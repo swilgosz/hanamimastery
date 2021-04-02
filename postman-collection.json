@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "2bc9d466-04a7-4a07-9b14-46ff225114ad",
+		"name": "Driggl's Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Blogging",
+			"item": [
+				{
+					"name": "V1",
+					"item": [
+						{
+							"name": "Publishing",
+							"item": [
+								{
+									"name": "Articles",
+									"item": [
+										{
+											"name": "Recently Published",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{host}}/blogging/v1/blogs/:id/articles",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"blogging",
+														"v1",
+														"blogs",
+														":id",
+														"articles"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "{{blog_slug}}",
+															"type": "string",
+															"description": "A unique SLUG of the blog to list article for"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Show",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{host}}/blogging/v1/blogs/:blog_id/articles/:id",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"blogging",
+														"v1",
+														"blogs",
+														":blog_id",
+														"articles",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "blog_id",
+															"value": "{{blog_slug}}"
+														},
+														{
+															"key": "id",
+															"value": "{{article_slug}}",
+															"type": "string",
+															"description": "A unique identifier of the published article"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Blogs",
+									"item": [
+										{
+											"name": "Show",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{host}}/blogging/v1/blogs/:id",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"blogging",
+														"v1",
+														"blogs",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "{{blog_slug}}",
+															"type": "string",
+															"description": "A unique slug of the requested blog"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
