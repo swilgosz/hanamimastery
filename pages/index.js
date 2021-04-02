@@ -1,17 +1,26 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+
+import { Button } from '@material-ui/core';
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Image src="/logo-small.png" width={256} height={86} />
+      <Button color="primary">Hello World</Button>
       <Head>
-        <title>Create Next App</title>
+        <title>My blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Read{' '}
+          <Link href="/blog">
+            <a>this page!</a>
+          </Link>
         </h1>
 
         <p className={styles.description}>
