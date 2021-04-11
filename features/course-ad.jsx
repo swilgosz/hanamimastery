@@ -13,7 +13,14 @@ export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
     <Grid
       spacing={3}
       container
-      component={(props) => <Box {...BoxProps} {...props} bgcolor={bg || ''} />}
+      component={(props) => (
+        <Box
+          {...BoxProps}
+          {...props}
+          bgcolor={bg || ''}
+          width="100%!important"
+        />
+      )}
     >
       <Grid
         item
