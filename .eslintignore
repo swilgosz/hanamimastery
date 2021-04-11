@@ -1,0 +1,5 @@
+.eslintrc.js
+serviceWorker.ts
+reportWebVitals.ts
+*.config.js
+.next
