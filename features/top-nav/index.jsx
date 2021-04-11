@@ -20,20 +20,23 @@ export default function MenuAppBar() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   return (
-    <AppBar position="static" color="inherit">
-      <Toolbar
-        className={classes.toolbar}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        component={(props) => <Container maxWidth="md" {...props} />}
-        variant="dense"
-      >
-        <NextLink href="/" passHref>
-          <Link>
-            <Image width="83" height="28" src="/logo-small.png" />
-          </Link>
-        </NextLink>
-        {isDesktop ? <DesktopMenu /> : <MobileMenu />}
-      </Toolbar>
-    </AppBar>
+    <>
+      <AppBar color="inherit">
+        <Toolbar
+          className={classes.toolbar}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          component={(props) => <Container maxWidth="md" {...props} />}
+          variant="dense"
+        >
+          <NextLink href="/" passHref>
+            <Link>
+              <Image width="83" height="28" src="/logo-small.png" />
+            </Link>
+          </NextLink>
+          {isDesktop ? <DesktopMenu /> : <MobileMenu />}
+        </Toolbar>
+      </AppBar>
+      <Toolbar variant="dense" />
+    </>
   );
 }

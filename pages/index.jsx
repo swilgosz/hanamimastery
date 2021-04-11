@@ -100,7 +100,9 @@ export default function Home() {
             Start learning now!
           </Button>
         </Box>
-        <CourseAd BoxProps={{ component: 'section', px: 3, py: 6 }} />
+        <CourseAd
+          BoxProps={{ id: 'courses', component: 'section', px: 3, py: 6 }}
+        />
         <Box px={3} py={12} component="section" textAlign="center">
           <Typography variant="h4" align="center" gutterBottom>
             Not sure if it&apos;s for you?
