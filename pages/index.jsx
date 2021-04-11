@@ -4,6 +4,8 @@ import {
   Container,
   makeStyles,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@material-ui/core';
 import { NextSeo } from 'next-seo';
 import NextLink from 'next/link';
@@ -25,13 +27,14 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backdropFilter: 'brightness(0.35)',
     display: 'flex',
-  },
-  heroContent: {
-    flexGrow: 1,
-    display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'flex-end',
+    alignItems: 'center',
+    padding: theme.spacing(2),
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(6),
+      alignItems: 'flex-end',
+    },
   },
   linkButton: {
     color: theme.palette.common.white,
@@ -39,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Home() {
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   const classes = useStyles();
   return (
     <>
@@ -54,32 +59,30 @@ export default function Home() {
           image: '/home-cover.jpg',
         }}
       />
-      <main>
+      <Container maxWidth="xl" component="main" disableGutters>
         <section
           className={classes.hero}
           style={{ backgroundImage: `url("/home-cover.jpg")` }}
         >
           <div className={classes.heroFilter}>
-            <Container maxWidth="md" className={classes.heroContent}>
-              <Typography
-                variant="h4"
-                className="title"
-                color="common.white"
-                gutterBottom
+            <Typography
+              variant="h4"
+              className="title"
+              align={isDesktop ? 'inherit' : 'center'}
+              gutterBottom
+            >
+              Wanna be a developer?
+            </Typography>
+            <NextLink href="#courses" passHref>
+              <Button
+                size="large"
+                className={classes.linkButton}
+                variant="contained"
+                color="primary"
               >
-                Wanna be a developer?
-              </Typography>
-              <NextLink href="#courses" passHref>
-                <Button
-                  size="large"
-                  className={classes.linkButton}
-                  variant="contained"
-                  color="primary"
-                >
-                  Check out our courses!
-                </Button>
-              </NextLink>
-            </Container>
+                Check out our courses!
+              </Button>
+            </NextLink>
           </div>
         </section>
         <Box px={3} py={12} component="section" textAlign="center">
@@ -124,7 +127,7 @@ export default function Home() {
             Check it out!
           </Button>
         </Box>
-      </main>
+      </Container>
     </>
   );
 }
