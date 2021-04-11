@@ -17,12 +17,13 @@ export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
     >
       <Grid
         item
-        xs={6}
+        xs={12}
+        md={6}
         component="img"
         src="/rails-rest-api.jpg"
         alt="Rails api thumbnail"
       />
-      <Grid item xs={6}>
+      <Grid item xs={12} md={6}>
         <Typography variant="h4">Ruby On Rails REST API</Typography>
         <Typography variant={size === 'small' ? 'subtitle2' : 'h6'}>
           The complete guide
