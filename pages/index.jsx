@@ -1,69 +1,113 @@
+import {
+  Box,
+  Button,
+  Container,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
+import NextLink from 'next/link';
 import CourseAd from '../features/course-ad';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    padding: 0,
+    minHeight: theme.spacing(6),
+  },
+  hero: {
+    backgroundSize: 'cover',
+    display: 'flex',
+    minHeight: theme.spacing(75),
+    color: theme.palette.common.white,
+  },
+  heroFilter: {
+    flexGrow: 1,
+    backdropFilter: 'brightness(0.35)',
+    display: 'flex',
+  },
+  heroContent: {
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+  },
+  linkButton: {
+    color: theme.palette.common.white,
+  },
+}));
+
 export default function Home() {
+  const classes = useStyles();
   return (
-    <div>
+    <main>
       <section
-        className="hero has-background-image"
+        className={classes.hero}
         style={{ backgroundImage: `url("/home-cover.jpg")` }}
       >
-        <div className="cover social">
-          <img src="/home-cover.jpg" alt="Driggl" />
-        </div>
-        <div className="hero-body has-mask">
-          <div className="container has-text-right">
-            <h1 className="title">Wanna be a developer?</h1>
-            <a
-              href="#courses"
-              className="button is-primary has-text-weight-bold is-large"
+        <div className={classes.heroFilter}>
+          <Container maxWidth="md" className={classes.heroContent}>
+            <Typography
+              variant="h4"
+              className="title"
+              color="common.white"
+              gutterBottom
             >
-              Check out our courses!
-            </a>
-          </div>
+              Wanna be a developer?
+            </Typography>
+            <NextLink href="#courses" passHref>
+              <Button
+                size="large"
+                className={classes.linkButton}
+                variant="contained"
+                color="primary"
+              >
+                Check out our courses!
+              </Button>
+            </NextLink>
+          </Container>
         </div>
       </section>
-      <section className="section hero">
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <h2 className="title">
-              Experienced & Trusted by
-              <strong>
-                <span className="has-text-orange">1000+</span>
-              </strong>
-              People worldwide
-            </h2>
-            <a
-              href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
-              className="button is-primary has-text-weight-bold is-large"
-            >
-              Start learning now!
-            </a>
-          </div>
-        </div>
-      </section>
-      <section id="courses" className="section">
-        <CourseAd />
-      </section>
-      <section className="hero section">
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <h2 className="title">Not sure if it&apos;s for you?</h2>
-            <h3 className="subtitle">
-              No worries, we offer
-              <strong>
-                <span className="has-text-orange">30-day</span>
-              </strong>
-              money-back!
-            </h3>
-            <a
-              href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
-              className="button is-primary has-text-weight-bold is-large"
-            >
-              Check it out!
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
+      <Box px={3} py={12} component="section" textAlign="center">
+        <Typography variant="h4" align="center" gutterBottom>
+          Experienced & Trusted by{' '}
+          <Typography variant="inherit" component="strong" color="primary">
+            1000+
+          </Typography>{' '}
+          People worldwide
+        </Typography>
+        <Button
+          href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
+          size="large"
+          className={classes.linkButton}
+          variant="contained"
+          color="primary"
+        >
+          Start learning now!
+        </Button>
+      </Box>
+      <CourseAd BoxProps={{ component: 'section', px: 3, py: 6 }} />
+      <Box px={3} py={12} component="section" textAlign="center">
+        <Typography variant="h4" align="center" gutterBottom>
+          Not sure if it&apos;s for you?
+        </Typography>
+        <Typography variant="h5" paragraph>
+          No worries, we offer{' '}
+          <Typography variant="inherit" component="strong" color="primary">
+            30-day
+          </Typography>{' '}
+          money-back!
+        </Typography>
+        <Button
+          href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
+          size="large"
+          className={classes.linkButton}
+          variant="contained"
+          color="primary"
+        >
+          Check it out!
+        </Button>
+      </Box>
+    </main>
   );
 }
