@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TopNav from '../features/top-nav/index';
+import Footer from '../features/footer';
 import theme from '../styles/theme';
 
 export default function MyApp(props) {
@@ -21,6 +22,7 @@ export default function MyApp(props) {
       <CssBaseline />
       <TopNav />
       <Component {...pageProps} />
+      <Footer />
     </ThemeProvider>
   );
 }
