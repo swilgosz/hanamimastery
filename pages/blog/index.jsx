@@ -1,11 +1,21 @@
 import { NextSeo } from 'next-seo';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { Container, Grid, makeStyles } from '@material-ui/core';
 import { setArticles } from '../../redux/slices/articles';
 import { setAuthors } from '../../redux/slices/authors';
 import getArticlesData from '../../utils/get-articles-data';
+import EmailSubscriptionForm from '../../features/email-subscription-form';
+import ArticlesGrid from '../../features/articles-grid/index';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 export default function BlogIndex({ articles, authors }) {
+  const classes = useStyles();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setArticles(articles));
@@ -25,6 +35,20 @@ export default function BlogIndex({ articles, authors }) {
           type: 'website',
         }}
       />
+      <Grid
+        container
+        className={classes.root}
+        component={(props) => (
+          <Container maxWidth="lg" component="main" {...props} />
+        )}
+      >
+        <Grid item xs={12} md={9}>
+          <ArticlesGrid />
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <EmailSubscriptionForm />
+        </Grid>
+      </Grid>
     </>
   );
 }

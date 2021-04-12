@@ -15,7 +15,7 @@ const userId = '0cbf9512faab835f9be304437';
 const listId = '4c303aa769';
 
 export default function EmailSubscriptionForm() {
-  const { get, loading, error, data } = useFetch(
+  const { get, loading, error } = useFetch(
     'https://driggl.us9.list-manage.com/subscribe/'
   );
 
