@@ -25,7 +25,7 @@ export default function MenuAppBar() {
         <Toolbar
           className={classes.toolbar}
           // eslint-disable-next-line react/jsx-props-no-spreading
-          component={(props) => <Container maxWidth="md" {...props} />}
+          component={(props) => <Container maxWidth="lg" {...props} />}
           variant="dense"
         >
           <NextLink href="/" passHref>

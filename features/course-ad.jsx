@@ -1,14 +1,7 @@
-import { Box, Button, Grid, Typography, makeStyles } from '@material-ui/core';
+import { Box, Button, Grid, Typography } from '@material-ui/core';
 import NextLink from 'next/link';
 
-const useStyles = makeStyles((theme) => ({
-  linkButton: {
-    color: theme.palette.common.white,
-  },
-}));
-
 export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
-  const classes = useStyles();
   return (
     <Grid
       spacing={3}
@@ -44,7 +37,6 @@ export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
           passHref
         >
           <Button
-            className={classes.linkButton}
             variant="contained"
             color="primary"
             size={size === 'small' ? 'medium' : 'large'}

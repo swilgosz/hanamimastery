@@ -1,4 +1,11 @@
-import { createMuiTheme } from "@material-ui/core";
-import { orange } from "@material-ui/core/colors";
+import { createMuiTheme } from '@material-ui/core';
+import { orange } from '@material-ui/core/colors';
 
-export default createMuiTheme({ palette: { primary: orange } });
+export default createMuiTheme({
+  palette: { primary: orange },
+  overrides: {
+    MuiButton: {
+      containedPrimary: { color: '#fff' },
+    },
+  },
+});

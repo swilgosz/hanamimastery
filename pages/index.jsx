@@ -36,9 +36,6 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'flex-end',
     },
   },
-  linkButton: {
-    color: theme.palette.common.white,
-  },
 }));
 
 export default function Home() {
@@ -74,12 +71,7 @@ export default function Home() {
               Wanna be a developer?
             </Typography>
             <NextLink href="#courses" passHref>
-              <Button
-                size="large"
-                className={classes.linkButton}
-                variant="contained"
-                color="primary"
-              >
+              <Button size="large" variant="contained" color="primary">
                 Check out our courses!
               </Button>
             </NextLink>
@@ -96,7 +88,6 @@ export default function Home() {
           <Button
             href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
             size="large"
-            className={classes.linkButton}
             variant="contained"
             color="primary"
           >
@@ -120,7 +111,6 @@ export default function Home() {
           <Button
             href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
             size="large"
-            className={classes.linkButton}
             variant="contained"
             color="primary"
           >
