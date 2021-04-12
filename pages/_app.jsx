@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import TopNav from '../features/top-nav/index';
 import Footer from '../features/footer';
 import theme from '../styles/theme';
+import store from '../redux/store';
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -18,7 +20,7 @@ export default function MyApp(props) {
   }, []);
 
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <meta name="author" content="Driggl - https://driggl.com" />
       </Head>
@@ -29,6 +31,6 @@ export default function MyApp(props) {
         <Component {...pageProps} />
         <Footer />
       </ThemeProvider>
-    </>
+    </Provider>
   );
 }
