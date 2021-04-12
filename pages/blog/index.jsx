@@ -1,21 +1,38 @@
-export default function BlogIndex({ data }) {
-  console.log(data);
-  return <div>Hi</div>;
+import { NextSeo } from 'next-seo';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { setArticles } from '../../redux/slices/articles';
+import { setAuthors } from '../../redux/slices/authors';
+import getArticlesData from '../../utils/get-articles-data';
+
+export default function BlogIndex({ articles, authors }) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setArticles(articles));
+    dispatch(setAuthors(authors));
+  }, [dispatch]);
+  return (
+    <>
+      <NextSeo
+        title="Recent articles"
+        titleTemplate="%s | Driggl - Modern web development"
+        description="Build modern websites like a professional with Driggl's Community!"
+        openGraph={{
+          title: 'Recent articles',
+          description:
+            'Newest content from web Professionals and the Modern web development Community!',
+          images: ['/home-cover.jpg'],
+          type: 'website',
+        }}
+      />
+    </>
+  );
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
-    `https://api.sourcerio.com/blogging/v1/blogs/driggl/articles`
-  );
-  const data = await res.json();
-
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+  const { articles, authors } = await getArticlesData();
 
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { articles, authors }, // will be passed to the page component as props
   };
 }
