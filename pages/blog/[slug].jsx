@@ -1,35 +1,18 @@
 import React from 'react';
-import hydrate from 'next-mdx-remote/hydrate';
-import renderToString from 'next-mdx-remote/render-to-string';
+import getArticlesData from '../../utils/get-articles-data';
 
-const components = {};
-
-export default function BlogIndex({ data, source }) {
-  const content = hydrate(source, { components });
-  console.log(data);
-  return <div>{content}</div>;
+export default function BlogIndex({ data }) {
+  return (
+    <div dangerouslySetInnerHTML={{ __html: data.data.attributes.content }} />
+  );
 }
 
-const getArticlesData = async (
-  link = 'https://api.sourcerio.com/blogging/v1/blogs/driggl/articles/'
-) => {
-  const response = await fetch(link);
-  const body = await response.json();
-  const {
-    data,
-    links: { next },
-  } = body;
-  if (next) {
-    return data.concat(await getArticlesData(next));
-  }
-  return data;
-};
-
 export async function getStaticPaths() {
-  const posts = await getArticlesData();
-  const paths = posts.map((article) => ({
+  const { articles } = await getArticlesData();
+  const paths = Object.values(articles).map((article) => ({
     params: { slug: article.attributes.slug },
   }));
+  console.log(paths);
   return { paths, fallback: false };
 }
 
@@ -39,18 +22,6 @@ export async function getStaticProps(context) {
   );
   const data = await res.json();
 
-  const { content } = data.data.attributes;
-
-  const mdxSource = await renderToString(content, {
-    components,
-    // Optionally pass remark/rehype plugins
-    mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-    },
-    scope: data,
-  });
-
   if (!data) {
     return {
       notFound: true,
@@ -58,6 +29,6 @@ export async function getStaticProps(context) {
   }
 
   return {
-    props: { data, source: mdxSource }, // will be passed to the page component as props
+    props: { data }, // will be passed to the page component as props
   };
 }
