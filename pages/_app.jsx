@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Head from 'next/head';
 import TopNav from '../features/top-nav/index';
 import Footer from '../features/footer';
 import theme from '../styles/theme';
@@ -17,12 +18,17 @@ export default function MyApp(props) {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-      <CssBaseline />
-      <TopNav />
-      <Component {...pageProps} />
-      <Footer />
-    </ThemeProvider>
+    <>
+      <Head>
+        <meta name="author" content="Driggl - https://driggl.com" />
+      </Head>
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <CssBaseline />
+        <TopNav />
+        <Component {...pageProps} />
+        <Footer />
+      </ThemeProvider>
+    </>
   );
 }
