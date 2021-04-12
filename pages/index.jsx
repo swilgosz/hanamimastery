@@ -56,7 +56,7 @@ export default function Home() {
           title: 'Driggl - Modern web development',
           description:
             'Build modern websites like a professional with Driggl Community!',
-          image: '/home-cover.jpg',
+          images: ['/home-cover.jpg'],
         }}
       />
       <Container maxWidth="xl" component="main" disableGutters>
