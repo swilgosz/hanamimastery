@@ -105,7 +105,7 @@ This approach above allowed us to use something like:
     ...
 ```
 
-To serialize the standard responses we use [_fast_jsonapi_ gem from Netflix](https://driggl.com/blog/from-activemodel-serializers-to-fast-jsonapi). It's quite nice for the usual approach, but for error handling not so much so we decided to write our own _ErrorSerializer_.
+To serialize the standard responses we use [_fast_jsonapi_ gem from Netflix](https://driggl.com/blog/a/from-activemodel-serializers-to-fast-jsonapi). It's quite nice for the usual approach, but for error handling not so much so we decided to write our own _ErrorSerializer_.
 
 ```ruby
     # app/serializers/error_serializer.rb
