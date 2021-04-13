@@ -21,9 +21,7 @@ const getArticleSourceFromFile = async (slug) => {
 
 const getArticleData = async (slug) => {
   try {
-    const res = await fetch(
-      `https://api.sourcerio.com/blogging/v1/blogs/driggl/articles/${slug}`
-    );
+    const res = await fetch(`${process.env.API_URL}/articles/${slug}`);
     const data = await res.json();
     if (!data) throw new Error();
 
