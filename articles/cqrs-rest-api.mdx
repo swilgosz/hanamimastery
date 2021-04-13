@@ -2,7 +2,7 @@ I love CQRS pattern in my web applications and experience shows me that the bene
 
 With one of my clients we decided to implement CQRS pattern to complement Domain Driven Design, and we figured out that there are some tricky parts not completely obvious at the beginning and we were frustrated that nobody actually described them well in the past.
 
-I've wrote about the[ ruby implementation of CQRS in the separate article](https://driggl.com/blog/a/cars-api-endpoints-in-rails-applications). Here I'll focus on more high-level content.
+I've wrote about the[ ruby implementation of CQRS in the separate article](https://driggl.com/blog/cars-api-endpoints-in-rails-applications). Here I'll focus on more high-level content.
 
 ### Challenges we faced
 
@@ -151,7 +151,7 @@ Where you can pass different attributes you want to and omit what's not needed t
 
 Then we hide some of our Business logic from the UI and allow frontend to be more flexible in how they implement the components.
 
-This, however, requires us to implement the [Trigger Pattern](https://hawkins6423.github.io/) or similar, additional abstraction layer which generates [more code to be written](https://driggl.com/blog/a/why-we-are-not-dry).
+This, however, requires us to implement the [Trigger Pattern](https://hawkins6423.github.io/) or similar, additional abstraction layer which generates [more code to be written](https://driggl.com/blog/why-we-are-not-dry).
 
 ### Conclusion
 
