@@ -51,6 +51,10 @@ const getArticleData = async (slug) => {
       readingTime: readingTime(content),
     };
 
+    // Currently, articles are being read from the file system
+    // if you change ARTICLES_SOURCE env var to 'API'
+    // make sure that the mdx buffer is being stored as content
+
     const articleSource =
       process.env.ARTICLES_SOURCE === 'API'
         ? content
