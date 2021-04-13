@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved
+import '../styles/highlighting.css';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/core/styles';
