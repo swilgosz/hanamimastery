@@ -1,12 +1,12 @@
 import { NextSeo } from 'next-seo';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Container, Grid, makeStyles } from '@material-ui/core';
-import { setArticles } from '../../redux/slices/articles';
-import { setAuthors } from '../../redux/slices/authors';
-import getArticlesData from '../../utils/get-articles-data';
-import EmailSubscriptionForm from '../../features/email-subscription-form';
 import ArticlesGrid from '../../features/articles-grid/index';
+import EmailSubscriptionForm from '../../features/email-subscription-form';
+import getArticlesData from '../../utils/get-articles-data';
+import { setAuthors } from '../../redux/slices/authors';
+import { setArticles } from '../../redux/slices/articles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
