@@ -1,16 +1,41 @@
 import React from 'react';
 import hydrate from 'next-mdx-remote/hydrate';
-import { Box, Container, Typography } from '@material-ui/core';
+import { Box, Container, Typography, makeStyles } from '@material-ui/core';
 import { DiscussionEmbed } from 'disqus-react';
 import { NextSeo } from 'next-seo';
-import getArticlesData from '../../utils/get-articles-data';
-import getArticleData from '../../utils/get-article-data';
-import components from '../../features/mdx-components';
+import getArticlesData from '../../../utils/get-articles-data';
+import getArticleData from '../../../utils/get-article-data';
+import components from '../../../features/mdx-components';
+import ArticleLayout from '../../../layouts/article-layout';
 
-export default function BlogIndex({ source, article }) {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    padding: 0,
+    minHeight: theme.spacing(6),
+  },
+  hero: {
+    backgroundSize: 'cover',
+    display: 'flex',
+    minHeight: theme.spacing(75),
+    color: theme.palette.common.white,
+  },
+  heroFilter: {
+    flexGrow: 1,
+    backdropFilter: 'brightness(0.35)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: theme.spacing(2),
+  },
+}));
+
+export default function Article({ source, article }) {
+  const classes = useStyles();
   const content = hydrate(source, { components });
   const { tags, slug, title, thumbnail, id, excerpt } = article;
-  const url = `https://driggl.com/blog/a/${slug}?comments-version=2`;
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/blog/a/${slug}`;
   return (
     <>
       <NextSeo
@@ -43,19 +68,31 @@ export default function BlogIndex({ source, article }) {
           appId: process.env.NEXT_PUBLIC_FB_APP_ID,
         }}
       />
-      <Box component="img" src={thumbnail.full} width="100%" />
-      <Container maxWidth="lg" component="main">
-        <Typography variant="h2">{title}</Typography>
-        {content}
-        <DiscussionEmbed
-          shortname="driggl"
-          config={{
-            url,
-            title,
-            identifier: `article-${id}-v2`,
-          }}
-        />
-      </Container>
+      <section
+        className={classes.hero}
+        style={{ backgroundImage: `url("${thumbnail.full}")` }}
+      >
+        <Typography variant="h4" align="center" className={classes.heroFilter}>
+          {title}
+        </Typography>
+      </section>
+      <ArticleLayout
+        article={
+          <Container maxWidth="lg" component="main">
+            {content}
+            <div>
+              <DiscussionEmbed
+                shortname="driggl"
+                config={{
+                  url: `${url}?comments-version=2`,
+                  title,
+                  identifier: `article-${id}-v2`,
+                }}
+              />
+            </div>
+          </Container>
+        }
+      />
     </>
   );
 }
