@@ -118,5 +118,6 @@ export async function getStaticProps(context) {
 
   return {
     props: { source, article }, // will be passed to the page component as props
+    revalidate: 604800, // revalidate the article every week
   };
 }
