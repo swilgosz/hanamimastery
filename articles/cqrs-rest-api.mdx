@@ -64,7 +64,7 @@ When you define your resources, you can think about all the actions you can call
 
 Let's consider a trivial example first. When you have a blog, you can perform several actions on the article, few of which are:
 
-```
+```bash
 - create
 - update
 - publish
@@ -84,7 +84,7 @@ The real issue is, that by monkey-patches like that, we loose the connection wit
 
 In this example, much better solution would be, to add two more URLS to publish and unpublish the article:
 
-```
+```bash
     PUT /articles/:id/publish
     PUT /articles/:id/unpublish
 ```
@@ -143,7 +143,7 @@ There are several attributes for the job's application draft that can be changed
 
 It introduces a lot of complexity and can cause unnecessary traffic in our system. Instead of that, I see it as much better solution, to have only one endpoint:
 
-```
+```bash
     PATCH /applications/:id
 ```
 
