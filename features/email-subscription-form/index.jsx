@@ -15,7 +15,7 @@ const userId = '0cbf9512faab835f9be304437';
 const listId = '4c303aa769';
 
 export default function EmailSubscriptionForm() {
-  const { get, loading, error } = useFetch(
+  const { post, loading, error } = useFetch(
     'https://driggl.us9.list-manage.com/subscribe/'
   );
 
@@ -27,7 +27,7 @@ export default function EmailSubscriptionForm() {
     resolver: yupResolver(schema),
   });
   const onSubmit = (data) => {
-    get(`?EMAIL=${escape(data.email)}&id=${listId}&u=${userId}`);
+    post({ email_address: data.email });
   };
 
   return (

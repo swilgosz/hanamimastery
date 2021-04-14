@@ -1,6 +1,6 @@
 import React from 'react';
 import hydrate from 'next-mdx-remote/hydrate';
-import { Box, Container, Typography, makeStyles } from '@material-ui/core';
+import { Container, Typography, makeStyles } from '@material-ui/core';
 import { DiscussionEmbed } from 'disqus-react';
 import { NextSeo } from 'next-seo';
 import getArticlesData from '../../../utils/get-articles-data';

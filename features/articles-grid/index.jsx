@@ -1,18 +1,26 @@
-import { List, ListItem } from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { getAllArticles } from '../../redux/slices/articles';
 import ArticleTile from './tile';
 
+const useStyles = makeStyles((theme) => ({
+  list: {
+    listStyle: 'none',
+    padding: theme.spacing(0, 4),
+  },
+}));
+
 const ArticlesDisplay = () => {
+  const classes = useStyles();
   const articles = useSelector(getAllArticles);
   return (
-    <List container component="ul">
-      {articles.map((article) => (
-        <ListItem items xs={12} component="li">
+    <Grid container component="ul" className={classes.list} spacing={6}>
+      {articles.map((article, index) => (
+        <Grid item items xs={12} md={index === 0 ? 12 : 6} component="li">
           <ArticleTile article={article} />
-        </ListItem>
+        </Grid>
       ))}
-    </List>
+    </Grid>
   );
 };
 
