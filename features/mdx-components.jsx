@@ -109,7 +109,13 @@ const useHeaderStyles = makeStyles(() =>
 const CustomHeader = ({ variant, children, id, ...props }) => {
   const classes = useHeaderStyles();
   return (
-    <Typography className={classes.root} variant={variant} id={id} {...props}>
+    <Typography
+      className={classes.root}
+      variant={variant}
+      id={id}
+      gutterBottom
+      {...props}
+    >
       {children}
       {id && (
         <Link
@@ -133,6 +139,7 @@ const MDXComponents = {
   h4: (props) => <CustomHeader variant="h5" {...props} />,
   h5: (props) => <CustomHeader variant="h6" {...props} />,
   h6: (props) => <CustomHeader variant="h6" {...props} />,
+  p: (props) => <Typography {...props} paragraph />,
   kbd: (props) => <Kbd {...props} />,
   a: CustomLink,
   img: (props) => <CustomImage {...props} />,
