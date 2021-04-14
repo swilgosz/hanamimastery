@@ -36,6 +36,7 @@ export default function Article({ source, article }) {
   const content = hydrate(source, { components });
   const { tags, slug, title, thumbnail, id, excerpt } = article;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/blog/a/${slug}`;
+
   return (
     <>
       <NextSeo
@@ -102,7 +103,7 @@ export async function getStaticPaths() {
   const paths = Object.values(articles).map((article) => ({
     params: { slug: article.attributes.slug },
   }));
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps(context) {
