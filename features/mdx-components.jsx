@@ -142,6 +142,7 @@ const MDXComponents = {
   h5: (props) => <CustomHeader variant="h6" {...props} />,
   h6: (props) => <CustomHeader variant="h6" {...props} />,
   p: (props) => <Typography {...props} paragraph />,
+  li: (props) => <Typography {...props} component="li" />,
   kbd: (props) => <Kbd {...props} />,
   a: CustomLink,
   img: (props) => <CustomImage {...props} />,
