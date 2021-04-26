@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     padding: theme.spacing(2),
   },
+  article: {
+    marginBottom: '100px'
+  },
 }));
 
 export default function Article({ source, article }) {
@@ -80,7 +83,9 @@ export default function Article({ source, article }) {
       <ArticleLayout
         article={
           <Container maxWidth="lg" component="main">
-            {content}
+            <article className={classes.article}>
+              {content}
+            </article>
             <div>
               <DiscussionEmbed
                 shortname="driggl"

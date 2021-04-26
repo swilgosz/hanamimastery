@@ -80,6 +80,8 @@ const CustomLink = (props) => {
 const useHeaderStyles = makeStyles(() =>
   createStyles({
     root: {
+      marginTop: '40px',
+      marginBottom: '20px',
       scrollMarginTop: '100px',
       scrollSnapMargin: '100px', // Safari
       // '&[id]': {
