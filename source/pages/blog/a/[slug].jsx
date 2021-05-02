@@ -34,9 +34,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Article({ source, article }) {
+export default function Article({ article }) {
   const classes = useStyles();
-  const content = hydrate(source, { components });
+  const content = hydrate(article.content, { components });
   const { tags, slug, title, thumbnail, id, excerpt } = article;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/blog/a/${slug}`;
 
@@ -74,7 +74,7 @@ export default function Article({ source, article }) {
       />
       <section
         className={classes.hero}
-        style={{ backgroundImage: `url("${thumbnail.full}")` }}
+        style={{ backgroundImage: `url("${thumbnail.cover}")` }}
       >
         <Typography variant="h4" align="center" className={classes.heroFilter}>
           {title}
@@ -119,10 +119,10 @@ export async function getStaticProps(context) {
     };
   }
 
-  const { source, article } = articleData;
+  const { article } = articleData;
 
   return {
-    props: { source, article }, // will be passed to the page component as props
+    props: { article }, // will be passed to the page component as props
     revalidate: 604800, // revalidate the article every week
   };
 }

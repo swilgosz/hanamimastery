@@ -4,63 +4,33 @@ import fs from 'fs';
 import path from 'path';
 import readingTime from 'reading-time';
 import components from '../features/mdx-components';
+import matter from 'gray-matter';
 
 const getArticleSourceFromFile = async (slug) => {
   const file = fs.readFileSync(
     path.join(`${process.cwd()}/articles/${slug}.mdx`)
   );
-  return file;
+  const matterResult = matter(file);
+
+  return {
+    ...matterResult.data,
+    content: matterResult.content,
+  };
 };
 
 const getArticleData = async (slug) => {
   try {
-    const res = await fetch(`${process.env.API_URL}/articles/${slug}`);
-    const data = await res.json();
-    if (!data) throw new Error();
+    const article =
+        await getArticleSourceFromFile(slug);
 
-    const {
-      publishedAt,
-      status,
-      metadata,
-      excerpt,
-      content,
-      title,
-      tags,
-      thumbnail,
-    } = data.data.attributes;
-
-    const author = data.data.relationships.author.data;
-    const article = {
-      id: data.data.id,
-      tags,
-      author,
-      publishedAt,
-      status,
-      slug,
-      metadata,
-      excerpt,
-      title,
-      thumbnail,
-      readingTime: readingTime(content),
-    };
-
-    // Currently, articles are being read from the file system
-    // if you change ARTICLES_SOURCE env var to 'API'
-    // make sure that the mdx buffer is being stored as content
-
-    const articleSource =
-      process.env.ARTICLES_SOURCE === 'API'
-        ? content
-        : await getArticleSourceFromFile(slug);
-
-    const mdxSource = await renderToString(articleSource, {
+    article.content = await renderToString(article.content, {
       components,
       mdxOptions: {
         remarkPlugins: [],
         rehypePlugins: [rehypePrism],
       },
     });
-    return { source: mdxSource, article };
+    return { article };
   } catch (error) {
     return undefined;
   }
