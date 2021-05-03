@@ -3,10 +3,10 @@ import hydrate from 'next-mdx-remote/hydrate';
 import { Container, Typography, makeStyles } from '@material-ui/core';
 import { DiscussionEmbed } from 'disqus-react';
 import { NextSeo } from 'next-seo';
-import getArticlesData from '../../../utils/get-articles-data';
-import getArticleData from '../../../utils/get-article-data';
-import components from '../../../features/mdx-components';
-import ArticleLayout from '../../../layouts/article-layout';
+import getArticlesData from '../../utils/get-articles-data';
+import getArticleData from '../../utils/get-article-data';
+import components from '../../features/mdx-components';
+import ArticleLayout from '../../layouts/article-layout';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,7 +38,7 @@ export default function Article({ article }) {
   const classes = useStyles();
   const content = hydrate(article.content, { components });
   const { tags, slug, title, thumbnail, id, excerpt } = article;
-  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/blog/a/${slug}`;
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/episodes/${slug}`;
 
   return (
     <>
@@ -51,7 +51,7 @@ export default function Article({ article }) {
           creator: '@sebwilgosz',
           title,
           description: excerpt,
-          image: thumbnail.sharing,
+          image: thumbnail.big,
         }}
         description={excerpt}
         openGraph={{
@@ -74,7 +74,7 @@ export default function Article({ article }) {
       />
       <section
         className={classes.hero}
-        style={{ backgroundImage: `url("${thumbnail.cover}")` }}
+        style={{ backgroundImage: `url("${thumbnail.full}")` }}
       >
         <Typography variant="h4" align="center" className={classes.heroFilter}>
           {title}
@@ -88,11 +88,11 @@ export default function Article({ article }) {
             </article>
             <div>
               <DiscussionEmbed
-                shortname="driggl"
+                shortname={`hanamimastery-${process.env.environment}`}
                 config={{
-                  url: `${url}?comments-version=2`,
+                  url: `${url}`,
                   title,
-                  identifier: `article-${id}-v2`,
+                  identifier: `episode-${id}`,
                 }}
               />
             </div>
@@ -105,7 +105,6 @@ export default function Article({ article }) {
 
 export async function getStaticPaths() {
   const { articles } = await getArticlesData();
-  console.log(articles)
   const paths = []
   // const paths = Object.values(articles).map((article) => ({
   //   params: { slug: article.slug },

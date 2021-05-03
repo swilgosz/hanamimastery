@@ -41,15 +41,15 @@ const ArticleTile = ({ article }) => {
   const { tags, excerpt, thumbnail, content, slug, title } = article;
   return (
     <Card className={classes.root}>
-      <NextLink href={`/blog/a/${slug}`} passHref>
+      <NextLink href={`/episodes/${slug}`} passHref>
         <CardActionArea>
-          <CardMedia className={classes.media} image={thumbnail.medium} />
+          <CardMedia className={classes.media} image={thumbnail.big} />
         </CardActionArea>
       </NextLink>
       <CardHeader
         disableTypography
         title={
-          <NextLink passHref href={`/blog/a/${slug}`}>
+          <NextLink passHref href={`/episodes/${slug}`}>
             <Link variant="h5">{title}</Link>
           </NextLink>
         }
@@ -76,7 +76,7 @@ const ArticleTile = ({ article }) => {
         </Typography>
       </CardContent>
       <CardActions className={classes.actions}>
-        <NextLink href={`/blog/a/${slug}`} passHref>
+        <NextLink href={`/episodes/${slug}`} passHref>
           <Link>Read more</Link>
         </NextLink>
       </CardActions>

@@ -12,12 +12,12 @@ export default function BlogIndex({ articles, authors }) {
     <>
       <NextSeo
         title="Recent articles"
-        titleTemplate="%s | Driggl - Modern web development"
+        titleTemplate="%s | Hanami Mastery - learn hanami as a pro"
         description="Build modern websites like a professional with Driggl's Community!"
         openGraph={{
           title: 'Recent articles',
           description:
-            'Newest content from web Professionals and the Modern web development Community!',
+            'Newest episodes with guides related to Hanami ruby Framework!',
           images: ['/home-cover.jpg'],
           type: 'website',
         }}

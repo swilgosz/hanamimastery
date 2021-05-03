@@ -6,7 +6,7 @@ import { Link, Typography } from '@material-ui/core';
 export default function footer() {
   return (
     <Typography component="footer" align="center" gutterBottom>
-      Copyright © Driggl {new Date().getFullYear()}.{' '}
+      Copyright © HanamiMastery {new Date().getFullYear()}.{' '}
       <NextLink href="/privacy-policy" passHref>
         <Link>Privacy Policy</Link>
       </NextLink>
