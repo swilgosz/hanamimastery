@@ -18,6 +18,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script type="text/javascript" src="https://a.omappapi.com/app/js/api.min.js" data-account="82043" data-user="72987" async></script>
         </body>
       </Html>
     );

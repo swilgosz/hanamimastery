@@ -32,44 +32,7 @@ export default function EmailSubscriptionForm() {
 
   return (
     <>
-      <Typography variant="h4">Do you like this content?</Typography>
-      <Typography paragraph>
-        Subscribe to our Newsletter for weekly updates about new articles and
-        <strong> free programming tips!</strong>
-      </Typography>
-      <Grid
-        container
-        component="form"
-        onSubmit={handleSubmit(onSubmit)}
-        spacing={2}
-      >
-        <Controller
-          name="email"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <Grid item>
-              <TextField
-                disabled={loading}
-                variant="outlined"
-                size="small"
-                error={error || errors.email}
-                helperText={
-                  (errors.email && errors.email.message) ||
-                  (error && error.message)
-                }
-                label="Email"
-                {...field}
-              />
-            </Grid>
-          )}
-        />
-        <Grid item>
-          <Button variant="contained" color="primary" type="submit">
-            Submit
-          </Button>
-        </Grid>
-      </Grid>
+      <div id="om-jygtzgejjk4smsfhwyo7-holder"></div>
     </>
   );
 }
