@@ -1,8 +1,8 @@
-// eslint-disable-next-line import/no-unresolved
 import '../styles/highlighting.css';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { useRouter } from 'next/router';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import TopNav from '../features/top-nav/index';
@@ -12,6 +12,13 @@ import store from '../redux/store';
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
+
+  const { asPath } = useRouter();
+  React.useEffect(() => {
+    if (window.om82043_72987) {
+      window.om82043_72987.reset();
+    }
+  }, [asPath]);
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
