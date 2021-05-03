@@ -1,8 +1,7 @@
 import getData from './get-data';
 
 const getArticlesData = async () => {
-  // const authors = getData(`team/**/*`);
-  const authors = [];
+  const authors = getData(`team/**/*`);
   const articles = getData('episodes/*')
     .sort((a, b) => {
       return b.id - a.id;
@@ -16,7 +15,6 @@ const getArticlesData = async () => {
     });
 
   return {
-    authors,
     articles,
   };
 };

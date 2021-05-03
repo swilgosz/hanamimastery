@@ -1,10 +1,6 @@
 import { NextSeo } from 'next-seo';
-import { useDispatch } from 'react-redux';
-import React, { useEffect } from 'react';
 import ArticlesGrid from '../features/articles-grid/index';
 import getArticlesData from '../utils/get-articles-data';
-import { setAuthors } from '../redux/slices/authors';
-import { setArticles } from '../redux/slices/articles';
 import ArticleLayout from '../layouts/article-layout';
 
 export default function BlogIndex({ articles, authors }) {
@@ -30,10 +26,10 @@ export default function BlogIndex({ articles, authors }) {
 }
 
 export async function getStaticProps() {
-  const { articles, authors } = await getArticlesData();
+  const { articles } = await getArticlesData();
 
   return {
-    props: { articles, authors }, // will be passed to the page component as props
+    props: { articles }, // will be passed to the page component as props
     revalidate: 604800, // revalidate the articles listing every week
   };
 }

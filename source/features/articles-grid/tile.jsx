@@ -10,6 +10,7 @@ import {
   CardActionArea,
   CardHeader,
   Link,
+  Button,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   actions: {
     padding: theme.spacing(2),
+    justifyContent: 'flex-end'
   },
 }));
 
@@ -56,7 +58,7 @@ const ArticleTile = ({ article }) => {
         subheader={
           <>
             <Typography variant="subtitle1">
-              {author.fullName}, {readingTime(content).text}
+              {author.name}, {readingTime(content).text}
               <Box>
                 {tags.length ? (
                   <>
@@ -77,7 +79,7 @@ const ArticleTile = ({ article }) => {
       </CardContent>
       <CardActions className={classes.actions}>
         <NextLink href={`/episodes/${slug}`} passHref>
-          <Link>Read more</Link>
+          <Button variant='contained' color='primary'>Read more</Button>
         </NextLink>
       </CardActions>
     </Card>
