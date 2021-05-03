@@ -8,11 +8,6 @@ import { setArticles } from '../../redux/slices/articles';
 import ArticleLayout from '../../layouts/article-layout';
 
 export default function BlogIndex({ articles, authors }) {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setArticles(articles));
-    dispatch(setAuthors(authors));
-  }, [dispatch]);
   return (
     <>
       <NextSeo
@@ -27,7 +22,9 @@ export default function BlogIndex({ articles, authors }) {
           type: 'website',
         }}
       />
-      <ArticleLayout article={<ArticlesGrid />} />
+      <ArticleLayout article={
+        <ArticlesGrid articles={articles} />
+      } />
     </>
   );
 }

@@ -1,25 +1,24 @@
-import normalize from 'json-api-normalizer';
-import lodashMerge from 'lodash.merge';
+import getData from './get-data';
 
-const getArticlesData = async (
-  link = `${process.env.API_URL}/articles?page[number]=1`
-) => {
-  const response = await fetch(link);
-  const body = await response.json();
+const getArticlesData = async () => {
+  // const authors = getData(`team/**/*`);
+  const authors = [];
+  const articles = getData('episodes/*')
+    .sort((a, b) => {
+      return b.id - a.id;
+    })
+    .map((article) => {
+      return {
+        ...article,
+        author: authors.find((author) => author.slug === article.author) || {},
+        tags: article.tags || []
+      };
+    });
 
-  const {
-    meta: {
-      '/articles': {
-        links: { next },
-      },
-    },
-    articles,
+  return {
     authors,
-  } = normalize(body, { endpoint: '/articles?page[number]=0' });
-  if (next) {
-    return lodashMerge(await getArticlesData(next), { articles, authors });
-  }
-  return { articles, authors };
+    articles,
+  };
 };
 
 export default getArticlesData;

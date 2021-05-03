@@ -105,9 +105,11 @@ export default function Article({ article }) {
 
 export async function getStaticPaths() {
   const { articles } = await getArticlesData();
-  const paths = Object.values(articles).map((article) => ({
-    params: { slug: article.attributes.slug },
-  }));
+  console.log(articles)
+  const paths = []
+  // const paths = Object.values(articles).map((article) => ({
+  //   params: { slug: article.slug },
+  // }));
   return { paths, fallback: 'blocking' };
 }
 

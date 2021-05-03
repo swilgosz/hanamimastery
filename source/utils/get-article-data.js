@@ -8,7 +8,7 @@ import matter from 'gray-matter';
 
 const getArticleSourceFromFile = async (slug) => {
   const file = fs.readFileSync(
-    path.join(`${process.cwd()}/articles/${slug}.mdx`)
+    path.join(`${process.cwd()}/data/episodes/${slug}.mdx`)
   );
   const matterResult = matter(file);
 

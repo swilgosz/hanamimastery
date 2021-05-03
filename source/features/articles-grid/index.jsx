@@ -1,6 +1,4 @@
 import { Grid, makeStyles } from '@material-ui/core';
-import { useSelector } from 'react-redux';
-import { getAllArticles } from '../../redux/slices/articles';
 import ArticleTile from './tile';
 
 const useStyles = makeStyles((theme) => ({
@@ -10,9 +8,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ArticlesDisplay = () => {
+const ArticlesDisplay = (props) => {
   const classes = useStyles();
-  const articles = useSelector(getAllArticles);
+  const articles = props.articles;
   return (
     <Grid container component="ul" className={classes.list} spacing={6}>
       {articles.map((article, index) => (
