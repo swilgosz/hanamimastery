@@ -88,7 +88,7 @@ export default function Article({ article }) {
             </article>
             <div>
               <DiscussionEmbed
-                shortname={process.env.DISQUS_SHORTNAME}
+                shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
                 config={{
                   url: `${url}`,
                   title,
