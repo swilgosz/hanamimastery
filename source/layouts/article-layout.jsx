@@ -17,13 +17,10 @@ const ArticleLayout = ({ aside, article }) => {
         <Container maxWidth="lg" component="main" {...props} />
       )}
     >
-      <Grid item xs={12} md={2} component="aside">
-        {aside}
-      </Grid>
       <Grid item xs={12} md={8} component="article">
         {article}
       </Grid>
-      <Grid item xs={12} md={2}>
+      <Grid item xs={12} md={4}>
         <EmailSubscriptionForm />
       </Grid>
     </Grid>
