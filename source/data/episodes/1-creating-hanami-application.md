@@ -14,20 +14,20 @@ We're entering a new era in Ruby world, there are no doubts on that! It's all be
 
 In this episode I'll show you how to create a brand new Hanami application using the prepared [Hanami Application Template](https://github.com/hanami/hanami-2-application-template).
 
-## The quick setup
+### The quick setup
 
 It's super easy to setup a new project and with the Hanami team busy with the CLI for the project things will soon be even easier. At the moment the process consists of 5 steps:
 
 
 1. Clone the repository
 2. Run installation script
-3. Rename example .env file
-4. Run bundler
+3. Run bundler
+4. Rename example .env file
 5. Create PG database
 
 I'll cover them all in the article below
 
-### TLDR (full script here)
+#### TLDR (full script here)
 
 ```shell
 g clone git@github.com:hanami/hanami-2-application-template.git hanami_mastery
@@ -39,7 +39,7 @@ createdb hanami_mastery_development
 puma config.ru
 ```
 
-### Cloning the repository
+#### 1. Cloning the repository
 
 First of all we need to create a brand new Hanami application by cloning the template repository into
 a customized named folder of my application
@@ -49,7 +49,7 @@ g clone git@github.com:hanami/hanami-2-application-template.git hanami_mastery
 cd hanami_mastery
 ```
 
-### Running the installer
+#### 2. Running the installer
 
 Next, run the installation script appending the command with your app name to rename all the default
 instances to your customized application name.
@@ -60,15 +60,15 @@ bin/install hanami_mastery
 
 This will rename all the occurences of the default AppPrototypeTest with the hanami_mastery in this case.
 
-### Install dependencies
+### 3. Install dependencies
 
-As in any ruby appliation, running it
+To install dependencies, we need to run _bundler_ as in any other ruby application
 
 ```shell
 bundle install
 ```
 
-### Rename the sample .env file
+#### 4. Rename the sample .env file
 
 To run the hanami project, we need the environment file collecting all the initial setttings for
 our application to run in different environments. The tempalte comes with `.env-example` file
@@ -79,15 +79,8 @@ we need to copy during the inital setup and name it: `.env.develpment`
 cp .env-example .env.development
 ```
 
-### Install dependencies
 
-To install dependencies, we need to run _bundler_ as in any other ruby application
-
-```shell
-bundle install
-```
-
-### Creating Postgres database
+#### 5. Creating Postgres database
 
 The default setup comes with postgres database configuration. Assuming you have the postgres-server
 already installed - I do it on my Mac using [Postgresapp](https://postgresapp.com/) - we can easily
@@ -108,7 +101,7 @@ puma config.ru -p 3001
 ```
 
 
-## Summary
+### Summary
 
 I love how Rails made super-easy to start with a new project and deliver MVPs to the clients. Amazing CLI, file generators, all that is perfect for beginners.
 
