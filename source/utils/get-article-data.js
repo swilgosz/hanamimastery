@@ -8,8 +8,9 @@ import getData from './get-data';
 
 const getArticleData = async (slug) => {
   // try {
+    console.log(slug);
     const article =
-        getData(`episodes/${slug}*`)[0];
+      getData(`episodes/${slug}*`)[0];
 
     article.content = await renderToString(article.content, {
       components,
