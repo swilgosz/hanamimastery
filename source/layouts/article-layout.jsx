@@ -32,7 +32,7 @@ const ArticleLayout = ({ aside, article }) => {
           <CardHeader
             disableTypography
             title={
-              <Typography variant="h5">
+              <Typography variant="h4">
                 Sponsor this project on Github!
               </Typography>
             }
