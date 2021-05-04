@@ -20,7 +20,7 @@ const getArticleSourceFromFile = async (slug) => {
 };
 
 const getArticleData = async (slug) => {
-  try {
+  // try {
     const article =
         getData(`episodes/${slug}*`)[0];
 
@@ -32,9 +32,9 @@ const getArticleData = async (slug) => {
       },
     });
     return { article };
-  } catch (error) {
-    return undefined;
-  }
+  // } catch (error) {
+    // return undefined;
+  // }
 };
 
 export default getArticleData;
