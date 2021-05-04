@@ -16,15 +16,11 @@ const getFile = (fullPath) => {
 }
 
 const getData = (glob) => {
-  const files = fg.sync(`${path.join(dataDir, glob)}.md`.replace(/\\/g, '/'));
-
-  console.log('FILES');
-  console.log(glob);
-  console.log(files)
+  const files = fg.sync(`${path.join(dataDir, glob)}.mdx`.replace(/\\/g, '/'));
   const objects = files.map((filePath) => (
     {
-      slug: path.basename(filePath).replace(/\\/g, '/').replace(/\.md$/, '').replace(/\s/g, '-'),
-      path: `/${path.relative(dataDir, filePath).replace(/\\/g, '/').replace(/\.md$/, '').replace(/\s/g, '-')}`,
+      slug: path.basename(filePath).replace(/\\/g, '/').replace(/\.mdx$/, '').replace(/\s/g, '-'),
+      path: `/${path.relative(dataDir, filePath).replace(/\\/g, '/').replace(/\.mdx$/, '').replace(/\s/g, '-')}`,
       ...getFile(filePath),
     }
   ));

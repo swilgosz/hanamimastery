@@ -7,9 +7,10 @@ import matter from 'gray-matter';
 import getData from './get-data';
 
 const getArticleData = async (slug) => {
-  try {
+  // try {
+    console.log(slug);
     const article =
-        getData(`episodes/${slug}*`)[0];
+      getData(`episodes/${slug}*`)[0];
 
     article.content = await renderToString(article.content, {
       components,
@@ -19,12 +20,12 @@ const getArticleData = async (slug) => {
       },
     });
     return { article };
-  } catch (error) {
-    console.log('-------------------')
-    console.log('Article Rendering error')
-    console.log(error)
-    return undefined;
-  }
+  // } catch (error) {
+  //   console.log('-------------------')
+  //   console.log('Article Rendering error')
+  //   console.log(error)
+  //   return undefined;
+  // }
 };
 
 export default getArticleData;
