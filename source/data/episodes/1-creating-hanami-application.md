@@ -5,9 +5,9 @@ tags: ['fullstack']
 title: '#1 Creating a new Hanami app from the template'
 excerpt: 'How to create a brand new Hanami app lighting fast by using the Hanami application template.'
 thumbnail:
-  full: /images/episodes/001/cover-full.jpeg
-  big: /images/episodes/001/cover-big.jpeg
-  small: /images/episodes/001/cover-small.jpeg
+  full: /images/episodes/1/cover-full.jpeg
+  big: /images/episodes/1/cover-big.jpeg
+  small: /images/episodes/1/cover-small.jpeg
 ---
 
 We're entering a new era in Ruby world, there are no doubts on that! It's all because really soon a **completely rewritten** Hanami framework will have it's next major release.
@@ -62,7 +62,7 @@ This will rename all the occurences of the default AppPrototypeTest with the han
 
 ### Install dependencies
 
-As in any ruby appliation, running it 
+As in any ruby appliation, running it
 
 ```shell
 bundle install
