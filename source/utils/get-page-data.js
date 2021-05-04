@@ -4,7 +4,7 @@ import components from '../features/mdx-components';
 import getData from './get-data';
 
 const getPageData = async (slug) => {
-  // try {
+  try {
     const page =
         getData(`pages/${slug}.md`)[0];
 
@@ -16,9 +16,12 @@ const getPageData = async (slug) => {
       },
     });
     return { page };
-  // } catch (error) {
-    // return undefined;
-  // }
+  } catch (error) {
+    console.log('-------------------')
+    console.log('Page Rendering error')
+    console.log(error)
+    return undefined;
+  }
 };
 
 export default getPageData;
