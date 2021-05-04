@@ -7,7 +7,7 @@ import matter from 'gray-matter';
 import getData from './get-data';
 
 const getArticleData = async (slug) => {
-  try {
+  // try {
     const article =
         getData(`episodes/${slug}*`)[0];
 
@@ -19,12 +19,12 @@ const getArticleData = async (slug) => {
       },
     });
     return { article };
-  } catch (error) {
-    console.log('-------------------')
-    console.log('Article Rendering error')
-    console.log(error)
-    return undefined;
-  }
+  // } catch (error) {
+  //   console.log('-------------------')
+  //   console.log('Article Rendering error')
+  //   console.log(error)
+  //   return undefined;
+  // }
 };
 
 export default getArticleData;
