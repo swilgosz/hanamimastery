@@ -44,9 +44,9 @@ export default function Article({ article }) {
     <>
       <NextSeo
         title={title}
-        titleTemplate=" %s | Driggl - Modern web development"
+        titleTemplate=" %s | Hanami Mastery - a knowledge base to hanami framework"
         twitter={{
-          site: '@drigglweb',
+          site: '@hanamimastery',
           cardType: 'summary_large_image',
           creator: '@sebwilgosz',
           title,
@@ -66,7 +66,7 @@ export default function Article({ article }) {
           defaultImageWidth: 120,
           defaultImageHeight: 630,
           type: 'article',
-          site_name: 'Driggl - Modern Web Development',
+          site_name: 'Hanami Mastery - a knowledge base to hanami framework',
         }}
         facebook={{
           appId: process.env.NEXT_PUBLIC_FB_APP_ID,
