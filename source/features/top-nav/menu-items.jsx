@@ -2,8 +2,7 @@ import NextLink from 'next/link';
 import MenuItem from '@material-ui/core/MenuItem';
 
 const links = [
-  // { href: '/blog', label: 'Blog' },
-  // { href: '/#courses', label: 'Courses' },
+  { href: '/about', label: 'About' },
   { href: 'https://github.com/sponsors/swilgosz', label: 'Github Sponsors' },
 ];
 
