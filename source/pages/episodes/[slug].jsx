@@ -103,14 +103,13 @@ export default function Article({ article }) {
   );
 }
 
-// export async function getStaticPaths() {
-//   const { articles } = await getArticlesData();
-//   const paths = []
-//   // const paths = Object.values(articles).map((article) => ({
-//   //   params: { slug: article.slug },
-//   // }));
-//   return { paths, fallback: 'blocking' };
-// }
+export async function getStaticPaths() {
+  const { articles } = await getArticlesData();
+  const paths = Object.values(articles).map((article) => ({
+    params: { slug: article.slug },
+  }));
+  return { paths, fallback: 'blocking' };
+}
 
 export async function getStaticProps(context) {
   const articleData = await getArticleData(context.params.slug);

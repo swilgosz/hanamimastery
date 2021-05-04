@@ -8,7 +8,6 @@ const getPageData = async (slug) => {
     const page =
         getData(`pages/${slug}*`)[0];
 
-    console.log(page);
     page.content = await renderToString(page.content, {
       components,
       mdxOptions: {
