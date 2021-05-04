@@ -6,7 +6,7 @@ import getData from './get-data';
 const getPageData = async (slug) => {
   // try {
     const page =
-        getData(`pages/${slug}*`)[0];
+        getData(`pages/${slug}.md`)[0];
 
     page.content = await renderToString(page.content, {
       components,

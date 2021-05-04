@@ -48,7 +48,7 @@ const ArticleLayout = ({ aside, article }) => {
             <Typography>
               <iframe
                 src="https://ghbtns.com/github-btn.html?user=swilgosz&type=sponsor"
-                frameborder="0"
+                frameBorder="0"
                 scrolling="0"
                 width="150"
                 height="20"
