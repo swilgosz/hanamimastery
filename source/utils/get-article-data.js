@@ -1,16 +1,18 @@
 import renderToString from 'next-mdx-remote/render-to-string';
 import rehypePrism from '@mapbox/rehype-prism';
-import path from 'path';
-import readingTime from 'reading-time';
 import components from '../features/mdx-components';
-import matter from 'gray-matter';
 import getData from './get-data';
 
 const getArticleData = async (slug) => {
   // try {
-    console.log(slug);
-    const article =
-      getData(`episodes/${slug}*`)[0];
+    const articles = getData(`episodes/${slug}*`);
+
+    console.log(`Fetching articles: ${slug}`);
+    console.log(articles);
+    const article = articles[0];
+    // if (!article) {
+    //   return undefined;
+    // }
 
     article.content = await renderToString(article.content, {
       components,
