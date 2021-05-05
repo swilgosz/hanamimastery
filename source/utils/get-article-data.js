@@ -5,10 +5,11 @@ import getData from './get-data';
 
 const getArticleData = async (slug) => {
   // try {
-    const articles = getData(`episodes/${slug}*`);
+    // const articles = getData(`episodes/${slug}*`);
+    const articles = getData('episodes/1-creating-hanami-application');
 
     console.log(`Fetching articles: ${slug}`);
-    console.log(articles);
+    console.log(articles)
     const article = articles[0];
     // if (!article) {
     //   return undefined;

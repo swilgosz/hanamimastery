@@ -5,8 +5,17 @@ import getData from './get-data';
 
 const getPageData = async (slug) => {
   // try {
-    const page = getData(`pages/${slug}*`)[0];
+    console.log(getData('pages'));
+    let page = undefined;
 
+    if (slug === 'about') {
+      page = getData('pages/about')[0];
+    }
+
+    if (slug === 'thank-you') {
+      page = getData(`pages/thank-you`)[0];
+    }
+    console.log(page);
     page.content = await renderToString(page.content, {
       components,
       mdxOptions: {
