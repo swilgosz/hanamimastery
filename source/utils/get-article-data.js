@@ -3,10 +3,9 @@ import rehypePrism from '@mapbox/rehype-prism';
 import components from '../features/mdx-components';
 import getData from './get-data';
 
-const getArticleData = async (slug) => {
+const getArticleData = (slug) => {
   // try {
-    // const articles = getData(`episodes/${slug}*`);
-    const articles = getData('episodes/1-creating-hanami-application');
+    const articles = getData(`episodes/${slug}`);
 
     console.log(`Fetching articles: ${slug}`);
     console.log(articles)
@@ -15,7 +14,7 @@ const getArticleData = async (slug) => {
     //   return undefined;
     // }
 
-    article.content = await renderToString(article.content, {
+    article.content = renderToString(article.content, {
       components,
       mdxOptions: {
         remarkPlugins: [],

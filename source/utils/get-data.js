@@ -16,7 +16,11 @@ const getFile = (fullPath) => {
 }
 
 const getData = (glob) => {
-  const files = fg.sync(`${path.join(dataDir, glob)}.mdx`.replace(/\\/g, '/'));
+  let files =
+    fg.sync(`${path.join(dataDir, glob)}.mdx`.replace(/\\/g, '/'));
+  if [files.lngth === 0] {
+    fg.sync(`${path.join(dataDir, glob)}.mdx`.replace(/\\/g, '/'));
+  }
   console.log(`Getting data for: ${glob}`);
   console.log(files);
   const objects = files.map((filePath) => (

@@ -3,20 +3,13 @@ import rehypePrism from '@mapbox/rehype-prism';
 import components from '../features/mdx-components';
 import getData from './get-data';
 
-const getPageData = async (slug) => {
+const getPageData = (slug) => {
   // try {
-    console.log(getData('pages'));
-    let page = undefined;
+    const page = getData(`pages/${slug}`);
 
-    if (slug === 'about') {
-      page = getData('pages/about')[0];
-    }
-
-    if (slug === 'thank-you') {
-      page = getData(`pages/thank-you`)[0];
-    }
+    console.log(`fetching page ${slug}`);
     console.log(page);
-    page.content = await renderToString(page.content, {
+    page.content = renderToString(page.content, {
       components,
       mdxOptions: {
         remarkPlugins: [],
