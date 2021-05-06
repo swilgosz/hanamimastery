@@ -1,8 +1,13 @@
-import getData from './get-data';
+import getData from "./get-data";
 
 const getArticlesData = () => {
-  const authors = getData(`team/**/*`);
-  const articles = getData('episodes/*')
+  const { objects: authors, dataDir, files } = getData(`team/**/*`);
+  const {
+    objects: articles,
+    dataDir: filesDataDir,
+    files: episodesFiles,
+  } = getData("episodes/*");
+  articles
     .sort((a, b) => {
       return b.id - a.id;
     })
@@ -10,12 +15,16 @@ const getArticlesData = () => {
       return {
         ...article,
         author: authors.find((author) => author.slug === article.author) || {},
-        tags: article.tags || []
+        tags: article.tags || [],
       };
     });
 
   return {
     articles,
+    dataDir,
+    files,
+    filesDataDir,
+    episodesFiles,
   };
 };
 
