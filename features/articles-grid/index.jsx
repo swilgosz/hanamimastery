@@ -17,7 +17,6 @@ const ArticlesDisplay = (props) => {
         <Grid
           key={article.id}
           item
-          items
           xs={12}
           md={index === 0 ? 12 : 6}
           component="li"
