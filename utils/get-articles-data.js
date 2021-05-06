@@ -1,12 +1,8 @@
 import getData from "./get-data";
 
 const getArticlesData = () => {
-  const { objects: authors, dataDir, files } = getData(`team/**/*`);
-  const {
-    objects: articles,
-    dataDir: filesDataDir,
-    files: episodesFiles,
-  } = getData("episodes/*");
+  const authors = getData(`team/**/*`);
+  const articles = getData("episodes/*");
   articles
     .sort((a, b) => {
       return b.id - a.id;
@@ -21,10 +17,7 @@ const getArticlesData = () => {
 
   return {
     articles,
-    dataDir,
-    files,
-    filesDataDir,
-    episodesFiles,
+    authors,
   };
 };
 

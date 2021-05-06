@@ -34,7 +34,7 @@ const getData = (glob) => {
     ...getFile(filePath),
   }));
 
-  return { objects, dataDir, files };
+  return objects;
 };
 
 export default getData;

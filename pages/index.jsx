@@ -3,14 +3,7 @@ import ArticlesGrid from "../features/articles-grid/index";
 import getArticlesData from "../utils/get-articles-data";
 import ArticleLayout from "../layouts/article-layout";
 
-export default function BlogIndex({
-  articles,
-  dataDir,
-  files,
-  filesDataDir,
-  episodesFiles,
-}) {
-  console.log(articles, dataDir, files, filesDataDir, episodesFiles);
+export default function BlogIndex({ articles }) {
   return (
     <>
       <NextSeo
@@ -31,16 +24,9 @@ export default function BlogIndex({
 }
 
 export async function getStaticProps() {
-  const {
-    articles,
-    dataDir,
-    files,
-    filesDataDir,
-    episodesFiles,
-  } = await getArticlesData();
+  const { articles, authors } = await getArticlesData();
 
   return {
-    props: { articles, dataDir, files, filesDataDir, episodesFiles }, // will be passed to the page component as props
-    revalidate: 604800, // revalidate the articles listing every week
+    props: { articles, authors }, // will be passed to the page component as props
   };
 }

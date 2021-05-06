@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Page({ page, content }) {
-  console.log(page, content);
   const classes = useStyles();
   const pageContent = hydrate(content, { components });
   const { slug, title, thumbnail, id, excerpt } = page;

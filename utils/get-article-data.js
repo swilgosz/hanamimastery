@@ -4,7 +4,7 @@ import components from "../features/mdx-components";
 import getData from "./get-data";
 
 const getArticleData = async (slug) => {
-  const { objects: articles, dataDir, files } = getData(`episodes/${slug}`);
+  const articles = getData(`episodes/${slug}`);
 
   const article = articles[0];
 
@@ -15,7 +15,7 @@ const getArticleData = async (slug) => {
       rehypePlugins: [rehypePrism],
     },
   });
-  return { article, content, dataDir, files };
+  return { article, content };
 };
 
 export default getArticleData;

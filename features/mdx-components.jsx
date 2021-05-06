@@ -5,16 +5,17 @@ import {
   makeStyles,
   createStyles,
   withTheme,
+  Grid,
   withStyles,
-} from '@material-ui/core';
-import NextLink from 'next/link';
-import CourseAd from './course-ad';
-import EmailSubscriptionForm from './email-subscription-form/index';
+} from "@material-ui/core";
+import NextLink from "next/link";
+import CourseAd from "./course-ad";
+import EmailSubscriptionForm from "./email-subscription-form/index";
 
 const CustomChip = withTheme(
   withStyles((theme) => ({
     root: {
-      backgroundColor: 'transparent',
+      backgroundColor: "transparent",
       boxShadow: `inset 0 -1px 0 ${theme.palette.grey[400]}`,
       borderRadius: `${theme.spacing(0.75)}px`,
       padding: `${theme.spacing(3 / 8)}px ${theme.spacing(5 / 8)}px`,
@@ -32,21 +33,21 @@ const Kbd = ({ children }) => <CustomChip size="small" label={children} />;
 const useImageStyles = makeStyles((theme) =>
   createStyles({
     wrapper: {
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column',
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
     },
     image: {
-      maxWidth: '100%',
+      maxWidth: "100%",
       margin: `0 auto ${theme.spacing(1.25)}px auto`,
       borderRadius: `${theme.spacing(1)}px`,
     },
     caption: {
-      fontWeight: 'lighter',
-      fontSize: '16px',
-      lineHeight: '20px',
+      fontWeight: "lighter",
+      fontSize: "16px",
+      lineHeight: "20px",
       color: theme.palette.grey[600],
-      textAlign: 'center',
+      textAlign: "center",
     },
   })
 );
@@ -64,7 +65,7 @@ const CustomImage = ({ src, alt }) => {
 
 const CustomLink = (props) => {
   const { href } = props;
-  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+  const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
 
   if (isInternalLink) {
     return (
@@ -80,29 +81,29 @@ const CustomLink = (props) => {
 const useHeaderStyles = makeStyles(() =>
   createStyles({
     root: {
-      marginTop: '40px',
-      marginBottom: '20px',
-      scrollMarginTop: '100px',
-      scrollSnapMargin: '100px', // Safari
+      marginTop: "40px",
+      marginBottom: "20px",
+      scrollMarginTop: "100px",
+      scrollSnapMargin: "100px", // Safari
       // '&[id]': {
       //   pointerEvents: 'none',
       // },
-      '&[id]:before': {
-        display: 'block',
-        height: ' 6rem',
-        marginTop: '-6rem',
-        visibility: 'hidden',
+      "&[id]:before": {
+        display: "block",
+        height: " 6rem",
+        marginTop: "-6rem",
+        visibility: "hidden",
         content: `""`,
       },
-      '&[id]:hover a': { opacity: 1 },
+      "&[id]:hover a": { opacity: 1 },
     },
     anchor: {
-      fontWeight: 'normal',
-      marginLeft: '0.375rem',
-      opacity: '0',
-      '&:focus': {
+      fontWeight: "normal",
+      marginLeft: "0.375rem",
+      opacity: "0",
+      "&:focus": {
         opacity: 1,
-        boxShadow: 'outline',
+        boxShadow: "outline",
       },
     },
   })
@@ -149,6 +150,7 @@ const MDXComponents = {
   CourseAd,
   EmailSubscriptionForm,
   Om,
+  Grid,
 };
 
 export default MDXComponents;

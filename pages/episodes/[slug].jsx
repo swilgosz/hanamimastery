@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Article({ article, content }) {
-  console.log(article, content);
   const classes = useStyles();
   const articleContent = hydrate(content, { components });
   const { tags, slug, title, thumbnail, id, excerpt } = article;
