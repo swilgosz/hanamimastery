@@ -1,42 +1,43 @@
-import React from 'react';
-import hydrate from 'next-mdx-remote/hydrate';
-import { Container, Typography, makeStyles } from '@material-ui/core';
-import { DiscussionEmbed } from 'disqus-react';
-import { NextSeo } from 'next-seo';
-import getArticlesData from '../../utils/get-articles-data';
-import getArticleData from '../../utils/get-article-data';
-import components from '../../features/mdx-components';
-import ArticleLayout from '../../layouts/article-layout';
+import React from "react";
+import hydrate from "next-mdx-remote/hydrate";
+import { Container, Typography, makeStyles } from "@material-ui/core";
+import { DiscussionEmbed } from "disqus-react";
+import { NextSeo } from "next-seo";
+import getArticlesData from "../../utils/get-articles-data";
+import getArticleData from "../../utils/get-article-data";
+import components from "../../features/mdx-components";
+import ArticleLayout from "../../layouts/article-layout";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: "flex",
     padding: 0,
     minHeight: theme.spacing(6),
   },
   hero: {
-    backgroundSize: 'cover',
-    display: 'flex',
+    backgroundSize: "cover",
+    display: "flex",
     minHeight: theme.spacing(75),
     color: theme.palette.common.white,
   },
   heroFilter: {
     flexGrow: 1,
-    backdropFilter: 'brightness(0.35)',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backdropFilter: "brightness(0.35)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
     padding: theme.spacing(2),
   },
   article: {
-    marginBottom: '100px'
+    marginBottom: "100px",
   },
 }));
 
-export default function Article({ article }) {
+export default function Article({ article, content }) {
+  console.log(article, content);
   const classes = useStyles();
-  const content = hydrate(article.content, { components });
+  const articleContent = hydrate(content, { components });
   const { tags, slug, title, thumbnail, id, excerpt } = article;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/episodes/${slug}`;
 
@@ -46,9 +47,9 @@ export default function Article({ article }) {
         title={title}
         titleTemplate=" %s | Hanami Mastery - a knowledge base to hanami framework"
         twitter={{
-          site: '@hanamimastery',
-          cardType: 'summary_large_image',
-          creator: '@sebwilgosz',
+          site: "@hanamimastery",
+          cardType: "summary_large_image",
+          creator: "@sebwilgosz",
           title,
           description: excerpt,
           image: thumbnail.big,
@@ -56,7 +57,7 @@ export default function Article({ article }) {
         description={excerpt}
         openGraph={{
           article: {
-            authors: ['https://www.facebook.com/sebastian.wilgosz'],
+            authors: ["https://www.facebook.com/sebastian.wilgosz"],
             tags,
           },
           url,
@@ -65,8 +66,8 @@ export default function Article({ article }) {
           images: thumbnail,
           defaultImageWidth: 120,
           defaultImageHeight: 630,
-          type: 'article',
-          site_name: 'Hanami Mastery - a knowledge base to hanami framework',
+          type: "article",
+          site_name: "Hanami Mastery - a knowledge base to hanami framework",
         }}
         facebook={{
           appId: process.env.NEXT_PUBLIC_FB_APP_ID,
@@ -83,9 +84,7 @@ export default function Article({ article }) {
       <ArticleLayout
         article={
           <Container maxWidth="lg" component="main">
-            <article className={classes.article}>
-              {content}
-            </article>
+            <article className={classes.article}>{articleContent}</article>
             <div>
               <DiscussionEmbed
                 shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
@@ -108,7 +107,7 @@ export async function getStaticPaths() {
   const paths = Object.values(articles).map((article) => ({
     params: { slug: article.slug },
   }));
-  return { paths, fallback: 'blocking' };
+  return { paths, fallback: "blocking" };
 }
 
 export async function getStaticProps(context) {
@@ -118,11 +117,10 @@ export async function getStaticProps(context) {
       notFound: true,
     };
   }
-
-  const { article } = articleData;
+  const { article, content } = articleData;
 
   return {
-    props: { article }, // will be passed to the page component as props
+    props: { article, content }, // will be passed to the page component as props
     revalidate: 604800, // revalidate the article every week
   };
 }

@@ -1,33 +1,21 @@
-import renderToString from 'next-mdx-remote/render-to-string';
-import rehypePrism from '@mapbox/rehype-prism';
-import components from '../features/mdx-components';
-import getData from './get-data';
+import renderToString from "next-mdx-remote/render-to-string";
+import rehypePrism from "@mapbox/rehype-prism";
+import components from "../features/mdx-components";
+import getData from "./get-data";
 
-const getArticleData = (slug) => {
-  // try {
-    const articles = getData(`episodes/${slug}`);
+const getArticleData = async (slug) => {
+  const articles = getData(`episodes/${slug}`);
 
-    console.log(`Fetching articles: ${slug}`);
-    console.log(articles)
-    const article = articles[0];
-    // if (!article) {
-    //   return undefined;
-    // }
+  const article = articles[0];
 
-    article.content = renderToString(article.content, {
-      components,
-      mdxOptions: {
-        remarkPlugins: [],
-        rehypePlugins: [rehypePrism],
-      },
-    });
-    return { article };
-  // } catch (error) {
-  //   console.log('-------------------')
-  //   console.log('Article Rendering error')
-  //   console.log(error)
-  //   return undefined;
-  // }
+  const content = await renderToString(article.content, {
+    components,
+    mdxOptions: {
+      remarkPlugins: [],
+      rehypePlugins: [rehypePrism],
+    },
+  });
+  return { article, content };
 };
 
 export default getArticleData;

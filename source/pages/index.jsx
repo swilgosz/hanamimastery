@@ -3,7 +3,8 @@ import ArticlesGrid from '../features/articles-grid/index';
 import getArticlesData from '../utils/get-articles-data';
 import ArticleLayout from '../layouts/article-layout';
 
-export default function BlogIndex({ articles, authors }) {
+export default function BlogIndex({ articles }) {
+  console.log(articles);
   return (
     <>
       <NextSeo
@@ -18,9 +19,7 @@ export default function BlogIndex({ articles, authors }) {
           type: 'website',
         }}
       />
-      <ArticleLayout article={
-        <ArticlesGrid articles={articles} />
-      } />
+      <ArticleLayout article={<ArticlesGrid articles={articles} />} />
     </>
   );
 }
