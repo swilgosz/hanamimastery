@@ -1,25 +1,13 @@
 import React from "react";
-import hydrate from "next-mdx-remote/hydrate";
-import { Container, Typography, makeStyles } from "@material-ui/core";
+import { Container, makeStyles } from "@material-ui/core";
 import { NextSeo } from "next-seo";
-import getPageData from "../utils/get-page-data";
+
+import { MDXRemote } from "next-mdx-remote";
 import components from "../features/mdx-components";
 import ArticleLayout from "../layouts/article-layout";
+import { getFileBySlug } from "../utils/index";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    padding: 0,
-    minHeight: theme.spacing(6),
-  },
-}));
-
-export default function Page({ page, content }) {
-  const classes = useStyles();
-  const pageContent = hydrate(content, { components });
-  const { slug, title, thumbnail, id, excerpt } = page;
-  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/episodes/${slug}`;
-
+export default function Page({ frontMatter, mdxSource }) {
   return (
     <>
       <NextSeo
@@ -37,7 +25,9 @@ export default function Page({ page, content }) {
       <ArticleLayout
         article={
           <Container maxWidth="lg" component="main">
-            <article>{pageContent}</article>
+            <article>
+              {<MDXRemote {...mdxSource} components={components} />}
+            </article>
           </Container>
         }
       />
@@ -46,18 +36,15 @@ export default function Page({ page, content }) {
 }
 
 export async function getStaticProps() {
-  const pageData = await getPageData("about");
+  const post = await getFileBySlug("pages", "about");
 
-  if (!pageData) {
+  if (!post) {
     return {
       notFound: true,
     };
   }
 
-  const { page, content } = pageData;
-
   return {
-    props: { page, content }, // will be passed to the page component as props
-    revalidate: 604800, // revalidate the page every week
+    props: { ...post }, // will be passed to the page component as props
   };
 }

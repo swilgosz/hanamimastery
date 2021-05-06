@@ -1,12 +1,11 @@
 import React from "react";
-import hydrate from "next-mdx-remote/hydrate";
 import { Container, Typography, makeStyles } from "@material-ui/core";
 import { DiscussionEmbed } from "disqus-react";
 import { NextSeo } from "next-seo";
-import getArticlesData from "../../utils/get-articles-data";
-import getArticleData from "../../utils/get-article-data";
+import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import ArticleLayout from "../../layouts/article-layout";
+import { getFiles, getFileBySlug } from "../../utils/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,10 +33,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Article({ article, content }) {
+export default function Article({ mdxSource, frontMatter }) {
   const classes = useStyles();
-  const articleContent = hydrate(content, { components });
-  const { tags, slug, title, thumbnail, id, excerpt } = article;
+  const { tags, slug, title, thumbnail, id, excerpt } = frontMatter;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/episodes/${slug}`;
 
   return (
@@ -83,7 +81,9 @@ export default function Article({ article, content }) {
       <ArticleLayout
         article={
           <Container maxWidth="lg" component="main">
-            <article className={classes.article}>{articleContent}</article>
+            <article className={classes.article}>
+              <MDXRemote {...mdxSource} components={components} />
+            </article>
             <div>
               <DiscussionEmbed
                 shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
@@ -102,23 +102,18 @@ export default function Article({ article, content }) {
 }
 
 export async function getStaticPaths() {
-  const { articles } = getArticlesData();
-  const paths = Object.values(articles).map((article) => ({
-    params: { slug: article.slug },
-  }));
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps(context) {
-  const articleData = await getArticleData(context.params.slug);
-  if (!articleData) {
-    return {
-      notFound: true,
-    };
-  }
-  const { article, content } = articleData;
+  const posts = await getFiles("episodes");
 
   return {
-    props: { article, content }, // will be passed to the page component as props
+    paths: posts.map((p) => ({
+      params: {
+        slug: p.replace(/\.mdx/, ""),
+      },
+    })),
+    fallback: false,
   };
+}
+export async function getStaticProps({ params }) {
+  const post = await getFileBySlug("episodes", params.slug);
+  return { props: { ...post } };
 }

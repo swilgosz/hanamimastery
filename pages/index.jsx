@@ -1,9 +1,9 @@
 import { NextSeo } from "next-seo";
 import ArticlesGrid from "../features/articles-grid/index";
-import getArticlesData from "../utils/get-articles-data";
 import ArticleLayout from "../layouts/article-layout";
+import { getAllFilesFrontMatter } from "../utils";
 
-export default function BlogIndex({ articles }) {
+export default function BlogIndex({ posts }) {
   return (
     <>
       <NextSeo
@@ -18,15 +18,15 @@ export default function BlogIndex({ articles }) {
           type: "website",
         }}
       />
-      <ArticleLayout article={<ArticlesGrid articles={articles} />} />
+      <ArticleLayout article={<ArticlesGrid articles={posts} />} />
     </>
   );
 }
 
 export async function getStaticProps() {
-  const { articles, authors } = await getArticlesData();
+  const posts = await getAllFilesFrontMatter("episodes");
 
   return {
-    props: { articles, authors }, // will be passed to the page component as props
+    props: { posts }, // will be passed to the page component as props
   };
 }

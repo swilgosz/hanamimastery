@@ -11,36 +11,42 @@ import {
   CardHeader,
   Link,
   Button,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { useSelector } from 'react-redux';
-import NextLink from 'next/link';
-import readingTime from 'reading-time';
-import TextTruncate from 'react-text-truncate';
-import { findAuthor } from '../../redux/slices/authors';
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { nanoid } from "@reduxjs/toolkit";
+import NextLink from "next/link";
+import TextTruncate from "react-text-truncate";
 
 const useStyles = makeStyles((theme) => ({
   content: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
   },
   media: {
-    content: '',
-    height: 'auto',
-    paddingBottom: '56.5%',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
+    content: "",
+    height: "auto",
+    paddingBottom: "56.5%",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
   },
   actions: {
     padding: theme.spacing(2),
-    justifyContent: 'flex-end'
+    justifyContent: "flex-end",
   },
 }));
 
 const ArticleTile = ({ article }) => {
   const classes = useStyles();
   const author = article.author;
-  const { tags, excerpt, thumbnail, content, slug, title } = article;
+  const {
+    tags,
+    excerpt,
+    thumbnail,
+    content,
+    slug,
+    title,
+    readingTime,
+  } = article;
   return (
     <Card className={classes.root}>
       <NextLink href={`/episodes/${slug}`} passHref>
@@ -58,12 +64,12 @@ const ArticleTile = ({ article }) => {
         subheader={
           <>
             <Typography variant="subtitle1">
-              {author.name}, {readingTime(content).text}
+              {author}
               <Box>
                 {tags.length ? (
                   <>
                     {tags.map((tag) => (
-                      <Chip label={tag} />
+                      <Chip key={nanoid()} label={tag} />
                     ))}
                   </>
                 ) : null}
@@ -79,7 +85,9 @@ const ArticleTile = ({ article }) => {
       </CardContent>
       <CardActions className={classes.actions}>
         <NextLink href={`/episodes/${slug}`} passHref>
-          <Button variant='contained' color='primary'>Read more</Button>
+          <Button variant="contained" color="primary">
+            Read more
+          </Button>
         </NextLink>
       </CardActions>
     </Card>
