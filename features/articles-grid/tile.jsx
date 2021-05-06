@@ -15,7 +15,9 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import { nanoid } from "@reduxjs/toolkit";
 import NextLink from "next/link";
+import { useSelector } from "react-redux";
 import TextTruncate from "react-text-truncate";
+import { findAuthor } from "../../redux/slices/authors";
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -37,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
 
 const ArticleTile = ({ article }) => {
   const classes = useStyles();
-  const author = article.author;
   const {
+    author: authorName,
     tags,
     excerpt,
     thumbnail,
@@ -47,6 +49,7 @@ const ArticleTile = ({ article }) => {
     title,
     readingTime,
   } = article;
+  const { name } = useSelector((state) => findAuthor(state, authorName));
   return (
     <Card className={classes.root}>
       <NextLink href={`/episodes/${slug}`} passHref>
@@ -64,7 +67,7 @@ const ArticleTile = ({ article }) => {
         subheader={
           <>
             <Typography variant="subtitle1">
-              {author}
+              {name}
               <Box>
                 {tags.length ? (
                   <>

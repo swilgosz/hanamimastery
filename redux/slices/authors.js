@@ -1,9 +1,11 @@
-import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
+import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
-const authorsAdapter = createEntityAdapter();
+const authorsAdapter = createEntityAdapter({
+  selectId: (author) => author.slug,
+});
 
 const authorsSlice = createSlice({
-  name: 'authors',
+  name: "authors",
   initialState: authorsAdapter.getInitialState(),
   reducers: {
     setAuthors: authorsAdapter.setAll,
