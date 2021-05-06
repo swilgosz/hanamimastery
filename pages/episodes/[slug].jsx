@@ -106,7 +106,7 @@ export async function getStaticPaths() {
   const paths = Object.values(articles).map((article) => ({
     params: { slug: article.slug },
   }));
-  return { paths, fallback: "blocking" };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps(context) {
@@ -120,6 +120,5 @@ export async function getStaticProps(context) {
 
   return {
     props: { article, content }, // will be passed to the page component as props
-    revalidate: 604800, // revalidate the article every week
   };
 }
