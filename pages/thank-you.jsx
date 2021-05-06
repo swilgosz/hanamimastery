@@ -9,10 +9,8 @@ export default function Page({ mdxSource }) {
   return (
     <ArticleLayout
       article={
-        <Container maxWidth="lg" component="main">
-          <article>
-            {<MDXRemote {...mdxSource} components={components} />}
-          </article>
+        <Container maxWidth="lg">
+          <MDXRemote {...mdxSource} components={components} />
         </Container>
       }
     />

@@ -1,25 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {
-  Typography,
-  Card,
-  CardContent,
-  CardHeader,
-} from '@material-ui/core';
-import { Grid, Container, makeStyles } from '@material-ui/core';
-import EmailSubscriptionForm from '../features/email-subscription-form';
+import { Typography, Card, CardContent, CardHeader } from "@material-ui/core";
+import { Grid, Container, makeStyles } from "@material-ui/core";
+import EmailSubscriptionForm from "../features/email-subscription-form";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(4),
+  },
+  card: {
+    [theme.breakpoints.down("md")]: {
+      margin: theme.spacing(0, 4),
+    },
   },
 }));
 
-const ArticleLayout = ({ aside, article }) => {
+const ArticleLayout = ({ article }) => {
   const classes = useStyles();
   return (
     <Grid
       container
       className={classes.root}
+      spacing={2}
       component={(props) => (
         <Container maxWidth="lg" component="main" {...props} />
       )}
@@ -27,8 +28,15 @@ const ArticleLayout = ({ aside, article }) => {
       <Grid item xs={12} md={8} component="article">
         {article}
       </Grid>
-      <Grid item xs={12} md={4}>
-        <Card>
+      <Grid
+        item
+        xs={12}
+        md={4}
+        component={(props) => (
+          <Container maxWidth="lg" component="aside" {...props} />
+        )}
+      >
+        <Card className={classes.card}>
           <CardHeader
             disableTypography
             title={
@@ -37,11 +45,9 @@ const ArticleLayout = ({ aside, article }) => {
               </Typography>
             }
             subheader={
-              <>
-                <Typography variant="subtitle1">
-                  10% of all your support goes to Hanami development support
-                </Typography>
-              </>
+              <Typography variant="subtitle1">
+                10% of all your support goes to Hanami development support
+              </Typography>
             }
           />
           <CardContent>
@@ -52,8 +58,8 @@ const ArticleLayout = ({ aside, article }) => {
                 scrolling="0"
                 width="150"
                 height="20"
-                title="GitHub" /
-                >
+                title="GitHub"
+              />
             </Typography>
           </CardContent>
         </Card>

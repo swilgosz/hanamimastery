@@ -39,17 +39,8 @@ const useStyles = makeStyles((theme) => ({
 
 const ArticleTile = ({ article }) => {
   const classes = useStyles();
-  const {
-    author: authorName,
-    tags,
-    excerpt,
-    thumbnail,
-    content,
-    slug,
-    title,
-    readingTime,
-  } = article;
-  const { name } = useSelector((state) => findAuthor(state, authorName));
+  const { author: authorName, tags, excerpt, thumbnail, slug, title } = article;
+  const author = useSelector((state) => findAuthor(state, authorName));
   return (
     <Card className={classes.root}>
       <NextLink href={`/episodes/${slug}`} passHref>
@@ -65,20 +56,14 @@ const ArticleTile = ({ article }) => {
           </NextLink>
         }
         subheader={
-          <>
-            <Typography variant="subtitle1">
-              {name}
-              <Box>
-                {tags.length ? (
-                  <>
-                    {tags.map((tag) => (
-                      <Chip key={nanoid()} label={tag} />
-                    ))}
-                  </>
-                ) : null}
-              </Box>
-            </Typography>
-          </>
+          <Typography variant="subtitle1">
+            {author && author.name}
+            <Box>
+              {tags.length
+                ? tags.map((tag) => <Chip key={nanoid()} label={tag} />)
+                : null}
+            </Box>
+          </Typography>
         }
       />
       <CardContent className={classes.content}>
