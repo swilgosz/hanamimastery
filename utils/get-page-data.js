@@ -4,9 +4,9 @@ import components from "../features/mdx-components";
 import getData from "./get-data";
 
 const getPageData = async (slug) => {
-  const page = getData(`pages/${slug}`)[0];
+  const { objects: page } = getData(`pages/${slug}`);
 
-  const content = await renderToString(page.content, {
+  const content = await renderToString(page[0].content, {
     components,
     mdxOptions: {
       remarkPlugins: [],
