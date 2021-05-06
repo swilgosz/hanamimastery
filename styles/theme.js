@@ -16,12 +16,6 @@ export default createMuiTheme({
         html: {
           WebkitFontSmoothing: "auto",
         },
-        "#__next": {
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          overflow: "scroll",
-        },
       },
     },
   },
