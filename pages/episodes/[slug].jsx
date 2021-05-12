@@ -6,6 +6,7 @@ import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import ArticleLayout from "../../layouts/article-layout";
 import { getFiles, getFileBySlug } from "../../utils/";
+import YoutubeEmbed from "../../features/youtube-embed";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Article({ mdxSource, frontMatter }) {
   const classes = useStyles();
-  const { tags, slug, title, thumbnail, id, excerpt } = frontMatter;
+  const { tags, slug, videoId, title, thumbnail, id, excerpt } = frontMatter;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/episodes/${slug}`;
 
   return (
@@ -82,6 +83,7 @@ export default function Article({ mdxSource, frontMatter }) {
         article={
           <Container maxWidth="lg" component="main">
             <article className={classes.article}>
+              <YoutubeEmbed embedId={videoId} />
               <MDXRemote {...mdxSource} components={components} />
             </article>
             <div>
