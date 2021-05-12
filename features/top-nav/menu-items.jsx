@@ -4,7 +4,7 @@ import { nanoid } from "@reduxjs/toolkit";
 
 const links = [
   { href: "/about", label: "About" },
-  { href: "https://github.com/sponsors/swilgosz", label: "Github Sponsors" },
+  { href: "/sponsors", label: "Sponsors" },
 ];
 
 const MenuItems = ({ MenuItemProps = {} }) =>
