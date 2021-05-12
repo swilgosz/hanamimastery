@@ -2793,6 +2793,11 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
+next-gtm@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/next-gtm/-/next-gtm-1.0.0.tgz#32f784319b0ba4ca96bf63ca3aae576687536f15"
+  integrity sha512-7TVoi8NMlxE0bvLDWJLNcUC6FebK3MYEZiG6FDcezPNpDpsiIwrbpXTHTC1Hq8DPpmZjWEaEwn5bmnDrOnLY+g==
+
 next-mdx-remote@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/next-mdx-remote/-/next-mdx-remote-3.0.1.tgz#2e6901c5d72c62ef3d90c53e7d827cb79b5cd968"
