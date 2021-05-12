@@ -1,7 +1,7 @@
 code:not([class*='language-']) {
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
   padding: 0.2em 0.4em;
-  font-size: 85%;
+  font-size: 1em;
   border-radius: 6px;
   background: #1b1f230d;
 }
@@ -16,7 +16,7 @@ pre[class*='language-'] {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.2em;
 
   -moz-tab-size: 4;
@@ -38,7 +38,7 @@ pre[class*='language-'] {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.2em;
 
   -moz-tab-size: 4;
