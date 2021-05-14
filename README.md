@@ -7,7 +7,7 @@ Hanami Mastery is a project which goal's is to help you master the Hanami ruby f
 
 Episode consists of:
 
-- Cover Image (Versions: Full (1920x900 - 2.13) Big (780x440 - 1.77) Small - 360x200 - 1.77)
+- Cover Image (Versions: Full (1920x600 - 2.13) Big (780x440 - 16:9 - 1.77) Small - 360x200 - 16:9 - 1.77)
 - Text content
 - Youtube video Guide
 
