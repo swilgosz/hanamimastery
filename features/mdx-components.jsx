@@ -151,6 +151,7 @@ const MDXComponents = {
   EmailSubscriptionForm,
   Om,
   Grid,
+  Typography
 };
 
 export default MDXComponents;
