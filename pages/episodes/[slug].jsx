@@ -59,6 +59,7 @@ export default function Article({ mdxSource, frontMatter }) {
             authors: ["https://www.facebook.com/sebastian.wilgosz"],
             tags,
           },
+          locale: "en_US",
           url,
           title,
           description: excerpt,
