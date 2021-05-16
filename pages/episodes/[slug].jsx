@@ -45,6 +45,7 @@ export default function Article({ mdxSource, frontMatter }) {
         title={title}
         titleTemplate=" %s | Hanami Mastery - a knowledge base to hanami framework"
         twitter={{
+          handle: "@hanamimastery",
           site: "@hanamimastery",
           cardType: "summary_large_image",
           creator: "@sebwilgosz",
@@ -61,11 +62,18 @@ export default function Article({ mdxSource, frontMatter }) {
           url,
           title,
           description: excerpt,
-          images: thumbnail,
           defaultImageWidth: 120,
           defaultImageHeight: 630,
           type: "article",
           site_name: "Hanami Mastery - a knowledge base to hanami framework",
+          images: [
+            {
+              url: thumbnail.big,
+              width: 780,
+              height: 440,
+              alt: title,
+            }
+          ],
         }}
         facebook={{
           appId: process.env.NEXT_PUBLIC_FB_APP_ID,
