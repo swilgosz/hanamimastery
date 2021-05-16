@@ -38,7 +38,7 @@ export default function Article({ mdxSource, frontMatter }) {
   const classes = useStyles();
   const { tags, slug, videoId, title, thumbnail, id, excerpt } = frontMatter;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/episodes/${slug}`;
-
+  const videos = videoId ? [{ url: `https://youtu.be/${videoId}` }] : null;
   return (
     <>
       <NextSeo
@@ -66,6 +66,7 @@ export default function Article({ mdxSource, frontMatter }) {
           defaultImageHeight: 630,
           type: "article",
           site_name: "Hanami Mastery - a knowledge base to hanami framework",
+          videos: videos,
           images: [
             {
               url: thumbnail.big,
