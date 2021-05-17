@@ -9,10 +9,9 @@ import TopNav from '../features/top-nav/index';
 import Footer from '../features/footer';
 import theme from '../styles/theme';
 import store from '../redux/store';
-import Router from "next/router";
-import withGA from "next-ga";
+import TagManager from 'react-gtm-module'
 
-const MyApp = function(props) {
+export default function MyApp(props) {
   const { Component, pageProps } = props;
 
   const { asPath } = useRouter();
@@ -30,6 +29,15 @@ const MyApp = function(props) {
     }
   }, []);
 
+
+  const tagManagerArgs = {
+    id: process.env.NEXT_PUBLIC_GTM_ID
+  }
+
+  React.useEffect(() => {
+    TagManager.initialize(tagManagerArgs)
+  }, [])
+
   return (
     <Provider store={store}>
       <Head>
@@ -46,5 +54,3 @@ const MyApp = function(props) {
     </Provider>
   );
 }
-
-export default withGA(process.env.NEXT_PUBLIC_GTM_ID, Router)(MyApp);
