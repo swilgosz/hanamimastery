@@ -31,7 +31,7 @@ export default function MyApp(props) {
 
 
   const tagManagerArgs = {
-    id: process.env.NEXT_PUBLIC_GTM_ID
+    gtmId: process.env.NEXT_PUBLIC_GTM_ID
   }
 
   React.useEffect(() => {
