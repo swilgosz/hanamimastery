@@ -4,9 +4,9 @@ import { Card, CardContent, makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: theme.spacing(2),
-    [theme.breakpoints.down("md")]: {
-      margin: theme.spacing(2, 4),
-    },
+    // [theme.breakpoints.down("md")]: {
+    //   margin: theme.spacing(2),
+    // },
   },
 }));
 

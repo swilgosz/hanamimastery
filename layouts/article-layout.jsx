@@ -8,9 +8,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
   },
   card: {
-    [theme.breakpoints.down("md")]: {
-      margin: theme.spacing(0, 4),
-    },
   },
 }));
 

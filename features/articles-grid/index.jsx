@@ -5,6 +5,11 @@ const useStyles = makeStyles((theme) => ({
   list: {
     listStyle: "none",
     padding: theme.spacing(0, 4),
+    [theme.breakpoints.down("md")]: {
+      padding: theme.spacing(0, 0),
+    },
+
+
   },
 }));
 
