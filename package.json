@@ -14,6 +14,7 @@
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.5.1",
+    "add": "^2.0.6",
     "disqus-react": "^1.0.11",
     "fast-glob": "^3.2.5",
     "gray-matter": "^4.0.3",
@@ -21,7 +22,7 @@
     "lodash.merge": "^4.6.2",
     "mdx-prism": "^0.3.3",
     "next": "10.0.9",
-    "next-gtm": "^1.0.0",
+    "next-ga": "^2.3.4",
     "next-mdx-remote": "^3.0.1",
     "next-seo": "^4.23.0",
     "react": "17.0.2",
@@ -34,6 +35,7 @@
     "rehype": "^11.0.0",
     "remark-autolink-headings": "^6.0.1",
     "use-http": "^1.0.19",
+    "yarn": "^1.22.10",
     "yup": "^0.32.9"
   },
   "devDependencies": {

@@ -9,9 +9,10 @@ import TopNav from '../features/top-nav/index';
 import Footer from '../features/footer';
 import theme from '../styles/theme';
 import store from '../redux/store';
-import Gtm from 'next-gtm';
+import Router from "next/router";
+import withGA from "next-ga";
 
-export default function MyApp(props) {
+const MyApp = function(props) {
   const { Component, pageProps } = props;
 
   const { asPath } = useRouter();
@@ -35,8 +36,6 @@ export default function MyApp(props) {
         <meta name="author" content="Hanami Mastery - https://hanamimastery.com" />
       </Head>
 
-      <Gtm id={process.env.NEXT_PUBLIC_GTM_ID}/>
-
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
@@ -47,3 +46,5 @@ export default function MyApp(props) {
     </Provider>
   );
 }
+
+export default withGA(process.env.NEXT_PUBLIC_GTM_ID, Router)(MyApp);
