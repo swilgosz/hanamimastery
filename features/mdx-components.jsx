@@ -75,7 +75,7 @@ const CustomLink = (props) => {
     );
   }
 
-  return <Link {...props} />;
+  return <Link target="_blank" {...props} />;
 };
 
 const useHeaderStyles = makeStyles(() =>
