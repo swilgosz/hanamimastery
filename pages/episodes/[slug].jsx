@@ -52,7 +52,7 @@ export default function Article({ mdxSource, frontMatter }) {
         }}
         additionalMetaTags={[{
           name: 'twitter:image',
-          content: thumbnail.big,
+          content: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
         }]}
         description={excerpt}
         openGraph={{
@@ -71,7 +71,7 @@ export default function Article({ mdxSource, frontMatter }) {
           videos: videos,
           images: [
             {
-              url: thumbnail.big,
+              url: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
               width: 780,
               height: 440,
               alt: title,
