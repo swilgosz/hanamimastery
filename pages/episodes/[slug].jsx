@@ -46,14 +46,14 @@ export default function Article({ mdxSource, frontMatter }) {
         title={title}
         titleTemplate=" %s | Hanami Mastery - a knowledge base to hanami framework"
         twitter={{
-          handle: "@hanamimastery",
           site: "@hanamimastery",
+          handle: "@sebwilgosz",
           cardType: "summary_large_image",
-          creator: "@sebwilgosz",
-          title,
-          description: excerpt,
-          image: thumbnail.big,
         }}
+        additionalMetaTags={[{
+          name: 'twitter:image',
+          content: thumbnail.big,
+        }]}
         description={excerpt}
         openGraph={{
           article: {
