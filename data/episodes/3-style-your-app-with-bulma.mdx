@@ -4,7 +4,7 @@ author: "swilgosz"
 tags: ["fullstack", "views", "assets"]
 title: "#3 Style your Hanami App with Bulma using Hanami Assets"
 excerpt: "In this episode I make use of Bulma CSS framework and integrate it with Hanami 2.0 application to prettify it with the least effort possible."
-videoId: null
+videoId: "tnOaUNfdgfo"
 thumbnail:
   full: /images/episodes/3/cover-full.jpeg
   big: /images/episodes/3/cover-big.jpeg
@@ -79,6 +79,25 @@ config.actions.default_headers = {
 ```
 
 ![Article's grid](/images/episodes/3/bulma-installed.png)
+
+
+### Install Bulma with Hanami via NPM
+
+Bulma is also shipped as an NPM package, so If you don't want to use CDN, thanks to Hanami::View you can easily install any NPM package into your hanami application using the standard package installation instructions.
+
+In he terminal let me just install the bulma package
+
+```bash
+npm install bulma
+```
+
+and then in the `index.css` file just replace the CDN download link with the package path. In my case it's `bulma/css/bulma`
+
+```css
+@import 'bulma/css/bulma'
+```
+
+When you'll visit the browser, you should not notice any changes in the rendered content.
 
 ### Add Bulma grid to Hanami template
 
