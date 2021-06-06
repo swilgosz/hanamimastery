@@ -11,6 +11,7 @@ import {
 import NextLink from "next/link";
 import CourseAd from "./course-ad";
 import EmailSubscriptionForm from "./email-subscription-form/index";
+import YoutubeEmbed from "./youtube-embed";
 
 const CustomChip = withTheme(
   withStyles((theme) => ({
@@ -151,7 +152,8 @@ const MDXComponents = {
   EmailSubscriptionForm,
   Om,
   Grid,
-  Typography
+  Typography,
+  YoutubeEmbed
 };
 
 export default MDXComponents;

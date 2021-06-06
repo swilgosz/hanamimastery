@@ -2,7 +2,19 @@
 import React from "react";
 import { Typography, Card, CardContent, CardHeader } from "@material-ui/core";
 
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+  },
+  centered: {
+    display: 'block',
+    textAlign: 'center'
+  },
+}));
+
 export default function GHSponsor() {
+  const classes = useStyles();
   return (
     <Card>
       <CardHeader
@@ -20,14 +32,16 @@ export default function GHSponsor() {
       />
       <CardContent>
         <Typography>
-          <iframe
-            src="https://ghbtns.com/github-btn.html?user=swilgosz&type=sponsor"
-            frameBorder="0"
-            scrolling="0"
-            width="150"
-            height="20"
-            title="GitHub"
-          />
+          <div className={classes.centered}>
+            <iframe
+              src="https://ghbtns.com/github-btn.html?user=swilgosz&type=sponsor"
+              frameBorder="0"
+              scrolling="0"
+              width="150"
+              height="20"
+              title="GitHub"
+            />
+          </div>
         </Typography>
       </CardContent>
     </Card>
