@@ -29,9 +29,9 @@ export default function PrivacyPolicy() {
                 52-129 Wrocław;
                 <br />
                 e-mail address:
-                <a href="mailto:info@driggl.pl">info@driggl.</a>com;
+                <a href="mailto:info@hanamimastery.com">info@hanamimastery.com</a>;
                 <br />
-                web address:&nbsp;<a href="http://driggl.pl">https://driggl.</a>
+                web address:&nbsp;<a href="http://hanamimastery.com">https://hanamimastery.com</a>
                 com;
                 <br />
                 telephone number: (+48) 724 532&nbsp;430;
