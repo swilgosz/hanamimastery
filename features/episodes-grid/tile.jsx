@@ -37,13 +37,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ArticleTile = ({ article }) => {
+const EpisodeTile = ({ article }) => {
   const classes = useStyles();
   const { author: authorName, tags, excerpt, thumbnail, slug, title } = article;
   const author = useSelector((state) => findAuthor(state, authorName));
   return (
     <Card className={classes.root}>
-      <NextLink href={`/articles/${slug}`} passHref>
+      <NextLink href={`/episodes/${slug}`} passHref>
         <CardActionArea>
           <CardMedia className={classes.media} image={thumbnail.big} />
         </CardActionArea>
@@ -51,7 +51,7 @@ const ArticleTile = ({ article }) => {
       <CardHeader
         disableTypography
         title={
-          <NextLink passHref href={`/articles/${slug}`}>
+          <NextLink passHref href={`/episodes/${slug}`}>
             <Link variant="h5">{title}</Link>
           </NextLink>
         }
@@ -72,7 +72,7 @@ const ArticleTile = ({ article }) => {
         </Typography>
       </CardContent>
       <CardActions className={classes.actions}>
-        <NextLink href={`/articles/${slug}`} passHref>
+        <NextLink href={`/episodes/${slug}`} passHref>
           <Button variant="contained" color="primary">
             Read more
           </Button>
@@ -82,4 +82,4 @@ const ArticleTile = ({ article }) => {
   );
 };
 
-export default ArticleTile;
+export default EpisodeTile;

@@ -1,10 +1,10 @@
 import { NextSeo } from "next-seo";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import EpisodesGrid from "../features/episodes-grid/index";
-import ArticleLayout from "../layouts/article-layout";
-import { setAuthors } from "../redux/slices/authors";
-import { getAllFilesFrontMatter } from "../utils";
+import ArticlesGrid from "../../features/articles-grid/index";
+import ArticleLayout from "../../layouts/article-layout";
+import { setAuthors } from "../../redux/slices/authors";
+import { getAllFilesFrontMatter } from "../../utils";
 
 export default function BlogIndex({ posts, authors }) {
   const dispatch = useDispatch();
@@ -14,24 +14,24 @@ export default function BlogIndex({ posts, authors }) {
   return (
     <>
       <NextSeo
-        title="Recent articles"
+        title="Casual articles"
         titleTemplate="%s | Hanami Mastery - learn hanami as a pro"
-        description="Get familiar with Hanami framework and realise that Ruby is not only Rails!"
+        description="Newest non-episode Hanami Mastery articles. Casual thinking, felietons, and others!"
         openGraph={{
-          title: "Recent articles",
+          title: "Casual articles",
           description:
-            "Get familiar with Hanami framework and realise that Ruby is not only Rails! Newest episodes with guides related to Hanami 2.0!",
+            "Newest non-episode Hanami Mastery articles. Casual thinking, felietons, and others!",
           images: ["/home-cover.jpg"],
           type: "website",
         }}
       />
-      <ArticleLayout article={<EpisodesGrid articles={posts} />} />
+      <ArticleLayout article={<ArticlesGrid articles={posts} />} />
     </>
   );
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter("episodes");
+  const posts = await getAllFilesFrontMatter("stray");
   const authors = await getAllFilesFrontMatter("team");
 
   return {
