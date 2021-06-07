@@ -3,6 +3,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { nanoid } from "@reduxjs/toolkit";
 
 const links = [
+  { href: "/c/stray", label: "Stray" },
   { href: "/about", label: "About" },
   { href: "/sponsors", label: "Sponsors" },
 ];
