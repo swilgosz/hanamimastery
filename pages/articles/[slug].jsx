@@ -40,6 +40,7 @@ export default function Article({ mdxSource, frontMatter }) {
   const { tags, slug, videoId, title, thumbnail, id, excerpt } = frontMatter;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/stray/${slug}`;
   const videos = videoId ? [{ url: `https://youtu.be/${videoId}` }] : null;
+  const thumb = thumbnail.big.startsWith('http') ? thumbnail.big : `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`
   return (
     <>
       <NextSeo
@@ -52,7 +53,7 @@ export default function Article({ mdxSource, frontMatter }) {
         }}
         additionalMetaTags={[{
           name: 'twitter:image',
-          content: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
+          content: thumb,
         }]}
         description={excerpt}
         openGraph={{
@@ -71,7 +72,7 @@ export default function Article({ mdxSource, frontMatter }) {
           videos: videos,
           images: [
             {
-              url: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
+              url: thumb,
               width: 780,
               height: 440,
               alt: title,
