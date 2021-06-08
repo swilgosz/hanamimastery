@@ -29,9 +29,8 @@ const ArticleLayout = ({ article }) => {
           )}
         >
           <GHSponsor className={classes.card} />
-          <EmailSubscriptionForm className={classes.card} />
-
           <BuyMeACoffee className={classes.card} />
+          <EmailSubscriptionForm className={classes.card} />
         </Grid>
       </Grid>
     </Container>
