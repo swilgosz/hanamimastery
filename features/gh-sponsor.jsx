@@ -11,39 +11,16 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     textAlign: 'center'
   },
+  btn: {
+    border: 0,
+  }
 }));
 
 export default function GHSponsor() {
   const classes = useStyles();
   return (
-    <Card>
-      <CardHeader
-        disableTypography
-        title={
-          <Typography variant="h4">
-            Sponsor this project on Github!
-          </Typography>
-        }
-        subheader={
-          <Typography variant="subtitle1">
-            10% of all your support goes to Hanami development support
-          </Typography>
-        }
-      />
-      <CardContent>
-        <Typography>
-          <div className={classes.centered}>
-            <iframe
-              src="https://ghbtns.com/github-btn.html?user=swilgosz&type=sponsor"
-              frameBorder="0"
-              scrolling="0"
-              width="150"
-              height="20"
-              title="GitHub"
-            />
-          </div>
-        </Typography>
-      </CardContent>
-    </Card>
+    <iframe src="https://github.com/sponsors/swilgosz/card" title="Sponsor swilgosz" height="400" width="100%" className={classes.btn}
+    />
+
   );
 }
