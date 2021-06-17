@@ -4,7 +4,7 @@ author: "swilgosz"
 tags: ["dry-rb", "backend", "dry-inflector"]
 title: "#4 An easy string manipulations in Ruby with DRY-Inflector"
 excerpt: "Meet Dry::Inflector - a neat way to apply non-standard string transformations."
-videoId: null
+videoId: "iCplLYsvGuI"
 thumbnail:
   full: /images/episodes/4/cover-full.jpeg
   big: /images/episodes/4/cover-big.jpeg
@@ -65,12 +65,12 @@ class CommandBus
   #
   def init_handler(command_klass)
     handler_klass_str = command_klass.split("::").tap do |items|
-      items[items.index_of('Commands')] = "CommandHandlers"
+      items[items.index('Commands')] = "CommandHandlers"
       items[-1] = "On#{items[-1]}"
-    end
+    end.join("::")
 
     handler_klass = handler_klass_str.constantize
-    handler.new
+    handler_klass.new
   end
 end
 ```
