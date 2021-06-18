@@ -1,0 +1,255 @@
+---
+id: 5
+author: "swilgosz"
+tags: ["backend", "dry-rb", "dry-configurable"]
+title: "#5 Configure anything with Dry::Configurable"
+excerpt: "Configuring projects and components is one of the most common features in programming in general. dry-configurable is a standalone gem providing you exactly this in Ruby! Read about how to use it."
+videoId: null
+thumbnail:
+  full: /images/episodes/5/cover-full.jpeg
+  big: /images/episodes/5/cover-big.jpeg
+  small: /images/episodes/5/cover-small.jpeg
+source: https://github.com/hanamimastery/episodes/tree/main/001
+---
+
+Hi all,
+
+When you write ruby gems, or even resuable components, there is often a need for configuring your projects to behave differently in different contexts.
+
+For example, in our [EventStoreClient](https://github.com/yousty/event_store_client) gem, we've used to connect to [external event store](https://eventstore.com), we needed to pass the authorization data, as well as the URL of the store where it was hosted upon.
+
+```ruby
+EventStoreClient.configure do |config|
+  config.eventstore_url = ENV['EVENTSTORE_URL']
+  config.eventstore_user = ENV['EVENTSTORE_USER']
+  config.eventstore_password = ENV['EVENTSTORE_PASSWORD']
+  config.verify_ssl = false # remove this line if your server does have the host verified
+end
+```
+
+In the [aws-sdk](https://github.com/aws/aws-sdk-ruby) gem, you need to pass similar configuration options:
+
+```ruby
+require 'aws-sdk'
+require 'json'
+
+creds = JSON.load(File.read('secrets.json'))
+Aws.config[:credentials] = Aws::Credentials.new(
+  creds['AccessKeyId'],
+  creds['SecretAccessKey']
+)
+```
+
+And, if you use [Rails](https://github.com/rails/rails), this kind of configuration may be super familiar.
+
+```ruby
+module Api
+  class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 6.0
+    config.api_only = true
+  end
+end
+```
+
+In fact, it's so common behaviour, **where a gem or component needs to be configured somehow**, that it's surprising most of the projects come with the custom configuration implementations, not always thinking about being Thread-Safe, Type-safe, or even test the configuration engine properly.
+
+In today's episode of Hanami Mastery I want to show you the [Dry-Configurable gem](https://dry-rb.org/gems/dry-configurable), which may be an amazing improvement in this field.
+
+### Dry::Configurable
+
+`dry-configurable` is a simple mixin allowing to add thread-safe configuration behaviour to your classes.
+
+Initially written by [Andy Holland](https://github.com/AMHOL), then basically rewritten by [Nikita Schilnikov](https://github.com/flash-gordon) and [Piotr Solnica](https://github.com/solnic), is one of such micro-libraries, that are close to perfection and can be injected almost everywhere.
+
+### Usage
+
+`dry-configurable` is extremely simple to use, but because of it's narrowed responsibility, at the same time it's extremely flexible to use in different contexts.
+
+Just extend the mixin and use the `setting` macro to add configuration options:
+
+You can use it either on ruby `module`
+
+```ruby
+# frozen_string_literal: true
+
+require 'dry-configurable'
+
+module App
+  extend Dry::Configurable
+
+  setting :api_url
+end
+
+App.config.api_url = 'https://example.com'
+App.config.api_url
+```
+
+on a `class` ,
+
+```ruby
+class App
+  extend Dry::Configurable
+
+  setting :api_url
+end
+
+App.config.api_url = 'https://example2.com'
+App.config.api_url
+```
+
+or  an `instance`.
+
+```ruby
+class App
+  include Dry::Configurable
+
+  setting :api_url
+end
+
+app1 = App.new.
+app1.config.api_url # => nil
+app1.config.api_url = 'https://hanamimastery.com'
+app1.config.api_url # => 'https://hanamimastery.com'
+
+app2 = App.new.config.api_url
+app2.config.api_url # => nil
+```
+
+Keep in mind, that this way you may have for example, multiple clients connecting to an external `API`, each client being completely independent!
+
+It's super useful, and I personally include Dry::Configurable in almost every gem or service I create, as it's so flexible in use.
+
+### Features
+
+Now let's go through some of the features Dry::Configurable allows you to use.
+
+#### Basic setting
+
+```ruby
+require 'dry-configurable'
+
+class App
+  extend Dry::Configurable
+
+  # Defaults to nil if no default value is given
+  setting :adapter
+
+  # Defaults to false
+  setting :enabled, false, reader: true
+end
+```
+
+First of all, you can do a basic setting, which by default is set to `nil`. Then after setting the attribute to a specific value, this value is returned.
+
+```ruby
+App.config.adapter # => nil
+App.config.adapter = :http
+App.config.adapter # => :http
+
+```
+
+You can set the default values for your settings, by passing the default value as an argument.
+
+```ruby
+App.config.enabled # => false
+App.config.enabled = true
+App.config.enabled # => true
+```
+
+If you'd like to access the setting directly on the class or instance the setting is defined on, set the `reader` option to `true`. Then you'll be able to access that setting directly, while it'll also be available via the configuration object.
+
+```ruby
+App.enabled # => false
+App.config.enabled # => false
+
+App.enabled = true
+
+App.config.enabled # => true
+App.enabled = true
+```
+
+### Nested settings
+
+With `dry-configurable` you can add nested settings, with all features supported in every deep level. You can nest as many levels as you want, it'll all work exeactly the same!
+
+```ruby
+require 'dry-configurable'
+
+class App
+  extend Dry::Configurable
+
+  # Pass a block for nested configuration (works to any depth)
+  # Passing the reader option as true will create attr_reader method for the class
+  # Passing the reader attributes works with nested configuration
+  setting :repository, reader: true do
+    # Can pass a default value
+    setting :type, :local
+    setting :encryption do
+      setting :cipher, 'aes-256-cbc'
+    end
+  end
+end
+```
+
+You can then use those settings by chaining the methods on the config object. And yes, the chaining works exactly the same, if I'll set a `reader` option.
+
+```ruby
+App.config.repository.type # => ":local"
+
+App.config.repository.type = :remote
+App.config.repository.type # => ":remote"
+
+App.config.repository.enryption.cipher # =>  "aes-256-cbc"
+
+App.repository.type = :remote
+
+```
+
+### Pre-Processed values
+
+Finally, you can easily do the `pre-processing` of default, and passed setting values. I find it useful for example, when I need to work with URLs. It's generally bad practice to work with plain ruby strings when it comes to URL definitions, so I often wrap such in an `URI` object.
+
+```ruby
+require 'dry-configurable'
+
+class App
+  extend Dry::Configurable
+
+  # Pre-process values
+  setting(:url, 'https://hanamimastery.com') { |value| URI(value) }
+end
+
+App.config.url # => #<URI::HTTPS https://hanamimastery.com>
+
+App.config.url = "https://subscribe.me"
+
+App.config.url # => #<URI::HTTPS https://subscribe.me>
+
+```
+
+This makes sure I'll never have invalid URL in my application. You can also do advanced Type checking, schema definitions and so on, to be sure your app will never allow invalid configuration to be set.
+
+### Summary
+
+`dry-configurable` is so simple, but at the same so useful, it's hard to believe it's not included in all ruby applications.
+
+It's worth of mentioning, that Hanami-RB 2.0 uses the Dry::Configurable for the framework, view and controlelr settings. Give it a try in your projects and you'll not regret.
+
+
+I hope you've enjoyed this episode, and if you want to see more content in this fashion, subscribe to my Newsletter and [follow me on twitter](https://twitter.com/hanamimastery)!
+
+
+Also, **If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas how to improve, please mention it in the comments!**
+
+### Special Thanks
+
+I'd like to thank Bohdan V. for supporting this channel, and all other people encouraging me to continue with Hanami Mastery project - It really matters a lot!
+
+Any support allows me to spend more time on creating this content, promoting great open source projects, so Thank you!.
+
+- [Bohdan V.](https://g3d.dev/) - For joining to my [mate supporters tier](https://github.com/sponsors/swilgosz)!
+- [Paul Hanaoka](https://unsplash.com/@plhnk) - For an amazing Cover Photo
+- [Andy Holland](https://github.com/AMHOL) - for comming with `dry-configurable` idea.
+- [Nikita Schilnikov](https://github.com/flash-gordon) - For amazing upgrades.
+- [Piotr Solnica](https://solnic.codes/) - for maintaining the `dry-configurable` gem and the tremendous work he does to keep dry-rb libraries alive!
