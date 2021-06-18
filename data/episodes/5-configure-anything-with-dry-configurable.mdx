@@ -169,7 +169,7 @@ App.config.enabled # => true
 App.enabled = true
 ```
 
-### Nested settings
+#### Nested settings
 
 With `dry-configurable` you can add nested settings, with all features supported in every deep level. You can nest as many levels as you want, it'll all work exeactly the same!
 
@@ -206,7 +206,7 @@ App.repository.type = :remote
 
 ```
 
-### Pre-Processed values
+#### Pre-Processed values
 
 Finally, you can easily do the `pre-processing` of default, and passed setting values. I find it useful for example, when I need to work with URLs. It's generally bad practice to work with plain ruby strings when it comes to URL definitions, so I often wrap such in an `URI` object.
 
