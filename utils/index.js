@@ -13,8 +13,8 @@ export async function getFiles(type) {
 
 export async function getFileBySlug(type, slug) {
   const source = slug
-    ? fs.readFileSync(path.join(root, "data", type, `${slug}.mdx`), "utf8")
-    : fs.readFileSync(path.join(root, "data", `${type}.mdx`), "utf8");
+    ? fs.readFileSync(path.join(root, "data", type, `${slug}.md`), "utf8")
+    : fs.readFileSync(path.join(root, "data", `${type}.md`), "utf8");
 
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
@@ -47,7 +47,7 @@ export async function getAllFilesFrontMatter(type) {
     return [
       {
         ...data,
-        slug: postSlug.replace(".mdx", ""),
+        slug: postSlug.replace(".md", ""),
       },
       ...allPosts,
     ];
