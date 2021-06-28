@@ -11,12 +11,9 @@ thumbnail:
   small: /images/episodes/5/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/001
 ---
+When you write ruby gems or even reusable components, there is often a need for configuring your projects to behave differently in different contexts.
 
-Hi all,
-
-When you write ruby gems, or even resuable components, there is often a need for configuring your projects to behave differently in different contexts.
-
-For example, in our [EventStoreClient](https://github.com/yousty/event_store_client) gem, we've used to connect to [external event store](https://eventstore.com), we needed to pass the authorization data, as well as the URL of the store where it was hosted upon.
+For example, in our [EventStoreClient](https://github.com/yousty/event_store_client) gem, we've used to connect to the [external event store](https://eventstore.com). We needed to pass the authorization data, as well as the URL of the store where it was hosted upon.
 
 ```ruby
 EventStoreClient.configure do |config|
@@ -27,7 +24,7 @@ EventStoreClient.configure do |config|
 end
 ```
 
-In the [aws-sdk](https://github.com/aws/aws-sdk-ruby) gem, you need to pass similar configuration options:
+In the [aws-sdk](https://github.com/aws/aws-sdk-ruby) gem from another hand, you need to pass similar configuration options:
 
 ```ruby
 require 'aws-sdk'
@@ -40,7 +37,7 @@ Aws.config[:credentials] = Aws::Credentials.new(
 )
 ```
 
-And, if you use [Rails](https://github.com/rails/rails), this kind of configuration may be super familiar.
+And, if you use [Rails](https://github.com/rails/rails), this kind of configuration may be super familiar to you.
 
 ```ruby
 module Api
@@ -52,27 +49,29 @@ module Api
 end
 ```
 
-In fact, it's so common behaviour, **where a gem or component needs to be configured somehow**, that it's surprising most of the projects come with the custom configuration implementations, not always thinking about being Thread-Safe, Type-safe, or even test the configuration engine properly.
+In fact, it's so common behavior, **where a gem or component needs to be configured somehow**, that it's surprising most of the projects come with the custom configuration implementations, not always thinking about being Thread-Safe, Type-safe, or even test the configuration engine properly.
 
-In today's episode of Hanami Mastery I want to show you the [Dry-Configurable gem](https://dry-rb.org/gems/dry-configurable), which may be an amazing improvement in this field.
+In today's episode of Hanami Mastery, I want to show you the [Dry-Configurable gem](https://dry-rb.org/gems/dry-configurable), which may be an amazing improvement in this field.
 
 ### Dry::Configurable
 
-`dry-configurable` is a simple mixin allowing to add thread-safe configuration behaviour to your classes.
+`dry-configurable` is a simple mixin allowing you to add thread-safe configuration behavior to your classes.
 
-Initially written by [Andy Holland](https://github.com/AMHOL), then basically rewritten by [Nikita Shilnikov](https://github.com/flash-gordon) and [Piotr Solnica](https://github.com/solnic), is one of such micro-libraries, that are close to perfection and can be injected almost everywhere.
+Initially written by [Andy Holland](https://github.com/AMHOL), then basically rewritten by [Nikita Shilnikov](https://github.com/flash-gordon) and [Piotr Solnica](https://github.com/solnic), is one of such micro-libraries, that are close to perfection and **can be injected almost everywhere*8.
 
 ### Usage
 
-`dry-configurable` is extremely simple to use, but because of it's narrowed responsibility, at the same time it's extremely flexible to use in different contexts.
+> **Note:** Because of intense work on [Hanami 2.0](https://hanamirb.org) and its dependencies at the moment, the interface of the `dry-configurable` may soon change a little bit, but that's a minor thing and you can always refer to the [gem's documentation](https://dry-rb.org/gems/dry-configurable) for the most up-to-date version of the usage. I'll also keep this article up-to-date.
+
+`dry-configurable` is super simple to use, but because of its narrowed responsibility, at the same time it's extremely flexible to be used in different contexts.
 
 Just extend the mixin and use the `setting` macro to add configuration options:
 
-You can use it either on ruby `module`
+You can use it either on ruby `module` on a `class` or an `instance`.
+
+On the module level, you need to extend the ___Dry::Configurable__ module and you can safely use all features it provides. Here I set the `api_url to hanamimastery.com`
 
 ```ruby
-# frozen_string_literal: true
-
 require 'dry-configurable'
 
 module App
@@ -81,13 +80,15 @@ module App
   setting :api_url
 end
 
-App.config.api_url = 'https://example.com'
-App.config.api_url
+App.config.api_url = 'https://hanamimastery.com'
+App.config.api_url # => 'https://hanamimastery.com'
 ```
 
-on a `class` ,
+On the class level, nothing changes, **you can use it exactly in the same way**.
 
 ```ruby
+require 'dry-configurable'
+
 class App
   extend Dry::Configurable
 
@@ -98,7 +99,7 @@ App.config.api_url = 'https://example2.com'
 App.config.api_url
 ```
 
-or  an `instance`.
+If you want to use it on the instance of the class, however, the only difference is that you need to include the `Dry::Configurable` module instead of extending it.
 
 ```ruby
 class App
@@ -107,18 +108,18 @@ class App
   setting :api_url
 end
 
-app1 = App.new.
-app1.config.api_url # => nil
-app1.config.api_url = 'https://hanamimastery.com'
-app1.config.api_url # => 'https://hanamimastery.com'
+app1 = App.new.config.api_url = 'https://example3.com'
+app1.config.api_url
 
 app2 = App.new.config.api_url
-app2.config.api_url # => nil
+app2.config.api_url
 ```
 
-Keep in mind, that this way you may have for example, multiple clients connecting to an external `API`, each client being completely independent!
+Simple? Simple.
 
-It's super useful, and I personally include Dry::Configurable in almost every gem or service I create, as it's so flexible in use.
+Keep in mind, that this way you may have, for example, **multiple clients connecting to an external** `API`, each client being **completely independent!**
+
+It's super useful, and I include [[dry-configurable|Dry::Configurable]] in almost every gem or service I create, because of it's flexibility.
 
 ### Features
 
