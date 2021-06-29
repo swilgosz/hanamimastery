@@ -80,7 +80,7 @@ Hanami application template with the default configuration can be run using just
 ```shell
 puma config.ru
 ```
-However, if I'll run the project now, it'll crash saying that the database URL configuration is missing. I'm sure that these error messages will be improved in the near future.
+However, if I'll run the project now, it'll crash saying that the database URL configuration is missing. I'm sure that these error messages will be improved in the near future. You can check the [dry-configurable episode](/episodes/5-configure-anything-with-dry-configurable)
 
 But for now, to fix it, we need the environment file collecting all the initial settings for our application to be run in different environments. The template already comes with an example env file, named `.env-example` . I need to copy it under the: `.env.development`. Please notice that dash in the middle had been changed to a dot.
 

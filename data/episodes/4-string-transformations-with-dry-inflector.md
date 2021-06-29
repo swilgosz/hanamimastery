@@ -12,23 +12,21 @@ thumbnail:
 source: https://github.com/hanamimastery/episodes/tree/main/004
 ---
 
-Hi there!
-
-In this episode of Hanami Mastery I want to showcase a super useful little Ruby Gem, that actually helped me a lot in writing my own Ruby packages. It's a [Dry::Inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend to follow him up. I actually discovered this gem by [watching one of his Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I actually made a habbit of watching other developers' videos and presentations!
+In this episode of Hanami Mastery I want to showcase a super useful little Ruby Gem, that helped me a lot in writing my own Ruby packages. It's a [Dry::Inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up. I discovered this gem by [watching one of his Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
 
 ### The problem we've faced
 
-Recently we had a need in our projects to improve the way we distribute the commands that had been triggered in the system. Whenever the command is called, it should be properly handled and the appropriate event should be published to our event store.
+Recently we needed to improve in our projects the way we distribute the commands that had been triggered in the system. Whenever the command is called, it should be properly handled and the appropriate event should be published to our event store.
 
 I don't want to talk too much about [how we approached the CQRS](https://driggl.com/blog/a/cars-api-endpoints-in-rails-applications) implementation in our systems, but I'll show a little diagram here just to visualize what I'm talking about.
 
-In the usual web application, when you send a request, it's recieved by a router, which recognizes the URL of the request and passes the attached parameters and headers into the proper controller action to be handled by.
+In the usual web application, when you send a request, [it's received by a router](2-listing-articles-with-hanami-view), which recognizes the URL of the request and passes the attached parameters and headers into the proper controller action to be handled.
 
 ![Route visualization in web aps](/images/episodes/4/router.png)
 
 In other words, if you write: `articles#new` in Rails, or `articles.new` in Hanami, the passed string will be interpreted by the router, and the controller named `articles` will be called with an action `new`.
 
-Literally, based on the convention of naming and the file structure, the correct constant will be instantized and a proper method called.
+Based on the convention of naming and the file structure, the correct constant will be instantiated and a proper method called.
 
 We needed similar functionality for our business logic.
 
@@ -36,7 +34,7 @@ We had a set of commands that can happen in the system, and each of them should 
 
 ![Command bus visualization in ruby apps](/images/episodes/4/command-bus.png)
 
-We wanted a `CommandBus` class, that actually registers proper handler automatically based on the given command name, following the naming convention we created.
+We wanted a `CommandBus` class, that registers proper handler automatically based on the given command name, following the naming convention we created.
 
 I know it sounds pretty complex, but it all comes down to this:
 
@@ -75,11 +73,11 @@ class CommandBus
 end
 ```
 
-This is quite simplified version of the command bus, but it's already pretty useful. It allows us to register a command, and then just call a command bus with this command. There is only one place, where the logic of figuring out what should handle my command is - and it's a command bus.
+This is quite a simplified version of the command bus, but it's already pretty useful. It allows us to register a command, and then just call a command bus with this command. There is only one place, where the logic of figuring out what should handle my command is - and it's a command bus.
 
-For `Commands::Create` => it supposed to call `CommandHanndlers::OnCreate`. However, this crashes, due to the usage of `constantize` method.
+For `Commands::Create` it's supposed to call `CommandHanndlers::OnCreate`. However, this crashes, due to the usage of `constantize` method.
 
-This method is not implemented in ruby, so we would either need to write it ourselves, or rely on [ActiveSupport's inflector](https://api.rubyonrails.org/v6.1.3.2/classes/ActiveSupport/Inflector.html) class.
+This method is not implemented in ruby, so we would either need to write it ourselves or rely on [ActiveSupport's inflector](https://api.rubyonrails.org/v6.1.3.2/classes/ActiveSupport/Inflector.html) class.
 
 We didn't want that, because ActiveSupport is a set of a WHOLE LOT of features that we did not want to use in our simple gem and we didn't want to make it Rails-Specific.
 
@@ -87,19 +85,19 @@ We thought about implementing it on our own, but then we've found the `DRY::Infl
 
 ### Dry::Inflector
 
-DRY-Inflector is a simple gem that wraps several useful string transformations into a small `inflector` object. Because it is so small, we gladly injected that into our internal ecosystem.
+*dry-inflector* is a simple gem that wraps several useful string transformations into a small `inflector` object. Because it is so small, we gladly injected that into our internal ecosystem.
 
 Here is a short presentation of why it's so great:
 
 1. **It's extremely small** - and therefore, it's focused on one single purpose. This allows us to integrate it with any ruby app without a problem.
-2. **It's configurable** - as it's a standalone object, we can configure it by adding own rules, without affecting the global String behaviour, which is great, as we have a full controll were we want those transformations to be applied.
-3. **Thread-Safe**
+2. **It's [configurable](/episodes/5-configure-anything-with-dry-configurable)** - as it's a standalone object, we can configure it by adding our own rules, without affecting the global String behavior, which is great, as we have full control where we want those transformations to be applied.
+3. **It's thread-safe**
 
-To use it, we only need to instantiate the inflector object, and from that we can make use of full set of all features it provides.
+To use it, we only need to instantiate the inflector object, and from that, we can make use of the full set of all features it provides.
 
 For example, we can pluralize or singularize nouns, camelize strings, demodulize, and perform several other string transformations.
 
-Here is a little snipped I've copied from the documentation, to present the basic feature of `Dry::Inflector`.
+Here is a little snippet I've copied from the documentation, to present the basic feature of `Dry::Inflector`.
 
 ```ruby
 require "dry/inflector"
@@ -130,9 +128,9 @@ inflector.ordinalize(23) # => "23rd"
 
 There is also the one we've looked for, `constantize`!
 
-### Using #Constantize with Dry::Inflector
+### Using constantize with Dry::Inflector
 
-Let's check how `constantize` method behaves. I'll create a minimal set, just a plain ruby script with requiring a `dry-inflector` and creating the `inflector` instance.
+Let's check how `constantize` method behaves. I'll create a minimal set, just a plain ruby script requiring a `dry-inflector` and creating the `inflector` instance.
 
 ```ruby
 #!/usr/bin/env ruby
@@ -140,26 +138,29 @@ Let's check how `constantize` method behaves. I'll create a minimal set, just a 
 require 'dry-inflector'
 
 inflector = Dry::Inflector.new
+```
 
+Then Let's create the sample class, Let's call it HanamiMastery, and put some string. Maybe Subscribe!, as [I actually want to ask you for that](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ) ;).
+
+```ruby
 class HanamiMastery
   def call
     p 'Subscribe!'
   end
 end
-
-inflector.constantize("HanamiMastery").new.()
 ```
-
-Then Let's create the sample class, Let's call it HanamiMastery, and put some string. Maybe Subscribe!, as [I actually want to ask you for that](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ) ;).
 
 Then let's call the constantize, passed in the `"HanamiMastery"` sting as a parameter.
 
-That is amazing!  Out of the box implementation of most useful string transformations, but extracted as a single feature, ready to be used!
+```ruby
+inflector.constantize("HanamiMastery").new.()
+```
+
+That is amazing! Out of the box implementation of most useful string transformations, but extracted as a single feature, ready to be used!
 
 ### Solving our problem
 
 With `dry-inflector` gem discovered, it was almost no-brainer to update our `CommandBus` to make use of it!
-
 
 ```ruby
 require 'dry-inflector'
@@ -181,13 +182,13 @@ class CommandBus
 end
 ```
 
-This way, we avoided implementing the method in dozens of gems supporting our microservices ecosystem, and we're quickly realized, that other inflection transformations were also very usful in our case.
+This way, we avoided implementing the method in dozens of gems supporting our microservices ecosystem, and we've quickly realized, that other inflection transformations were also very useful in our case.
 
-Great! **Thanks, Open-Source geeks**!
+That's just great! **Thanks, Open-Source geeks**!
 
 ### Configuring the Dry::Inflector object
 
-I'd want to yet quickly mention the configuration feature, as this is one more super-useful functionalities that `dry-inflector` provides. For example, I always hate, when I want to have `API` namespace, and I need to name classes, like: `Api`, or `Http` insted of `HTTP` and `API`. This is easily solved by `Dry::Inflector` by allowing to mark certain words as acronyms.
+I'd want to yet quickly mention the configuration feature, as this is one more super-useful functionalities that `dry-inflector` provides. For example, I always hate, when I want to have `API` namespace, and I need to name classes, like: `Api`, or `Http` instead of `HTTP` and `API` for Rails to properly transform those strings. This is easily solved by `Dry::Inflector` by allowing to mark certain words as acronyms.
 
 ```ruby
 require "dry/inflector"
@@ -200,7 +201,7 @@ inflector.underscore("JSONAPIresponse") # => "json_api_response"
 inflector.camelize("json_api_request") # => "JSONAPIResponse"
 ```
 
-The other nice thing is that you can add your own inflections, to mark certain words as uncountable, or deliver additional rules to plurailization of certain words.
+The other nice thing is that you can add your own inflections, mark certain words as uncountable, or deliver additional rules to the pluralization of certain words.
 
 ```ruby
 require "dry/inflector"
@@ -218,18 +219,18 @@ That's all I have for today, [check out the gem's documentation](https://dry-rb.
 
 ### Do you like this episode? Consider sponsoring the project!
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion, [Subscribe to my channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ) and [follow me on twitter](https://twitter.com/sebwilgosz)!  As always, all links you can find the description of the video or in the the https://hanamimastery.com.
+I hope you've enjoyed this episode, and if you want to see more content in this fashion, [Subscribe to my channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ) and [follow me on twitter](https://twitter.com/sebwilgosz)!  As always, all links you can find the description of the video or in the [Hanami Mastery about page](https://hanamimastery.com/about)
 
 
-Also, **If you have any suggestions of amazing ruby gems You'd like me to cover**, or ideas how to improve, please mention it in the comments!
+Also, **If you have any suggestions of amazing ruby gems You'd like me to cover**, or ideas on how to improve, please mention it in the comments!
 
 See you!
 
 ### Special Thanks!
 
-I'd like to thank All amazing people who decided to sponsor me so far. I appreciate your trust, as I understand that too many blogs do not even hit the barrier of 10 articles!
+I'd like to thank All the amazing people who decided to sponsor me so far. I appreciate your trust, as I understand that too many blogs do not even hit the barrier of 10 articles!
 
-Any support allows me to spend more time on creating a content which promotes great open source projects. I hope to do more of this stuff in the future!
+Any support allows me to spend more time on creating content that promotes great open source projects. I hope to do more of this stuff in the future!
 
 - [Bohdan V.](https://g3d.dev/) - For joining to my [regular supporters](https://github.com/sponsors/swilgosz)!
 - [Jonathan Kemper](https://unsplash.com/@jupp) - for a great cover photo

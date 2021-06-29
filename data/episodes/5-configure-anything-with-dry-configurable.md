@@ -51,6 +51,8 @@ end
 
 In fact, it's so common behavior, **where a gem or component needs to be configured somehow**, that it's surprising most of the projects come with the custom configuration implementations, not always thinking about being Thread-Safe, Type-safe, or even test the configuration engine properly.
 
+You can configure anyting, from initial [stylings for your applicaiton](/episodes/3-style-your-app-with-bulma), database connections, whatever you want.
+
 In today's episode of Hanami Mastery, I want to show you the [Dry-Configurable gem](https://dry-rb.org/gems/dry-configurable), which may be an amazing improvement in this field.
 
 ### Dry::Configurable
@@ -119,7 +121,7 @@ Simple? Simple.
 
 Keep in mind, that this way you may have, for example, **multiple clients connecting to an external** `API`, each client being **completely independent!**
 
-It's super useful, and I include [[dry-configurable|Dry::Configurable]] in almost every gem or service I create, because of its flexibility.
+It's super useful, and I include `Dry::Configurable` in almost every gem or service I create, because of its flexibility.
 
 ### Features
 
@@ -281,7 +283,7 @@ This code already will fail in case of invalid configuration, like passing nil o
 
 ### Summary
 
-`dry-configurable` is so simple, but at the same so useful, it's hard to believe it's not included in all ruby applications.
+`dry-configurable` is so simple, but at the same so useful, it's hard to believe it's not included in all ruby applications. Similar concepts are applied to [dry-inflector gem](/episodes/4-string-transformations-with-dry-inflector) - skinny, simple, resuable and this is why I love *dry-rb* for.
 
 It's worth mentioning, that **Hanami-RB 2.0 uses the Dry::Configurable** for the framework, view, and controller settings. Give it a try in your projects and you'll not regret it.
 
