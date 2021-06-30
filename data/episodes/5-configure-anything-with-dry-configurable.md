@@ -287,9 +287,7 @@ This code already will fail in case of invalid configuration, like passing nil o
 
 It's worth mentioning, that **Hanami-RB 2.0 uses the Dry::Configurable** for the framework, view, and controller settings. Give it a try in your projects and you'll not regret it.
 
-
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to my Newsletter** and [follow me on twitter](https://twitter.com/hanamimastery)!
-
 
 Also, **If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention it in the comments!**
 

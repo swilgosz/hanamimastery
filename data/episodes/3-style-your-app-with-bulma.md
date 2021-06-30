@@ -12,11 +12,11 @@ thumbnail:
 source: https://github.com/hanamimastery/episodes/tree/main/003
 ---
 
-I have [this simple Hanami web application here](/episodes/2-listing-articles-with-hanami-view), listing sample blog articles with cat's images on top. Honestly, It is horrible. Really. And my goal for this episode is to make it prettier with the least effort possible.
+I have [this simple Hanami web application here](/episodes/2-listing-articles-with-hanami-view), listing sample blog articles with cat's images on top. Honestly, It's horrible. Really. And my goal for this episode is to **make it prettier with the least effort possible**.
 
 ![Unstyled articles list](/images/episodes/3/unstyled.png)
 
-To achieve this, I'll make use of [Bulma CSS framework](https://bulma.io/) Which is a great, simple to use CSS-only framework, which means, it works with any JS engine you would like to use in your app. No matter if you use your custom scripts, jQuery, React, Angular or Vue, Bulma will allways work as you may expect and this is the main reason I've chosen it for this showcase.
+To achieve this, I'll make use of [Bulma CSS](https://bulma.io/), which is a great, simple to use, CSS-only framework. This means it works with any JS engine you would like to use in your app. No matter if you use your custom scripts, jQuery, React, Angular, or Vue, Bulma will always work as you may expect and this is the main reason I've chosen it for this showcase.
 
 ### Install Bulma in Hanami application
 
@@ -24,11 +24,11 @@ Let's integrate Bulma with our project first
 
 Due to Hanami::Assets being fully configured in the new Hanami application, it's pretty easy to install any `npm` package and use it in our web apps.
 
-In the getting started guide, You can see several ways to install it, and just for now we'll use the option to import the css directly from the CDN's official URL.
+In the getting started guide, You can see several ways to install it, and, just for now, we'll use the option to import the CSS directly from the CDN's official URL.
 
 I just need to copy the source code and paste it in the `slices/main/assets/public/index.css` Index.css file for my `main` slice.
 
-Then going back to the installation, I can see that in the _code requirements_ section of the Bulma's documentation I also need to add viewport information into my applicaiton layout html file. Let me copy that very quickly.
+Then going back to the installation, I can see that in the _code requirements_ section of Bulma's documentation I also need to add viewport information into my application layout HTML file. Let me copy that very quickly.
 
 ```css
 # slices/main/assets/public/index.css
@@ -83,7 +83,7 @@ config.actions.default_headers = {
 
 Bulma is also shipped as an NPM package, so If you don't want to use CDN, thanks to Hanami::View you can easily install any NPM package into your hanami application using the standard package installation instructions.
 
-In he terminal let me just install the bulma package
+In the terminal let me just install the `bulma` package
 
 ```bash
 npm install bulma
@@ -101,7 +101,7 @@ When you'll visit the browser, you should not notice any changes in the rendered
 
 The margins had been changed too, however, this is still pretty bad. Let's update it by adding some grid. I want articles to be shown in rows of three elements. To achieve this, I'll iterate through my array of articles, using `each_slice` method, passing the expected number of columns as an argument.
 
-Then at the beginning of an each slice I'll add a `.columns` wrapper, and then for each column in a row I'll add a `.column` class
+Then at the beginning of each slice, I'll add a `.columns` wrapper, and then for each column in a row I'll add a `.column` class
 
 ```html
 // slices/main/web/templates/templates/articles/index.html.slim
@@ -115,7 +115,7 @@ h1.title Blog articles
         == render :item, article: article
 ```
 
-This finally gives a nice change to the rendered result. All articles are grouped in columns, and I did not write a single CSS line, everything being working out of the box. Awesome!
+This finally gives a nice change to the rendered result. All articles are grouped in columns, and I did not write a single CSS line, everything is working out of the box. Awesome!
 
 ![Bulma installed](/images/episodes/3/grid.png)
 
@@ -139,7 +139,7 @@ I'll need a `navigation` tag with `breadcrumb` class, with a list of items to be
 
 ![Breadcrumbs component](/images/episodes/3/breadcrumbs.png)
 
-Now let's update the single article's item. For this, I'll use [Bulma's _card_ component](https://bulma.io/documentation/components/card/) and simliar to breadcrumbs, I just need to copy the HTML structure to my template file. To speed things up I'll just paste the content I've prepared before. This is a card component, translated to slim - as this is what I'm working with, and instead of static strings, I show the appropriate article's attributes.
+Now let's update the single article's item. For this, I'll use [Bulma's _card_ component](https://bulma.io/documentation/components/card/) and similar to breadcrumbs, I just need to copy the HTML structure to my template file. To speed things up I'll just paste the content I've prepared before. This is a card component, translated to slim - as this is what I'm working with, and instead of static strings, I show the appropriate article's attributes.
 
 ```html
 // slices/main/web/templates/blog/articles/_item_.html.slim
@@ -165,7 +165,7 @@ Now let's update the single article's item. For this, I'll use [Bulma's _card_ c
 
 ![Cards component](/images/episodes/3/cards.png)
 
-With similar tweaks you can easily prettify the single article's page or anything you want in your application.
+With similar tweaks, you can easily prettify the single article's page or anything you want in your application.
 
 ```html
 // slices/main/web/templates/blog/articles/show.html.slim
@@ -197,9 +197,9 @@ article.container
 
 ### Summary
 
-[Hanami-Assets](https://github.com/hanami/assets) is an amazing gem that allows to manage assets in any Ruby application. In [Hanami 2,](https://hanamirb.org), with zero-configuration integration, it's just a pleasure to work with.
+[Hanami-Assets](https://github.com/hanami/assets) is an amazing gem that allows managing assets in any Ruby application. In [Hanami 2,](https://hanamirb.org), with zero-configuration integration, it's just a pleasure to work with.
 
-You can use it with Bulma, Fundation, React, Vue, or any other asset framework, as it's extremely flexible.
+You can use it with Bulma, Foundation, React, Vue, or any other asset framework, as it's extremely flexible.
 
 ### Special Thanks
 

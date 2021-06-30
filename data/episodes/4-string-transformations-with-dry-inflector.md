@@ -160,7 +160,7 @@ That is amazing! Out of the box implementation of most useful string transformat
 
 ### Solving our problem
 
-With `dry-inflector` gem discovered, it was almost no-brainer to update our `CommandBus` to make use of it!
+With `dry-inflector` gem discovered, it was almost a no-brainer to update our `CommandBus` to make use of it!
 
 ```ruby
 require 'dry-inflector'
