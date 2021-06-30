@@ -5,9 +5,9 @@ tags: ["open-source"]
 title: "My attempt to change the world of Open-Source financing."
 excerpt: "Open-Source development is hard nowadays. Here I explain how I want to make it easier."
 thumbnail:
-  full: https://via.placeholder.com/1920/600?text=HanamiMastery.com
-  big: https://via.placeholder.com/780/440?text=HanamiMastery.com
-  small: https://via.placeholder.com/360/200?text=HanamiMastery.com
+  full: /images/articles/hanamimastery-origins/cover-full.jpeg
+  big: /images/articles/hanamimastery-origins/cover-big.jpeg
+  small: /images/articles/hanamimastery-origins/cover-small.jpeg
 source: null
 category: stray
 ---
@@ -141,3 +141,10 @@ So This is a start.
 **This is my attempt to change the world.** For Hanami and Open-Source in General. I don't expect to be ever able to finance a majority of great projects that should be supported, but If I'll inspire one person in any way, I'll be fulfilled.
 
 Nowadays, working open-source is definitely a hard thing to do. But I see a bright future ahead, and I'll do my best to bring it closer to all of us!
+
+
+### Special thanks
+
+I'd like to explicitly thank
+
+- [Katt Yukawa](https://unsplash.com/@kattyukawa) for a great cover photo!
