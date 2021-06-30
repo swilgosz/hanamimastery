@@ -50,6 +50,6 @@ export async function getAllFilesFrontMatter(type) {
         slug: postSlug.replace(".md", ""),
       },
       ...allPosts,
-    ].sort(function(a, b) { return a.id < b.id });
+    ].sort(function(a, b) { return b.id - a.id });
   }, []);
 }
