@@ -12,17 +12,17 @@ thumbnail:
 source: https://github.com/hanamimastery/episodes/tree/main/002
 ---
 
-In the previous episode I've created a new Hanami application using [Template repository](/episodes/1-creating-hanami-application).
+In the previous episode, I've created a new Hanami application, using the [Template repository](/episodes/1-creating-hanami-application).
 
-At the moment, It only has the home page implemented, but I'd love to transfer it into a blog application. In this episode I'll show you how to list the objects in Hanami template. We will focus on understanding the [Hanami::View](https://github.com/hanami/view) part of the architecture.
+At the moment, It only has the home page implemented, but I'd love to transfer it into a blog application. In this episode, I'll show you how to list the objects in the Hanami template. We will focus on understanding the [Hanami::View](https://github.com/hanami/view) part of the architecture.
 
-To start, let's start by adding a new route, under the `/articles` url.
+To start, let's start by adding a new route, under the `/articles` URL.
 
 ### Adding static HTML rendering endpoint
 
-First let's visit the `routes.rb` file stored in the `config` directory. The router distributes the incoming requests and decides which action should handle that.
+First, let's visit the `routes.rb` file stored in the `config` directory. The router distributes the incoming requests and decides which action should handle that.
 
-So let's add a a route to handle get requests to `/articles` URL and write the handler to it. The handler in Hanami, can be literally anything that responds to a `call` method, accepting the rack env as an argument, and returning the serialized rack response, so for a very minimal example, we can even use a raw `proc`.
+So let's add a route to handle get requests to `/articles` URL and write the handler to it. The handler in Hanami can be literally anything that responds to a `call` method, accepting the rack env as an argument, and returning the serialized rack response, so for a very minimal example, we can even use a raw `proc`.
 
 ```ruby
 # /config/routes.rb
@@ -42,11 +42,11 @@ This will render the level one header HTML tag with the _Articles_ string in the
 
 ### Rendering
 
-This is super simple and elastic in use, because as those are the only requirements, we can replace this `proc` with any object that meets the router expectations!
+This is super simple and elastic in use because as those are the only requirements, we can replace this `proc` with any object that meets the router's expectations!
 
 If we'd have to render more complicated templates, however, it'd be nice to have a class that takes care of preparing the `HTML` to keep our routes clean and simple.
 
-This is when #Hanami/Action come in. I can replace the `proc` written directly in the routes by a path pointing into the action I want to call instead.
+This is when #Hanami/Action comes in. I can replace the `proc` written directly in the routes with a path pointing into the action I want to call instead.
 
 ```ruby
 # /config/routes.rb
@@ -61,13 +61,13 @@ Hanami.application.routes do
 end
 ```
 
-By default Hanami assumes that actions for a given slice are placed in the `actions` folder inside this slice, and the rest of the path matches what we've written in the route.
+By default, Hanami assumes that actions for a given slice are placed in the `actions` folder inside this slice, and the rest of the path matches what we've written in the route.
 
 Let me then create a new action named articles, in the blog folder.
 
 Remember: It can be any ruby object, that responds to a `call`, accepting rack `env` as an argument and returning the rack response.
 
-So let's define the call method, and return the standard rack response, but with different string in the `h1` tag, just to be sure it works.
+So let's define the call method, and return the standard rack response, but with a different string in the `h1` tag, just to be sure it works.
 
 ```ruby
 # /slices/main/lib/main/actions/blog/articles.rb
@@ -93,13 +93,13 @@ Now when I'll visit the browser, You should see the updated text. Awesome!
 
 ### Using views and templates
 
-While this works fine, usually we'd like to write our templates in the `html` or `slim` files, or serialize our `JSON` responses using serializers instead of using raw strings everywhere.
+While this works fine, usually we'd like to write our templates in the `html` or `slim` files or serialize our `JSON` responses using serializers instead of using raw strings everywhere.
 
 This is why in #Hanami, except [actions](https://github.com/hanami/controller#actions), we have also [views](https://github.com/hanami/view) and templates.
 
 ![Static Page rendering](/images/episodes/2/request-flow.png)
 
-The whole request flow starts from the router, then it's distributed into a proper action.
+The whole request flow starts from the router, then it's distributed into proper action.
 
 - **Action** parses the request to extract the `params` and `headers`. The action then calls the proper view object with prepared arguments.
 - **The view**, based on the given arguments, prepares data for `template` to render, and then renders the proper `template` with certain local variables exposed.
@@ -123,9 +123,9 @@ module Main
 end
 ```
 
-Please notice that we inherit here for an action specific for the given `slice` - as there may be a situation, where each `slice` will have different authorization strategy, or other request transformations.
+Please notice that we inherit here for action specific for the given `slice` - as there may be a situation, where each `slice` will have a different authorization strategy or other request transformations.
 
-Now let's create a template for the articles listing of our blog. I create the `articles.html.slim`  template file in the templates directory and inside let's list some articles' titles.
+Now let's create a template for the article listing of our blog. I create the `articles.html.slim`  template file in the templates directory and inside let's list some articles' titles.
 
 ```ruby
 # /slices/main/web/templates/blog/articles.html.slim
@@ -159,9 +159,9 @@ module Main
 end
 ```
 
-Within the view lays the logic of preparing the data for a template. My template need `articles` collection that it can iterate by, so let's quickly expose `articles` method, and within generate a simple array of structs to be returned.
+Within the view lays the logic of preparing the data for a template. My template need `articles` collection that it can iterate by, so let's quickly expose `articles` method, and generate a simple array of structs to be returned.
 
-I need the `article` definition yet, and we're ready to go! Quick look at the browser, and Voila! Here are our articles listed!
+I need the `article` definition yet, and we're ready to go! A quick look at the browser, and Voila! Here are our articles listed!
 
 ![Static Page rendering](/images/episodes/2/articles.png)
 
@@ -169,13 +169,13 @@ This is still just a rendering - to style it up you'll need to make use of Hanam
 
 ### Summary
 
-In this episode we've went through the basic rendering flow in Hanami applications, and understood the view-related part of the Hanami Architecture.
+In this episode, we've gone through the basic rendering flow in Hanami applications and understood the view-related part of Hanami Architecture.
 
-It may be a lot comparing to simplified, [MVC](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm) approach, where There are only three parts of the system - **Model, View, and Controller**, but history proved that `MVC` just does not scale well.
+It may be a lot compared to the simplified, [MVC](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm) approach, where there are only three parts of the system - **Model, View, and Controller**, but history proved that `MVC` just does not scale well.
 
-The extended Hanami architecture, where each class has it's dedicated purpose definitely allows to reduce coupling in bigger systems and helps to better manage complexity.
+The extended Hanami architecture, where each class has its dedicated purpose definitely allows to reduce coupling in bigger systems and helps to better manage complexity.
 
 ### Special Thanks
 
 - [Paul Skorupskas](https://unsplash.com/@pawelskor) for a great cover photo
-- [Tim Riley](https://timriley.info/) - for a great help in understanding the Hanami's views architecture.
+- [Tim Riley](https://timriley.info/) - for the great help in understanding Hanami's views architecture.
