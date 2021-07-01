@@ -253,6 +253,28 @@ App.config.url # => #<URI::HTTPS https://subscribe.me>
 
 This makes sure I'll never have an invalid URL in my application. You can also do advanced Type checking, schema definitions, and so on, to be sure your app will never allow invalid configuration to be set.
 
+### The *configure* block
+
+So far, in the examples above, I mostly set the values to our settings using the inline attribute assignment.
+
+However, if your component has a lot of settings, or maybe the name is too long, you can save some of the keystrokes by using the `configure` method. It sends the `config` instance to the block you pass as an argument and then yields whatever is inside.
+
+I find it very useful as it's convenient for me to configure my ruby classes this way. I've shown how it looks at the very beginning of the article, but here is another example, with some comments.
+
+```ruby
+client = Client.configure do |config|
+  config.adapter = :http
+  config.url = 'https://hanamimastery.com'
+end
+
+client.config.adapter # => ":http"
+client.config.repository.type # => :local
+```
+
+As you can see, the `configure` method returns the object it's called upon, so we can assign instances of the classes to variables for later usage and configure in the same operation.
+
+While this is useful, it's only a useful syntax. I am surprised, however, that the official docs don't cover it! **It's an opportunity to write a little contribution**!
+
 ### Using dry-configurable in the gem
 
 Finally, I'll quickly show the complete use case and explain what problem *dry-configurable* actually solves.
