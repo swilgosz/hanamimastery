@@ -44,11 +44,16 @@ export async function getAllFilesFrontMatter(type, content) {
       "utf8"
     );
     const { data, content } = matter(source);
-
+    const mdxSource = await serialize(content, {
+      mdxOptions: {
+        remarkPlugins: [],
+        rehypePlugins: [mdxPrism],
+      },
+    });
     return [
       {
         ...data,
-        content,
+        mdxSource,
         slug: postSlug.replace(".md", ""),
       },
       ...allPosts,
