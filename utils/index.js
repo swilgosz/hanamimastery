@@ -67,7 +67,7 @@ export async function getRssData() {
     managingEditor: "Sebastian Wilgosz",
     webMaster: "Sebastian Wilgosz",
     copyright: `${new Date().getFullYear()} Sebastian Wilgosz`,
-    language: "en",
+    language: "en-us",
     categories: ["Ruby", "Hanami", "Web development"],
     pubDate: new Date().toLocaleString(),
     ttl: "60",
