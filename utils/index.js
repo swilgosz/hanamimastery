@@ -43,17 +43,11 @@ export async function getAllFilesFrontMatter(type, content) {
       path.join(root, "data", type, postSlug),
       "utf8"
     );
-    const { data, content } = matter(source);
-    const mdxSource = await serialize(content, {
-      mdxOptions: {
-        remarkPlugins: [],
-        rehypePlugins: [mdxPrism],
-      },
-    });
+    const { data } = matter(source);
+
     return [
       {
         ...data,
-        mdxSource,
         slug: postSlug.replace(".md", ""),
       },
       ...allPosts,
@@ -114,7 +108,7 @@ export async function getRssData() {
     if (itemA.publishedAt < itemB.publishedAt) return 1;
     return 0;
   });
-  items.map(({ title, excerpt, videoId, author, tags, publishedAt, url, thumbnail, content }) => {
+  items.map(({ title, excerpt, videoId, author, tags, publishedAt, url, thumbnail }) => {
     feed.addItem({
       title,
       description: excerpt,
@@ -126,7 +120,7 @@ export async function getRssData() {
       // TODO: <dc:creator><![CDATA[ swilgosz ]]></dc:creator>
       date: new Date(publishedAt),
       image: `https://hanamimastery.com/${thumbnail.big}`,
-      content,
+      content: excerpt,
       author: [
         {
           name: "Sebastian Wilgosz",
