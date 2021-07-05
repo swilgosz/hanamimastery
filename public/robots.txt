@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://hanamimastery.com
+
+# Sitemaps
+Sitemap: https://hanamimastery.com/sitemap.xml

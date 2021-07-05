@@ -1,4 +1,5 @@
 import fs from "fs";
+import rss from "rss";
 import matter from "gray-matter";
 import path from "path";
 import readingTime from "reading-time";
@@ -50,6 +51,45 @@ export async function getAllFilesFrontMatter(type) {
         slug: postSlug.replace(".md", ""),
       },
       ...allPosts,
-    ].sort(function(a, b) { return b.id - a.id });
+    ].sort(function (a, b) {
+      return b.id - a.id;
+    });
   }, []);
+}
+
+export async function getRssData() {
+  const feed = new rss({
+    title: "Hanami Mastery newest episodes!",
+    description: "The best way to master Hanami ruby framework!",
+    feed_url: "https://hanamimastery.com/rss.xml",
+    site_url: "https://hanamimastery.com",
+    image_url: "https://hanamimastery.com/logo-hm.jpeg",
+    managingEditor: "Sebastian Wilgosz",
+    webMaster: "Sebastian Wilgosz",
+    copyright: "2021 Sebastian Wilgosz",
+    language: "en",
+    categories: ["Ruby", "Hanami", "Web development"],
+    pubDate: new Date().toLocaleString(),
+    ttl: "60",
+  });
+
+  const posts = await getAllFilesFrontMatter("stray");
+  const episodes = await getAllFilesFrontMatter("episodes");
+  const postsWithSlug = posts.map((item) => ({
+    ...item,
+    url: `https://hanamimastery.com/articles/${item.slug}`,
+  }));
+  const episodesWithSlug = episodes.map((item) => ({
+    ...item,
+    url: `https://hanamimastery.com/episodes/${item.slug}`,
+  }));
+  const items = postsWithSlug.concat(episodesWithSlug).sort((itemA, itemB) => {
+    if (itemA.id > itemB.id) return -1;
+    if (itemA.id < itemB.id) return 1;
+    return 0;
+  });
+  items.map(({ author, tags, title, id, url }) => {
+    feed.item({ author, title, categories: tags, guid: id, url });
+  });
+  return feed;
 }
