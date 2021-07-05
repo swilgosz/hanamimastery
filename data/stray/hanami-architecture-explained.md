@@ -4,6 +4,7 @@ author: "swilgosz"
 tags: []
 title: "Hanami architecture explained"
 excerpt: "People ask me about the simple explanation of Hanami architecture. Why is it so complicated? Is it? I'll try to explain it in simple words."
+publishedAt: "2021-06-29"
 thumbnail:
   full: /images/articles/hanami-architecture-explained/cover-full.jpeg
   big: /images/articles/hanami-architecture-explained/cover-big.jpeg

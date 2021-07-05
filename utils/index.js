@@ -66,7 +66,7 @@ export async function getRssData() {
     image_url: "https://hanamimastery.com/logo-hm.jpeg",
     managingEditor: "Sebastian Wilgosz",
     webMaster: "Sebastian Wilgosz",
-    copyright: "2021 Sebastian Wilgosz",
+    copyright: `${new Date().getFullYear()} Sebastian Wilgosz`,
     language: "en",
     categories: ["Ruby", "Hanami", "Web development"],
     pubDate: new Date().toLocaleString(),
@@ -84,12 +84,19 @@ export async function getRssData() {
     url: `https://hanamimastery.com/episodes/${item.slug}`,
   }));
   const items = postsWithSlug.concat(episodesWithSlug).sort((itemA, itemB) => {
-    if (itemA.id > itemB.id) return -1;
-    if (itemA.id < itemB.id) return 1;
+    if (itemA.publishedAt > itemB.publishedAt) return -1;
+    if (itemA.publishedAt < itemB.publishedAt) return 1;
     return 0;
   });
-  items.map(({ author, tags, title, id, url }) => {
-    feed.item({ author, title, categories: tags, guid: id, url });
+  items.map(({ author, excerpt, tags, publishedAt, title, url }) => {
+    feed.item({
+      author,
+      title,
+      description: excerpt,
+      categories: tags,
+      date: publishedAt,
+      url
+    });
   });
   return feed;
 }

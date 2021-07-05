@@ -4,6 +4,7 @@ author: "swilgosz"
 tags: ["fullstack", "views", "router", "actions"]
 title: "#2 Listing articles in Hanami and Dry-View"
 excerpt: "In this episode I explain the Hanami architecture related to views rendering, by using Hanami View, Hanami Actions and templates, to list articles for a blog applicaton."
+publishedAt: "2021-05-15"
 videoId: "79_1lHX_uEA"
 thumbnail:
   full: /images/episodes/2/cover-full.jpeg

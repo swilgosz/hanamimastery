@@ -4,6 +4,7 @@ author: "swilgosz"
 tags: ["open-source"]
 title: "My attempt to change the world of Open-Source financing."
 excerpt: "Open-Source development is hard nowadays. Here I explain how I want to make it easier."
+publishedAt: "2021-06-07"
 thumbnail:
   full: /images/articles/hanamimastery-origins/cover-full.jpeg
   big: /images/articles/hanamimastery-origins/cover-big.jpeg

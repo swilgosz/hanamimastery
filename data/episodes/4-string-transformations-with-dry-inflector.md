@@ -4,6 +4,7 @@ author: "swilgosz"
 tags: ["dry-rb", "backend", "dry-inflector"]
 title: "#4 An easy string manipulations in Ruby with DRY-Inflector"
 excerpt: "Meet Dry::Inflector - a neat way to apply non-standard string transformations."
+publishedAt: "2021-06-14"
 videoId: "iCplLYsvGuI"
 thumbnail:
   full: /images/episodes/4/cover-full.jpeg
