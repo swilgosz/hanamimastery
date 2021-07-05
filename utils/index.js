@@ -64,7 +64,7 @@ export async function getRssData() {
     title: "Hanami Mastery newest episodes!",
     description: "The best way to master Hanami ruby framework!",
     id: "https://hanamimastery.com",
-    link: "https://hanamimastery.com/rss",
+    link: "https://hanamimastery.com/atom",
     language: "en-US", // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
     image: "https://hanamimastery.com/logo-hm.jpeg",
     favicon: "https://hanamimastery.com/favicon.ico",
@@ -75,7 +75,11 @@ export async function getRssData() {
       name: "Sebastian Wilgosz",
       email: "sebastian@hanamimastery.com",
       link: "https://github.com/swilgosz"
-    }
+    },
+    feedLinks: {
+      atom: "https://hanamimastery.com/atom",
+      rss: "https://hanamimastery.com/rss"
+    },
   });
 
   feed.addCategory("Ruby");
@@ -107,11 +111,6 @@ export async function getRssData() {
   });
   items.map(({ title, excerpt, videoId, author, tags, publishedAt, url, thumbnail, content }) => {
     feed.addItem({
-      author: {
-        name: "Sebastian Wilgosz",
-        email: "sebastian@hanamimastery.com",
-        link: "https://github.com/swilgosz"
-      },
       title,
       description: excerpt,
       categories: tags,
@@ -122,7 +121,14 @@ export async function getRssData() {
       // TODO: <dc:creator><![CDATA[ swilgosz ]]></dc:creator>
       date: new Date(publishedAt),
       image: `https://hanamimastery.com/${thumbnail.big}`,
-      content
+      content,
+      author: [
+        {
+          name: "Sebastian Wilgosz",
+          email: "sebastian@hanamimastery.com",
+          link: "https://github.com/swilgosz"
+        }
+      ],
     });
   });
   return feed;
