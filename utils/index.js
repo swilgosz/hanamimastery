@@ -64,7 +64,6 @@ export async function getRssData() {
     feed_url: "https://hanamimastery.com/rss.xml",
     site_url: "https://hanamimastery.com",
     image_url: "https://hanamimastery.com/logo-hm.jpeg",
-    // docs: 'http://hanamimastery.com/rss/docs.html',
     managingEditor: "Sebastian Wilgosz",
     webMaster: "Sebastian Wilgosz",
     copyright: "2021 Sebastian Wilgosz",
@@ -74,11 +73,23 @@ export async function getRssData() {
     ttl: "60",
   });
 
-  feed.item({ title: "hio" });
-  feed.item({ title: "bye" });
-
-  // const posts = await getAllFilesFrontMatter("stray");
-  // const episodes = await getAllFilesFrontMatter("episodes");
-  // console.log(posts, episodes);
+  const posts = await getAllFilesFrontMatter("stray");
+  const episodes = await getAllFilesFrontMatter("episodes");
+  const postsWithSlug = posts.map((item) => ({
+    ...item,
+    url: `https://hanamimastery.com/articles/${item.slug}`,
+  }));
+  const episodesWithSlug = episodes.map((item) => ({
+    ...item,
+    url: `https://hanamimastery.com/episodes/${item.slug}`,
+  }));
+  const items = postsWithSlug.concat(episodesWithSlug).sort((itemA, itemB) => {
+    if (itemA.id > itemB.id) return -1;
+    if (itemA.id < itemB.id) return 1;
+    return 0;
+  });
+  items.map(({ author, tags, title, id, url }) => {
+    feed.item({ author, title, categories: tags, guid: id, url });
+  });
   return feed;
 }
