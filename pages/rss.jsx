@@ -15,7 +15,7 @@ export async function getServerSideProps(context) {
   const { res } = context;
   const rssData = await getRssData();
   res.setHeader("Content-Type", "text/xml");
-  res.write(rssData.rss2());
+  res.write(rssData.xml());
   res.end();
   return { props: {} };
 }
