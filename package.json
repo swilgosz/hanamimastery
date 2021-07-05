@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap --config sitemap-config.js && node rss-gen.js",
+    "postbuild": "next-sitemap --config sitemap-config.js",
     "start": "next start",
     "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx"
   },
