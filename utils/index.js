@@ -69,7 +69,7 @@ export async function getRssData() {
     title: "Hanami Mastery newest episodes!",
     description: "The best way to master Hanami ruby framework!",
     id: "https://hanamimastery.com",
-    link: "https://hanamimastery.com/rss",
+    link: "https://hanamimastery.com",
     language: "en-US", // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
     image: "https://hanamimastery.com/logo-hm.jpeg",
     favicon: "https://hanamimastery.com/favicon.ico",
