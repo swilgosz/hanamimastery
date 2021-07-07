@@ -43,38 +43,59 @@ Never miss a new episode by subscribing to our Newsletter!
 
 ### The Sponsorship History Log
 
-Below I track all the income and my support to the Hanami RB so far.
+Below I track all the income of HanamiMastery and HanamiMastery support for the Hanami RB so far.
+
+**2021-07**
+
+|Source|HanamiMastery income|HanamiRB Support|Note
+|:-|-:|-:|-:|
+|Github Monthly Supporter|$5|$5|Sponsoring @timriley
+|Github Monthly Supporter|$10|$5|Sponsoring @jodosha
+|Seb's personal budget|$0|$4|Sponsoring @solnic
+|Total:|$15|$14
+
+<br />
+<br />
 
 **2021-06**
 
-|Source|HanamiMastery income|HanamiRB Support|
-|:-|-:|-:|
-|Github Monthly Supporter|$10| $1|
-|Seb's personal budget|$0|$4|
+|Source|HanamiMastery income|HanamiRB Support|Note
+|:-|-:|-:|-:|
+|Github Monthly Supporter|$10|$1|Sponsoring @timriley
+|Seb's personal budget|$0|$4|Sponsoring @solnic
+|Total:|$10|$5
 
+<br />
+<br />
 
 **2021-05**
 
-|Source|HanamiMastery income|HanamiRB Support|
-|:-|-:|-:|
-|Github One-time Supporter|$10| $5|
-|Seb's personal budget|$0|$4|
-|Github One-time Supporter|$50| $5|
+|Source|HanamiMastery income|HanamiRB Support|Note
+|:-|-:|-:|-:|
+|Github One-time Supporter|$10|$5|Sponsoring @jodosha
+|Seb's personal budget|$0|$4|Sponsoring @solnic
+|Github One-time Supporter|$50|$5|Sponsoring @timriley
+|Total:|$0|$4
 
 <br />
 <br />
 
 **2021-04**
 
-|Source|HanamiMastery income|HanamiRB Support|
-|:-|-:|-:|
-|Seb's personal budget|$0|$4|
+|Source|HanamiMastery income|HanamiRB Support|Note
+|:-|-:|-:|-:|
+|Seb's personal budget|$0|$4|Sponsoring @solnic
+|Total:|$0|$4
 
 <br />
 <br />
 
 **2021-03**
 
-|Source|HanamiMastery income|HanamiRB Support|
-|:-|-:|-:|
-|Seb's personal budget|$0|$4|
+|Source|HanamiMastery income|HanamiRB Support|Note
+|:-|-:|-:|-:|
+|Seb's personal budget|$0|$4|Sponsoring @solnic
+|Total:|$0|$4
+
+<br />
+<br />
