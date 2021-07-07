@@ -75,7 +75,7 @@ Below I track all the income of HanamiMastery and HanamiMastery support for the 
 |Github One-time Supporter|$10|$5|Sponsoring @jodosha
 |Seb's personal budget|$0|$4|Sponsoring @solnic
 |Github One-time Supporter|$50|$5|Sponsoring @timriley
-|Total:|$0|$4
+|Total:|$60|$14
 
 <br />
 <br />
