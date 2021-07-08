@@ -20,11 +20,11 @@ In this episode, I'll explain this concept with simple words. However,  to keep 
 
 First of all, let's clarify the term *software architecture*. **Martin flower** already wrote [a dozen of posts about it](https://martinfowler.com/architecture/), but in general, the architecture isn't really about **MVC**, **Service objects**, used **ORM** or things like that. **MVC is not architecture** - let's start with that, so we'll be able to more easily go into the core of the question.
 
-> Note: If you looking for a detailed explanation of how repositories, relationships, and models map to Rails Models, or why View in Hanami is a ruby object, then **subscribe to the Newsletter ** as you need to wait for the next episodes.
+> Note: If you're looking for a detailed explanation of how repositories, relationships, and models map to Rails Models, or why View in Hanami is a ruby object, then **subscribe to the Newsletter ** as you need to wait for the next episodes.
 
-I'm pointing at this, because people asking me about *Hanami architecture*, **do not ask about what they want to get an answer for**. They ask me specifically about Hanami's building blocks differ from Rails MVC and why there are so many of them. But, as they use words: "hanami architecture", **let's explain that first.**
+I'm pointing at this, because people asking me about *Hanami architecture*, **do not ask about what they want to get an answer for**. They ask me specifically about "*how Hanami's building blocks differ from Rails MVC*" and why there are so many of them. But, as they use words: "hanami architecture", **let's explain that first.**
 
-Some examples of software architecture:
+#### Some examples of software architecture:
 
 - Monolith
 - Microservice Architecture
@@ -35,9 +35,9 @@ The **application architecture** term refers to a much higher level than the fac
 
 ### Monolith-First approach.
 
-Hanami is a framework, that supports all kinds of architectures, and this is what differs from Rails, however, at the very root it evangelizes the [Monolith-First](https://martinfowler.com/bliki/MonolithFirst.html) - to [quickly build a complete application from scratch](/episodes/1-creating-hanami-application).
+Hanami is a framework, **that supports all kinds of architectures**, and this is what differs from Rails, however, at the very root it evangelizes the [Monolith-First](https://martinfowler.com/bliki/MonolithFirst.html) - to [quickly build a complete application from scratch](/episodes/1-creating-hanami-application).
 
-This is **exactly like rails** does.
+This is **exactly what rails** does.
 
 What differs from Rails, is that Hanami enforces the **separation of concerns**, encouraging developers by default to build applications that scale well, and are **easily transferrable into other architecture types**.
 
@@ -47,9 +47,9 @@ There are several core concepts Hanami introduces, which allow developers to wri
 
 #### 1. Slices
 
-A **slice** in Hanami is a way for you **to add boundaries to certain parts of your application.** You can think of it as a similar concept to Rails::Engine, but it's much more self-contained and independent of the other parts of the system.
+A **slice** in Hanami is a way for you **to add boundaries to certain parts of your application.** You can think of it as a similar concept to `Rails::Engine`, but it's much more self-contained and independent of the other parts of the system.
 
-Think of it as mini-applications, completely independent, but available in the same codebase for simplicity. If you'll ever want to extract this part to a completely separate project, you'll be able more or less just copy the folder out and paste it to the other service repository, while most of the things will be working out of the box.
+Slices are mini-applications, completely independent, but available in the same codebase for simplicity. If you'll ever want to extract this part to a completely separate project, you'll be able more or less just copy the folder out and paste it to the other service repository, while most of the things will be still working out of the box.
 
 #### 2. Separation of concerns
 
@@ -57,6 +57,7 @@ The second big part of the Hanami is the *separation of concerns* - a high-level
 
 Hanami [consists of multiple gems](https://github.com/hanami) and gem families, that build separate components of the framework, but it does not have hard dependencies, meaning, you can replace any of them if you wish with your own version or even a completely custom solution.
 
+This means, you can introduce some of Hanami components in your Rails projects if you wish! The philosophy is similar to what DRY-RB libraries do. **Handle the given task, and don't care about the others.**
 
 ### Application framework
 
@@ -72,9 +73,9 @@ This is the real power of this framework and this is what differs it from rails 
 
 ### Summary
 
-I hope you've enjoyed this article, and if you want to see more content in this fashion, **[Subscribe to HM YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **[follow me on Twitter](twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the [about page](https://hanamimastery.com/about).
+I hope you've enjoyed this article, and if you want to see more content in this fashion, **[Subscribe to HM YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **[follow me on Twitter](twitter.com/hanamimastery)**!  
 
-Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
+Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve,** please mention them in the comments!**
 
 ### Special Thanks!
 
