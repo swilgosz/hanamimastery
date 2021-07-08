@@ -53,9 +53,9 @@ Think of it as mini-applications, completely independent, but available in the s
 
 #### 2. Separation of concerns
 
-The second big part of the Hanami is the [[separation of concerns]] - a high-level concept that the whole framework is built upon.
+The second big part of the Hanami is the *separation of concerns* - a high-level concept that the whole framework is built upon.
 
-Hanami [[consists of multiple gems]] and gem families, that build separate components of the framework, but it does not have hard dependencies, meaning, you can replace any of them if you wish with your own version or even a completely custom solution.
+Hanami [consists of multiple gems](https://github.com/hanami) and gem families, that build separate components of the framework, but it does not have hard dependencies, meaning, you can replace any of them if you wish with your own version or even a completely custom solution.
 
 
 ### Application framework
