@@ -126,11 +126,11 @@ However, when I want to make my projects to communicate with, for example, GitHu
 
 It would be silly to ask them to adjust their API for my needs;)
 
-![How not to communicate](/images/episodes/6/adapters-1.png)
+![How not to communicate](/images/episodes/6/adapters-2.png)
 
 What I should do, is transform the incoming data from one standard to another relatively easily and ideally, do the two-way transformations!
 
-![Why we need adapters](/images/episodes/6/adapters-1.png)
+![Why we need adapters](/images/episodes/6/adapters-3.png)
 
 #### Other useful examples for data transformations in Ruby
 
