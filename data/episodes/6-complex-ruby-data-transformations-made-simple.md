@@ -15,9 +15,11 @@ source: https://github.com/hanamimastery/episodes/tree/main/006
 
 I often work with hashes in plain ruby, especially when I prepare **standalone scripts or gem packages**, and there were plenty of situations where I needed to do some simple, or more complex data transformations to achieve the expected output.
 
-In the [episode #4](/episodes/4-string-transformations-with-dry-inflector) I've described how I easily do fancy manipulations on string objects, but, more complex data sets require more powerful tricks to serve our needs so I've decided to extend this topic.
+In the *episode #4* I've described [how I easily do fancy manipulations on string objects](/episodes/4-string-transformations-with-dry-inflector), but, more complex data sets require more powerful tricks to serve our needs so I've decided to extend this topic.
 
-One example of troublesome hash, is when I get the hash as a method argument, but I don't know if the keys are symbols or strings, then things can get messy.
+### Troubles with data transformations - symbolize keys
+
+One example of troublesome hash, is when I get the hash as a method argument, but **I don't know if the keys are symbols or strings**. Then things can get messy.
 
 ```ruby
 def deserialize(hash)
@@ -28,7 +30,9 @@ deserialize({ 'data' => 'bad luck!' })
 # => nil
 ```
 
-Because the expected key does not exist, I receive `nil` and I can easily end up with the `undefined method` error which may be an embarrassing overlook for me in the eyes of my clients.
+Because the expected key does not exist, I receive `nil` and I can easily end up with the *undefined method* error which may be an embarrassing overlook for me in the eyes of my clients.
+
+#### Custom hash stringifiers
 
 In rails, you can just call `symbolize_keys` or `deep_symbolize_keys` on the given hash and the problem would be solved. This would work on any deep level of my argument.
 
@@ -43,9 +47,9 @@ deserialize({ 'data' => 'good luck!' })
 # => 'good luck'
 ```
 
-But how it would look like outside of the Rails ecosystem? The deep_symbolize_keys method is not defined in plain ruby.
+But how it would look like outside of the Rails ecosystem? The `deep_symbolize_keys` method is not defined in plain ruby.
 
-I'll use the a more funny example as an argument from now on. Here is the simplified solution I used in the past all the time using the `each_with_object` method. 
+Here is the simplified solution I used in the past all the time using the `each_with_object` method. 
 
 ```ruby
 hash = {
@@ -70,7 +74,6 @@ hash.transform_keys(&:to_s)
 ```
 
 While this looks fine, **none of this will take into account nested hashes**. If I'd want to solve THIS problem, things would quickly get messy, and in case of more transformations required on the data set, I would quickly get lost in my own code.
-
 
 ### Nest keys
 
@@ -165,13 +168,13 @@ adapter.call(hash)
 # => { id: name: 'John', address: { city: 'NY', zip: { number: 1234 } } }
 ```
 
-But also, s****ome much more complex scenarios may be done in a simple, easy to read and maintain code.
+But also, **some much more complex scenarios** may be done in a simple, easy to read and maintain code.
 
 ### Summary
 
-`dry-transformer` allows you to write middleware for your APIs with no effort, you can do mappings from hash to objects and other ways around, advanced array modifications, and a whole bunch of other stuff you would ever need.
+`dry-transformer` allows you to** write middleware for your APIs with no effort**, you can do mappings from hash to objects and other ways around, advanced array modifications, and a whole bunch of other stuff you would ever need.
 
-As I often say, the only thing that restricts us is our imagination and `dry-transformer` allows you to transform anything into anything else using a tiny DSL written on top of ruby.
+As I often say, the only thing that restricts us is our imagination and `dry-transformer` **allows you to transform anything into anything else** using a tiny DSL written on top of ruby.
 
 Super useful stuff and I strongly suggest giving it a shot. You may be surprised how easily you can write adapters, serializers, and deserializers from now on.
 
