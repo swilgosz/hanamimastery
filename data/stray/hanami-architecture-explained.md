@@ -6,9 +6,9 @@ title: "Hanami architecture explained"
 excerpt: "People ask me about the simple explanation of Hanami architecture. Why is it so complicated? Is it? I'll try to explain it in simple words."
 publishedAt: "2021-06-29"
 thumbnail:
-  full: /images/articles/hanami-architecture-explained/cover-full.jpeg
-  big: /images/articles/hanami-architecture-explained/cover-big.jpeg
-  small: /images/articles/hanami-architecture-explained/cover-small.jpeg
+  full: https://hanamimastery.com/images/articles/hanami-architecture-explained/cover-full.jpeg
+  big: https://hanamimastery.com/images/articles/hanami-architecture-explained/cover-big.jpeg
+  small: https://hanamimastery.com/images/articles/hanami-architecture-explained/cover-small.jpeg
 source: null
 ---
 

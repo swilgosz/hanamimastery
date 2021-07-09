@@ -7,9 +7,9 @@ excerpt: "Configuring projects and components is one of the most common features
 publishedAt: "2021-06-19"
 videoId: J_352sH25oc
 thumbnail:
-  full: /images/episodes/5/cover-full.jpeg
-  big: /images/episodes/5/cover-big.jpeg
-  small: /images/episodes/5/cover-small.jpeg
+  full: https://hanamimastery.com/images/episodes/5/cover-full.jpeg
+  big: https://hanamimastery.com/images/episodes/5/cover-big.jpeg
+  small: https://hanamimastery.com/images/episodes/5/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/001
 ---
 When you write ruby gems or even reusable components, there is often a need for configuring your projects to behave differently in different contexts.

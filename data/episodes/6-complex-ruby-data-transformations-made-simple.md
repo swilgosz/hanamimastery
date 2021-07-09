@@ -4,12 +4,12 @@ author: "swilgosz"
 tags: ['dry-transformer', 'dry-rb', 'backend']
 title: "#6 Complex Ruby Transformations made simple with Dry::Transformer"
 excerpt: "Have you ever need to stringify keys outside of rails? Whether you want to import or export CSVs or communicate with external services you may need to parse the input to different output. 'dry-transformer' can help you with it."
-
+publishedAt: "2021-07-09"
 videoId: JAJae1S4tDw
 thumbnail:
-  full: /images/episodes/6/cover-full.jpeg
-  big: /images/episodes/6/cover-big.jpeg
-  small: /images/episodes/6/cover-small.jpeg
+  full: https://hanamimastery.com/images/episodes/6/cover-full.jpeg
+  big: https://hanamimastery.com/images/episodes/6/cover-big.jpeg
+  small: https://hanamimastery.com/images/episodes/6/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/006
 ---
 
@@ -49,7 +49,7 @@ deserialize({ 'data' => 'good luck!' })
 
 But how it would look like outside of the Rails ecosystem? The `deep_symbolize_keys` method is not defined in plain ruby.
 
-Here is the simplified solution I used in the past all the time using the `each_with_object` method. 
+Here is the simplified solution I used in the past all the time using the `each_with_object` method.
 
 ```ruby
 hash = {
@@ -120,7 +120,7 @@ This little library allows you to pass any data as an input and do some crazy tr
 
 Well, one example is, that in HanamiMastery I work with [JSON:API standard](https://jsonapi.org/) when it comes to my API communication. It's super nice, REST-ful standard, with a lot of overhead already done by very smart people.
 
-However, when I want to make my projects to communicate with, for example, GitHub, it would not work, as GitHub uses the Rest API standard, which is Rails default. 
+However, when I want to make my projects to communicate with, for example, GitHub, it would not work, as GitHub uses the Rest API standard, which is Rails default.
 
 ![Communication troubles](/images/episodes/6/adapters-1.png)
 
@@ -135,8 +135,8 @@ What I should do, is transform the incoming data from one standard to another re
 #### Other useful examples for data transformations in Ruby
 
 Similar requirements are often needed in case of:
-- CSV exports or imports, 
-- RSS parsing, 
+- CSV exports or imports,
+- RSS parsing,
 - user input
 - code highlighting
 - markdown files
@@ -158,11 +158,11 @@ class HanamiMasteryAdapter < Dry::Transformer::Pipe
   end
 end
 
-hash = { 
+hash = {
   'id' => 1
-  'login' => 'John', 
-  'city' => 'NY', 
-  'zip' => { 'number' => 1234 } 
+  'login' => 'John',
+  'city' => 'NY',
+  'zip' => { 'number' => 1234 }
 }
 adapter.call(hash)
 # => { id: name: 'John', address: { city: 'NY', zip: { number: 1234 } } }
@@ -178,7 +178,7 @@ As I often say, the only thing that restricts us is our imagination and `dry-tra
 
 Super useful stuff and I strongly suggest giving it a shot. You may be surprised how easily you can write adapters, serializers, and deserializers from now on.
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on Twitter](twitter.com/hanamimastery)**! 
+I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on Twitter](twitter.com/hanamimastery)**!
 
 Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
 
