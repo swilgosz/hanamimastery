@@ -320,7 +320,8 @@ I'd like to thank Bohdan V. for supporting this channel, and all other people en
 
 Any support allows me to spend more time on creating this content, promoting great open source projects, so Thank you!.
 
-- [Bohdan V.](https://g3d.dev/) - For joining my [mate supporters tier](https://github.com/sponsors/swilgosz)!
+
+- [Bohdan V.](https://g3d.dev/) - For joining my [Mate supporters tier](https://github.com/sponsors/swilgosz)!
 - [Paul Hanaoka](https://unsplash.com/@plhnk) - For an amazing Cover Photo
 - [Andy Holland](https://github.com/AMHOL) - for coming with *dry-configurable* idea.
 - [Nikita Shilnikov](https://github.com/flash-gordon) - For amazing upgrades.
