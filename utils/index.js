@@ -92,7 +92,7 @@ export async function getRssData() {
   items.map(({ author, excerpt, tags, videoId, publishedAt, title, url, thumbnail }) => {
     const xmlItem = {
       title,
-      image: `https://hanamimastery.com/${thumbnail.big}`,
+      image: thumbnail.big,
       description: excerpt,
       categories: tags,
       date: publishedAt,
