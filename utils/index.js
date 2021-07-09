@@ -100,7 +100,7 @@ export async function getRssData() {
     }
     if (!!videoId) {
       xmlItem.enclosure = {
-        'url'  : `https://youtu.be/${videoId}`,
+        'url'  : `https://www.youtube.com/embed/${videoId}`,
         'type' : 'video'
       }
     }
