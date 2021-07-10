@@ -75,7 +75,7 @@ hash.transform_keys(&:to_s)
 
 While this looks fine, **none of this will take into account nested hashes**. If I'd want to solve THIS problem, things would quickly get messy, and in case of more transformations required on the data set, I would quickly get lost in my own code.
 
->Note: As *thunderbong* [pointed out on Reddit](https://www.reddit.com/r/ruby/comments/ogu1lu/6_complex_ruby_transformations_made_simple_with/), there is a nice way to handle nested key transformations easily using `JSON` library.
+>Note: As [thunderbong](https://www.reddit.com/user/thunderbong/) [pointed out on Reddit](https://www.reddit.com/r/ruby/comments/ogu1lu/6_complex_ruby_transformations_made_simple_with/), there is a nice way to handle nested key transformations easily using `JSON` library.
 
 ```ruby
 require 'json'
