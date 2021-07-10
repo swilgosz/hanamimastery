@@ -209,3 +209,4 @@ As always, check out my other episodes and let me know what you think! Thank you
 
 -[Benjamin Klotz](https://github.com/tak1n) For joining my [High Five! supporters tier](https://github.com/sponsors/swilgosz)!
 - [Arseny Togulev](https://unsplash.com/@tetrakiss)- for a great cover image
+- [Mateusz Jarosz](https://twitter.com/jaroszm91) - for an inspiration for this article
