@@ -75,6 +75,23 @@ hash.transform_keys(&:to_s)
 
 While this looks fine, **none of this will take into account nested hashes**. If I'd want to solve THIS problem, things would quickly get messy, and in case of more transformations required on the data set, I would quickly get lost in my own code.
 
+>Note: As *thunderbong* [pointed out on Reddit](https://www.reddit.com/r/ruby/comments/ogu1lu/6_complex_ruby_transformations_made_simple_with/), there is a nice way to handle nested key transformations easily using `JSON` library.
+
+```ruby
+require 'json'
+
+hash = {
+  'name' =>
+  'Mr. Smith',
+  'address' => { 'city' => 'Sim City', 'zip' => 123456 }
+}
+
+JSON.parse(JSON[hash], symbolize_names: true)
+# => { :name=>"Mr. Smith", :address => { :city => "Sim City", :zip => 123456 } }
+```
+
+Just it's not trivial to remember about all the edge cases of the data transformations..
+
 ### Nest keys
 
 The other very simple example would be to** nest a set of keys** under a chosen parent.  If I store the address information as a `jsonb` in my database, I'd be forced to group the address-related keys and store them together under the `address` column.
