@@ -7,9 +7,9 @@ excerpt: "Have you ever need to stringify keys outside of rails? Whether you wan
 publishedAt: "2021-07-09"
 videoId: JAJae1S4tDw
 thumbnail:
-  full: https://hanamimastery.com/images/episodes/6/cover-full.jpeg
-  big: https://hanamimastery.com/images/episodes/6/cover-big.jpeg
-  small: https://hanamimastery.com/images/episodes/6/cover-small.jpeg
+  full: /images/episodes/6/cover-full.jpeg
+  big: /images/episodes/6/cover-big.jpeg
+  small: /images/episodes/6/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/006
 ---
 

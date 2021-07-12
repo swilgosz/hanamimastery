@@ -7,9 +7,9 @@ excerpt: "Meet Dry::Inflector - a neat way to apply non-standard string transfor
 publishedAt: "2021-06-14"
 videoId: "iCplLYsvGuI"
 thumbnail:
-  full: https://hanamimastery.com/images/episodes/4/cover-full.jpeg
-  big: https://hanamimastery.com/images/episodes/4/cover-big.jpeg
-  small: https://hanamimastery.com/images/episodes/4/cover-small.jpeg
+  full: /images/episodes/4/cover-full.jpeg
+  big: /images/episodes/4/cover-big.jpeg
+  small: /images/episodes/4/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/004
 ---
 

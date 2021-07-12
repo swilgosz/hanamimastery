@@ -7,9 +7,9 @@ excerpt: "How to create a brand new Hanami app lighting fast by using the Hanami
 publishedAt: "2021-05-10"
 videoId: "Gx4eqU-oDL8"
 thumbnail:
-  full: https://hanamimastery.com/images/episodes/1/cover-full.jpeg
-  big: https://hanamimastery.com/images/episodes/1/cover-big.jpeg
-  small: https://hanamimastery.com/images/episodes/1/cover-small.jpeg
+  full: /images/episodes/1/cover-full.jpeg
+  big: /images/episodes/1/cover-big.jpeg
+  small: /images/episodes/1/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/001
 ---
 

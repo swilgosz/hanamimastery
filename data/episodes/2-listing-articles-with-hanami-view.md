@@ -7,9 +7,9 @@ excerpt: "In this episode I explain the Hanami architecture related to views ren
 publishedAt: "2021-05-15"
 videoId: "79_1lHX_uEA"
 thumbnail:
-  full: https://hanamimastery.com/images/episodes/2/cover-full.jpeg
-  big: https://hanamimastery.com/images/episodes/2/cover-big.jpeg
-  small: https://hanamimastery.com/images/episodes/2/cover-small.jpeg
+  full: /images/episodes/2/cover-full.jpeg
+  big: /images/episodes/2/cover-big.jpeg
+  small: /images/episodes/2/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/002
 ---
 

@@ -7,9 +7,9 @@ excerpt: "In this episode I make use of Bulma CSS framework and integrate it wit
 publishedAt: "2021-05-30"
 videoId: "tnOaUNfdgfo"
 thumbnail:
-  full: https://hanamimastery.com/images/episodes/3/cover-full.jpeg
-  big: https://hanamimastery.com/images/episodes/3/cover-big.jpeg
-  small: https://hanamimastery.com/images/episodes/3/cover-small.jpeg
+  full: /images/episodes/3/cover-full.jpeg
+  big: /images/episodes/3/cover-big.jpeg
+  small: /images/episodes/3/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/003
 ---
 

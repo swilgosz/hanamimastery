@@ -92,7 +92,7 @@ export async function getRssData() {
   items.map(({ author, excerpt, tags, videoId, publishedAt, title, url, thumbnail }) => {
     const xmlItem = {
       title,
-      image: thumbnail.big,
+      image: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
       description: excerpt,
       categories: tags,
       date: publishedAt,
