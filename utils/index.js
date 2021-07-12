@@ -51,8 +51,10 @@ export async function getAllFilesFrontMatter(type) {
         slug: postSlug.replace(".md", ""),
       },
       ...allPosts,
-    ].sort(function (a, b) {
-      return b.id - a.id;
+    ].sort((itemA, itemB) => {
+      if (itemA.publishedAt > itemB.publishedAt) return -1;
+      if (itemA.publishedAt < itemB.publishedAt) return 1;
+      return 0;
     });
   }, []);
 }
