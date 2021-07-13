@@ -27,19 +27,19 @@ Most bloggers don't tell that their articles went viral because someone **was ki
 
 Without that, there is a distorted image of success on the Internet, showing that all the **success of a brand, person, or company** is a result of the hard work a true leader behind it had put.
 
-**And I think that's bullshit**. 
+**And I think that's bullshit**.
 
 [Every success has a factor of luck behind it](https://youtu.be/3LopI4YeC4I), and also, **an uncountable amount of people provoking that success**. This is my case at least, and I want to be fair saying it loudly.
 
 Is it popular thinking? I don't think so, because **I bet it doesn't sell well**. But I don't care at the moment. If I can't be transparent and honest with what I do, I probably won't do it.
 
-**This is also extremely visible in Open-Source world**. 
+**This is also extremely visible in Open-Source world**.
 
 Companies can build amazing things, earn tons of money, but they rarely spend a coin to appreciate all the open-source software they use every day. They spend thousands of dollars on expensive courses for their staff but **rarely spend a minute to appreciate the public tutorials and guides** their developers use to educate themselves.
 
 I disagree, I rebel, and I will stand against that.
 
-#### I'm not building my business on my own. 
+#### I'm not building my business on my own.
 
 As I've mentioned the Youtube productivity gurus, here is my case.** I DON'T build my projects on my own.**
 
@@ -48,12 +48,12 @@ I want to make a difference in the world, but I'm building [Hanami Mastery](http
 - Without **[sponsorship](https://github.com/sponsors/swilgosz)**, it wouldn't be possible to dedicate time to create great content. With greater sponsorship, I can create greater content and do it more often.
 - Without **Hanami and all libraries around**, there wouldn't be anything to write about!
 - Without **great photos done by amazing photographers**, I'd not get interesting cover images and thumbnails for my episodes.
- 
-All that I just take, without asking for permission, just because it's legal to do so. **But is it fair**? 
+
+All that I just take, without asking for permission, just because it's legal to do so. **But is it fair**?
 
 **The very least I can do is to say "thank you" from time to time**.
 
-#### Frelances and coding help
+#### Freelancers and coding help
 
 I heavily make use of great developers willing to help me with the issues or features I have trouble with. **I do delegate the advanced react stuff** wherever I don't know how to do something or have no time to do it.
 
@@ -82,9 +82,9 @@ SO I'll continue giving appreciation for all the people I can that help me, for 
 1. **I want more people to appreciate others' impact on their success** - and If I'll do it, it's +1 person, and if I'll inspire anybody, it's +X.
 2. I believe, that **when I'll say thanks to others in various ways, I'll get a thank you from others I help to** or inspire about something
 
->Note: 
+>Note:
 >This is how it should work.
->Does it work this way? 
+>Does it work this way?
 >No idea. **I'm writing it in the middle of 2021**, in 5 years I'll come back and give an update.
 
 I'm just happy when I hear from time to time: "Hey Seb, I really like what you do! Keep going!". So I'm trying to do the same for others.
@@ -115,13 +115,13 @@ However, sometimes it's hard, especially when it comes to talking to companies. 
 
 Or maybe I'm just wrong and did not meet enough companies in my life? Time will tell, and I'll adjust these thoughts.
 
-Whatever path I'll choose, growing the company or not, I certainly want to reach more audiences, help more people, educate more people, and so on. Therefore, at some point **I'll not be able to give enough appreciation for small bits of help anymore.** :(. 
+Whatever path I'll choose, growing the company or not, I certainly want to reach more audiences, help more people, educate more people, and so on. Therefore, at some point **I'll not be able to give enough appreciation for small bits of help anymore.** :(.
 
-Projects grow, communities grow, and we always have only 24 hours in a day. Yeah, that sucks. 
+Projects grow, communities grow, and we always have only 24 hours in a day. Yeah, that sucks.
 
 > Note: **So if you are a company** and you care about being appreciated, It's worth helping me when I'm in the early stage. You'll probably get a permanent link at a less cost for your budget.
 
-Sometimes, However,  **I'll get valuable help and I'll not be able to even say "thank you"** due to holidays, illness, or just forgetting. 
+Sometimes, However,  **I'll get valuable help and I'll not be able to even say "thank you"** due to holidays, illness, or just forgetting.
 
 Sorry, happens, I'm just a human.
 
@@ -141,7 +141,7 @@ So don't go that way. Let's keep things simple.
 
 I DO appreciate if you help me, helped me, or will help me. **[Willingly or not](https://twitter.com/sebwilgosz/status/1401986813070299138)**. You may be an inspiration to me. You may produce something I've taken for my needs (like cover photos). Or I could learn from you. Whatever.
 
-In the recent Cruella movie Baroness (Emma Thompson), said: "Don't say Thank you! It's losers speech" but I disagree. I'm not a Baroness, but I don't care. 
+In the recent Cruella movie Baroness (Emma Thompson), said: "Don't say Thank you! It's losers speech" but I disagree. I'm not a Baroness, but I don't care.
 
 I'll try to say "thanks" all the time as much as I'll be able to as this is who I am.
 
@@ -155,6 +155,6 @@ I hope you've enjoyed this article, and if you want to see more content in this 
 
 As always I want to say a special thanks to my [Github sponsors](https://github.com/sponsors/swilgosz)! Any support allows me to spend more time on creating this content, promoting great open source projects.
 
-And 
+And
 
 - [Tim Mossholder](https://unsplash.com/@timmossholder)- for a great cover image
