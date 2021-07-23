@@ -2,7 +2,7 @@
 id: 1
 author: "swilgosz"
 tags: []
-title: "#7 Untangle your code with Dry::Monads!"
+title: "#7 Untangle your code with MORE than service objects! Meet Dry::Monads!"
 excerpt: "Everyone knows how messy Rails controllers can be come. In this episode, I'm implementing the service-pattern on steroids using dry-monads in my sample Rails application."
 videoId: FnXezvNDnIg
 publishedAt: "2021-07-09"
@@ -112,7 +112,7 @@ Imagine big [CanCanCan](https://github.com/CanCanCommunity/cancancan) Ability cl
 
 **Conditional validations**
 
-Then we have the validation check, rendering validation errors in case of failure. Here is another common problem hidden. **The user may be valid for creation**, but to update the user, **you could need different validation rules**. 
+Then we have the validation check, rendering validation errors in case of failure. Here is another common problem hidden. **The user may be valid for creation**, but to update the user, **you could need different validation rules**.
 
 In this case, you'll end up with conditional validations which are very hard to be tracked.
 
@@ -141,7 +141,7 @@ These kinds of checks are something I often see in rails controllers or models, 
 
 Each of these steps **can potentially be a bit complicated**, like validating the request parameters, or checking if the business rules allow for given action to be performed in the current application state.
 
-**It makes TOTAL SENSE then to not keep it all in the controllers, right**? 
+**It makes TOTAL SENSE then to not keep it all in the controllers, right**?
 
 However, i**n most Rails applications all those steps tend to be squeezed between the Model and Controller** without too much thought behind processing the business processes.
 
