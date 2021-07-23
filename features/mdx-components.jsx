@@ -12,6 +12,7 @@ import NextLink from "next/link";
 import CourseAd from "./course-ad";
 import EmailSubscriptionForm from "./email-subscription-form/index";
 import YoutubeEmbed from "./youtube-embed";
+import GHSponsor from "./gh-sponsor";
 
 const CustomChip = withTheme(
   withStyles((theme) => ({
@@ -153,7 +154,8 @@ const MDXComponents = {
   Om,
   Grid,
   Typography,
-  YoutubeEmbed
+  YoutubeEmbed,
+  GHSponsor,
 };
 
 export default MDXComponents;

@@ -143,7 +143,7 @@ Each of these steps **can potentially be a bit complicated**, like validating th
 
 **It makes TOTAL SENSE then to not keep it all in the controllers, right**?
 
-However, i**n most Rails applications all those steps tend to be squeezed between the Model and Controller** without too much thought behind processing the business processes.
+However, i**n most Rails applications all those steps tend to be squeezed between the Model and Controller** without too much thought behind managing  business processes.
 
 If you'll add 10 additional actions to the single user model, you'll easily end up with a big mess.
 
@@ -169,7 +169,9 @@ With this gem, I'll be able to ensure, that All my objects always return the sam
 
 Finally, [Dry::Validation](https://dry-rb.org/gems/dry-validation/) is the best validation engine I know. I use it in all my projects for years already, to extract my validation rules out of Active Record objects.
 
-While I'll go through the implementation pretty fast in this episode if you're interested in deeper dive into any of those gems, let me know using #suggestion - and you can consider sponsoring me on Github to get a bigger impact on future episodes content.
+While I'll go through the implementation pretty fast in this episode if you're interested in deeper dive into any of those gems, let me know using #suggestion - and you can [consider sponsoring me on Github](https://github.com/sponsors/swilgosz) to get a bigger impact on future episodes content.
+
+<GHSponsor />
 
 ### Action object
 
@@ -570,7 +572,7 @@ There are of course pros and cons of this approach.
 
 **Is this code easier to read?** I would say so, but it requires more jumping between files.
 
-- It's way easier to test, so you can practice complete Test-Driven development without an effort.
+- It's way easier to test, so you can [practice complete Test-Driven development](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/) without an effort.
 - It's more scalable
 - less error-prone.
 
