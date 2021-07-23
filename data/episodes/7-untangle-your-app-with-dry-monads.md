@@ -1,11 +1,11 @@
 ---
-id: 1
+id: 7
 author: "swilgosz"
-tags: []
+tags: ['backend', 'rails', 'dry-rb', 'dry-monads', 'dry-validation', 'dry-matcher']
 title: "#7 Untangle your code with MORE than service objects! Meet Dry::Monads!"
 excerpt: "Everyone knows how messy Rails controllers can be come. In this episode, I'm implementing the service-pattern on steroids using dry-monads in my sample Rails application."
 videoId: FnXezvNDnIg
-publishedAt: "2021-07-09"
+publishedAt: "2021-07-23"
 thumbnail:
   full: /images/episodes/7/cover-full.jpeg
   big: /images/episodes/7/cover-big.jpeg
@@ -577,7 +577,7 @@ The refactoring completed!
 
 There are of course pros and cons of this approach.
 
-**Is this code easier to read?** I would say so, but it requires more jumping between files. 
+**Is this code easier to read?** I would say so, but it requires more jumping between files.
 
 - It's way easier to test, so you can practice complete Test-Driven development without an effort.
 - It's more scalable
