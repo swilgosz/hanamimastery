@@ -594,6 +594,11 @@ If you consider trying Hanami after years of working with Rails, you'll meet mor
 
 Instead of naming everything `service`, I name objects based on what they actually are, and this reduced the amount of code that needed to be refactored when I needed to change frameworks, or more often when I need to update the Rails or Hanami in our projects.
 
+Here are some ideas for naming ruby objects in web applications.
+
+![Different abstraction names examples](/images/episodes/7/different-abstractions.png)
+
+
 ### Special thanks
 
 I hope you've enjoyed this episode and as always I'd like to say thanks to my Github sponsors, I appreciate the support as it allows me to create better content and it speeds up the development of the Hanami web framework.
