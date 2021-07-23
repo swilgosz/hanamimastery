@@ -17,31 +17,31 @@ Recently I've written an article, where I've told about the decision process beh
 
 > Please keep in mind that this statement was made before even Hanami 2-alpha versions had been officially released.
 
-I'll post this article in the description of the video so it'll be the first thing you'll see when you open it up.
-
-The important part was, that rewriting my [Hanami application](/episodes/1-creating-hanami-application) to Rails took me less than a day - and I was able to do so, because of how I and my team tend to structure code in our web applications for the recent years.
+The important part was, that **rewriting my [Hanami application](/episodes/1-creating-hanami-application) to Rails took me less than a day** - and I was able to do so, because of how I and my team tend to structure code in our web applications for the recent years.
 
 Then I've gone through this [great article about using Service Objects](https://www.honeybadger.io/blog/refactor-ruby-rails-service-object/) in Rails applications and It plucked my heartstring. At first, I thought: Another article about Service objects, **which I personally HATE**.
 
-But almost instantly, a second thought came to my mind, revealing, that I am actually a super fan of service objects. I just only don't name them this way, I use more abstractions and extract dependencies out for better clarity.
+But almost instantly, a second thought came to my mind, revealing, that **I am actually a super fan of service objects**. I just only don't name them this way, I use more abstractions and extract dependencies out for better clarity.
 
 So in this episode, I'll show you **my version of service objects** that allowed me to replace one ruby web framework with another in a complete service in less than a day.
 
 > **A little disclaimer here**. This was a very small API-only service.
 
-In the next couple of minutes, I'll go through refactoring the onboarding endpoint to the structure we use in our microservices. Maybe it'll inspire you to improve your codebases and If it will, please send me your ideas so I can learn from!
+In the next couple of minutes, I'll go through refactoring the onboarding endpoint to the structure we use in our microservices. Maybe it'll inspire you to improve your codebases **and If it will, please send me your ideas so I can learn from!**
 
 Enjoy!
 
-## Why do we need service objects?
+### Why do we need service objects?
 
-I have here a [simple Rails API application](https://github.com/hanamimastery/episodes/tree/main/007), with a single endpoint, that allows me to register only a single user. I did simplify it for this video but wanted to implement a few hidden functionalities, so it is enough to visualize the benefits of the refactoring.
+I have here a [simple Rails API application](https://github.com/hanamimastery/episodes/tree/main/007), with a single endpoint, that **allows me to register only a single user**. I did simplify it for this video but wanted to implement a few hidden functionalities, so it is enough to visualize the benefits of the refactoring.
 
 ![List of onboarding error responses](/images/episodes/7/list-of-errorrs-for-onboarding.png)
 
-Just please keep in mind, that the more complex the problem your application solves is, and the bigger your project grows, this technique will give you more and more benefits.
+> Just please keep in mind, that the more complex the problem your application solves is, and the bigger your project grows, this technique will give you more and more benefits.
 
-I've tested it in small microservices but also in big monolithic applications with hundreds of endpoints available.
+I've tested it in small microservices **but also in big monolithic applications** with hundreds of endpoints available.
+
+#### Rails controllers do too much
 
 So I have this single endpoint that creates a user and you may think it's the only thing it does **but is it really**?
 
@@ -90,57 +90,82 @@ module Onboarding
 end
 ```
 
-At the very top, you have the authorization check, which I've just implemented as a placeholder for this showcase, checking if the authorization header is present.
-
-I've written a complete tests coverage for this project to refactor safely, and it had been caught by one test example.
+At the very top**, you have the authorization check**, which I've just implemented as a placeholder for this showcase, checking if the authorization header is present. I've written a complete tests coverage for this project to refactor safely, and it had been caught by one test example.
 
 Then when there are specific errors risen, I'm rescuing from them calling proper error rendering methods.
 
-Still, this single controller action does several things and there are some issues hard to be seen and tough to debug.
+Still, **this single controller action does several things** and there are some issues hard to be seen and tough to debug.
 
 And this is a super simple one.
 
-My experience from big rails projects shows that one can never underestimate, how big rails controllers may become.
+My experience from big rails projects shows that **one can never underestimate, how big rails controllers may become.**
+
+#### Hidden issues in standard Rails applications
 
 Let me go through some of the issues hidden here.
 
-You can see, that it first authorizes the request. It's not ideal, because it happens before params deserialization. This usually means, fetching objects from the database, like the OAuth application, or current user, which may result in unnecessary DB queries.
+**Unnecessary DB requests**
 
-Then we have the validation check, rendering validation errors in case of failure. Here is another common problem hidden. The user may be valid for creation, but to update the user, you could need different validation rules. In this case, you'll end up with conditional validations which are very hard to be tracked.
+You can see, that it first authorizes the request. It's not ideal, because it **happens before params deserialization**. This usually means, fetching objects from the database, like the OAuth application, or current user, which may result in unnecessary DB queries.
 
-Also when your application supports multiple API versions, it may be possible, that in the older API version your user was valid, but then you had added more validation rules to the user and the new API is not backward compatible.
+Imagine big [CanCanCan](https://github.com/CanCanCommunity/cancancan) Ability class, and You'll immediately get an idea what I'm talking about.
+
+**Conditional validations**
+
+Then we have the validation check, rendering validation errors in case of failure. Here is another common problem hidden. **The user may be valid for creation**, but to update the user, **you could need different validation rules**. 
+
+In this case, you'll end up with conditional validations which are very hard to be tracked.
+
+**API versioning and backward compatibility**
+
+Also when your application supports multiple API versions, it may be possible, that in the older API version your user was valid, **but then you had added more validation rules to the use**r and the new API is not backward compatible.
 
 API versioning, when we have validations stored in global Active Record models, is very hard to maintain, and this is the main reason I'm avoiding storing validation logic inside of the models.
 
+**Business logic in the controller**
+
 Then, finally, we have a business validation rule that prevents our action to succeed. It's not about validating the input.
 
-The request body is completely valid and the client has an access to perform the request, but at the current state of the application, this action is not allowed due to the business condition.
+The **request body is completely valid** and the **client has an access to perform the request**, but at the current state of the application, this action is not allowed due to the business condition.
 
 These kinds of checks are something I often see in rails controllers or models, but I love the approach coming from Domain Driven Development, where the Business logic is aggregated in a completely separated object.
 
+**So our controller**
+
+1. Deserializes the input
+2. Authorizes the request
+3. Validates the params
+4. Checks business conditions
+5. Performs the action (updates the application state)
+6. Serializes the response
+
 Each of these steps **can potentially be a bit complicated**, like validating the request parameters, or checking if the business rules allow for given action to be performed in the current application state.
 
-**It makes TOTAL SENSE then to not keep it all in the controllers, right**? However, in most Rails applications all those steps tend to be squeezed between the Model and Controller without too much thought behind processing the business processes.
+**It makes TOTAL SENSE then to not keep it all in the controllers, right**? 
+
+However, i**n most Rails applications all those steps tend to be squeezed between the Model and Controller** without too much thought behind processing the business processes.
 
 If you'll add 10 additional actions to the single user model, you'll easily end up with a big mess.
 
 So, writing service objects for each and every action in your controller is pretty useful.
 
+### Refactoring the controller action
+
 Now let me refactor this code to make it more straightforward, more scalable, and more reliable.
 
 I'll use tree gems to do that.
 
-### Dry-Monads
+#### 1. Dry-Monads
 
 To easily create objects which list several steps to perform, and better handle errors, I'll use [Dry-Monads](https://dry-rb.org/gems/dry-monads/).
 
 With this gem, I'll be able to ensure, that All my objects always return the same type of objects, either Success or Failure, which can be easily caught, compared, and processed later.
 
-### Dry-Matcher
+#### 2. Dry-Matcher
 
 [Dry-Matcher](https://dry-rb.org/gems/dry-matcher/) is a pattern matching for Ruby that puts error handling to the next level. It has built-in integration with `dry-monads`, so It's a natural candidate to be used as a comparison engine for different failure objects.
 
-### Dry-Validation
+#### 3. Dry-Validation
 
 Finally, [Dry::Validation](https://dry-rb.org/gems/dry-validation/) is the best validation engine I know. I use it in all my projects for years already, to extract my validation rules out of Active Record objects.
 
@@ -170,7 +195,7 @@ module Onboarding
         include Dry::Matcher.for(:call, with: Dry::Matcher::ResultMatcher)
 
         def call(request)
-          # Steps to be listed here 
+          # Steps to be listed here
           Success(status: :created)
         end
       end
@@ -478,7 +503,7 @@ end
 
 With this, our endpoint is pretty much done.
 
-### Call_action
+### The *call_action* method
 
 Finally, let's go back to our controller and clean it up.
 
