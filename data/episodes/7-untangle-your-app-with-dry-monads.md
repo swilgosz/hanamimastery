@@ -576,19 +576,22 @@ The refactoring completed!
 ### Summary
 
 There are of course pros and cons of this approach.
-Is this code easier to read? I would say so, but it requires more jumping between files. It's way easier to test, so you can practice complete Test-Driven development without an effort.
 
-It's more scalable and less error-prone.
+**Is this code easier to read?** I would say so, but it requires more jumping between files. 
 
-It allows me to update rails projects easily, or even replace one web framework with another in no time.
+- It's way easier to test, so you can practice complete Test-Driven development without an effort.
+- It's more scalable
+- less error-prone.
 
-However, the drawback is that more actual code needs to be written.
+It allows me to update rails projects easily, or **even replace one web framework with another in no time**.
 
-I've designed this years ago for our Rails applications, and I was AMAZED, when I've discovered, that Hanami actually evangelizes a very similar programming style and conventions.
+However, **the drawback is that more actual code needs to be written**.
+
+I've designed this years ago for our Rails applications, and I was AMAZED, when I've discovered, that [Hanami actually evangelizes a very similar programming style and conventions](https://github.com/hanami/controller).
 
 If you consider trying Hanami after years of working with Rails, you'll meet more such programming styles, where dependencies are injected from outside, and the single responsibility is encouraged for your objects.
 
-#### To summarize
+**To summarize**
 
 **don't be afraid of putting more abstractions to your systems**. If service objects are supposed to only handle business processes, maybe calling them directly from the controller is not the best approach.
 
