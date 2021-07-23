@@ -177,6 +177,8 @@ Going back to the refactoring. First of all, I'll not start from the ServiceObje
 
 A service is an object that performs a single Business Process, so it should not be concerned about any of this authorization or validation stuff. It makes sense then to not call it directly from the controller.
 
+![Service Object responsibility](/images/episodes/7/service-object-responsibility.png)
+
 This is why when I implement my Rails endpoints, I'm always starting from creating the endpoint action object, where I list all the steps that are required to perform the single action.
 
 It accepts a rack request and returns the serializable response. Writing your controller actions in the way they're Rack-Compatible is the first step to create truly framework-agnostic web applications.
