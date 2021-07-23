@@ -183,11 +183,11 @@ This is why when I implement my Rails endpoints, I'm always starting from creati
 
 It accepts a rack request and returns the serializable response. Writing your controller actions in the way they're Rack-Compatible is the first step to create truly framework-agnostic web applications.
 
-require 'dry/monads'
-require 'dry/matcher/result_matcher'
-
 ```ruby
 # /lib/onboarding/endpoints/create_user/action.rb
+
+require 'dry/monads'
+require 'dry/matcher/result_matcher'
 
 module Onboarding
   module Endpoints
@@ -390,16 +390,7 @@ module Onboarding
   module Endpoints
     module CreateUser
       class Validator < Dry::Validation::Contract
-        option :repository
-
-        params do
-          required(:name).filled(:string)
-          required(:email).filled(:string)
-        end
-
-        rule(:email) do
-          key.failure('must be unique') if repository.exists?(email: value)
-        end
+        # rules go here
       end
     end
   end
@@ -561,7 +552,7 @@ class ApplicationController < ActionController::API
   end
 end
 
-````
+```
 
 in case it's a deserialization issue, it returns the bad request HTTP status, and respectively for authorization failure, the forbidden error is returned.
 
@@ -606,7 +597,7 @@ Here are some ideas for naming ruby objects in web applications.
 
 I hope you've enjoyed this episode and as always I'd like to say thanks to my Github sponsors, I appreciate the support as it allows me to create better content and it speeds up the development of the Hanami web framework.
 
-If you enjoyed this episode and **want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
+If you enjoyed this episode and **want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me** [on twitter](https://twitter.com/hanamimastery)!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
 
 Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
 
