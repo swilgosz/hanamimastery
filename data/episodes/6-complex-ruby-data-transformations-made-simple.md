@@ -13,7 +13,7 @@ thumbnail:
 source: https://github.com/hanamimastery/episodes/tree/main/006
 ---
 
-I often work with hashes in plain ruby, especially when I prepare **standalone scripts or gem packages**, and there were plenty of situations where I needed to do some simple, or more complex data transformations to achieve the expected output.
+I often work with hashes in plain ruby, especially when I prepare **standalone scripts or gem packages**, or [I need to deserialize the parameters comming to the server](/episodes/7-untangle-your-app-with-dry-monads), and there were plenty of situations where I needed to do some simple, or more complex data transformations to achieve the expected output.
 
 In the *episode #4* I've described [how I easily do fancy manipulations on string objects](/episodes/4-string-transformations-with-dry-inflector), but, more complex data sets require more powerful tricks to serve our needs so I've decided to extend this topic.
 
