@@ -49,7 +49,7 @@ Based on the dependency graph, and links between multiple libraries, you can ide
 
 #### 1. Application-level gems
 
-`dry-rails` depends on `dry-validation`, `dry-system`, and `dry-schema`. 
+`dry-rails` depends on `dry-validation`, `dry-system`, and `dry-schema`.
 
 As `dry-rails` is a pure integration with Rails applications, you can safely assume, that if the core team had put an effort to integrate those three gems with rails apps, those are the entry points to the wide range of application-level use cases.
 
@@ -74,12 +74,15 @@ While this graph is useful as a starting point, **you cannot figure out everythi
 
 Also, an amazing micro-library used for string transformations, [dry-inflector](/episodes/4-string-transformations-with-dry-inflector), have no dependencies, but **it's hard to figure out that it's a completely standalone gem**, easy to be used everywhere.
 
-To know such things, you will need to go through the [DRY-RB](https://dry-rb.org) documentation or **subscribe to our newsletter** and **follow me** [on twitter](https://twitter.com/hanamimastery)**! 
+To know such things, you will need to go through the [DRY-RB](https://dry-rb.org) documentation or **subscribe to our newsletter** and **follow me** [on twitter](https://twitter.com/hanamimastery)**!
 
 I'll soon publish more episodes and tricks related to DRY-RB family.
 
+<br />
+
 <EmailSubscriptionForm />
 
+<br />
 Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention it in the comments!
 
 ### Special Thanks!
