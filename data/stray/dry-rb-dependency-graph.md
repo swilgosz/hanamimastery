@@ -13,15 +13,21 @@ source: https://github.com/hanamimastery/episodes/tree/main/001
 category: stray
 ---
 
-When I've been starting with DRY-RB family, I've been wondering, **what the hell should I start learning first**. Which gems are the best to learn at the beginning, and **which one I should skip**?
+When I've been starting to learn [DRY-RB gems ecosystem](https://dry-rb.org/gems), I've been wondering, **what the hell should I start learning first**. Which gems are the best to learn at the beginning, and **which one I should skip**?
 
-Recently, when I've been browsing through the DRY-RB discourse forum, I went through a post from Jed Schneider, [suggesting a visualization of dependencies](https://discourse.dry-rb.org/t/documentation-help-wanted/1212/13) for a DRY-RB family. I think It's a great idea, so here it is!
+I hope in this article I'll be able to put some light on the topic.
+
+Recently, when I've been browsing through the DRY-RB discourse forum, I went through a post from Jed Schneider, [suggesting a visualization of dependencies](https://discourse.dry-rb.org/t/documentation-help-wanted/1212/13) for a DRY-RB family. 
+
+I quickly figured out that such diagram may tremendously simplify the decision making when a new developer wants to start learning DRY-RB gems.
+
+I think It's a great idea, so here it is!
 
 ### Full DRY-RB dependency char
 
-This network diagram shows connections between all the official [gems from DRY-RB organization](https://dry-rb.org/gems).
+This network diagram shows connections between all the official [gems from DRY-RB organization](https://dry-rb.org/gems) and external libraries.
 
-The darker nodes are representing **external dependencies**.
+The darker nodes represent **external dependencies**.
 
 ![DRY-RB full dependency graph with external deps](/images/articles/dry-rb-dependency-graph/dry-rb-dependency-graph-full.png)
 
@@ -35,7 +41,10 @@ This diagram shows **only internal gems connections**, for a more simplified vie
 ![DRY-RB internal dependency graph](/images/articles/dry-rb-dependency-graph/dry-rb-dependency-graph-internal.png)
 
 
+## Conclusions
+
 **You can quickly identify also key gems** for the whole DRY-RB ecosystem, like `dry-core`, or `dry-container` which are designed as a base for building more complex gems and libraries. Of course, you still can use them directly in your apps if you see the benefits from it, but it may be harder to find a use case for them.
+
 
 ### Sorting DRY-RB libraries based on connections.
 
@@ -69,6 +78,12 @@ It's worth checking out why those few gems had been created. **What kind of task
 
 
 ### Summary
+
+If I'd start learning DRY-RB gems now, I'd pick Application-Level gems, like `dry-schema` and `dry-validation`. Those are also one of the most popular ones, so there is a great chance there are nice tutorials already published on the web.
+
+Then I'd try to make familiar with some of the super-small gems, like `dry-configurable`, or `dry-inflector`, which are easy to understand and quite intutive to use.
+
+#### Further thoughts
 
 While this graph is useful as a starting point, **you cannot figure out everything**. For example, one of the most common problems in programming advanced components is solved by `dry-configuration`. I've talked about it in [episode #4](/episodes/5-configure-anything-with-dry-configurable), however, you cannot figure it out from this graph.
 
