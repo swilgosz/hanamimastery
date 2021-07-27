@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Article({ mdxSource, frontMatter }) {
   const classes = useStyles();
   const { tags, slug, videoId, title, thumbnail, id, excerpt } = frontMatter;
-  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/stray/${slug}`;
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/articles/${slug}`;
   const videos = videoId ? [{ url: `https://youtu.be/${videoId}` }] : null;
   const thumb = thumbnail.big.startsWith('http') ? thumbnail.big : `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`
   return (
