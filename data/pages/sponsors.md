@@ -57,7 +57,7 @@ Here are rough plans of different income channels.
 
 Sponsorhip is only a one pillar of strategical income - but extremely important one as it allows me get sustainable business and reinvestments from the start, when other channels are not possible to be build yet.
 
-It means, that your sponsorship allows me to grow faster, and achieve additional sources of income sooner. 
+It means, that your sponsorship allows me to grow faster, and achieve additional sources of income sooner.
 
 By helping Hanami Mastery now you're helping all the great developers that build Hanami project and related gem families from the start.
 
@@ -96,8 +96,23 @@ Below I track the income and outcome of Hanami Mastery. How much support I got a
 Excluded stuff.
 
 - **My Time** - Of course I completely don't count here my time put into the project. It would be ridiculous but trust me, you don't want to know how much it takes to prepare this content not being a native english speaker.
-- Also, at the moment I'm only focusing on Github sponsorship tracking due to the lack of time. I skipped my investments and costs for delegating the work on Hanami Mastery website. 
+- Also, at the moment I'm only focusing on Github sponsorship tracking due to the lack of time. I skipped my investments and costs for delegating the work on Hanami Mastery website.
 - **My income from regular developer's work** - It's not included except parts where I invest directly into the Hanami Mastery initiative. First because of NDA with my clients, and secondly, because it's used mostly to support my family, not this project.
+
+**2021-08**
+
+| Source                    | Amount |    Type |                                     Note |     |
+|:------------------------- | ------:| -------:| ----------------------------------------:| --- |
+| GH Hanami Dev Sponsorship |   -$18 | outcome | Sponsoring @timriley, @jodosha, @solinic |     |
+| GH Monthly Supporters     |     $21 |  income |                                         |     |
+| GH One-Time Supporters    |     $1 |  income |                                          |     |
+| BMC Supporters            |     $5 |  income |                                          |     |
+| HME Sponsorship           |   $533 |  income |                                          |     |
+| Total:                    |    $541 |         |                                         |     |
+
+<br />
+<br />
+
 
 **2021-07**
 
