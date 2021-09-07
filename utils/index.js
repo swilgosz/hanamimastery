@@ -76,7 +76,7 @@ export async function getRssData() {
     ttl: "60",
   });
 
-  const posts = await getAllFilesFrontMatter("stray");
+  const posts = await getAllFilesFrontMatter("articles");
   const episodes = await getAllFilesFrontMatter("episodes");
   const postsWithSlug = posts.map((item) => ({
     ...item,
@@ -100,12 +100,12 @@ export async function getRssData() {
       date: publishedAt,
       url
     }
-    if (!!videoId) {
-      xmlItem.enclosure = {
-        'url'  : `https://www.youtube.com/embed/${videoId}`,
-        'type' : 'video'
-      }
-    }
+    // if (!!videoId) {
+    //   xmlItem.enclosure = {
+    //     'url'  : `https://www.youtube.com/embed/${videoId}`,
+    //     'type' : 'video'
+    //   }
+    // }
     feed.item(xmlItem);
   });
   return feed;

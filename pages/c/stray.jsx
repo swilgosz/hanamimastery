@@ -31,7 +31,7 @@ export default function BlogIndex({ posts, authors }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter("stray");
+  const posts = await getAllFilesFrontMatter("articles");
   const authors = await getAllFilesFrontMatter("team");
 
   return {

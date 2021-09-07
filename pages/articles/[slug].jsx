@@ -142,7 +142,7 @@ export default function Article({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles("stray");
+  const posts = await getFiles("articles");
 
   return {
     paths: posts.map((p) => ({
@@ -154,6 +154,6 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params }) {
-  const post = await getFileBySlug("stray", params.slug);
+  const post = await getFileBySlug("articles", params.slug);
   return { props: { ...post } };
 }
