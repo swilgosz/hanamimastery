@@ -77,8 +77,6 @@ In Rails controllers, the action renders the template directly, while in Hanami 
 
 #### Views
 
-![[Pasted image 20210821000036.png]]
-
 This moves our attention to the view rendering. In [Hanami episode #2](/episodes/2-listing-articles-with-hanami-view) I already dag into the view rendering and have shown how to render articles for a blog - feel free to check it out if you're interested in implementation details.
 
 In Rails, you only have templates that are named views. They're supposed to only be used to present the injected data in an HTML file, but because there is no clear place to put view logic, we often end up with logic being placed in views or controllers.
