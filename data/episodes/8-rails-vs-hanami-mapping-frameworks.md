@@ -19,9 +19,9 @@ This talk, and this episode, was sponsored by [Useo](https://useo.pl).
 
 It was an extremely nice experience for me and I've learned a tremendous amount of stuff about life recordings, which are completely different than recording these episodes.
 
-> Before I start, let me just mention that I'm working on an e-book extending this topic deeply, so if you are opt-in for more content from me related to Rails and Hanami comparison, with code examples and such - you can [join my Github sponsors](https://github.com/sponsors/swilgosz) for access to the early versions of the ebook and having an impact what to cover in it.
-
 In this episode, I'll talk about mapping Hanami to Rails, and especially I'll focus on different building blocks, each of those frameworks has to offer, so it'll easier to grasp Hanami concepts for people with Rich Rails experience and another way around.
+
+> Before I start, let me just mention that I'm working on an e-book extending this topic deeply, so if you are opt-in for more content from me related to Rails and Hanami comparison, with code examples and such - you can [join my Github sponsors](https://github.com/sponsors/swilgosz) for access to the early versions of the ebook and having an impact what to cover in it.
 
 ### Why mapping concepts is a useful skill
 
@@ -37,6 +37,8 @@ If you have a big experience in Rails, you may be surprised, that Hanami encoura
 
 This leads to having **fewer but bigger** files in Rails, and more but smaller files in Hanami. Just switching from one framework to another requires a bit of mindset change and a development workflow to be adjusted. I hope this episode will help you with it.
 
+#### Rails abstractions
+
 In Rails, you can list all the key abstractions very easily as they are pretty well defined and there are not too many of them
 
 ![Rails abstractions](/images/episodes/8/rails-abstractions.png)
@@ -50,11 +52,13 @@ So you have:
 - Mailers
 - global Helpers
 
+#### Hanami abstractions
+
 In Hanami, you'll be encouraged to have more abstractions in your system depending on your domain and application structure. By default, Hanami introduces way more building blocks, and some of them you may easily understand if you come from Rails world, but others you'd need to just check as they have no direct mapping to Rails.
 
 ![Hanami abstractions](/images/episodes/8/hanami-abstractions.png)
 
-> Quick Notice: If you have used DRY-RB libraries in your Rails projects, you'll have a much easier job, and if you used ROM-RB as your persistence layer, you're pretty much set up already, because Hanami leverages both of those gem families to deliver a complete toolset for building full-featured scalable web applications in Ruby.
+**Quick Notice**: If you have used [DRY-RB libraries](https://dry-rb.org) in your Rails projects, you'll have a much easier job! And if you used ROM-RB as your persistence layer, you're pretty much set up already, because Hanami leverages both of those gem families to deliver a complete toolset for building full-featured scalable web applications in Ruby.
 
 ![Hanami gems family](/images/episodes/8/hanami-gems-family.png)
 
@@ -75,17 +79,20 @@ In Rails each controller has multiple actions defined as methods, in Hanami, you
 In Rails controllers, the action renders the template directly, while in Hanami it just calls the proper view.
 
 
-#### Views
+### Views
 
 This moves our attention to the view rendering. In [Hanami episode #2](/episodes/2-listing-articles-with-hanami-view) I already dag into the view rendering and have shown how to render articles for a blog - feel free to check it out if you're interested in implementation details.
 
-In Rails, you only have templates that are named views. They're supposed to only be used to present the injected data in an HTML file, but because there is no clear place to put view logic, we often end up with logic being placed in views or controllers.
+In Rails, you only have templates that are named views. They're supposed to only be used to present the injected data in an HTML file, but they do way more and let's have a quick look what.
 
-There is no presentation pattern built-in, so it also tends to be placed in templates directly, or in global helpers.
+1. **View logic** - because there is no clear place to put view logic, we often end up with logic being placed in views or controllers.
+2. **Presentation logic** - There is no presentation pattern built-in, so it also tends to be placed in templates directly, or in global helpers.
+3. HTML structure - the template structures the HTML document to show the data in the browser
+4. Using helpers - whenever the view-related logic is used in several places, helpers come with help.
 
-Then template structures the HTML document to show the data in the browser, and use helpers whenever the view-related logic is used in several places.
+![Hanami and Rails views comparison](/images/episodes/8/views-comparison.png)
 
-Hanami team just said, it's too much for a single object, and they'd split the templates into three parts.
+The Hanami team just said, it's too much for a single object, and they'd split the templates into three parts.
 
 In Hanami you'll then have a view object, that is a ruby file, which contains the view-related logic, uses the helpers when needed, and renders the proper template with only exposed methods available.
 
@@ -99,11 +106,20 @@ This is more code to be written from the very first endpoint, but it scales way 
 
 Then let's go on to the models.
 
+![Hanami and Rails models comparison](/images/episodes/8/models-comparison.png)
+
+
 In Rails, similar to views, when it comes to models, they tend to have multiple responsibilities, and because of that, it's very easy to blow them up in content.
 
 In standard Rails application, you'll find your models being responsible for validating data, the database communication, the scopes' definition, and also will contain the business logic.
 
-In Hanami, each of those responsibilities is again, extracted away to completely separate objects. This way, we get the contracts to validate the data, repositories delivering an interface to communicate with a database, and relations - where we define our queries. Please notice there is no place for business logic in any of those objects.
+In Hanami, each of those responsibilities is again, extracted away to completely separate objects. This way, we get 
+
+1. contracts to validate the data, 
+2. repositories delivering an interface to communicate with a database, 
+3. relations - where we define our queries. 
+
+Please notice that **there is no place for business logic** in any of those objects.
 
 Hanami encourages you to come with your own abstractions for modeling your business domain and doesn't force you to change your business implementation to match the database structure.
 
