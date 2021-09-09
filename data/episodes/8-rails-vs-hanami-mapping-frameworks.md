@@ -5,7 +5,7 @@ tags: ['rails', 'hanami']
 title: "#8 Learn new things easily - mapping Rails to Hanami "
 excerpt: "When I've started with learning Hanami, I've struggled a lot because of the different concepts Hanami has over Rails. In this episode of Hanami Mastery I'm mapping Rails to Hanami for easier learning."
 videoId: 73oJ-_aldc8
-publishedAt: "2021-09-07"
+publishedAt: "2021-09-09"
 thumbnail:
   full: /images/episodes/8/cover-full.jpeg
   big: /images/episodes/8/cover-big.jpeg
@@ -113,11 +113,11 @@ In Rails, similar to views, when it comes to models, they tend to have multiple 
 
 In standard Rails application, you'll find your models being responsible for validating data, the database communication, the scopes' definition, and also will contain the business logic.
 
-In Hanami, each of those responsibilities is again, extracted away to completely separate objects. This way, we get 
+In Hanami, each of those responsibilities is again, extracted away to completely separate objects. This way, we get
 
-1. contracts to validate the data, 
-2. repositories delivering an interface to communicate with a database, 
-3. relations - where we define our queries. 
+1. contracts to validate the data,
+2. repositories delivering an interface to communicate with a database,
+3. relations - where we define our queries.
 
 Please notice that **there is no place for business logic** in any of those objects.
 
