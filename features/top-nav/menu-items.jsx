@@ -8,7 +8,7 @@ const links = [
   { href: "/c/stray", label: "Stray" },
   { href: "/about", label: "About" },
   { href: "/sponsors", label: "Sponsors" },
-  { href: "/feed", label: "RSS", icon: '/rss-feed-icon.png'}
+  { href: "/feed.xml", label: "RSS", icon: '/rss-feed-icon.png'}
 ];
 
 const MenuItems = ({ MenuItemProps = {} }) =>
