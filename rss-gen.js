@@ -1,33 +1,7 @@
 const fs = require("fs")
 const rss = require("rss")
-const matter = require("gray-matter")
-const path = require("path")
 
-const root = process.cwd();
-
-async function getAllFilesFrontMatter(type) {
-  const files = fs.readdirSync(path.join(root, "data", type));
-
-  return files.reduce((allPosts, postSlug) => {
-    const source = fs.readFileSync(
-      path.join(root, "data", type, postSlug),
-      "utf8"
-    );
-    const { data } = matter(source);
-
-    return [
-      {
-        ...data,
-        slug: postSlug.replace(".md", ""),
-      },
-      ...allPosts,
-    ].sort((itemA, itemB) => {
-      if (itemA.publishedAt > itemB.publishedAt) return -1;
-      if (itemA.publishedAt < itemB.publishedAt) return 1;
-      return 0;
-    });
-  }, []);
-}
+const { getAllFilesFrontMatter } = require("./utils/index")
 
 async function getRssData() {
   const feed = new rss({
@@ -95,8 +69,6 @@ async function getRssData() {
 async function generateRssFeed() {
   try {
     const feed = await getRssData();
-    console.log(feed)
-
     fs.mkdirSync("./public/rss", { recursive: true });
     fs.writeFileSync("./public/feed.xml", feed.xml());  
   } catch (error) {
