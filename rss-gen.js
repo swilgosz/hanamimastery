@@ -7,7 +7,7 @@ async function getRssData() {
   const feed = new rss({
     title: "Hanami Mastery newest episodes!",
     description: "The best way to master Hanami ruby framework!",
-    feed_url: "https://hanamimastery.com/feed",
+    feed_url: "https://hanamimastery.com/feed.xml",
     author: "Sebastian Wilgosz",
     site_url: "https://hanamimastery.com",
     image_url: "https://hanamimastery.com/logo-hm.jpeg",
@@ -70,7 +70,7 @@ async function generateRssFeed() {
   try {
     const feed = await getRssData();
     fs.mkdirSync("./public/rss", { recursive: true });
-    fs.writeFileSync("./public/feed.xml", feed.xml());  
+    fs.writeFileSync("./public/feed.xml", feed.xml());
   } catch (error) {
     console.log(error)
   }

@@ -18,6 +18,11 @@ module.exports = {
         destination: "/feed.xml",
         permanent: true,
       },
+      {
+        source: "/rss",
+        destination: "/feed.xml",
+        permanent: true,
+      }
     ];
   },
   webpack: (config, { isServer }) => {

@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
           <link
             rel="alternate"
             type="application/rss+xml"
-            title="Hanami Mastery RSS channel!" href="/feed"
+            title="Hanami Mastery RSS channel!" href="/feed.xml"
           />
           <link
             rel="stylesheet"
