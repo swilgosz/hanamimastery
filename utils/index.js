@@ -1,18 +1,17 @@
-import fs from "fs";
-import rss from "rss";
-import matter from "gray-matter";
-import path from "path";
-import readingTime from "reading-time";
-import { serialize } from "next-mdx-remote/serialize";
-import mdxPrism from "mdx-prism";
+const fs = require("fs")
+const path = require("path")
+const readingTime = require("reading-time")
+const matter = require("gray-matter")
+const mdxPrism = require("mdx-prism")
+const { serialize } = require("next-mdx-remote/serialize");
 
 const root = process.cwd();
 
-export async function getFiles(type) {
+async function getFiles(type) {
   return fs.readdirSync(path.join(root, "data", type));
 }
 
-export async function getFileBySlug(type, slug) {
+async function getFileBySlug(type, slug) {
   const source = slug
     ? fs.readFileSync(path.join(root, "data", type, `${slug}.md`), "utf8")
     : fs.readFileSync(path.join(root, "data", `${type}.md`), "utf8");
@@ -35,7 +34,7 @@ export async function getFileBySlug(type, slug) {
   };
 }
 
-export async function getAllFilesFrontMatter(type) {
+async function getAllFilesFrontMatter(type) {
   const files = fs.readdirSync(path.join(root, "data", type));
 
   return files.reduce((allPosts, postSlug) => {
@@ -59,54 +58,6 @@ export async function getAllFilesFrontMatter(type) {
   }, []);
 }
 
-export async function getRssData() {
-  const feed = new rss({
-    title: "Hanami Mastery newest episodes!",
-    description: "The best way to master Hanami ruby framework!",
-    feed_url: "https://hanamimastery.com/feed",
-    author: "Sebastian Wilgosz",
-    site_url: "https://hanamimastery.com",
-    image_url: "https://hanamimastery.com/logo-hm.jpeg",
-    managingEditor: "Sebastian Wilgosz",
-    webMaster: "Sebastian Wilgosz",
-    copyright: `${new Date().getFullYear()} Sebastian Wilgosz`,
-    language: "en-us",
-    categories: ["Ruby", "Hanami", "Web development"],
-    pubDate: new Date().toUTCString(),
-    ttl: "60",
-  });
-
-  const posts = await getAllFilesFrontMatter("articles");
-  const episodes = await getAllFilesFrontMatter("episodes");
-  const postsWithSlug = posts.map((item) => ({
-    ...item,
-    url: `https://hanamimastery.com/articles/${item.slug}`,
-  }));
-  const episodesWithSlug = episodes.map((item) => ({
-    ...item,
-    url: `https://hanamimastery.com/episodes/${item.slug}`,
-  }));
-  const items = postsWithSlug.concat(episodesWithSlug).sort((itemA, itemB) => {
-    if (itemA.publishedAt > itemB.publishedAt) return -1;
-    if (itemA.publishedAt < itemB.publishedAt) return 1;
-    return 0;
-  });
-  items.map(({ author, excerpt, tags, videoId, publishedAt, title, url, thumbnail }) => {
-    const xmlItem = {
-      title,
-      image: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
-      description: excerpt,
-      categories: tags,
-      date: publishedAt,
-      url
-    }
-    // if (!!videoId) {
-    //   xmlItem.enclosure = {
-    //     'url'  : `https://www.youtube.com/embed/${videoId}`,
-    //     'type' : 'video'
-    //   }
-    // }
-    feed.item(xmlItem);
-  });
-  return feed;
-}
+exports.getAllFilesFrontMatter = getAllFilesFrontMatter;
+exports.getFileBySlug = getFileBySlug;
+exports.getFiles = getFiles;
