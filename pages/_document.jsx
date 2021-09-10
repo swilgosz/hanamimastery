@@ -4,6 +4,7 @@ import { ServerStyleSheets } from '@material-ui/core/styles';
 import theme from '../styles/theme';
 export default class MyDocument extends Document {
   render() {
+    const siteUrl = `${process.env.NEXT_PUBLIC_BASE_URL || ''}/feed.xml`;
     return (
       <Html lang="en">
         <Head>
@@ -12,7 +13,7 @@ export default class MyDocument extends Document {
           <link
             rel="alternate"
             type="application/rss+xml"
-            title="Hanami Mastery RSS channel!" href="/feed.xml"
+            title="Hanami Mastery RSS channel!" href={siteUrl}
           />
           <link
             rel="stylesheet"
