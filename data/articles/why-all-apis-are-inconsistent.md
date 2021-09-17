@@ -42,7 +42,7 @@ There are some **commonly used responses**, like 201, or 404, but there are also
 
 One example is a 300 status code, which identifies, that for a certain request, the server can give different responses and you should be more precise. However, there is no official guide in which particular situations it should be applied or how to specify the request path so this one is rarely used.
 
-![[/images/articles/why-all-apis-are-inconsistent/multiple-responses-request.png]]
+![Multiple responses (300) HTTP status code][/images/articles/why-all-apis-are-inconsistent/multiple-responses-request.png]
 
 ### The missing piece
 
