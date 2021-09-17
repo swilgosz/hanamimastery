@@ -1,0 +1,148 @@
+---
+id: 5
+author: "swilgosz"
+tags: ['api', 'backend']
+title: "Why ALL APIs are inconsistent?"
+excerpt: "One of the most common problems in web applications, is to update the application state based on the business rules. How it's possible, that API specification does not cover it?"
+publishedAt: "2021-09-17"
+thumbnail:
+  full: /images/articles/why-all-apis-apng-inconsistent/cover-full.png
+  big: /images/articles/why-all-apis-are-inconsistent/cover-big.png
+  small: /images/articles/why-all-apis-are-inconsistent/cover-small.png
+source: null
+category: stray
+---
+
+There is a particular mystery within designing APIs for web applications, that is known for any API expert, however, not everyone does realize how incomplete our specifications are.
+
+A missing piece in the specification.
+
+To explain it, I need to talk a bit about [HTTP status codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+
+### HTTP Status codes
+
+If you've ever worked with any API, you're familiar with the fact, that when you send a request to the server, **it can respond with different responses**.
+
+For example, if I want to get an article, the server can respond with a 200 status code, including the article content.
+
+![Successful (200) HTTP status code](/images/articles/why-all-apis-are-inconsistent/successful-request.png)
+
+However, if the requested resource does not exist, the server will probably return an error response, with a 404 status code pointing to the fact **that article cannot be found**.
+![[Pasted image 20210917220338.png]]
+![Not found (404) HTTP status code](/images/articles/why-all-apis-are-inconsistent/not-found-request.png)
+
+There are plenty of different [officially defined HTTP codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) for different kinds of responses, where it's commonly assumed, that 
+
+- successful responses start from 2xx, 
+- the error responses related to the redirection messages start from 3xx. 
+- 4xx status code identifies the problem with the user-defined input, like missing parameters, 
+- 5xx status codes are related to the issues with the server, like a service being down, or an internal error appears.
+
+There are some **commonly used responses**, like 201, or 404, but there are also some rare birds, that you've probably never seen because of unclear specification, in which situation they may be useful.
+
+One example is a 300 status code, which identifies, that for a certain request, the server can give different responses and you should be more precise. However, there is no official guide in which particular situations it should be applied or how to specify the request path so this one is rarely used.
+
+![[/images/articles/why-all-apis-are-inconsistent/multiple-responses-request.png]]
+
+### The missing piece
+
+However, even though there are a lot of defined status codes, **there is a certain common problem, where none of them really applies**.
+
+**And I mean, a business rule violation.**
+
+The book example would be when you want to publish an article. 
+
+Let's say you have an article, and you publish it. If everything goes fine, you'll get a successful response from the server. However, if you'll try to publish the article again, **it's not clear how a server should respond!**
+
+#### Forbidden (403).
+
+One way to approach this problem would be to **return a forbidden error**, indicating that the user cannot perform this action. However, **it has nothing related to user permissions**. Even super admin cannot publish already published article, because **business rules just do not allow such thing to happen**!
+
+#### Invalid (422) or just BAD (400)
+
+Then we could say, that the request is not valid (422), or bad (400), but if you think about it, it isn't! **It's everything ok with the request itself**, it's just that in this particular moment APPLICATION refuses to process it due to the business conditions!
+
+#### So maybe Method not allowed? (405)
+
+The other candidate could be a 405 HTTP status code referring to an invalid method error. However, this one refers to the HTTP method, not just unacceptable action at the given moment.
+
+Again, it points to the issue with the format of the request. It could be useful, if you'd want your server to only process PATCH requests, and never accept PUT requests, but it doesn't feel right in this particular case.
+
+So what are the other options?
+
+### I'm a teapot
+
+Well, there is one, an especially interesting solution I would be eager to implement in a real application, even though this one is also designed for a different use case. It's a `teapot` 418 status code. 
+
+![Teapot (418) status code](/images/articles/why-all-apis-are-inconsistent/teapot.jpeg)
+
+I've used it already when I've shown [how to untangle API endpoints in your applications](/episodes/7-untangle-your-app-with-dry-monads).
+
+The teapot status code had been invented as an **April Fools' joke in 1998** and as you can imagine, it's not often used due to that fact.
+
+However, applications are using it sometimes, mostly to prevent automated queries, scrapping data, or creating a lot of random resources.
+  
+The thing is, that server refused to do something because of a reason known to the server - not because the user input is broken or invalid.
+
+When you want to make a coffee, using a teapot, you may return `404`, as `POST /teapot/:id/brew?drink_type=coffee`, sever can refuse that, because the allowed drinks to brew view teapot is a tea only.
+
+This is a business rule defined on the server.
+
+When you want to publish an article that is already published, it's the same situation. The server has internal business rules defined that prevent you from changing its state. You could think then, that the 418 status code is the best matching candidate for this use case!
+
+However, there is one more, I think even better.
+
+### 409 - conflict
+
+409, standing for a conflict. It states that the request could not be completed due to the conflict of the state of the requested resource.
+
+Is it exactly this case though? 
+
+> This code is only allowed in situations where it is expected that the user might be able to resolve the conflict and resubmit the request.
+
+In the described situation, the user cannot resubmit the request. The article is published, it's nothing with the request body that can be fixed.
+
+Then adjusting the email in the form may make the request succeed.
+
+Even though it's not the case in this example, in the ideal world I'd still go with this one for most of the business violations.
+
+However, what if the action cannot be performed, because the OTHER resource conflicts with it?
+
+For example, what if you want to register the user but the EMAIL or Frontend-Generated ID is already taken by ANOTHER user registered in the system.
+
+Or do you want to set the article as premium, but the BLOG has a basic plan?
+
+Hm.... teapot?
+
+### Final thoughts
+
+This is a pointless discussion because we don't leave in the ideal world, and a lot of situations are just simplified, because, in the end, it doesn't matter, as long as you document your API well.
+
+This is why we have Validation errors, where a user tries to register with non-unique emails, why we have forbidden errors, where an article is already published, and so on.
+
+I'm just saying, that the 418 seems to be a valid candidate for real use cases when it comes to business logic violations and the application states.
+
+But if you ask me how I'd solve the article publication issue?
+
+### My approach - 404
+
+Well, in this particular case, would just return 404, saying that `draft article to be sent cannot be found`.
+
+### Do you like this content?
+
+I hope you've enjoyed this article, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
+
+Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
+
+### Special Thanks!
+
+I'd like to thank [all my sponsors](https://github.com/sponsors/swilgosz) for supporting this project!
+
+Any support allows me to spend more time on creating this content, promoting great open source projects.
+
+Also thanks to
+
+-  [Toa Heftiba](https://unsplash.com/@heftiba) for a great cover photo
+- [Michał Parzuchowski](https://unsplash.com/@mparzuchowski)- for a great yellow teapot photo.
+
+Thank you all for being here, you're awesome! - and see you soon in the upcoming publications!
