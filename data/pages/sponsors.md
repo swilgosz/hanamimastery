@@ -49,7 +49,7 @@ I am committed to evolve this project, so **if you want me to put more effort an
 
 ##### 2. By supporting Hanami Mastery you support the whole Hanami ecosystem and related gems
 
-At least 10% of ALL the income I get in any wey (excluding my regular developer's job) is transferred directly to support Open-Source world, starting from Hanami core team, then related libraries maintainers and contributors.
+At least [10% of ALL the income](https://hanamimastery.notion.site/Hanami-Mastery-Finance-Log-61466ad21a9f4fe4807e13836cbd32f1) I get in any way (excluding my regular developer's job) is transferred directly to support Open-Source world, starting from Hanami core team, then related libraries maintainers and contributors.
 
 Here are rough plans of different income channels.
 
