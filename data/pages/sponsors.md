@@ -18,6 +18,12 @@ title: "Sponsors"
 
 <br />
 
+### The Sponsorship History Log
+
+Hanami Mastery is an **Open Startup kind of thing**, so we keep having a [Public track of the revenue and outcomes](https://hanamimastery.notion.site/Hanami-Mastery-Finance-Log-61466ad21a9f4fe4807e13836cbd32f1).
+
+You can check there, how much support I got and how much support I give.
+
 ### Sponsorship channels
 
 If you really enjoy my content or get benefits from it, you're welcome to support me, our [YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ), and the whole HanamiMastery initiative by [sponsoring on Github](https://github.com/sponsors/swilgosz) or sending a small donation.
@@ -85,13 +91,3 @@ Seb's personal profiles to follow if you wish:
 - Twitter: [@sebwilgosz](https://twitter.com/sebwilgosz)
 - Github: [@swilgosz](https://github.com/swilgosz)
 - BIO LINK: [swilgosz](https://bio.link/swilgosz)
-
-Never miss a new episode by subscribing to our Newsletter!
-
-<EmailSubscriptionForm />
-
-### The Sponsorship History Log
-
-Hanami Mastery is an Open Startup kind of thing, so we keep having a [Public track of the revenue and outcomes](https://hanamimastery.notion.site/Hanami-Mastery-Finance-Log-61466ad21a9f4fe4807e13836cbd32f1).
-
-You can check there, how much support I got and how much support I give.
