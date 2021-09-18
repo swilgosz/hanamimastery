@@ -31,11 +31,11 @@ However, if the requested resource does not exist, the server will probably retu
 ![[Pasted image 20210917220338.png]]
 ![Not found (404) HTTP status code](/images/articles/why-all-apis-are-inconsistent/not-found-request.png)
 
-There are plenty of different [officially defined HTTP codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) for different kinds of responses, where it's commonly assumed, that 
+There are plenty of different [officially defined HTTP codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) for different kinds of responses, where it's commonly assumed, that
 
-- successful responses start from 2xx, 
-- the error responses related to the redirection messages start from 3xx. 
-- 4xx status code identifies the problem with the user-defined input, like missing parameters, 
+- successful responses start from 2xx,
+- the error responses related to the redirection messages start from 3xx.
+- 4xx status code identifies the problem with the user-defined input, like missing parameters,
 - 5xx status codes are related to the issues with the server, like a service being down, or an internal error appears.
 
 There are some **commonly used responses**, like 201, or 404, but there are also some rare birds, that you've probably never seen because of unclear specification, in which situation they may be useful.
@@ -50,18 +50,13 @@ However, even though there are a lot of defined status codes, **there is a certa
 
 **And I mean, a business rule violation.**
 
-The book example would be when you want to publish an article. 
+The book example would be when you want to publish an article.
 
 Let's say you have an article, and you publish it. If everything goes fine, you'll get a successful response from the server. However, if you'll try to publish the article again, **it's not clear how a server should respond!**
 
 #### Forbidden (403).
 
 One way to approach this problem would be to **return a forbidden error**, indicating that the user cannot perform this action. However, **it has nothing related to user permissions**. Even super admin cannot publish already published article, because **business rules just do not allow such thing to happen**!
-
-#### Invalid (422) or just BAD (400)
-
-Then we could say, that the request is not valid (422), or bad (400), but if you think about it, it isn't! **It's everything ok with the request itself**, it's just that in this particular moment APPLICATION refuses to process it due to the business conditions!
-
 #### So maybe Method not allowed? (405)
 
 The other candidate could be a 405 HTTP status code referring to an invalid method error. However, this one refers to the HTTP method, not just unacceptable action at the given moment.
@@ -72,7 +67,7 @@ So what are the other options?
 
 ### I'm a teapot
 
-Well, there is one, an especially interesting solution I would be eager to implement in a real application, even though this one is also designed for a different use case. It's a `teapot` 418 status code. 
+Well, there is one, an especially interesting solution I would be eager to implement in a real application, even though this one is also designed for a different use case. It's a `teapot` 418 status code.
 
 ![Teapot (418) status code](/images/articles/why-all-apis-are-inconsistent/teapot.jpeg)
 
@@ -81,7 +76,7 @@ I've used it already when I've shown [how to untangle API endpoints in your appl
 The teapot status code had been invented as an **April Fools' joke in 1998** and as you can imagine, it's not often used due to that fact.
 
 However, applications are using it sometimes, mostly to prevent automated queries, scrapping data, or creating a lot of random resources.
-  
+
 The thing is, that server refused to do something because of a reason known to the server - not because the user input is broken or invalid.
 
 When you want to make a coffee, using a teapot, you may return `404`, as `POST /teapot/:id/brew?drink_type=coffee`, sever can refuse that, because the allowed drinks to brew view teapot is a tea only.
@@ -96,7 +91,7 @@ However, there is one more, I think even better.
 
 409, standing for a conflict. It states that the request could not be completed due to the conflict of the state of the requested resource.
 
-Is it exactly this case though? 
+Is it exactly this case though?
 
 > This code is only allowed in situations where it is expected that the user might be able to resolve the conflict and resubmit the request.
 
@@ -114,6 +109,24 @@ Or do you want to set the article as premium, but the BLOG has a basic plan?
 
 Hm.... teapot?
 
+#### Invalid (422) or just BAD (400)
+
+Then we could say, that the request is not valid (422), or bad (400), but if you think about it, it isn't! **It's everything ok with the request itself**, it's just that in this particular moment APPLICATION refuses to process it due to the business conditions!
+
+However, as one of Reddit users (BigLoveForNoodles) [pointed out in the discussion thread to this article](https://www.reddit.com/r/rails/comments/pq850g/why_all_apis_are_inconsistent/hdc1wqp), 422 is actually an amazing candidate in most of such problems.
+
+As 422 (invalid) error is meant to be used for semantic errors. The business logic violation is actually an example of semantic error in your system, so 422 fits really well to solve this question.
+
+For me personally validation error in this case seems to be out of place, but let's put personal feelings aside. Logically, it seems as a winner.
+
+### Capability-based API
+
+In 2017 Scott Wlaschin gave a talk about [Software Design with Capabilities](https://www.youtube.com/watch?v=fi1FsDW1QeY). This approach is not about returning specific error responses when user tries to perform unsupported action, but rather opposite. In every request, API can return a list of possible actions to be performed.
+
+It's also not a common approach to the problem, however I can see it useful, in some scenarios, and it is a perfect example of thinking outside of the box. You can check it out here.
+
+<YoutubeEmbed embedId='fi1FsDW1QeY' />
+
 ### Final thoughts
 
 This is a pointless discussion because we don't leave in the ideal world, and a lot of situations are just simplified, because, in the end, it doesn't matter, as long as you document your API well.
@@ -122,7 +135,7 @@ This is why we have Validation errors, where a user tries to register with non-u
 
 I'm just saying, that the 418 seems to be a valid candidate for real use cases when it comes to business logic violations and the application states.
 
-But if you ask me how I'd solve the article publication issue?
+But if you ask me **how I'd solve the article publication issue?**
 
 ### My approach - 404
 
@@ -142,7 +155,8 @@ Any support allows me to spend more time on creating this content, promoting gre
 
 Also thanks to
 
--  [Toa Heftiba](https://unsplash.com/@heftiba) for a great cover photo
+- [Toa Heftiba](https://unsplash.com/@heftiba) for a great cover photo
 - [Michał Parzuchowski](https://unsplash.com/@mparzuchowski)- for a great yellow teapot photo.
+- All people pointing flaws in my thinking on [Reddit](https://www.reddit.com/r/rails/comments/pq850g/why_all_apis_are_inconsistent/) and [Twitter](https://twitter.com/sebwilgosz/status/1438964529841549327)
 
 Thank you all for being here, you're awesome! - and see you soon in the upcoming publications!
