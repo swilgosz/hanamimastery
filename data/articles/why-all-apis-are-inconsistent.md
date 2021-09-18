@@ -15,7 +15,7 @@ category: stray
 
 There is a particular mystery within designing APIs for web applications, that is known for any API expert, however, not everyone does realize how incomplete our specifications are.
 
-A missing piece in the specification.
+A missing piece in the specification. Basically, **HOW TO HANDLE BUSINESS LOGIC VIOLATIONS?**
 
 To explain it, I need to talk a bit about [HTTP status codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
@@ -65,23 +65,23 @@ Again, it points to the issue with the format of the request. It could be useful
 
 So what are the other options?
 
-### I'm a teapot
+### I'm a teapot (418)
 
 Well, there is one, an especially interesting solution I would be eager to implement in a real application, even though this one is also designed for a different use case. It's a `teapot` 418 status code.
 
 ![Teapot (418) status code](/images/articles/why-all-apis-are-inconsistent/teapot.jpeg)
 
-I've used it already when I've shown [how to untangle API endpoints in your applications](/episodes/7-untangle-your-app-with-dry-monads).
+I've used it once just for fun already, when I've shown [how to untangle API endpoints in your applications](/episodes/7-untangle-your-app-with-dry-monads).
 
-The teapot status code had been invented as an **April Fools' joke in 1998** and as you can imagine, it's not often used due to that fact.
+The teapot status code had been invented as an **April Fools' joke in 1998** and as you can imagine, it's not often used due to that fact. Honstly, I'd not use it either except maybe my personal projects, when I would just like to have fun and put a smile on users actually using my API.
 
-However, applications are using it sometimes, mostly to prevent automated queries, scrapping data, or creating a lot of random resources.
+However, **applications DO use it sometimes**, mostly to prevent automated queries, scrapping data, or creating a lot of random resources.
 
 The thing is, that server refused to do something because of a reason known to the server - not because the user input is broken or invalid.
 
-When you want to make a coffee, using a teapot, you may return `404`, as `POST /teapot/:id/brew?drink_type=coffee`, sever can refuse that, because the allowed drinks to brew view teapot is a tea only.
+When you want to make a coffee, using a teapot, you may return `418`, as `POST /teapot/:id/brew?drink_type=coffee` can be refused by the server, because on the list of allowed drinks to brew view teapot is the tea only.
 
-This is a business rule defined on the server.
+**This is a business rule defined on the server.**
 
 When you want to publish an article that is already published, it's the same situation. The server has internal business rules defined that prevent you from changing its state. You could think then, that the 418 status code is the best matching candidate for this use case!
 
@@ -125,21 +125,25 @@ In 2017 Scott Wlaschin gave a talk about [Software Design with Capabilities](htt
 
 It's also not a common approach to the problem, however I can see it useful, in some scenarios, and it is a perfect example of thinking outside of the box. You can check it out here.
 
+The one particularly interesting part is that with this approach, you can make your API consumers completely unaware how your business logic works!
+
 <YoutubeEmbed embedId='fi1FsDW1QeY' />
 
 ### Final thoughts
 
-This is a pointless discussion because we don't leave in the ideal world, and a lot of situations are just simplified, because, in the end, it doesn't matter, as long as you document your API well.
+This is a pointless discussion because we don't leave in the ideal world, and a lot of situations are just simplified, because, in the end, it doesn't matter, as long as you document your API well. So even if APIs are built differently even if use the same standards and specs, the **only thing that matters, is INTERNAL consistency**.
 
 This is why we have Validation errors, where a user tries to register with non-unique emails, why we have forbidden errors, where an article is already published, and so on.
 
-I'm just saying, that the 418 seems to be a valid candidate for real use cases when it comes to business logic violations and the application states.
+In this artilce I'm just saying, that there are different approaches, to one of the most common problems in the modern web applications, due to the lack of specification in that field, and even the April Fools' joke - 418 HTTP status code - seems to be a valid candidate for real use cases when it comes to business logic violations and the application states.
 
 But if you ask me **how I'd solve the article publication issue?**
 
 ### My approach - 404
 
-Well, in this particular case, would just return 404, saying that `draft article to be sent cannot be found`.
+Well, in this particular case, would just return 404, saying that `draft article to be sent cannot be found`. For different business cases, I'd choose individual approaches, even though it's exhausting to make those decisions over and over.
+
+But try to think outside of the box, and maybe YOU will be the one that will add a missing piece to the API standards!
 
 ### Do you like this content?
 
