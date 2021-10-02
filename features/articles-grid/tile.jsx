@@ -5,20 +5,17 @@ import {
   Card,
   Typography,
   CardActions,
-  Chip,
-  Box,
   CardActionArea,
   CardHeader,
   Link,
   Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { nanoid } from "@reduxjs/toolkit";
 import NextLink from "next/link";
 import { useSelector } from "react-redux";
 import TextTruncate from "react-text-truncate";
 import { findAuthor } from "../../redux/slices/authors";
-
+import TagList from "../tags/tag-list"
 const useStyles = makeStyles((theme) => ({
   content: {
     display: "flex",
@@ -58,11 +55,7 @@ const ArticleTile = ({ article }) => {
         subheader={
           <Typography variant="subtitle1">
             {author && author.name}
-            <Box>
-              {tags.length
-                ? tags.map((tag) => <Chip key={nanoid()} label={tag} />)
-                : null}
-            </Box>
+            <TagList tags={tags} />
           </Typography>
         }
       />
