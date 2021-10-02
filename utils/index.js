@@ -58,6 +58,28 @@ async function getAllFilesFrontMatter(type) {
   }, []);
 }
 
+async function getAllContent() {
+  const posts = await getAllFilesFrontMatter("articles");
+  const episodes = await getAllFilesFrontMatter("episodes");
+  const postsWithSlug = posts.map((item) => ({
+    ...item,
+    url: `https://hanamimastery.com/articles/${item.slug}`,
+    namespace: 'articles',
+  }));
+  const episodesWithSlug = episodes.map((item) => ({
+    ...item,
+    url: `https://hanamimastery.com/episodes/${item.slug}`,
+    namespace: 'episodes',
+  }));
+  const items = postsWithSlug.concat(episodesWithSlug).sort((itemA, itemB) => {
+    if (itemA.publishedAt > itemB.publishedAt) return -1;
+    if (itemA.publishedAt < itemB.publishedAt) return 1;
+    return 0;
+  });
+  return items;
+}
+
 exports.getAllFilesFrontMatter = getAllFilesFrontMatter;
 exports.getFileBySlug = getFileBySlug;
 exports.getFiles = getFiles;
+exports.getAllContent = getAllContent;
