@@ -1,7 +1,7 @@
 ---
 id: 9
 author: "swilgosz"
-tags: ['rom-rb', 'persistence', 'sequel', 'backend', 'hanami']
+tags: ['hanami', 'rom-rb', 'persistence', 'sequel', 'faker']
 title: "#9 Integrate Hanami 2.0 with your Database using ROM"
 excerpt: "Every application needs persistence. Saving records in a database is just a must. Here is how you can do it in Hanami applications!"
 videoId: "GAmHmj0XK5U"
@@ -14,7 +14,7 @@ source: https://github.com/hanamimastery/episodes/tree/main/009
 ---
 
 
-In the [Hanami Mastery #002](/episodes/2-listing-articles-with-hanami-view) I've shown you how to list articles in Hanami 2.0 application and in the third episode, [how to prettify them using bulma CSS framework](/episodes/3-style-your-app-with-bulma). However, there is an issue with this. 
+In the [Hanami Mastery #002](/episodes/2-listing-articles-with-hanami-view) I've shown you how to list articles in Hanami 2.0 application and in the third episode, [how to prettify them using bulma CSS framework](/episodes/3-style-your-app-with-bulma). However, there is an issue with this.
 
 ## Importance of persistence
 
@@ -55,12 +55,12 @@ module Main
   module Entities
     class Article
       attr_accessor(
-        :title, 
-        :excerpt, 
-        :author, 
-        :content, 
-        :thumbnail, 
-        :id, 
+        :title,
+        :excerpt,
+        :author,
+        :content,
+        :thumbnail,
+        :id,
         :published_on
        )
 
@@ -113,7 +113,7 @@ module Main
       module Articles
         class Index < View::Base
           expose :articles do
-            (1..20).map do |i| 
+            (1..20).map do |i|
               ::Main::Entities::Article.new(id: i)
             end
           end
@@ -143,7 +143,7 @@ hanami db create_migration create_authors
 hanami db create_migration create_articles
 ```
 
-This will create an empty migration file but with the correct timestamp automatically added to the file name. 
+This will create an empty migration file but with the correct timestamp automatically added to the file name.
 
 ```ruby
 ROM::SQL.migration do
@@ -192,15 +192,15 @@ end
 
 ```
 
-Now I can RUN the migrations... and my tables are created. 
+Now I can RUN the migrations... and my tables are created.
 
 ```shell
 hanami db migrate
 ```
 
-> NOTE: If you want to know more about migration DSL in Hanami, ROM migrations are based on [Sequel](https://github.com/jeremyevans/sequel), created by Jeremy Evans, one of Ruby Legends I would say. You can check the [detailed Sequel migrations documentation here](https://github.com/jeremyevans/sequel/blob/master/doc/migration.rdoc) if you're interested more about this topic. 
+> NOTE: If you want to know more about migration DSL in Hanami, ROM migrations are based on [Sequel](https://github.com/jeremyevans/sequel), created by Jeremy Evans, one of Ruby Legends I would say. You can check the [detailed Sequel migrations documentation here](https://github.com/jeremyevans/sequel/blob/master/doc/migration.rdoc) if you're interested more about this topic.
 
-### Relations 
+### Relations
 
 Now having that database tables in place, I'll create the [Relations](https://rom-rb.org/learn/core/5.2/relations/) and [Repositories](https://rom-rb.org/learn/repository/5.2/quick-start/) for both resources.
 
@@ -259,9 +259,9 @@ Because we do entity definition based on the tables definitions, there is no nee
 
 Now, let's add an article repository.
 
-In `ROM` relations are responsible for communicating with database, to fetch the data. There you define queries specific for the DB you use, or if you wish - scopes definitions. 
+In `ROM` relations are responsible for communicating with database, to fetch the data. There you define queries specific for the DB you use, or if you wish - scopes definitions.
 
-Repositories are database-agnostic, and can use multuple relations to update and fetch resources from many databases, if needed. This is why it's extremely easy to replace database adapters in Hanami, while keeping the same interface and minimizing the required changes to be done across application. 
+Repositories are database-agnostic, and can use multuple relations to update and fetch resources from many databases, if needed. This is why it's extremely easy to replace database adapters in Hanami, while keeping the same interface and minimizing the required changes to be done across application.
 
 #### Articles repository
 
@@ -367,7 +367,7 @@ Because we have the `articles` variable exposed, there is nothing we need to do 
 
 ### Seeding data
 
-This is all that's required to make our articles listing working! 
+This is all that's required to make our articles listing working!
 
 However, visiting the articles page in the browser now will show you an empty list of articles, becasue there are none saved in our database yet.
 
@@ -384,7 +384,7 @@ require 'faker'
 authors = Main::Container['application.persistence.repositories.authors']
 ```
 
-Then let me create a few **completely random** records. 
+Then let me create a few **completely random** records.
 
 ```ruby
 authors.create(first_name: 'Seb', last_name: 'Wilgosz')
@@ -424,7 +424,7 @@ hanami db seed
 docker-compose up
 ```
 
-We can now run the server and visit `localhost:2300` to check out the result in the browser. 
+We can now run the server and visit `localhost:2300` to check out the result in the browser.
 
 ![[Pasted image 20210930191747.png]]
 
@@ -506,7 +506,7 @@ I will combine the articles with the author, and find it by primary key, passing
 
 Now after restarting the server page should work well. Oh, it seems I made a little mistake in the show action, so let me visit it very quickly. Yes, I used the render method on the action object, instead of the response. Now should be fine.
 
-Hurray! 
+Hurray!
 
 The article is persistent and does not change even after the page refresh, I can safely browse my publications and manage resources exactly as one would expect from a blog application.
 

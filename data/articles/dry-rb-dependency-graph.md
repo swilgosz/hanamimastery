@@ -1,7 +1,7 @@
 ---
 id: 4
 author: "swilgosz"
-tags: ['dry-rb', 'backend']
+tags: ['dry-rb']
 title: "I've made a dependency graph for DRY-RB Ruby gems family"
 excerpt: "Have you ever wondered which DRY-RB library learn first? I did when I started with DRY-RB. I hope this will help!"
 publishedAt: "2021-07-27"
@@ -17,7 +17,7 @@ When I've been starting to learn [DRY-RB gems ecosystem](https://dry-rb.org/gems
 
 I hope in this article I'll be able to put some light on the topic.
 
-Recently, when I've been browsing through the DRY-RB discourse forum, I went through a post from Jed Schneider, [suggesting a visualization of dependencies](https://discourse.dry-rb.org/t/documentation-help-wanted/1212/13) for a DRY-RB family. 
+Recently, when I've been browsing through the DRY-RB discourse forum, I went through a post from Jed Schneider, [suggesting a visualization of dependencies](https://discourse.dry-rb.org/t/documentation-help-wanted/1212/13) for a DRY-RB family.
 
 I quickly figured out that such diagram may tremendously simplify the decision making when a new developer wants to start learning DRY-RB gems.
 
