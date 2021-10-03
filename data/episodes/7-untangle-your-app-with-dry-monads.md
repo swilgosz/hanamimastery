@@ -6,6 +6,8 @@ title: "#7 Untangle your code with MORE than service objects! Meet Dry::Monads!"
 excerpt: "Everyone knows how messy Rails controllers can be come. In this episode, I'm implementing the service-pattern on steroids using dry-monads in my sample Rails application."
 videoId: FnXezvNDnIg
 publishedAt: "2021-07-23"
+modifiedAt: "2021-10-03"
+alias: 'HMEP007'
 thumbnail:
   full: /images/episodes/7/cover-full.jpeg
   big: /images/episodes/7/cover-big.jpeg

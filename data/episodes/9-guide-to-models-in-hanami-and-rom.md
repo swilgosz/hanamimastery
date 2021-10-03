@@ -6,6 +6,8 @@ title: "#9 Integrate Hanami 2.0 with your Database using ROM"
 excerpt: "Every application needs persistence. Saving records in a database is just a must. Here is how you can do it in Hanami applications!"
 videoId: "GAmHmj0XK5U"
 publishedAt: "2021-10-02"
+modifiedAt: "2021-10-03"
+alias: 'HMEP009'
 thumbnail:
   full: /images/episodes/9/cover-full.jpeg
   big: /images/episodes/9/cover-big.jpeg

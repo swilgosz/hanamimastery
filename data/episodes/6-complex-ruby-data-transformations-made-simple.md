@@ -5,6 +5,8 @@ tags: ['dry-rb', 'dry-transformer']
 title: "#6 Complex Ruby Transformations made simple with Dry::Transformer"
 excerpt: "Have you ever need to stringify keys outside of rails? Whether you want to import or export CSVs or communicate with external services you may need to parse the input to different output. 'dry-transformer' can help you with it."
 publishedAt: "2021-07-09"
+modifiedAt: "2021-10-03"
+alias: 'HMEP006'
 videoId: JAJae1S4tDw
 thumbnail:
   full: /images/episodes/6/cover-full.jpeg

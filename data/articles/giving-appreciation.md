@@ -5,6 +5,8 @@ tags: ['thoughts']
 title: "Why I'm giving so much appreciation everywhere?"
 excerpt: "People seem to be surprised being mentioned in my articles, tweets, videos, or when I send a personal 'thank you' email. I've decided to sort it out here..."
 publishedAt: "2021-07-12"
+modifiedAt: "2021-10-03"
+alias: 'HMAP003'
 thumbnail:
   full: /images/articles/giving-appreciation/cover-full.jpeg
   big: /images/articles/giving-appreciation/cover-big.jpeg

@@ -5,6 +5,8 @@ tags: ['api', "thoughts"]
 title: "Why ALL APIs are inconsistent?"
 excerpt: "One of the most common problems in web applications, is to update the application state based on the business rules. How it's possible, that API specification does not cover it?"
 publishedAt: "2021-09-17"
+modifiedAt: "2021-10-03"
+alias: 'HMAP005'
 thumbnail:
   full: /images/articles/why-all-apis-are-inconsistent/cover-full.png
   big: /images/articles/why-all-apis-are-inconsistent/cover-big.png

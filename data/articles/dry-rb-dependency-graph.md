@@ -5,6 +5,8 @@ tags: ['dry-rb']
 title: "I've made a dependency graph for DRY-RB Ruby gems family"
 excerpt: "Have you ever wondered which DRY-RB library learn first? I did when I started with DRY-RB. I hope this will help!"
 publishedAt: "2021-07-27"
+modifiedAt: "2021-10-03"
+alias: 'HMAP004'
 thumbnail:
   full: /images/articles/dry-rb-dependency-graph/cover-full.png
   big: /images/articles/dry-rb-dependency-graph/cover-big.png

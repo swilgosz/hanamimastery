@@ -5,6 +5,8 @@ tags: ["hanami"]
 title: "Hanami architecture explained"
 excerpt: "People ask me about the simple explanation of Hanami architecture. Why is it so complicated? Is it? I'll try to explain it in simple words."
 publishedAt: "2021-06-29"
+modifiedAt: "2021-10-03"
+alias: 'HMAP002'
 thumbnail:
   full: /images/articles/hanami-architecture-explained/cover-full.jpeg
   big: /images/articles/hanami-architecture-explained/cover-big.jpeg
@@ -23,7 +25,7 @@ First of all, let's clarify the term *software architecture*. **Martin flower** 
 
 > Note: If you're looking for a detailed explanation of how repositories, relationships, and models map to Rails Models, or why View in Hanami is a ruby object, then **subscribe to the Newsletter ** as you need to wait for the next episodes.
 
-I'm pointing at this, because people asking me about *Hanami architecture*, **do not ask about what they want to get an answer for**. They ask me specifically about "*how Hanami's building blocks differ from Rails MVC*" and why there are so many of them. 
+I'm pointing at this, because people asking me about *Hanami architecture*, **do not ask about what they want to get an answer for**. They ask me specifically about "*how Hanami's building blocks differ from Rails MVC*" and why there are so many of them.
 
 > This question **I already addressed in an [episode #8](https://hanamimastery.com/episodes/9-guide-to-models-in-hanami-and-rom)**. If this is what bothers you, feel free to check it out!
 
