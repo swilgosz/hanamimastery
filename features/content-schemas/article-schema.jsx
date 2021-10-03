@@ -1,9 +1,7 @@
 import React from "react";
 
 function makeArticleSchema(article) {
-  // const desc = stripHTML(article.excerpt)
   return {
-      // schema truncated for brevity
       '@context': 'http://schema.org',
       '@type': 'Article',
       datePublished: article.publishedAt,
@@ -27,16 +25,6 @@ function makeArticleSchema(article) {
         '@type': "Organization",
         name: 'Hanami Mastery',
         url: 'https://hanamimastery.com'
-      },
-      video: {
-        '@type': 'VideoObject',
-        name: article.title,
-        description: article.excerpt,
-        uploadDate: article.publishedAt,
-        thumbnailUrl: `${process.env.NEXT_PUBLIC_BASE_URL}${article.thumbnail.big}`,
-        embedUrl: `https://www.youtube.com/embed/${article.videoId}`,
-        datePublished: article.publishedAt,
-        inLanguage: 'en-US'
       }
   }
 }

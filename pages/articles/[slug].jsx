@@ -5,6 +5,7 @@ import { NextSeo } from "next-seo";
 import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import ArticleLayout from "../../layouts/article-layout";
+import ArticleSchema from "../../features/content-schemas/article-schema";
 import { getFiles, getFileBySlug } from "../../utils";
 import YoutubeEmbed from "../../features/youtube-embed";
 import {StickyShareButtons} from 'sharethis-reactjs';
@@ -91,6 +92,7 @@ export default function Article({ mdxSource, frontMatter }) {
           {title}
         </Typography>
       </section>
+      <ArticleSchema article={frontMatter} />
       <ArticleLayout
         article={
           <Container maxWidth="lg" component="main">
