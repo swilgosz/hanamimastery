@@ -38,12 +38,15 @@ This project is driven by a few simple rules.
 
 #### Episodes
 
-Episode consists (or will be) of:
+Episode consists of:
 
-- Article guide
+- Article guide - [see example](/episodes/9-guide-to-models-in-hanami-and-rom).
+- Youtube Video guide - [see example](https://youtu.be/GAmHmj0XK5U)
 - Summary notes/snippets (comming soon)
-- Youtube Video guide (need support to get there)
 
+#### Articles
+
+Except full episodes, I'm publishing standard blog articles, under the [stray category](/c/stray). These usually don't contain video attached and may touch topics that are outside of the Hanami domain. [See example](/articles/dry-rb-dependency-graph).
 
 ### Do you like this idea? Consider support!
 
@@ -59,4 +62,4 @@ I especially need a support for recording regular Youtube Videos.
 - Twitter: [@hanamimastery](https://twitter.com/hanamimastery) | [@sebwilgosz](https://twitter.com/sebwilgosz)
 - Youtube Channel: [Hanami Mastery](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)
 - Github: [@hanamimastery](https://github.com/hanamimastery) | [@swilgosz](https://github.com/swilgosz)
-- FB: [HanamiMastery](https://facebook.com/hanamimastery)
+- FB: [HanamiMastery](https://facebook.com/hanamimasteryfb)
