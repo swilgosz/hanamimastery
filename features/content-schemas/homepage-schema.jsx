@@ -17,7 +17,7 @@ function makeHomePageSchema() {
       image: `${process.env.NEXT_PUBLIC_BASE_URL}/images/logo-hm.png`,
       alternateName: "HanamiMastery",
       inLanguage: 'en-US',
-      mainContentOfPage: [
+      mainEntity: [
         { '@type': 'SiteNavigationElement', name: 'Episodes', url: `${process.env.NEXT_PUBLIC_BASE_URL}` },
         { '@type': 'SiteNavigationElement', name: 'Stray', url: `${process.env.NEXT_PUBLIC_BASE_URL}/c/stray` },
         { '@type': 'SiteNavigationElement', name: 'About', url: `${process.env.NEXT_PUBLIC_BASE_URL}/about` },
