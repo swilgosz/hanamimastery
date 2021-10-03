@@ -13,7 +13,7 @@ source: null
 category: stray
 ---
 
-People start to ask me a lot about **Hanami architecture** and why it's so complicated, what was the point and **how it differs from rails**.
+People start to ask me a lot about **Hanami architecture** and why it's so complicated, what was the point and [how it differs from rails](/episodes/8-rails-vs-hanami-mapping-frameworks).
 
 In this episode, I'll explain this concept with simple words. However,  to keep things simple, I'll extract more detailed stuff into **separate articles**.
 
@@ -23,7 +23,11 @@ First of all, let's clarify the term *software architecture*. **Martin flower** 
 
 > Note: If you're looking for a detailed explanation of how repositories, relationships, and models map to Rails Models, or why View in Hanami is a ruby object, then **subscribe to the Newsletter ** as you need to wait for the next episodes.
 
-I'm pointing at this, because people asking me about *Hanami architecture*, **do not ask about what they want to get an answer for**. They ask me specifically about "*how Hanami's building blocks differ from Rails MVC*" and why there are so many of them. But, as they use words: "hanami architecture", **let's explain that first.**
+I'm pointing at this, because people asking me about *Hanami architecture*, **do not ask about what they want to get an answer for**. They ask me specifically about "*how Hanami's building blocks differ from Rails MVC*" and why there are so many of them. 
+
+> This question **I already addressed in an [episode #8](https://hanamimastery.com/episodes/9-guide-to-models-in-hanami-and-rom)**. If this is what bothers you, feel free to check it out!
+
+But, as most of the people use words: "hanami architecture", **let's explain that first.**
 
 #### Some examples of software architecture:
 
