@@ -4,6 +4,7 @@ import { DiscussionEmbed } from "disqus-react";
 import { NextSeo } from "next-seo";
 import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
+import ArticleSchema from "../../features/content-schemas/article-schema";
 import ArticleLayout from "../../layouts/article-layout";
 import { getFiles, getFileBySlug } from "../../utils/";
 import YoutubeEmbed from "../../features/youtube-embed";
@@ -82,6 +83,7 @@ export default function Article({ mdxSource, frontMatter }) {
           appId: process.env.NEXT_PUBLIC_FB_APP_ID,
         }}
       />
+      <ArticleSchema article={frontMatter} />
       <section
         className={classes.hero}
         style={{ backgroundImage: `url("${thumbnail.full}")` }}
