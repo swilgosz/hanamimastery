@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import EpisodesGrid from "../features/episodes-grid/index";
 import ArticleLayout from "../layouts/article-layout";
+import HomePageSchema from "../features/content-schemas/homepage-schema";
 import { setAuthors } from "../redux/slices/authors";
 import { getAllFilesFrontMatter } from "../utils";
 
@@ -25,6 +26,7 @@ export default function BlogIndex({ posts, authors }) {
           type: "website",
         }}
       />
+      <HomePageSchema />
       <ArticleLayout article={<EpisodesGrid articles={posts} />} />
     </>
   );
