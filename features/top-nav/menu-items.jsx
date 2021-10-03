@@ -15,16 +15,16 @@ const MenuItems = ({ MenuItemProps = {} }) =>
   links.map(({ href, label, icon }) => {
     if (icon) {
       return (
-        <NextLink href={href}>
-          <MenuItem key={nanoid()} {...MenuItemProps}>
+        <NextLink key={nanoid()} href={href}>
+          <MenuItem {...MenuItemProps}>
             <RssFeedIcon />
           </MenuItem>
       </NextLink>
       );
     }
     return (
-      <NextLink href={href}>
-        <MenuItem key={nanoid()} {...MenuItemProps}>
+      <NextLink key={nanoid()} href={href}>
+        <MenuItem {...MenuItemProps}>
           {label}
         </MenuItem>
       </NextLink>
