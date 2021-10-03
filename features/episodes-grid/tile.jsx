@@ -62,7 +62,7 @@ const EpisodeTile = ({ article }) => {
       />
       <CardContent className={classes.content}>
         <Typography className={classes.excerpt}>
-          <TextTruncate line={4} truncateText="…" text={excerpt} />
+          <TextTruncate element="span" line={4} truncateText="…" text={excerpt} />
         </Typography>
       </CardContent>
       <CardActions className={classes.actions}>
