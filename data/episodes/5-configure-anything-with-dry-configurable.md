@@ -2,7 +2,7 @@
 id: 5
 author: "swilgosz"
 tags: ["dry-rb", "dry-configurable"]
-title: "#5 Configure anything with Dry::Configurable"
+title: "#5 Configure anything with dry-configurable"
 excerpt: "Configuring projects and components is one of the most common features in programming in general. dry-configurable is a standalone gem providing you exactly this in Ruby! Read about how to use it."
 publishedAt: "2021-06-19"
 modifiedAt: "2021-10-03"
@@ -58,7 +58,7 @@ You can configure anyting, from initial [stylings for your applicaiton](/episode
 
 In today's episode of Hanami Mastery, I want to show you the [Dry-Configurable gem](https://dry-rb.org/gems/dry-configurable), which may be an amazing improvement in this field.
 
-### Dry::Configurable
+### dry-configurable
 
 `dry-configurable` is a simple mixin allowing you to add thread-safe configuration behavior to your classes.
 
@@ -310,7 +310,7 @@ This code already will fail in case of invalid configuration, like passing nil o
 
 `dry-configurable` is so simple, but at the same so useful, it's hard to believe it's not included in all ruby applications. Similar concepts are applied to [dry-inflector gem](/episodes/4-string-transformations-with-dry-inflector) - skinny, simple, resuable and this is why I love *dry-rb* for.
 
-It's worth mentioning, that **Hanami-RB 2.0 uses the Dry::Configurable** for the framework, view, and controller settings. Give it a try in your projects and you'll not regret it.
+It's worth mentioning, that **Hanami-RB 2.0 uses the dry-configurable** for the framework, view, and controller settings. Give it a try in your projects and you'll not regret it.
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to my Newsletter** and [follow me on twitter](https://twitter.com/hanamimastery)!
 

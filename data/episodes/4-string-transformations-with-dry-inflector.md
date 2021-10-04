@@ -2,8 +2,8 @@
 id: 4
 author: "swilgosz"
 tags: ["dry-rb", "dry-inflector"]
-title: "#4 An easy string manipulations in Ruby with DRY-Inflector"
-excerpt: "Meet Dry::Inflector - a neat way to apply non-standard string transformations."
+title: "#4 An easy string manipulations in Ruby with DRY-INFLECTOR!"
+excerpt: "Meet dry-inflector - a neat way to apply non-standard string transformations."
 publishedAt: "2021-06-14"
 modifiedAt: "2021-10-03"
 alias: 'HMEP004'
@@ -15,7 +15,7 @@ thumbnail:
 source: https://github.com/hanamimastery/episodes/tree/main/004
 ---
 
-In this episode of Hanami Mastery I want to showcase a super useful little Ruby Gem, that helped me a lot in writing my own Ruby packages. It's a [Dry::Inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up. I discovered this gem by [watching one of his Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
+In this episode of Hanami Mastery I want to showcase a super useful little Ruby Gem, that helped me a lot in writing my own Ruby packages. It's a [dry-inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up. I discovered this gem by [watching one of his Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
 
 > While this episode covers **string transformations only**, if you are interested in more advanced stuff, **covering hash and object transformations**, check out [episode #6](/episodes/6-complex-ruby-data-transformations-made-simple)
 
@@ -86,9 +86,9 @@ This method is not implemented in ruby, so we would either need to write it ours
 
 We didn't want that, because ActiveSupport is a set of a WHOLE LOT of features that we did not want to use in our simple gem and we didn't want to make it Rails-Specific.
 
-We thought about implementing it on our own, but then we've found the `DRY::Inflector` - which is exactly what we needed.
+We thought about implementing it on our own, but then we've found the `dry-inflector` - which is exactly what we needed.
 
-### Dry::Inflector
+### DRY-INFLECTOR
 
 *dry-inflector* is a simple gem that wraps several useful string transformations into a small `inflector` object. Because it is so small, we gladly injected that into our internal ecosystem.
 
@@ -102,7 +102,7 @@ To use it, we only need to instantiate the inflector object, and from that, we c
 
 For example, we can pluralize or singularize nouns, camelize strings, demodulize, and perform several other string transformations.
 
-Here is a little snippet I've copied from the documentation, to present the basic feature of `Dry::Inflector`.
+Here is a little snippet I've copied from the documentation, to present the basic feature of `dry-inflector`.
 
 ```ruby
 require "dry/inflector"
@@ -133,7 +133,7 @@ inflector.ordinalize(23) # => "23rd"
 
 There is also the one we've looked for, `constantize`!
 
-### Using constantize with Dry::Inflector
+### Using constantize with dry-inflector
 
 Let's check how `constantize` method behaves. I'll create a minimal set, just a plain ruby script requiring a `dry-inflector` and creating the `inflector` instance.
 
