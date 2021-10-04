@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     display: "flex",
     flexDirection: "column",
+    paddingTop: "0px",
   },
   media: {
     content: "",
@@ -50,7 +51,7 @@ const EpisodeTile = ({ article }) => {
         disableTypography
         title={
           <NextLink passHref href={`/episodes/${slug}`}>
-            <Link variant="h5">{title}</Link>
+            <Link variant="h6">{title}</Link>
           </NextLink>
         }
         subheader={
