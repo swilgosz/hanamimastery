@@ -6,7 +6,7 @@ import ArticleLayout from "../../layouts/article-layout";
 import { setAuthors } from "../../redux/slices/authors";
 import { getAllContent, getAllFilesFrontMatter } from "../../utils";
 
-export default function BlogIndex({ posts, authors }) {
+export default function BlogIndex({ posts, authors, tag }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setAuthors(authors));
@@ -14,14 +14,13 @@ export default function BlogIndex({ posts, authors }) {
   return (
     <>
       <NextSeo
-        title="Casual articles"
+        title={`Articles and episodes about ${tag}`}
         titleTemplate="%s | Hanami Mastery - learn hanami as a pro"
-        description="Newest non-episode Hanami Mastery articles. Casual thinking, felietons, and others!"
+        description={`Newest Hanami Mastery content related to ${tag} topic!`}
         openGraph={{
-          title: "Casual articles",
-          description:
-            "Newest non-episode Hanami Mastery articles. Casual thinking, felietons, and others!",
-          images: ["/home-cover.jpg"],
+          title: `Articles and episodes about ${tag}`,
+          description: `Newest Hanami Mastery content related to ${tag} topic!`,
+          images: ["/images/logo-hm.jpeg"],
           type: "website",
         }}
       />
@@ -36,7 +35,7 @@ export async function getStaticProps({ params }) {
   const authors = await getAllFilesFrontMatter("team");
 
   return {
-    props: { posts, authors }, // will be passed to the page component as props
+    props: { posts, authors, tag: params.tag }, // will be passed to the page component as props
   };
 }
 

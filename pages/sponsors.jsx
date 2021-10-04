@@ -17,7 +17,7 @@ export default function Page({ frontMatter, mdxSource }) {
         openGraph={{
           title: "Sponsors - Hanami Mastery",
           description: "Get the information how to support the project!",
-          images: ["/home-cover.jpg"],
+          images: ["/images/logo-hm.jpeg"],
           type: "website",
         }}
       />
