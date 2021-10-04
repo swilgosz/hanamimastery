@@ -17,12 +17,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function TagList({ tags }) {
+  const displayedTags = tags.slice(0, 3);
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
-      {tags.length
-        ? tags.map((tag) => <TagButton key={nanoid()} tag={tag}/>)
+      {displayedTags.length
+        ? displayedTags.map((tag) => <TagButton key={nanoid()} tag={tag}/>)
         : null}
     </Box>
   )
