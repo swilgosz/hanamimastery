@@ -14,11 +14,11 @@ export default function BlogIndex({ posts, authors, tag }) {
   return (
     <>
       <NextSeo
-        title={`Articles and episodes about ${tag}`}
+        title={`Articles and screencast episodes about ${tag}`}
         titleTemplate="%s | Hanami Mastery - learn hanami as a pro"
         description={`Newest Hanami Mastery content related to ${tag} topic!`}
         openGraph={{
-          title: `Articles and episodes about ${tag}`,
+          title: `Articles and screencast episodes about ${tag}`,
           description: `Newest Hanami Mastery content related to ${tag} topic!`,
           images: ["/images/logo-hm.jpeg"],
           type: "website",

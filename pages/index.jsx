@@ -15,13 +15,13 @@ export default function BlogIndex({ posts, authors }) {
   return (
     <>
       <NextSeo
-        title="Newest episodes and articles"
-        titleTemplate="%s | Hanami Mastery - learn hanami as a pro"
+        title="Newest Hanami screencasts, articles, and video tutorials"
+        titleTemplate="%s | Hanami Mastery - learn Hanami as a pro"
         description="Get familiar with Hanami framework and realise that Ruby is not only Rails!"
         openGraph={{
           title: "Recent articles",
           description:
-            "Get familiar with Hanami framework and realise that Ruby is not only Rails! Newest episodes with guides related to Hanami 2.0!",
+            "Get familiar with Hanami framework and realise that Ruby is not only Rails! Newest episodes with screencasts related to Hanami!",
           images: ["/images/logo-hm.jpeg"],
           type: "website",
         }}
