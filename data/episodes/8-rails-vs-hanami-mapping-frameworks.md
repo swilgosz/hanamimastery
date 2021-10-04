@@ -12,6 +12,12 @@ thumbnail:
   full: /images/episodes/8/cover-full.jpeg
   big: /images/episodes/8/cover-big.jpeg
   small: /images/episodes/8/cover-small.jpeg
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1435333547284369409
+  reddit:
+    ruby: https://www.reddit.com/r/ruby/comments/pjuq4u/8_learn_new_things_easily_mapping_rails_to_hanami/
+    rails: https://www.reddit.com/r/rails/comments/pjuqct/8_learn_new_things_easily_mapping_rails_to_hanami/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/pjuqzc/8_learn_new_things_easily_mapping_rails_to_hanami/
 source: null
 ---
 
