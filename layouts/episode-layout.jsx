@@ -19,10 +19,10 @@ const EpisodeLayout = ({ episode, view, episodePath }) => {
   return (
     <Container maxWidth="xl" component="main">
       <Grid container className={classes.root} spacing={2}>
-        <Grid item xs={12} sm={12} md={12} lg={3} component="aside">
+        <Grid item xs={12} sm={12} md={12} lg={2} xl={3} component="aside">
           <EpisodeTabs activeTab={view} episodePath={episodePath} />
         </Grid>
-        <Grid item sm={12} md={8} lg={6} component="episode">
+        <Grid item sm={12} md={8} lg={7} xl={6} component="episode">
           {episode}
         </Grid>
         <Grid

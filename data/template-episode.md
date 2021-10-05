@@ -4,12 +4,20 @@ author: "swilgosz"
 tags: ["fullstack"]
 title: "#1 <<Title>>"
 excerpt: "<<Summary>>"
-publishedAt: 2021-06-29
 videoId: null
+publishedAt: "2021-09-09"
+modifiedAt: "2021-10-03"
+alias: 'HMEP008'
 thumbnail:
   full: https://via.placeholder.com/1920/600?text=HanamiMastery.com
   big: https://via.placeholder.com/780/440?text=HanamiMastery.com
   small: https://via.placeholder.com/360/200?text=HanamiMastery.com
+discussions:
+  twitter: null
+  reddit:
+    ruby: null
+    rails: null
+    hanamirb: null
 source: https://github.com/hanamimastery/episodes/tree/main/001
 ---
 

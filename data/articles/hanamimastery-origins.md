@@ -11,6 +11,12 @@ thumbnail:
   full: /images/articles/hanamimastery-origins/cover-full.jpeg
   big: /images/articles/hanamimastery-origins/cover-big.jpeg
   small: /images/articles/hanamimastery-origins/cover-small.jpeg
+discussions:
+  twitter: null
+  reddit:
+    ruby: null
+    rails: null
+    hanamirb: null
 source: null
 category: stray
 ---

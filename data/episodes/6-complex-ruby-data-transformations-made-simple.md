@@ -12,6 +12,12 @@ thumbnail:
   full: /images/episodes/6/cover-full.jpeg
   big: /images/episodes/6/cover-big.jpeg
   small: /images/episodes/6/cover-small.jpeg
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1413468642935644163
+  reddit:
+    ruby: https://www.reddit.com/r/ruby/comments/ogu1lu/6_complex_ruby_transformations_made_simple_with/
+    rails: https://www.reddit.com/r/rails/comments/ogu86y/6_complex_ruby_transformations_made_simple_with/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/ogu8e3/6_complex_ruby_transformations_made_simple_with/
 source: https://github.com/hanamimastery/episodes/tree/main/006
 ---
 

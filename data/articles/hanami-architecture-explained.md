@@ -11,6 +11,12 @@ thumbnail:
   full: /images/articles/hanami-architecture-explained/cover-full.jpeg
   big: /images/articles/hanami-architecture-explained/cover-big.jpeg
   small: /images/articles/hanami-architecture-explained/cover-small.jpeg
+discussions:
+  twitter: null
+  reddit:
+    ruby: null
+    rails: null
+    hanamirb: null
 source: null
 category: stray
 ---

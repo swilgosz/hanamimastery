@@ -12,6 +12,11 @@ thumbnail:
   full: /images/episodes/4/cover-full.jpeg
   big: /images/episodes/4/cover-big.jpeg
   small: /images/episodes/4/cover-small.jpeg
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1404386496656904200
+  reddit:
+    ruby: https://www.reddit.com/r/ruby/comments/o28dun/4_an_easy_string_manipulations_in_ruby_with/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/o28c02/easy_string_manipulation_in_ruby_with/
 source: https://github.com/hanamimastery/episodes/tree/main/004
 ---
 

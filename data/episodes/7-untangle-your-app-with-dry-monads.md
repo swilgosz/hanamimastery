@@ -12,6 +12,12 @@ thumbnail:
   full: /images/episodes/7/cover-full.jpeg
   big: /images/episodes/7/cover-big.jpeg
   small: /images/episodes/7/cover-small.jpeg
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1418503870800609282
+  reddit:
+    ruby: https://www.reddit.com/r/ruby/comments/opyw3q/7_untangle_your_code_with_more_than_service/
+    rails: https://www.reddit.com/r/rails/comments/opywct/7_untangle_your_code_with_more_than_service/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/opywku/7_untangle_your_code_with_more_than_service/
 source: https://github.com/hanamimastery/episodes/tree/main/007
 ---
 
