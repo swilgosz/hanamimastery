@@ -9,13 +9,14 @@ code:not([class*='language-']) {
 code[class*='language-'],
 pre[class*='language-'] {
   color: #393a34;
+  overflow: auto;
   font-family: 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier,
     monospace;
   direction: ltr;
   text-align: left;
-  white-space: pre;
+  white-space: pre-wrap;
   word-spacing: normal;
-  word-break: normal;
+  word-break: break-all;
   font-size: 1em;
   line-height: 1.2em;
 
@@ -30,14 +31,15 @@ pre[class*='language-'] {
 }
 
 pre[class*='language-'] {
+  overflow: auto;
   color: #393a34;
   font-family: 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier,
     monospace;
   direction: ltr;
   text-align: left;
-  white-space: pre;
+  white-space: pre-wrap;
   word-spacing: normal;
-  word-break: normal;
+  word-break: break-all;
   font-size: 1em;
   line-height: 1.2em;
 
