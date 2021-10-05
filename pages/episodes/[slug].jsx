@@ -105,7 +105,7 @@ export default function Article({ mdxSource, frontMatter }) {
         view={activeView}
         episodePath={`/episodes/${slug}`}
         episode={
-          <Container maxWidth="lg" component="main">
+          <div>
             <StickyShareButtons
               config={{
                 alignment: 'left',    // alignment of buttons (left, right)
@@ -144,7 +144,7 @@ export default function Article({ mdxSource, frontMatter }) {
             <TabPanel value={activeView} index='discuss'>
               <Discussions {...frontMatter} url={url} identifier={`episode-${id}`} />
             </TabPanel>
-          </Container>
+          </div>
         }
       />
     </>

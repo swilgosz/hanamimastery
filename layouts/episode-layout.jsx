@@ -9,16 +9,17 @@ const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: theme.spacing(4),
   },
-  link: {
-
+  container: {
+    paddingLeft: "4px",
+    paddingRight: "0px"
   },
 }));
 
 const EpisodeLayout = ({ episode, view, episodePath }) => {
   const classes = useStyles();
   return (
-    <Container maxWidth="xl" component="main">
-      <Grid container className={classes.root} spacing={2}>
+    <Container className={classes.conainer} maxWidth="xl" component="main">
+      <Grid container className={classes.root} spacing={1}>
         <Grid item xs={12} sm={12} md={12} lg={2} xl={3} component="aside">
           <EpisodeTabs activeTab={view} episodePath={episodePath} />
         </Grid>
