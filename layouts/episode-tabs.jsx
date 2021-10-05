@@ -32,13 +32,8 @@ function LinkTab(props) {
 
 export default function EpisodeTabs({ activeTab, episodePath }) {
   const classes = useStyles();
-  const mapping = {
-    'read': 0,
-    'discuss': 1,
-    // 'watch': 2,
-  }
 
-  const value = mapping[activeTab];
+  const value = activeTab || 0;
 
   const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
 

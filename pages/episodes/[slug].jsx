@@ -46,7 +46,12 @@ export default function Article({ mdxSource, frontMatter }) {
     ...queryString.parse(router.asPath.split(/\?/)[1])
   }
   const classes = useStyles();
-  const activeView = router.query.view || 'read';
+
+  const mapping = {
+    'read': 0,
+    'discuss': 1
+  }
+  const activeTab = mapping[router.query.view] || 0;
   const { tags, slug, videoId, title, thumbnail, id, excerpt } = frontMatter;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/episodes/${slug}`;
   const videos = videoId ? [{ url: `https://youtu.be/${videoId}` }] : null;
@@ -102,7 +107,7 @@ export default function Article({ mdxSource, frontMatter }) {
         </Typography>
       </section>
       <EpisodeLayout
-        view={activeView}
+        view={activeTab}
         episodePath={`/episodes/${slug}`}
         episode={
           <div>
@@ -133,15 +138,15 @@ export default function Article({ mdxSource, frontMatter }) {
                 top: 160,             // offset in pixels from the top of the page
               }}
             />
-            <TabPanel value={activeView} index='read'>
+            <TabPanel value={activeTab} index={0}>
               <YoutubeEmbed embedId={videoId} />
               <article className={classes.article}>
                 <MDXRemote {...mdxSource} components={components} />
               </article>
             </TabPanel>
-            {/* <TabPanel value={activeView} index='watch'>
+            {/* <TabPanel value={activeTab} index='watch'>
             </TabPanel> */}
-            <TabPanel value={activeView} index='discuss'>
+            <TabPanel value={activeTab} index={1}>
               <Discussions {...frontMatter} url={url} identifier={`episode-${id}`} />
             </TabPanel>
           </div>
