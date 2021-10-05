@@ -11,6 +11,12 @@ thumbnail:
   full: /images/articles/why-all-apis-are-inconsistent/cover-full.png
   big: /images/articles/why-all-apis-are-inconsistent/cover-big.png
   small: /images/articles/why-all-apis-are-inconsistent/cover-small.png
+discussions:
+  twitter: null
+  reddit:
+    ruby: null
+    rails: null
+    hanamirb: null
 source: null
 category: stray
 ---

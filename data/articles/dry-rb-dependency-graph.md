@@ -12,6 +12,12 @@ thumbnail:
   big: /images/articles/dry-rb-dependency-graph/cover-big.png
   small: /images/articles/dry-rb-dependency-graph/cover-small.png
 source: https://github.com/hanamimastery/episodes/tree/main/001
+discussions:
+  twitter: null
+  reddit:
+    ruby: null
+    rails: null
+    hanamirb: null
 category: stray
 ---
 

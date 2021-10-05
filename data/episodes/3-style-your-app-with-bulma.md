@@ -12,6 +12,10 @@ thumbnail:
   full: /images/episodes/3/cover-full.jpeg
   big: /images/episodes/3/cover-big.jpeg
   small: /images/episodes/3/cover-small.jpeg
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1399429644143706125
+  reddit:
+    ruby: https://www.reddit.com/r/ruby/comments/ns1don/style_your_hanami_app_with_bulma_using/
 source: https://github.com/hanamimastery/episodes/tree/main/003
 ---
 

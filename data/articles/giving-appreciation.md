@@ -12,6 +12,12 @@ thumbnail:
   big: /images/articles/giving-appreciation/cover-big.jpeg
   small: /images/articles/giving-appreciation/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/001
+discussions:
+  twitter: null
+  reddit:
+    ruby: null
+    rails: null
+    hanamirb: null
 category: stray
 ---
 

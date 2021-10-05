@@ -12,6 +12,12 @@ thumbnail:
   full: /images/episodes/9/cover-full.jpeg
   big: /images/episodes/9/cover-big.jpeg
   small: /images/episodes/9/cover-small.jpeg
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1444126058178093056
+  reddit:
+    ruby: https://www.reddit.com/r/ruby/comments/pzmi3f/integrate_hanami_20_with_your_database_using_rom/
+    rails: https://www.reddit.com/r/rails/comments/pzmiap/integrate_hanami_20_with_your_database_using_rom/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/pzmihi/integrate_hanami_20_with_your_database_using_rom/
 source: https://github.com/hanamimastery/episodes/tree/main/009
 ---
 

@@ -1,14 +1,17 @@
 import React from "react";
 import { Container, Typography, makeStyles } from "@material-ui/core";
-import { DiscussionEmbed } from "disqus-react";
 import { NextSeo } from "next-seo";
 import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import EpisodeSchema from "../../features/content-schemas/episode-schema";
-import ArticleLayout from "../../layouts/article-layout";
+import EpisodeLayout from "../../layouts/episode-layout";
 import { getFiles, getFileBySlug } from "../../utils/";
 import YoutubeEmbed from "../../features/youtube-embed";
 import {StickyShareButtons} from 'sharethis-reactjs';
+import { useRouter } from 'next/router'
+import TabPanel from '../../features/tab-panel';
+import queryString from "query-string";
+import Discussions from "../../features/content/discussions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +40,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Article({ mdxSource, frontMatter }) {
+  const router = useRouter()
+  router.query = {
+    ...router.query,
+    ...queryString.parse(router.asPath.split(/\?/)[1])
+  }
   const classes = useStyles();
+  const activeView = router.query.view || 'read';
   const { tags, slug, videoId, title, thumbnail, id, excerpt } = frontMatter;
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/episodes/${slug}`;
   const videos = videoId ? [{ url: `https://youtu.be/${videoId}` }] : null;
@@ -92,8 +101,10 @@ export default function Article({ mdxSource, frontMatter }) {
           {title}
         </Typography>
       </section>
-      <ArticleLayout
-        article={
+      <EpisodeLayout
+        view={activeView}
+        episodePath={`/episodes/${slug}`}
+        episode={
           <Container maxWidth="lg" component="main">
             <StickyShareButtons
               config={{
@@ -122,20 +133,17 @@ export default function Article({ mdxSource, frontMatter }) {
                 top: 160,             // offset in pixels from the top of the page
               }}
             />
-            <article className={classes.article}>
+            <TabPanel value={activeView} index='read'>
               <YoutubeEmbed embedId={videoId} />
-              <MDXRemote {...mdxSource} components={components} />
-            </article>
-            <div>
-              <DiscussionEmbed
-                shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
-                config={{
-                  url: `${url}`,
-                  title,
-                  identifier: `episode-${id}`,
-                }}
-              />
-            </div>
+              <article className={classes.article}>
+                <MDXRemote {...mdxSource} components={components} />
+              </article>
+            </TabPanel>
+            {/* <TabPanel value={activeView} index='watch'>
+            </TabPanel> */}
+            <TabPanel value={activeView} index='discuss'>
+              <Discussions {...frontMatter} url={url} identifier={`episode-${id}`} />
+            </TabPanel>
           </Container>
         }
       />
@@ -155,6 +163,7 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
 export async function getStaticProps({ params }) {
   const post = await getFileBySlug("episodes", params.slug);
   return { props: { ...post } };

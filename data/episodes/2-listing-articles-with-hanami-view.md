@@ -12,6 +12,9 @@ thumbnail:
   full: /images/episodes/2/cover-full.jpeg
   big: /images/episodes/2/cover-big.jpeg
   small: /images/episodes/2/cover-small.jpeg
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1393999827546038279
+  reddit: []
 source: https://github.com/hanamimastery/episodes/tree/main/002
 ---
 
