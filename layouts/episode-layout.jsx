@@ -19,7 +19,7 @@ const EpisodeLayout = ({ episode, view, episodePath }) => {
   const classes = useStyles();
   return (
     <Container className={classes.conainer} maxWidth="xl" component="main">
-      <Grid container className={classes.root} spacing={1}>
+      <Grid container className={classes.root} spacing={4}>
         <Grid item xs={12} sm={12} md={12} lg={2} xl={3} component="aside">
           <EpisodeTabs activeTab={view} episodePath={episodePath} />
         </Grid>
