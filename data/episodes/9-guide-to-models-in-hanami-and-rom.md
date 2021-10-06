@@ -7,7 +7,7 @@ excerpt: "Every application needs persistence. Saving records in a database is j
 videoId: "GAmHmj0XK5U"
 publishedAt: "2021-10-02"
 modifiedAt: "2021-10-03"
-alias: 'HMEP009'
+aliases: ['HMEP009']
 thumbnail:
   full: /images/episodes/9/cover-full.jpeg
   big: /images/episodes/9/cover-big.jpeg

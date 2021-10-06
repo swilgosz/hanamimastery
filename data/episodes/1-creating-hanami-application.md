@@ -6,7 +6,7 @@ title: "#1 Creating a new Hanami app from the template"
 excerpt: "How to create a brand new Hanami app lighting fast by using the Hanami application template."
 publishedAt: "2021-05-10"
 modifiedAt: "2021-10-03"
-alias: 'HMEP001'
+aliases: ['HMEP001']
 videoId: "Gx4eqU-oDL8"
 thumbnail:
   full: /images/episodes/1/cover-full.jpeg

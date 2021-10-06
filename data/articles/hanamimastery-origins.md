@@ -6,7 +6,7 @@ title: "My attempt to change the world of Open-Source financing."
 excerpt: "Open-Source development is hard nowadays. Here I explain how I want to make it easier."
 publishedAt: "2021-06-07"
 modifiedAt: "2021-10-03"
-alias: 'HMAP001'
+aliases: ['HMAP001']
 thumbnail:
   full: /images/articles/hanamimastery-origins/cover-full.jpeg
   big: /images/articles/hanamimastery-origins/cover-big.jpeg

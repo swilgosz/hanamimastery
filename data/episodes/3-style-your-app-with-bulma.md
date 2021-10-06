@@ -6,7 +6,7 @@ title: "#3 Style your Hanami App with Bulma using Hanami Assets"
 excerpt: "In this episode I make use of Bulma CSS framework and integrate it with Hanami 2.0 application to prettify it with the least effort possible."
 publishedAt: "2021-05-30"
 modifiedAt: "2021-10-03"
-alias: 'HMEP003'
+aliases: ['HMEP003']
 videoId: "tnOaUNfdgfo"
 thumbnail:
   full: /images/episodes/3/cover-full.jpeg

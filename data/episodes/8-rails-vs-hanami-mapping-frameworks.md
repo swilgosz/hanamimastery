@@ -7,7 +7,7 @@ excerpt: "When I've started with learning Hanami, I've struggled a lot because o
 videoId: 73oJ-_aldc8
 publishedAt: "2021-09-09"
 modifiedAt: "2021-10-03"
-alias: 'HMEP008'
+aliases: ['HMEP008']
 thumbnail:
   full: /images/episodes/8/cover-full.jpeg
   big: /images/episodes/8/cover-big.jpeg

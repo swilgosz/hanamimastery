@@ -7,7 +7,7 @@ excerpt: "<<Summary>>"
 videoId: null
 publishedAt: "2021-09-09"
 modifiedAt: "2021-10-03"
-alias: 'HMEP008'
+aliases: ['HMEP008']
 thumbnail:
   full: https://via.placeholder.com/1920/600?text=HanamiMastery.com
   big: https://via.placeholder.com/780/440?text=HanamiMastery.com

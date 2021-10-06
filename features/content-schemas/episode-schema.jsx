@@ -12,7 +12,7 @@ function makeEpisodeSchema(episode) {
       name: episode.title,
       headline: episode.title,
       image: `${process.env.NEXT_PUBLIC_BASE_URL}${episode.thumbnail.big}`,
-      alternateName: episode.alias,
+      alternateName: episode.aliases[0],
       inLanguage: 'en-US',
       author: {
         '@type': 'Person',

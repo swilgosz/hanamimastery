@@ -12,7 +12,7 @@ function makeArticleSchema(article) {
       name: article.title,
       headline: article.title,
       image: `${process.env.NEXT_PUBLIC_BASE_URL}${article.thumbnail.big}`,
-      alternateName: article.alias,
+      alternateName: article.aliases[0],
       inLanguage: 'en-US',
       author: {
         '@type': 'Person',

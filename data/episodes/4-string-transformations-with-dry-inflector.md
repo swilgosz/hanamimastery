@@ -6,7 +6,7 @@ title: "#4 An easy string manipulations in Ruby with DRY-INFLECTOR!"
 excerpt: "Meet dry-inflector - a neat way to apply non-standard string transformations."
 publishedAt: "2021-06-14"
 modifiedAt: "2021-10-03"
-alias: 'HMEP004'
+aliases: ['HMEP004']
 videoId: "iCplLYsvGuI"
 thumbnail:
   full: /images/episodes/4/cover-full.jpeg
