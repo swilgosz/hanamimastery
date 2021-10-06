@@ -70,6 +70,23 @@ In today's episode of Hanami Mastery, I want to show you the [Dry-Configurable g
 
 Initially written by [Andy Holland](https://github.com/AMHOL), then basically rewritten by [Nikita Shilnikov](https://github.com/flash-gordon) and [Piotr Solnica](https://github.com/solnic), is one of such micro-libraries, that are close to perfection and **can be injected almost everywhere*8.
 
+
+#### Quick note about the deprecation warning
+
+> NOTE: The syntax of configuring classes changed a little bit. If you see the deprecation warning;
+>   [dry-configurable] passing a constructor as a block is deprecated and will be removed in the next major version
+>      Provide a `constructor:` keyword argument instead
+> You can switch to the new syntax
+
+
+```ruby
+  ### Old, deprecated way to set defaults
+  setting :bucket, 'dev'
+
+  ### Current approach
+  setting :bucket, default: 'dev'
+```
+
 ### Usage
 
 > **Note:** Because of intense work on [Hanami 2.0](https://hanamirb.org) and its dependencies at the moment, the interface of the `dry-configurable` may soon change a little bit, but that's a minor thing and you can always refer to the [gem's documentation](https://dry-rb.org/gems/dry-configurable) for the most up-to-date version of the usage. I'll also keep this article up-to-date.
