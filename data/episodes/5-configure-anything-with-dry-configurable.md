@@ -70,23 +70,6 @@ In today's episode of Hanami Mastery, I want to show you the [Dry-Configurable g
 
 Initially written by [Andy Holland](https://github.com/AMHOL), then basically rewritten by [Nikita Shilnikov](https://github.com/flash-gordon) and [Piotr Solnica](https://github.com/solnic), is one of such micro-libraries, that are close to perfection and **can be injected almost everywhere*8.
 
-
-#### Quick note about the deprecation warning
-
-> NOTE: The syntax of configuring classes changed a little bit. If you see the deprecation warning;
->   [dry-configurable] passing a constructor as a block is deprecated and will be removed in the next major version
->      Provide a `constructor:` keyword argument instead
-> You can switch to the new syntax
-
-
-```ruby
-  ### Old, deprecated way to set defaults
-  setting :bucket, 'dev'
-
-  ### Current approach
-  setting :bucket, default: 'dev'
-```
-
 ### Usage
 
 > **Note:** Because of intense work on [Hanami 2.0](https://hanamirb.org) and its dependencies at the moment, the interface of the `dry-configurable` may soon change a little bit, but that's a minor thing and you can always refer to the [gem's documentation](https://dry-rb.org/gems/dry-configurable) for the most up-to-date version of the usage. I'll also keep this article up-to-date.
@@ -176,8 +159,13 @@ App.config.adapter # => :http
 ```
 
 You can set the default values for your settings, passing the default value as a second argument.
+##### Quick note about the deprecation warning
 
-> Note: This syntax will change in the next release. Instead of second unnamed argument, the default value will be passed into the named parameter `default: YOURDEFAULT`
+> NOTE: The syntax of configuring classes changed a little bit. If you see the deprecation warning;
+>   [dry-configurable] passing a constructor as a block is deprecated and will be removed in the next major version
+>      Provide a `constructor:` keyword argument instead
+> You can switch to the new syntax
+
 
 ```ruby
 require 'dry-configurable'
@@ -189,7 +177,12 @@ class App
   setting :adapter
 
   # Defaults to false
+
+  # Old, deprecated way to set defaults
   setting :enabled, false
+
+  # Current approach
+  setting :enabled, default: false
 end
 
 App.config.enabled # => false
@@ -209,7 +202,7 @@ class App
   setting :adapter
 
   # Defaults to false
-  setting :enabled, false, reader: true
+  setting :enabled, default: false, reader: true
 end
 
 App.enabled # => false
@@ -235,9 +228,9 @@ class App
   # Passing the reader attributes works with nested configuration
   setting :repository, reader: true do
     # Can pass a default value
-    setting :type, :local
+    setting :type, default: :local
     setting :encryption do
-      setting :cipher, 'aes-256-cbc'
+      setting :cipher, default: 'aes-256-cbc'
     end
   end
 end
@@ -267,7 +260,7 @@ class App
   extend Dry::Configurable
 
   # Pre-process values
-  setting(:url, 'https://hanamimastery.com') { |value| URI(value) }
+  setting(:url, default: 'https://hanamimastery.com') { |value| URI(value) }
 end
 
 App.config.url # => #<URI::HTTPS https://hanamimastery.com>
