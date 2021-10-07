@@ -56,6 +56,7 @@ export default function Article({ mdxSource, frontMatter }) {
           name: 'twitter:image',
           content: thumb,
         }]}
+        canonical={url}
         description={excerpt}
         openGraph={{
           article: {
