@@ -3,7 +3,7 @@ id: 4
 author: "swilgosz"
 tags: ["dry-rb", "dry-inflector"]
 title: "#4 An easy string manipulations in Ruby with DRY-INFLECTOR!"
-excerpt: "Meet dry-inflector - a neat way to apply non-standard string transformations."
+excerpt: "Use constantize, classify, underscore and MORE on Strings in Pure ruby! Use dry-inflector to quickly apply non-standard string transformations!"
 publishedAt: "2021-06-14"
 modifiedAt: "2021-10-03"
 aliases: ['HMEP004']
@@ -20,7 +20,9 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/004
 ---
 
-In this episode of Hanami Mastery I want to showcase a super useful little Ruby Gem, that helped me a lot in writing my own Ruby packages. It's a [dry-inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up. I discovered this gem by [watching one of his Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
+In this episode of Hanami Mastery screencast I want to showcase a super useful little Ruby Gem, that helped me a lot in writing my own Ruby packages. It implements **ruby classify**, *underscore*, **constantize**, all within pure ruby, without rails dependencies.
+
+It's a [dry-inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up. I discovered this gem by [watching one of his Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
 
 > While this episode covers **string transformations only**, if you are interested in more advanced stuff, **covering hash and object transformations**, check out [episode #6](/episodes/6-complex-ruby-data-transformations-made-simple)
 
