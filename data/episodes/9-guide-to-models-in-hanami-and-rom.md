@@ -88,7 +88,7 @@ module Main
 end
 ```
 
-For each created article we also create a random author and assign it to the author-reader. When I Open the author entity, you'll see a very similar data structure, where everything is just randomly filled in using faker helpers.
+For each created article we also create a random author and assign it to the author-reader. When I open the author entity, you'll see a very similar data structure, where everything is just randomly filled in using faker helpers.
 
 ```ruby
 # slices/main/lib/main/entities/article.rb
@@ -219,7 +219,7 @@ Hanami allows you to have separate sets of persistence-related resources for eac
 First I will create the article relation, which inherits from ROM sql relation, and define the schema based on `:articles` table, setting a flag: `infer` to true. This will automatically set my attribute readers on the entity, based on the table definition!
 
 ```ruby
-# lib/sandbox/persistance/relations/articles.rb
+# lib/sandbox/persistence/relations/articles.rb
 
 module Persistence
   module Relations
@@ -244,7 +244,7 @@ Then within the schema, I'll define the belongs_to association for the article's
 Let's repeat the same thing for authors, with the difference, that author has many articles.
 
 ```ruby
-# lib/sandbox/persistance/relations/authors.rb
+# lib/sandbox/persistence/relations/authors.rb
 
 module Persistence
   module Relations
@@ -278,7 +278,7 @@ Let me define the article repository now, so we can fetch and create resources i
 By adding the `commands :create`, we extend the default repository by the ability to create resources, which we can use to seed the data to our system.
 
 ```ruby
-# lib/sandbox/persistance/repositories/articles.rb
+# lib/sandbox/persistence/repositories/articles.rb
 
 module Sandbox
   module Persistence
@@ -302,7 +302,7 @@ then I just need to define the `all method`, and inside I combine articles with 
 Now I'll also add the authors' repository. I don't need it for listing my articles, but It will be useful for seeding data into our database.
 
 ```ruby
-# lib/sandbox/persistance/repositories/articles.rb
+# lib/sandbox/persistence/repositories/articles.rb
 
 module Sandbox
   module Persistence
