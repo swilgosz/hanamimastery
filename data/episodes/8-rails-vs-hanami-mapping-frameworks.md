@@ -6,7 +6,7 @@ title: "#8 Learn new things easily - mapping Rails to Hanami "
 excerpt: "When I've started with learning Hanami, I've struggled a lot because of the different concepts Hanami has over Rails. In this episode of Hanami Mastery I'm mapping Rails to Hanami for easier learning."
 videoId: 73oJ-_aldc8
 publishedAt: "2021-09-09"
-modifiedAt: "2021-10-03"
+modifiedAt: "2021-10-12"
 aliases: ['HMEP008']
 thumbnail:
   full: /images/episodes/8/cover-full.jpeg
@@ -78,7 +78,7 @@ So we have routes and actions instead of controllers.
 
 Let's then take a closer look into differences and try to map those components to each other.
 
-#### Controllers and actions
+### Controllers and actions
 
 Controllers and actions are pretty easy to understand, as they really do play the same role in both frameworks.
 
@@ -110,7 +110,7 @@ Then finally, presentation logic had been extracted to Parts, so it's clear wher
 
 This is more code to be written from the very first endpoint, but it scales way better and this solution can be used in Rails too if you want it.
 
-#### Models
+### Models
 
 Then let's go on to the models.
 
@@ -126,6 +126,8 @@ In Hanami, each of those responsibilities is again, extracted away to completely
 1. contracts to validate the data,
 2. repositories delivering an interface to communicate with a database,
 3. relations - where we define our queries.
+
+> I have covered a complete persistence layer in Hanami in the [episode #009](/episodes/9-guide-to-models-in-hanami-and-rom), so feel free to check it you're keen to learn more details about ROM usage in Hanami.
 
 Please notice that **there is no place for business logic** in any of those objects.
 
