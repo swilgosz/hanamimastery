@@ -5,7 +5,7 @@ import EpisodesGrid from "../features/episodes-grid/index";
 import ArticleLayout from "../layouts/article-layout";
 import HomePageSchema from "../features/content-schemas/homepage-schema";
 import { setAuthors } from "../redux/slices/authors";
-import { getAllFilesFrontMatter } from "../utils";
+import { getContent } from "../utils";
 
 export default function BlogIndex({ posts, authors }) {
   const dispatch = useDispatch();
@@ -33,8 +33,8 @@ export default function BlogIndex({ posts, authors }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter("episodes");
-  const authors = await getAllFilesFrontMatter("team");
+  const posts = await getContent("episodes");
+  const authors = await getContent("team");
 
   return {
     props: { posts, authors }, // will be passed to the page component as props

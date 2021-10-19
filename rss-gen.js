@@ -1,7 +1,7 @@
 const fs = require("fs")
 const rss = require("rss")
 
-const { getAllFilesFrontMatter } = require("./utils/index")
+const { getContent } = require("./utils/index")
 
 async function getRssData() {
   const feed = new rss({
@@ -20,8 +20,8 @@ async function getRssData() {
     ttl: "60",
   });
 
-  const posts = await getAllFilesFrontMatter("articles");
-  const episodes = await getAllFilesFrontMatter("episodes");
+  const posts = await getContent("articles");
+  const episodes = await getContent("episodes");
   const postsWithSlug = posts.map((item) => ({
     ...item,
     url: `https://hanamimastery.com/articles/${item.slug}`,
