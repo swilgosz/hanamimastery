@@ -5,7 +5,8 @@ import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import EpisodeSchema from "../../features/content-schemas/episode-schema";
 import EpisodeLayout from "../../layouts/episode-layout";
-import { getFiles, getFileBySlug } from "../../utils/";
+import { getSlugs } from "../../utils/file-browsers";
+import { getContentBySlug } from "../../utils/queries";
 import YoutubeEmbed from "../../features/youtube-embed";
 import {StickyShareButtons} from 'sharethis-reactjs';
 import { useRouter } from 'next/router'
@@ -52,8 +53,7 @@ export default function Article({ mdxSource, frontMatter }) {
     'discuss': 1
   }
   const activeTab = mapping[router.query.view] || 0;
-  const { tags, slug, videoId, title, thumbnail, id, excerpt } = frontMatter;
-  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/episodes/${slug}`;
+  const { tags, path, videoId, title, thumbnail, id, excerpt, url} = frontMatter;
   const videos = videoId ? [{ url: `https://youtu.be/${videoId}` }] : null;
   return (
     <>
@@ -67,7 +67,7 @@ export default function Article({ mdxSource, frontMatter }) {
         }}
         additionalMetaTags={[{
           name: 'twitter:image',
-          content: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
+          content: thumbnail.big,
         }]}
         canonical={url}
         description={excerpt}
@@ -87,7 +87,7 @@ export default function Article({ mdxSource, frontMatter }) {
           videos: videos,
           images: [
             {
-              url: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
+              url: thumbnail.big,
               width: 780,
               height: 440,
               alt: title,
@@ -109,7 +109,7 @@ export default function Article({ mdxSource, frontMatter }) {
       </section>
       <EpisodeLayout
         view={activeTab}
-        episodePath={`/episodes/${slug}`}
+        episodePath={`/${path}`}
         episode={
           <div>
             <StickyShareButtons
@@ -158,19 +158,15 @@ export default function Article({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles("episodes");
+  const slugs = await getSlugs("episodes");
 
   return {
-    paths: posts.map((p) => ({
-      params: {
-        slug: p.replace(/\.md/, ""),
-      },
-    })),
+    paths: slugs.map((p) => ({ params: { slug: p } })),
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getFileBySlug("episodes", params.slug);
+  const post = await getContentBySlug("episodes", params.slug);
   return { props: { ...post } };
 }

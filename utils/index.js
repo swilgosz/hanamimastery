@@ -7,10 +7,6 @@ const { serialize } = require("next-mdx-remote/serialize");
 
 const root = process.cwd();
 
-async function getFiles(type) {
-  return fs.readdirSync(path.join(root, "data", type));
-}
-
 async function getFileBySlug(type, slug) {
   const source = slug
     ? fs.readFileSync(path.join(root, "data", type, `${slug}.md`), "utf8")
@@ -34,7 +30,7 @@ async function getFileBySlug(type, slug) {
   };
 }
 
-async function getAllFilesFrontMatter(type) {
+async function getContent(type) {
   const files = fs.readdirSync(path.join(root, "data", type));
 
   return files.reduce((allPosts, postSlug) => {
@@ -59,8 +55,8 @@ async function getAllFilesFrontMatter(type) {
 }
 
 async function getAllContent() {
-  const posts = await getAllFilesFrontMatter("articles");
-  const episodes = await getAllFilesFrontMatter("episodes");
+  const posts = await getContent("articles");
+  const episodes = await getContent("episodes");
   const postsWithSlug = posts.map((item) => ({
     ...item,
     url: `https://hanamimastery.com/articles/${item.slug}`,
@@ -79,7 +75,6 @@ async function getAllContent() {
   return items;
 }
 
-exports.getAllFilesFrontMatter = getAllFilesFrontMatter;
+exports.getContent = getContent;
 exports.getFileBySlug = getFileBySlug;
-exports.getFiles = getFiles;
 exports.getAllContent = getAllContent;

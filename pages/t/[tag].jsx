@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import ContentGrid from "../../features/content-grid/index";
 import ArticleLayout from "../../layouts/article-layout";
 import { setAuthors } from "../../redux/slices/authors";
-import { getAllContent, getAllFilesFrontMatter } from "../../utils";
+import { getAllContent, getContent } from "../../utils";
 
 export default function BlogIndex({ posts, authors, tag }) {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ export default function BlogIndex({ posts, authors, tag }) {
 export async function getStaticProps({ params }) {
   const allPosts = await getAllContent();
   const posts = allPosts.filter((item) => (item.tags.includes(params.tag)));
-  const authors = await getAllFilesFrontMatter("team");
+  const authors = await getContent("team");
 
   return {
     props: { posts, authors, tag: params.tag }, // will be passed to the page component as props
