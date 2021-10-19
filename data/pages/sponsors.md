@@ -1,5 +1,10 @@
 ---
 title: "Sponsors"
+thumbnail:
+  full: /logo-hm.jpeg
+  big: /logo-hm.jpeg
+  small: /logo-hm-letter.jpeg
+
 ---
 
 ### Welcome!

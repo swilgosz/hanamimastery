@@ -1,7 +1,7 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import { Container } from "@material-ui/core";
-import { getFileBySlug } from "../utils/index";
+import { getContentBySlug } from "../utils/queries";
 import components from "../features/mdx-components";
 import ArticleLayout from "../layouts/article-layout";
 
@@ -18,7 +18,7 @@ export default function Page({ mdxSource }) {
 }
 
 export async function getStaticProps() {
-  const post = await getFileBySlug("pages", "thank-you");
+  const post = await getContentBySlug("pages", "thank-you");
 
   if (!post) {
     return {
