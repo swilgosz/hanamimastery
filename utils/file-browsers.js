@@ -7,8 +7,19 @@ const root = process.cwd();
   @param [String] folder name
   @return [Array] - list of files in the given folder
 */
-async function getFiles(type) {
+async function _getFiles(type) {
   return fs.readdirSync(path.join(root, "data", type));
 }
 
-exports.getFiles = getFiles;
+/*
+  Our dynamic data file names are content slugs with extensions. This function strips file names from the format extension.
+  @param [String] contentType (folder name)
+  @return [Array] list of items' slugs
+*/
+async function getSlugs(contentType) {
+const fileNames = await _getFiles(contentType);
+
+return fileNames.map((fileName) => (fileName.replace(/\.md/, "")));
+}
+
+exports.getSlugs = getSlugs;

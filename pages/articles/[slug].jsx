@@ -6,7 +6,7 @@ import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import ArticleLayout from "../../layouts/article-layout";
 import ArticleSchema from "../../features/content-schemas/article-schema";
-import { getFiles } from "../../utils/file-browsers";
+import { getSlugs } from "../../utils/file-browsers";
 import { getFileBySlug } from "../../utils";
 import YoutubeEmbed from "../../features/youtube-embed";
 import {StickyShareButtons} from 'sharethis-reactjs';
@@ -146,17 +146,14 @@ export default function Article({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles("articles");
+  const slugs = await getSlugs("articles");
 
   return {
-    paths: posts.map((p) => ({
-      params: {
-        slug: p.replace(/\.md/, ""),
-      },
-    })),
+    paths: slugs.map((p) => ({ params: { slug: p } })),
     fallback: false,
   };
 }
+
 export async function getStaticProps({ params }) {
   const post = await getFileBySlug("articles", params.slug);
   return { props: { ...post } };
