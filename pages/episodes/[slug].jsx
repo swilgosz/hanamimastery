@@ -5,7 +5,8 @@ import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import EpisodeSchema from "../../features/content-schemas/episode-schema";
 import EpisodeLayout from "../../layouts/episode-layout";
-import { getFiles, getFileBySlug } from "../../utils/";
+import { getFiles } from "../../utils/file-browsers";
+import { getFileBySlug } from "../../utils";
 import YoutubeEmbed from "../../features/youtube-embed";
 import {StickyShareButtons} from 'sharethis-reactjs';
 import { useRouter } from 'next/router'

@@ -7,10 +7,6 @@ const { serialize } = require("next-mdx-remote/serialize");
 
 const root = process.cwd();
 
-async function getFiles(type) {
-  return fs.readdirSync(path.join(root, "data", type));
-}
-
 async function getFileBySlug(type, slug) {
   const source = slug
     ? fs.readFileSync(path.join(root, "data", type, `${slug}.md`), "utf8")
@@ -81,5 +77,4 @@ async function getAllContent() {
 
 exports.getAllFilesFrontMatter = getAllFilesFrontMatter;
 exports.getFileBySlug = getFileBySlug;
-exports.getFiles = getFiles;
 exports.getAllContent = getAllContent;

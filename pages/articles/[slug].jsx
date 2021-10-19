@@ -6,7 +6,8 @@ import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import ArticleLayout from "../../layouts/article-layout";
 import ArticleSchema from "../../features/content-schemas/article-schema";
-import { getFiles, getFileBySlug } from "../../utils";
+import { getFiles } from "../../utils/file-browsers";
+import { getFileBySlug } from "../../utils";
 import YoutubeEmbed from "../../features/youtube-embed";
 import {StickyShareButtons} from 'sharethis-reactjs';
 
