@@ -6,19 +6,7 @@ const readingTime = require("reading-time");
 const matter = require("gray-matter");
 const mdxPrism = require("mdx-prism");
 const { serialize } = require("next-mdx-remote/serialize");
-
-/*
-  Read an md file with a given path from the "data" root folder. File path should not contain format extension
-  @param [String] file path, i.e: "episodes/1-funny-episode"
-  @return [String] a content of the markdown file
-*/
-async function _readFileByPath(filePath) {
-  const source = fs.readFileSync(
-    path.join(root, "data", `${filePath}.md`),
-    "utf8"
-  );
-  return source;
-}
+const { readFileByPath, getPaths } = require("./file-browsers");
 
 /*
   Extends the file meta data by additional fields and information, like
@@ -54,7 +42,7 @@ function _serializeContentData(filePath, data) {
 */
 async function getContentBySlug(type, slug) {
   const filePath = slug ? `${type}/${slug}` : type
-  const source = await _readFileByPath(filePath);
+  const source = readFileByPath(filePath);
 
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
@@ -73,4 +61,41 @@ async function getContentBySlug(type, slug) {
   };
 }
 
+/*
+  Reads content of the given type. If no type given, reads both articles and episodes, then sorts them all by publishedAt.
+  @param [String] the folderName (optional), i.e: "articles"
+  @param [string] slug
+  @return [Array] list of content objects
+*/
+async function getContent(type) {
+  const paths = await getPaths(type);
+
+  return await paths.reduce((allPosts, filePath) => {
+    const source = readFileByPath(filePath);
+    const { data } = matter(source);
+
+    return [
+      _serializeContentData(filePath, data),
+      ...allPosts,
+    ].sort((itemA, itemB) => {
+      if (itemA.publishedAt > itemB.publishedAt) return -1;
+      if (itemA.publishedAt < itemB.publishedAt) return 1;
+      return 0;
+    });
+  }, []);
+}
+
+/*
+  Fetches content by the given tag
+  @param []
+*/
+// async function getContentByTag(tag) {
+//   const posts = await getContent();
+//   return posts.filter((item) => (item.tags.includes(tag)));
+// }
+
+// export { getContent, getContentByTag };
+
+
 exports.getContentBySlug = getContentBySlug;
+exports.getContent = getContent;

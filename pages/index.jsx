@@ -5,7 +5,7 @@ import EpisodesGrid from "../features/episodes-grid/index";
 import ArticleLayout from "../layouts/article-layout";
 import HomePageSchema from "../features/content-schemas/homepage-schema";
 import { setAuthors } from "../redux/slices/authors";
-import { getContent } from "../utils";
+import { getContent } from "../utils/queries";
 
 export default function BlogIndex({ posts, authors }) {
   const dispatch = useDispatch();

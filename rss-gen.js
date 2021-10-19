@@ -1,7 +1,7 @@
 const fs = require("fs")
 const rss = require("rss")
 
-const { getContent } = require("./utils/index")
+const { getContent } = require("./utils/queries")
 
 async function getRssData() {
   const feed = new rss({
@@ -20,22 +20,8 @@ async function getRssData() {
     ttl: "60",
   });
 
-  const posts = await getContent("articles");
-  const episodes = await getContent("episodes");
-  const postsWithSlug = posts.map((item) => ({
-    ...item,
-    url: `https://hanamimastery.com/articles/${item.slug}`,
-  }));
-  const episodesWithSlug = episodes.map((item) => ({
-    ...item,
-    url: `https://hanamimastery.com/episodes/${item.slug}`,
-  }));
-  const items = postsWithSlug.concat(episodesWithSlug).sort((itemA, itemB) => {
-    if (itemA.publishedAt > itemB.publishedAt) return -1;
-    if (itemA.publishedAt < itemB.publishedAt) return 1;
-    return 0;
-  });
-  items.map(
+  const posts = await getContent();
+  posts.map(
     ({
       author,
       excerpt,
