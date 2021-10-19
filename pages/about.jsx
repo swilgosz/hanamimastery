@@ -5,7 +5,7 @@ import { NextSeo } from "next-seo";
 import { MDXRemote } from "next-mdx-remote";
 import components from "../features/mdx-components";
 import ArticleLayout from "../layouts/article-layout";
-import { getFileBySlug } from "../utils/index";
+import { getContentBySlug } from "../utils/queries";
 
 export default function Page({ frontMatter, mdxSource }) {
   return (
@@ -34,7 +34,7 @@ export default function Page({ frontMatter, mdxSource }) {
 }
 
 export async function getStaticProps() {
-  const post = await getFileBySlug("pages", "about");
+  const post = await getContentBySlug("pages", "about");
 
   if (!post) {
     return {

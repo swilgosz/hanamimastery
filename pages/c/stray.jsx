@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import ArticlesGrid from "../../features/articles-grid/index";
 import ArticleLayout from "../../layouts/article-layout";
 import { setAuthors } from "../../redux/slices/authors";
-import { getContent } from "../../utils";
+import { getContent } from "../../utils/queries";
 
 export default function BlogIndex({ posts, authors }) {
   const dispatch = useDispatch();
