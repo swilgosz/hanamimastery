@@ -7,7 +7,7 @@ import components from "../../features/mdx-components";
 import ArticleLayout from "../../layouts/article-layout";
 import ArticleSchema from "../../features/content-schemas/article-schema";
 import { getSlugs } from "../../utils/file-browsers";
-import { getFileBySlug } from "../../utils";
+import { getContentBySlug } from "../../utils/queries";
 import YoutubeEmbed from "../../features/youtube-embed";
 import {StickyShareButtons} from 'sharethis-reactjs';
 
@@ -39,10 +39,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Article({ mdxSource, frontMatter }) {
   const classes = useStyles();
-  const { tags, slug, videoId, title, thumbnail, id, excerpt } = frontMatter;
-  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/articles/${slug}`;
+  const { tags, videoId, title, thumbnail, id, excerpt, path, url } = frontMatter;
   const videos = videoId ? [{ url: `https://youtu.be/${videoId}` }] : null;
-  const thumb = thumbnail.big.startsWith('http') ? thumbnail.big : `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`
   return (
     <>
       <NextSeo
@@ -55,7 +53,7 @@ export default function Article({ mdxSource, frontMatter }) {
         }}
         additionalMetaTags={[{
           name: 'twitter:image',
-          content: thumb,
+          content: thumbnail.big,
         }]}
         canonical={url}
         description={excerpt}
@@ -75,7 +73,7 @@ export default function Article({ mdxSource, frontMatter }) {
           videos: videos,
           images: [
             {
-              url: thumb,
+              url: thumbnail.big,
               width: 780,
               height: 440,
               alt: title,
@@ -155,6 +153,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getFileBySlug("articles", params.slug);
+  const post = await getContentBySlug("articles", params.slug);
   return { props: { ...post } };
 }
