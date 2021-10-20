@@ -4,12 +4,10 @@ import ArticleTile from "./tile";
 const useStyles = makeStyles((theme) => ({
   list: {
     listStyle: "none",
-    padding: theme.spacing(0, 4),
+    padding: theme.spacing(0, 4, 4, 0),
     [theme.breakpoints.down("md")]: {
       padding: theme.spacing(0, 0),
     },
-
-
   },
 }));
 

@@ -4,7 +4,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import RssFeedIcon from '@material-ui/icons/RssFeed';
 
 const links = [
-  { href: "/", label: "Episodes" },
+  { href: "/episodes", label: "Episodes" },
   { href: "/c/stray", label: "Stray" },
   { href: "/about", label: "About" },
   { href: "/sponsors", label: "Sponsors" },
