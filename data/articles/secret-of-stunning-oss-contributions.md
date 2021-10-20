@@ -36,8 +36,6 @@ So let's think about what this comment says and what I've done with it.
 
 Open Source contributions are often pretty much charity work. You don't get paid for it, you don't get too much appreciation or recognition.
 
-![Don't. Just don't](/images/articles/secret-of-stunning-oss-contributions/you-should-not-do-it.gif)
-
 However, **If you'd like to really focus on open-source contributions**, and contribute like crazy, full-time, or whatever, it's obvious you need to take care of your stability first.
 
 Therefore, unless you have a decent amount of passive income, you haven't got rich on crypto or anything like that, it's unlikely if it can pay back to you in any way.
@@ -49,6 +47,8 @@ Therefore, unless you have a decent amount of passive income, you haven't got ri
 - If your app just needs that fix/improvement, then you're fine.
 
 However, if you can't find any of those beneficial enough, to start being engaged in open-source projects heavily, then you should either resign...
+
+![Don't. Just don't](/images/articles/secret-of-stunning-oss-contributions/you-should-not-do-it.gif)
 
 ## ... or you can also... make it beneficial if it's not just YET.
 
