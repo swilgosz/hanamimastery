@@ -6,10 +6,17 @@ tags: ["thoughts", "hanami"]
 title: "The secret of stunning OSS contributions! I've changed my life for Hanami!"
 excerpt: "If you can contribute to open-source, do it only if you can benefit from it. So if you can't benefit, either drop the idea or... make it beneficial!"
 publishedAt: "2021-10-20"
+modifiedAt: "2021-10-20"
 thumbnail:
   full: /images/articles/secret-of-stunning-oss-contributions/cover-full.jpeg
   big: /images/articles/secret-of-stunning-oss-contributions/cover-big.jpeg
   small: /images/articles/secret-of-stunning-oss-contributions/cover-small.jpeg
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1450900128898985991
+  reddit:
+    ruby: https://www.reddit.com/r/ruby/comments/qc85bj/the_secret_of_stunning_oss_contributions_ive/
+    # rails: null
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/qc84tc/the_secret_of_stunning_oss_contributions_ive/
 source: null
 category: stray
 ---
