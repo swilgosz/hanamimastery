@@ -3,7 +3,7 @@ id: 6
 aliases: ["HMAP006"]
 author: "swilgosz"
 tags: ["thoughts", "hanami"]
-title: "#The secret of stunning OSS contributions! I've changed my life for Hanami!"
+title: "The secret of stunning OSS contributions! I've changed my life for Hanami!"
 excerpt: "If you can contribute to open-source, do it only if you can benefit from it. So if you can't benefit, either drop the idea or... make it beneficial!"
 publishedAt: "2021-10-20"
 thumbnail:
