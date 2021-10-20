@@ -37,7 +37,7 @@ export default function BlogIndex({ articles, episodes, authors }) {
       <ArticleLayout
         article={
           <>
-            <h1>Recent Hanami Mastery screencast episodes</h1>
+            <h1>Recent episodes</h1>
             <EpisodesGrid articles={episodes} more={true} />
             <Box align="right" m={4}>
               <NextLink href={`/episodes`} passHref center>
