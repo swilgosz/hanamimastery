@@ -15,12 +15,13 @@ import NextLink from "next/link";
 import { useSelector } from "react-redux";
 import TextTruncate from "react-text-truncate";
 import { findAuthor } from "../../redux/slices/authors";
-import TagList from "../tags/tag-list"
+import TagList from "../tags/tag-list";
 
 const useStyles = makeStyles((theme) => ({
   content: {
     display: "flex",
     flexDirection: "column",
+    paddingTop: "0px",
   },
   media: {
     content: "",
@@ -50,7 +51,7 @@ const ContentTile = ({ item }) => {
         disableTypography
         title={
           <NextLink passHref href={`/${namespace}/${slug}`}>
-            <Link variant="h5">{title}</Link>
+            <Link variant="h6">{title}</Link>
           </NextLink>
         }
         subheader={

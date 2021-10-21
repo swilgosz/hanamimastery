@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import ArticlesGrid from "../../features/articles-grid/index";
+import ContentGrid from "../../features/content-grid/index";
 import ArticleLayout from "../../layouts/article-layout";
 import { setAuthors } from "../../redux/slices/authors";
 import { getContent } from "../../utils/queries";
@@ -25,7 +25,7 @@ export default function BlogIndex({ posts, authors }) {
           type: "website",
         }}
       />
-      <ArticleLayout article={<ArticlesGrid articles={posts} />} />
+      <ArticleLayout article={<ContentGrid items={posts} />} />
     </>
   );
 }

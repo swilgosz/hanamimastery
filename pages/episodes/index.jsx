@@ -1,17 +1,11 @@
 import { NextSeo } from "next-seo";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import EpisodesGrid from "../../features/episodes-grid/index";
+import ContentGrid from "../../features/content-grid/index";
 import ArticleLayout from "../../layouts/article-layout";
 import HomePageSchema from "../../features/content-schemas/homepage-schema";
 import { setAuthors } from "../../redux/slices/authors";
 import { getContent } from "../../utils/queries";
-import {
-  Box,
-  Button,
-  Divider,
-} from "@material-ui/core";
-import NextLink from "next/link";
 
 export default function BlogIndex({ articles, episodes, authors }) {
   const dispatch = useDispatch();
@@ -37,7 +31,7 @@ export default function BlogIndex({ articles, episodes, authors }) {
         article={
           <>
             <h1>Recent Hanami Mastery screencast episodes</h1>
-            <EpisodesGrid articles={episodes} more={true} />
+            <ContentGrid items={episodes} more={true} />
           </>
         }
       />
