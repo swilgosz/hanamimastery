@@ -18,7 +18,7 @@ function makeHomePageSchema() {
       alternateName: "HanamiMastery",
       inLanguage: 'en-US',
       mainEntity: [
-        { '@type': 'SiteNavigationElement', name: 'Episodes', url: `${process.env.NEXT_PUBLIC_BASE_URL}` },
+        { '@type': 'SiteNavigationElement', name: 'Episodes', url: `${process.env.NEXT_PUBLIC_BASE_URL}/episodes` },
         { '@type': 'SiteNavigationElement', name: 'Stray', url: `${process.env.NEXT_PUBLIC_BASE_URL}/c/stray` },
         { '@type': 'SiteNavigationElement', name: 'About', url: `${process.env.NEXT_PUBLIC_BASE_URL}/about` },
         { '@type': 'SiteNavigationElement', name: 'Sponsors', url: `${process.env.NEXT_PUBLIC_BASE_URL}/sponsors` },

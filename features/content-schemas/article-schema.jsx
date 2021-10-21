@@ -11,7 +11,7 @@ function makeArticleSchema(article) {
       keywords: article.tags.toString(),
       name: article.title,
       headline: article.title,
-      image: `${process.env.NEXT_PUBLIC_BASE_URL}${article.thumbnail.big}`,
+      image: article.thumbnail.big,
       alternateName: article.aliases[0],
       inLanguage: 'en-US',
       author: {

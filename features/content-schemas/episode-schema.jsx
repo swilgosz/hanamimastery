@@ -11,7 +11,7 @@ function makeEpisodeSchema(episode) {
       keywords: episode.tags.toString(),
       name: episode.title,
       headline: episode.title,
-      image: `${process.env.NEXT_PUBLIC_BASE_URL}${episode.thumbnail.big}`,
+      image: episode.thumbnail.big,
       alternateName: episode.aliases[0],
       inLanguage: 'en-US',
       author: {
@@ -31,7 +31,7 @@ function makeEpisodeSchema(episode) {
         name: episode.title,
         description: episode.excerpt,
         uploadDate: episode.publishedAt,
-        thumbnailUrl: `${process.env.NEXT_PUBLIC_BASE_URL}${episode.thumbnail.big}`,
+        thumbnailUrl: episode.thumbnail.big,
         embedUrl: `https://www.youtube.com/embed/${episode.videoId}`,
         datePublished: episode.publishedAt,
         inLanguage: 'en-US'

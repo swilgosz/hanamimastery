@@ -34,7 +34,7 @@ async function getRssData() {
     }) => {
       const xmlItem = {
         title,
-        image: `${process.env.NEXT_PUBLIC_BASE_URL}${thumbnail.big}`,
+        image: thumbnail.big,
         description: excerpt,
         categories: tags,
         date: publishedAt,
