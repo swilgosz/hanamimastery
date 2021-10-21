@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 
 import { MDXRemote } from "next-mdx-remote";
 import components from "../features/mdx-components";
-import ArticleLayout from "../layouts/article-layout";
+import ArticlesLayout from "../layouts/articles-layout";
 import { getContentBySlug } from "../utils/queries";
 
 export default function Page({ frontMatter, mdxSource }) {
@@ -22,7 +22,7 @@ export default function Page({ frontMatter, mdxSource }) {
         }}
       />
 
-      <ArticleLayout
+      <ArticlesLayout
         article={
           <Container maxWidth="lg">
             <MDXRemote {...mdxSource} components={components} />

@@ -3,11 +3,11 @@ import { MDXRemote } from "next-mdx-remote";
 import { Container } from "@material-ui/core";
 import { getContentBySlug } from "../utils/queries";
 import components from "../features/mdx-components";
-import ArticleLayout from "../layouts/article-layout";
+import ArticlesLayout from "../layouts/articles-layout";
 
 export default function Page({ mdxSource }) {
   return (
-    <ArticleLayout
+    <ArticlesLayout
       article={
         <Container maxWidth="lg">
           <MDXRemote {...mdxSource} components={components} />

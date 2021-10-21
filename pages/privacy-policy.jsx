@@ -1,8 +1,8 @@
-import ArticleLayout from '../layouts/article-layout';
+import ArticlesLayout from '../layouts/articles-layout';
 
 export default function PrivacyPolicy() {
   return (
-    <ArticleLayout
+    <ArticlesLayout
       article={
         <section className="section">
           <div className="container">

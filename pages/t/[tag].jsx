@@ -2,7 +2,7 @@ import { NextSeo } from "next-seo";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ContentGrid from "../../features/content-grid/index";
-import ArticleLayout from "../../layouts/article-layout";
+import ArticlesLayout from "../../layouts/articles-layout";
 import { setAuthors } from "../../redux/slices/authors";
 import { getContent, getContentByTag } from "../../utils/queries";
 
@@ -24,7 +24,7 @@ export default function BlogIndex({ posts, authors, tag }) {
           type: "website",
         }}
       />
-      <ArticleLayout article={<ContentGrid items={posts} />} />
+      <ArticlesLayout article={<ContentGrid items={posts} />} />
     </>
   );
 }

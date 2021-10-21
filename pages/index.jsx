@@ -2,7 +2,7 @@ import { NextSeo } from "next-seo";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ContentGrid from "../features/content-grid/index";
-import ArticleLayout from "../layouts/article-layout";
+import ArticlesLayout from "../layouts/articles-layout";
 import HomePageSchema from "../features/content-schemas/homepage-schema";
 import { setAuthors } from "../redux/slices/authors";
 import { getContent } from "../utils/queries";
@@ -33,7 +33,7 @@ export default function BlogIndex({ articles, episodes, authors }) {
         }}
       />
       <HomePageSchema />
-      <ArticleLayout
+      <ArticlesLayout
         article={
           <>
             <h1>Recent episodes</h1>
