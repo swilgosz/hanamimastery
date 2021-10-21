@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, makeStyles } from "@material-ui/core";
+import { Typography, makeStyles } from "@material-ui/core";
 import { NextSeo } from "next-seo";
 import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";

@@ -3,7 +3,7 @@ import { Grid, Container, makeStyles } from "@material-ui/core";
 import EmailSubscriptionForm from "../features/email-subscription-form";
 import GHSponsor from "../features/gh-sponsor";
 import BuyMeACoffee from "../features/buy-me-a-coffee-button";
-import EpisodeTabs from "./episode-tabs"
+import EpisodeTabs from "./episode-tabs";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +23,7 @@ const EpisodeLayout = ({ episode, view, episodePath }) => {
         <Grid item xs={12} sm={12} md={12} lg={2} xl={3} component="aside">
           <EpisodeTabs activeTab={view} episodePath={episodePath} />
         </Grid>
-        <Grid item sm={12} md={8} lg={7} xl={6} component="episode">
+        <Grid item sm={12} md={8} lg={7} xl={6} component="article">
           {episode}
         </Grid>
         <Grid

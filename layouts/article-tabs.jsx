@@ -30,7 +30,7 @@ function LinkTab(props) {
   );
 }
 
-export default function EpisodeTabs({ activeTab, episodePath }) {
+export default function ArticleTabs({ activeTab, articlePath }) {
   const classes = useStyles();
 
   const value = activeTab || 0;
@@ -49,9 +49,8 @@ export default function EpisodeTabs({ activeTab, episodePath }) {
         value={value}
         centered
       >
-        <LinkTab label="Read" aria-selected={true} href={episodePath} {...a11yProps(0)}/>
-        {/* <LinkTab label="Watch" href={`${episodePath}?view=watch`} {...a11yProps('watch')}/> */}
-        <LinkTab className={classes.link} label="Discussions" href={`${episodePath}?view=discuss`} {...a11yProps(1)}/>
+        <LinkTab label="Read" aria-selected={true} href={articlePath} {...a11yProps(0)}/>
+        <LinkTab className={classes.link} label="Discussions" href={`${articlePath}?view=discuss`} {...a11yProps(1)}/>
       </Tabs>
     </Box>
   );

@@ -1,16 +1,18 @@
 import React from "react";
-import { Container, Typography, makeStyles } from "@material-ui/core";
-import { DiscussionEmbed } from "disqus-react";
+import { Typography, makeStyles } from "@material-ui/core";
 import { NextSeo } from "next-seo";
 import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
-import ShareButtons from "../../features/share-buttons";
-import ArticleLayout from "../../layouts/article-layout";
 import ArticleSchema from "../../features/content-schemas/article-schema";
+import ArticleLayout from "../../layouts/article-layout";
 import { getSlugs } from "../../utils/file-browsers";
 import { getContentBySlug } from "../../utils/queries";
-import YoutubeEmbed from "../../features/youtube-embed";
-import {StickyShareButtons} from 'sharethis-reactjs';
+
+import ShareButtons from "../../features/share-buttons";
+import { useRouter } from 'next/router'
+import TabPanel from '../../features/tab-panel';
+import queryString from "query-string";
+import Discussions from "../../features/content/discussions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,9 +41,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Article({ mdxSource, frontMatter }) {
+  const router = useRouter()
+  router.query = {
+    ...router.query,
+    ...queryString.parse(router.asPath.split(/\?/)[1])
+  }
   const classes = useStyles();
-  const { tags, videoId, title, thumbnail, id, excerpt, path, url } = frontMatter;
-  const videos = videoId ? [{ url: `https://youtu.be/${videoId}` }] : null;
+
+  const mapping = {
+    'read': 0,
+    'discuss': 1
+  }
+  const activeTab = mapping[router.query.view] || 0;
+  const { tags, path, title, thumbnail, id, excerpt, url} = frontMatter;
+
   return (
     <>
       <NextSeo
@@ -71,7 +84,6 @@ export default function Article({ mdxSource, frontMatter }) {
           defaultImageHeight: 630,
           type: "article",
           site_name: "Hanami Mastery - a knowledge base to hanami framework",
-          videos: videos,
           images: [
             {
               url: thumbnail.big,
@@ -85,6 +97,7 @@ export default function Article({ mdxSource, frontMatter }) {
           appId: process.env.NEXT_PUBLIC_FB_APP_ID,
         }}
       />
+      <ArticleSchema article={frontMatter} />
       <section
         className={classes.hero}
         style={{ backgroundImage: `url("${thumbnail.full}")` }}
@@ -93,25 +106,21 @@ export default function Article({ mdxSource, frontMatter }) {
           {title}
         </Typography>
       </section>
-      <ArticleSchema article={frontMatter} />
       <ArticleLayout
+        view={activeTab}
+        articlePath={`/${path}`}
         article={
-          <Container maxWidth="lg" component="main">
+          <div>
             <ShareButtons />
-            <article className={classes.article}>
-              <MDXRemote {...mdxSource} components={components} />
-            </article>
-            <div>
-              <DiscussionEmbed
-                shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
-                config={{
-                  url: `${url}`,
-                  title,
-                  identifier: `article-${id}`,
-                }}
-              />
-            </div>
-          </Container>
+            <TabPanel value={activeTab} index={0}>
+              <article className={classes.article}>
+                <MDXRemote {...mdxSource} components={components} />
+              </article>
+            </TabPanel>
+            <TabPanel value={activeTab} index={1}>
+              <Discussions {...frontMatter} url={url} identifier={`article-${id}`} />
+            </TabPanel>
+          </div>
         }
       />
     </>
