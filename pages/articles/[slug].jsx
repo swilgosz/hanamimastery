@@ -4,6 +4,7 @@ import { DiscussionEmbed } from "disqus-react";
 import { NextSeo } from "next-seo";
 import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
+import ShareButtons from "../../features/share-buttons";
 import ArticleLayout from "../../layouts/article-layout";
 import ArticleSchema from "../../features/content-schemas/article-schema";
 import { getSlugs } from "../../utils/file-browsers";
@@ -96,33 +97,7 @@ export default function Article({ mdxSource, frontMatter }) {
       <ArticleLayout
         article={
           <Container maxWidth="lg" component="main">
-            <StickyShareButtons
-              config={{
-                alignment: 'left',    // alignment of buttons (left, right)
-                color: 'social',      // set the color of buttons (social, white)
-                enabled: true,        // show/hide buttons (true, false)
-                font_size: 14,        // font size for the buttons
-                hide_desktop: false,  // hide buttons on desktop (true, false)
-                labels: 'cta',     // button labels (cta, counts, null)
-                language: 'en',       // which language to use (see LANGUAGES)
-                min_count: 1,         // hide react counts less than min_count (INTEGER)
-                networks: [           // which networks to include (see SHARING NETWORKS)
-                  'twitter',
-                  'reddit',
-                  'linkedin',
-                  'facebook',
-                  'pinterest',
-                  'email'
-                ],
-                padding: 12,          // padding within buttons (INTEGER)
-                radius: 4,            // the corner radius on each button (INTEGER)
-                show_total: true,     // show/hide the total share count (true, false)
-                show_mobile: true,    // show/hide the buttons on mobile (true, false)
-                show_toggle: true,    // show/hide the toggle buttons (true, false)
-                size: 48,             // the size of each button (INTEGER)
-                top: 160,             // offset in pixels from the top of the page
-              }}
-            />
+            <ShareButtons />
             <article className={classes.article}>
               <MDXRemote {...mdxSource} components={components} />
             </article>
