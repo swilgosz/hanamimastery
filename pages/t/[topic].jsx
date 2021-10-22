@@ -24,7 +24,12 @@ export default function BlogIndex({ posts, authors, topic }) {
           type: "website",
         }}
       />
-      <ArticlesLayout article={<ContentGrid items={posts} />} />
+      <ArticlesLayout article={
+        <>
+        <h1>Recent articles and screencasts related to {topic}</h1>
+        <ContentGrid items={posts} />
+        </>
+      } />
     </>
   );
 }
