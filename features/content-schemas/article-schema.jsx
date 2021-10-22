@@ -8,7 +8,7 @@ function makeArticleSchema(article) {
       dateModified: article.modifiedAt || article.publishedAt,
       url: article.url,
       description: article.excerpt,
-      keywords: article.tags.toString(),
+      keywords: article.topics.toString(),
       name: article.title,
       headline: article.title,
       image: article.thumbnail.big,

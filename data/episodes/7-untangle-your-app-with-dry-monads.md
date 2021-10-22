@@ -1,7 +1,7 @@
 ---
 id: 7
 author: "swilgosz"
-tags: ['rails', 'dry-rb', 'dry-monads', 'dry-validation', 'dry-matcher']
+topics: ['rails', 'dry-rb', 'dry-monads', 'dry-validation', 'dry-matcher']
 title: "#7 Untangle your code with MORE than service objects! Meet dry-monads!"
 excerpt: "Everyone knows how messy Rails controllers can be come. In this episode, I'm implementing the service-pattern on steroids using dry-monads in my sample Rails application."
 videoId: FnXezvNDnIg

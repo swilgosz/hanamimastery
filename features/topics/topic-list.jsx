@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import TagButton from "../tags/tag-button"
+import TopicButton from "./topic-button"
 import { Box, makeStyles } from "@material-ui/core";
 import { nanoid } from "@reduxjs/toolkit";
 
@@ -16,14 +16,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TagList({ tags }) {
-  const displayedTags = tags.slice(0, 3);
+export default function TopicList({ topics }) {
+  const displayedTopics = topics.slice(0, 3);
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
-      {displayedTags.length
-        ? displayedTags.map((tag) => <TagButton key={nanoid()} tag={tag}/>)
+      {displayedTopics.length
+        ? displayedTopics.map((topic) => <TopicButton key={nanoid()} topic={topic}/>)
         : null}
     </Box>
   )

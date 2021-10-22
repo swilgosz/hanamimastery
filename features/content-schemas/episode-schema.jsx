@@ -8,7 +8,7 @@ function makeEpisodeSchema(episode) {
       dateModified: episode.modifiedAt || episode.publishedAt,
       url: episode.url,
       description: episode.excerpt,
-      keywords: episode.tags.toString(),
+      keywords: episode.topics.toString(),
       name: episode.title,
       headline: episode.title,
       image: episode.thumbnail.big,

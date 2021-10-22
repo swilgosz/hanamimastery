@@ -86,14 +86,14 @@ async function getContent(type) {
 }
 
 /*
-  Fetches mixed content by the given tag
+  Fetches mixed content by the given topic
   @param []
 */
-async function getContentByTag(tag) {
+async function getContentByTopic(topic) {
   const posts = await getContent();
-  return posts.filter((item) => (item.tags.includes(tag)));
+  return posts.filter((item) => (item.topics.includes(topic)));
 }
 
 exports.getContentBySlug = getContentBySlug;
 exports.getContent = getContent;
-exports.getContentByTag = getContentByTag;
+exports.getContentByTopic = getContentByTopic;

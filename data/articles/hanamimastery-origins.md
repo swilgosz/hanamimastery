@@ -1,7 +1,7 @@
 ---
 id: 1
 author: "swilgosz"
-tags: ["open-source", "thoughts"]
+topics: ["open-source", "thoughts"]
 title: "My attempt to change the world of Open-Source financing."
 excerpt: "Open-Source development is hard nowadays. Here I explain how I want to make it easier."
 publishedAt: "2021-06-07"

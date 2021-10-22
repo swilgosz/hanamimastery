@@ -15,7 +15,7 @@ import NextLink from "next/link";
 import { useSelector } from "react-redux";
 import TextTruncate from "react-text-truncate";
 import { findAuthor } from "../../redux/slices/authors";
-import TagList from "../tags/tag-list";
+import TopicList from "../topics/topic-list";
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ContentTile = ({ item }) => {
   const classes = useStyles();
-  const { author: authorName, tags, path, excerpt, thumbnail, slug, title } = item;
+  const { author: authorName, topics, path, excerpt, thumbnail, slug, title } = item;
   const author = useSelector((state) => findAuthor(state, authorName));
   return (
     <Card className={classes.root}>
@@ -57,7 +57,7 @@ const ContentTile = ({ item }) => {
         subheader={
           <Typography variant="subtitle1">
             {author && author.name}
-            <TagList tags={tags} />
+            <TopicList topics={topics} />
           </Typography>
         }
       />

@@ -25,7 +25,7 @@ async function getRssData() {
     ({
       author,
       excerpt,
-      tags,
+      topics,
       videoId,
       publishedAt,
       title,
@@ -36,7 +36,7 @@ async function getRssData() {
         title,
         image: thumbnail.big,
         description: excerpt,
-        categories: tags,
+        categories: topics,
         date: publishedAt,
         url,
       };

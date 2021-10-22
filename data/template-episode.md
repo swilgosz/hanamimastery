@@ -1,7 +1,7 @@
 ---
 id: 1
 author: "swilgosz"
-tags: ["fullstack"]
+topics: ["templates"]
 title: "#1 <<Title>>"
 excerpt: "<<Summary>>"
 videoId: null
@@ -23,7 +23,6 @@ source: https://github.com/hanamimastery/episodes/tree/main/001
 
 TO BE REMOVED
 Project: [[100 HanamiMastery episodes marathon]]
-Tags: #templates
 
 !!!CONTENT!!!!
 

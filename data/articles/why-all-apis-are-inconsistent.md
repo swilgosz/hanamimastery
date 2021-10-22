@@ -1,7 +1,7 @@
 ---
 id: 5
 author: "swilgosz"
-tags: ['api', "thoughts"]
+topics: ['api', "thoughts"]
 title: "Why ALL APIs are inconsistent?"
 excerpt: "One of the most common problems in web applications, is to update the application state based on the business rules. How it's possible, that API specification does not cover it?"
 publishedAt: "2021-09-17"

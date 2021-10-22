@@ -9,13 +9,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TagButton({tag}) {
+export default function TopicButton({topic}) {
   const classes = useStyles();
-  const href = `/t/${tag}`;
+  const href = `/t/${topic}`;
   return (
     <Chip
       className={classes.root}
-      label={tag}
+      label={topic}
       component='a'
       href={href}
       color="primary"

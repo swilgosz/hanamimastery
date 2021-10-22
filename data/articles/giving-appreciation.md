@@ -1,7 +1,7 @@
 ---
 id: 3
 author: "swilgosz"
-tags: ['thoughts']
+topics: ['thoughts']
 title: "Why I'm giving so much appreciation everywhere?"
 excerpt: "People seem to be surprised being mentioned in my articles, tweets, videos, or when I send a personal 'thank you' email. I've decided to sort it out here..."
 publishedAt: "2021-07-12"

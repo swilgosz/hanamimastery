@@ -53,7 +53,7 @@ export default function Article({ mdxSource, frontMatter }) {
     'discuss': 1
   }
   const activeTab = mapping[router.query.view] || 0;
-  const { tags, path, title, thumbnail, id, excerpt, url} = frontMatter;
+  const { topics, path, title, thumbnail, id, excerpt, url} = frontMatter;
 
   return (
     <>
@@ -74,7 +74,7 @@ export default function Article({ mdxSource, frontMatter }) {
         openGraph={{
           article: {
             authors: ["https://www.facebook.com/sebastian.wilgosz"],
-            tags,
+            topics,
           },
           locale: "en_US",
           url,

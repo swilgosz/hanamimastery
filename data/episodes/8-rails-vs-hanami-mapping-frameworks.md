@@ -1,7 +1,7 @@
 ---
 id: 8
 author: "swilgosz"
-tags: ['rails', 'hanami']
+topics: ['rails', 'hanami']
 title: "#8 Learn new things easily - mapping Rails to Hanami "
 excerpt: "When I've started with learning Hanami, I've struggled a lot because of the different concepts Hanami has over Rails. In this episode of Hanami Mastery I'm mapping Rails to Hanami for easier learning."
 videoId: 73oJ-_aldc8

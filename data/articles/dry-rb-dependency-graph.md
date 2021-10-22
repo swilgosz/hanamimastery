@@ -1,7 +1,7 @@
 ---
 id: 4
 author: "swilgosz"
-tags: ['dry-rb']
+topics: ['dry-rb']
 title: "I've made a dependency graph for DRY-RB Ruby gems family"
 excerpt: "Have you ever wondered which DRY-RB library learn first? I did when I started with DRY-RB. I hope this will help!"
 publishedAt: "2021-07-27"

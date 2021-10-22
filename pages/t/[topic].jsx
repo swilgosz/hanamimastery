@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import ContentGrid from "../../features/content-grid/index";
 import ArticlesLayout from "../../layouts/articles-layout";
 import { setAuthors } from "../../redux/slices/authors";
-import { getContent, getContentByTag } from "../../utils/queries";
+import { getContent, getContentByTopic } from "../../utils/queries";
 
-export default function BlogIndex({ posts, authors, tag }) {
+export default function BlogIndex({ posts, authors, topic }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setAuthors(authors));
@@ -14,12 +14,12 @@ export default function BlogIndex({ posts, authors, tag }) {
   return (
     <>
       <NextSeo
-        title={`Articles and screencast episodes about ${tag}`}
+        title={`Articles and screencast episodes about ${topic}`}
         titleTemplate="%s | Hanami Mastery - learn hanami as a pro"
-        description={`Newest Hanami Mastery content related to ${tag} topic!`}
+        description={`Newest Hanami Mastery content related to ${topic} topic!`}
         openGraph={{
-          title: `Articles and screencast episodes about ${tag}`,
-          description: `Newest Hanami Mastery content related to ${tag} topic!`,
+          title: `Articles and screencast episodes about ${topic}`,
+          description: `Newest Hanami Mastery content related to ${topic} topic!`,
           images: ["/images/logo-hm.jpeg"],
           type: "website",
         }}
@@ -30,23 +30,23 @@ export default function BlogIndex({ posts, authors, tag }) {
 }
 
 export async function getStaticProps({ params }) {
-  const posts = await getContentByTag(params.tag);
+  const posts = await getContentByTopic(params.topic);
   const authors = await getContent("team");
 
   return {
-    props: { posts, authors, tag: params.tag }, // will be passed to the page component as props
+    props: { posts, authors, topic: params.topic }, // will be passed to the page component as props
   };
 }
 
 export async function getStaticPaths() {
   const items = await getContent();
-  const arr = items.map((p) => (p.tags));
-  const allTags = [].concat(...arr);
-  const tags = [...new Set(allTags)]
+  const arr = items.map((p) => (p.topics));
+  const allTopics = [].concat(...arr);
+  const topics = [...new Set(allTopics)]
   return {
-    paths: tags.map((t) => ({
+    paths: topics.map((t) => ({
       params: {
-        tag: t,
+        topic: t,
       },
     })),
     fallback: false,
