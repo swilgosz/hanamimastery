@@ -177,7 +177,7 @@ With this gem, I'll be able to ensure, that All my objects always return the sam
 
 Finally, [Dry::Validation](https://dry-rb.org/gems/dry-validation/) is the best validation engine I know. I use it in all my projects for years already, to extract my validation rules out of Active Record objects.
 
-While I'll go through the implementation pretty fast in this episode if you're interested in deeper dive into any of those gems, let me know using #suggestion - and you can [consider sponsoring me on Github](https://github.com/sponsors/swilgosz) to get a bigger impact on future episodes content.
+While I'll go through the implementation pretty fast in this episode if you're interested in deeper dive into any of those gems, let me know using `#suggestion` - and you can [consider sponsoring me on Github](https://github.com/sponsors/swilgosz) to get a bigger impact on future episodes content.
 
 <GHSponsor />
 

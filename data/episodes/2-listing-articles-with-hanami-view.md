@@ -52,7 +52,7 @@ This is super simple and elastic in use because as those are the only requiremen
 
 If we'd have to render more complicated templates, however, it'd be nice to have a class that takes care of preparing the `HTML` to keep our routes clean and simple.
 
-This is when #Hanami/Action comes in. I can replace the `proc` written directly in the routes with a path pointing into the action I want to call instead.
+This is when Hanami/Action comes in. I can replace the `proc` written directly in the routes with a path pointing into the action I want to call instead.
 
 ```ruby
 # /config/routes.rb
@@ -101,7 +101,7 @@ Now when I'll visit the browser, You should see the updated text. Awesome!
 
 While this works fine, usually we'd like to write our templates in the `html` or `slim` files or serialize our `JSON` responses using serializers instead of using raw strings everywhere.
 
-This is why in #Hanami, except [actions](https://github.com/hanami/controller#actions), we have also [views](https://github.com/hanami/view) and templates.
+This is why in Hanami, except [actions](https://github.com/hanami/controller#actions), we have also [views](https://github.com/hanami/view) and templates.
 
 ![Static Page rendering](/images/episodes/2/request-flow.png)
 
