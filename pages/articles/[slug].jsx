@@ -34,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     padding: theme.spacing(2),
+    fontSize: "2.125rem",
+    fontWeight: "400",
+    lineHeight: "1.235",
+    letterSpacing: "0.00735em",
   },
   article: {
     marginBottom: "100px",
@@ -102,7 +106,7 @@ export default function Article({ mdxSource, frontMatter }) {
         className={classes.hero}
         style={{ backgroundImage: `url("${thumbnail.full}")` }}
       >
-        <Typography variant="h4" align="center" className={classes.heroFilter}>
+        <Typography variant="h1" align="center" className={classes.heroFilter}>
           {title}
         </Typography>
       </section>
