@@ -13,10 +13,7 @@ thumbnail:
   small: /images/articles/hanami-architecture-explained/cover-small.jpeg
 discussions:
   twitter: null
-  reddit:
-    ruby: null
-    rails: null
-    hanamirb: null
+  reddit: []
 source: null
 category: stray
 ---

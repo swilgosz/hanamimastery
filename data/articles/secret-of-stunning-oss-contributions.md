@@ -26,7 +26,7 @@ One of such things was to always **keep your income higher than outcome**. The o
 
 And then, I've read an amazing comment response from Piotr Solnica on his [10 years of open-source](https://solnic.codes/2021/06/04/10-years-of-open-source/) article:
 
- >The only suggestion I'd have for anybody who considers contributing to OSS is this: do it only if it directly benefits you and be 100% selfish in a good way... Don't fix other people's problems as long as it doesn't benefit you directly in the short term.   *Piotr Solnica*
+ >The only suggestion I'd have for anybody who considers contributing to OSS is this: do it only if it directly benefits you and be 100% selfish in a good way... Don't fix other people's problems as long as it doesn't benefit you directly in the short term.   *Piotr Solnica*^f999ff
 
 This was awesome, it really triggered something in my head. I would consider it as a *Wow!* moment in my life when I've read it.
 

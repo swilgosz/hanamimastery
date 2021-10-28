@@ -13,11 +13,11 @@ thumbnail:
   small: /images/articles/dry-rb-dependency-graph/cover-small.png
 source: https://github.com/hanamimastery/episodes/tree/main/001
 discussions:
-  twitter: null
+  twitter: https://twitter.com/HanamiMastery/status/1419835101853233198
   reddit:
-    ruby: null
-    rails: null
-    hanamirb: null
+    ruby: https://www.reddit.com/r/ruby/comments/osda3l/ive_made_a_dependency_graph_for_dryrb_ruby_gems/
+    rails: https://www.reddit.com/r/rails/comments/osdbkr/ive_made_a_dependency_graph_for_dryrb_ruby_gems/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/osdd2k/ive_made_a_dependency_graph_for_dryrb_ruby_gems/
 category: stray
 ---
 

@@ -12,11 +12,11 @@ thumbnail:
   big: /images/articles/why-all-apis-are-inconsistent/cover-big.png
   small: /images/articles/why-all-apis-are-inconsistent/cover-small.png
 discussions:
-  twitter: null
+  twitter: https://twitter.com/HanamiMastery/status/1438963253993000979
   reddit:
-    ruby: null
-    rails: null
-    hanamirb: null
+    ruby: https://www.reddit.com/r/ruby/comments/pq858k/why_all_apis_are_inconsistent/
+    rails: https://www.reddit.com/r/rails/comments/pq850g/why_all_apis_are_inconsistent/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/pq85mr/why_all_apis_are_inconsistent/
 source: null
 category: stray
 ---

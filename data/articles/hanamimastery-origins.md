@@ -12,11 +12,8 @@ thumbnail:
   big: /images/articles/hanamimastery-origins/cover-big.jpeg
   small: /images/articles/hanamimastery-origins/cover-small.jpeg
 discussions:
-  twitter: null
-  reddit:
-    ruby: null
-    rails: null
-    hanamirb: null
+  twitter: https://twitter.com/sebwilgosz/status/1401982721388392458
+  reddit: []
 source: null
 category: stray
 ---

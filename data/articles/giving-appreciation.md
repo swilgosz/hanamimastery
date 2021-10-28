@@ -13,11 +13,8 @@ thumbnail:
   small: /images/articles/giving-appreciation/cover-small.jpeg
 source: https://github.com/hanamimastery/episodes/tree/main/001
 discussions:
-  twitter: null
-  reddit:
-    ruby: null
-    rails: null
-    hanamirb: null
+  twitter: https://twitter.com/sebwilgosz/status/1414611029561053188
+  reddit: []
 category: stray
 ---
 
