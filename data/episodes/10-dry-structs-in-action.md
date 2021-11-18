@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ['dry-rb', 'dry-struct']
 title: "#10 Model your business with structs on steroids - dry-struct in action!"
 excerpt: "A struct with static type check for all attributes is a pretty useful thing in Ruby and all other languages. Here are 3 examples of useful applications for typed structs using dry-struct."
-videoId: null
+videoId: "J3LVridUt_Y"
 publishedAt: "2021-11-22"
 thumbnail:
   full: /images/episodes/10/cover-full.jpeg
