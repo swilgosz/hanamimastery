@@ -20,13 +20,13 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/010
 ---
 
-In this episode of Hanami Mastery, I will deep dive into the possible implementation of the parts from a business layer in your project and show you why typed structs can be useful in your system. To do this, I'll use [dry-struct](https://dry-rb.org/gems/dry-struct) as a struct initialization engine.
+In this episode of Hanami Mastery, I will deep dive into the possible implementation of the parts from a business layer in your project and show you **why typed structs** can be useful in your system. To do this, I'll use [dry-struct](https://dry-rb.org/gems/dry-struct) as a struct initialization engine.
 
-`dry-struct` is a project created by [Nikita Shilnikov](https://github.com/flash-gordon) and managed by the [DRY-RB team](https://github.com/dry-rb/people), and I want to show you why it's extremely helpful, giving you struct-like objects, but on steroids.
+`dry-struct` is a project created by [Nikita Shilnikov](https://github.com/flash-gordon) and managed by the [DRY-RB team](https://github.com/dry-rb/people), and I want to show you why it's extremely helpful, giving you struct-like objects, **but on steroids**.
 
 Unlike regular structs, these give you **a static type checking for free** and will raise an error each time you try to initialize a struct with invalid attributes violating the schema definition.
 
-One may think: Awesome, a nice, easy-to-use validation gem for my project, but in the next moment your eyes will see, that within the dry family only there are two other validation gems available already! Those are [dry-schema](https://dry-rb.org/gems/dry-schema) and [dry-validation](https://dry-rb.org/gems/dry-validation), both great and together fulfill all needs of anyone who needs to validate anything.
+One may think: "Awesome, a nice, easy-to-use validation gem for my project", but in the next moment your eyes will see, that within the dry family only **there are two other validation gems available already!** Those are [dry-schema](https://dry-rb.org/gems/dry-schema) and [dry-validation](https://dry-rb.org/gems/dry-validation), both great and together fulfill all needs of anyone who needs to validate anything.
 
 However, more importantly, on the official website, you can find a section [addressing directly the question of validating data by using *dry-struct*](https://dry-rb.org/gems/dry-struct/1.0/#validating-data-with-dry-struct)!
 
@@ -36,7 +36,7 @@ It basically says, that validating data with `dry-struct` is totally possible, b
 
 You may now be wondering in which scenario you could need a type check if the data is **supposed to be valid**? I can feel your confusion, so let me show you a few examples of actual applications when `dry-struct` is useful.
 
-### 1. Event sourced systems.
+## 1. Event sourced systems.
 
 The first example I came up with is when you want to get benefits from the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) in your applications. In such systems, **one of the most important rules** you would like to follow is that "what happened, happened".
 
@@ -44,9 +44,11 @@ It means, when you publish an event, you should not remove it from the log, or e
 
 Therefore, it's extremely important to be sure, that every event in your system has a valid structure and all data they carry on **are of a proper type.**
 
-This is one example of when `dry-struct` can be useful. No matter if there can be a bug in the validation logic of the API interface, or at any point of the processing, by using `dry-struct` it is not possible to even instantiate an event with inappropriate data.
+This is one case of when `dry-struct` can be useful. No matter if there can be a bug in the validation logic of the API interface, or at any point of the processing, by using `dry-struct` it is not possible to even instantiate an event with inappropriate data.
 
 Let me show it to you by an example.
+
+### Create event using typed struct
 
 ```ruby
 require 'dry-struct'
@@ -111,7 +113,7 @@ At the point where an event is initialized, there should not be any validation i
 
 This way I can model my business logic without worrying about validation errors, and just test each part of the system in encapsulation, being sure that it's not possible to publish anything that violates the application state.
 
-### 2. Commands
+## 2. Commands
 
 Even if you don't want to make use of events in your system, it is possible you will be interested in using the CQRS pattern in your applications, or even just extract your business domain layer aside from the framework part and communicate with it via service objects.
 
@@ -124,6 +126,8 @@ The rule is similar. A command, or service, directly affecting your business dom
 - in rails, callbacks.
 
 All of those cases already have input data pre-validated, as [I have shown in episode 7](/episodes/7-untangle-your-app-with-dry-monads) so again, it's completely fine to raise an error in case of calling a business commands with an invalid set of attributes.
+
+### Example of command implementation using DRY-Struct
 
 Below I'll add a simple command and name it: `SubscribeToHanamiMastery`. Then inside I'll set the command schema.
 
@@ -165,13 +169,15 @@ subscribe.call(subscriber_id: 'invalid id', email: 'you@awesome.subscriber')
 
 When I'll call this, the command will return a successful value in case of correct data but raise an error otherwise.
 
-### 3. Value objects
+## 3. Value objects
 
 One more useful use case for using `dry-struct`, in my opinion, is a value object implementation.
 
 I can't count how many times I have seen undefined method errors on nil class...
 
 Having the type check verification on arguments passed into the value object practically eliminates such errors. It raises an error during the value object initialization but with a way more detailed error message, which helps a lot in debugging and testing your application.
+
+### DRY-Struct based value object definition
 
 Here is an example of a simple Gender value object, where you can initialize the object using integer and in case of passing an invalid value, you get an error, similar to Integer('invalid')
 
@@ -215,7 +221,7 @@ The value objects allow us to eliminate from our system the [primitive obsession
 
 This is just a basic example, but I believe you get the idea.
 
-### Summary
+## Summary
 
 Typed structs and deeply frozen structs are a very useful tool and I certainly barely scratched the surface of possible applications, to make use of them.  I didn't even mention the reciepies or nested structs features but I strongly encourage you to discover them on your own!
 
