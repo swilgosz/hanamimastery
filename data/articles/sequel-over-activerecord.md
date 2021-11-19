@@ -68,7 +68,7 @@ The core Hanami team just chooses the best available tool for the job, not the m
 
 **And I think it's great!**
 
-With this, if we could improve the community around it, we would improve on available resources and integrations! I totally support this philosophy, as [this is why I started Hanami Mastery in the first place.](/articles/hanamimastery-origins)
+With this, **if we could improve the community around it, we would improve on available resources and integrations**! I totally support this philosophy, as [this is why I started Hanami Mastery in the first place.](/articles/hanamimastery-origins)
 
 Now let's talk about the main points above in depth.
 
@@ -76,15 +76,19 @@ Now let's talk about the main points above in depth.
 
 Confident design in programming means basically that your program behaves as it's expected to.
 
-It splits into different levels, from designing website UI, to designing libraries, classes, or single functions.
+Confident desing touches different levels of creating applications, from designing website UI, to designing libraries, classes, or single functions.
+
+Obviously on different levels, it'll matter for different users. Let's start from something obvious.
 
 ### Confident design in web UI design
 
-In UI it's all about components that people can use confidentially, **knowing what the app will do before they do the interaction**. A very simple example of that is my Hamburger menu on HanamiMastery mobile view.
+In UI, confident design is all about components that people can use confidentially, **knowing what the app will do before they do the interaction**. A very simple example of that is my Hamburger menu on HanamiMastery mobile view.
 
 ![Confident design in UI](/images/articles/sequel-over-activerecord/confident-design.png)
 
-It covers all kinds of components behavior, looks, etc. When a user sees something and can use it without thinking, it's a good confident design.
+You can guess what will happen fi you'll click it, no?
+
+Confident design covers all kinds of components behavior, looks, etc. **When a user sees something and can use it without thinking, it's a good confident design**.
 
 ### Confident design in programming
 
@@ -129,7 +133,9 @@ When you'll `establish_connection`, to set up the connection with the database, 
 
 It appears that Rails calls this establish_connection on the Article object under the hood, so we don't need to, but the funny thing is that calling `establish_connection` on `ActiveRecord::Base` does not establish anything.
 
-The code below will be executed without returning any issues, even though my Postgres server is not even running!
+##### Establishing connection - ActiveRecord example
+
+Here is a simple example to showcase this behavior.
 
 ```ruby
 require 'irb'
@@ -148,12 +154,15 @@ end
 IRB.start
 ```
 
+The code above will be executed without returning any issues, even though my Postgres server is not even running!
 
 ![Establish Connection issue](/images/articles/sequel-over-activerecord/establish-connection.png)
 
 This is certainly not something I would expect.
 
-Sequel - Does not have such an issue. When I call the `connect` method, it actually tries to establish a db connection, and the analogous code in case of `sequel` will fail immediately.
+##### Establishing connection - Sequel example
+
+Sequel does not have such an issue. When I call the `connect` method, it actually tries to establish a db connection, and the analogous code in case of `sequel` will fail immediately.
 
 ```ruby
 require 'irb'
@@ -174,7 +183,9 @@ IRB.start
 
 ![Expected connection establishing error](/images/articles/sequel-over-activerecord/establish-connection.png)
 
-This is what I call confident design for libraries. If the library behaves as we would expect to, it's less likely we'll encounter random bugs due to the inappropriate usage of the library, especially if we're creating complicated, advanced systems, like the Hanami framework.
+**This is what I call confident design for libraries**.
+
+If the library behaves as we would expect to, it's less likely we'll encounter random bugs due to the inappropriate usage of the library, especially if we're creating complicated, advanced systems, like the Hanami framework.
 
 But Wait, There is More!
 
