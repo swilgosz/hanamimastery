@@ -23,19 +23,17 @@ Hanami uses [ROM-RB](https://rom-rb.org) to implement the persistence layer, and
 
 ### But WHY? Why not ActiveRecord?
 
-Therefore I wondered about the reasons behind that. I knew there are issues with ActiveRecord and I did face some of them in my career, but I wanted to know the exact pain points and why Sequel is better than ActiveRecord in enough different areas so it had been chosen by the Hanami team.
+Therefore I wondered about the reasons behind that. I knew there are issues with ActiveRecord and I did face some of them in my career, but I wanted to know the exact pain points and **why Sequel is better than ActiveRecord in enough different areas** to be chosen by the Hanami team.
 
 Recently I've seen this great [Youtube Video summary, comparing ActiveRecord With Sequel](https://www.youtube.com/watch?v=ftJrBpiYQXM) by [Janko Marohnić](https://janko.io/about). I've been amazed and immediately took a lot of notes.
 
 > Big Kudos to Janko for his work! My article is mostly the summary of his presentation, his articles, and collected findings from my own experience and other resources related to this topic.
 
-This article is a result of what I got from this video and further exploring of the topic, and as Hanami uses Sequel under the hood, I've found it interesting to compose this short article from the findings.
+This article is a result of what I got from this video and further exploring of the topic, and as **Hanami uses Sequel under the hood**, I've found it interesting to compose this short article from the findings.
 
 **You can check out the video here!**
 
 <YoutubeEmbed embedId={'ftJrBpiYQXM'} />
-
-# Similiarities vs Differences
 
 ## What is Sequel?
 
@@ -43,7 +41,7 @@ For those who don't know, [Sequel](https://github.com/jeremyevans/sequel) is a r
 
 There are already a lot of comparisons out there already, and I'll link to those in the resources of this article, but I could not hesitate to write my own, focusing on Hanami usage.
 
-Here are the main points that Janko covered, that actually make `Sequel` better than `ActiveRecord` choice for any web application.
+Here are the main points that Janko covered, which actually make `Sequel` better choice than `ActiveRecord` for any sql-based ruby application.
 
 1. Confident Design
 2. Explicitness
@@ -52,7 +50,7 @@ Here are the main points that Janko covered, that actually make `Sequel` better 
 5. Performance
 6. Features
 
-Below I will describe them in a more detailed manner but first, for people who don't like reading, is my summary.
+Below I will describe some of them, adding my own, in a more detailed manner but first, for people who don't like reading, is my summary.
 
 ## Why Hanami uses ROM (and Sequel) over ActiveRecord?
 
