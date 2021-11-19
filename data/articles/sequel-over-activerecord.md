@@ -12,11 +12,10 @@ thumbnail:
   big: /images/articles/sequel-over-activerecord/cover-big.jpeg
   small: /images/articles/sequel-over-activerecord/cover-small.jpeg
 discussions:
-  twitter: null
+  twitter: https://twitter.com/HanamiMastery/status/1461829159173472265
   reddit:
-    ruby: null
-    rails: null
-    hanamirb: null
+    ruby: https://www.reddit.com/r/ruby/comments/qxrnvl/rom_and_sequel_over_activerecord/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/qxro4b/rom_and_sequel_over_activerecord/
 source: null
 category: stray
 ---
