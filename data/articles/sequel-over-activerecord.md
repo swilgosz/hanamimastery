@@ -19,7 +19,9 @@ discussions:
 source: null
 category: stray
 ---
-Hanami uses [ROM-RB](https://rom-rb.org) to implement the persistence layer, and if it comes to SQL databases, ROM uses Sequel as an ORM for an adapter for sql connections.
+Hanami uses [ROM-RB](https://rom-rb.org) to implement the persistence layer, and if it comes to SQL databases, ROM uses Sequel to manage SQL connections.
+
+### But WHY? Why not ActiveRecord?
 
 Therefore I wondered about the reasons behind that. I knew there are issues with ActiveRecord and I did face some of them in my career, but I wanted to know the exact pain points and why Sequel is better than ActiveRecord in enough different areas so it had been chosen by the Hanami team.
 
