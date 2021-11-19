@@ -1,0 +1,242 @@
+---
+id: 7
+aliases: ["HMAP007"]
+author: "swilgosz"
+topics: ["hanami", "rails", "persistance", "rom-rb", "activerecord", "sequel"]
+title: "ROM and Sequel over ActiveRecord?"
+excerpt: "I've wondered why Hanami uses sequel under the hood. There are some problems with ActiveRecord, but I've wanted to know exactly, what it is about. Here is the summary of my foundings."
+publishedAt: "2021-11-19"
+modifiedAt: "2021-11-19"
+thumbnail:
+  full: /images/articles/sequel-over-activerecord/cover-full.jpeg
+  big: /images/articles/sequel-over-activerecord/cover-big.jpeg
+  small: /images/articles/sequel-over-activerecord/cover-small.jpeg
+discussions:
+  twitter: null
+  reddit:
+    ruby: null
+    rails: null
+    hanamirb: null
+source: null
+category: stray
+---
+Hanami uses [ROM-RB](https://rom-rb.org) to implement the persistence layer, and if it changes mes to SQL databases, ROM uses Sequel as an ORM for adapter for sql connections.
+
+Therefore I wondered about the reasons behind that. I knew there are issues with ActiveRecord and I did face sime of them in my career, bit I wanted to know the exact painpoints and why Sequel is better than ActiveRecord in enough different areas so it had been chosen by Hanami team.
+
+Recently I've seen this great [Youtube Video summary, comparing ActiveRecord With Sequel](https://www.youtube.com/watch?v=ftJrBpiYQXM) by [Janko Marohnić](https://janko.io/about). I've been amazed and immediately took a lot of notes.
+
+> Big Kudos for Janko for his work! My article is mostly the summary of his presentation, his articles, and collected findings from my own experience and other resources related to this topic.
+
+This article is a result of what I got from this video and further exploring of the topic, and as Hanami uses Sequel under the hood, I've found it interesting to compose this short article from the findings.
+
+**You can check out the video here!**
+
+<YoutubeEmbed embedId={'ftJrBpiYQXM'} />
+
+# Similiarities vs Differences
+
+## What is Sequel?
+
+For those who don't know, [Sequel](https://github.com/jeremyevans/sequel) is a ruby ORM, an ActiveRecord's alternative, developed to communicate with databases easily. It can be used in any ruby application, and is an ORM of choice for [Hanami framework](https://hanamirb.org).
+
+There are already a lot of comparisons out there already, and I'll link to those in the resources of this article, but I could not hesitate writing my own, focusing on Hanami usage.
+
+Here are the main points that Janko covered, that actually makes `Sequel` better than `ActiveRecord` choice for any web application.
+
+1. Confident Design
+2. Explicity
+3. No global State
+4. Complexity management
+5. Performance
+6. Features
+
+Below I will describe them in a more detailed manner but first, for people who don't like reading, is my summary.
+
+## Why Hanami uses ROM (and Sequel) over ActiveRecord?
+
+When you will go through the video above or the details below, the answer should become obvious.
+
+![Sequel vs Active Record](/images/articles/sequel-over-activerecord/sequel-vs-activerecord.png)
+
+> Disclaimer: Plus means advantage over the other option.
+
+Sequel wins in almost all meaningful categories, and the only thing that speaks for ActiveRecord seems to be the fact that there is a greater community around it so it's more rich in terms of available learning resources or compatible gems built by developers all around the world.
+
+I do understand the reasons behind choosing Sequel and [ROM](https://rom-rb.org) as a default ORM for Hanami application framework.
+
+The core Hanami team just choose the best available tool for the job, not the most popular one.
+
+**And I think it's great!**
+
+With this, if we could improve the community around it, we would improve on available resources and integrations! I totally support this philosophy, as [this is why I started Hanami Mastery in the first place.](/articles/hanamimastery-origins)
+
+Now let's talk about the main points above in depth.
+
+## Confident design
+
+Confident design in programming means basically that your program behaves as it's expected to.
+
+It splits into different levels, from designing websites UI, to designing libraries, classes or single functions.
+
+### Confident design in web UI design
+
+In UI it's all about components which people can use confidentially, **knowing what the app will do before they do the interaction**. A very simple example of that is my Hamburger menu on HanamiMastery mobile view.
+
+![Confident design in UI](/images/articles/sequel-over-activerecord/confident-design.png)
+
+It covers all kind of components behavior, look, etc. When user sees something and can use it without thinking, it's a good confident design.
+
+### Confident design in programming
+
+However, it comes down to the lower levels too. **For programming libraries, developers are users.**
+
+If I design a library which can be used by developers confidentially, it's a sign of well-designed library. You can apply this thought to classes and methods too, or even the API endpoints!
+
+So how does this all apply to `active-record` and `sequel`?
+
+### Active Record WAT's
+
+#### 1. Gem's name
+
+Ruby's convention method for naming gems comes down to this.
+
+- "MyGem" => "my_gem"
+- "My::Gem" => "my-gem"
+
+Therefore, If I know the `ActiveRecord` class name, I'd expect the name to be named: `active_record`.
+
+![ActiveRecord naming issue](/images/articles/sequel-over-activerecord/activerecord-naming-wats.png)
+
+But it's not as I would expect.
+
+Fortunately, when it comes to `require`, name follows the convention.
+
+```ruby
+require 'active_record'
+```
+
+This one is not a big deal, especially as most people using `ActiveRecord` do it because of Rails, and Rails have it listed as a dependency. No need to be strict about dependencies names I guess.
+
+It annoyed me personally several times though, as I am a person who plays around with gems in raw ruby environment to contribute, benchmark and build non-standard solutions.
+
+#### 2. Establish Connection
+
+The first real example of inconfident design though is when we use `establish_connection` method.
+
+When you'll `establish_connection`, to setup the connection with the database, then, in the console, calling an Article class, ruby will ask you to establish connection again.
+
+![Reaction on connection not established after calling establish_connection in ActiveRecord](/images/articles/sequel-over-activerecord/wat-1.gif)
+
+It appears that Rails calls this establish_connection on the Article object under the hood, so we don't need to, but the funny thing is that calling `establish_connection` on `ActiveRecord::Base` does not establish anything.
+
+The code below will be executed without returning any issues, even though my Postgres server is not even running!
+
+```ruby
+require 'irb'
+
+require 'pg'
+require 'active_record'
+
+ActiveRecord::Base.establish_connection(
+  adapter: 'postgresql',
+  database: 'mydb'
+)
+
+class Article < ActiveRecord::Base
+end
+
+IRB.start
+```
+
+
+![Establish Connection issue](/images/articles/sequel-over-activerecord/establish-connection.png)
+
+This is certainly not something I would expect.
+
+Sequel - Does not have such issue. When I call the `connect` method, it actually tries to establish db connection, and the analogous code in case of `sequel` will fail immediately.
+
+```ruby
+require 'irb'
+
+require 'pg'
+require 'sequel'
+
+DB = Sequel.connect(
+  adapter: 'postgresql',
+  database: 'mydb'
+)
+
+class Article < Sequel::Model
+end
+
+IRB.start
+```
+
+![Expected connection establishing error](/images/articles/sequel-over-activerecord/establish-connection.png)
+
+This is what I call confident design for libraries. If library behaves as we would expect to, it's less likely we'll encounter random bugs due to the inappropriate usage of the library, especially if we're creating complicated, advanced systems, like Hanami framework.
+
+But Wait, There is More!
+
+#### 3. Defining methods on Runtime.
+
+We all know that `ActiveRecord` does define model methods based on table schema definition. It's super convinient and speeds up the development in early days of the application like crazy.
+
+I love this feature, but it's a bit less known, that `ActiveRecord` actually defines those methods defines methods dynamically **in runtime**.
+
+So, until the first instance of my model is not created, the method on the class is not defined....
+
+![Methods defined on runtime](/images/articles/sequel-over-activerecord/methods-defined-on-runtime.png)
+
+Sequel Parses the schema immediately, so you'll know immediately that the article has the `title` method defined, as you probably expected.
+
+![Methods defined on build time](/images/articles/sequel-over-activerecord/methods-defined-immediately.png)
+
+### Complexity
+
+I am often annoyed by the fact the `type` method in Rails is reserved for STI, even though STI is something I rarely use.
+
+After watching Janko's video, I know I'm not the only one.
+
+Unfortunately, one of the biggest issues with `activerecord` is it's size. Active Record is a monster, rich in features, most of which you'll probably not use, especially if you only want to develop simple, task-focused library.
+
+It's fine, that `activerecord` is rich in features, however not being able to disable them is in my opinion very bad thing.
+
+Sequel, in contrast, loads by default only essencial feature set, allowing user to have control over what should be included. All non-standard features are loadable by plugin system, which makes Sequel more lightweight, faster and easier to work with.
+
+```ruby
+ActiveRecord::Base.ancestors # loads all the features
+
+Sequel::Model.ancestors # loads only essencials - everything accessible by a plugins.
+```
+
+This Really speeds up the app, improves the memory management, and so on.
+
+![ActiveRecord and Sequel weight comparison (SRC: https://youtu.be/ftJrBpiYQXM)](/images/articles/sequel-over-activerecord/ar-sequel-weight-comparison.png)
+
+## Summary
+
+Sequel is really a much better library than ActiveRecord objectively. I strongly believe ActiveRecord is popular because of Rails.
+
+Now, when I work more with Hanami, I really enjoy being exposed on Sequel too!
+
+Keep in mind, that this article covers only a fraction of the differences. I'll extend it but in the meantime, I strongly encourage you to [watch the video](https://www.youtube.com/watch?v=ftJrBpiYQXM) and read the resources linked below!
+
+### Consider support!
+
+I hope you've enjoyed this article, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)**, and **follow me [on Twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
+
+### Do you know other great gems?
+
+If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention it in the comments!
+
+### References
+- [Sequel CheatSheet](http://sequel.jeremyevans.net/rdoc/files/doc/cheat_sheet_rdoc.html)
+- [Ode to sequel by Janko Marohnić](https://janko.io/ode-to-sequel/)
+- https://mrbrdo.wordpress.com/2013/10/15/why-you-should-stop-using-activerecord-and-start-using-sequel/
+
+### Thanks!
+
+- [Jon Tyson](https://unsplash.com/@jontyson) - For a great cover photo
+- [Janko Marohnić](https://github.com/janko) - for an astonishing ground work to make this article possible.
