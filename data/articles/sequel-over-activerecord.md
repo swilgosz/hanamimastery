@@ -193,9 +193,9 @@ But Wait, There is More!
 
 We all know that `ActiveRecord` does define model methods based on table schema definition. It's super convenient and speeds up the development in the early days of the application like crazy.
 
-I love this feature, but it's a bit less known, that `ActiveRecord` actually defines those methods defines methods dynamically **in runtime**.
+I love this feature, but it's a bit less known, that `ActiveRecord` actually defines those methods dynamically **in runtime**.
 
-So, until the first instance of my model is not created, the method on the class is not defined...
+So, until the first instance of my model is created, the method on the class is not defined...
 
 ![Methods defined on runtime](/images/articles/sequel-over-activerecord/methods-defined-on-runtime.png)
 
