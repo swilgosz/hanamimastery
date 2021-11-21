@@ -68,7 +68,7 @@ The core Hanami team just chooses the best available tool for the job, not the m
 
 **And I think it's great!**
 
-With this, **if we could improve the community around it, we would improve on available resources and integrations**! I totally support this philosophy, as [this is why I started Hanami Mastery in the first place.](/articles/hanamimastery-origins)
+With this, **if we could improve the community around ROM and Sequel, we would improve on available resources and integrations**! I totally support this philosophy, as [this is why I started Hanami Mastery in the first place.](/articles/hanamimastery-origins)
 
 Now let's talk about the main points above in depth.
 
@@ -86,7 +86,7 @@ In UI, confident design is all about components that people can use confidential
 
 ![Confident design in UI](/images/articles/sequel-over-activerecord/confident-design.png)
 
-You can guess what will happen fi you'll click it, no?
+You can guess what will happen if you'll click it, no?
 
 Confident design covers all kinds of components behavior, looks, etc. **When a user sees something and can use it without thinking, it's a good confident design**.
 
@@ -107,7 +107,7 @@ Ruby's convention method for naming gems comes down to this.
 - "MyGem" => "my_gem"
 - "My::Gem" => "my-gem"
 
-Therefore, If I know the `ActiveRecord` class name, I'd expect the name to be named: `active_record`.
+Therefore, If I know the `ActiveRecord` class name, I'd expect the gem to be named: `active_record`.
 
 ![ActiveRecord naming issue](/images/articles/sequel-over-activerecord/activerecord-naming-wats.png)
 
@@ -181,7 +181,7 @@ end
 IRB.start
 ```
 
-![Expected connection establishing error](/images/articles/sequel-over-activerecord/establish-connection.png)
+![Expected connection establishing error](/images/articles/sequel-over-activerecord/conenction-established.png)
 
 **This is what I call confident design for libraries**.
 
