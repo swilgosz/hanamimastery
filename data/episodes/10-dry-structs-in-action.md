@@ -13,11 +13,11 @@ thumbnail:
   big: /images/episodes/10/cover-big.jpeg
   small: /images/episodes/10/cover-small.jpeg
 discussions:
-  twitter: nil
+  twitter: https://twitter.com/HanamiMastery/status/1462587511562289154
   reddit:
-    ruby: nil
-    rails: nil
-    hanamirb: nil
+    ruby: https://www.reddit.com/r/ruby/comments/qz98gt/10_model_your_business_with_structs_on_steroids/
+    rails: https://www.reddit.com/r/rails/comments/qz9a70/10_model_your_business_with_structs_on_steroids/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/qz9akm/10_model_your_business_with_structs_on_steroids/
 source: https://github.com/hanamimastery/episodes/tree/main/010
 ---
 
