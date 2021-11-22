@@ -247,6 +247,5 @@ If you have any suggestions of amazing ruby gems You'd like me to cover, or idea
 - https://mrbrdo.wordpress.com/2013/10/15/why-you-should-stop-using-activerecord-and-start-using-sequel/
 
 ### Thanks!
-
 - [Jon Tyson](https://unsplash.com/@jontyson) - For a great cover photo
 - [Janko Marohnić](https://github.com/janko) - for the astonishing groundwork to make this article possible.
