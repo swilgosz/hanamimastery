@@ -12,11 +12,10 @@ thumbnail:
   big: /images/episodes/11/cover-big.jpeg
   small: /images/episodes/12/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1465212762888486913
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/r4pw59/11_effective_programming_in_ruby_wit_dryeffects/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/r4pwd8/11_effective_programming_in_ruby_wit_dryeffects/
 source: https://github.com/hanamimastery/episodes/tree/main/011
 ---
 Algebraic effects are a concept from functional programming that allows working with a shared, non-locale state.
