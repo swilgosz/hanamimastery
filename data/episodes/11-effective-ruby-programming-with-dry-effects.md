@@ -18,7 +18,7 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/r4pwd8/11_effective_programming_in_ruby_wit_dryeffects/
 source: https://github.com/hanamimastery/episodes/tree/main/011
 ---
-Algebraic effects are a concept from functional programming that allows working with a shared, non-locale state.
+Algebraic effects are a concept from functional programming that allows working with a shared, non-local state.
 
 You can achieve a lot of amazing things with them, like
 
@@ -30,13 +30,13 @@ You can achieve a lot of amazing things with them, like
 - dependency injection
 - ...and many, many more. 
 
-All that can be done in a unified, testable way, which could bring more cohesion to your projects.
+All that can be done in a unified,** testable way**, which could bring more cohesion to your projects.
 
 For me, coming from an object-oriented world, however, It was not something I could easily grasp just by looking at the definition. Fortunately, [similar to monads](/episodes/7-untangle-your-app-with-dry-monads), **one doesn't need to fully understand algebraic effects or category theory to figure out why and when they may be useful.**
 
 In this episode of Hanami mastery I will show you **two simple but real-world examples of using effects to extend your Hanami or any other ruby application**. I will use Hanami hello, World application for showcasing those scenarios, but you can apply the concept to whatever you wish.
 
-For that, I will make use of [[dry-effects]] which is a neat little library that implements the most useful algebraic effects in Ruby. Created by Nikita Shilonicov and Piotr Solnica and managed by the dry team it follows the simple rule of doing just one thing but doing it in the best possible way.
+For that, I will make use of [[dry-effects]] which is a neat little library that implements the most useful algebraic effects in Ruby. Created by [Nikita Shilonicov](https://github.com/flash-gordon) and managed by the dry team it follows the simple rule of doing just one thing but doing it in the best possible way.
 
 ## The reader effect
 
@@ -397,7 +397,7 @@ I hope you've enjoyed this episode, and if you want to see more content in this 
 I'd like to especially thank 
 
 - [Andrzej Krzywda](https://github.com/andrzejkrzywda)
-- Sebastjan Hribar
+- [Sebastjan Hribar](https://github.com/sebastjan-hribar)
 - and [Useo](https://github.com/useo-pl)
 
 Together with all my other GitHub sponsors for supporting this project and the whole Hanami Mastery initiative. Highly appreciated! You make this project possible!
