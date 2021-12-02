@@ -3,7 +3,7 @@ import * as React from "react";
 import { Grid, Container, Typography } from "@material-ui/core";
 import { SeoComponent } from "../../features/seo";
 import { useRouter } from "next/router";
-import { useStyles } from "./styles";
+import { useStyles } from "./episode-layout.styles";
 import BuyMeACoffee from "../../features/buy-me-a-coffee-button";
 import Discussions from "../../features/content/discussions";
 import EmailSubscriptionForm from "../../features/email-subscription-form";

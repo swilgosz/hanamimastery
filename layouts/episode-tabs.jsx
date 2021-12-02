@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    bgcolor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.paper,
     borderColor: "divider",
   },
   link: {
