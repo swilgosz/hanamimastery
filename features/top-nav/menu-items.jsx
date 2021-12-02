@@ -7,8 +7,9 @@ const links = [
   { href: "/episodes", label: "Episodes" },
   { href: "/c/stray", label: "Stray" },
   { href: "/about", label: "About" },
+  { href: "/collaboration", label: "Collaboration" },
   { href: "/sponsors", label: "Sponsors" },
-  { href: "/feed", label: "RSS", icon: '/rss-feed-icon.png'}
+  { href: "/feed", label: "RSS", icon: '/rss-feed-icon.png' }
 ];
 
 const MenuItems = ({ MenuItemProps = {} }) =>
@@ -19,7 +20,7 @@ const MenuItems = ({ MenuItemProps = {} }) =>
           <MenuItem {...MenuItemProps}>
             <RssFeedIcon />
           </MenuItem>
-      </NextLink>
+        </NextLink>
       );
     }
     return (
