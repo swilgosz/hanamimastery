@@ -1,10 +1,13 @@
-import * as React from 'react';
-import { Box, Tabs, Tab, makeStyles, useMediaQuery } from '@material-ui/core';
+import * as React from "react";
+import { Box, Tabs, Tab, makeStyles, useMediaQuery } from "@material-ui/core";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(4),
+    width: "100%",
+    backgroundColor: theme.palette.background.paper,
+    borderColor: "divider",
   },
   link: {
     display: "inline-flex",
@@ -12,46 +15,70 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const getTabsValue = (view) => {
+  switch (view) {
+    case "episodes":
+      return 0;
+    case "discuss":
+      return 1;
+    default:
+      return 0;
+  }
+};
+
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
 function LinkTab(props) {
   const classes = useStyles();
   return (
-    <NextLink className={classes.link} centered href={props.href} passHref>
-      <Tab className={classes.link}
-        {...props}
-      />
+    <NextLink
+      className={classes.link}
+      centered
+      href={props.href}
+      passHref
+      shallow
+    >
+      <Tab className={classes.link} {...props} />
     </NextLink>
   );
 }
 
-export default function EpisodeTabs({ activeTab, episodePath }) {
+export default function EpisodeTabs() {
   const classes = useStyles();
 
-  const value = activeTab || 0;
+  const {
+    query: { slug, view },
+  } = useRouter();
 
-  const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
+  const episodePath = React.useMemo(() => `/episodes/${slug}`, [slug]);
+  const value = getTabsValue(view);
 
-  const tabsProps = {
-    orientation: isSmallScreen ? false : "vertical",
-    // size: isSmallScreen ? "small" : "large"
-  };
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   return (
-    <Box sx={{ width: '100%', bgcolor: 'background.paper', borderColor: 'divider', width: '100%' }}>
+    <Box className={classes.root}>
       <Tabs
-        {...tabsProps}
+        orientation={isSmallScreen ? false : "vertical"}
         value={value}
         centered
       >
-        <LinkTab label="Read" aria-selected={true} href={episodePath} {...a11yProps(0)}/>
-        {/* <LinkTab label="Watch" href={`${episodePath}?view=watch`} {...a11yProps('watch')}/> */}
-        <LinkTab className={classes.link} label="Discussions" href={`${episodePath}?view=discuss`} {...a11yProps(1)}/>
+        <LinkTab
+          label="Read"
+          aria-selected={true}
+          href={episodePath}
+          {...a11yProps(0)}
+        />
+        <LinkTab
+          className={classes.link}
+          label="Discussions"
+          href={`${episodePath}?view=discuss`}
+          {...a11yProps(1)}
+        />
       </Tabs>
     </Box>
   );
