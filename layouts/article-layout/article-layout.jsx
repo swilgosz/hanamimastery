@@ -1,32 +1,29 @@
 import * as React from "react";
-
 import { Grid, Container, Typography } from "@material-ui/core";
 import { SeoComponent } from "../../features/seo";
 import { useRouter } from "next/router";
-import { useStyles } from "./episode-layout.styles";
+import { useStyles } from "./article-layout.styles";
+import ArticleSchema from "../../features/content-schemas/article-schema";
+import ArticleTabs from "../article-tabs";
 import BuyMeACoffee from "../../features/buy-me-a-coffee-button";
 import Discussions from "../../features/content/discussions";
 import EmailSubscriptionForm from "../../features/email-subscription-form";
-import EpisodeSchema from "../../features/content-schemas/episode-schema";
-import EpisodeTabs from "../episode-tabs";
 import GHSponsor from "../../features/gh-sponsor";
 import ShareButtons from "../../features/share-buttons";
-import YoutubeEmbed from "../../features/youtube-embed";
+
 import {
   shouldDisplayArticle,
   shouldDisplayDiscussions,
-  shouldDisplayVideo,
 } from "../../utils/display-queries";
 
-const EpisodeLayout = ({ episode, children }) => {
+const ArticleLayout = ({ article, children }) => {
   const classes = useStyles();
 
   const {
     query: { view },
   } = useRouter();
 
-  const { topics, videoId, title, thumbnail, id, excerpt, url, discussions } =
-    episode;
+  const { topics, title, thumbnail, id, excerpt, url, discussions } = article;
 
   const displayArticle = React.useMemo(
     () => shouldDisplayArticle(view),
@@ -36,7 +33,6 @@ const EpisodeLayout = ({ episode, children }) => {
     () => shouldDisplayDiscussions(view),
     [view]
   );
-  const displayVideo = React.useMemo(() => shouldDisplayVideo(view), [view]);
 
   return (
     <>
@@ -46,7 +42,7 @@ const EpisodeLayout = ({ episode, children }) => {
         topics={topics}
         excerpt={excerpt}
       />
-      <EpisodeSchema episode={episode} />
+      <ArticleSchema article={article} />
       <section
         className={classes.hero}
         style={{ backgroundImage: `url("${thumbnail.full}")` }}
@@ -58,19 +54,10 @@ const EpisodeLayout = ({ episode, children }) => {
       <Container className={classes.conainer} maxWidth="xl" component="main">
         <Grid container className={classes.root} spacing={4}>
           <Grid item xs={12} sm={12} md={12} lg={2} xl={3} component="aside">
-            <EpisodeTabs />
+            <ArticleTabs />
           </Grid>
-          <Grid
-            item
-            sm={12}
-            md={8}
-            lg={7}
-            xl={6}
-            component="article"
-            className={classes.article}
-          >
+          <Grid item sm={12} md={8} lg={7} xl={6} component="article">
             <ShareButtons />
-            {displayVideo && <YoutubeEmbed embedId={videoId} />}
             {displayArticle && children}
             {displayDiscussions && (
               <Discussions
@@ -100,4 +87,4 @@ const EpisodeLayout = ({ episode, children }) => {
   );
 };
 
-export default EpisodeLayout;
+export default ArticleLayout;
