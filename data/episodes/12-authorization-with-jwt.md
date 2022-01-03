@@ -12,12 +12,12 @@ thumbnail:
   big: /images/episodes/12/cover-big.jpeg
   small: /images/episodes/12/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1478133632787169289
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: https://github.com/hanamimastery/episodes/tree/main/00X
+    ruby: https://www.reddit.com/r/ruby/comments/rve7dr/authorization_with_jwt_in_any_rack_applications/
+    rails: https://www.reddit.com/r/rails/comments/rve7q5/authorization_with_jwt_in_any_rack_applications/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/rve817/authorization_with_jwt_in_any_rack_applications/
+source: https://github.com/hanamimastery/episodes/tree/main/012
 ---
 ---
 
