@@ -19,7 +19,6 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/rve817/authorization_with_jwt_in_any_rack_applications/
 source: https://github.com/hanamimastery/episodes/tree/main/012
 ---
----
 
 I have this simple Hanami API application allowing me to list some draft articles and published ones, under separate endpoints. However, none of those endpoints is authorized, which means that anybody can access all my resources at any point in time!
 
