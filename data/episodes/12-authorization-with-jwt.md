@@ -1,5 +1,5 @@
 ---
-id: 1
+id: 12
 aliases: ["HMEP012"]
 author: "swilgosz"
 topics: ['hanami', 'authorization', 'dry-effects', 'dry-rb', 'jwt']
