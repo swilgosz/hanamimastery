@@ -44,7 +44,7 @@ Let's tackle the first example.
 
 I have my "hello world" application here and I would like to add a localization feature to support multiple languages.
 
-![[/images/episodes/11/hello-world.png]]
+![Hello world application](/images/episodes/11/hello-world.png)
 
 In my view, I have the message method exposed, which is then rendered in the template. 
 
@@ -117,7 +117,7 @@ end
 
 Voila! It works!
 
-![[/images/episodes/11/karibu-world.png]]
+![Translated hello world](/images/episodes/11/karibu-world.png)
 
 However, how much overhead it is?
 
@@ -176,7 +176,7 @@ The reader effect is the simplest effect available, it just reads the state and 
 
 In my case, this is exactly what will happen. Because I had not set my initial value for the locale reader, trying to read it in the browser will raise an error saying that the state cannot be read.
 
-![[/images/episodes/11/state-not-set.png]]
+![State not set error](/images/episodes/11/state-not-set.png)
 
 It's expected, and to solve it, I will write a little localization middleware that will be used by my whole application. 
 
