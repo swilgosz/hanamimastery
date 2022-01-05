@@ -434,7 +434,7 @@ docker-compose up
 
 We can now run the server and visit `localhost:2300` to check out the result in the browser.
 
-![[Pasted image 20210930191747.png]]
+![Final blog listing with persistence set](/images/episodes/9/blog-listing-final.png)
 
 It looks pretty similar to what we had before, however, after refreshing the page, everything will stay the same.
 

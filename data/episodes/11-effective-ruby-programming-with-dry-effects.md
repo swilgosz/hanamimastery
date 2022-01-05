@@ -36,7 +36,7 @@ For me, coming from an object-oriented world, however, It was not something I co
 
 In this episode of Hanami mastery I will show you **two simple but real-world examples of using effects to extend your Hanami or any other ruby application**. I will use Hanami hello, World application for showcasing those scenarios, but you can apply the concept to whatever you wish.
 
-For that, I will make use of [[dry-effects]] which is a neat little library that implements the most useful algebraic effects in Ruby. Created by [Nikita Shilonicov](https://github.com/flash-gordon) and managed by the dry team it follows the simple rule of doing just one thing but doing it in the best possible way.
+For that, I will make use of [dry-effects](https://dry-rb.org/gems/dry-effects) which is a neat little library that implements the most useful algebraic effects in Ruby. Created by [Nikita Shilonicov](https://github.com/flash-gordon) and managed by the dry team it follows the simple rule of doing just one thing but doing it in the best possible way.
 
 ## The reader effect
 
