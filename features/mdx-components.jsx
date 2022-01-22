@@ -83,7 +83,7 @@ const CustomLink = (props) => {
 const useHeaderStyles = makeStyles(() =>
   createStyles({
     root: {
-      marginTop: "40px",
+      marginTop: "10px",
       marginBottom: "20px",
       scrollMarginTop: "100px",
       scrollSnapMargin: "100px", // Safari
@@ -156,6 +156,7 @@ const MDXComponents = {
   Typography,
   YoutubeEmbed,
   GHSponsor,
+  CustomHeader
 };
 
 export default MDXComponents;
