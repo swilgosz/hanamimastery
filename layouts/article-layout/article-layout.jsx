@@ -34,6 +34,13 @@ const ArticleLayout = ({ article, children }) => {
     [view]
   );
 
+  let prefix;
+  if (view == "discuss") {
+    prefix = "Discussions for "
+  } else {
+    prefix = ""
+  }
+
   return (
     <>
       <SeoComponent

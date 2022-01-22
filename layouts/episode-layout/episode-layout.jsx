@@ -38,13 +38,20 @@ const EpisodeLayout = ({ episode, children }) => {
   );
   const displayVideo = React.useMemo(() => shouldDisplayVideo(view), [view]);
 
+  let prefix;
+  if (view == "discuss") {
+    prefix = "Discussions for "
+  } else {
+    prefix = ""
+  }
+
   return (
     <>
       <SeoComponent
-        title={title}
+        title={`${prefix}${title}`}
         thumbnails={thumbnail}
         topics={topics}
-        excerpt={excerpt}
+        excerpt={`${prefix}${excerpt}`}
       />
       <EpisodeSchema episode={episode} />
       <section
