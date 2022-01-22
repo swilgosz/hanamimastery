@@ -79,9 +79,22 @@ If you like to write, and have Hanami-related knowledge, you're more than welcom
 If you want to help building the website, I have [plenty of opened GitHub tasks](https://github.com/swilgosz/hanamimastery/projects/1) for this. Feel free to grab whatever you can!
 
 
-Thanks! Stay in touch!
+### Thanks! Stay in touch!
 
-- Twitter: [@hanamimastery](https://twitter.com/hanamimastery) | [@sebwilgosz](https://twitter.com/sebwilgosz)
-- Youtube Channel: [Hanami Mastery](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)
-- Github: [@hanamimastery](https://github.com/hanamimastery) | [@swilgosz](https://github.com/swilgosz)
-- FB: [HanamiMastery](https://facebook.com/hanamimasteryfb)
+I understand, that financial support may be too much. Don't worry.
+You can also support us **by following us** and **sharing our episodes**!
+
+**Hanami Mastery Profiles**
+
+- [Check out ALL my content here](https://hanamimastery.com):
+- [Hanami Mastery Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)
+- Follow us on [Twitter](https://twitter.com/hanamimastery)
+- Subscribe our [Youtube Channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)
+- Give a like on [Facebook](https://www.facebook.com/hanamimasteryfb)
+- Github: [@hanamimastery](https://github.com/hanamimastery) with all [episodes source codes](https://github.com/hanamimastery/episodes)!
+
+**Seb's personal profiles to follow if you wish:**
+
+- BIO LINK: [swilgosz](https://bio.link/swilgosz)
+- Twitter: [@sebwilgosz](https://twitter.com/sebwilgosz)
+- Github: [@swilgosz](https://github.com/swilgosz)
