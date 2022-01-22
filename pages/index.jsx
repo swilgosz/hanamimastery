@@ -1,6 +1,6 @@
-import { NextSeo } from "next-seo";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { SeoComponent } from "../features/seo";
 import ContentGrid from "../features/content-grid/index";
 import ArticlesLayout from "../layouts/articles-layout";
 import HomePageSchema from "../features/content-schemas/homepage-schema";
@@ -20,17 +20,10 @@ export default function BlogIndex({ articles, episodes, authors }) {
   }, [authors]);
   return (
     <>
-      <NextSeo
+      <SeoComponent
         title="Newest Hanami screencasts, articles, and video tutorials"
-        titleTemplate="%s | Hanami Mastery - learn Hanami as a pro"
-        description="Get familiar with Hanami framework and realise that Ruby is not only Rails!"
-        openGraph={{
-          title: "Recent articles",
-          description:
-            "Get familiar with Hanami framework and realise that Ruby is not only Rails! Newest episodes with screencasts related to Hanami!",
-          images: ["/images/logo-hm.jpeg"],
-          type: "website",
-        }}
+        excerpt="Get familiar with Hanami framework and realise that Ruby is not only Rails!"
+        ogtype="website"
       />
       <HomePageSchema />
       <ArticlesLayout

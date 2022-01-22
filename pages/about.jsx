@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, makeStyles } from "@material-ui/core";
-import { NextSeo } from "next-seo";
+import { SeoComponent } from "../features/seo";
 
 import { MDXRemote } from "next-mdx-remote";
 import components from "../features/mdx-components";
@@ -10,16 +10,11 @@ import { getContentBySlug } from "../utils/queries";
 export default function Page({ frontMatter, mdxSource }) {
   return (
     <>
-      <NextSeo
+      <SeoComponent
         title="About | Hanami Mastery - the concept and mission."
-        titleTemplate="%s | Hanami Mastery - learn hanami as a pro"
-        description="Discover the rules driving the Hanami Mastery project!"
-        openGraph={{
-          title: "About - Hanami Mastery",
-          description: "Discover the rules driving the Hanami Mastery project!",
-          images: ["/images/logo-hm.jpeg"],
-          type: "website",
-        }}
+        excerpt="Discover the rules driving the Hanami Mastery project!"
+        thumbnails={frontMatter.thumbnail}
+        ogtype="website"
       />
 
       <ArticlesLayout
