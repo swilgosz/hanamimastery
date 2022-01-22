@@ -7,6 +7,7 @@ const matter = require("gray-matter");
 const mdxPrism = require("mdx-prism");
 const { serialize } = require("next-mdx-remote/serialize");
 const { readFileByPath, getPaths } = require("./file-browsers");
+const admonitions = require('remark-admonitions');
 
 /*
   Extends the file meta data by additional fields and information, like
@@ -47,7 +48,7 @@ async function getContentBySlug(type, slug) {
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [admonitions],
       rehypePlugins: [mdxPrism],
     },
   });
