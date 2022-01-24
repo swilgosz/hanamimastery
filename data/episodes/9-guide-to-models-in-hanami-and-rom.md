@@ -267,13 +267,17 @@ Because we do entity definitions based on the tables definitions, there is no ne
 
 Now, let's add an article repository.
 
+:::warning Update notice!
+You'll encounter a problem with loading repositories due to file-loading improvements introduced in `Hanami 2.0-alpha3`. Check out [episode #13](/episodes/13-dry-container-tips) for detailed explanation!
+:::
+
 In `ROM` relations are responsible for communicating with the database, to fetch the data. There you define queries specific for the DB you use, or if you wish - scopes definitions.
 
 Repositories are database-agnostic and can use multiple relations to update and fetch resources from many databases if needed. This is why it's extremely easy to replace database adapters in Hanami while keeping the same interface and minimizing the required changes to be done across the application.
 
 #### Articles repository
 
-Let me define the article repository now, so we can fetch and create resources in the database.
+Let me defióhmwne the article repository now, so we can fetch and create resources in the database.
 
 By adding the `commands :create`, we extend the default repository by the ability to create resources, which we can use to seed the data to our system.
 
