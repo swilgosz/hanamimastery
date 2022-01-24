@@ -387,6 +387,7 @@ Additionally,
 - [Georg Bommeli](https://unsplash.com/@calina) for a great cover image
 - [Tim Riley](http://timriley.info/) for pointing me out how tricky English can be
 
-### Do you know other great gems?
+:::note Do you know other great gems?
 
 Leave a comment with `#suggestion`, I'll gladly cover them in the future episodes!
+:::

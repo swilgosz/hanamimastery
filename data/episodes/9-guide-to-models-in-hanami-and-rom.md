@@ -42,7 +42,7 @@ He [opensourced it on Github](https://github.com/waiting-for-dev/hanami-2-applic
 
 #### Faker & Vitor Oliviera
 
-When I was focused just to show the rendering part of the Hanami application, I came with a quick solution to define a dummy entity in the main slice, with the default parameters in place. Those entities can be easily created in any place of the application and I bravely created them inside of view objects.
+When I was focused just to show the rendering part of the Hanami application, I came up with a quick solution to define a dummy entity in the main slice, with the default parameters in place. Those entities can be easily created in any place of the application and I bravely created them inside of view objects.
 
 To quickly generate a random entity to be displayed on the page, I used a [faker gem](https://github.com/faker-ruby/faker).
 
@@ -140,7 +140,7 @@ But now let's implement it using actual records fetched from the database, as on
 
 ## The correct approach - ROM.rb in action.
 
-Hanami has built-in integration with [ROM](https://rom-rb.org). This is the default ORM of choice, and even if it can be replaced by anything, I don't see a reason to do so. It's powerful, fast, and easy to use.
+Hanami has built-in integration with [ROM](https://rom-rb.org). This is the default ORM of choice, and even if it can be replaced by anything, I don't see a reason to do so. It's powerful, fast, and easy to use. I talked about [ROM with comparison to Activerecord](/articles/sequel-over-activerecord) in dedicated article, feel free to chech it out!
 
 ### Create migrations
 
