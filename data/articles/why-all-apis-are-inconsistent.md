@@ -36,7 +36,7 @@ For example, if I want to get an article, the server can respond with a 200 stat
 ![Successful (200) HTTP status code](/images/articles/why-all-apis-are-inconsistent/successful-request.png)
 
 However, if the requested resource does not exist, the server will probably return an error response, with a 404 status code pointing to the fact **that article cannot be found**.
-![[Pasted image 20210917220338.png]]
+
 ![Not found (404) HTTP status code](/images/articles/why-all-apis-are-inconsistent/not-found-request.png)
 
 There are plenty of different [officially defined HTTP codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) for different kinds of responses, where it's commonly assumed, that
