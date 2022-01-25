@@ -23,29 +23,31 @@ source: https://github.com/hanamimastery/episodes/tree/main/013
 In this episode I'll show you a few ways to debug dependency loading via [dry-container](https://dry-rb.org/gems/dry-container) in Hanami applications, by using one of my recent setbacks.
 
 # Repository pattern 
-In one of my recent tutorials, I showcased [a complete integration of persistence layer in Hanami 2.0 applications](https://hanamimastery.com/episodes/9-guide-to-models-in-hanami-and-rom), to deliver blog articles data read from my DB straight into the browser.
+In episode 9, I showcased [a complete integration of persistence layer in Hanami 2.0 applications](https://hanamimastery.com/episodes/9-guide-to-models-in-hanami-and-rom), to deliver blog articles data read from my DB straight into the browser.
 
-However, **there was a mistake hidden in this tutorial** that started to haunt me right after the release of the next [Hanami Alpha version](https://hanamirb.org/blog/2021/11/09/announcing-hanami-200alpha3/), as it caused incompatibility issues with what I've shown in the tutorial.
+However, **there was a mistake hidden in this tutorial** that started to haunt me right after the release of the next [Hanami Alpha version](https://hanamirb.org/blog/2021/11/09/announcing-hanami-200alpha3/), as it caused incompatibility issues with what I've shown in the video.
 
-There is a risk that some of my content becomes outdated quickly until official Hanami 2 is released but it's a risk I had consciously taken to help existing Hanami developers start playing with this project earlier.
+There is a risk that some of my content becomes outdated quickly until official Hanami 2 is released but **it's a risk I had consciously taken** to help existing Hanami developers start playing with this project earlier.
 
-However, to minimize such situations, I am currently releasing more videos about DRY libraries, which are a bit more stable.
+:::info
+However, to minimize such situations, I am currently releasing more videos about [DRY libraries](/t/dry-rb)/, which are a bit more safe for me to cover.
+:::
 
-While this is a normal risk when releasing tutorials about alpha versions, or rather about anything what happens in web development, this particular bug was caused because of my incomplete understanding of the *Repository Pattern* in ruby! 
+While this is a normal risk when releasing tutorials about alpha versions, **or rather about anything what happens in web development**, this particular bug was caused because of my incomplete understanding of the *Repository Pattern* in ruby! 
 
-So, right after I realized that I did some research and to my surprise, **I was not the only one who didn't get the concept in full shape**.
+So, right after realizing that I did some research and to my surprise, **I was [not the only one](https://discourse.rom-rb.org/t/difference-between-repositories-and-relations/317) who didn't get the concept in full shape**.
 
-In this article I'll explain where the problem came from and we will dig a little bit into loading dependencies using application containers.
+In this article I'll explain where the problem came from and we will dig a little bit into **loading dependencies using application containers**.
 
 ### Repository vs Relations
 
-I will make a detailed explanation of a repository pattern and how it's done in Hanami as part of my Hanami Mastery PRO very soon, but for now, let's focus on the dependency injection part.
+I will make a detailed explanation of a repository pattern and how it's done in Hanami **as part of my Hanami Mastery PRO very soon**, but for now, let's focus on the dependency injection part.
 
-As Hanami uses ROM as the ORM of choice, all patterns and the conceptions of the persistence in Hanami are directly related to ROM concepts. This is cool, as it reduces the overhead of learning the intermediate DSL, and we can just rely directly on ROM documentation to do anything it provides.
+As Hanami uses [ROM](http://rom-rb.org) as the ORM of choice, all patterns and the conceptions of the persistence in Hanami are [directly related to ROM concepts](/articles/sequel-over-activerecord). This is cool, as it reduces the overhead of learning the intermediate DSL, and we can just rely directly on amazing ROM documentation to do anything it provides.
 
 Therefore in Hanami, we have [Relations](https://rom-rb.org/5.0/learn/core/relations/) and [Repositories](https://rom-rb.org/5.0/learn/repositories/).
 
-What I did in the initial integration of ROM was placing repositories next to relations in the `lib/sandbox/peristence/repositories` and this was the core problem.
+What I did in the initial integration of ROM was **placing repositories next to relations** in the general lib folder (`lib/sandbox/peristence/repositories`) and this was the core problem.
 
 #### Repository
 
@@ -55,7 +57,7 @@ For example, you can **have multiple slices** in your application **accessing th
 
 ![Multi-Slice DB connection](/images/episodes/13/multi-slice-db-connection.png)
 
-In this case, each of our slices would have a separate repository, providing a clean interface to fetch only data the specific context is interested in.
+In this case, **each of our slices would have a separate repository**, providing a clean interface to fetch only data the specific context is interested in.
 
 Therefore **repositories belong to the business part of your application** and it is recommended that you define multiple repositories in different slices, which use the same relations to receive some data.
 
@@ -81,15 +83,15 @@ module Persistence
 end
 ```
 
-**You may define there very common queries** but queries specific for the given use case will definitely be placed within repositories.
+**You may define very common queries there** but queries specific for the given use case will definitely be placed within repositories.
 
-### Improved Hanami file structure
+### The improved Hanami file structure
 
 In occasion of a work on Hanami 2 Alpha3 release [Tim Riley](https://github.com/github/timriley) did an [extraordinary contribution to dry-system](https://github.com/dry-rb/dry-system/pull/181) improving it in a way that made possible flattened directory structure. You may read more about this amazing feature he added in his [OSS Update article for September 2021](https://timriley.info/writing/2021/10/11/open-source-status-update-september-2021/).
 
 Then several improvements had been applied, and as a result, **repository loading started to be more strict** and dumb resilient, ensuring that people will place them in a proper place by default.
 
-Therefore let's fix my implementation.
+Having that said, let's fix my implementation!
 
 ### Moving repository to a slice 
 
@@ -174,7 +176,7 @@ end
 
 ```
 
-Notice that now my repositories don't have the persistence module anymore and my app namespace had been replaced by the name of slice.
+Notice that now my repositories **don't have the persistence module anymore** and **my app namespace had been replaced by the name of slice**.
 
 Finally let me visit my actions and fix the repository loading.
 
@@ -204,13 +206,15 @@ Then as I moved it to the **current slice**, I don't need the application namesp
 
 Now my code is much cleaner and makes much more sense.
 
-And more importantly, it works without issues!
+**And more importantly, it works without issues!**
 
 ![List of articles loaded from DB](/images/episodes/13/articles-list.png)
 
 ### Container debugging tips.
 
-Before I'll wrap-up this episode, let's take a quick look at the container debugging.
+It all seems very nice and easy, but it's because **I exactly knew how my repositories are loaded**, and under what keys they'll appear after the update.
+
+**But what if you actually want to figure that out?**
 
 Loading dependencies by using a container is an extremely powerful thing.
 
@@ -228,20 +232,20 @@ container
 # => Sandbox::Container
 ```
 
-To preview all the dependencies loaded by the container, I kan use the `#keys` method on it.
+To preview all the dependencies loaded by the container, I can use the `#keys` method on it.
 
 ```ruby
 container.keys
 # => ["notifications"]
 ```
 
-However, it returns only one key for now.
+However, it returns only one key for now - `"notifications"`!
 
-In the development environment all files are by default lazy-loaded by the container, which means, they are only loaded when they're needed.
+In the development environment, all files are by default lazy-loaded by the container, which means, **they are only loaded when they're needed**.
 
-This is why, if I'll ask container what it loaded, he will return minimal number of dependencies used when starting the console.
+This is why, if I'll ask the container what is loaded, it returns a minimal number of dependencies used when starting the console.
 
-As soon as I will try to access for the first time the dependency not loaded yet, container will load it it and instatiate properly resolving all objects required by it 
+As soon as I will try to access for the first time the dependency not loaded yet, the container will load it and instantiate properly, **automatically resolving all objects required by it**!
 
 ```ruby
 container.keys
@@ -252,13 +256,13 @@ container.keys
 # => ["notifications", "settings"]
 ```
 
-This feature allows hanami console to be always extremely quick and the same applies to different test runs, no matter how much your app grows.
+This feature **allows the hanami console to be always extremely quick** and **the same applies to different test runs**, no matter how much your app grows.
 
-However, it's useful to preview all loadable deps to quickly find what we need.
+However, it's often useful to preview all loadable deps to quickly find what we need.
 
-#### Load all dependencies on demand using `#finalize!`
+#### Load all dependencies on-demand using `#finalize!`
 
-I can force the container to load everything at once by calling `#finalize!` method ending with bang on it.
+I can force the container to load everything at once by calling `#finalize!` method ending it with a bang.
 
 ```ruby
 container.finalize!
@@ -269,16 +273,29 @@ Now checking the loaded dependencies again will result in all settings properly 
 
 ```ruby
 container.keys
-# => ["notifications", "settings", "assets", "persistence.config", "persistence.db", "persistence.rom", "rack_monitor", "routes_helper", "view.context", "inflector", "logger", "rack_logger"]
+# => [
+# "notifications", 
+# "settings", 
+# "assets", 
+# "persistence.config", 
+# "persistence.db", 
+# "persistence.rom", 
+# "rack_monitor", 
+# "routes_helper", 
+# "view.context", 
+# "inflector", 
+# "logger", 
+# "rack_logger"
+# ]
 ```
 
-With this you recieve a complete control over loading dependencies, however here you still can't see your repositories, can you?
+With this **you receive a complete control over loading dependencies,** however here you still can't see your repositories, can you?
 
 ### Slice-specific containers
 
-It happens because each slice has their own container, independent of each other.
+It happens because **each slice has their own container**, independent of each other.
 
-With this you may have different processes on separate pods running different parts of your system without loading all your codebase to the memory which is another huge benefit.
+With this you may have different processes on separate pods running different parts of your system **without loading all your codebase to the memory** which is another huge benefit.
 
 To access the main slice container, I just need to call it.
 
@@ -372,7 +389,7 @@ Main::Container.keys
 
 [dry-system](https://dry-rb.org/gems/dry-system) and [dry-container](https://dry-rb.org/gems/dry-container) are extremely powerful tools and if you understand how to work with them, you'll never look back.
 
-Because of the amazing control they provide and loading always a minimal set of files to perform a single task, test-driven development becomes enjoyable again! You may have always fast test suits during the development, extremely performant rake tasks, and optimized pods for the production environment.
+Because of the amazing control they provide and loading always a minimal set of files to perform a single task, **test-driven development becomes enjoyable again**! You may have always fast test suits during the development, extremely performant rake tasks, and optimized pods for the production environment.
 
 That's all for today, I hope you enjoyed this episode and that as always, you'll get learnings from my mistakes.
 
@@ -387,7 +404,6 @@ By helping me with a few dollars per month creating this content, you are helpin
 And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
 
 As usual, here you can find two of my previous episodes! thank you all for supporting my channel, you are awesome, and have a nice rest of your day!
-
 
 Additionally,
 
