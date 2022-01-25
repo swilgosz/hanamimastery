@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/13/cover-big.jpeg
   small: /images/episodes/13/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1485884896094703616
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/sc8nlj/13_sneakpeak_into_dependency_loading_deps_with/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/sc8wei/a_sneakpeak_into_dependency_loading_debugging/
 source: https://github.com/hanamimastery/episodes/tree/main/013
 ---
 
@@ -54,7 +53,7 @@ A repository is **a bridge between the persistence layer and application logic**
 
 For example, you can **have multiple slices** in your application **accessing the same database table**!
 
-![[Pasted image 20220123000339.png]]
+![Multi-Slice DB connection](/images/episodes/13/multi-slice-db-connection.png)
 
 In this case, each of our slices would have a separate repository, providing a clean interface to fetch only data the specific context is interested in.
 
@@ -207,7 +206,7 @@ Now my code is much cleaner and makes much more sense.
 
 And more importantly, it works without issues!
 
-![[Pasted image 20220124010929.png]]
+![List of articles loaded from DB](/images/episodes/13/articles-list.png)
 
 ### Container debugging tips.
 
