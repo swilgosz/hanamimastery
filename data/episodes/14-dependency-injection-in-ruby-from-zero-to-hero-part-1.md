@@ -13,11 +13,11 @@ thumbnail:
   big: /images/episodes/14/cover-big.jpeg
   small: /images/episodes/14/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1488102569637564419
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/sgyk9p/dependency_injection_in_ruby_from_zero_to_hero/
+    rails: https://www.reddit.com/r/rails/comments/sgykjd/dependency_injection_in_ruby_from_zero_to_hero/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/sgykqb/dependency_injection_in_ruby_from_zero_to_hero/
 source: https://github.com/hanamimastery/episodes/tree/main/014
 ---
 In the last episode, I've shown you [how to debug loading dependencies in Hanami applications](/episodes/13-dry-container-tips) by leveraging the power of [dry-container](https://dry-rb.org/gems/dry-container).
