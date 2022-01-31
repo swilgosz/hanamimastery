@@ -20,9 +20,6 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/014
 ---
-
-Hi there!
-
 In the last episode, I've shown you [how to debug loading dependencies in Hanami applications](/episodes/13-dry-container-tips) by leveraging the power of [dry-container](https://dry-rb.org/gems/dry-container).
 
 This time I want to dig deeper into the problem this gem solves with it's friends and why it even exist!
