@@ -22,9 +22,9 @@ source: https://github.com/hanamimastery/episodes/tree/main/014
 ---
 In the last episode, I've shown you [how to debug loading dependencies in Hanami applications](/episodes/13-dry-container-tips) by leveraging the power of [dry-container](https://dry-rb.org/gems/dry-container).
 
-This time I want to dig deeper into the problem this gem solves with it's friends and why it even exist!
+This time I want to dig deeper into the problem this gem solves with its friends and why it even exist!
 
-## Dependnecy injection with dry-rb gems.
+## Dependency injection with dry-rb gems.
 
 On the [dry-rb dependency graph](/articles/dry-rb-dependency-graph) I've created a while ago you may see, that *dry_container* is actually one of the key gems in the whole dry-rb ecosystem and most cool gems from the dry-rb family use it under the hood.
 
