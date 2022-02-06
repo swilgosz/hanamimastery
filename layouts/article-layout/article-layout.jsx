@@ -10,6 +10,8 @@ import Discussions from "../../features/content/discussions";
 import EmailSubscriptionForm from "../../features/email-subscription-form";
 import GHSponsor from "../../features/gh-sponsor";
 import ShareButtons from "../../features/share-buttons";
+import SidebarSponsors from "../../features/sidebar-sponsors";
+import SidebarJobOffers from "../../features/sidebar-job-offers";
 
 import {
   shouldDisplayArticle,
@@ -87,6 +89,8 @@ const ArticleLayout = ({ article, children }) => {
             <GHSponsor className={classes.card} />
             <BuyMeACoffee className={classes.card} />
             <EmailSubscriptionForm className={classes.card} />
+            <SidebarSponsors />
+            <SidebarJobOffers />
           </Grid>
         </Grid>
       </Container>

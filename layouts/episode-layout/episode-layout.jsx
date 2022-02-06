@@ -12,6 +12,8 @@ import EpisodeTabs from "../episode-tabs";
 import GHSponsor from "../../features/gh-sponsor";
 import ShareButtons from "../../features/share-buttons";
 import YoutubeEmbed from "../../features/youtube-embed";
+import SidebarSponsors from "../../features/sidebar-sponsors";
+import SidebarJobOffers from "../../features/sidebar-job-offers";
 import {
   shouldDisplayArticle,
   shouldDisplayDiscussions,
@@ -105,6 +107,8 @@ const EpisodeLayout = ({ episode, children }) => {
             <GHSponsor className={classes.card} />
             <BuyMeACoffee className={classes.card} />
             <EmailSubscriptionForm className={classes.card} />
+            <SidebarSponsors />
+            <SidebarJobOffers />
           </Grid>
         </Grid>
       </Container>
