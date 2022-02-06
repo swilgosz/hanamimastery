@@ -1,7 +1,7 @@
 ---
 id: 3
 author: "swilgosz"
-topics: ["hanami", "hanami-view", "hanami-assets"]
+topics: ["hanami", "hanami-view" ]
 title: "Style your Hanami App with Bulma using Hanami Assets"
 excerpt: "In this episode I make use of Bulma CSS framework and integrate it with Hanami 2.0 application to prettify it with the least effort possible."
 publishedAt: "2021-05-30"

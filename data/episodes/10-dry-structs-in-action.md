@@ -2,7 +2,7 @@
 id: 10
 aliases: ["HMEP010"]
 author: "swilgosz"
-topics: ['dry-rb', 'dry-struct']
+topics: ['dry-rb']
 title: "Model your business with structs on steroids - dry-struct in action!"
 excerpt: "A struct with static type check for all attributes is a pretty useful thing in Ruby and all other languages. Here are 3 examples of useful applications for typed structs using dry-struct."
 videoId: "J3LVridUt_Y"

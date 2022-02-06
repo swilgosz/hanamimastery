@@ -2,7 +2,7 @@
 id: 11
 aliases: ["HMEP011"]
 author: "swilgosz"
-topics: ["dry-rb", "dry-effects", "hanami"]
+topics: ["dry-rb", "hanami", "dry-effects"]
 title: "Effective programming in ruby"
 excerpt: "2 real-world examples of using algebraic effects in Hanami ruby applications with dry-effects."
 videoId: "Ik_81cHFAqg"

@@ -2,7 +2,7 @@
 id: 13
 aliases: ["HMEP013"]
 author: "swilgosz"
-topics: ['dry-rb', 'dry-container', 'dry-system', 'hanami']
+topics: ['dry-rb', 'dry-container', 'dry-system', 'hanami', 'dependency injection', 'persistence', 'rom-rb']
 title: "A sneak-peak into dependency loading with Hanami and dry-container"
 excerpt: "dry-system and dry-container are extremely powerful tools and if you understand how to work with them, you'll never look back. It's amazing that Hanami uses them by default! Check out some useful debugging tips!"
 videoId: mMyqUaPBLWI
