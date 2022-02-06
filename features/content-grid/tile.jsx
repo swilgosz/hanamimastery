@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ContentTile = ({ item }) => {
   const classes = useStyles();
-  const { author: authorName, topics, path, excerpt, thumbnail, slug, title } = item;
+  const { author: authorName, id, topics, path, excerpt, thumbnail, slug, fullTitle } = item;
   const author = useSelector((state) => findAuthor(state, authorName));
   return (
     <Card className={classes.root}>
@@ -51,7 +51,7 @@ const ContentTile = ({ item }) => {
         disableTypography
         title={
           <NextLink passHref href={`/${path}`}>
-            <Link variant="h6">{title}</Link>
+            <Link variant="h6">{fullTitle}</Link>
           </NextLink>
         }
         subheader={

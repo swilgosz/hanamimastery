@@ -16,18 +16,28 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     minHeight: theme.spacing(75),
     color: theme.palette.common.white,
+    overflow: "hidden"
   },
-  heroFilter: {
-    flexGrow: 1,
-    backdropFilter: "brightness(0.35)",
+  heroFilterWrapper: {
     display: "flex",
+    flexGrow: 1,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    backdropFilter: "brightness(0.35)",
+  },
+  heroTitle: {
+    fontWeight: "400",
     padding: theme.spacing(2),
     fontSize: "2.125rem",
-    fontWeight: "400",
     lineHeight: "1.235",
+    letterSpacing: "0.00735em",
+  },
+  heroSubtitle: {
+    // padding: theme.spacing(2),
+    fontSize: "1.125rem",
+    fontWeight: "400",
+    lineHeight: "1.0",
     letterSpacing: "0.00735em",
   },
 }));

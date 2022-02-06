@@ -2,7 +2,7 @@
 id: 1
 author: "swilgosz"
 topics: ["hanami"]
-title: "#1 Creating a new Hanami app from the template"
+title: "Creating a new Hanami app from the template"
 excerpt: "How to create a brand new Hanami app lighting fast by using the Hanami application template."
 publishedAt: "2021-05-10"
 modifiedAt: "2021-10-03"

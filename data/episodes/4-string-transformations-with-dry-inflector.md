@@ -2,7 +2,7 @@
 id: 4
 author: "swilgosz"
 topics: ["dry-rb", "dry-inflector"]
-title: "#4 An easy string manipulations in Ruby with DRY-INFLECTOR!"
+title: "An easy string manipulations in Ruby with DRY-INFLECTOR!"
 excerpt: "Use constantize, classify, underscore and MORE on Strings in Pure ruby! Use dry-inflector to quickly apply non-standard string transformations!"
 publishedAt: "2021-06-14"
 modifiedAt: "2021-10-03"

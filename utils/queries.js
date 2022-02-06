@@ -17,12 +17,14 @@ const admonitions = require('remark-admonitions');
 */
 function _serializeContentData(filePath, data) {
   const postSlug = filePath.split("/").slice(1)[0];
-  const type = filePath.split("/").slice(0)[1]
+  const type = filePath.split("/")[0]
   const itemPath = (type == 'pages') ? postSlug : filePath;
   const host = process.env.NEXT_PUBLIC_BASE_URL || '';
 
   return {
     ...data,
+    type,
+    fullTitle: (type == 'episodes') ? `#${data.id} ${data.title}` : data.title,
     slug: postSlug,
     path: itemPath,
     url: `${host}/${itemPath}`,

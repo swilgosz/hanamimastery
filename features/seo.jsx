@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 
-export const SeoComponent = ({ title, thumbnails, url, excerpt, topics, ogtype }) => {
+export const SeoComponent = ({ title, fullTitle, thumbnails, url, excerpt, topics, ogtype }) => {
   if (!thumbnails) {
     thumbnails = { big: `${process.env.NEXT_PUBLIC_BASE_URL || ''}/logo-hm.jpeg` }
   }
@@ -28,7 +28,7 @@ export const SeoComponent = ({ title, thumbnails, url, excerpt, topics, ogtype }
         },
         locale: "en_US",
         url,
-        title,
+        fullTitle,
         description: excerpt,
         defaultImageWidth: 120,
         defaultImageHeight: 630,

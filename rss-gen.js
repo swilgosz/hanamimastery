@@ -21,6 +21,7 @@ async function getRssData() {
   });
 
   const posts = await getContent();
+
   posts.map(
     ({
       author,
@@ -28,12 +29,12 @@ async function getRssData() {
       topics,
       videoId,
       publishedAt,
-      title,
+      fullTitle,
       url,
       thumbnail,
     }) => {
       const xmlItem = {
-        title,
+        fullTitle,
         image: thumbnail.big,
         description: excerpt,
         categories: topics,

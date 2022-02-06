@@ -58,9 +58,14 @@ const EpisodeLayout = ({ episode, children }) => {
         className={classes.hero}
         style={{ backgroundImage: `url("${thumbnail.full}")` }}
       >
-        <Typography variant="h1" align="center" className={classes.heroFilter}>
+        <div className={classes.heroFilterWrapper}>
+        <Typography variant="h1" align="center" className={classes.heroTitle}>
           {title}
         </Typography>
+        <Typography variant="h5" align="center" className={classes.heroSubtitle}>
+          {`Episode #${id}`}
+        </Typography>
+        </div>
       </section>
       <Container className={classes.conainer} maxWidth="xl" component="main">
         <Grid container className={classes.root} spacing={4}>
