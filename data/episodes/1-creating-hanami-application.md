@@ -124,9 +124,17 @@ Yaay! You can see the "Welcome to, sandbox!" message.
 
 ![Hanami Welcome Message screen](/images/episodes/1/hanami-welcome-screen.png)
 
-Let's change it quickly to render a different text. To do it, we need to visit the home template in the application slice named `main`.
+Let's change it quickly to render a different text. To do it, we need to visit the home template in the application slice named `main` and change the text to `Hello, Hanami!`.
+
+```html
+# /slices/main/web/templates/home/show.html.slim
+
+h1 Hello, Hanami!
+```
 
 Now I'll restart the server and in the browser, we can see the updated text. Amazing!
+
+![Updated Hanami Welcome screen](/images/episodes/1/updated-welcome-screen-in-hanami.png)
 
 ### Summary
 
@@ -136,10 +144,6 @@ Unfortunately, when apps grow, Rails default architecture becomes problematic.
 
 Hanami solves that issue, and with all the amazing progress on simplifying the initial usage, **I believe it has a bright future!**
 
-:::tip Become an awesome subscriber!
-If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
-:::
-
 ### Special thanks!
 
 - [Sven Schwyn](https://github.com/svoop) for supporting my channel, really appreciated!
@@ -147,3 +151,7 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 - [Tim Riley](https://timriley.info/) - For his amazing engagement in rewriting the framework almost from scratch!
 - [Luca Guidi](https://lucaguidi.com/) - For tremendous work on whole Hanami development.
 - And All the people engaged in the Hanami project, thanks to whom I have a topic to write about.
+
+:::tip Become an awesome subscriber!
+If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+:::

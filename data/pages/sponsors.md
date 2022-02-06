@@ -1,10 +1,10 @@
 ---
 title: "Sponsors"
+modifiedAt: "2022-02-06"
 thumbnail:
   full: /logo-hm.jpeg
   big: /logo-hm.jpeg
   small: /logo-hm-letter.jpeg
-
 ---
 
 ## Welcome!
@@ -23,12 +23,14 @@ thumbnail:
 <br />
 
 :::info Hanami Mastery Insights
-If you want to get more insights about the project, **I strongly encourage you** to take a short look into the <a href="/about" target="_blank">about page</a> to get insights about our mission and plans, as well as into the <a href="/collaboration" target="_blank">collaboration page</a> to see the <strong>list of our current services and ways we can help each other!</strong>
+If you want to get more insights about the Hanami Mastery initiative, **I strongly encourage you** to take a short look at the 
+- <a href="/about" target="_blank">about page</a> - to see the details about <strong>our mission and plans</strong>, 
+- <a href="/collaboration" target="_blank">collaboration page</a> - to see the <strong>list of our current services and ways we can help each other!</strong>
 :::
 
 <br />
 
-### The Sponsorship History Log
+## The Sponsorship History Log
 
 Hanami Mastery is an **Open Startup kind of thing**, so we keep having a [Public track of the revenue and outcomes](https://hanamimastery.notion.site/Hanami-Mastery-Finance-Log-61466ad21a9f4fe4807e13836cbd32f1).
 
