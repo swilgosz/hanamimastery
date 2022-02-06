@@ -2,6 +2,7 @@
 import { Grid, Container, makeStyles } from "@material-ui/core";
 import EmailSubscriptionForm from "../features/email-subscription-form";
 import GHSponsor from "../features/gh-sponsor";
+import SidebarSponsors from "../features/sidebar-sponsors";
 import BuyMeACoffee from "../features/buy-me-a-coffee-button";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,6 +32,7 @@ const ArticlesLayout = ({ article }) => {
           <GHSponsor className={classes.card} />
           <BuyMeACoffee className={classes.card} />
           <EmailSubscriptionForm className={classes.card} />
+          <SidebarSponsors />
         </Grid>
       </Grid>
     </Container>
