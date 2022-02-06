@@ -7,7 +7,9 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingBottom: '20px'
+    marginTop: theme.spacing(2),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
   },
   centered: {
     // display: 'block',
