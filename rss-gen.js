@@ -34,7 +34,7 @@ async function getRssData() {
       thumbnail,
     }) => {
       const xmlItem = {
-        fullTitle,
+        title: fullTitle,
         image: thumbnail.big,
         description: excerpt,
         categories: topics,
