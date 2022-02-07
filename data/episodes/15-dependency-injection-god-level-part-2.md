@@ -13,17 +13,16 @@ thumbnail:
   big: /images/episodes/15/cover-big.jpg
   small: /images/episodes/15/cover-small.jpg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1490583121422651395
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/smk05m/dependency_injection_in_ruby_god_level_meet/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/smk0cq/dependency_injection_in_ruby_god_level_meet/
 source: https://github.com/hanamimastery/episodes/tree/main/015
 ---
 
-In the last episode I've covered deeply the reasons behind the existence of `dry-container` gem and shown how to implement dependency injection in Ruby from scratch.
+In the last episode, I've covered deeply the reasons behind the existence of `dry-container` gem and shown how to implement dependency injection in Ruby from scratch.
 
-This pattern, however powerful, can easily get annoying due to the lot of additional code one needs to write - and in most cases, it's repeatable code, nothing challenging, so boring.
+This pattern, however powerful, can easily get annoying due to a lot of additional code one needs to write - and in most cases, it's repeatable code, nothing challenging, so boring.
 
 This episode is a direct follow-up on that topic and today I'll focus exactly on problems related to: more overhead, and more code to be written, showcasing two great additions to dry-container, which are
 
