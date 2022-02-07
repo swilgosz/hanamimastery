@@ -24,6 +24,11 @@ In the last episode, I've covered deeply the reasons behind the existence of `dr
 
 This pattern, however powerful, can easily get annoying due to a lot of additional code one needs to write - and in most cases, it's repeatable code, nothing challenging, so boring.
 
+:::important
+This episode is the **Part 2** of digging into dependency injection in Ruby. Check out Part 1 here!
+[Episode #14 - Dependency injection in Ruby from Zero to Hero!](/episodes/14-dependency-injection-in-ruby-from-zero-to-hero-part-1)
+:::
+
 This episode is a direct follow-up on that topic and today I'll focus exactly on problems related to: more overhead, and more code to be written, showcasing two great additions to dry-container, which are
 
 - [dry-auto_inject](https://dry-rb.org/gems/dry-auto_inject)
@@ -110,7 +115,7 @@ Good News!
 
 ## Slim down your classes with dry-auto_inject!
 
-There is a gem that allows exactly for that. It's *dry-auto_inject*, one of the first DRY libraries written by [[Peter Solnica]]. What it does, is allowing you to automatically create attr_readers in your classes and override initialize methods, removing tons of code you'd need to write without it.
+There is a gem that allows exactly for that. It's *dry-auto_inject*, one of the first DRY libraries written by [Peter Solnica](https://github.com/solnic), [Tim Riley](https://github.com/timriley) and [Nikita Shilnikov](https://github.com/flash-gordon). What it does, is allowing you to automatically create attr_readers in your classes and override initialize methods, removing tons of code you'd need to write without it.
 
 With this little gem we can now simplify our registration file by automatically resolving all dependencies!
 

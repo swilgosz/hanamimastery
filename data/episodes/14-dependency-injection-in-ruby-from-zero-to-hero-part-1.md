@@ -22,7 +22,13 @@ source: https://github.com/hanamimastery/episodes/tree/main/014
 ---
 In the last episode, I've shown you [how to debug loading dependencies in Hanami applications](/episodes/13-dry-container-tips) by leveraging the power of [dry-container](https://dry-rb.org/gems/dry-container).
 
-This time I want to dig deeper into the problem this gem solves with its friends and why it even exist!
+
+This time I want to dig deeper into the problem this gem solves with its friends and why it even exists!
+
+:::important
+This episode is the **Part 1** of digging into dependency injection in Ruby. Check out Part 2 here!
+[Episode #15 - Dependency injection in Ruby - GOD Level!](/episodes/15-dependency-injection-god-level-part-2)
+:::
 
 ## Dependency injection with dry-rb gems.
 
