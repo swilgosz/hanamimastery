@@ -35,6 +35,10 @@ This article is a result of what I got from this video and further exploring of 
 
 <YoutubeEmbed embedId={'ftJrBpiYQXM'} />
 
+:::important
+It's important to mention that Sequel is an implementation detail in rom-sql and eventually Sequel will be replaced in ROM with a custom SQL builder (see [https://github.com/sql-rb/sql-composer](https://github.com/sql-rb/sql-composer)).
+:::
+
 ## What is Sequel?
 
 For those who don't know, [Sequel](https://github.com/jeremyevans/sequel) is a ruby ORM, an ActiveRecord's alternative, developed to communicate with databases easily. It can be used in any ruby application and is an ORM of choice for [Hanami framework](https://hanamirb.org).
