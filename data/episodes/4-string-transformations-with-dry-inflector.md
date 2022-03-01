@@ -20,11 +20,19 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/004
 ---
 
-In this episode of Hanami Mastery screencast I want to showcase a super useful little Ruby Gem, that helped me a lot in writing my own Ruby packages. It implements **ruby classify**, *underscore*, **constantize**, all within pure ruby, without rails dependencies.
+In this episode of Hanami Mastery screencast I want to showcase a super useful little Ruby Gem, that helped me a lot in writing my own Ruby packages.
 
-It's a [dry-inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up. I discovered this gem by [watching one of his Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
+It implements `classify`, `underscore`, `constantize`, all within pure ruby, without rails dependencies and [without any monkey-patching core Ruby classes!
+](https://solnic.codes/2022/02/02/rails-and-its-ruby-dialect/)
 
-> While this episode covers **string transformations only**, if you are interested in more advanced stuff, **covering hash and object transformations**, check out [episode #6](/episodes/6-complex-ruby-data-transformations-made-simple)
+It's a [dry-inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up. 
+
+I discovered this gem by [watching one of Luca's Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
+
+
+:::note
+While this episode covers **string transformations only**, if you are interested in more advanced stuff, **covering hash and object transformations**, check out [episode #6](/episodes/6-complex-ruby-data-transformations-made-simple)
+:::
 
 ### The problem we've faced
 
