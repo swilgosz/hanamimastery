@@ -43,7 +43,7 @@ While it worked pretty well at the beginning, over time it appeared not being en
 
 And what if your clients are using your software too? And they try to communicate a problem, but the words chosen there are nowhere near something reflecting the implementation?
 
-One very simple example could be, when company manager forwards the job application comming to our system to someone else to tackle. 
+One very simple example could be, when company manager forwards the job application comming to our system to someone else to tackle.
 
 ![Forwarding job application](/images/episodes/16/forwarding-app.png)
 
@@ -59,13 +59,7 @@ And the similar translation is required back for the end-user to understand what
 
 There is an extremely well done video by Mayer Zombade that illustrates this problem better than I could ever imagine, so feel free to check it out in the text version of this episode. It will be also the first link you'll see in the description.
 
-<iframe 
-        width="560" height="315" src="https://www.youtube.com/embed/tUOiO4dN65Y" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-</iframe>
+<YoutubeEmbed embedId={'tUOiO4dN65Y'} />
 
 In all those cases there is a big need to translate the business requirements or expectations to technical language, which often generates confusion and it's easy to miss important concepts.
 
@@ -79,7 +73,7 @@ Imagine, if you have internal currency in your system, where your 1 e-coin equal
 
 ![](/images/episodes/16/coin-usd.png)
 
-Then you may expand your area to other country, let's say: Canada, where 1 e-coin equals to $1 too. 
+Then you may expand your area to other country, let's say: Canada, where 1 e-coin equals to $1 too.
 
 ![](/images/episodes/16/coin-cad.png)
 
@@ -107,13 +101,13 @@ He described it by a series of different patterns, that were further evolved by 
 
 I totally recommend this book for anyone interested in working on non-trivial, real-world business problems and scalable applications.
 
-#### Separating App from business. 
+#### Separating App from business.
 
 The key part covered here, is that with a proper design, we could very deeply understand the business domain and processes on the engineer part, we can use the same language while talking to each other, and we can build highly reliable software, building exactly what is needed, and skipping everything else.
 
 [As Martin Fowler says](https://martinfowler.com/bliki/DomainDrivenDesign.html), Domain Driven Design centers programming the domain model with high understanding of business rules and processes. With this approach, you start seeing benefits of designing your apps in the way they are independent on the frameworks they use, as it becomes very much clear, that Business Layer is the most important, and unique part that gives your company the advantage, while everything else is just a tooling, providing interface to interact with this unique part.
 
-This is where I started putting to my projects a clear separation between the business model and rules, and the application. 
+This is where I started putting to my projects a clear separation between the business model and rules, and the application.
 
 ![Separation of business and application layer](/images/episodes/16/separation-of-business-and-application.png)
 
@@ -178,7 +172,7 @@ The framework is named: [Trailblazer](https://trailblazer.to), and thank to its 
 
 The central part of the framework is the Operation, which serves as a service object of some sort, but designed in a way it's always easy to test, modify, extend, and handle failures. It allows to validate input, authorize activities, perform actual steps, and many, many more that I cannot cover just yet, but strongly recommend to check [Nick's Trailblazer tales Youtube channel](https://www.youtube.com/channel/UCi2P0tFMtjMUsWLYAD1Ezsw) when he started publishing neat tutorials for beginners.
 
-I have way less experience with Trailblazer (yet). I did check it out in the past when I evaluated Trailblazer and the Arkency approach for my previous clients. 
+I have way less experience with Trailblazer (yet). I did check it out in the past when I evaluated Trailblazer and the Arkency approach for my previous clients.
 
 It was quite an early stage of Trailblazer when I evaluated that for the first time - funny thing, the same applies to evaluating Hanami 2.0. It's just not easy to be an early adopter of innovative solutions (heh!)
 
@@ -278,7 +272,7 @@ The problem is, that a lot of people do not care, similar to politics not carryi
 
 I, as a developer, strongly believe that my long-term success is tight to the success of my clients and while I often need to agree on simplified solutions, I always look for long-term improvements, streamlining communications between multiple departments, and simplifying the overall architecture of the applications.
 
-That's all for today, I hope you enjoyed this episode and you'll take some inspirations from it. 
+That's all for today, I hope you enjoyed this episode and you'll take some inspirations from it.
 
 I am very glad that different communities are aware of this problem and they work independently on high-quality solutions, providing us rich pool of those we can choose from, allowing us to apply the one that best suits our needs or preferences.
 
@@ -288,7 +282,7 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ### Thanks
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 - **MVP match** - which kindly agreed to join my silver sponsors tier with a great potential to closer collaboration in the future. They soon want to start an initiative to support open source developers and maintainers of different technologies. Kudos!
  - **Junyang Ng** - for supporting me in a highest personal tier
