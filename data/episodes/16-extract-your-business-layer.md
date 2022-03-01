@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/16/cover-big.jpeg
   small: /images/episodes/16/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1498508207928586243
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/t3yqyl/your_app_is_not_your_business_4_ways_to_separate/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/t3yrgp/your_app_is_not_your_business_4_ways_to_separate/
 source: https://github.com/hanamimastery/episodes/tree/main/016
 ---
 
