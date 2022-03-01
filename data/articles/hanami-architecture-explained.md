@@ -24,7 +24,7 @@ In this episode, I'll explain this concept with simple words. However,  to keep 
 
 ### The architecture.
 
-First of all, let's clarify the term *software architecture*. **Martin flower** already wrote [a dozen of posts about it](https://martinfowler.com/architecture/), but in general, the architecture isn't really about **MVC**, **Service objects**, used **ORM** or things like that. **MVC is not architecture** - let's start with that, so we'll be able to more easily go into the core of the question.
+First of all, let's clarify the term *software architecture*. **Martin Fowler** already wrote [a dozen of posts about it](https://martinfowler.com/architecture/), but in general, the architecture isn't really about **MVC**, **Service objects**, used **ORM** or things like that. **MVC is not architecture** - let's start with that, so we'll be able to more easily go into the core of the question.
 
 > Note: If you're looking for a detailed explanation of how repositories, relationships, and models map to Rails Models, or why View in Hanami is a ruby object, then **subscribe to the Newsletter ** as you need to wait for the next episodes.
 
