@@ -20,10 +20,6 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/016
 ---
 
-# Your app is not your business!
-
-Hi there!
-
 ### My story - designing your domain
 
 In this episode of Hanami Mastery I want to talk about something different than usual, touching topic that was on back of my head for a while already. Today I won't cover a particular gem nor tool but rather the approach to tackle the **difficulty of solving business problems using software**.
