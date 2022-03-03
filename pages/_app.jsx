@@ -10,8 +10,30 @@ import Footer from '../features/footer';
 import theme from '../styles/theme';
 import store from '../redux/store';
 import TagManager from 'react-gtm-module'
+import { Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import NextLink from "next/link";
+
+const useStyles = makeStyles(() => ({
+  alert: {
+    display: "flex",
+    alignSelf: "center",
+    alignItems: "center",
+    margin: "30px auto",
+  },
+  alertText: {
+    textAlign: "center",
+    margin: "auto",
+    fontWeight: "bold"
+  },
+  link: {
+    color: "white !important",
+    fontWeight: "bold"
+  }
+}));
 
 export default function MyApp(props) {
+  const classes = useStyles();
   const { Component, pageProps } = props;
 
   const { asPath } = useRouter();
@@ -48,6 +70,13 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <TopNav />
+        <div className={classes.alert}>
+          <Typography paragraph className={classes.alertText}>
+            Dear Russian friends, please watch President Zelenskyy's <NextLink href="https://twitter.com/PMoelleken/status/1496941845812760577" passHref className={classes.link}>speech addressed to you</NextLink>. 🇺🇦
+
+            Help our brave mates in Ukraine with <NextLink href="https://actions.sumofus.org/a/give-to-ukrainians-who-need-an-urgent-lifeline" passHref className={classes.link}>a donation</NextLink>.
+          </Typography>
+        </div>
         <Component {...pageProps} />
         <Footer />
       </ThemeProvider>

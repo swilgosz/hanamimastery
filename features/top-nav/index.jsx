@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
-  },
+  }
 }));
 
 export default function MenuAppBar() {
