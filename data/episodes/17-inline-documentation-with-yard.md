@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/17/cover-big.jpeg
   small: /images/episodes/17/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1501151576332906499
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/t9efpn/inline_documentation_the_secret_habit_of/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/t9efva/inline_documentation_the_secret_habit_of/
 source: https://github.com/hanamimastery/episodes/tree/main/017
 ---
 
@@ -166,7 +165,7 @@ In a very clear format, I can describe what the class or method does, why it exi
 
 There are also conventions to document custom DSL methods, private API, and a lot more if you wish.
 
-It would be tedious to go all of this on this video, so guess what? I recommend you to check out the great documentation of this documentation!
+It would be tedious to go all of this in this article, so guess what? I recommend you to check out the [great documentation of this documentation](https://rubydoc.info/gems/yard/file/docs/GettingStarted.md)!
 
 If you'll just get familiar with a few most basic features I presented already, it'll already make a huge difference in your projects and teams.
 
@@ -174,9 +173,9 @@ If you'll just get familiar with a few most basic features I presented already, 
 
 If I do have my code documented, I can generate the neat, complete documentation files, by the `yard doc` command.
 
-I have here a [dry-transformer](6-complex-ruby-data-transformations-made-simple) files downloaded, and just to show you how it works, I'm going to generate local docs for this gem.
+I have here a [dry-transformer](https://dry-rb.org/gems/dry-transformer) files downloaded, and just to show you how it works, I'm going to generate local docs for this gem.
 
-> By the way, check out episode 6, where I covered the basics of complex ruby transformations using dry-transformer!
+> By the way, [check out episode 6](/episodes/6-complex-ruby-data-transformations-made-simple), where I covered the basics of complex ruby transformations using dry-transformer!
 
 First I need to install the *yard* gem, and then I can generate docs using a single command.
 
@@ -350,7 +349,7 @@ Then use existing conventions, and frameworks, like Yardock, to get a bunch of a
 
 Do I always add it? The answer is simple: NO. I add it when I have a time, and mood for it, and when there is a reason to do so. I developed a habit of adding such docs, but I find there is a lot in common to tests I write. 
 
-There is a great resource from Jason Swett about when to write tests, and I can suggest being pragmatic about inline docs too.
+There is a great resource from Jason Swett about [when not to write tests](https://www.codewithjason.com/not-write-tests/), and I can suggest being pragmatic about inline docs too.
 
 When I would write sth like: `UUIDV4Generator.call`, then I'd definitely not be stressed out about adding an inline doc to anything in it.
 
