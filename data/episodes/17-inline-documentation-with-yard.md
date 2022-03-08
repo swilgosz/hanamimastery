@@ -325,7 +325,7 @@ But it's totally possible, you'll encounter more complicated examples in your pr
 
 Ok, you may say that the git history is enough. Code editors give you a life browsing of who changed what and when, so it is easy to get a context, no? 
 
-![[git-commit-details-editor-popup.png]]
+![Git lens popup in visual studio code](/images/episodes/17/git-commit-details-editor-popup.png)
 
 Is it? In my opinion, often it is, but often it's also not enough.
 
