@@ -52,10 +52,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function JobOffers() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open1, setOpen1] = React.useState(true);
+  const [open2, setOpen2] = React.useState(true);
 
-  const handleClick = () => {
-    setOpen(!open);
+  const handleClick1 = () => {
+    setOpen1(!open1);
+  };
+
+  const handleClick2 = () => {
+    setOpen2(!open2);
   };
 
   return (
@@ -72,11 +77,11 @@ export default function JobOffers() {
           }
           className={classes.root}
         >
-          <ListItem button onClick={handleClick} className={classes.list}>
+          <ListItem button onClick={handleClick1} className={classes.list}>
             <ListItemText primary="DNSimple" className={classes.list} />
-            {open ? <ExpandLess /> : <ExpandMore />}
+            {open1 ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse in={open1} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem button color="primary" className={classes.nestedList}>
                 {/* <ListItemIcon>
@@ -93,15 +98,22 @@ export default function JobOffers() {
               </ListItem>
             </List>
           </Collapse>
+
+          <ListItem button onClick={handleClick2} className={classes.list}>
+            <ListItemText primary="AscendaLoyalty" className={classes.list} />
+            {open2 ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse in={open2} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItem button color="primary" className={classes.nestedList}>
+                <Link href="https://careers.ascendaloyalty.com/o/senior-backend-engineer-data-platform-fintech-budapest" target="_blank_">
+                  <ListItemText primary="Sr Backend Engineer" />
+                </Link>
+              </ListItem>
+            </List>
+          </Collapse>
         </List>
       </CardContent>
-      {/* <CardActions className={ classes.centered }>
-        <NextLink href={`/sponsors`} passHref>
-          <Button variant="contained" color="primary">
-            See all sponsors
-          </Button>
-        </NextLink>
-      </CardActions> */}
     </Card>
   );
 }
