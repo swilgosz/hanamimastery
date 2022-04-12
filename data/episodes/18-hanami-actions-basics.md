@@ -6,8 +6,8 @@ topics: ["hanami", "hanami-actions"]
 title: "Fun with Hanami Actions"
 excerpt: "Hanami actions are one of the richest building blocks in terms of available features and in this episode I want to go over them, showing how to validate params, handle errors and and use before or after hooks."
 videoId: o9F3RC424GI
-publishedAt: "2022-03-12"
-modifiedAt: "2022-03-12"
+publishedAt: "2022-04-12"
+modifiedAt: "2022-04-12"
 thumbnail:
   full: /images/episodes/18/cover-full.jpeg
   big: /images/episodes/18/cover-big.jpeg
