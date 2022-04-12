@@ -47,7 +47,7 @@ end
 
 When I'll open the root URL, you should see the updated welcome message in the browser now.
 
-![[Pasted image 20220411224648.png]]
+![[inline-action-body.png]]
 
 This is pretty neat, but to show more interesting stuff, I need a PATCH action.
 
@@ -86,7 +86,7 @@ res.headers.merge!("X-Custom" => "OK")
 
 When I visit the URL subscribe me at hanamimastery.com, you will see a new header being returned.
 
-![[Pasted image 20220411225057.png]]
+![[custom-header-set.png]]
 
 ### Params
 
@@ -116,11 +116,11 @@ end
 
 I can see here the email read from an URL parameter, and if I will add something to the query, it will be visible here too!
 
-![[Pasted image 20220411225547.png]]
+![[params-in-response-body-1.png]]
 
 That's awesome, so let's try to add the JSON body parameters to the request and see what happens.
 
-![[Pasted image 20220411225904.png]]
+![[json-request-example.png]]
 
 **Surprisingly, nothing.**
 
@@ -138,7 +138,7 @@ use Hanami::Middleware::BodyParser, :json
 
 After restarting the server, your extra parameter should be visible now. 
 
-![[Pasted image 20220411225920.png]]
+![[params-in-response-body-2.png]]
 
 #### Validating params
 
@@ -190,7 +190,7 @@ Hanami uses [Dry Validations](https://dry-rb.orgs/dry-validation) and [Dry-Schem
 
 Now, when I'll send the request with the empty *name*, I'll get the *422* error response and none of the code after the validation call will be performed.
 
-![[Pasted image 20220412011553.png]]
+![[validation-error.png]]
 
 ### Before and After Hooks!
 
@@ -287,7 +287,7 @@ end
 
 When I'll run this, It'll arrange my string components in the expected order!
 
-![[Pasted image 20220412013120.png]]
+![[before-hooks-example-response.png]]
 
 If you want some methods to be run after the given action, use the `after` hooks in the same way.
 
@@ -331,7 +331,7 @@ end
 
 This will raise the `AuthorizationError`,  and return to the browser as a *500 server error* which is not the best experience to the user.
 
-![[Pasted image 20220412014314.png]]
+![[unhandled-error-response.png]]
 
 Instead, we would like to handle this and return the readable error message to the user, ideally also with the correct HTTP status set.
 
@@ -366,7 +366,7 @@ end
 
 This will properly handle my error and return the formatted message to the user exactly as you could expect.
 
-![[Pasted image 20220412014842.png]]
+![[handled-error-response.png]]
 
 ### Summary
 
