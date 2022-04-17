@@ -7,17 +7,16 @@ title: "Fun with Hanami Actions"
 excerpt: "Hanami actions are one of the richest building blocks in terms of available features and in this episode I want to go over them, showing how to validate params, handle errors and and use before or after hooks."
 videoId: o9F3RC424GI
 publishedAt: "2022-04-12"
-modifiedAt: "2022-04-12"
+modifiedAt: "2022-04-17"
 thumbnail:
   full: /images/episodes/18/cover-full.jpeg
   big: /images/episodes/18/cover-big.jpeg
   small: /images/episodes/18/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1513810275715399688
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/u1y02d/fun_with_hanami_actions_hanami_mastery_a/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/u1y0j7/fun_with_hanami_actions/
 source: https://github.com/hanamimastery/episodes/tree/main/018
 ---
 
