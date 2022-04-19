@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/19/cover-big.jpeg
   small: /images/episodes/19/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1516505551072546828
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/u7dysh/the_underrated_power_of_dryschema_hanami_mastery/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/u7dz8n/the_underrated_power_of_dryschema_hanami_mastery/
 source: https://github.com/hanamimastery/episodes/tree/main/019
 ---
 
