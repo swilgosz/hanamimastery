@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ["dry-rb", "dry-schema", "hanami"]
 title: "The underrated power of dry-schema"
 excerpt: "dry-schema is an extremely powerful and validation engine for Ruby applications and as it's a built-in validation solution for Hanami projects, It is important to get familiar with it."
-videoId: null
+videoId: 6ayFwr2OcDc
 publishedAt: "2022-04-19"
 modifiedAt: "2022-04-19"
 thumbnail:
@@ -174,7 +174,7 @@ The super awesome thing about it is that you can now work with the result of you
 
 ```ruby
 result.to_h
-=> { name: 'Seb', age: 19 } # notice it's not string anymore
+# => { name: 'Seb', age: 19 } # notice it's not string anymore
 ```
 
 And it's highly recommended to always do so, to minimize the situation where our code crashes due to unexpected data type as an input argument.
@@ -308,7 +308,7 @@ It's extremely fast, composable, and powerful validation engine and I strongly r
 
 Maybe with this gem added to your project, you'll start to validate more input data, and less bugs will appear in your applications.
 
-### When to use?
+### When to use dry-schema?
 
 At the end, by quoting the documentation statement, if you wonder when to use this beauty, the answer is "Always, and Everywhere!"
 
