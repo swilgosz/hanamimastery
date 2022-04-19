@@ -21,13 +21,9 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/020
 ---
 
-# dry-validation - The one gem to validate them all!
+In the last episode, I've talked to you about the [*dry-schema* features](/episodes/19-) **allowing you to easily validate data structures and attributes types** in your ruby applications.
 
-Hi there!
-
-In the last episode, I've talked to you about the [*dry-schema* features](/episodes/19-) allowing you to easily validate data structures and attributes types in your ruby applications.
-
-However powerful, it's not [dry-schema](https://dry-rb.org/gems/dry-schema) that is the mostly used DRY library, but the other library, built on top of that engine which extends it's functionality.
+However powerful, it's not [dry-schema](https://dry-rb.org/gems/dry-schema) that is the mostly used DRY library. It's another gem, built on top of that engine which extends it's functionality.
 
 It's *dry-validation* and this is what I'll talk today about.
 
@@ -47,9 +43,7 @@ And here how to master DI in ruby by leveraging the features of dry-system:
 [HME015 - Dependency injection in Ruby: God Level](/episodes/15-dependency-injection-god-level-part-2)
 :::
 
-So when do you want to use this gem?
-
-## When to use?
+## When to use dry-validation?
 
 If you have projects, where there is not too much of the business logic to be validated, chances are that dry-schema standalone would be enough for you.
 
@@ -59,8 +53,8 @@ However, when you want to add more advanced validation, like email uniqueness, v
 
 Let me show you a few nice features specific for *dry-validation*.
 
-:::warning
-And a quick disclaimer here. If you want to use *dry-validation* in your project, **this video shows just a subset of features** - the whole functionality provided by *dry-schema* is omitted here, **as I've covered this gem in two of my previous episodes**. Check them out to have a complete overview of validation power you get for free in Hanami applications.
+:::note
+If you want to use *dry-validation* in your project, **this video shows just a subset of features** - the whole functionality provided by *dry-schema* is omitted here, **as I've covered this gem in two of my previous episodes**. Check them out to have a complete overview of validation power you get for free in Hanami applications.
 
 - [HME018 - Validating params in Hanami Actions](/episodes/18-hanami-actions-basics)
 - [HME019 - dry-schema overview](/episodes/19-dry-schema)
@@ -213,8 +207,12 @@ If you want to know more, I recommend checking out the [DRY in Five Youtube seri
 
 The funny thing is that people often use it in Rails applications, skipping strong_parameters and active_model validations completely, as this one is more safe and faster.
 
-Unfortunately, this is all I've for today, stay in touch to 
+Unfortunately, this is all I've for today! I hope you enjoyed this episode and stay in touch to get updates about my upcoming content!
 
+:::note Become an awesome subscriber!
+
+If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+:::
 
 ### Thanks
 
@@ -228,14 +226,9 @@ By helping me with [monthly github sponsorship](https://github.com/sponsors/swil
 
 And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
 
-If you know other great gems you wish me to talk about, leave a comment with `#suggestion`, and I'll gladly cover them in the future episodes!
-
 Also big thanks to [Thibault Luycx](https://unsplash.com/@conscious_design) for a great cover image!
 
 :::note Do you know great Ruby gems?
 
 Leave a comment with `#suggestion`, I'll gladly cover them in the future episodes!
 :::
-
-
-As usual, here you can find two of my previous videos! Thank you all for supporting my channel, you are awesome, and have a nice rest of your day!
