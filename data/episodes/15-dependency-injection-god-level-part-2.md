@@ -2,12 +2,12 @@
 id: 15
 aliases: ["HMEP015"]
 author: "swilgosz"
-topics: ["dry-rb", "dry-system", "dependency injection", "hanami", 'dry-inflector']
+topics: ["dry-rb", "dry-system", "dependency-injection", "hanami", 'dry-inflector']
 title: "Dependency Injection in Ruby - GOD Level! Meet dry-system! (Part 2)"
 excerpt: "Dependency injection brings you great power, but comes with its own headaches. If you can get rid of them, You're left with the power only. In Ruby, with dry-system, it's possible. Here is how!"
 videoId: hT0NcYiTsQY
 publishedAt: "2022-02-07"
-modifiedAt: "2022-02-07"
+modifiedAt: "2022-04-25"
 thumbnail:
   full: /images/episodes/15/cover-full.jpg
   big: /images/episodes/15/cover-big.jpg
