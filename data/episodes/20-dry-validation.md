@@ -3,7 +3,7 @@ id: 20
 aliases: ["HMEP020"]
 author: "swilgosz"
 topics: ["dry-rb", "dry-validation", "hanami"]
-title: "dry-validation - The one gem to validate them all"
+title: "dry-validation - The one gem to validate them all!"
 excerpt: "Validating data input is an extremely important problem to tackle in all applications. In Ruby ecosystem there is no better tool for that than dry-validation. Here is why!"
 videoId: null
 publishedAt: "2022-04-25"
@@ -29,12 +29,15 @@ It's *dry-validation* and this is what I'll talk today about.
 
 ## What is dry-validation?
 
-[dry-validation](https://dry-rb.org/gems/dry-validation) is a data validation library for all kinds of ruby applications, that provides complete set of features you'd need to validate anything.
+*[dry-validation](https://dry-rb.org/gems/dry-validation)* is a data validation library for all kinds of ruby applications, that provides complete set of features you'd need to validate anything.
 
 1. **It uses *dry-schema* for data structure and type validation**, which is great on its own!
 2. Extends the functionality to add business validations.
-3. Allows to inject external dependencies, and write custom macros.
-4. **It plays extremely well with dependency injection** - I have recorded two episodes about how to do dependency injection in ruby like a PRO using DRY-libraries, so feel free to check them out!
+3. Allows injecting external dependencies
+4. Allows writing **custom macros**.
+5. **It plays extremely well with dependency injection**
+
+I have recorded two episodes about [how to do dependency injection in ruby like a PRO](/t/dependency-injection) using DRY-libraries, so feel free to check them out!
 
 :::tip Do you want to apply next-level dependency injection in your ruby apps?
 
@@ -45,11 +48,17 @@ And here how to master DI in ruby by leveraging the features of dry-system:
 
 ## When to use dry-validation?
 
-If you have projects, where there is not too much of the business logic to be validated, chances are that dry-schema standalone would be enough for you.
+If you have projects, where there is not too much of the business logic to be validated, **chances are that dry-schema standalone would be enough** for you.
 
-However, when you want to add more advanced validation, like email uniqueness, validating attributes based on others provided, connect to external apis or display powerful YAML-based error messages, then dry-validation is the way to go.
+However, when you want to add more advanced validation, like 
+- email uniqueness, 
+- validating attributes based on others provided, 
+- connect to external apis ,
+- display powerful YAML-based error messages
 
-**In Hanami you have access to both gems**, as *dry-schema* is a subset of *dry-validation*, and in actions, it's usually ok to just validate the data structures.
+then *dry-validation* is the way to go.
+
+**In Hanami, you have access to both gems**, as *dry-schema* is a subset of *dry-validation*, and in the actions, it's usually ok to just validate the data structures.
 
 Let me show you a few nice features specific for *dry-validation*.
 
