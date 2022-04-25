@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/20/cover-big.jpeg
   small: /images/episodes/20/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1518496292569333760
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/ubfop4/dryvalidation_the_one_gem_to_validate_them_all/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/ubfoyg/dryvalidation_the_one_gem_to_validate_them_all/
 source: https://github.com/hanamimastery/episodes/tree/main/020
 ---
 
