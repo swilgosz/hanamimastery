@@ -7,7 +7,7 @@ title: "Effective programming in ruby"
 excerpt: "2 real-world examples of using algebraic effects in Hanami ruby applications with dry-effects."
 videoId: "Ik_81cHFAqg"
 publishedAt: "2021-11-29"
-modifiedAt: "2021-11-29"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/11/cover-full.jpeg
   big: /images/episodes/11/cover-big.jpeg
@@ -29,7 +29,7 @@ You can achieve a lot of amazing things with them, like
 - timeouts
 - feature toggles,
 - dependency injection
-- ...and many, many more. 
+- ...and many, many more.
 
 All that can be done in a unified,** testable way**, which could bring more cohesion to your projects.
 
@@ -47,7 +47,7 @@ I have my "hello world" application here and I would like to add a localization 
 
 ![Hello world application](/images/episodes/11/hello-world.png)
 
-In my view, I have the message method exposed, which is then rendered in the template. 
+In my view, I have the message method exposed, which is then rendered in the template.
 
 ```ruby
 # /slices/main/views/home/show.slim
@@ -179,7 +179,7 @@ In my case, this is exactly what will happen. Because I had not set my initial v
 
 ![State not set error](/images/episodes/11/state-not-set.png)
 
-It's expected, and to solve it, I will write a little localization middleware that will be used by my whole application. 
+It's expected, and to solve it, I will write a little localization middleware that will be used by my whole application.
 
 #### Localization middleware
 
@@ -260,11 +260,11 @@ The responsibility of setting that up is extracted into a single place.
 
 ### Current Time
 
-I would love my welcome message to show the current time in the browser too. 
+I would love my welcome message to show the current time in the browser too.
 
 I want you to think **How would you do it?**
 
-The easiest way to do so is to just assign a `Time.now` to a variable in the view and format it in a neat way. 
+The easiest way to do so is to just assign a `Time.now` to a variable in the view and format it in a neat way.
 
 ```ruby
 expose :message do
@@ -290,7 +290,7 @@ Whenever I would need to change it, my test would fail even though the class beh
 
 > I am going to deep dive into the best Hanami testing practices in Hanami Premium! Join now if you want to get to another level of Hanami's expertise!
 
-But let's go back to the topic. To solve the problem with tests, I could inject the current time from the outside as a dependency, or use an effect. 
+But let's go back to the topic. To solve the problem with tests, I could inject the current time from the outside as a dependency, or use an effect.
 
 Both approaches are fine, but you probably know how to pass the dependency into an object, and effects can be somewhat new for you.
 
@@ -324,7 +324,7 @@ I can remove the `Time.now` call as I won't need it anymore.
 
 #### CurrentTime middleware for handling algebraic effect
 
-Then I will write the CurrentTime middleware to resolve the current time state. 
+Then I will write the CurrentTime middleware to resolve the current time state.
 
 ```ruby
 # config.ru
@@ -395,7 +395,7 @@ I hope you've enjoyed this episode, and if you want to see more content in this 
 
 ### Special Thanks!
 
-I'd like to especially thank 
+I'd like to especially thank
 
 - [Andrzej Krzywda](https://github.com/andrzejkrzywda)
 - [Sebastjan Hribar](https://github.com/sebastjan-hribar)
@@ -405,8 +405,6 @@ Together with all my other GitHub sponsors for supporting this project and the w
 
 Also thanks to [Nicolas Picard](https://unsplash.com/@artnok) - for a great cover image!
 
-Thanks to all of you for being a part of the great Ruby community and for all the positive reactions you give. You're awesome! 
+Thanks to all of you for being a part of the great Ruby community and for all the positive reactions you give. You're awesome!
 
-Feel free to checkout **my other episodes**, and if you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
-
-Have a nice day and see you in the next Hanami Mastery episode.
+Feel free to checkout **my other episodes**!

@@ -6,7 +6,7 @@ title: "Untangle your code with MORE than service objects! Meet dry-monads!"
 excerpt: "Everyone knows how messy Rails controllers can be come. In this episode, I'm implementing the service-pattern on steroids using dry-monads in my sample Rails application."
 videoId: FnXezvNDnIg
 publishedAt: "2021-07-23"
-modifiedAt: "2021-10-03"
+modifiedAt: "2022-04-29"
 aliases: ['HMEP007']
 thumbnail:
   full: /images/episodes/7/cover-full.jpeg
@@ -602,14 +602,11 @@ Here are some ideas for naming ruby objects in web applications.
 
 ![Different abstraction names examples](/images/episodes/7/different-abstractions.png)
 
-
-### Special thanks
-
 I hope you've enjoyed this episode and as always I'd like to say thanks to my Github sponsors, I appreciate the support as it allows me to create better content and it speeds up the development of the Hanami web framework.
 
 If you enjoyed this episode and **want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me** [on twitter](https://twitter.com/hanamimastery)!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
 
-Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
+### Thanks
 
 Special thanks to:
 

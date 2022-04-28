@@ -5,7 +5,7 @@ topics: ["thoughts"]
 title: "Why ALL APIs are inconsistent?"
 excerpt: "One of the most common problems in web applications, is to update the application state based on the business rules. How it's possible, that API specification does not cover it?"
 publishedAt: "2021-09-17"
-modifiedAt: "2021-10-03"
+modifiedAt: "2022-04-29"
 aliases: ['HMAP005']
 thumbnail:
   full: /images/articles/why-all-apis-are-inconsistent/cover-full.png
@@ -156,8 +156,6 @@ But try to think outside of the box, and maybe YOU will be the one that will add
 ### Do you like this content?
 
 I hope you've enjoyed this article, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
-
-Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
 
 ### Special Thanks!
 

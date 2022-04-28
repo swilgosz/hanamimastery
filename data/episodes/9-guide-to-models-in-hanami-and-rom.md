@@ -6,7 +6,7 @@ title: "Integrate Hanami 2.0 with your Database using ROM"
 excerpt: "Every application needs persistence. Saving records in a database is just a must. Here is how you can do it in Hanami applications!"
 videoId: "GAmHmj0XK5U"
 publishedAt: "2021-10-02"
-modifiedAt: "2021-10-03"
+modifiedAt: "2022-04-29"
 aliases: ['HMEP009']
 thumbnail:
   full: /images/episodes/9/cover-full.jpeg
@@ -527,8 +527,6 @@ The article is persistent and does not change even after the page refresh, I can
 That's all for today!
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, **newsletter**  and **follow me [on Twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
-
-Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
 
 ### Special Thanks!
 

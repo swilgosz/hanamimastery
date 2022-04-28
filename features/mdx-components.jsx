@@ -13,6 +13,7 @@ import CourseAd from "./course-ad";
 import EmailSubscriptionForm from "./email-subscription-form/index";
 import YoutubeEmbed from "./youtube-embed";
 import GHSponsor from "./gh-sponsor";
+import TopicSuggestion from "./topic-suggestion";
 
 const CustomChip = withTheme(
   withStyles((theme) => ({
@@ -156,7 +157,8 @@ const MDXComponents = {
   Typography,
   YoutubeEmbed,
   GHSponsor,
-  CustomHeader
+  CustomHeader,
+  TopicSuggestion,
 };
 
 export default MDXComponents;

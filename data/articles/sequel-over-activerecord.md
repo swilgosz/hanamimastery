@@ -6,7 +6,7 @@ topics: ["hanami", "rails", "persistence", "rom-rb", "activerecord", "sequel"]
 title: "ROM and Sequel over ActiveRecord?"
 excerpt: "I've wondered why Hanami uses sequel under the hood. There are some problems with ActiveRecord, but I've wanted to know exactly, what it is about. Here is the summary of my foundings."
 publishedAt: "2021-11-19"
-modifiedAt: "2021-11-19"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/articles/sequel-over-activerecord/cover-full.jpeg
   big: /images/articles/sequel-over-activerecord/cover-big.jpeg
@@ -240,10 +240,6 @@ Keep in mind, that this article covers only a fraction of the differences. I'll 
 ### Consider support!
 
 I hope you've enjoyed this article, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)**, and **follow me [on Twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
-
-### Do you know other great gems?
-
-If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention it in the comments!
 
 ### References
 - [Sequel CheatSheet](http://sequel.jeremyevans.net/rdoc/files/doc/cheat_sheet_rdoc.html)

@@ -7,7 +7,7 @@ title: "Authorization with JWT in Hanami applications!"
 excerpt: "Authorizating your API applications can be trivial, if you have proper tolls to do it. Here I showcase how authorization with JWT can be done effortless in any ruby application by using Hanami 2 as an example."
 videoId: ITusxlun0J8
 publishedAt: "2022-01-03"
-modifiedAt: "2021-01-03"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/12/cover-full.jpeg
   big: /images/episodes/12/cover-big.jpeg
@@ -386,8 +386,3 @@ Additionally,
 
 - [Georg Bommeli](https://unsplash.com/@calina) for a great cover image
 - [Tim Riley](http://timriley.info/) for pointing me out how tricky English can be
-
-:::note Do you know other great gems?
-
-Leave a comment with `#suggestion`, I'll gladly cover them in the future episodes!
-:::

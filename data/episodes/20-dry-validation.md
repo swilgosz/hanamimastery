@@ -7,7 +7,7 @@ title: "dry-validation - The one gem to validate them all!"
 excerpt: "Validating data input is an extremely important problem to tackle in all applications. In Ruby ecosystem there is no better tool for that than dry-validation. Here is why!"
 videoId: 2FhHo38dHpw
 publishedAt: "2022-04-25"
-modifiedAt: "2022-04-25"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/20/cover-full.jpeg
   big: /images/episodes/20/cover-big.jpeg
@@ -49,9 +49,9 @@ And here how to master DI in ruby by leveraging the features of dry-system:
 
 If you have projects, where there is not too much of the business logic to be validated, **chances are that dry-schema standalone would be enough** for you.
 
-However, when you want to add more advanced validation, like 
-- email uniqueness, 
-- validating attributes based on others provided, 
+However, when you want to add more advanced validation, like
+- email uniqueness,
+- validating attributes based on others provided,
 - connect to external apis ,
 - display powerful YAML-based error messages
 
@@ -145,11 +145,11 @@ class HanamiMasterySubscriptionContract < Dry::Validation::Contract
   params do
     required(:email).filled(:string)
   end
-  
+
   rule(:email).validate(:email_format)
   rule(:email) do
     unless repo.exists?(values[:email])
-      key.failure("I appreciate you want to subscribe twice but we don't want to spam you!") 
+      key.failure("I appreciate you want to subscribe twice but we don't want to spam you!")
     end
   end
 end
@@ -224,7 +224,7 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ### Thanks
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 - **[Saeloun](https://github.com/saeloun)**
 - **[Brandon Weaver](https://github.com/baweaver)**
@@ -235,8 +235,3 @@ By helping me with [monthly github sponsorship](https://github.com/sponsors/swil
 And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
 
 Also big thanks to [Thibault Luycx](https://unsplash.com/@conscious_design) for a great cover image!
-
-:::note Do you know great Ruby gems?
-
-Leave a comment with `#suggestion`, I'll gladly cover them in the future episodes!
-:::

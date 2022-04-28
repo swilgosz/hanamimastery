@@ -30,8 +30,6 @@ Project: [[100 HanamiMastery episodes marathon]]
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on twitter](twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the the https://hanamimastery.com.
 
-Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas how to improve, please mention it in the comments!
-
 ### Special Thanks!
 
 I'd like to thank [LATEST SPONSORS]. for supporting this project!

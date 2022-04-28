@@ -7,7 +7,7 @@ title: "Inline documentation - the secret habit of successful devs."
 excerpt: "Everyone would love to have a secret power. A skill that makes you a hero. There is no one such skill, but in this episode, I'll talk about inline documentation - a great skill that can make you a better developer."
 videoId: -h52cUY4obo
 publishedAt: "2022-03-08"
-modifiedAt: "2022-03-14"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/17/cover-full.jpeg
   big: /images/episodes/17/cover-big.jpeg
@@ -407,8 +407,3 @@ for supporting this project, I really appreciate it!
 By helping me with a few dollars per month creating this content, you are helping the open-source developers and maintainers to create amazing software for you!
 
 And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
-
-:::note Do you know great Ruby gems?
-
-Leave a comment with `#suggestion`, I'll gladly cover them in the future episodes!
-:::

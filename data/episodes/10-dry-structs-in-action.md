@@ -7,7 +7,7 @@ title: "Model your business with structs on steroids - dry-struct in action!"
 excerpt: "A struct with static type check for all attributes is a pretty useful thing in Ruby and all other languages. Here are 3 examples of useful applications for typed structs using dry-struct."
 videoId: "J3LVridUt_Y"
 publishedAt: "2021-11-22"
-modifiedAt: "2021-11-22"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/10/cover-full.jpeg
   big: /images/episodes/10/cover-big.jpeg
@@ -191,7 +191,7 @@ end
 
 By setting the type I can eliminate the possibility to set gender value yet unsupported by the system while keeping this thing easily extendable in the future.
 
-For now, let's just add to_i and to_s methods. 
+For now, let's just add to_i and to_s methods.
 
 ```ruby
 def to_i
@@ -236,8 +236,6 @@ I'd like to especially thank my existing [github sponsors](https://github.com/sw
 
 Also thanks to [Kelly Sikkema](https://unsplash.com/@kellysikkema) - for a great cover image!
 
-Thanks to all of you for being a part of the great Ruby community and for all the positive reactions you give. You're awesome! 
+Thanks to all of you for being a part of the great Ruby community and for all the positive reactions you give. You're awesome!
 
-Feel free to checkout **my other episodes**, and if you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
-
-Have a nice day and see you in the next Hanami Mastery episode.
+Feel free to checkout **my other episodes**!

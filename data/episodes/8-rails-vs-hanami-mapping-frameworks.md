@@ -6,7 +6,7 @@ title: "Learn new things easily - mapping Rails to Hanami!"
 excerpt: "When I've started with learning Hanami, I've struggled a lot because of the different concepts Hanami has over Rails. In this episode of Hanami Mastery I'm mapping Rails to Hanami for easier learning."
 videoId: 73oJ-_aldc8
 publishedAt: "2021-09-09"
-modifiedAt: "2021-10-12"
+modifiedAt: "2022-04-29"
 aliases: ['HMEP008']
 thumbnail:
   full: /images/episodes/8/cover-full.jpeg
@@ -139,7 +139,7 @@ I see it as a reasonable trade-off, let me know how do you see it in the comment
 
 ### Scalability with slices
 
-Rails is designed to write medium-sized monolithic applications and **its default file structure just does not scale well**. At some point, you'll need to extend it but there is no clear way how, [so we create our own soultions](/episodes/7-untangle-your-app-with-dry-monads), and enter similar issues React applications have, where every project has different structure and patterns applied. 
+Rails is designed to write medium-sized monolithic applications and **its default file structure just does not scale well**. At some point, you'll need to extend it but there is no clear way how, [so we create our own soultions](/episodes/7-untangle-your-app-with-dry-monads), and enter similar issues React applications have, where every project has different structure and patterns applied.
 
 > Disclaimer: Before you'll start yielding at me: **I am fully aware of the existence of Github, Twitter, Shopify, and different other Rails giants**. I am not saying it's not possible to scale Rails applications - of course, it is. Rails by default just generate some problems with scaling that are sometimes tricky to be avoided.
 
@@ -159,8 +159,6 @@ I'd like to especially thank [Useo](https://useo.pl) and, [Thomas Carr](https://
 
 Also thanks to [Israel Palacio](https://unsplash.com/@othentikisra)- for a great cover image!
 
-Thanks to all of you for being a part of the great Ruby community and for all the positive reactions you give. You're awesome! 
+Thanks to all of you for being a part of the great Ruby community and for all the positive reactions you give. You're awesome!
 
-Feel free to checkout **my other episodes**, and if you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention them in the comments!
-
-Have a nice day and see you in the next Hanami Mastery episode.
+Feel free to checkout **my other episodes**!

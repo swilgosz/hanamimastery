@@ -7,7 +7,7 @@ title: "The underrated power of dry-schema"
 excerpt: "dry-schema is an extremely powerful and validation engine for Ruby applications and as it's a built-in validation solution for Hanami projects, It is important to get familiar with it."
 videoId: 6ayFwr2OcDc
 publishedAt: "2022-04-19"
-modifiedAt: "2022-04-19"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/19/cover-full.jpeg
   big: /images/episodes/19/cover-big.jpeg
@@ -46,7 +46,7 @@ The list of features is actually stupidly long, but these two points are the mai
 
 #### Data structure
 
-In your application you may have various types of input, like: 
+In your application you may have various types of input, like:
 - Form Params
 - JSON body parameters.
 - YAML or JSON config files
@@ -80,7 +80,7 @@ But best would be to show it to you by an example.
 Let's say I want to validate the name and age of the input hash.
 
 ```ruby
-input = { name: 'Seb', age: 19 } 
+input = { name: 'Seb', age: 19 }
 ```
 
 With `dry-schema` you can define the expected data structure for your validation, defining all the input structure rules.
@@ -192,7 +192,7 @@ For example, if I'd like to validate all **tags in my search query** I could req
 
 ```ruby
 schema = Dry::Schema.Params do
-  required(:tags) { array? & each { str? } } 
+  required(:tags) { array? & each { str? } }
 end
 
 tags = ['tag1', 'tag2', :tag3]
@@ -246,7 +246,7 @@ result = contract.call(['tag1', 2])
 result.success?
 # => false
 result.errors.to_h
-# => 
+# =>
 ```
 
 These error messages [can accept locale information](https://dry-rb.org/gems/dry-schema/1.9/basics/working-with-schemas/#working-with-error-messages) to return information in different languages, as well as several other options.
@@ -271,7 +271,7 @@ class UserSchema < Dry::Schema::Params
 end
 ```
 
-Now when I'll pass my tags wrapped within the `other_info` key, I'll get my validation rules applied to the user validator! 
+Now when I'll pass my tags wrapped within the `other_info` key, I'll get my validation rules applied to the user validator!
 
 ```ruby
 schema = UserSchema.new
@@ -313,7 +313,7 @@ At the end, by quoting the documentation statement, if you wonder when to use th
 
 ### Thanks!
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 - **[Saeloun](https://github.com/saeloun)**
 - **[Brandon Weaver](https://github.com/baweaver)**
@@ -326,8 +326,3 @@ By helping me with monthly github sponsorship to creating this content, together
 And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
 
 Also big thanks to [Arnold Antoo](https://unsplash.com/@arnold_antoo) for the great cover image!
-
-:::note Do you know great Ruby gems?
-
-Leave a comment with `#suggestion`, I'll gladly cover them in the future episodes!
-:::

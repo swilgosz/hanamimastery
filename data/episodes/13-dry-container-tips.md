@@ -7,7 +7,7 @@ title: "A sneak-peak into dependency loading with Hanami and dry-container"
 excerpt: "dry-system and dry-container are extremely powerful tools and if you understand how to work with them, you'll never look back. It's amazing that Hanami uses them by default! Check out some useful debugging tips!"
 videoId: mMyqUaPBLWI
 publishedAt: "2022-01-25"
-modifiedAt: "2021-04-25"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/13/cover-full.jpeg
   big: /images/episodes/13/cover-big.jpeg
@@ -22,7 +22,7 @@ source: https://github.com/hanamimastery/episodes/tree/main/013
 
 In this episode I'll show you a few ways to debug dependency loading via [dry-container](https://dry-rb.org/gems/dry-container) in Hanami applications, by using one of my recent setbacks.
 
-# Repository pattern 
+# Repository pattern
 In episode 9, I showcased [a complete integration of persistence layer in Hanami 2.0 applications](https://hanamimastery.com/episodes/9-guide-to-models-in-hanami-and-rom), to deliver blog articles data read from my DB straight into the browser.
 
 However, **there was a mistake hidden in this tutorial** that started to haunt me right after the release of the next [Hanami Alpha version](https://hanamirb.org/blog/2021/11/09/announcing-hanami-200alpha3/), as it caused incompatibility issues with what I've shown in the video.
@@ -33,7 +33,7 @@ There is a risk that some of my content becomes outdated quickly until official 
 However, to minimize such situations, I am currently releasing more videos about [DRY libraries](/t/dry-rb)/, which are a bit more safe for me to cover.
 :::
 
-While this is a normal risk when releasing tutorials about alpha versions, **or rather about anything what happens in web development**, this particular bug was caused because of my incomplete understanding of the *Repository Pattern* in ruby! 
+While this is a normal risk when releasing tutorials about alpha versions, **or rather about anything what happens in web development**, this particular bug was caused because of my incomplete understanding of the *Repository Pattern* in ruby!
 
 So, right after realizing that I did some research and to my surprise, **I was [not the only one](https://discourse.rom-rb.org/t/difference-between-repositories-and-relations/317) who didn't get the concept in full shape**.
 
@@ -93,7 +93,7 @@ Then several improvements had been applied, and as a result, **repository loadin
 
 Having that said, let's fix my implementation!
 
-### Moving repository to a slice 
+### Moving repository to a slice
 
 I have here my repository placed in a general lib folder, inside of my app's and persistence namespaces.
 
@@ -274,17 +274,17 @@ Now checking the loaded dependencies again will result in all settings properly 
 ```ruby
 container.keys
 # => [
-# "notifications", 
-# "settings", 
-# "assets", 
-# "persistence.config", 
-# "persistence.db", 
-# "persistence.rom", 
-# "rack_monitor", 
-# "routes_helper", 
-# "view.context", 
-# "inflector", 
-# "logger", 
+# "notifications",
+# "settings",
+# "assets",
+# "persistence.config",
+# "persistence.db",
+# "persistence.rom",
+# "rack_monitor",
+# "routes_helper",
+# "view.context",
+# "inflector",
+# "logger",
 # "rack_logger"
 # ]
 ```
@@ -408,8 +408,3 @@ As usual, here you can find two of my previous episodes! thank you all for suppo
 Additionally,
 
 - [Ante Hamersmit](https://unsplash.com/@ante_kante) for a great cover image!
-
-:::note Do you know other great gems?
-
-Leave a comment with `#suggestion`, I'll gladly cover them in the future episodes!
-:::

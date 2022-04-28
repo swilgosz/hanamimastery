@@ -5,7 +5,7 @@ topics: ["hanami"]
 title: "Hanami architecture explained"
 excerpt: "People ask me about the simple explanation of Hanami architecture. Why is it so complicated? Is it? I'll try to explain it in simple words."
 publishedAt: "2021-06-29"
-modifiedAt: "2021-10-03"
+modifiedAt: "2022-04-29"
 aliases: ['HMAP002']
 thumbnail:
   full: /images/articles/hanami-architecture-explained/cover-full.jpeg
@@ -84,8 +84,6 @@ This is the real power of this framework and this is what differs it from rails 
 ### Summary
 
 I hope you've enjoyed this article, and if you want to see more content in this fashion, **[Subscribe to HM YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **[follow me on Twitter](https://twitter.com/hanamimastery)**!
-
-Also, If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve,** please mention them in the comments!**
 
 ### Special Thanks!
 

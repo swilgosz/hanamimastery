@@ -7,7 +7,7 @@ title: "Fun with Hanami Actions"
 excerpt: "Hanami actions are one of the richest building blocks in terms of available features and in this episode I want to go over them, showing how to validate params, handle errors and and use before or after hooks."
 videoId: o9F3RC424GI
 publishedAt: "2022-04-12"
-modifiedAt: "2022-04-17"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/18/cover-full.jpeg
   big: /images/episodes/18/cover-big.jpeg
@@ -22,7 +22,7 @@ source: https://github.com/hanamimastery/episodes/tree/main/018
 
 Action in Hanami is probably the biggest and the most feature-rich building block. In this episode, I want to have some fun with them by trying out different parts and show you some features you'll need to build complete web applications.
 
-Let's start with a basic action. 
+Let's start with a basic action.
 
 ### Overriding the body
 
@@ -72,7 +72,7 @@ end
 ```
 
  Now let's extend this beauty.
- 
+
 ### Custom Response headers
 
 The first thing I want to show is how we can modify response headers in Hanami Actions.
@@ -91,7 +91,7 @@ When I visit the URL subscribe me at hanamimastery.com, you will see a new heade
 
 That's cool!
 
-Now, when headers are covered, let's have some fun with parameters. 
+Now, when headers are covered, let's have some fun with parameters.
 
 In my action, I can easily access all parameters passed to it too! Let me quickly add params to the response body for an easier overview. I'll change the body string to [HEREDOC syntax](https://www.rubyguides.com/2018/11/ruby-heredoc/) to easier maintain multiline string definition and add the params hash at the bottom.
 
@@ -135,7 +135,7 @@ require "hanami/middleware/body_parser"
 use Hanami::Middleware::BodyParser, :json
 ```
 
-After restarting the server, your extra parameter should be visible now. 
+After restarting the server, your extra parameter should be visible now.
 
 ![Params in response body 2](/images/episodes/18/params-in-response-body-2.png)
 
@@ -169,7 +169,7 @@ module Main
 
         def handle(req, res)
           halt 422, req.params.errors unless req.params.valid?
-          
+
           res.status = 200
           res.body = <<-HTML
             <h3>Hello, awesome subscriber!</h3>
@@ -209,7 +209,7 @@ module Main
     module Home
       class Subscribe < Action::Base
         before :validate
-        
+
         def handle(req, res)
           res.status = 200
           res.body = <<-HTML
@@ -302,7 +302,7 @@ module Main
     module Home
       class Subscribe < Action::Base
         AuthorizationError = Class.new(StandardError)
-        
+
         before :authorize
         # ...
 
@@ -342,11 +342,11 @@ module Main
     module Home
       class Subscribe < Action::Base
         AuthorizationError = Class.new(StandardError)
-        
+
         config.handle_exception StandardError => :handle_authorize
-        
+
         before :authorize
-        
+
         # ...
 
         private
@@ -380,11 +380,9 @@ However, that's all for today. I hope you've enjoyed this episode, and
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 
-And if you know any great ruby gem you'd like me to cover, leave a comment with `#suggestion`, I'll gladly cover it in the future episodes!
-
 ### Thanks
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 - **MVP match**
 - **[AscendaLoyalty](https://ascendaloyalty.com)**
@@ -397,8 +395,3 @@ By helping me with a few dollars per month creating this content, you are helpin
 And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
 
 Also big thanks to [Jakob Owens](https://unsplash.com/@jakobowens1) for a great cover image.
-
-:::note Do you know great Ruby gems?
-
-Leave a comment with `#suggestion`, I'll gladly cover them in the future episodes!
-:::

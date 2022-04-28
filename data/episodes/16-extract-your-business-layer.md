@@ -7,7 +7,7 @@ title: "Your app is not your business!"
 excerpt: "Check out these 4 ways to separate your business logic aside of your application layer in Ruby applications."
 videoId: intcf3jzzn8
 publishedAt: "2022-03-01"
-modifiedAt: "2022-03-01"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/16/cover-full.jpeg
   big: /images/episodes/16/cover-big.jpeg
@@ -289,7 +289,5 @@ Thanks for supporting this project, I really apreciate it!
 By helping me with a few dollars per month creating this content, you help the open-source developers and maintainers to create amazing software for you and the whole Ruby community!
 
 And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
-
-If you know other great gems you wish me to talk about, leave a comment with `#suggestion`, and I'll gladly cover them in the future episodes!
 
 Thank you all for reading, you are awesome, and have a nice rest of your day!

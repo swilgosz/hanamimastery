@@ -5,7 +5,7 @@ topics: ["dry-rb", "dry-configurable"]
 title: "Configure anything with dry-configurable"
 excerpt: "Configuring projects and components is one of the most common features in programming in general. dry-configurable is a standalone gem providing you exactly this in Ruby! Read about how to use it."
 publishedAt: "2021-06-19"
-modifiedAt: "2021-10-03"
+modifiedAt: "2022-04-29"
 aliases: ['HMEP005']
 videoId: J_352sH25oc
 thumbnail:
@@ -329,8 +329,6 @@ This code already will fail in case of invalid configuration, like passing nil o
 It's worth mentioning, that **Hanami-RB 2.0 uses the dry-configurable** for the framework, view, and controller settings. Give it a try in your projects and you'll not regret it.
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to my Newsletter** and [follow me on twitter](https://twitter.com/hanamimastery)!
-
-Also, **If you have any suggestions of amazing ruby gems You'd like me to cover, or ideas on how to improve, please mention it in the comments!**
 
 ### Special Thanks
 

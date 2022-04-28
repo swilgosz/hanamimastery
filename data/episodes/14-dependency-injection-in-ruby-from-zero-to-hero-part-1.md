@@ -7,7 +7,7 @@ title: "Dependency Injection in Ruby from 0 to hero (Part 1)"
 excerpt: "Dependency Injection is an extremely useful programming technique and can be easily implemented in Ruby! Mastering it is an important skill to leverage the power of Hanami applications! dry-container is one way to help you with it!"
 videoId: sYl2v3YgK2Q
 publishedAt: "2022-01-31"
-modifiedAt: "2022-04-25"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/14/cover-full.jpeg
   big: /images/episodes/14/cover-big.jpeg
@@ -58,7 +58,7 @@ Dependency injection is one of the techniques helping to achieve that.
 
 While I know that [the world doesn't need another post about dependency injection in Ruby](https://solnic.codes/2013/12/17/the-world-needs-another-post-about-dependency-injection-in-ruby/), I decided to create one anyway, to complement this series and explain the Hanami approach to it.
 
-Dependency injection IS a very simple concept and see the article created by Piotr Solnica which I link in the description, for a numerous list of benefits it provides and how simple it can be. 
+Dependency injection IS a very simple concept and see the article created by Piotr Solnica which I link in the description, for a numerous list of benefits it provides and how simple it can be.
 
 :::info Not focusing on tests at all!
 There is a lot of controversy on the web around [providing arguments used only for testing purposes](https://gist.githubusercontent.com/raw/4466492/2ebbe8ba20f7ec37c8e19dde280323ee04e1a535/gistfile1.txt) and a lot of people talking about DI in Ruby already focused on testing benefits. So I'll skip that part. Somewhat. Maybe just this: **dependency injection is extremely useful in testing**!
@@ -108,7 +108,7 @@ When I call it I'll get some logs and that's all.
 command = BecomeAwesomeSubscriber.new
 
 command.call(email: 'awesome@hanamimastery.subscriber')
-# => 
+# =>
 # starting subscription...
 # @-_-@
 # subscribed to newsletter!
@@ -192,19 +192,19 @@ Now we are one step closer to the composable code and our refactoring would be a
 ### 3. Memory optimizations
 
 When I'll just instantiate the `BecomeAwesomeSubscriber` service object, I'll end up with 2 instances of `Logger` class, both completely identical!
-  
+
 And every time sth will use my objects, new loggers will be created.
 
 ```ruby
 require 'objspace'
 ObjectSpace.each_object(Logger).count # => 0
-cmd = BecomeAwesomeSubscriber.new 
+cmd = BecomeAwesomeSubscriber.new
 ObjectSpace.each_object(Logger).count # => 2
 srv = EmailSubscriptionService.new
 ObjectSpace.each_object(Logger).count # => 3
 ```
 
-I know how it looks. 
+I know how it looks.
 
 **What's the point of it?** - you may ask. **- Two or three more objects? Who cares?**
 
@@ -344,7 +344,7 @@ module MyApp
           def initialize(logger: MyApp::Utils::Loggers::IOLogger.new)
             @logger = logger
           end
-        
+
           def call(email)
             logger.call("@-_-@")
           end
@@ -363,13 +363,13 @@ module Blog
     class BecomeAwesomeSubscriber
       attr_reader :logger, :service
       def initialize(
-        logger: MyApp::Utils::Loggers::IOLogger.new, 
+        logger: MyApp::Utils::Loggers::IOLogger.new,
         service: MyApp::Utils::Services::Subscriptions::EmailSubscription.new
       )
         @logger = logger
         @service = service
       end
-    
+
       def call(email)
         logger.call("starting subscription...")
         service.call(email)
@@ -495,7 +495,7 @@ Also, you may easily get an overview of everything that is happening in your sys
 ```ruby
 Container.keys
 # => [
-# 'logger', 
+# 'logger',
 # 'services.email_subscription',
 # 'commands.become_awesome_subscriber
 # ]
@@ -517,7 +517,7 @@ What I described above is only a scratch benefits dry-container provides. Some o
 
 However, it's still only one gem. So what are the others for?
 
-In the next episode I'll showcase the **dry-auto_inject** and **dry-system** gems, stay tuned for that! 
+In the next episode I'll showcase the **dry-auto_inject** and **dry-system** gems, stay tuned for that!
 
 That's all for today, I hope you enjoyed this episode and you'll give dry-container a try.
 
@@ -527,10 +527,10 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ### Thanks
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
- - **Andrzej Krzywda**, 
- - **Sebastjan Hribar**, 
+ - **Andrzej Krzywda**,
+ - **Sebastjan Hribar**,
  - and [Useo](https://useo.pl)
 
 for supporting this project, I really apreciate it!
@@ -538,8 +538,3 @@ for supporting this project, I really apreciate it!
 By helping me with a few dollars per month creating this content, you are helping the open-source developers and maintainers to create amazing software for you!
 
 And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
-
-:::note Do you know other great gems?
-
-Leave a comment with `#suggestion`, I'll gladly cover them in the future episodes!
-:::

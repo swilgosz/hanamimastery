@@ -7,7 +7,7 @@ title: "Dependency Injection in Ruby - GOD Level! Meet dry-system! (Part 2)"
 excerpt: "Dependency injection brings you great power, but comes with its own headaches. If you can get rid of them, You're left with the power only. In Ruby, with dry-system, it's possible. Here is how!"
 videoId: hT0NcYiTsQY
 publishedAt: "2022-02-07"
-modifiedAt: "2022-04-25"
+modifiedAt: "2022-04-29"
 thumbnail:
   full: /images/episodes/15/cover-full.jpg
   big: /images/episodes/15/cover-big.jpg
@@ -76,7 +76,7 @@ module MyApp
           def initialize(logger:)
             @logger = logger
           end
-        
+
           def call(email)
             logger.call("@-_-@")
           end
@@ -98,7 +98,7 @@ module Blog
         @logger = logger
         @service = service
       end
-    
+
       def call(**args)
         logger.call("starting subscription...")
         service.call(args[:email])
@@ -109,7 +109,7 @@ module Blog
 end
 ```
 
-Good News! 
+Good News!
 
 ### Dry-rb team have you covered!
 
@@ -119,7 +119,7 @@ There is a gem that allows exactly for that. It's *dry-auto_inject*, one of the 
 
 With this little gem we can now simplify our registration file by automatically resolving all dependencies!
 
-First of all, in my container file, I just create `Deps` constant which will be the only thing I'll use across my classes. 
+First of all, in my container file, I just create `Deps` constant which will be the only thing I'll use across my classes.
 
 ```ruby
 require 'dry-container'
@@ -131,11 +131,11 @@ class Container
   register('my_app.utils.loggers.io_logger') do
     MyApp::Utils::Loggers::IOLogger.new
   end
-  
+
   register('my_app.utils.services.subscriptions.email_subscription') do
     MyApp::Utils::Services::Subscriptions::EmailSubscription.new
   end
-  
+
   register('blog.commands.become_awesome_subscriber') do
     Blog::Commands::BecomeAwesomeSubscriber.new
   end
@@ -157,7 +157,7 @@ module MyApp
       module Subscriptions
         class EmailSubscription
           include Deps[logger: 'my_app.utils.loggers.io_logger']
-        
+
           def call(email)
             logger.call("@-_-@")
           end
@@ -174,7 +174,7 @@ module Blog
         logger: 'my_app.utils.loggers.io_logger',
         service: 'my_app.utils.services.subscriptions.email_subscription'
       ]
-    
+
       def call(**args)
         logger.call("starting subscription...")
         service.call(args[:email])
@@ -209,7 +209,7 @@ However, **can you spot further possible improvements on this**?
 ## Dry-System for what?
 
 Having that covered, what's the point of dry-system?
-  
+
 In my article about [dry-rb dependency graph](dry-rb-dependency-graph), I've highlighted, that based on the gem relationships you can conclude **which gems are supposed to be used directly**, and **which are designed as a low-level building blocks for other libraries**.
 
 dry-system is a high-level gem designed specifically for a direct use.
@@ -248,7 +248,7 @@ class Container < Dry::System::Container
 end
 ```
 
-This little snippet uses dry-container under the hood, but it also leverages the power of [dry-configurable](https://dry-rb.org/gems/dry-configurable) to allow easy-to-use, thread-safe configuration for the gem. 
+This little snippet uses dry-container under the hood, but it also leverages the power of [dry-configurable](https://dry-rb.org/gems/dry-configurable) to allow easy-to-use, thread-safe configuration for the gem.
 
 :::info
 Check out [how to configure anything in Ruby using dry-configurable](/episodes/5-configure-anything-with-dry-configurable) I've talked about in episode 5.
@@ -319,7 +319,7 @@ If I'll create a file in the slice, it's automatically picked up by the `dry-sys
 
 In Hanami, each slice has dedicated container, which can be resolved independently. This allows to load a whole tree of dependencies for a single slice, or set of slices in a single pod, without loading anything from other parts of the system.
 
-The only two things you really need to care about in Hanami, is that you can access the slice container - and this is an object using `dry-container`  under the hood, which allows 
+The only two things you really need to care about in Hanami, is that you can access the slice container - and this is an object using `dry-container`  under the hood, which allows
 you to quickly browse and access registered dependencies.
 
 ```ruby
@@ -387,11 +387,11 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ### Thanks
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 - **DNSimple** - which kindly joined to my platinum sponsorship tier allowing me to delegate a bit of work related to editing videos for my tutorials.
- - **Andrzej Krzywda**, 
- - **Sebastjan Hribar**, 
+ - **Andrzej Krzywda**,
+ - **Sebastjan Hribar**,
 
 for supporting this project, I really apreciate it!
 
@@ -401,7 +401,4 @@ And remember, if you want to support my work even without money involved, the be
 
 Additionally thanks [La-Rel Easter](https://unsplash.com/@lastnameeaster) for the great cover image!
 
-If you know other great gems you wish me to talk about, leave a comment with `#suggestion`, and I'll gladly cover them in the future episodes!
-
 As usual, here you can find two of my previous videos! Thank you all for supporting my channel, you are awesome, and have a nice rest of your day!
-

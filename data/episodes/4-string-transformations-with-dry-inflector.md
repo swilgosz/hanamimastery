@@ -5,7 +5,7 @@ topics: ["dry-rb", "dry-inflector"]
 title: "An easy string manipulations in Ruby with DRY-INFLECTOR!"
 excerpt: "Use constantize, classify, underscore and MORE on Strings in Pure ruby! Use dry-inflector to quickly apply non-standard string transformations!"
 publishedAt: "2021-06-14"
-modifiedAt: "2021-10-03"
+modifiedAt: "2022-04-29"
 aliases: ['HMEP004']
 videoId: "iCplLYsvGuI"
 thumbnail:
@@ -25,7 +25,7 @@ In this episode of Hanami Mastery screencast I want to showcase a super useful l
 It implements `classify`, `underscore`, `constantize`, all within pure ruby, without rails dependencies and [without any monkey-patching core Ruby classes!
 ](https://solnic.codes/2022/02/02/rails-and-its-ruby-dialect/)
 
-It's a [dry-inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up. 
+It's a [dry-inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up.
 
 I discovered this gem by [watching one of Luca's Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
 
@@ -240,9 +240,6 @@ That's all I have for today, [check out the gem's documentation](https://dry-rb.
 ### Do you like this episode? Consider sponsoring the project!
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, [Subscribe to my channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ) and [follow me on twitter](https://twitter.com/sebwilgosz)!  As always, all links you can find the description of the video or in the [Hanami Mastery about page](https://hanamimastery.com/about)
-
-
-Also, **If you have any suggestions of amazing ruby gems You'd like me to cover**, or ideas on how to improve, please mention it in the comments!
 
 See you!
 

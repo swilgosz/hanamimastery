@@ -3,11 +3,13 @@ import components from "../../features/mdx-components";
 import ArticleLayout from "../../layouts/article-layout";
 import { getSlugs } from "../../utils/file-browsers";
 import { getContentBySlug } from "../../utils/queries";
+import TopicSuggestion from "../../features/topic-suggestion";
 
 export default function Article({ mdxSource, frontMatter }) {
   return (
     <ArticleLayout article={frontMatter}>
       <MDXRemote {...mdxSource} components={components} />
+      <TopicSuggestion />
     </ArticleLayout>
   );
 }
