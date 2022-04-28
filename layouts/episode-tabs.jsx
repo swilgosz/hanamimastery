@@ -48,7 +48,11 @@ function LinkTab(props) {
   );
 }
 
-export default function EpisodeTabs() {
+function SrcFolderName(id) {
+  return (parseInt(id) < 100 ? `0${id}` : id);
+}
+
+export default function EpisodeTabs({episode}) {
   const classes = useStyles();
 
   const {
@@ -57,7 +61,7 @@ export default function EpisodeTabs() {
 
   const episodePath = React.useMemo(() => `/episodes/${slug}`, [slug]);
   const value = getTabsValue(view);
-
+  const source = episode.source;
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   return (
@@ -79,6 +83,15 @@ export default function EpisodeTabs() {
           href={`${episodePath}?view=discuss`}
           {...a11yProps(1)}
         />
+        {source &&
+          <LinkTab
+            label="Source"
+            className={classes.link}
+            href={source}
+            target="_blank"
+            {...a11yProps(0)}
+          />
+        }
       </Tabs>
     </Box>
   );

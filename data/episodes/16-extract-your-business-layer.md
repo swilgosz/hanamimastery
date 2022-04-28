@@ -17,7 +17,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/t3yqyl/your_app_is_not_your_business_4_ways_to_separate/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/t3yrgp/your_app_is_not_your_business_4_ways_to_separate/
-source: https://github.com/hanamimastery/episodes/tree/main/016
+source: #https://github.com/hanamimastery/episodes/tree/main/016
 ---
 
 ### My story - designing your domain
