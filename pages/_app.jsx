@@ -72,7 +72,7 @@ export default function MyApp(props) {
         <TopNav />
         <div className={classes.alert}>
           <Typography paragraph className={classes.alertText}>
-            Dear Russian friends, please watch President Zelenskyy's <NextLink href="https://twitter.com/PMoelleken/status/1496941845812760577" passHref className={classes.link}>speech addressed to you</NextLink>. 🇺🇦
+            Dear friends, please watch President Zelenskyy's <NextLink href="https://twitter.com/PMoelleken/status/1496941845812760577" passHref className={classes.link}>speech</NextLink>. 🇺🇦
 
             Help our brave mates in Ukraine with <NextLink href="https://actions.sumofus.org/a/give-to-ukrainians-who-need-an-urgent-lifeline" passHref className={classes.link}>a donation</NextLink>.
           </Typography>
