@@ -9,6 +9,11 @@ import MobileMenu from "./menu-mobile";
 import DesktopMenu from "./menu-desktop";
 
 const useStyles = makeStyles(() => ({
+  forkme: {
+    position: 'absolute',
+    right: 0,
+    top: 0
+  },
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
@@ -35,6 +40,20 @@ export default function MenuAppBar() {
           </NextLink>
           {isDesktop ? <DesktopMenu /> : <MobileMenu />}
         </Toolbar>
+        {
+          isDesktop ?
+          <a href="https://github.com/swilgosz/hanamimastery/fork" target="_blank">
+            <img
+              loading="lazy"
+              width="149"
+              height="149"
+              src="/images/forkme_right_white_ffffff.png?resize=149%2C149"
+              className={classes.forkme}
+              alt="Fork me on GitHub"
+              data-recalc-dims="1" />
+          </a>
+          : <></>
+        }
       </AppBar>
       <Toolbar variant="dense" />
     </>
