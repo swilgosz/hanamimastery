@@ -62,25 +62,7 @@ Then run `npm start` to run my assets server and when I check the browser, you c
 ```ruby
 # config/application.rb
 
-config.actions.default_headers = {
-  "X-Frame-Options" => "DENY",
-  "X-Content-Type-Options" => "nosniff",
-  "X-XSS-Protection" => "1; mode=block",
-  "Content-Security-Policy" => \
-    "base-uri 'self'; " \
-    "child-src 'self'; " \
-    "connect-src 'self'; " \
-    "default-src 'none'; " \
-    "font-src 'self'; " \
-    "form-action 'self'; " \
-    "frame-ancestors 'self'; " \
-    "frame-src 'self'; " \
-    "img-src 'self' https: data:; " \
-    "media-src 'self'; " \
-    "object-src 'none'; " \
-    "script-src 'localhost'; " \
-    "style-src * 'unsafe-inline'"
-  }
+config.actions.content_security_policy[:default_src] = "'self' http://localhost:8080"
 ```
 
 ![Article's grid](/images/episodes/3/bulma-installed.png)
