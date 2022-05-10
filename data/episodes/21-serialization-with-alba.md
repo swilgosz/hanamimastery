@@ -43,7 +43,7 @@ This is why in this episode, I'll go through the fastest Ruby serializer availab
 
 Alba is a well-maintained JSON serialization engine, for Ruby, JRuby, and TruffleRuby implementations, and what I like in this gem - except of its speed, is the easiness of use, no dependencies and the fact it plays well with any Ruby application!
 
-![[Pasted image 20220425225854.png]]
+![[alba-stats.png]]
 
 It had been created by Okura Masafumi, a pretty active Ruby developer, organizer of Kaigi on Rails and several other ruby initiatives.
 
@@ -234,17 +234,17 @@ repo.create(nickname: 'guest')
 
 Now when I'll run the server and vist my user path, I'll get the information  about the given user in the system.
 
-![[Pasted image 20220509193014.png]]
+![[single-response.png]]
 
 It's awesome, so let's check what's under the `/users` endpoint.
 
-![[Pasted image 20220509193954.png]]
+![[collection-response.png]]
 
 Alba serialization works out of the box for collections, which is great, however there is no root key visible here which is a bit inconsistent.
 
 To fix it, in the serializer, let's add the `root_key_for_collection`. This nests our whole collection under the `:users` root key as one could expect.
 
-![[Pasted image 20220509194427.png]]
+![[nested-collection-response.png]]
 
 You may also specify this key inline, by passing the collection root key as a second argument to the general root key, depending on your preference.
 
@@ -287,7 +287,7 @@ end
 
 Now, when I'll visit the user endpoint to check the third user, I'll get prefilled values in the response body.
 
-![[Pasted image 20220509235217.png]]
+![[default-values-response.png]]
 
 ### Key transformation
 
@@ -311,7 +311,7 @@ Alba.enable_inference!(with: :dry)
 
 With this, our JSON response will look a little bit differently.
 
-![[Pasted image 20220509224137.png]]
+![[transformed-keys-response.png]]
 
 There are several options you may use to transform your keys, and even write your own inflectors if you wish, which is not super hard to do.
 
@@ -338,7 +338,7 @@ end
 
 Now in the browser you may see the new attributes listed.
 
-![[Pasted image 20220509224657.png]]
+![[inline-serialization-response.png]]
 
 ## Summary
 
