@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/21/cover-big.jpeg
   small: /images/episodes/21/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1524108530751610883
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/umqmj7/json_serialization_with_alba_in_hanami_hanami/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/umqmru/json_serialization_with_alba_in_hanami_hanami/
 source: https://github.com/hanamimastery/episodes/tree/main/021
 ---
 
