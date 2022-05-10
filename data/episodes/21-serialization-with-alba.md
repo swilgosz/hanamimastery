@@ -132,6 +132,36 @@ module Main
 end
 ```
 
+### Basic serializer
+
+Then let me create the new user serializer that we will use in our user model. I'm going to create a new folder in my main slice, named serializers, and define my alba resources there.
+
+I want to wrap my resources under the `user` wrapper. We can do so by using the `root_key` macro with the expected key inside.
+
+To define attributes I'll use the `attributes` macro passing names as parameters. If your attribute needs some basic transformations, you can use an `attribute` with a block.
+
+Here I'll add a full_name to be listed instead of first and last name as separate fields.
+
+```ruby
+# /slices/main/lib/serializers/user.rb
+
+module Main
+  module Serializers
+    class User
+      include Alba::Resource
+
+      root_key :user
+
+      attributes :id, :nickname
+
+      attribute :full_name do |resource|
+        "#{resource.first_name}: #{resource.last_name}"
+      end
+    end
+  end
+end
+```
+
 ### Serializing single object
 
 Having that I can create a new file, for the user show action.
@@ -192,33 +222,6 @@ module Main
 end
 ```
 
-Then let me create the new user serializer that we will use in our user model. I'm going to create a new folder in my main slice, named serializers, and define my alba resources there.
-
-I want to wrap my resources under the `user` wrapper. We can do so by using the `root_key` macro with the expected key inside.
-
-To define attributes I'll use the `attributes` macro passing names as parameters. If your attribute needs some basic transformations, you can use an `attribute` with a block.
-
-Here I'll add a full_name to be listed instead of first and last name as separate fields.
-
-```ruby
-# /slices/main/lib/serializers/user.rb
-
-module Main
-  module Serializers
-    class User
-      include Alba::Resource
-
-      root_key :user
-
-      attributes :id, :nickname
-
-      attribute :full_name do |resource|
-        "#{resource.first_name}: #{resource.last_name}"
-      end
-    end
-  end
-end
-```
 
 Now let me add a few records to the database using `hanami console`:
 
