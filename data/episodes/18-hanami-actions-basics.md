@@ -141,9 +141,9 @@ After restarting the server, your extra parameter should be visible now.
 
 #### Validating params
 
-Having access to the parameters is great, but there may be a chance you'd like to validate the input parameters incoming to your enpoints.
+Having access to the parameters is great, but there may be a chance you'd like to validate the input parameters incoming to your endpoints.
 
-Applications may be much more complicated than CRUD-based resource updating projects, and therefore, Hanami allows to validate parameters without coupling validations to persistence layer of your app.
+Applications may be much more complicated than CRUD-based resource updating projects, and therefore, Hanami allows you to validate parameters without coupling validations to the persistence layer of your app.
 
 To Validate params, use the `params` method, defining the expected parameters schema inside.
 
