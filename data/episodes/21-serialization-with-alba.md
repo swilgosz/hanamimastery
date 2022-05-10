@@ -31,13 +31,13 @@ In Ruby, there are several gems that take care of that task, one of which
 - [ActiveModelSerializers](https://github.com/rails-api/active_model_serializers) or AMS, the most famous implementation of the JSON serializer for Ruby - it's a very old library and possibly the most known one.
 - [JSONAPI-Serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) - a community - managed descendant of `fast_jsonapi` gem, to keep that great project alive.
 -  next you have [Blueprinter](https://github.com/procore/blueprinter) 
-- **Panko**
+- [Panko serializer](https://github.com/panko-serializer/panko_serializer)
 
 And several other gems you could use to achieve this task.
 
-However, if speed is like air for your application, then you'd be only interested in the fastest solutions available on the web.
+However, if speed is like air for your application, then you'd be only interested in **the fastest solutions available on the web**.
 
-The fastest serializer for ruby apps I am aware of is [Panko serializer](https://github.com/panko-serializer/panko_serializer), however, as it is a C-extension gem, chances are you'd look for an alternative pure ruby solution.
+The fastest serializer for ruby apps I am aware of is *Panko serializer*, however, as it is a C-extension gem, chances are you'd look for an alternative pure ruby solution.
 
 This is why in this episode, I'll go through the fastest Ruby serializer available currently.
 
@@ -47,19 +47,23 @@ Alba is a well-maintained JSON serialization engine, for Ruby, JRuby, and Truffl
 
 ![Alba stats](/images/episodes/21/alba-stats.png)
 
-It had been created by Okura Masafumi, a pretty active Ruby developer, organizer of Kaigi on Rails and several other ruby initiatives.
+It had been created by [Okura Masafumi](https://github.com/okuramasafumi), a pretty active Ruby developer, organizer of [Kaigi on Rails](https://kaigionrails.org/) and several other ruby initiatives.
 
 By the way,
 
-> Alba uses Github discussion threads for collecting [feedback](https://github.com/okuramasafumi/alba/discussions/categories/feedback), ideas, and discussions about the development - which I was inspired on. If you tried it out, feel free to share your thoughts with the gem's author to make this library even better than it is right now.
+:::important
+Alba uses **Github discussion threads** for collecting [feedback](https://github.com/okuramasafumi/alba/discussions/categories/feedback), ideas, and discussions about the development - which I was inspired on. If you tried it out, feel free to share your thoughts with the gem's author to make this library even better than it is right now.
+:::
 
 ### Installation
 
 I have the scaffolded Hanami application here, with *rom-rb* Users repository pre-setup, so it's extremely easy to add or list records in the system. As always, you have the complete source code linked in the episode so feel free to check it out if you need a more detailed look at it.
 
-Additionally, I have already talked about basic persistence in Hanami applications in episodes 9th and 18th, so I'll not go through the details this time, feel free to check the mentioned videos, they'll be linked in the related resources for sure.
+:::info
+Additionally, I have already talked about basic persistence in Hanami applications in [HME009](/episodes/9-guide-to-models-in-hanami-and-rom) and [HME018](/episodes/18-hanami-actions-basics), so I'll not go through the details this time, feel free to check them out!
+:::
 
-To start using alba, I'll first add it to my Gemfile together with the `oj` gem.
+To start using *alba*, I'll first add it to my `Gemfile` together with the [oj](https://github.com/ohler55/oj) gem.
 
 ```ruby
 gem 'alba'
@@ -70,7 +74,7 @@ And install them via the `bundle install` command.
 
 ### Configuration
 
-`Oj` gem is not required if you use the default configuration. In that case, alba works out of the box. However, it truly shines when it's optimized for speed. To to that, I'll create the serialization provider, where I'll require alba and configure the `:OJ` as a backend.
+The *Oj* gem is not required if you use the default configuration. In that case, alba works out of the box. However, it truly shines when it's optimized for speed. To to that, I'll create the serialization provider, where I'll require alba and configure the `:oj` as a backend.
 
 I'm going to create a new provider named serializers, and inside of it, configure alba when the application starts.
 
@@ -86,7 +90,7 @@ Hanami.application.register_provider :serializers do
 end
 ```
 
-This way, `Alba` will be required and configured only after calling boot on my application, and it won't slow down the console, nor unit tests, or all sorts of rake tasks!
+This way, `Alba` will be required and configured only after calling boot on my application, and **it won't slow down the console, nor unit tests, or all sorts of rake tasks!**
 
 ## Using Alba in Hanami
 
@@ -94,7 +98,7 @@ Now let's try it out!
 
 ### Setting up Hanami endpoints
 
-Let me create a new GET endpoint fetching the current user information.
+Let me create a new `GET` endpoint fetching the current user information.
 
 In the router, I'm adding the proper route handler, for `/users` index and show actions, and then creating a simple action to play with them.
 
@@ -131,7 +135,7 @@ end
 ### Serializing single object
 
 Having that I can create a new file, for the user show action.
-It uses the user repository to fetch the requested object, and validates the URL parameter, ensuring the safe coercion to an integer.
+It uses the user repository to fetch the requested object, and validates the *URL* parameter, ensuring the safe coercion to an integer.
 
 This way I'll always work with Integers in my system, and stringified number will never leak into my application code!
 
