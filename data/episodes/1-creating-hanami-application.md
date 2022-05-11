@@ -47,7 +47,7 @@ cd sandbox
 bin/install sandbox
 bundle install
 cp .env-example .env.development
-puma config.ru
+bundle exec puma config.ru
 ```
 
 To work with this setup, you'll need to have ruby language and SQLite database installed on your machine.
@@ -91,7 +91,7 @@ The output says, that "the application is ready to be run", but we need to apply
 Hanami application template with the default configuration can be run using just a normal `puma` api, with usual port specification and other options.
 
 ```shell
-puma config.ru
+bundle exec puma config.ru
 ```
 
 However, if I'll run the project now, it'll crash saying that the **database URL configuration is missing**. 
@@ -117,7 +117,7 @@ When We'll rename the file, the `ENV` file will be picked-up by the Hanami setti
 Now finally we can start our application which will be accessible at localhost on port 3000.
 
 ```shell
-puma config.ru
+bundle exec puma config.ru
 ```
 
 Yaay! You can see the "Welcome to, sandbox!" message.
