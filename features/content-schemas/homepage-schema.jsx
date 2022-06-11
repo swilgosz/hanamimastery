@@ -38,6 +38,7 @@ function makeHomePageSchema() {
       },
       sameAs: [
         'https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ',
+        'https://www.youtube.com/c/HanamiMastery',
         'https://twitter.com/hanamimastery',
         'https://facebook.com/hanamimasteryfb',
         'https://github.com/hanamimastery'

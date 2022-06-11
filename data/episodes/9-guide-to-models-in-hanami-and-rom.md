@@ -526,7 +526,7 @@ The article is persistent and does not change even after the page refresh, I can
 
 That's all for today!
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, **newsletter**  and **follow me [on Twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
+I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to [this YT channel](https://www.youtube.com/c/HanamiMastery)**, **newsletter**  and **follow me [on Twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
 
 ### Special Thanks!
 

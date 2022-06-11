@@ -203,7 +203,7 @@ As I often say, the only thing that restricts us is our imagination and `dry-tra
 
 Super useful stuff and I strongly suggest giving it a shot. You may be surprised how easily you can write adapters, serializers, and deserializers from now on.
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
 ### Special thanks
 

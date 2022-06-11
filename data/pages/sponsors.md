@@ -53,7 +53,7 @@ I may restrict this information to **my sponsors only in the future**.
 
 ## How to support Hanami Mastery?
 
-If you really enjoy my content or get benefits from it, you're welcome to support me, our [YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ), and the whole [HanamiMastery initiative](/about) by [sponsoring on Github](https://github.com/sponsors/swilgosz) or sending a donation of your choice.
+If you really enjoy my content or get benefits from it, you're welcome to support me, our [YT channel](https://www.youtube.com/c/HanamiMastery), and the whole [HanamiMastery initiative](/about) by [sponsoring on Github](https://github.com/sponsors/swilgosz) or sending a donation of your choice.
 
 - [Github sponsors](https://github.com/sponsors/swilgosz)
 - [Buy me a coffee](https://www.buymeacoffee.com/swilgosz)
@@ -124,7 +124,7 @@ You can also support us **by following us** and **sharing our episodes**!
 - [Check out ALL my content here](https://hanamimastery.com):
 - [Hanami Mastery Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)
 - Follow us on [Twitter](https://twitter.com/hanamimastery)
-- Subscribe our [Youtube Channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)
+- Subscribe our [Youtube Channel](https://www.youtube.com/c/HanamiMastery)
 - Give a like on [Facebook](https://www.facebook.com/hanamimasteryfb)
 - Github: [@hanamimastery](https://github.com/hanamimastery) with all [episodes source codes](https://github.com/hanamimastery/episodes)!
 

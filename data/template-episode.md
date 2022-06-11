@@ -28,7 +28,7 @@ Project: [[100 HanamiMastery episodes marathon]]
 
 ### Summary
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on twitter](twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the the https://hanamimastery.com.
+I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me [on twitter](twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the the https://hanamimastery.com.
 
 ### Special Thanks!
 

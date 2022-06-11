@@ -604,7 +604,7 @@ Here are some ideas for naming ruby objects in web applications.
 
 I hope you've enjoyed this episode and as always I'd like to say thanks to my Github sponsors, I appreciate the support as it allows me to create better content and it speeds up the development of the Hanami web framework.
 
-If you enjoyed this episode and **want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me** [on twitter](https://twitter.com/hanamimastery)!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
+If you enjoyed this episode and **want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me** [on twitter](https://twitter.com/hanamimastery)!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
 
 ### Thanks
 

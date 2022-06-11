@@ -153,7 +153,7 @@ Whenever then comes a need to extract a part of the application into a separate 
 
 ### Summary
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
 I'd like to especially thank [Useo](https://useo.pl) and, [Thomas Carr](https://github.com/htcarr3), and Vitalij Pokrityuk for supporting this channel and the Hanami Mastery initiative. I appreciate that as without your financial support this project could not exist.
 

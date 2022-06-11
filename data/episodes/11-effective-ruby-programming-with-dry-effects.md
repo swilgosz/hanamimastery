@@ -391,7 +391,7 @@ It can become a while until effects will be widely adopted across ruby applicati
 
 For more advanced examples join Hanami Mastery PRO or my GitHub Sponsors, to get access to weekly premium episodes!
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to [my YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
 ### Special Thanks!
 

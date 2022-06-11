@@ -81,7 +81,7 @@ However, **in a lot of cases, you would need to visit the implementation and fig
 
 If you do have your code documented, at least a little bit, then you may save some time and brainpower, by letting your editor figure that out for you!
 
-Let's say, I have two subscription mechanisms in the system. One that [subscribes via email](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter), and other, that [subscribes to the Youtube Channel.](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)
+Let's say, I have two subscription mechanisms in the system. One that [subscribes via email](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter), and other, that [subscribes to the Youtube Channel.](https://www.youtube.com/c/HanamiMastery)
 
 ```ruby
 # Subscribes to the Newsletter
@@ -130,7 +130,7 @@ This is, what happens when I'll hover over the `service.call` method execution l
 **I immediately get the information about what type of class is assigned to the service reader**, and what the method does! In this case, it subscribes the current video viewer to the youtube channel.
 
 :::important Disclaimer
-As you can see here, automatic subscriptions are not fully implemented yet, so **please use the [manual way of subscribing to a channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, for a while yet.
+As you can see here, automatic subscriptions are not fully implemented yet, so **please use the [manual way of subscribing to a channel](https://www.youtube.com/c/HanamiMastery)**, for a while yet.
 :::
 
 Even though I don't have the information what is hidden under the variable value just based on a variable name, it's still immediately accessible and it proved to be useful quite often in my case.
@@ -391,7 +391,7 @@ Inline documentation is a great tool that can bring awesome long-term benefits t
 
 :::note Become an awesome subscriber!
 
-If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 
 ## Thanks

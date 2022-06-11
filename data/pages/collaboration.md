@@ -89,7 +89,7 @@ You can also support us **by following us** and **sharing our episodes**!
 - [Check out ALL my content here](https://hanamimastery.com):
 - [Hanami Mastery Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)
 - Follow us on [Twitter](https://twitter.com/hanamimastery)
-- Subscribe our [Youtube Channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)
+- Subscribe our [Youtube Channel](https://www.youtube.com/c/HanamiMastery)
 - Give a like on [Facebook](https://www.facebook.com/hanamimasteryfb)
 - Github: [@hanamimastery](https://github.com/hanamimastery) with all [episodes source codes](https://github.com/hanamimastery/episodes)!
 

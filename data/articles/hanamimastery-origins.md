@@ -135,7 +135,7 @@ This is where I've got an idea to start solving all those issues.
 
 The idea is simple. There are much better developers out there, working on Hanami every day to make it great - how can I help them in the most meaningful way? Start with guides.
 
-1. **There are not too many resources and docs to learn new Hanami** - so I'm [creating a vlog](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ), where I'm publishing Hanami related courses, guides, videos, articles, tutorials, and whatever you can think about.
+1. **There are not too many resources and docs to learn new Hanami** - so I'm [creating a vlog](https://www.youtube.com/c/HanamiMastery), where I'm publishing Hanami related courses, guides, videos, articles, tutorials, and whatever you can think about.
 2. **The core team is too small** - **SO I joined the team**, to help with preparing the guides and improving documentation. It's small because people need to earn money for their lives. They usually cannot afford to work for free too much. SO I'm giving off at least 10% of ALL income I'll make in any way, related to HanamiMastery, directly to support maintainers of libraries Hanami relies on, directly or indirectly.
 
 Still, I put a tremendous amount of effort to create content, publish it, maintain it, update it. I do it for free because I like it. And I will do it more, the more time I'll be able to put into it.

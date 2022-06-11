@@ -83,7 +83,7 @@ This is the real power of this framework and this is what differs it from rails 
 
 ### Summary
 
-I hope you've enjoyed this article, and if you want to see more content in this fashion, **[Subscribe to HM YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)** and **[follow me on Twitter](https://twitter.com/hanamimastery)**!
+I hope you've enjoyed this article, and if you want to see more content in this fashion, **[Subscribe to HM YT channel](https://www.youtube.com/c/HanamiMastery)** and **[follow me on Twitter](https://twitter.com/hanamimastery)**!
 
 ### Special Thanks!
 

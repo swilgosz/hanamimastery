@@ -160,7 +160,7 @@ require 'dry-inflector'
 inflector = Dry::Inflector.new
 ```
 
-Then Let's create the sample class, Let's call it HanamiMastery, and put some string. Maybe Subscribe!, as [I actually want to ask you for that](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ) ;).
+Then Let's create the sample class, Let's call it HanamiMastery, and put some string. Maybe Subscribe!, as [I actually want to ask you for that](https://www.youtube.com/c/HanamiMastery) ;).
 
 ```ruby
 class HanamiMastery
@@ -239,7 +239,7 @@ That's all I have for today, [check out the gem's documentation](https://dry-rb.
 
 ### Do you like this episode? Consider sponsoring the project!
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion, [Subscribe to my channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ) and [follow me on twitter](https://twitter.com/sebwilgosz)!  As always, all links you can find the description of the video or in the [Hanami Mastery about page](https://hanamimastery.com/about)
+I hope you've enjoyed this episode, and if you want to see more content in this fashion, [Subscribe to my channel](https://www.youtube.com/c/HanamiMastery) and [follow me on twitter](https://twitter.com/sebwilgosz)!  As always, all links you can find the description of the video or in the [Hanami Mastery about page](https://hanamimastery.com/about)
 
 See you!
 

@@ -228,7 +228,7 @@ Typed structs and deeply frozen structs are a very useful tool and I certainly b
 
 I would love to see in what scenarios do you apply them in your projects, so feel free to send me some code samples or article references in the comments of this episode, and if you do want to see more advanced content, join to Hanami Mastery premium, where I dig much deeper into these topics.
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to [my YT channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ)**, [Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter) and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, [Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter) and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
 ### Special Thanks!
 
