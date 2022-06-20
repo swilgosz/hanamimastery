@@ -20,7 +20,6 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/023
 ---
-
 I tend to work with multiple ruby applications at the same time. Whether it is my open-source activity, or projects for my client, in either case, **I do not always have an impact on what coding styles I am supposed to use.**
 
 One team prefers the double quotes, while other teams - a single. It's a never-ending war of people screaming about syntax, while honestly, I don't care, as long as it's consistent within a project.
@@ -51,16 +50,15 @@ Rubocop is so popular, that recently it managed to be on the list of [Top-Loved]
 
 Mostly loved gems
 
-![[Pasted image 20220615045648.png]]
+![Most loved gems 2022](/images/episodes/23/mostly-loved-gems-2022.png)
 
-Top Frustrating gems
-![[Pasted image 20220615045723.png]]
+![Most frustrating gems 2022](/images/episodes/23/mostly-frustrating-gems-2022.png)
 
 Why people are frustrated because of Rubocop?
 
 I have a theory, that one of the reasons is that some people just don't use it properly!
 
-In this episode then I've decided to list 4 of the rubocop-related frustrations I could think about and come with a few tips for you to remove each of the frustration out of your head.
+In this episode then I've decided to list 4 of the rubocop-related frustrations I could think about and come up with a few tips for you to remove each of the frustration from your head.
 
 I encourage you to list your other issues you have experienced with this gem in the discussions threads, so we can find solutions together!
 
@@ -74,7 +72,7 @@ If you want to integrate RuboCop with an old project, defaults can really bite y
 
 I can imagine you get frowned after seeing sth like this:
 
-![[Pasted image 20220615051415.png]]
+![Too many violations](/images/episodes/23/too-many-rubocop-violations.png)
 
 It could take AGES to fix all of those issues! And let's be honest, there is no client that can't wait for paying you to break all the too long lines in the codebase!
 
