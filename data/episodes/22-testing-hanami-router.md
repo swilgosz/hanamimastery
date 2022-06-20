@@ -13,10 +13,10 @@ thumbnail:
   big: /images/episodes/22/cover-big.jpeg
   small: /images/episodes/22/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1536317415428182022
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/vbajuf/hanami_router_with_tdd_hanami_mastery_episode_22/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/vbak2g/hanami_router_with_tdd_hanami_mastery_episode_22/
 source: https://github.com/hanamimastery/episodes/tree/main/022
 ---
 
@@ -27,7 +27,7 @@ Recently, I’ve some [fun with Hanami Actions](/episodes/18-hanami-actions-basi
 Routing is one of the basic components of any web application. This is the interface of your application, and the clients using it. In this episode I'll dig a bit into the Hanami router from the usage point of view, covering why it's great and how to work with it.
 
 ### Hanami-Router Path recognition tests
-I'm going to start by writing a test file for my routes. Usually, I don't show it on the screencasts, but [I'm a big fan of test-driven development](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/), and whenever possible I'm trying to practice it during the real development. To write routing tests, I'll create a new routes spec file, under `spec/web` folder. One of the best things about Hanami is that most parts of the application can be unit-tested, and the Routing part is not an exception. 
+I'm going to start by writing a test file for my routes. Usually, I don't show it on the screencasts, but [I'm a big fan of test-driven development](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/), and whenever possible I'm trying to practice it during the real development. To write routing tests, I'll create a new routes spec file, under `spec/web` folder. One of the best things about Hanami is that most parts of the application can be unit-tested, and the Routing part is not an exception.
 
 Actually The fact that Hanami is so easily testable is one of the reasons why I like this framework so much. I'll use [rspec](https://github.com/rspec/rspec/) as a testing framework because it's the **default in all Hanami projects** and I love it a lot.
 
@@ -111,8 +111,8 @@ module Web
       slice :main, at: "/" do
         root to: "home.show"
 
-        get "/subscriptions", 
-          as: :subscriptions, 
+        get "/subscriptions",
+          as: :subscriptions,
           to: ->(env) { [200, {}, [["Awesome Subscriber 1"]]] }
         post "/subscribe",
           as: :subscribe,
@@ -171,7 +171,7 @@ As you can expect, this test fails, and to fix it I'll add the missing route to 
 # config/routes.rb
 
 # ...
-get "/subscriptions/:id", 
+get "/subscriptions/:id",
   as: :subscription,
   to: ->(env) { [200, {}, ["Awesome Subscriber!"]] }
 ```
@@ -236,7 +236,7 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ### Thanks
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 - **[Benjamin Klotz](https://github.com/tak1n)**
 - **[Saeloun](https://github.com/saeloun)**
