@@ -198,6 +198,13 @@ Those four points are what I can imagine people could be frustrated about when d
 
 If there are other points that drive you crazy though, please leave a comment in the discussion threads for this episode, and we could together find some ways around that.
 
+Unfortunately, it's all I have for you today. I hope you've enjoyed this episode and learned sth new!
+
+:::note Become an awesome subscriber!
+
+If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+:::
+
 ## Thanks
 
 I want to especially thank my recent sponsors, 
