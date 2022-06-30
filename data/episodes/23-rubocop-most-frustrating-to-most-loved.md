@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/23/cover-big.jpeg
   small: /images/episodes/23/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1541528907282792450
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/vm66s8/rubocop_4_ways_to_reduce_your_frustration_hanami/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/vm67a8/rubocop_4_ways_to_reduce_your_frustration_hanami/
 source: https://github.com/hanamimastery/episodes/tree/main/023
 ---
 I tend to work with multiple ruby applications at the same time. Whether it is my open-source activity, or projects for my client, in either case, **I do not always have an impact on what coding styles I am supposed to use.**
