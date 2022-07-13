@@ -21,9 +21,11 @@ discussions:
 source: null
 ---
 
-Recently I gave a talk on [Saint P Ruby meetup](https://www.youtube.com/c/SaintPRubyCommunity) and as I've got nice feedback, I've decided to extract one interesting part to an official Hanami Mastery episode.
+Recently I gave a talk on [Saint P Ruby meetup](https://www.youtube.com/c/SaintPRubyCommunity) and as I've got nice feedback, I've decided to extract some interesting parts to an official Hanami Mastery episode.
 
+:::note
 This talk, and this episode, was sponsored by [Useo](https://useo.pl).
+:::
 
 It was an extremely nice experience for me and I've learned a tremendous amount of stuff about life recordings, which are completely different than recording these episodes.
 
