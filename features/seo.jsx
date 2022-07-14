@@ -24,7 +24,7 @@ export const SeoComponent = ({ title, fullTitle, thumbnails, url, excerpt, topic
       openGraph={{
         article: {
           authors: ["https://www.facebook.com/sebastian.wilgosz"],
-          topics,
+          tags: topics,
         },
         locale: "en_US",
         url,

@@ -53,6 +53,7 @@ const EpisodeLayout = ({ episode, children }) => {
         title={`${prefix}${title}`}
         thumbnails={thumbnail}
         topics={topics}
+        url={episode.url}
         excerpt={`${prefix}${excerpt}`}
       />
       <EpisodeSchema episode={episode} />

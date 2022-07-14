@@ -49,6 +49,7 @@ const ArticleLayout = ({ article, children }) => {
         title={title}
         thumbnails={thumbnail}
         topics={topics}
+        url={article.url}
         excerpt={excerpt}
       />
       <ArticleSchema article={article} />
