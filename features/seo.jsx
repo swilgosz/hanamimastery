@@ -28,7 +28,7 @@ export const SeoComponent = ({ title, fullTitle, thumbnails, url, excerpt, topic
         },
         locale: "en_US",
         url,
-        fullTitle,
+        title: fullTitle || title,
         description: excerpt,
         defaultImageWidth: 120,
         defaultImageHeight: 630,
