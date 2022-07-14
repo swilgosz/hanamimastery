@@ -4,16 +4,25 @@ import { Container } from "@material-ui/core";
 import { getContentBySlug } from "../utils/queries";
 import components from "../features/mdx-components";
 import ArticlesLayout from "../layouts/articles-layout";
+import { SeoComponent } from "../features/seo";
 
-export default function Page({ mdxSource }) {
+export default function Page({ frontMatter, mdxSource }) {
   return (
-    <ArticlesLayout
-      article={
-        <Container maxWidth="lg">
-          <MDXRemote {...mdxSource} components={components} />
-        </Container>
-      }
-    />
+    <>
+      <SeoComponent
+        title="Thank you for your Hanami Mastery subscription!"
+        excerpt="Check out the possible next steps to dig into our initiative!"
+        thumbnails={frontMatter.thumbnail}
+        ogtype="website"
+      />
+      <ArticlesLayout
+        article={
+          <Container maxWidth="lg">
+            <MDXRemote {...mdxSource} components={components} />
+          </Container>
+        }
+      />
+    </>
   );
 }
 
