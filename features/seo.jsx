@@ -1,16 +1,13 @@
 import { NextSeo } from "next-seo";
 
 export const SeoComponent = ({ title, fullTitle, thumbnails, url, excerpt, topics, ogtype }) => {
-  if (!title) {
-    title = "A knowledge base to hanami framework"
-  }
   if (!thumbnails) {
     thumbnails = { big: `${process.env.NEXT_PUBLIC_BASE_URL || ''}/logo-hm.jpeg` }
   }
   return (
     <NextSeo
       title={title}
-      titleTemplate="%s | Hanami Mastery"
+      titleTemplate=" %s | Hanami Mastery - a knowledge base to hanami framework"
       twitter={{
         site: "@hanamimastery",
         handle: "@sebwilgosz",
