@@ -7,7 +7,7 @@ export const SeoComponent = ({ title, fullTitle, thumbnails, url, excerpt, topic
   return (
     <NextSeo
       title={title}
-      titleTemplate=" %s | Hanami Mastery - a knowledge base to hanami framework"
+      titleTemplate="%s | Hanami Mastery - a knowledge base to hanami framework"
       twitter={{
         site: "@hanamimastery",
         handle: "@sebwilgosz",
