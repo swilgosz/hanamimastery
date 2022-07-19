@@ -5,7 +5,7 @@ topics: ["hanami"]
 title: "Hanami architecture explained"
 excerpt: "People ask me about the simple explanation of Hanami architecture. Why is it so complicated? Is it? I'll try to explain it in simple words."
 publishedAt: "2021-06-29"
-modifiedAt: "2022-04-29"
+modifiedAt: "2022-07-19"
 aliases: ['HMAP002']
 thumbnail:
   full: /images/articles/hanami-architecture-explained/cover-full.jpeg
@@ -88,7 +88,3 @@ I hope you've enjoyed this article, and if you want to see more content in this 
 ### Special Thanks!
 
 I'd like to thank all people supporting this project! Any support allows me to spend more time on creating this content, **promoting great open source projects**.
-
-Also thanks to
-
-- [Larry Crayton](https://unsplash.com/@ljcrayton)- for a great cover image
