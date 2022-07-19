@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ["tests"]
 title: "7 Levels of test coverage"
 excerpt: "Do you measure your test coverage? Do you know that everything below 80% is irrelevant? Here I list 7 levels of test coverage, check out where you are!"
-videoId: null
+videoId: _6drOV_-k-4
 publishedAt: "2022-07-19"
 modifiedAt: "2022-07-19"
 thumbnail:
@@ -26,7 +26,7 @@ For a decade of working on multiple projects, I've experienced a few approaches 
 Let's start.
 
 ## Level 1: Noob
-![Photo by Minnie Zhou](images/episodes/24/noob.jpg)
+![Photo by Minnie Zhou](images/episodes/24/noob.jpeg)
 
 For a noob level, I'm referring to when I can see 0-20% LTC (Line Test-Coverage) in a project.
 
@@ -60,7 +60,7 @@ An example could be, a static blog, like my [Hanami Mastery project](https://han
 As you can see, even though [I am a fan of Test-Driven development](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/), and **I am completely against the no-test policy**, I am able to accept that some projects can make it work in certain scenarios. **And even I practice it sometimes myself.**
 
 ## Level 2: Apprentice.
-![Photo by: Vitolda Klein](/images/episodes/24/apprentice.jpg)
+![Photo by: Vitolda Klein](/images/episodes/24/apprentice.jpeg)
 The *apprentice* test-coverage level in My opinion refers to projects having **20-60% LTC**.
 
 **Here is what it often means:**
@@ -76,7 +76,7 @@ In the end, we are able to deliver a feature to meet the deadline, but *tests ar
 I guess, that having this level of test coverage in your system does only makes sense if it's an in-between state, on the way to the higher test-coverage levels.
 
 ## Level 3: Padawan
-![Photo by: Siora Photography](/images/episodes/24/student.jpg)
+![Photo by: Siora Photography](/images/episodes/24/student.jpeg)
 
 This third level refers to **60-80% of LTC**.
 
@@ -97,7 +97,7 @@ When you have such a test-coverage level in your project, **link to this article
 :::
 
 ## Level 4: Advanced
-![Austin Distel](/images/episodes/24/expert.jpg)
+![Austin Distel](/images/episodes/24/expert.jpeg)
 This level of test coverage is what most developers target and end on.
 
 You may say, that your application is well-tested if you achieve **80-100% LTC**.
@@ -119,7 +119,7 @@ TDD tends to have great unit test coverage but because of a tendency to mock the
 It's useful to remember about adding some integration tests on top, to make sure our main features fulfill the current specification of the project.
 
 ## Level 5: Jedi
-![Photo by: Mathew Ball](/images/episodes/24/jedi.jpg)
+![Photo by: Mathew Ball](/images/episodes/24/jedi.jpeg)
 Here we start reaching the next level of self-awareness. The Jedi level refers to keeping the *full* Line Test coverage, but at the same time applying also the full *branch test coverage*.
 
 By enabling [Branch Coverage checks](https://github.com/simplecov-ruby/simplecov#branch-coverage-ruby--25) and keeping it at the level of *80-100%*, **you're becoming a Jedi**.
@@ -131,7 +131,7 @@ You realise, that there are other ways of testing code quality and reliability, 
 ## Level 6: Master
 
 ![Photo by
-Leslie Jones](/images/episodes/24/master.jpg)
+Leslie Jones](/images/episodes/24/master.jpeg)
 Now, it becomes easier. 
 
 Once you get to know that there is a lot you don't know yet, it's easier to achieve true mastery.
@@ -147,7 +147,7 @@ If you have been introduced to your checks mutation testing, there is a chance y
 But... It doesn't mean, your app is 100% reliable...
 
 ## Level 7: Yoda
-![Photo by: Riku Lu](/images/episodes/24/yoda.jpg)
+![Photo by: Riku Lu](/images/episodes/24/yoda.jpeg)
 ...which brings us to the last part of this episode.
 
 The final level of test coverage is when you get it all:
