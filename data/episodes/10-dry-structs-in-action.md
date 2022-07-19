@@ -7,7 +7,7 @@ title: "Model your business with structs on steroids - dry-struct in action!"
 excerpt: "A struct with static type check for all attributes is a pretty useful thing in Ruby and all other languages. Here are 3 examples of useful applications for typed structs using dry-struct."
 videoId: "J3LVridUt_Y"
 publishedAt: "2021-11-22"
-modifiedAt: "2022-04-29"
+modifiedAt: "2022-07-19"
 thumbnail:
   full: /images/episodes/10/cover-full.jpeg
   big: /images/episodes/10/cover-big.jpeg
@@ -23,7 +23,7 @@ source: https://github.com/hanamimastery/episodes/tree/main/010
 
 In this episode of Hanami Mastery, I will deep dive into the possible implementation of the parts from a business layer in your project and show you **why typed structs** can be useful in your system. To do this, I'll use [dry-struct](https://dry-rb.org/gems/dry-struct) as a struct initialization engine.
 
-`dry-struct` is a project created by [Nikita Shilnikov](https://github.com/flash-gordon) and managed by the [DRY-RB team](https://github.com/dry-rb/people), and I want to show you why it's extremely helpful, giving you struct-like objects, **but on steroids**.
+`dry-struct` is a project created by [Nikita Shilnikov](https://github.com/flash-gordon) and managed by the [DRY-RB team](https://github.com/orgs/dry-rb/people), and I want to show you why it's extremely helpful, giving you struct-like objects, **but on steroids**.
 
 Unlike regular structs, these give you **a static type checking for free** and will raise an error each time you try to initialize a struct with invalid attributes violating the schema definition.
 
@@ -232,7 +232,7 @@ I hope you've enjoyed this episode, and if you want to see more content in this 
 
 ### Special Thanks!
 
-I'd like to especially thank my existing [github sponsors](https://github.com/swilgosz/sponsors) and a new sponsor, [Andrzej Krzywda](https://github.com/andrzejkrzywda) for supporting this project and the whole Hanami Mastery initiative! I appreciate that as without your financial support this project could not exist.
+I'd like to especially thank my existing [github sponsors](https://github.com/sponsors/swilgosz) and a new sponsor, [Andrzej Krzywda](https://github.com/andrzejkrzywda) for supporting this project and the whole Hanami Mastery initiative! I appreciate that as without your financial support this project could not exist.
 
 Also thanks to [Kelly Sikkema](https://unsplash.com/@kellysikkema) - for a great cover image!
 

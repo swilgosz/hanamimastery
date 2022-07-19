@@ -25,7 +25,7 @@ In this episode of Hanami Mastery screencast I want to showcase a super useful l
 It implements `classify`, `underscore`, `constantize`, all within pure ruby, without rails dependencies and [without any monkey-patching core Ruby classes!
 ](https://solnic.codes/2022/02/02/rails-and-its-ruby-dialect/)
 
-It's a [dry-inflector](https://github.com/dry-rb/dry-inflector0) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up.
+It's a [dry-inflector](https://github.com/dry-rb/dry-inflector) gem written by [Luca Guidi](https://lucaguidi.com/), an amazing developer, co-author of Hanami Web framework and I definitely recommend following him up.
 
 I discovered this gem by [watching one of Luca's Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
 

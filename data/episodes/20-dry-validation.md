@@ -207,7 +207,7 @@ my_contract.(name: "")
   .or   { |r| puts "failed: #{r.errors.to_h.inspect}" }
 ```
 
-If you want to know more, I recommend checking out the [DRY in Five Youtube series](https://www.youtube.com/watch?v=6FITn8FheQs&list=PLLproF5gmeGGvXX7kZuCmWnZ6dOaeLs_v) by [Luca Guidi](https://lucaguidi.com/), which is a nice intro to this gem. And, if you want to get the always up-to-date information, make sure you follow the DRY-RB on twitter and visit the [gem's documentation](https://dry-rb.org/gems/dry-rb)!
+If you want to know more, I recommend checking out the [DRY in Five Youtube series](https://www.youtube.com/watch?v=6FITn8FheQs&list=PLLproF5gmeGGvXX7kZuCmWnZ6dOaeLs_v) by [Luca Guidi](https://lucaguidi.com/), which is a nice intro to this gem. And, if you want to get the always up-to-date information, make sure you follow the DRY-RB on Twitter and visit the [gem's documentation](https://dry-rb.org/gems)!
 
 ### Summary
 

@@ -7,7 +7,7 @@ title: "A sneak-peak into dependency loading with Hanami and dry-container"
 excerpt: "dry-system and dry-container are extremely powerful tools and if you understand how to work with them, you'll never look back. It's amazing that Hanami uses them by default! Check out some useful debugging tips!"
 videoId: mMyqUaPBLWI
 publishedAt: "2022-01-25"
-modifiedAt: "2022-04-29"
+modifiedAt: "2022-07-19"
 thumbnail:
   full: /images/episodes/13/cover-full.jpeg
   big: /images/episodes/13/cover-big.jpeg
@@ -87,7 +87,7 @@ end
 
 ### The improved Hanami file structure
 
-In occasion of a work on Hanami 2 Alpha3 release [Tim Riley](https://github.com/github/timriley) did an [extraordinary contribution to dry-system](https://github.com/dry-rb/dry-system/pull/181) improving it in a way that made possible flattened directory structure. You may read more about this amazing feature he added in his [OSS Update article for September 2021](https://timriley.info/writing/2021/10/11/open-source-status-update-september-2021/).
+In occasion of a work on Hanami 2 Alpha3 release [Tim Riley](https://github.com/timriley) did an [extraordinary contribution to dry-system](https://github.com/dry-rb/dry-system/pull/181) improving it in a way that made possible flattened directory structure. You may read more about this amazing feature he added in his [OSS Update article for September 2021](https://timriley.info/writing/2021/10/11/open-source-status-update-september-2021/).
 
 Then several improvements had been applied, and as a result, **repository loading started to be more strict** and dumb resilient, ensuring that people will place them in a proper place by default.
 

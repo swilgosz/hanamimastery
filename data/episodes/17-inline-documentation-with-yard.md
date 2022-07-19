@@ -7,7 +7,7 @@ title: "Inline documentation - the secret habit of successful devs."
 excerpt: "Everyone would love to have a secret power. A skill that makes you a hero. There is no one such skill, but in this episode, I'll talk about inline documentation - a great skill that can make you a better developer."
 videoId: -h52cUY4obo
 publishedAt: "2022-03-08"
-modifiedAt: "2022-04-29"
+modifiedAt: "2022-07-19"
 thumbnail:
   full: /images/episodes/17/cover-full.jpeg
   big: /images/episodes/17/cover-big.jpeg
@@ -53,7 +53,7 @@ Before I'll jump into the particular solutions, I'd love to show you a few advan
 
 First of all, if I'm building a project or library, a component, or whatever else, **I can leverage ready-to-use documentation generators**. Those parse my code and comments attached to it and generate neat, complete websites, where the whole team or whole community can easily track what's going on within my classes.
 
-One example of such generator for Ruby projects is [rubydoc.info](https://rubydoc.info/gems/dry-system.) **it automatically detects public ruby gems and generates documentation pages based on the inline comments in the code itself**.
+One example of such generator for Ruby projects is [rubydoc.info](https://rubydoc.info/gems/dry-system). **It automatically detects public ruby gems and generates documentation pages based on the inline comments in the code itself**.
 
 You can for example, browse the [dry-system documentation website](https://rubydoc.info/gems/dry-system), where you can easily go through each method and class and check out what it does, what arguments it accepts, and what type of value it returns!
 
