@@ -15,7 +15,7 @@ export default function BlogIndex({ posts, authors }) {
     <>
       <NextSeo
         title="Casual articles about web development in Ruby"
-        titleTemplate="%s | Hanami Mastery - learn hanami as a pro"
+        titleTemplate="%s | Hanami Mastery"
         description="Newest non-episode Hanami Mastery articles. Casual thinking, felietons, and others!"
         openGraph={{
           title: "Casual articles about web development in Ruby",
