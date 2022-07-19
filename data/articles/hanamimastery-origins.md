@@ -102,7 +102,7 @@ I still see potential in publishing more online courses in the near future, but 
 
 When I've worked on the Rails API course creation I needed to learn a lot. This actually forced my skills into the next level of API development and software architecture.
 
-I quickly realized that Rails architecture is not enough even for API-Only scalable systems, and I've [designed my own custom solution for this](https://driggl.com/blog/a/cars-api-endpoints-in-rails-applications) for my client, inspired by [Dry-RB](https://dry-rb.org/gems) and [Trailblazer](https://trailblazer.to/2.1/docs/trailblazer.html) solutions - Actually, using Dry-RB libraries under the hood.
+I quickly realized that Rails architecture is not enough even for API-Only scalable systems, and I've [designed my own custom solution for this](https://driggl.com/blog/a/cqrs-api-endpoints-in-rails-applications) for my client, inspired by [Dry-RB](https://dry-rb.org/gems) and [Trailblazer](https://trailblazer.to/2.1/docs/trailblazer.html) solutions - Actually, using Dry-RB libraries under the hood.
 
 
 But then [Hanami 2.0-alpha2](https://hanamirb.org/blog/2021/05/04/announcing-hanami-200alpha2/) had been announced and It appeared to be a solution for all architectural issues I've faced in all my teams so far.

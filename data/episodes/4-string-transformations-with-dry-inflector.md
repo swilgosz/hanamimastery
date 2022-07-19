@@ -38,7 +38,7 @@ While this episode covers **string transformations only**, if you are interested
 
 Recently we needed to improve in our projects the way we distribute the commands that had been triggered in the system. Whenever the command is called, it should be properly handled and the appropriate event should be published to our event store.
 
-I don't want to talk too much about [how we approached the CQRS](https://driggl.com/blog/a/cars-api-endpoints-in-rails-applications) implementation in our systems, but I'll show a little diagram here just to visualize what I'm talking about.
+I don't want to talk too much about [how we approached the CQRS](https://driggl.com/blog/a/cqrs-api-endpoints-in-rails-applications) implementation in our systems, but I'll show a little diagram here just to visualize what I'm talking about.
 
 In the usual web application, when you send a request, [it's received by a router](2-listing-articles-with-hanami-view), which recognizes the URL of the request and passes the attached parameters and headers into the proper controller action to be handled.
 
