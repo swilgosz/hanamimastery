@@ -79,6 +79,7 @@ export default function EpisodeTabs({episode}) {
         />
         <LinkTab
           className={classes.link}
+          rel="alternate"
           label="Discussions"
           href={`${episodePath}?view=discuss`}
           {...a11yProps(1)}

@@ -41,11 +41,11 @@ export default function TopicSuggestion() {
         </Typography>
       </CardContent>
       <CardActions className={classes.centered}>
-        <Button href="https://github.com/orgs/hanamimastery/discussions/new?category=Suggestions" target="_blank" color="primary" variant="contained" startIcon={<ChatIcon />} className={classes.btn}>
+        <Button rel="nofollow" href="https://github.com/orgs/hanamimastery/discussions/new?category=Suggestions" target="_blank" color="primary" variant="contained" startIcon={<ChatIcon />} className={classes.btn}>
           Suggest topic
         </Button>
 
-        <Button href="https://twitter.com/intent/tweet?text=%40HanamiMastery%20%23suggestion%20%0A%0A&url=http%3A%2F%2Fhanamimastery.com%2Fepisodes" target="_blank" variant="contained" startIcon={<TwitterIcon />} className={classes.btn}>
+        <Button rel="nofollow" href="https://twitter.com/intent/tweet?text=%40HanamiMastery%20%23suggestion%20%0A%0A&url=http%3A%2F%2Fhanamimastery.com%2Fepisodes" target="_blank" variant="contained" startIcon={<TwitterIcon />} className={classes.btn}>
           Tweet #suggestion
         </Button>
       </CardActions>
