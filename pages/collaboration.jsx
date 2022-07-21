@@ -11,7 +11,7 @@ export default function Page({ frontMatter, mdxSource }) {
   return (
     <>
       <SeoComponent
-        title="Collaboration - how we can help each other? | Hanami Mastery"
+        title="Collaboration - how we can help each other?"
         excerpt="Find out how we can help you and how you can help us!"
         thumbnails={frontMatter.thumbnail}
         ogtype="website"
