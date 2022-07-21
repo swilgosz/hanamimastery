@@ -36,15 +36,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ContentTile = ({ item }) => {
+const ContentTile = ({ item, variant }) => {
   const classes = useStyles();
   const { author: authorName, id, topics, path, excerpt, thumbnail, slug, fullTitle } = item;
   const author = useSelector((state) => findAuthor(state, authorName));
+  const thumbnailUrl = variant == 'big' ? thumbnail.big : thumbnail.small
   return (
     <Card className={classes.root}>
       <NextLink href={`/${path}`} passHref>
         <CardActionArea>
-          <CardMedia className={classes.media} image={thumbnail.big} />
+          <CardMedia className={classes.media} image={thumbnailUrl} />
         </CardActionArea>
       </NextLink>
       <CardHeader

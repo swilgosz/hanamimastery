@@ -26,7 +26,7 @@ const ContentDisplay = (props) => {
           md={index === 0 ? 12 : 6}
           component="li"
         >
-          <ContentTile item={item} />
+          <ContentTile item={item} variant={index === 0 ? 'big' : 'small'} />
         </Grid>
       ))}
     </Grid>
