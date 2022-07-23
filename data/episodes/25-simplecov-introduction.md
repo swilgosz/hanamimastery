@@ -3,8 +3,8 @@ id: 25
 aliases: ["HMEP025"]
 author: "swilgosz"
 topics: ["tests", "simplecov"]
-title: "Simplecov to help you start with testing your apps!"
-excerpt: "Everybody tells about Test-Driven workflows but when you are not so experienced, it's hard to figure out how to start. Simplecov guides you through your project's test coverage."
+title: "Branch for a next Launch - Simplecov!"
+excerpt: "Enchance your test coverage reports by mastering the Simplecov gem!"
 videoId: null
 publishedAt: "2022-07-25"
 modifiedAt: "2022-07-25"
