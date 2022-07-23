@@ -26,7 +26,7 @@ For a decade of working on multiple projects, I've experienced a few approaches 
 Let's start.
 
 ## Level 1: Noob
-![Photo by Minnie Zhou](images/episodes/24/noob.jpeg)
+![Photo by Minnie Zhou](/images/episodes/24/noob.jpeg)
 
 For a noob level, I'm referring to when I can see 0-20% LTC (Line Test-Coverage) in a project.
 
