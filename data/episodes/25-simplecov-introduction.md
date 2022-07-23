@@ -2,12 +2,12 @@
 id: 25
 aliases: ["HMEP025"]
 author: "swilgosz"
-topics: []
-title: "#25 <<Title>>"
-excerpt: "<<Summary>>"
+topics: ["tests", "simplecov"]
+title: "Simplecov to help you start with testing your apps!"
+excerpt: "Everybody tells about Test-Driven workflows but when you are not so experienced, it's hard to figure out how to start. Simplecov guides you through your project's test coverage."
 videoId: null
-publishedAt: "2022-02-09"
-modifiedAt: "2022-02-09"
+publishedAt: "2022-07-25"
+modifiedAt: "2022-07-25"
 thumbnail:
   full: /images/episodes/25/cover-full.jpeg
   big: /images/episodes/25/cover-big.jpeg
@@ -20,8 +20,6 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/025
 ---
-
-Hi there!
 
 In the last episode, I talked about [7 levels of test coverage](/episodes/24-7-levels-of-test-coverage) I identify in my projects, and I hope that gave you some ideas on what to avoid and what to aim for in your applications.
 
