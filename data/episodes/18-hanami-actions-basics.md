@@ -20,7 +20,7 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/018
 ---
 
-Action in Hanami is probably the biggest and the most feature-rich building block. In this episode, I want to have some fun with them by trying out different parts and show you some features you'll need to build complete web applications.
+Action in Hanami is probably the biggest and the most feature-rich building block. In this episode, I want to have fun with them by trying out different parts and showing you some features you'll need to build complete web applications.
 
 Let's start with a basic action.
 
@@ -48,7 +48,7 @@ When I'll open the root URL, you should see the updated welcome message in the b
 
 ![Inline Action Body](/images/episodes/18/inline-action-body.png)
 
-This is pretty neat, but to show more interesting stuff, I need a PATCH action.
+This is pretty neat, but I need a PATCH action to show more interesting stuff.
 
 I'll copy it over to another action file, named subscribe. Then I'm going to register my new action in the router as an endpoint responding to a PATCH HTTP method.
 
