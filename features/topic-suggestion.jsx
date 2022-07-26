@@ -33,10 +33,10 @@ export default function TopicSuggestion() {
         <Typography gutterBottom variant="h5" component="div">
         Do you know great Ruby gems?
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2">
           Add your suggestion to our <strong>discussion panel!</strong>
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2">
           I'll gladly cover them in the future episodes! <strong>Thank you!</strong>
         </Typography>
       </CardContent>
