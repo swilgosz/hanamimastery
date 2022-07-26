@@ -5,13 +5,13 @@ author: "swilgosz"
 topics: ["tests", "simplecov"]
 title: "Branch for a next Launch - Simplecov!"
 excerpt: "Enchance your test coverage reports by mastering the Simplecov gem!"
-videoId: null
+videoId: "84J-_DlvoQE"
 publishedAt: "2022-07-25"
 modifiedAt: "2022-07-25"
 thumbnail:
-  full: /images/episodes/25/cover-full.jpeg
-  big: /images/episodes/25/cover-big.jpeg
-  small: /images/episodes/25/cover-small.jpeg
+  full: /images/episodes/25/cover-full.jpg
+  big: /images/episodes/25/cover-big.jpg
+  small: /images/episodes/25/cover-small.jpg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
   reddit:
@@ -101,13 +101,13 @@ At the very bottom of the output, you can see that the coverage report is now ge
 open coverage/index.html
 ```
 
-![[coverage-all.png]]
+![All files coverage report](/images/episodes/25/coverage-all.png)
 
 I can clearly see, that my `divider` is not fully covered by tests, but surprisingly, 80% seems to be covered!
 
 After clicking on it, though, I get a detailed view, of which lines were called of the class were called during my test run, and which weren't.
 
-![[coverage-divider-single-1.png]]
+![Single file coverage report](/images/episodes/25/coverage-divider-single-1.png)
 
 It clearly says, that the only line that matters, is missed, and the rest is called by the autoloading engine during the app boot time.
 
@@ -134,7 +134,7 @@ end
 
 Now let me check the code generation again.
 
-![[coverage-divider-single-fake-cover.png]]
+![Wrongly reported uncovered line](/images/episodes/25/coverage-divider-single-fake-cover.png)
 
 It seems, that my file is fully covered now! Isn't that great?
 
@@ -169,7 +169,7 @@ end
 
 Now our report looks way more realistic.
 
-![[coverage-branch.png]]
+![Branch coverage enabled](/images/episodes/25/coverage-branch.png)
 
 I get 50% of test coverage, saying, that my file has two different paths that my code can take, and only one is tested. The rest is irrelevant, all lines being called by the loading engine do not affect the final result.
 
@@ -185,7 +185,7 @@ end
 
 Now my file is finally reported correctly.
 
-![[coverage-divider-single-2.png]]
+![Line covered correctly](/images/episodes/25/coverage-divider-single-2.png)
 
 However, it's not all we can improve.
 
@@ -193,7 +193,7 @@ However, it's not all we can improve.
 
 *Simplecov* has no knowledge about our application. Therefore, by default, it just reports all files we have in the system, including all *test* files.
 
-![[coverage-including-spec.png]]
+![All files coverage report with spec marked](/images/episodes/25/coverage-including-spec.png)
 
 There is no need to have that in the report - at least I am not interested to check, that all my tests had been run when I run them all.
 
@@ -208,13 +208,13 @@ end
 
 Now finally, after running my tests the end result looks as expected, including only files that matter to me.
 
-![[coverage-all-cleaned-up.png]]
+![All files coverage report with filters applied](/images/episodes/25/coverage-all-cleaned-up.png)
 
 ### Grouping
 
 Things are looking way better now, and I love this simple look at the start, but when I'm working on bigger applications, split into different teams/departments, I like to have a way of grouping the report by files relevant to my part of the project.
 
-![[coverage-groups.png]]
+![All files coverage report with grouping enabled](/images/episodes/25/coverage-groups.png)
 
 To achieve this, I need to add my group definitions to the `simplecov` configuration, passing a name as a first argument, while the file path definition as a second one.
 
