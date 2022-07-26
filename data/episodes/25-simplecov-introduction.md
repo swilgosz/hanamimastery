@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/25/cover-big.jpg
   small: /images/episodes/25/cover-small.jpg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1551862278705876992
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/w8fbli/branch_for_a_next_launch_simplecov/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/w8fbzm/branch_for_a_next_launch_simplecov/
 source: https://github.com/hanamimastery/episodes/tree/main/025
 ---
 
