@@ -283,6 +283,7 @@ Simplecov is a nice guide to have an overview of how well-tested our application
 There is a ton of documentation about how to speed up your checks when running tests in different processes - so potentially, we can run tests for each slice separately, and `simplecov` can easily merge the final result to present the report correctly.
 
 Unfortunately, it's all I have for you today.
+
 :::note Become an awesome subscriber!
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
