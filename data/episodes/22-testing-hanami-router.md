@@ -20,18 +20,18 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/022
 ---
 
-Recently, I’ve some [fun with Hanami Actions](/episodes/18-hanami-actions-basics), and this time I’ll dig a little bit into **the routing part**.
+Recently, I’ve had some [fun with Hanami Actions](/episodes/18-hanami-actions-basics), and this time I’ll dig a little bit into **the routing part**.
 
 ### Routing
 
-Routing is one of the basic components of any web application. This is the interface of your application, and the clients using it. In this episode I'll dig a bit into the Hanami router from the usage point of view, covering why it's great and how to work with it.
+Routing is one of the basic components of any web application. This is the interface between your application and the clients using it. In this episode I'll dig a bit into the Hanami router from the usage point of view, covering why it's great and how to work with it.
 
 ### Hanami-Router Path recognition tests
-I'm going to start by writing a test file for my routes. Usually, I don't show it on the screencasts, but [I'm a big fan of test-driven development](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/), and whenever possible I'm trying to practice it during the real development. To write routing tests, I'll create a new routes spec file, under `spec/web` folder. One of the best things about Hanami is that most parts of the application can be unit-tested, and the Routing part is not an exception.
+I'm going to start by writing a test file for my routes. Usually, I don't show this on the screencasts, but [I'm a big fan of test-driven development](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/), and whenever possible I'm trying to practice TDD during actual development. To write routing tests, I'll create a new routes spec file, under the `spec/main` folder. One of the best things about Hanami is that most parts of the application can be unit-tested, and the Routing part is not an exception.
 
 Actually The fact that Hanami is so easily testable is one of the reasons why I like this framework so much. I'll use [rspec](https://github.com/rspec/rspec/) as a testing framework because it's the **default in all Hanami projects** and I love it a lot.
 
-First of all, I'll get the application router object and assign this to a variable.
+First of all, I'll get the application router object and assign this to a variable. Note that the name of my app is "Sandbox."
 
 ```ruby
 # spec/main/routes_spec.rb
@@ -43,7 +43,7 @@ RSpec.describe "Routes" do
 end
 ```
 
-Having that I can write a few tests for my routes. Let's say I want to have an application that has a landing page and allows me to list people subscribed to my channel or create new subscriptions.
+Having that, I can write a few tests for my routes. Let's say I want to have an application that has a landing page and allows me to list people subscribed to my channel or create new subscriptions.
 
 There are two ways to test if the endpoint for a given URL exists.
 
@@ -60,6 +60,7 @@ RSpec.describe "Main slice router" do
   let(:router) { Sandbox::Application.router }
 
   it 'routes to root URL' do
+    expect(router.path(:root)).to eq('/')
   end
 
   it 'routes to /subscriptions URL' do
@@ -70,11 +71,11 @@ RSpec.describe "Main slice router" do
 end
 ```
 
-When I'll run the first test, it'll pass out of the box, because the Hanami application comes with the root URL being served by default.
+When I run the first test, it'll pass out of the box, because the Hanami application comes with the root URL being served by default.
 
 ![Passing root path generation test](/images/episodes/22/first-test-passed.png)
 
-Analogously I'm going to check the remaining paths by adding check comparisons to the other two routes.
+Analogously, I'm going to check the remaining paths by adding check comparisons to the other two routes.
 
 ```ruby
 # spec/main/routes_spec.rb
@@ -90,17 +91,17 @@ end
 # ...
 ```
 
-Remaining two tests, however, of course won't work, as I don't have any custom routes defined yet, and all tests except the `root` check fails saying, there is no named route defined.
+The remaining two tests, however, of course won't work, as I don't have any custom routes defined yet. All tests except the `root` check fail saying, there is no named route defined.
 
 ![Failing tests example](/images/episodes/22/failing-tests.png)
 
-Let me create them yet.
+Let me create them now.
 
 ### Creating basic routes
 
-In the routes configuration file, I'm going to add a new `GET` route, recognizing the `/subscriptions` URL. Then I'll name it `subscriptions`, and serve by using a custom inline _rack_ response.
+In the routes configuration file, I'm going to add a new `GET` route, recognizing the `/subscriptions` URL. I'll name it `:subscriptions`, and serve it by using a custom inline _rack_ response.
 
-Below I'll add the `POST` route named :subscribe and returning a `201` status code as a response, with the *"Thank you!"* message.
+Below I'll add the `POST` route, named `:subscribe` and returning a `201` status code as a response with the *"Thank you!"* message.
 
 ```ruby
 # config/routes.rb
@@ -123,29 +124,29 @@ module Web
 end
 ```
 
-If you have any experience with Rack applications, it may be familiar to you. [hanami-router](https://github.com/hanami/router) is fully `rack`-compatible, and can be used to write any web server in Ruby, not only for Hanami applications!
+If you have any experience with Rack applications, this may be familiar to you. [hanami-router](https://github.com/hanami/router) is fully `rack`-compatible, and can be used to write any web server in Ruby, not only for Hanami applications!
 
 It's extremely fast, and stable thanks to the great work of [Luca Guidi](https://github.com/jodosha), and if you're curious how it works, please check out [his talk about Hanami API](https://www.youtube.com/watch?v=tfvoNBU9-Zo), when he explains in details the mechanism he used to optimise it for any possible use case.
 
-With this all my tests passes without any issues.
+With this all my tests pass without any issues.
 
 ![Passing tests](/images/episodes/22/passing-tests.png)
 
-But it's not all we can do to test our application routing properly!
+But that's not all we can do to test our application routing properly!
 
 ### URL structure explanation
 A single application endpoint stores much more information than just a path.
 
 ![URL structure](/images/episodes/22/url-structure.png)
 
-First part of a route is an HTML method, which tells if it's a `GET`, `POST`, `PATCH`, `PUT` or `DELETE`.
+The first part of a route is an HTML method, which tells if it's a `GET`, `POST`, `PATCH`, `PUT` or `DELETE`.
 
 Then you have the _path_ information, which consists of static and dynamic segments. Those are identified as URL parameters and merged with the query parameters attached after the question mark character.
 
-This is quite a bit of information, and in Hanami, you may get access to all that information by writing a reverse test scenario.
+This is quite a bit of information, and in Hanami you may get access to all that information by writing a reverse test scenario.
 
 ### Route recognition tests
-In the test file, instead of taking the route name as an argument and check the generated path, I can instead pass the generated path to the `recognize method`, and verify if all the information from this route is properly served by our application.
+In the test file, instead of taking the route name as an argument and checking the generated path, I can instead pass the generated path to the `recognize method`, and verify if all the information from this route is properly served by our application.
 
 Therefore, I can check the `path`, HTML method, and all the params recognized by my router correctly.
 
@@ -158,14 +159,14 @@ it 'recognizes "GET /subscriptions/:id"' do
   route = router.recognize('/subscriptions/1')
   aggregate_failures do
     expect(route).to be_routable
-    expect(route.path).to eq('/hello/1')
+    expect(route.path).to eq('/subscriptions/1')
     expect(route.verb).to eq('GET')
     expect(route.params).to eq({ id: "1" })
   end
 end
 ```
 
-As you can expect, this test fails, and to fix it I'll add the missing route to the app. Let me add it to the `config/routes.rb` file then.
+As you would expect, this test fails, and to fix it I'll add the missing route to the app. Let me add it to the `config/routes.rb` file then, this time with the name `:subscription`.
 
 ```ruby
 # config/routes.rb
@@ -186,7 +187,7 @@ There are many other features you may be interested in.
 
 For example, you can check if the route redirects you to another URL.
 
-The test for that would be pretty similar to what we've seen before, but now we can make sure that the `redirect` method returns `true` and the redirection path is expected.
+The test for that would be pretty similar to what we've seen before, but now we can make sure that the `redirect` method returns `true` and the redirection path is as expected.
 
 ```ruby
 # spec/web/routes_spec.rb
