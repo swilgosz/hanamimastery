@@ -13,10 +13,10 @@ thumbnail:
   big: /images/episodes/26/cover-big.jpeg
   small: /images/episodes/26/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1556748822298099714
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/wjk8jp/generate_sitemaps_for_hanami_applications/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/wjk9fc/generate_sitemaps_for_hanami_applications/
 source: https://github.com/hanamimastery/episodes/tree/main/026
 ---
 
