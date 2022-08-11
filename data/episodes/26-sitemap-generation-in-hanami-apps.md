@@ -56,13 +56,13 @@ Let's do some coding then!
 
 ### Sitemap generation
 
-I will use the [sitemap_generator](https://github.com/simplecov-ruby/simplecov) gem to do the actual sitemap file generation.
+I will use the [sitemap_generator](https://github.com/kjvarga/sitemap_generator) gem to do the actual sitemap file generation.
 
 It's a widely used gem to create and update sitemaps in your projects, and while it's partially done to work with Rails-specific projects you can use them in your Hanami applications too!
 
-Let me add the gem to the Gemfile and run the bundle to install it on my system. 
+Let me add the gem to the Gemfile and run the bundle to install it on my system.
 
-Then I'll register a new provider named `sitemap` to run the necessary configuration code and register new dependencies in my container. I'll use the namespace option, to make sure all dependencies relevant for the sitemap generation will be grouped under the top-level `sitemap` keyword. 
+Then I'll register a new provider named `sitemap` to run the necessary configuration code and register new dependencies in my container. I'll use the namespace option, to make sure all dependencies relevant for the sitemap generation will be grouped under the top-level `sitemap` keyword.
 
 Then In the `prepare` keyword, I'll require my newly installed gem, and apply some configuration options. For now I only need to set default host, that I'll be read from the application settings.
 
@@ -99,7 +99,7 @@ Now let me quickly add the `DEFAULT_HOST` environment variable, and we're ready 
 Now Let me create the interactor, named *generate sitemap*.
 
 :::tip
-I like to compose my apps using the **interactor pattern**. 
+I like to compose my apps using the **interactor pattern**.
 
 In the [episode 7](/episodes/7-untangle-your-app-with-dry-monads) - I talked a bit more about interactors, service objects or operations. You may find it interesting as **you can find there a bit more fancy implementation of the service object** than I do here.
 :::
@@ -123,7 +123,7 @@ module Sandbox
       include Deps[
         'sitemap.generator'
       ]
-      
+
       def call
         generator.create do
           add '/messages', changefreq: 'daily', priority: 0.9
@@ -149,7 +149,7 @@ Now I call it, and as a result I have the sitemap file availble in the public di
 
 Let me now add a simple action to browse this file in the browser.
 
-In my routes I will add the get route pointing to my sitemap.show action. 
+In my routes I will add the get route pointing to my sitemap.show action.
 
 ```ruby
 get 'sitemap', to: 'sitemaps.show'
@@ -259,18 +259,18 @@ module Sandbox
       include Deps[
         'sitemap.generator'
       ]
-      
+
       def call
         formatter = Hanami::Router::Formatter::CSV.new
         route_inspector =
           Hanami::Router::Inspector.new(formatter: formatter)
-        
+
         Sandbox::App.router(inspector: inspector)
-      
+
         route_inspector.call
 
         generator.create do
-          
+
         end
 
         generator.ping_search_engines
@@ -426,7 +426,7 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ## Thanks
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 - **[Akilas Yemane](https://twitter.com/akilasy)**
 - **[Bill Tihen](https://github.com/btihen)**
