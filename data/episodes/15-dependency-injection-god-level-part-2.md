@@ -19,7 +19,6 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/smk0cq/dependency_injection_in_ruby_god_level_meet/
 source: https://github.com/hanamimastery/episodes/tree/main/015
 ---
-
 In the last episode, I've covered deeply the reasons behind the existence of `dry-container` gem and shown how to implement dependency injection in Ruby from scratch.
 
 This pattern, however powerful, can easily get annoying due to a lot of additional code one needs to write - and in most cases, it's repeatable code, nothing challenging, so boring.
@@ -383,22 +382,18 @@ That's all for today, I hope you enjoyed this episode and you'll find it useful.
 
 Encourage you to give it a try in your projects too!
 
+:::note Become an awesome subscriber!
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+:::
 
-### Thanks
+## Thank you!
 
-I want to especially thank my recent sponsors,
-
+:::important Recent sponsors
 - **DNSimple** - which kindly joined to my platinum sponsorship tier allowing me to delegate a bit of work related to editing videos for my tutorials.
- - **Andrzej Krzywda**,
- - **Sebastjan Hribar**,
+ - **Andrzej Krzywda**
+ - **Sebastjan Hribar**
+:::
 
-for supporting this project, I really apreciate it!
-
-By helping me with a few dollars per month creating this content, you are helping the open-source developers and maintainers to create amazing software for you!
-
-And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
-
-Additionally thanks [La-Rel Easter](https://unsplash.com/@lastnameeaster) for the great cover image!
-
-As usual, here you can find two of my previous videos! Thank you all for supporting my channel, you are awesome, and have a nice rest of your day!
+:::important Other thanks
+- [La-Rel Easter](https://unsplash.com/@lastnameeaster) - for the great Cover Image!
+:::

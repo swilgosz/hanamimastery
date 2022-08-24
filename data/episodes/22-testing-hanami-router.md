@@ -235,18 +235,14 @@ Unfortunately, it's all I have for you today. I hope you've enjoyed this episode
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 
-### Thanks
+## Thank you!
 
-I want to especially thank my recent sponsors,
+:::important [Recent sponsors](https://github.com/sponsors/swilgosz)
+- [Benjamin Klotz](https://github.com/tak1n)
+- [Saeloun](https://github.com/saeloun)
+- [Brandon Weaver](https://github.com/baweaver)
+:::
 
-- **[Benjamin Klotz](https://github.com/tak1n)**
-- **[Saeloun](https://github.com/saeloun)**
-- **[Brandon Weaver](https://github.com/baweaver)**
-
-for supporting this project, I really apreciate it!
-
-By helping me with [monthly github sponsorship](https://github.com/sponsors/swilgosz) to create this content this content, you are helping the open-source developers and maintainers to create amazing software for you!
-
-And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
-
-See you soon!
+:::important Other thanks
+- [La-Rel Easter](https://unsplash.com/@lastnameeaster) - for the great Cover Image!
+:::

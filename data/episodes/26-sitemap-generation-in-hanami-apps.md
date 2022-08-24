@@ -426,17 +426,16 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ## Thanks
 
-I want to especially thank my recent sponsors,
+:::important [Recent sponsors](https://github.com/sponsors/swilgosz)
+- [Benjamin Klotz](https://github.com/tak1n)
+- [Saeloun](https://github.com/saeloun)
+- [Brandon Weaver](https://github.com/baweaver)
+:::
 
-- **[Akilas Yemane](https://twitter.com/akilasy)**
-- **[Bill Tihen](https://github.com/btihen)**
-- **[Benjamin Klotz](https://github.com/tak1n)**
+:::important Other thanks
+- [Nick Seagrave](https://unsplash.com/@seagrave) - for the great Cover Image!
+:::
 
-for supporting this project, I really appreciate it!
+If you have found this content useful, I'll appreciate it if you consider supporting this initiative.
 
-By helping me with a few dollars per month creating this content, you are helping the open-source developers and maintainers to create amazing software for you!
-
-And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
-
-
-Also big thanks to [Nick Seagrave](https://unsplash.com/@seagrave) for an awesome cover image!
+See you soon!
