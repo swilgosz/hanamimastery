@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/27/cover-big.jpeg
   small: /images/episodes/27/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1564357698296111105
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/x0zvah/integrate_sidekiq_with_hanami_applications/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/x0zvwy/integrate_sidekiq_with_hanami_applications/
 source: https://github.com/hanamimastery/episodes/tree/main/027
 ---
 In the previous episode, I showcased the possible implementation of the [Sitemap generation](/episodes/26-sitemap-generation-in-hanami-apps) for your Hanami applications. If you're new to the channel, make sure you check that out as today I'll make a direct improvement on that topic.
@@ -67,7 +66,7 @@ With this, I can configure the gem to work with my project.
 - A worker
 - ruby file loading code required for my worker to work.
 
-However, before I'll add them, let me briefly explain how the sidekiq works. Nothing detailed, just to give you a rough idea. 
+However, before I'll add them, let me briefly explain how the sidekiq works. Nothing detailed, just to give you a rough idea.
 
 Same as with a [lot of other stuff](/episodes/7-untangle-your-app-with-dry-monads), It's not necessary to know it in order to use it. But I used sidekiq for YEARS without really understanding *how it works under the hood* and at some point I got this question on the recruitment call and felt a bit dumb.
 
@@ -91,7 +90,7 @@ What you can learn from this diagram though, is that sidekiq manager, doesn't re
 
 This is important as in Hanami we really can leverage this thing for our advantage.
 
-Now let me add my worker. 
+Now let me add my worker.
 
 ### GenerateSitemap worker class
 
@@ -193,7 +192,7 @@ bundle install
 
 This gem allows me to define a `sidekiq.yml` file inside of the config directory, where I can have all my recurring jobs defined!
 
-I'm going to schedule my `generate_sitemap` worker now. 
+I'm going to schedule my `generate_sitemap` worker now.
 
 I need to define the identifier of my scheduled position, then specify **how often the job should run**. Just for this showcase, I'll set it to run every 2 seconds.
 
