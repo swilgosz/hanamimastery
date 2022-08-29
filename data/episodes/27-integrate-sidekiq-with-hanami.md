@@ -5,9 +5,9 @@ author: "swilgosz"
 topics: ["sidekiq", "background"]
 title: "Integrate Sidekiq with Hanami Applications"
 excerpt: "Sidekiq is probably the most known background processing engine for Ruby projects. In this episode I'll show you how to integrate it in Hanami applications!"
-videoId: null
-publishedAt: "2022-08-30"
-modifiedAt: "2022-08-30"
+videoId: fhjSwfVCMKs
+publishedAt: "2022-08-29"
+modifiedAt: "2022-08-29"
 thumbnail:
   full: /images/episodes/27/cover-full.jpeg
   big: /images/episodes/27/cover-big.jpeg
