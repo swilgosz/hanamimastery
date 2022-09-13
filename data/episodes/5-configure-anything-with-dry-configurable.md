@@ -5,7 +5,7 @@ topics: ["dry-rb", "dry-configurable"]
 title: "Configure anything with dry-configurable"
 excerpt: "Configuring projects and components is one of the most common features in programming in general. dry-configurable is a standalone gem providing you exactly this in Ruby! Read about how to use it."
 publishedAt: "2021-06-19"
-modifiedAt: "2022-04-29"
+modifiedAt: "2022-09-13"
 aliases: ['HMEP005']
 videoId: J_352sH25oc
 thumbnail:
@@ -22,7 +22,7 @@ source: https://github.com/hanamimastery/episodes/tree/main/001
 ---
 When you write ruby gems or even reusable components, there is often a need for configuring your projects to behave differently in different contexts.
 
-For example, in our [EventStoreClient](https://github.com/yousty/event_store_client) gem, we've used to connect to the [external event store](https://eventstore.com). We needed to pass the authorization data, as well as the URL of the store where it was hosted upon.
+For example, in our [EventStoreClient](https://github.com/yousty/event_store_client) gem, we've used to connect our apps to the [external event store](https://eventstore.com). We needed to pass the authorization data, as well as the URL of the store where it was hosted upon.
 
 ```ruby
 EventStoreClient.configure do |config|
@@ -58,29 +58,29 @@ module Api
 end
 ```
 
-In fact, it's so common behavior, **where a gem or component needs to be configured somehow**, that it's surprising most of the projects come with the custom configuration implementations, not always thinking about being Thread-Safe, Type-safe, or even test the configuration engine properly.
+In fact, it's so common behavior, **where a gem or component needs to be configured somehow**, that it's surprising most of the projects come with the custom configuration implementations, not always thinking about being Thread-Safe, Type-safe, or even test the configuration engine properly!
 
-You can configure anyting, from initial [stylings for your applicaiton](/episodes/3-style-your-app-with-bulma), database connections, whatever you want.
+I guess you can imagine what your project may do in such situation, can't you?
 
-In today's episode of Hanami Mastery, I want to show you the [Dry-Configurable gem](https://dry-rb.org/gems/dry-configurable), which may be an amazing improvement in this field.
+![[caitlin-wynne-4D953R0aRUo-unsplash(1)(1).jpg]]
 
-### dry-configurable
+But let's stay positive. You can avoid certain doom and I want to tell you how.
 
-`dry-configurable` is a simple mixin allowing you to add thread-safe configuration behavior to your classes.
+You can configure anyting, from initial [stylings for your application](/episodes/3-style-your-app-with-bulma), database connections, whatever you want.
 
-Initially written by [Andy Holland](https://github.com/AMHOL), then basically rewritten by [Nikita Shilnikov](https://github.com/flash-gordon) and [Piotr Solnica](https://github.com/solnic), is one of such micro-libraries, that are close to perfection and **can be injected almost everywhere*8.
+In today's episode of Hanami Mastery, I want to show you the [Dry-Configurable gem](https://dry-rb.org/gems/dry-configurable), which may be an amazing improvement in tn allowing you to add thread-safe configuration behavior to your classesita Shilnikov and Piotr Solnica, is one of such micro-libraries, that are close to perfection and can be injected almost everywhere*.
 
-### Usage
+## Usage
 
-> **Note:** Because of intense work on [Hanami 2.0](https://hanamirb.org) and its dependencies at the moment, the interface of the `dry-configurable` may soon change a little bit, but that's a minor thing and you can always refer to the [gem's documentation](https://dry-rb.org/gems/dry-configurable) for the most up-to-date version of the usage. I'll also keep this article up-to-date.
-
-`dry-configurable` is super simple to use, but because of its narrowed responsibility, at the same time it's extremely flexible to be used in different contexts.
+*dry-configurable* is super simple to use, but because of its narrowed responsibility, at the same time it's extremely stable and flexible to be applied in different contexts.
 
 Just extend the mixin and use the `setting` macro to add configuration options:
 
 You can use it either on ruby `module` on a `class` or an `instance`.
 
-On the module level, you need to extend the *Dry::Configurable* module and you can safely use all features it provides. Here I set the `api_url to hanamimastery.com`
+### Using *dry-configurable* on module
+
+On the module level, you need to extend the `Dry::Configurable` module and you can safely use all features it provides. Here I set the `api_url` to `https://hanamimastery.com`
 
 ```ruby
 require 'dry-configurable'
@@ -94,6 +94,8 @@ end
 App.config.api_url = 'https://hanamimastery.com'
 App.config.api_url # => 'https://hanamimastery.com'
 ```
+
+### Using *dry-configurable* on class
 
 On the class level, nothing changes, **you can use it exactly in the same way**.
 
@@ -110,6 +112,8 @@ App.config.api_url = 'https://example2.com'
 App.config.api_url
 ```
 
+### Using *dry-configurable* on object
+
 If you want to use it on the instance of the class, however, the only difference is that you need to include the `Dry::Configurable` module instead of extending it.
 
 ```ruby
@@ -119,26 +123,31 @@ class App
   setting :api_url
 end
 
-app1 = App.new.config.api_url = 'https://example3.com'
+app1 = App.new
+app1.config.api_url = 'https://example3.com'
 app1.config.api_url
-
-app2 = App.new.config.api_url
+# => 'https://example3.com'
+app2 = App.new
 app2.config.api_url
+# => nil
 ```
 
 Simple? Simple.
 
-Keep in mind, that this way you may have, for example, **multiple clients connecting to an external** `API`, each client being **completely independent!**
+Keep in mind, that this way you may have, for example, 
 
-It's super useful, and I include `Dry::Configurable` in almost every gem or service I create, because of its flexibility.
+- **multiple clients connecting to an external** `API`, each client being **completely independent!**
+- **multiple database connections**
 
-### Features
+It's super useful, and I include `Dry::Configurable` in almost every gem or service I create, because of its flexibility and small size.
+
+## Features
 
 Now let's go through some of the features *dry_configurable* allows you to use.
 
-#### Basic setting
+### Basic setting
 
-First of all, you can do a basic setting, which by default is set to `nil`. Then after setting the attribute to a specific value, this value is returned.
+First of all, you can do a basic setting, which by default is set to `nil`. Then after setting the attribute to a specific value, this value will be returned.
 
 ```ruby
 require 'dry-configurable'
@@ -159,7 +168,8 @@ App.config.adapter # => :http
 ```
 
 You can set the default values for your settings, passing the default value as a second argument.
-##### Quick note about the deprecation warning
+
+#### Quick note about the deprecation warning
 
 > NOTE: The syntax of configuring classes changed a little bit. If you see the deprecation warning;
 >   [dry-configurable] passing a constructor as a block is deprecated and will be removed in the next major version
@@ -213,7 +223,7 @@ App.config.enabled # => true
 App.enabled # => true
 ```
 
-#### Nested settings
+### Nested settings
 
 With *dry-configurable* you can add nested settings, with all features supported in every deep level. You can nest as many levels as you want, it'll all work the same!
 
@@ -249,7 +259,7 @@ App.config.repository.enryption.cipher # =>  "aes-256-cbc"
 App.repository.type # => :remote
 ```
 
-#### Pre-Processed values
+### Pre-Processed values
 
 Finally, you can easily do the `pre-processing` of default, and passed setting values. I find it useful for example when I need to work with URLs. It's [generally bad practice to work with plain ruby strings](https://solnic.codes/2012/06/25/get-rid-of-that-code-smell-primitive-obsession/) when it comes to URL definitions, so I often wrap such in a `URI` object.
 
@@ -320,9 +330,9 @@ require 'my_gem'
 MyGem.config.api_url = ENV['VAR_NOT_TIED_TO_GEM_IMPLEMENTATION']
 ```
 
-This code already will fail in case of invalid configuration, like passing nil or invalid URL, which is a much more error-prone implementation.
+This code already will fail in case of invalid configuration, like passing `nil` or invalid URL, which is a much more error-prone implementation.
 
-### Summary
+## Summary
 
 `dry-configurable` is so simple, but at the same so useful, it's hard to believe it's not included in all ruby applications. Similar concepts are applied to [dry-inflector gem](/episodes/4-string-transformations-with-dry-inflector) - skinny, simple, resuable and this is why I love *dry-rb* for.
 
@@ -330,7 +340,7 @@ It's worth mentioning, that **Hanami-RB 2.0 uses the dry-configurable** for the 
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to my Newsletter** and [follow me on twitter](https://twitter.com/hanamimastery)!
 
-### Special Thanks
+## Special Thanks
 
 I'd like to thank Bohdan V. for supporting this channel, and all other people encouraging me to continue with Hanami Mastery project - It really matters a lot!
 
