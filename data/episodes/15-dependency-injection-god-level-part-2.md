@@ -9,9 +9,9 @@ videoId: hT0NcYiTsQY
 publishedAt: "2022-02-07"
 modifiedAt: "2022-04-29"
 thumbnail:
-  full: /images/episodes/15/cover-full.jpg
-  big: /images/episodes/15/cover-big.jpg
-  small: /images/episodes/15/cover-small.jpg
+  full: /images/episodes/15/cover-full.jpeg
+  big: /images/episodes/15/cover-big.jpeg
+  small: /images/episodes/15/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/1490583121422651395
   reddit:
