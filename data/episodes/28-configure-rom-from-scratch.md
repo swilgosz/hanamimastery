@@ -76,7 +76,7 @@ I'm not a person who likes to wait, but rather one who takes things in hand, so 
 
 ## Installing ROM with SQL
 
-:::warn Disclaimer
+:::warning Disclaimer
 This episode is **NOT targeted at beginners** expecting everything working out-of-the-box. 
 
 It's for people wanting to know **how the persistence layer works under the hood** and how to master the great ORM which the ROM definitely is.
