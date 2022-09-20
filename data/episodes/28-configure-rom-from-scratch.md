@@ -40,7 +40,7 @@ If you find my content useful, check it out, **this is a great way to support my
 
 Now let me go back to the topic. You can create a new Hanami application using the `hanami new` command followed by the application name.
 
-```bash
+```shell
 gem install hanami -v 2.0.0.beta2
 hanami new sandbox
 cd sandbox
@@ -176,7 +176,7 @@ end
 
 Then in the `.env` file I'll add this to the environment.
 
-```
+```shell
 DATABASE_URL=postgresql://localhost:5432/sandbox_dev
 
 ```
@@ -221,13 +221,13 @@ It works! Now let me create the actual migration
 
  With a database connection in place, I just need the migration folder so let me create one.
 
-```
+```shell
 mkdir db/migrate
 ```
 
  Now we can simply run the `CLI` command to create a new migration file, however, because I use `zsh` as my main shell, by typing this I'll end up with an error. For bash shell it should work fine, however, to fix it in `zsh`, you'll need to escape the square brackets, or, what I like more, wrap the argument of the `rake` command with a single quotes.
 
-```
+```shell
 rake db:create_migration[create_authors]
 # => Error
 rake db:create_migration\\[create_authors\\] # works in zsh shell
@@ -240,7 +240,6 @@ With this, it all works well, and now I have the empty migrations file to create
 
 ```ruby
 rake 'db:create_migration[create_articles]'
-
 ```
 
  Within the main migration blockI add the `change` method that will accordingly apply the block's content during the migration and will try to roll back the change when we want to revert the step.
@@ -287,7 +286,7 @@ end
 
  Then I can run all migrations and check the current schema of the system.
 
-```bash
+```shell
 rake db:migrate
 ```
 
@@ -327,7 +326,7 @@ It is just a persistence engine built for scale - and so the Hanami is an applic
 
 This will ONLY be done on the application boot, so for example, in my `rake tasks` - where I don't need relations - I won't slow down my migrations executions by unnecessary loading of relations! I also won't risk that my application will crash if the relation file is missing.
 
-```
+```shell
   # config/providers/persistence.rb
   prepare do
     # ...
