@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/28/cover-big.jpeg
   small: /images/episodes/28/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1572120700303069184
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/xj201m/configure_rom_from_scratch_in_ruby_apps/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/xj209l/configure_rom_from_scratch_in_ruby_apps/
 source: https://github.com/hanamimastery/episodes/tree/main/028
 ---
 ROM is the most powerful ORM in Ruby. There is no doubt. If you'll compare it to *active_record*, *sequel*, or whatever you choose, there is just no competition in terms of features it delivers. It's not a surprise then, that Hanami made it an ORM of choice for its persistence layer.
