@@ -20,27 +20,21 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/028
 ---
-
-# Video Script: HMEV028
-
-## Configure ROM from scratch.
-
-# Scenario
-
 ROM is the most powerful ORM in Ruby. There is no doubt. If you'll compare it to *active_record*, *sequel*, or whatever you choose, there is just no competition in terms of features it delivers. It's not a surprise then, that Hanami made it an ORM of choice for its persistence layer.
 
 However, as Hanami 2.0 will be released without the persistence layer pre-configured, there may be a lot of people wanting to know HOW to configure it from scratch to already play with Hanami 2 in their projects.
 
 In this episode, I'll go with you through the basic integration of ROM in Hanami, but You can take these steps and apply them in ANY Ruby application, and it'll still work the same.
 
-> **Disclaimer:** In this episode, I'll showcase the basics of ROM, but this is just a part of the **deep dive course** about [understanding ROM and mastering it](https://hanamimastery.teachable.com/p/hanami-mastery-premium) we're making for you.
+:::info Disclaimer
+In this episode, I'll showcase the basics of ROM, but this is just a part of the **deep dive course** about [understanding ROM and mastering it](https://hanamimastery.teachable.com/p/hanami-mastery-premium) we're making for you.
 
-This course we already started to record and it is available as a part of [Hanami Mastery PRO](https://hanamimastery.teachable.com/p/hanami-mastery-premium). You can access it by clicking a link on the video description or visiting the Hanami Mastery website.
+This course we already started to record and it is available as a part of [Hanami Mastery PRO](https://hanamimastery.teachable.com/p/hanami-mastery-premium). Feel free to join to get early access and have an impact on shaping it with us!
 
 Access starts from **10$ per month for now**, and the price will stay the same for all early birds!
 
 If you find my content useful, check it out, **this is a great way to support my channel and Hanami Mastery initiative** while getting back actual benefits for the sponsorship!
->
+:::
 
 ## The app.
 
@@ -72,7 +66,7 @@ module Sandbox
 end
 ```
 
-You may refer to HMEP21 to see how I’ve set the JSON response header to my actions. I talked there about serialization using Alba, and covered several API-related configuration stuff.
+You may refer to [HMEP21](/episodes/21-serialization-with-alba) to see how I’ve set the JSON response header to my actions. I talked there about **serialization using Alba**, and covered several API-related configuration stuff.
 
 Of course, the route is also set up, so when I'll visit the `/articles` URL in the browser, you'll see the empty JSON response and the goal is to fill it with the content loaded from the database.
 
@@ -82,9 +76,11 @@ I'm not a person who likes to wait, but rather one who takes things in hand, so 
 
 ## Installing ROM with SQL
 
-> **Disclaimer:**
-This episode is **NOT targeted for beginners** expecting everything working out-of-the box. It's for people wanting to know how the persistence layer works under the hood and how to master the great ORM which the ROM definitely is.
->
+:::warn Disclaimer
+This episode is **NOT targeted at beginners** expecting everything working out-of-the-box. 
+
+It's for people wanting to know **how the persistence layer works under the hood** and how to master the great ORM which the ROM definitely is.
+:::
 
 > Everything I'm doing in this episode **you'll have integrated in Hanami 2.1** and you won't need to configure any of this, but I think it's useful to understand how ROM works under the hood anyway - especially in case you will want to use it in other frameworks, or gems.
 >
@@ -198,11 +194,12 @@ Here I want to add the predefined rake tasks loaded from ROM but to make all of 
 ```ruby
 # Rakefile
 
-require "hanami/setup"
 require 'rom/sql/rake_task'
+require "hanami/prepare"
 
 namespace :db do
   task :setup do
+    Sandbox::App.prepare :persistence
     config = Sandbox::Container['persistence.config']
     ROM::SQL::RakeSupport.env = ROM.container(config)
   end
@@ -423,7 +420,7 @@ authors.where(nickname: 'swilgosz').to_a
 
  First I include `rom` as a dependency, and then assign the articles' relation to a variable. I want to include the authors of the articles in the response, so I combine two tables together.
 
-```
+```ruby
 module Sandbox
   module Actions
     module Articles
