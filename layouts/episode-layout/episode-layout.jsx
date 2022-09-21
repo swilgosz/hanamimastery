@@ -14,6 +14,7 @@ import ShareButtons from "../../features/share-buttons";
 import YoutubeEmbed from "../../features/youtube-embed";
 import SidebarSponsors from "../../features/sidebar-sponsors";
 import SidebarJobOffers from "../../features/sidebar-job-offers";
+import ProTag from "../../features/content/pro-tag";
 import {
   shouldDisplayArticle,
   shouldDisplayDiscussions,
@@ -67,6 +68,7 @@ const EpisodeLayout = ({ episode, children }) => {
         </Typography>
         <Typography variant="h5" align="center" className={classes.heroSubtitle}>
           {`Episode #${id}`}
+          <ProTag pro={episode.premium} />
         </Typography>
         </div>
       </section>

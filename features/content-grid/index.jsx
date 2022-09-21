@@ -8,8 +8,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       padding: theme.spacing(0, 0),
     },
-
-
   },
 }));
 
@@ -27,6 +25,7 @@ const ContentDisplay = (props) => {
           component="li"
         >
           <ContentTile item={item} variant={index === 0 ? 'big' : 'small'} />
+
         </Grid>
       ))}
     </Grid>
