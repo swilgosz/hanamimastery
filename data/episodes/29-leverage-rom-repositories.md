@@ -15,10 +15,6 @@ thumbnail:
   small: /images/episodes/29/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
-  reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/029
 ---
 
