@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 import TextTruncate from "react-text-truncate";
 import { findAuthor } from "../../redux/slices/authors";
 import TopicList from "../topics/topic-list";
-
+import ProTag from "../content/pro-tag";
 const useStyles = makeStyles((theme) => ({
   content: {
     display: "flex",
@@ -42,7 +42,7 @@ const ContentTile = ({ item, variant }) => {
   const author = useSelector((state) => findAuthor(state, authorName));
   const thumbnailUrl = variant == 'big' ? thumbnail.big : thumbnail.small
   return (
-    <Card className={classes.root}>
+    <Card className={classes.card}>
       <NextLink href={`/${path}`} passHref>
         <CardActionArea>
           <CardMedia className={classes.media} image={thumbnailUrl} />
@@ -51,9 +51,12 @@ const ContentTile = ({ item, variant }) => {
       <CardHeader
         disableTypography
         title={
-          <NextLink passHref href={`/${path}`}>
-            <Link variant="h6">{fullTitle}</Link>
-          </NextLink>
+          <>
+            <NextLink passHref href={`/${path}`}>
+              <Link variant="h6">{fullTitle}</Link>
+            </NextLink>
+            <ProTag pro={item.premium} />
+          </>
         }
         subheader={
           <Typography variant="subtitle1">

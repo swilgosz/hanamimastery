@@ -24,6 +24,7 @@ function _serializeContentData(filePath, data) {
   return {
     ...data,
     type,
+    premium: data.premium || false,
     fullTitle: (type == 'episodes') ? `#${data.id} ${data.title}` : data.title,
     slug: postSlug,
     path: itemPath,
