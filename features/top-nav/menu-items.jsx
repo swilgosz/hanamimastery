@@ -2,8 +2,11 @@ import NextLink from "next/link";
 import MenuItem from "@material-ui/core/MenuItem";
 import { nanoid } from "@reduxjs/toolkit";
 import RssFeedIcon from '@material-ui/icons/RssFeed';
+import { makeStyles } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
 
 const links = [
+  { href: "https://hanamimastery.podia.com", label: "GO PRO", highlight: "true"},
   { href: "/episodes", label: "Episodes" },
   { href: "/c/stray", label: "Stray" },
   { href: "/about", label: "About" },
@@ -12,24 +15,51 @@ const links = [
   { href: "/feed", label: "RSS", icon: '/rss-feed-icon.png' }
 ];
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: "primary",
+  },
+}));
+
 const MenuItems = ({ MenuItemProps = {} }) =>
-  links.map(({ href, label, icon }) => {
+  links.map(({ href, label, icon, highlight }) => {
     if (icon) {
       return (
-        <NextLink key={nanoid()} href={href}>
+        <NextLink key={nanoid()} href={href} shallow passHref>
           <MenuItem {...MenuItemProps}>
             <RssFeedIcon />
           </MenuItem>
         </NextLink>
       );
     }
+
+    if (highlight) {
+      return (
+        <NextLink
+          key={nanoid()}
+          href={href}>
+          <MenuItem
+            variant=""
+          >
+            <Button variant="contained" color="primary">
+              {label}
+            </Button>
+          </MenuItem>
+        </NextLink>
+      )
+    }
     return (
-      <NextLink key={nanoid()} href={href}>
-        <MenuItem {...MenuItemProps}>
+      <NextLink
+        key={nanoid()}
+        href={href}>
+        <MenuItem
+          variant=""
+        >
           {label}
         </MenuItem>
       </NextLink>
     )
   });
+
 
 export default MenuItems;
