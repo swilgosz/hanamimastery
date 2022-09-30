@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ["rom", "persistence", "hanami"]
 title: "ROM - Mapping is everything"
 excerpt: "Understand data mapping in ROM, on all levels! In this episode we go through examples of simple to complex data mapping with ROM, with real usecases for each one."
-videoId: null
+videoId: Veqh0g8sNj4
 premium: true
 publishedAt: "2022-09-30"
 modifiedAt: "2022-09-30"
