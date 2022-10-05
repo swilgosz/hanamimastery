@@ -2,7 +2,7 @@
 id: 30
 aliases: ["HMEP030"]
 author: "swilgosz"
-topics: ["rom", "persistence", "hanami"]
+topics: ["rom-rb", "persistence", "hanami"]
 title: "ROM - Mapping is everything"
 excerpt: "Understand data mapping in ROM, on all levels! In this episode we go through examples of simple to complex data mapping with ROM, with real usecases for each one."
 videoId: Veqh0g8sNj4

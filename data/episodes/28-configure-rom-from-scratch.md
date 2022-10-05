@@ -2,7 +2,7 @@
 id: 28
 aliases: ["HMEP028"]
 author: "swilgosz"
-topics: ['rom', 'hanami', 'relations', 'sequel']
+topics: ['rom-rb', 'hanami', 'relations', 'sequel']
 title: "Configure ROM from scratch"
 excerpt: "Hanami 2.0 comes without the persistence layer nor views preconfigured. It is useful then to know how to set up the best ORM available in the Ruby ecosystem."
 videoId: qbhCJ6jO0oE
