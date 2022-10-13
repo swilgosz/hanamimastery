@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/31/cover-big.jpeg
   small: /images/episodes/31/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1579759167979794432
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/y14onb/romfactory_your_testing_buddy_for_hanami_apps/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/y14out/romfactory_your_testing_buddy_for_hanami_apps/
 source: https://github.com/hanamimastery/episodes/tree/main/031
 ---
 
