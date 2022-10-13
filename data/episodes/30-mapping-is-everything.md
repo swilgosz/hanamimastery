@@ -14,7 +14,7 @@ thumbnail:
   big: /images/episodes/30/cover-big.jpeg
   small: /images/episodes/30/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1575807037660798977
 source: https://github.com/hanamimastery/episodes/tree/main/030
 ---
 I've told you about the importance of [mapping things to each other](/episodes/8-rails-vs-hanami-mapping-frameworks) **several times already**. 

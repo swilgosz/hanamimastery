@@ -14,7 +14,7 @@ thumbnail:
   big: /images/episodes/29/cover-big.jpeg
   small: /images/episodes/29/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1572750433969381376
 source: https://github.com/hanamimastery/episodes/tree/main/029
 ---
 
