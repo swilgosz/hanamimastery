@@ -21,7 +21,7 @@ const ProTag = ({pro}) => {
         label="PRO"
         color="primary"
         component="a"
-        href="https://hanamimastery.podia.com"
+        href="https://pro.hanamimastery.com"
         target="_blank"
         // variant="filled"
         clickable

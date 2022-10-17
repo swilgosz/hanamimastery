@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 
 const links = [
-  { href: "https://hanamimastery.podia.com", label: "GO PRO", highlight: "true"},
+  { href: "https://pro.hanamimastery.com", label: "GO PRO", highlight: "true"},
   { href: "/episodes", label: "Episodes" },
   { href: "/c/stray", label: "Stray" },
   { href: "/about", label: "About" },

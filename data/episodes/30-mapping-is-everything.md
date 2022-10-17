@@ -17,9 +17,9 @@ discussions:
   twitter: https://twitter.com/HanamiMastery/status/1575807037660798977
 source: https://github.com/hanamimastery/episodes/tree/main/030
 ---
-I've told you about the importance of [mapping things to each other](/episodes/8-rails-vs-hanami-mapping-frameworks) **several times already**. 
+I've told you about the importance of [mapping things to each other](/episodes/8-rails-vs-hanami-mapping-frameworks) **several times already**.
 
-Linking unknown concepts to something we know and can work with, not only speeds up the learning process but **is a source of creativity**. 
+Linking unknown concepts to something we know and can work with, not only speeds up the learning process but **is a source of creativity**.
 
 In the digital world, where no idea is original, creative people link existing ideas to form *completely new concepts.*
 
@@ -174,12 +174,12 @@ authors_repo.authors.first
 
 That’s it, for the very basic usage of the automating [mapping functionality](https://rom-rb.org/learn/core/5.2/mappers/). If you are interested only in that, you may finish the episode here.
 
-However, in some scenarios, you’ll need *a custom mapping ability*. One example would be to **read a stream of events from the event store**. 
+However, in some scenarios, you’ll need *a custom mapping ability*. One example would be to **read a stream of events from the event store**.
 
 Let me show you how to do this.
 
 :::tip Subscribe to Hanami Mastery PRO
-This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://hanamimastery.podia.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
+This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://pro.hanamimastery.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
 :::
 
 ## Thanks

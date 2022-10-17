@@ -69,7 +69,7 @@ I bet that You've never heard good words about fat controllers in Rails. **This 
 This is what repositories are for.
 
 :::tip Subscribe to Hanami Mastery PRO
-This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://hanamimastery.podia.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
+This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://pro.hanamimastery.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
 :::
 
 ### Thanks
