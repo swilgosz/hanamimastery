@@ -155,7 +155,7 @@ With this, I can already paginate my resources by visiting the browser.
 
 With this, I can already paginate my resources by visiting the `localhost:2300/articles?page=2&per_page=1`
 
-![[paginated-response.png]]
+![Paginated resources response](/images/episodes/32/paginated-response.png)
 
 ## Validating pagination parameters.
 
@@ -213,7 +213,7 @@ end
 
 Now when I call my browser with invalid pagination parameters, I'll end up with the more meaningful error message.
 
-![[validate-pagination.png]]
+![Paginated resources response](/images/episodes/32/validate-pagination.png)
 
 Awesome!
 
