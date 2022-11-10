@@ -2,7 +2,7 @@
 id: 31
 aliases: ["HMEP031"]
 author: "swilgosz"
-topics: ['rom', 'tests', 'rom-factory']
+topics: ['rom-rb', 'tests', 'rom-factory']
 title: "ROM-Factory - Your testing buddy for Hanami apps"
 excerpt: "If you have experience testing ruby applications, I'm sure you've heard about FactoryBot. Here I show you the alternative, suited for ROM-based applications, including Hanami 2."
 videoId: ZTgZTEQB1iM
@@ -40,7 +40,7 @@ The problem with this is, that I have a foreign key set on *author's id*, and a 
 
 ```ruby
      Failure/Error: let(:article) { repo.create(published_on: Date.parse('2022-09-09')) }
-     
+
      ROM::SQL::NotNullConstraintError:
        PG::NotNullViolation: ERROR:  null value in column "author_id" violates not-null constraint
        DETAIL:  Failing row contains (1, null, null, null, null, 2022-09-09, 2022-10-01 00:26:42.124334, 2022-10-01 00:26:42.124334).
@@ -62,7 +62,7 @@ This is where the concept of *factories* had been born.
 
 ## FactoryBot for rails applications
 
-If you have a Rails background, I'm sure you've heard about [FactoryBot](https://github.com/thoughtbot/factory_bot), the popular gem used to quickly build instances of your models, so testing can be fun. 
+If you have a Rails background, I'm sure you've heard about [FactoryBot](https://github.com/thoughtbot/factory_bot), the popular gem used to quickly build instances of your models, so testing can be fun.
 
 I totally recommend it for rails projects, as I used it a lot and like it very much. However, while they claim to not be rails-specific, I find it very troublesome to use it with *non-ActiveRecord* projects.
 

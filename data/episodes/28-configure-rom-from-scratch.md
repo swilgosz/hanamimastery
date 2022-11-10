@@ -2,7 +2,7 @@
 id: 28
 aliases: ["HMEP028"]
 author: "swilgosz"
-topics: ['rom-rb', 'hanami', 'relations', 'sequel']
+topics: ['rom-rb', 'hanami', 'relations', 'sequel', 'persistence']
 title: "Configure ROM from scratch"
 excerpt: "Hanami 2.0 comes without the persistence layer nor views preconfigured. It is useful then to know how to set up the best ORM available in the Ruby ecosystem."
 videoId: qbhCJ6jO0oE
@@ -76,7 +76,7 @@ I'm not a person who likes to wait, but rather one who takes things in hand, so 
 ## Installing ROM with SQL
 
 :::warning Disclaimer
-This episode is **NOT targeted at beginners** expecting everything working out-of-the-box. 
+This episode is **NOT targeted at beginners** expecting everything working out-of-the-box.
 
 It's for people wanting to know **how the persistence layer works under the hood** and how to master the great ORM which the ROM definitely is.
 :::
