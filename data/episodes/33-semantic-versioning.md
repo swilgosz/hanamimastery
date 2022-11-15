@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/33/cover-big.jpeg
   small: /images/episodes/33/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1592480321324584960
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/yvun6y/deep_dive_into_semantic_versioning_in_ruby/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/yvunis/deep_dive_into_semantic_versioning_in_ruby/
 source: https://github.com/hanamimastery/episodes/tree/main/033
 ---
 If you seriously think about Ruby career, at [some point you’ll need to maintain a gem](/episodes/12-authorization-with-jwt). And I don’t even talk about open source contributions, which I totally recommend. But to maintain a gem, or a project, there is a chance you’ll want to easily decide, what version of software people would like to use.
