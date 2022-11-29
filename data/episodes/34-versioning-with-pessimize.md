@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/34/cover-big.jpeg
   small: /images/episodes/34/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1597520265394548738
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/z7owow/safe_gem_upgrades_with_pessimize_gem/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/z7oxlf/safe_gem_upgrades_with_pessimize_gem_hanami/
 source: https://github.com/hanamimastery/episodes/tree/main/034
 ---
 Working on a Ruby application implies, sooner or later, dealing with a `Gemfile`, gem versions and gem dependencies. This usually isn't a problem when we first create our project but, as time progresses and gems get mantained, working with multiple libraries becomes a hustle.
