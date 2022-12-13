@@ -13,10 +13,10 @@ thumbnail:
   big: /images/episodes/35/cover-big.jpeg
   small: /images/episodes/35/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1602640382533181440
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/zkujxt/halt_or_handle_dealing_with_exceptions_in_hanami/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/zkuk4c/halt_or_handle_dealing_with_exceptions_in_hanami/
 source: https://github.com/hanamimastery/episodes/tree/main/035
 ---
 Handling exceptions in a graceful way is a useful feature. In fact, my article about [handling exceptions in Rails applications](https://driggl.com/blog/a/handling-exceptions-in-rails-applications) is one of the most popular I've ever written - and that was done **even before** I realized, that Ruby community is active on Twitter and Reddit, so **there was no promotion whatsoever**.
