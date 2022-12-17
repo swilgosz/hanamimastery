@@ -20,7 +20,7 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/020
 ---
 
-In the last episode, I've talked to you about the [*dry-schema* features](/episodes/19-) **allowing you to easily validate data structures and attributes types** in your ruby applications.
+In the last episode, I've talked to you about the [*dry-schema* features](/episodes/19-dry-schema) **allowing you to easily validate data structures and attributes types** in your ruby applications.
 
 However powerful, it's not [dry-schema](https://dry-rb.org/gems/dry-schema) that is the mostly used DRY library. It's another gem, built on top of that engine which extends it's functionality.
 

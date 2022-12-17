@@ -24,7 +24,7 @@ I came through an article by Piotr Solnica, covering his [thoughts about open-so
 
 ### My open-source reality.
 
-I've first met Piotr around 2015 at one conference in Wrocław, where he presented the [ROM.rb](rom-rb.org) updates, and I was still kind of a junior-level ruby developer up then. I saw what he did in this library and I was amazed. Shocked, and amazed.
+I've first met Piotr around 2015 at one conference in Wrocław, where he presented the [ROM.rb](https://rom-rb.org) updates, and I was still kind of a junior-level ruby developer up then. I saw what he did in this library and I was amazed. Shocked, and amazed.
 
 The skills that were required to pull this thing together were on a completely different level than anything I experienced so far, and this was when I started being interesting in Open-Source contributions.
 

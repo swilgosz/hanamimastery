@@ -209,7 +209,7 @@ However, **can you spot further possible improvements on this**?
 
 Having that covered, what's the point of dry-system?
 
-In my article about [dry-rb dependency graph](dry-rb-dependency-graph), I've highlighted, that based on the gem relationships you can conclude **which gems are supposed to be used directly**, and **which are designed as a low-level building blocks for other libraries**.
+In my article about [dry-rb dependency graph](/articles/dry-rb-dependency-graph), I've highlighted, that based on the gem relationships you can conclude **which gems are supposed to be used directly**, and **which are designed as a low-level building blocks for other libraries**.
 
 dry-system is a high-level gem designed specifically for a direct use.
 

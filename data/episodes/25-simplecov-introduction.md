@@ -20,13 +20,13 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/025
 ---
 
-In the last episode, I talked about [7 levels of test coverage](/episodes/24-7-levels-of-test-coverage) I identify in my projects, and I hope that gave you some ideas on what to avoid and what to aim for in your applications.
+In the last episode, I talked about [7 levels of test coverage](/episodes/24-different-levels-of-test-coverage) I identify in my projects, and I hope that gave you some ideas on what to avoid and what to aim for in your applications.
 
  Let me know in the comments if testing in ruby is an interesting topic you'd like to hear more about and I'll continue with covering more tools helping to test applications efficiently.
 
 Today I'll deep dive into one of the tools that can help you figure out where your application is currently.
 
-There are several code metric tools, and quality checkers for Ruby available out there, and I hope I'll cover all of them at some point. 
+There are several code metric tools, and quality checkers for Ruby available out there, and I hope I'll cover all of them at some point.
 
 :::note 4 ways to remove your frustration
 So far I covered the `Rubocop` in [episode 23](/episodes/23-rubocop-most-frustrating-to-most-loved) which appears to be one of the most popular I published so far. Check it out if you're interested in how to ensure your code remains consistent within the project.
@@ -175,7 +175,7 @@ I get 50% of test coverage, saying, that my file has two different paths that my
 Let me add the missing test then:
 
 ```ruby
-# spec/spec_helper 
+# spec/spec_helper
 
 it 'returns info when dividing by 0' do
   expect(subject.call(4, 0)).to eq("Can't divide by 0")
@@ -291,7 +291,7 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ### Thanks
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 - **[Akilas Yemane](https://twitter.com/akilasy)**
 - **[Bill Tihen](https://github.com/btihen)**
