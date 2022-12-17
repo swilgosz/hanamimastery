@@ -385,6 +385,8 @@ I want to especially thank my recent sponsors,
 
 for supporting this project, I really appreciate it!
 
+- [Nikolai Chernichenko](https://unsplash.com/@perfectcoding) - for the great cover image
+
 :::important Consider sponsoring?
 If you want to support us, check out our [Github sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!
 :::
