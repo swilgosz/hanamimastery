@@ -8,11 +8,11 @@ module.exports = {
         import redirect from 'nextjs-redirect';
         export default redirect('/jobs', { statusCode: 301 });
       */
-      {
-        source: "/episodes",
-        destination: "/",
-        permanent: true,
-      },
+      // {
+      //   source: "/episodes",
+      //   destination: "/",
+      //   permanent: true,
+      // },
       {
         source: "/feed",
         destination: "/feed.xml",
