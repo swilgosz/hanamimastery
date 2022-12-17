@@ -7,11 +7,11 @@ title: "Effective programming in ruby"
 excerpt: "2 real-world examples of using algebraic effects in Hanami ruby applications with dry-effects."
 videoId: "Ik_81cHFAqg"
 publishedAt: "2021-11-29"
-modifiedAt: "2022-04-29"
+modifiedAt: "2022-12-17"
 thumbnail:
   full: /images/episodes/11/cover-full.jpeg
   big: /images/episodes/11/cover-big.jpeg
-  small: /images/episodes/12/cover-small.jpeg
+  small: /images/episodes/11/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/1465212762888486913
   reddit:
@@ -23,21 +23,23 @@ Algebraic effects are a concept from functional programming that allows working 
 
 You can achieve a lot of amazing things with them, like
 
-- continuable error handling,
+- continuable [error handling](/episodes/35-halt-or-handle),
 - promises and parallel execution,
 - caching
 - timeouts
 - feature toggles,
-- dependency injection
+- [dependency injection](/episodes/14-dependency-injection-in-ruby-from-zero-to-hero-part-1)
 - ...and many, many more.
 
-All that can be done in a unified,** testable way**, which could bring more cohesion to your projects.
+All that can be done in a unified, **testable way**, which could bring more cohesion to your projects.
 
-For me, coming from an object-oriented world, however, It was not something I could easily grasp just by looking at the definition. Fortunately, [similar to monads](/episodes/7-untangle-your-app-with-dry-monads), **one doesn't need to fully understand algebraic effects or category theory to figure out why and when they may be useful.**
+## DRY-effects - a concept hard to grasp
 
-In this episode of Hanami mastery I will show you **two simple but real-world examples of using effects to extend your Hanami or any other ruby application**. I will use Hanami hello, World application for showcasing those scenarios, but you can apply the concept to whatever you wish.
+For me, [coming from an object-oriented world](/articles/secret-of-stunning-oss-contributions), however, It was not something I could easily grasp just by looking at the definition! Fortunately, [similar to monads](/episodes/7-untangle-your-app-with-dry-monads), **one doesn't need to fully understand algebraic effects** or category theory **to figure out why and when they may be useful!**
 
-For that, I will make use of [dry-effects](https://dry-rb.org/gems/dry-effects) which is a neat little library that implements the most useful algebraic effects in Ruby. Created by [Nikita Shilonicov](https://github.com/flash-gordon) and managed by the dry team it follows the simple rule of doing just one thing but doing it in the best possible way.
+In this episode of Hanami mastery I will show you **two simple but real-world examples of using effects to extend your Hanami or any other ruby application**. I will use Hanami "Hello, World!" application for showcasing those scenarios, but you can apply the concept to whatever you wish.
+
+For that, I will make use of [dry-effects](https://dry-rb.org/gems/dry-effects) which is a neat little library that implements the most useful algebraic effects in Ruby. Created by [Nikita Shilnicov](https://github.com/flash-gordon) and managed by the DRY team it follows the simple rule of doing just one thing **but doing it in the best possible way.**
 
 ## The reader effect
 
@@ -73,7 +75,7 @@ h1 = message
 
 To add a very simple locale check, I will update the exposure to accept the locale argument, and based on its value I'm going to render the localized string.
 
-For the sake of this example, I will hardcode the support of two languages, so for English, I will render "Welcome to Hanami Mastery!", and for Swahili, "Karigo Hanami Mastery!"
+For the sake of this example, I'm going to hardcode the support of two languages, so for English, I will render "Welcome to Hanami Mastery!", and for Swahili, "Karigo Hanami Mastery!"
 
 Otherwise, I'm going to render the information about string not being localized properly.
 
@@ -258,7 +260,7 @@ The responsibility of setting that up is extracted into a single place.
 
 **It's also super convenient in testing**, but having that covered, let's go to another example.
 
-### Current Time
+## Current Time with dry-effects
 
 I would love my welcome message to show the current time in the browser too.
 
@@ -322,7 +324,7 @@ end
 
 I can remove the `Time.now` call as I won't need it anymore.
 
-#### CurrentTime middleware for handling algebraic effect
+### CurrentTime middleware for handling algebraic effect
 
 Then I will write the CurrentTime middleware to resolve the current time state.
 
@@ -332,7 +334,6 @@ Then I will write the CurrentTime middleware to resolve the current time state.
 require_relative "./lib/rack/with_time"
 use Rack::WithTime
 ```
-
 
 In the `config.ru` file I'm going to add the new middleware to the stack and then define the actual class.
 
@@ -379,21 +380,21 @@ From the behavior point of view, my app works exactly the same but my view objec
 
 My view doesn't care about setting the state anymore so in tests I can set it up in any way and it will work exactly as I would expect.
 
-### Summary
+## Summary
 
 **Algebraic effects are just a new tool to solve common programming problems** in a unified, coherent way, ensuring our code is easy to test and easy to maintain and dry-effects
 
-If you will write about other examples of using effects in ruby, let me know, I will gladly include your articles in this post as references, and If you wish to contribute to Hanami Mastery content, feel free to do so as well!.
-
-If you are interested to see other examples of using effects in ruby, let me know, I am keen to come with other use cases for this topic in the upcoming episodes.
+If you will write about other examples of using effects in ruby, let me know, I will gladly include your articles in this post as references, and If you wish to [contribute to Hanami Mastery content](https://github.com/swilgosz/hanamimastery), feel free to do so as well!.
 
 It can become a while until effects will be widely adopted across ruby applications but you may be one of the early adopters!
 
-For more advanced examples join Hanami Mastery PRO or my GitHub Sponsors, to get access to weekly premium episodes!
+:::note Become an awesome subscriber!  
+If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+:::
 
-I hope you've enjoyed this episode, and if you want to see more content in this fashion, **subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+For more advanced examples join [Hanami Mastery PRO](https://pro.hanamimastery.com) or my GitHub Sponsors, to get access to weekly premium episodes!
 
-### Special Thanks!
+## Special Thanks!
 
 I'd like to especially thank
 
