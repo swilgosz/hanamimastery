@@ -1,7 +1,7 @@
 ---
 id: 33
 aliases: ["HMEP033"]
-author: "swilgosz"
+author: "fiachetti"
 topics: ['gems']
 title: "Deep dive into semantic versioning in Ruby"
 excerpt: "Semantic versioning is a useful approach to version your projects or gems - and that will be necessary at some point if you seriously think about ruby career."

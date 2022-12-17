@@ -1,7 +1,7 @@
 ---
 id: 34
 aliases: ["HMEP034"]
-author: "flachetti"
+author: "fiachetti"
 topics: ['gems']
 title: "Safe gem upgrades with pessimize gem"
 excerpt: "Upgrading gems in the bigger project can become a hustle if you don't use tools like pessimize to help you deal with them safely."
