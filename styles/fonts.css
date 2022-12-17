@@ -1,0 +1,26 @@
+.MuiTypography-h1 {
+  font-size: 1.7rem !important;
+}
+
+
+.MuiTypography-h2 {
+  font-size: 1.5rem !important;
+}
+
+.MuiTypography-h3 {
+  font-size: 1.4rem !important;
+}
+
+.MuiTypography-h4 {
+  font-size: 1.3rem !important;
+}
+
+.MuiTypography-h5 {
+  font-size: 1.2rem !important;
+}
+
+.MuiTypography-h6 {
+  font-size: 1.2rem !important;
+  font-weight: lighter !important;
+  color: #666666;
+}

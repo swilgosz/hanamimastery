@@ -84,8 +84,8 @@ const CustomLink = (props) => {
 const useHeaderStyles = makeStyles(() =>
   createStyles({
     root: {
-      marginTop: "10px",
-      marginBottom: "20px",
+      marginTop: "30px",
+      marginBottom: "15px",
       scrollMarginTop: "100px",
       scrollSnapMargin: "100px", // Safari
       // '&[id]': {
@@ -139,12 +139,12 @@ const CustomHeader = ({ variant, children, id, ...props }) => {
 const Om = ({ om }) => <div id={om} />;
 
 const MDXComponents = {
-  h1: (props) => <CustomHeader variant="h2" component="h1" my={4} {...props} />,
-  h2: (props) => <CustomHeader variant="h3" {...props} />,
-  h3: (props) => <CustomHeader variant="h4" {...props} />,
-  h4: (props) => <CustomHeader variant="h5" {...props} />,
-  h5: (props) => <CustomHeader variant="h6" {...props} />,
-  h6: (props) => <CustomHeader variant="h6" {...props} />,
+  h1: (props) => <CustomHeader variant="h1" my={4} {...props} />,
+  h2: (props) => <CustomHeader variant="h2" {...props} />,
+  h3: (props) => <CustomHeader variant="h3" {...props} />,
+  h4: (props) => <CustomHeader variant="h4" {...props} />,
+  h5: (props) => <CustomHeader variant="h5" {...props} />,
+  h6: (props) => <CustomHeader variant="h6"{...props} />,
   p: (props) => <Typography {...props} paragraph />,
   li: (props) => <Typography {...props} component="li" />,
   kbd: (props) => <Kbd {...props} />,

@@ -335,6 +335,7 @@ require_relative "./lib/rack/with_time"
 use Rack::WithTime
 ```
 
+
 In the `config.ru` file I'm going to add the new middleware to the stack and then define the actual class.
 
 The base for the `WithTime` middleware is the same as in the previous example, so I'll just paste the prepared code here.
@@ -388,11 +389,12 @@ If you will write about other examples of using effects in ruby, let me know, I 
 
 It can become a while until effects will be widely adopted across ruby applications but you may be one of the early adopters!
 
-:::note Become an awesome subscriber!  
+:::note Become an awesome subscriber!
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 
 For more advanced examples join [Hanami Mastery PRO](https://pro.hanamimastery.com) or my GitHub Sponsors, to get access to weekly premium episodes!
+
 
 ## Special Thanks!
 

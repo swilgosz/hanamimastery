@@ -1,4 +1,5 @@
 import '../styles/highlighting.css';
+import '../styles/fonts.css';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/core/styles';
