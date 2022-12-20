@@ -7,7 +7,7 @@ title: "A sneak-peak into dependency loading with Hanami and dry-container"
 excerpt: "dry-system and dry-container are extremely powerful tools and if you understand how to work with them, you'll never look back. It's amazing that Hanami uses them by default! Check out some useful debugging tips!"
 videoId: mMyqUaPBLWI
 publishedAt: "2022-01-25"
-modifiedAt: "2022-07-19"
+modifiedAt: "2022-12-21"
 thumbnail:
   full: /images/episodes/13/cover-full.jpeg
   big: /images/episodes/13/cover-big.jpeg
@@ -19,10 +19,9 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/sc8wei/a_sneakpeak_into_dependency_loading_debugging/
 source: https://github.com/hanamimastery/episodes/tree/main/013
 ---
-
 In this episode I'll show you a few ways to debug dependency loading via [dry-container](https://dry-rb.org/gems/dry-container) in Hanami applications, by using one of my recent setbacks.
 
-# Repository pattern
+## Repository pattern
 In episode 9, I showcased [a complete integration of persistence layer in Hanami 2.0 applications](https://hanamimastery.com/episodes/9-guide-to-models-in-hanami-and-rom), to deliver blog articles data read from my DB straight into the browser.
 
 However, **there was a mistake hidden in this tutorial** that started to haunt me right after the release of the next [Hanami Alpha version](https://hanamirb.org/blog/2021/11/09/announcing-hanami-200alpha3/), as it caused incompatibility issues with what I've shown in the video.
@@ -39,7 +38,7 @@ So, right after realizing that I did some research and to my surprise, **I was [
 
 In this article I'll explain where the problem came from and we will dig a little bit into **loading dependencies using application containers**.
 
-### Repository vs Relations
+## Repository vs Relations
 
 I will make a detailed explanation of a repository pattern and how it's done in Hanami **as part of my Hanami Mastery PRO very soon**, but for now, let's focus on the dependency injection part.
 
@@ -49,7 +48,7 @@ Therefore in Hanami, we have [Relations](https://rom-rb.org/5.0/learn/core/relat
 
 What I did in the initial integration of ROM was **placing repositories next to relations** in the general lib folder (`lib/sandbox/peristence/repositories`) and this was the core problem.
 
-#### Repository
+### Repository
 
 A repository is **a bridge between the persistence layer and application logic** in your application.
 
@@ -61,7 +60,7 @@ In this case, **each of our slices would have a separate repository**, providing
 
 Therefore **repositories belong to the business part of your application** and it is recommended that you define multiple repositories in different slices, which use the same relations to receive some data.
 
-#### Relations
+### Relations
 
 Relations, on the other hand, are definitely a part of the persistence logic.
 
@@ -85,7 +84,7 @@ end
 
 **You may define very common queries there** but queries specific for the given use case will definitely be placed within repositories.
 
-### The improved Hanami file structure
+## The improved Hanami file structure
 
 In occasion of a work on Hanami 2 Alpha3 release [Tim Riley](https://github.com/timriley) did an [extraordinary contribution to dry-system](https://github.com/dry-rb/dry-system/pull/181) improving it in a way that made possible flattened directory structure. You may read more about this amazing feature he added in his [OSS Update article for September 2021](https://timriley.info/writing/2021/10/11/open-source-status-update-september-2021/).
 
@@ -93,7 +92,7 @@ Then several improvements had been applied, and as a result, **repository loadin
 
 Having that said, let's fix my implementation!
 
-### Moving repository to a slice
+## Moving repository to a slice
 
 I have here my repository placed in a general lib folder, inside of my app's and persistence namespaces.
 
@@ -210,7 +209,7 @@ Now my code is much cleaner and makes much more sense.
 
 ![List of articles loaded from DB](/images/episodes/13/articles-list.png)
 
-### Container debugging tips.
+## Container debugging tips.
 
 It all seems very nice and easy, but it's because **I exactly knew how my repositories are loaded**, and under what keys they'll appear after the update.
 
@@ -222,7 +221,7 @@ It can speed up tests suits like crazy, and allow for dependency injection witho
 
 However, if you don't know the exact key your dependency is accessible by, it may be a bit confusing at the beginning to use it, so it is useful to know how to find loadable components.
 
-#### Lazy loading dependencies
+### Lazy loading dependencies
 
 In the hanami console, I have the access to the `container` variable right away and it returns the general application container where all our configuration stuff lays in.
 
@@ -260,7 +259,7 @@ This feature **allows the hanami console to be always extremely quick** and **th
 
 However, it's often useful to preview all loadable deps to quickly find what we need.
 
-#### Load all dependencies on-demand using `#finalize!`
+### Load all dependencies on-demand using `#finalize!`
 
 I can force the container to load everything at once by calling `#finalize!` method ending it with a bang.
 
@@ -291,7 +290,7 @@ container.keys
 
 With this **you receive a complete control over loading dependencies,** however here you still can't see your repositories, can you?
 
-### Slice-specific containers
+## Slice-specific containers
 
 It happens because **each slice has their own container**, independent of each other.
 
@@ -352,7 +351,7 @@ For example, if I want to use logger in my action all I need to do in my file wo
 include Deps['application.logger']]
 ```
 
-#### Finalizing All container at once with
+### Finalizing All container at once with
 
 There may be a situation, where you want to just load everything from all slices and just don't care. You can easily do it by manually booting your application. As my application is named `Sandbox`, my code would look like this:
 
@@ -385,7 +384,7 @@ Main::Container.keys
 #  "views.home.show"]
 ```
 
-### Summary
+## Summary
 
 [dry-system](https://dry-rb.org/gems/dry-system) and [dry-container](https://dry-rb.org/gems/dry-container) are extremely powerful tools and if you understand how to work with them, you'll never look back.
 
@@ -395,7 +394,7 @@ That's all for today, I hope you enjoyed this episode and that as always, you'll
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
-### Thanks
+## Thanks
 
 I want to especially thank my recent sponsors, **Andrzej Krzywda, Sebastjan Hribar**, and [Useo](https://useo.pl) for supporting this project, really apreciate it!
 
