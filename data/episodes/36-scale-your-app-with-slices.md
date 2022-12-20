@@ -4,8 +4,8 @@ aliases: ["HMEP036"]
 author: "swilgosz"
 topics: ['hanami', 'architecture']
 title: "Scale your app with slices!"
-excerpt: "In Hanami you can reduce technical debt and keep fast development when application grows. For that, slices is the key feature to revolutionise the way you think abou web applications in Ruby."
-videoId: null
+excerpt: "In Hanami, you can reduce technical debt and keep fast development when the application grows. For that, slices is the key feature to revolutionize the way you think about web applications in Ruby."
+videoId: 0FNyymwYGwM
 publishedAt: "2022-12-20"
 modifiedAt: "2022-12-20"
 thumbnail:
@@ -338,7 +338,7 @@ module Admin
 end
 ```
 
-Now sending the request to each of the URL, will return the name of included component to prove, it’s loaded properly.
+Now sending the request to each of the URLs, will return the name of the included component to prove, it’s loaded properly.
 
 ![Response from API slice with impoted component](/images/episodes/36/api-unsubscribe-imported-component.png)
 ## Resolving parts of the app.
