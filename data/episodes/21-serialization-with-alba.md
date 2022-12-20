@@ -7,7 +7,7 @@ title: "JSON Serialization with Alba in Hanami"
 excerpt: "Serialize your API responses in Hanami applications with alba - the fastest ruby serialization gem"
 videoId: SHxV_pxh6m4
 publishedAt: "2022-05-10"
-modifiedAt: "2022-05-10"
+modifiedAt: "2022-12-21"
 thumbnail:
   full: /images/episodes/21/cover-full.jpeg
   big: /images/episodes/21/cover-big.jpeg
@@ -111,6 +111,10 @@ slice :main, at: "/" do
   get '/users', to: 'users.index'
 end
 ```
+
+:::tip Test your router
+Usually, I'm also adding tests for my code, which I don't show in the episodes to keep videos short and clean. Check out [HME022 - Testing the router](22-testing-hanami-router) and [HME031 - Testing persistence](/episodes/31-rom-factory) to get some idea about testing Hanami applications.
+:::
 
 Next, to inform my browser that all my responses are in JSON format, I'm going to add a before hook in the base action of the main slice, that will set the expected format before each call.
 
@@ -300,7 +304,7 @@ Now, when I'll visit the user endpoint to check the third user, I'll get prefill
 
 ### Key transformation
 
-Alba allows you to transform keys using the injected inflector! It works by default with active_support inflector, but it also supports the `dry-inflector`, which is default in Hanami.
+Alba allows you to transform keys using the injected inflector! It works by default with active_support inflector, but it also supports the `dry-inflector`, which is a default in Hanami.
 
 The only thing I need to add to the serializer is 
 

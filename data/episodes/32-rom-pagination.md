@@ -7,7 +7,7 @@ title: "Pagination in Hanami apps with ROM"
 excerpt: "There are plenty of popular ways to handle pagination in Ruby apps. But did you know, that ROM supports Pagination out of the box? And so Hanami does? In this episode, I'll show you how to quickly implement pagination from scratch for your Hanami projects."
 videoId: 5p9dEv7ENbA
 publishedAt: "2022-10-17"
-modifiedAt: "2022-10-17"
+modifiedAt: "2022-12-21"
 thumbnail:
   full: /images/episodes/32/cover-full.jpeg
   big: /images/episodes/32/cover-big.jpeg
@@ -84,7 +84,9 @@ end
 
 I use the `after` callback to set my HTTP response status to`:ok` after the action successfully processes the request.
 
-> If you want to know more about setting this persistence layer up, check out my [episodes related to ROM](/t/rom-rb), I’ve already covered several of them. Or, check out the [Hanami Mastery PRO](https://pro.hanamimastery.com), where I’m trying to share more advanced tutorials in a regular manner.
+:::note
+If you want to know more about setting this persistence layer up, check out my [episodes related to ROM](/t/rom-rb), I’ve already covered several of them. Or, check out the [Hanami Mastery PRO](https://pro.hanamimastery.com), where I’m trying to share more advanced tutorials in a regular manner.
+:::
 
 All seems to be fine, however, in the case of hundreds of articles in my database, I definitely would not like to fetch all of them and render a return to the response at once.
 
@@ -135,6 +137,12 @@ module Sandbox
   end
 end
 ```
+
+:::caution Working with relations
+For the sake of this example, my repository return relation object, that I can call pagination methods on. However, it's not the encouraged practice.
+
+[Repositories should return already finalized collection](/episodes/29-leverage-rom-repositories) - an array and should be used for simple queries. For any more advanced usage, like complicated queries, dynamic filters, or pagination, I encourage using Query Objects.
+:::
 
 Now, in the articles index action, I just need to include the newly created module, and add the pagination step to the `handle` method.
 

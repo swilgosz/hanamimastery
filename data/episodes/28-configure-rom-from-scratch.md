@@ -7,7 +7,7 @@ title: "Configure ROM from scratch"
 excerpt: "Hanami 2.0 comes without the persistence layer nor views preconfigured. It is useful then to know how to set up the best ORM available in the Ruby ecosystem."
 videoId: qbhCJ6jO0oE
 publishedAt: "2022-09-20"
-modifiedAt: "2022-09-20"
+modifiedAt: "2022-12-21"
 thumbnail:
   full: /images/episodes/28/cover-full.jpeg
   big: /images/episodes/28/cover-big.jpeg
@@ -68,6 +68,10 @@ end
 You may refer to [HMEP21](/episodes/21-serialization-with-alba) to see how I’ve set the JSON response header to my actions. I talked there about **serialization using Alba**, and covered several API-related configuration stuff.
 
 Of course, the route is also set up, so when I'll visit the `/articles` URL in the browser, you'll see the empty JSON response and the goal is to fill it with the content loaded from the database.
+
+:::tip Test your router
+In my episodes, I mostly show only working code, however the process of creating it is a bit different. If you're interested in how to test Hanami apps, check out [HME022 - Testing the router](22-testing-hanami-router) to get some idea about testing phase.
+:::
 
 Hanami 2.0 **will not have persistence nor view** layer pre-configured.
 

@@ -7,7 +7,7 @@ title: "Inline documentation - the secret habit of successful devs."
 excerpt: "Everyone would love to have a secret power. A skill that makes you a hero. There is no one such skill, but in this episode, I'll talk about inline documentation - a great skill that can make you a better developer."
 videoId: -h52cUY4obo
 publishedAt: "2022-03-08"
-modifiedAt: "2022-07-19"
+modifiedAt: "2022-12-21"
 thumbnail:
   full: /images/episodes/17/cover-full.jpeg
   big: /images/episodes/17/cover-big.jpeg
@@ -373,6 +373,8 @@ So what can we do to make inline documentation useful, not another piece of garb
 
 Remember, that **inline docs are an additional thing to maintain**. If you can keep things simple, do it! Document only what is necessary, and when you see it necessary.
 
+For example, do not document syntax norms, [leverage rubocop for checking and autocorrecting this for you](/episodes/23-rubocop-most-frustrating-to-most-loved)!
+
 ### 2. Use existing conventions and frameworks.
 
 Make use of existing tools, like YARD, to get a bunch of additional benefits.
@@ -390,7 +392,6 @@ When I would write sth like: `UUIDV4Generator.call`, then I'd definitely not be 
 Inline documentation is a great tool that can bring awesome long-term benefits to your team, and I find it very useful if we keep sanity about it.
 
 :::note Become an awesome subscriber!
-
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 
@@ -406,4 +407,4 @@ for supporting this project, I really appreciate it!
 
 By helping me with a few dollars per month creating this content, you are helping the open-source developers and maintainers to create amazing software for you!
 
-And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
+And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussion threads. Help me add value to the Open-Source community!

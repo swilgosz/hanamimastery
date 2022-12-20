@@ -7,7 +7,7 @@ title: "Hanami Router with TDD"
 excerpt: "Routing is one of the basic components of any web application. In this episode I'll dig a bit into the Hanami router from the usage point of view, covering why it's great and how to work with it."
 videoId: YI9YUYIROAw
 publishedAt: "2022-06-13"
-modifiedAt: "2022-06-13"
+modifiedAt: "2022-12-21"
 thumbnail:
   full: /images/episodes/22/cover-full.jpeg
   big: /images/episodes/22/cover-big.jpeg
@@ -25,6 +25,12 @@ Recently, I’ve had some [fun with Hanami Actions](/episodes/18-hanami-actions-
 ### Routing
 
 Routing is one of the basic components of any web application. This is the interface between your application and the clients using it. In this episode I'll dig a bit into the Hanami router from the usage point of view, covering why it's great and how to work with it.
+
+:::tip Check out ROM testing
+In this episode we only cover the route testing. If you're interested in chekcing how to test other parts of your app, look at the [HME031 - Testing persistence](/episodes/31-rom-factory) - to wrap your head about persistence tips for Hanami applications.
+
+To reach the [Yoda Level of test coverage](/episodes/24-different-levels-of-test-coverage), you need to know them all :).
+:::
 
 ### Hanami-Router Path recognition tests
 I'm going to start by writing a test file for my routes. Usually, I don't show this on the screencasts, but [I'm a big fan of test-driven development](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/), and whenever possible I'm trying to practice TDD during actual development. To write routing tests, I'll create a new routes spec file, under the `spec/main` folder. One of the best things about Hanami is that most parts of the application can be unit-tested, and the Routing part is not an exception.
