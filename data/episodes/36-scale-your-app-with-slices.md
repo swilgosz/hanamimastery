@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/36/cover-big.jpeg
   small: /images/episodes/36/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1592540395149426688
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/zqoggy/scale_your_app_with_slices_hanamimastery_36/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/zqogq3/scale_your_app_with_slices_hanamimastery_36/
 source: https://github.com/hanamimastery/episodes/tree/main/036
 ---
 With [Hanami 2.0 being released](https://hanamirb.org/blog/2022/11/22/announcing-hanami-200/), there is now a lot of cool, stable stuff we can cover in our screencasts, and one of them is something I was planned to tell about for a while already.
