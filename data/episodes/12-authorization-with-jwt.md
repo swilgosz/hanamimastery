@@ -7,7 +7,7 @@ title: "Authorization with JWT in Hanami applications!"
 excerpt: "Authorizating your API applications can be trivial, if you have proper tolls to do it. Here I showcase how authorization with JWT can be done effortless in any ruby application by using Hanami 2 as an example."
 videoId: ITusxlun0J8
 publishedAt: "2022-01-03"
-modifiedAt: "2022-04-29"
+modifiedAt: "2022-12-21"
 thumbnail:
   full: /images/episodes/12/cover-full.jpeg
   big: /images/episodes/12/cover-big.jpeg
@@ -21,19 +21,19 @@ discussions:
 source: https://github.com/hanamimastery/episodes/tree/main/012
 ---
 
-I have this simple Hanami API application allowing me to list some draft articles and published ones, under separate endpoints. However, none of those endpoints is authorized, which means that anybody can access all my resources at any point in time!
+I have this simple Hanami API application allowing me to list some draft articles and published ones, under separate endpoints. However, **none of those endpoints is authorized**, which means that anybody can access all my resources at any point in time!
 
-I'd like to have all my requests authorized by default, according to the [secure by default](https://en.wikipedia.org/wiki/Secure_by_default) principle, and for that, I'll want to go with the JSON Web Token authorization.
+I'd like to have all my requests authorized by default, according to the [secure by default](https://en.wikipedia.org/wiki/Secure_by_default) principle, and for that, I'll want to go with the *JSON Web Token authorization*.
 
 In this episode of Hanami Mastery, I'll show you how to implement the [JWT authorization mechanism](https://jwt.io/introduction) and a simple access check to verify the rights to access the given resource.
 
-### Authorization levels
+## Authorization levels
 
 In web API there are usually at least two levels of authorization. First is the application level, when we register the client application in our system and give it particular access, such as user session management or a registration.
 
 Then the other level of accessibility is when a user gets logged in and tries to access available resources.
 
-A nice example is a GitHub OAuth applications setup when you can register an application that can connect with GitHub API, and only when you use it to log in the user, you get access to more resources like your own private repositories for example.
+A nice example is a [GitHub OAuth applications setup](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app) when you can register an application that can connect with GitHub API, and only when you use it to log in the user, you get access to more resources like your own private repositories for example.
 
 ![Oauth application registration in Github](/images/episodes/12/oauth-applications-registration.png)
 
@@ -41,11 +41,13 @@ The reason for that is simple. Skipping authorization checks for endpoints, like
 
 Today I want to show you just the JWT authorization, and for the sake of this example I assume that you have the authentication mechanism implemented already. If that's not the case, I will cover authentication in one of my soon-to-be-released episodes. You can subscribe to my channel to be sure you won't miss it and support me to speed things up!
 
-### JayDoubleuTee
+## JayDoubleuTee
 
 To implement authorization for my Hanami application I'll use the [jay_doubleu_tee](https://github.com/hanamimastery/jay_doubleu_tee) gem, which is a tiny wrapper on top of the standard JWT implementation for ruby, to simplify the integration with web apps, and reduce the overhead required to add it to any - and I mean: **ANY Rack-based application**.
 
 In the README of this gem, you can even get a plain ruby script with only a few lines of code, that just works!
+
+Even though currently, it [came with only the minor version](/episodes/33-semantic-versioning) so far, it's already useful and stable.
 
 ```ruby
 # config.ru
@@ -115,6 +117,10 @@ So thanks, and as always, if You'll ever find anything where I could improve, le
 
 Anyway, back to the topic.
 
+## Using JWT with Hanami app
+
+Now let me show you how to use this gem in the Rack-compatible ruby applications, using Hanami app as an example.
+
 ### Generate the token for testing
 
 First I need to add the `jay_doubleu_tee` gem to my `Gemfile`. Then run the bundle to install new dependencies and we're ready to configure our authorization stuff.
@@ -124,6 +130,10 @@ First I need to add the `jay_doubleu_tee` gem to my `Gemfile`. Then run the bund
 
 gem 'jay_doubleu_tee'
 ```
+
+:::tip Learn safe versioning
+If you're interested in ideas how to manage gem versions in bigger projects, check out [HME034 introducing pessimize gem](/episodes/34-versioning-with-pessimize). It's just one way to never accidentially update gem unintentionally.
+:::
 
 To authorize the endpoint I need a token. As `jay_doubleu_tee` uses the RSA algorithm by default, I'll generate the private and public key pair and the token itself just for testing purposes.
 
@@ -366,7 +376,7 @@ end
 
 The behavior of my application stays the same. In the browser, I get the successful response for the correct scopes, but if I'll change it, I get the forbidden response instead.
 
-### Summary
+## Summary
 
 Implementing authorization in rack application can be trivial, and as basically any Ruby Web application is based on Rack, if there are Rack-Compatible gems to achieve a particular task, integrating them can be as easy as making a toast.
 
@@ -374,7 +384,7 @@ That's all for today, I hope you enjoyed this episode and that my ridiculous nam
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
-### Thanks
+## Thanks
 
 I want to especially thank my recent sponsors, **Andrzej Krzywda, Sebastjan Hribar**, and [Useo](https://useo.pl) for supporting this project, I appreciate it a lot!
 
