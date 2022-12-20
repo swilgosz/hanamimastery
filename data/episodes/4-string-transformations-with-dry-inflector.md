@@ -5,7 +5,7 @@ topics: ["dry-rb", "dry-inflector"]
 title: "An easy string manipulations in Ruby with DRY-INFLECTOR!"
 excerpt: "Use constantize, classify, underscore and MORE on Strings in Pure ruby! Use dry-inflector to quickly apply non-standard string transformations!"
 publishedAt: "2021-06-14"
-modifiedAt: "2022-07-19"
+modifiedAt: "2022-12-21"
 aliases: ['HMEP004']
 videoId: "iCplLYsvGuI"
 thumbnail:
@@ -249,6 +249,6 @@ I'd like to thank All the amazing people who decided to sponsor me so far. I app
 
 Any support allows me to spend more time on creating content that promotes great open source projects. I hope to do more of this stuff in the future!
 
-- [Bohdan V.](https://g3d.dev/) - For joining to my [regular supporters](https://github.com/sponsors/swilgosz)!
+- Bohdan V. - For joining to my [regular supporters](https://github.com/sponsors/swilgosz)!
 - [Jonathan Kemper](https://unsplash.com/@jupp) - for a great cover photo
 - [Luca Guidi](https://lucaguidi.com/) - for creating `dry-inflector` gem.

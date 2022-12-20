@@ -5,7 +5,7 @@ topics: ["dry-rb", "dry-configurable"]
 title: "Configure anything with dry-configurable"
 excerpt: "Configuring projects and components is one of the most common features in programming in general. dry-configurable is a standalone gem providing you exactly this in Ruby! Read about how to use it."
 publishedAt: "2021-06-19"
-modifiedAt: "2022-09-13"
+modifiedAt: "2022-12-21"
 aliases: ['HMEP005']
 videoId: J_352sH25oc
 thumbnail:
@@ -134,7 +134,7 @@ app2.config.api_url
 
 Simple? Simple.
 
-Keep in mind, that this way you may have, for example, 
+Keep in mind, that this way you may have, for example,
 
 - **multiple clients connecting to an external** `API`, each client being **completely independent!**
 - **multiple database connections**
@@ -347,7 +347,7 @@ I'd like to thank Bohdan V. for supporting this channel, and all other people en
 Any support allows me to spend more time on creating this content, promoting great open source projects, so Thank you!.
 
 
-- [Bohdan V.](https://g3d.dev/) - For joining my [Mate supporters tier](https://github.com/sponsors/swilgosz)!
+- Bohdan V. - For joining my [Mate supporters tier](https://github.com/sponsors/swilgosz)!
 - [Paul Hanaoka](https://unsplash.com/@plhnk) - For an amazing Cover Photo
 - [Andy Holland](https://github.com/AMHOL) - for coming with *dry-configurable* idea.
 - [Nikita Shilnikov](https://github.com/flash-gordon) - For amazing upgrades.
