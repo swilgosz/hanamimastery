@@ -106,7 +106,7 @@ export default function JobOffers() {
           <Collapse in={open2} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem button color="primary" className={classes.nestedList}>
-                <Link href="https://careers.ascendaloyalty.com/o/senior-backend-engineer-data-platform-fintech-budapest" target="_blank_">
+                <Link href="https://careers.ascendaloyalty.com/" target="_blank_">
                   <ListItemText primary="Sr Backend Engineer" />
                 </Link>
               </ListItem>
