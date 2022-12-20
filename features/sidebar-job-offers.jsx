@@ -87,15 +87,15 @@ export default function JobOffers() {
                 {/* <ListItemIcon>
                   <ArrowIcon />
                 </ListItemIcon> */}
-                <Link href="https://apply.workable.com/dnsimple/j/36AE622A87/" target="_blank_">
-                  <ListItemText primary="Software Engineer" />
+                <Link href="https://apply.workable.com/dnsimple/" target="_blank_">
+                  <ListItemText primary="All job offers" />
                 </Link>
               </ListItem>
-              <ListItem button color="primary" className={classes.nestedList}>
+              {/* <ListItem button color="primary" className={classes.nestedList}>
                 <Link href="https://apply.workable.com/dnsimple/j/F17DAD5B37/" target="_blank_">
                   <ListItemText primary="Sr Software Engineer" />
                 </Link>
-              </ListItem>
+              </ListItem> */}
             </List>
           </Collapse>
 
@@ -107,7 +107,7 @@ export default function JobOffers() {
             <List component="div" disablePadding>
               <ListItem button color="primary" className={classes.nestedList}>
                 <Link href="https://careers.ascendaloyalty.com/" target="_blank_">
-                  <ListItemText primary="Sr Backend Engineer" />
+                  <ListItemText primary="All job offers" />
                 </Link>
               </ListItem>
             </List>
