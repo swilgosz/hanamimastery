@@ -299,7 +299,7 @@ Are you convinced already? If not, let's check one more example!
 
 #### 4. Generate Javascript Code for EventStore Projections in Ruby Client
 
-The last snippet of this mix I want to show now, I [implemented in ruby event store client](https://github.com/yousty/event_store_client/blob/master/lib/event_store_client/adapters/http/commands/projections/create.rb) not so long ago, to allow for **generating server-side projections, that are written in Javascript**!
+The last snippet of this mix I want to show now, I [implemented in ruby event store client](https://github.com/yousty/event_store_client/blob/1d1b1e6f92ed66ad7777dc96c1d3c86575caba2f/lib/event_store_client/adapters/http/commands/projections/create.rb) not so long ago, to allow for **generating server-side projections, that are written in Javascript**!
 
 ```ruby
 # frozen_string_literal: true
