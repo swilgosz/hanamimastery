@@ -11,7 +11,10 @@ thumbnail:
   full: /images/articles/2022-summary/cover-full.jpeg
   big: /images/articles/2022-summary/cover-big.jpeg
   small: /images/articles/2022-summary/cover-small.jpeg
-source: https://github.com/hanamimastery/episodes/tree/main/001
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1608026496571932674
+  reddit:
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/zx551b/hanami_mastery_2022_year_summary_and_next_plans/
 category: stray
 ---
 It's this time of a year, when your mind works in a special way. You can close a chapter, and start fresh, adjust, rethimk, adapt.
