@@ -5,9 +5,9 @@ author: "fiachetti"
 topics: ['gems']
 title: "Safe gem upgrades with pessimize gem"
 excerpt: "Upgrading gems in the bigger project can become a hustle if you don't use tools like pessimize to help you deal with them safely."
-videoId: null
-publishedAt: "2022-11-29"
-modifiedAt: "2022-11-29"
+videoId: vGWrAE6WgXQ
+publishedAt: "2022-12-24"
+modifiedAt: "2022-12-24"
 thumbnail:
   full: /images/episodes/34/cover-full.jpeg
   big: /images/episodes/34/cover-big.jpeg
