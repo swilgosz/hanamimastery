@@ -293,7 +293,7 @@ end
 
 I’ll rename the subscribing slice in the Admin context to `subscriptions`, just to show this functionality.
 
-### Use imported external components in actons
+### Use imported external components in actions
 
 With this, I can open my actions, and access my imported interactors freely from there! Let me open the API subscribe action and add the new interactor.
 
