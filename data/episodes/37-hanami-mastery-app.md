@@ -20,12 +20,11 @@ discussions:
     rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 ---
-
-[🎬 01] Hi there!
+Hi there!
 
 During Hanami Mastery episodes production, I'm struggling with some repeatable actions, that I'd love to automate if possible. Without that, this generates unnecessary costs and delays. Moreover, it makes ME a bottleneck when it comes to releasing videos and articles more often.
 
-[🎬 02] **NOTE**: present: [Hanami Mastery App](https://github.com/hanamimastery/app) In this episode, I'm going to give you a short overview of one of the projects I've in plans for 2023 which will significantly simplify my workflows.
+**NOTE**: present: [Hanami Mastery App](https://github.com/hanamimastery/app) In this episode, I'm going to give you a short overview of one of the projects I've in plans for 2023 which will significantly simplify my workflows.
 
 ## Real-world Hanami application
 
@@ -39,27 +38,27 @@ Enjoy!
 
 ## Episode publication process
 
-[🎬 03] In this diagram, you can see a visualization of what is needed to publish an episode of Hanami Mastery. Unfortunately, a lot of actions are required, to publish a single video with an article, and this is troublesome for me.
+In this diagram, you can see a visualization of what is needed to publish an episode of Hanami Mastery. Unfortunately, a lot of actions are required, to publish a single video with an article, and this is troublesome for me.
 
 ![Diagram showing current process of content creation](diagram-old-rcreation-process.png)
 ### Scheduling an episode.
 
-[🎬 04] Currently, when I have an episode text, and video shoots ready, I send them to my team for production. In the meantime, I'm adding my `*.md` file to the Hanami Mastery repository and push to the episode's branch.
+Currently, when I have an episode text, and video shoots ready, I send them to my team for production. In the meantime, I'm adding my `*.md` file to the Hanami Mastery repository and push to the episode's branch.
 
 ![Diagram showing current process of scheduling videos](diagram-video-schedule-process-old.png)
 
-[🎬 05] When the video is ready, my team uploads it to the google drive folder, from where I upload it to Youtube and schedule it for publication.
+When the video is ready, my team uploads it to the google drive folder, from where I upload it to Youtube and schedule it for publication.
 
 Then I grab the video ID, and manually commit it to the `*.md` file.
 
-[🎬 06] NOTE: Present bullet points.
+NOTE: Present bullet points.
 I'm wondering if we could simplify that into:
 1. automatically recognize when the video is uploaded to google drive.
 2. then automatically fetch the file and upload it to youtube
 3. then grab the video ID, and commit to the episode's `*.md` file on the GitHub episode branch
 4. Schedule a worker, that periodically checks episodes to publish, and merges my branch to master when the correct publication date appears.
 
-[🎬 07] That would be one part. Having sth like this will be already a huge help for me, but we can do even better!
+That would be one part. Having sth like this will be already a huge help for me, but we can do even better!
 
 ### Image version preparation
 
@@ -79,7 +78,7 @@ But is it all?
 
 ### Scheduling episodes, and automatic publishing
 
-[🎬 08] In content creation, consistency is the key, and I do struggle with it, because I'm publishing my episodes manually right now.
+In content creation, consistency is the key, and I do struggle with it, because I'm publishing my episodes manually right now.
 
 ![Diagram showing current process of scheduling videos](diagram-publishing-scheduling-old.png)
 
@@ -91,16 +90,16 @@ This is what I'm going to improve in this year too, but there is one more piece 
 
 ### Publishing to multiple channels
 
-[🎬 09] I have the final part of this process, where every single episode needs to be published to multiple channels, to notify all of you about the release.
+I have the final part of this process, where every single episode needs to be published to multiple channels, to notify all of you about the release.
 
 ![[Pasted image 20221231061224.png]]
 
 I don't mind, but it's freaking time consuming, and if we could simplify this too, that would mean wonders to me.
 
-For example, because of [content_for :devs podcast](https://www.contentfor.dev) and [🎬 10] NOTE: Show bullet points below. Hanami Mastery, I'm running 
-- 3 different Twitter accounts, 
-- 3 Mastodon accounts, 
-- 2 Facebook profiles, 
+For example, because of [content_for :devs podcast](https://www.contentfor.dev) and NOTE: Show bullet points below. Hanami Mastery, I'm running
+- 3 different Twitter accounts,
+- 3 Mastodon accounts,
+- 2 Facebook profiles,
 - 2 Email newsletters
 - ... and more
 
@@ -110,11 +109,11 @@ It's a lot.
 
 ![Diagram showing current process of scheduling videos](diagram-publisher-old.png)
 
-[🎬 11] Then, when I publish episode on Reddit and Twitter, I paste the posts URLs to the episode content, and commit again to Github.
+Then, when I publish episode on Reddit and Twitter, I paste the posts URLs to the episode content, and commit again to Github.
 
 I bet you feel the pain. **It's not optimized at all**.
 
-[🎬 12] So what about having an app to help you with it? Allowing you to publish to several platforms, several accounts, communities?
+So what about having an app to help you with it? Allowing you to publish to several platforms, several accounts, communities?
 
 I'm not saying, to automate it all, but maybe allow some browsing, with status, publish to mastodon and twitter, and commit links automatically?
 
@@ -128,74 +127,11 @@ Now let's architecture this beauty...
 
 ## Summary
 
-[🎬 13] CTA :::tip Subscribe to Hanami Mastery PRO
-This is only a part of the episode! 
+CTA :::tip Subscribe to Hanami Mastery PRO
+This is only a part of the episode!
 Subscribe to [Hanami Mastery PRO](https://pro.hanamimastery.com) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
 :::
 
-## Architecture design approach
+## Thanks
 
-[🎬 14] To design my app, I will loosely follow the [C4-model of architecting software](https://c4model.com/).
-
-It's an amazing pattern, where I can design from high-level, and not care too much about implementation details. Then we could zoom in on my components and look for more detailed solutions.
-
-### Level one. Context diagram
-
-[🎬 15] The first level I want to work with, would be a context diagram, where I just list different systems and link them together to show the communication between them.
-
-![Diagram showing current process of scheduling videos](hm-app-context-diagram.png)
-
-#### Sidekiq Workers
-
-[🎬 16] I use Notion as my master content tracker, where I track the progress of episodes in different stage. This is very useful, as it's super customizable, and I can work on episodes together with my team.
-
-One of the entry points to our system, will be a sidekiq worker, that periodically checks the Notion database, for content to update. I'll set it to react on the very minimal set of triggers, and I'll dig into separate ones in the next videos and articles.
-
-![Diagram showing HM - Notion communication](hm-app-sidekiq-context.png)
-
-#### Video Scheduling
-
-[🎬 17] This will notify my other parts of the system, one of which will be probably the most complicated one - video uploader and scheduler.
-
-When the video is ready, we can update the item in Notion, and my scheduler will pick the file from google drive, check the criteria, and if they match, upload the correct video to YT. 
-
-![Diagram showing new uploader](hm-app-context-uploader.png)
-
-This will need to communicate with
-- Google Drive to fetch the file
-- Github to update video id.
-- Youtube to upload the video and schedule it
-
-In the beginning, I can just manually trigger the API call, but over time we could hook up Notion webhook, or even drive file trigger. Will see.
-
-#### Image Processing
-
-[🎬 18] Another component I have in mind is automatic image versioning. I can think of how to improve on this, but in general, this would just take the original image from the repository or drive, and add to the episode content automatically, with all versions generated.
-
-![Diagram showing current process of scheduling videos](hm-app-context-image-processing.png)
-
-This will simplify things a lot for sure.
-
-#### Episode publisher
-
-[🎬 19] The next element will be the publisher. Based on the saved episode details, we can communicate with multiple media and send a note about new content.
-
-![Diagram showing current process of scheduling videos](hm-app-context-publisher.png)
-
-This will require the sidekiq job to be scheduled every day and check if sth should be published on that day.
-
-Then publish using Github, and notify whenever possible. Easy? Heh!
-
-Multiple adapters, to send notifications in different media will be time-consuming, but will pay-off in the long-term, and more over, there will be a lot of stuff to talk about.
-
-#### API
-
-[🎬 20] Then finally, I'll need one more piece of puzzle, which is the Content management system. I need a way for users to interact with my app, and browser + API will be the best candidates for doing so.
-
-![Diagram showing current process of scheduling videos](hm-app-context-api.png)
-
-Here I'll allow caching the information about the content for easy browsing, storing events, etc.
-
-Although it's not crucial, it'll be one of the first elements I'll work with, because this kind of component will be very useful in testing features and integrations in a production environment.
-
-[🎬 21] I hope this makes sense, now I'll switch to more detailed diagrams. See you soon!
+That's all for today, thank you for watching!, and see you in the next episode!
