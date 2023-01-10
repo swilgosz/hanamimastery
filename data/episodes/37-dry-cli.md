@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/37/cover-big.jpeg
   small: /images/episodes/37/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1612917734441885709
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/108l1ps/advanced_cli_tools_with_ruby_and_drycli_hanami/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/108l35w/advanced_cli_tools_with_ruby_and_drycli_hanami/
 source: https://github.com/hanamimastery/episodes/tree/main/037
 ---
 
