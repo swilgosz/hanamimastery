@@ -1,26 +1,25 @@
 ---
-id: 39
-aliases: ["HMEP038"]
+id: 37
+aliases: ["HMEP037"]
 author: "swilgosz"
 topics: ['cli', 'dry-rb']
 title: "Advanced CLI tools with Ruby and dry-cli!"
 excerpt: "Utility scripts in Ruby can be very powerful, but also very messy. In this episode I showcase dry-cli, to help you maintain advanced ruby CLI progarms."
-videoId: null
+videoId: IXgdRbBRPDk
 publishedAt: "2023-01-10"
 modifiedAt: "2023-01-10"
 thumbnail:
-  full: /images/episodes/38/cover-full.jpeg
-  big: /images/episodes/38/cover-big.jpeg
-  small: /images/episodes/38/cover-small.jpeg
+  full: /images/episodes/37/cover-full.jpeg
+  big: /images/episodes/37/cover-big.jpeg
+  small: /images/episodes/37/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: https://github.com/hanamimastery/episodes/tree/main/038
+source: https://github.com/hanamimastery/episodes/tree/main/037
 ---
-Hi there!
 
 Recently I watched an amazing tutorial from *GoRails*, made by *Collin Jilbert*, about [writing simple ruby scripts for console tools](https://gorails.com/episodes/building-utilities-with-ruby-scripts).
 
@@ -44,7 +43,7 @@ Some of the transformations I need to do in a regular manner are:
 4. HTML generation
 5. Changing wiki links to normal links with absolute paths.
 
-Those functions can accept options and arguments, and you can imagine, how quickly it could get very messy in my program's source code to work with many of those. 
+Those functions can accept options and arguments, and you can imagine, how quickly it could get very messy in my program's source code to work with many of those.
 
 Moreover, think about how much repeatable code I would need to write every time l come up with a new micro-project!
 
@@ -198,7 +197,7 @@ opt_parser = OptionParser.new do |opts|
 end
 ```
 
-Then I need to call the `parse!` method on my parser, which will do the processing. 
+Then I need to call the `parse!` method on my parser, which will do the processing.
 ```ruby
 opt_parser.parse! # cleans ARGV from options args
 ```
@@ -234,7 +233,7 @@ require "dry/cli"
 module HanamiMastery
   module CLI
     extend Dry::CLI::Registry
-    
+
     register 'unshot', Unshot
     register 'touch', Touch
   end
@@ -357,7 +356,7 @@ Look how little I did to make this working! It's just defining a command class, 
 
 For example, let's say, I want my commands related to episode modification become subcommands of the wider set of actions.
 
-The only thing I need to do for this, would be wrapping them with a parent during registration. Here I'm going to change my commands call to 
+The only thing I need to do for this, would be wrapping them with a parent during registration. Here I'm going to change my commands call to
 
 ```ruby
 register "modify", aliases: ["m"] do |prefix|
@@ -375,7 +374,8 @@ Commands:
 ➜  038 git:(main) ✗ ./hanami_mastery.rb m -h
 Commands:
   hanami_mastery.rb m touch EPISODE                    # Updates the modifiedAt with the current date
-  hanami_mastery.rb m unshot EPISODE                   # Removes shot marks from a given article ```
+  hanami_mastery.rb m unshot EPISODE                   # Removes shot marks from a given article 
+```
 
 If this is not cool, I don't know what is.
 
@@ -405,7 +405,7 @@ I hope you've enjoyed this episode, and if you want to see more content in this 
 
 ### Thanks
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 -   [prowly.com](http://prowly.com)
 -   [Akilas Yemane](https://twitter.com/akilasy)
