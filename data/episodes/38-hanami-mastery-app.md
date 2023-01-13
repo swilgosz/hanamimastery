@@ -1,18 +1,18 @@
 ---
-id: 37
-aliases: ["HMEP037"]
+id: 38
+aliases: ["HMEP038"]
 author: "swilgosz"
 topics: ["hanami", "architecture"]
 title: "Intro to Apps architecture - Level 1: Context"
 excerpt: "In this episode we are going to design high-level concept of Hanami-based Web application. In 2023 we're going to automate a few things, and create production-ready Hanami application, that will support our content creation."
-videoId: null
+videoId: "TDeuxcRrjpU"
 premium: true
-publishedAt: "2023-01-09"
-modifiedAt: "2023-01-09"
+publishedAt: "2023-01-13"
+modifiedAt: "2023-01-13"
 thumbnail:
-  full: /images/episodes/37/cover-full.jpeg
-  big: /images/episodes/37/cover-big.jpeg
-  small: /images/episodes/37/cover-small.jpeg
+  full: /images/episodes/38/cover-full.jpeg
+  big: /images/episodes/38/cover-big.jpeg
+  small: /images/episodes/38/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
   reddit:
@@ -40,12 +40,13 @@ Enjoy!
 
 In this diagram, you can see a visualization of what is needed to publish an episode of Hanami Mastery. Unfortunately, a lot of actions are required, to publish a single video with an article, and this is troublesome for me.
 
-![Diagram showing current process of content creation](diagram-old-rcreation-process.png)
+![Diagram showing current process of content creation](/images/episodes/38/diagram-old-rcreation-process.png)
+
 ### Scheduling an episode.
 
 Currently, when I have an episode text, and video shoots ready, I send them to my team for production. In the meantime, I'm adding my `*.md` file to the Hanami Mastery repository and push to the episode's branch.
 
-![Diagram showing current process of scheduling videos](diagram-video-schedule-process-old.png)
+![Diagram showing current process of scheduling videos](/images/episodes/38/diagram-video-schedule-process-old.png)
 
 When the video is ready, my team uploads it to the google drive folder, from where I upload it to Youtube and schedule it for publication.
 
@@ -68,7 +69,7 @@ At the moment, I have image versions for each episode thumbnail, and often some 
 
 Unfortunately, I'm preparing the image versions manually, because I work with static site generator, without any neat image optimization/resizing logic involved.
 
-![Diagram showing current process of preparing versions](diagram-versions-preparation-old.png)
+![Diagram showing current process of preparing versions](/images/episodes/38/diagram-versions-preparation-old.png)
 
 But what if I could only come with 1 image version, and I'd have a script that resizes all thumbnails for me, and optimizes quality for web rendering, and then push them to the GitHub repository?
 
@@ -80,7 +81,7 @@ But is it all?
 
 In content creation, consistency is the key, and I do struggle with it, because I'm publishing my episodes manually right now.
 
-![Diagram showing current process of scheduling videos](diagram-publishing-scheduling-old.png)
+![Diagram showing current process of scheduling videos](/images/episodes/38/diagram-publishing-scheduling-old.png)
 
 It's impossible to publish every week at the same time this way, and automatic that part is crucial.
 
@@ -107,7 +108,7 @@ Then we have Reddit communities, twitter communities, facebook groups, Linkedin,
 
 It's a lot.
 
-![Diagram showing current process of scheduling videos](diagram-publisher-old.png)
+![Diagram showing current process of scheduling videos](/images/episodes/38/diagram-publisher-old.png)
 
 Then, when I publish episode on Reddit and Twitter, I paste the posts URLs to the episode content, and commit again to Github.
 
@@ -127,10 +128,8 @@ Now let's architecture this beauty...
 
 ## Summary
 
-CTA :::tip Subscribe to Hanami Mastery PRO
 This is only a part of the episode!
 Subscribe to [Hanami Mastery PRO](https://pro.hanamimastery.com) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
-:::
 
 ## Thanks
 
