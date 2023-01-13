@@ -4,8 +4,8 @@ aliases: ["HMEP037"]
 author: "swilgosz"
 topics: ['cli', 'dry-rb']
 title: "Advanced CLI tools with Ruby and dry-cli!"
-excerpt: "Utility scripts in Ruby can be very powerful, but also very messy. In this episode I showcase dry-cli, to help you maintain advanced ruby CLI progarms."
-videoId: IXgdRbBRPDk
+excerpt: "Utility scripts in Ruby can be very powerful, but also very messy. In this episode I showcase dry-cli, to help you maintain advanced ruby CLI programs."
+videoId: "FF3dsbd5ZNA"
 publishedAt: "2023-01-10"
 modifiedAt: "2023-01-10"
 thumbnail:
@@ -24,7 +24,7 @@ Recently I watched an amazing tutorial from *GoRails*, made by *Collin Jilbert*,
 
 It was a great introduction to CLI in Ruby, and it inspired me to write a follow-up on this topic because I also use ruby scripts in my terminal heavily.
 
-In this episode of Hanami Mastery I will go through how to write more advanced scripts to put your workflows to the next level.
+In this episode of Hanami Mastery I will go through **how to write more advanced scripts** to put your workflows to the next level.
 
 ## Problem to solve.
 
