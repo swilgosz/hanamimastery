@@ -7,7 +7,7 @@ title: "Advanced CLI tools with Ruby and dry-cli!"
 excerpt: "Utility scripts in Ruby can be very powerful, but also very messy. In this episode I showcase dry-cli, to help you maintain advanced ruby CLI programs."
 videoId: "FF3dsbd5ZNA"
 publishedAt: "2023-01-10"
-modifiedAt: "2023-01-10"
+modifiedAt: "2023-01-13"
 thumbnail:
   full: /images/episodes/37/cover-full.jpeg
   big: /images/episodes/37/cover-big.jpeg
@@ -373,7 +373,7 @@ Commands:
 ➜  038 git:(main) ✗ ./hanami_mastery.rb m -h
 Commands:
   hanami_mastery.rb m touch EPISODE                    # Updates the modifiedAt with the current date
-  hanami_mastery.rb m unshot EPISODE                   # Removes shot marks from a given article 
+  hanami_mastery.rb m unshot EPISODE                   # Removes shot marks from a given article
 ```
 
 If this is not cool, I don't know what is.
