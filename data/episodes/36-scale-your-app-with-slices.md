@@ -33,7 +33,7 @@ You can do so by extracting parts of your code into slices.
 
 [Slices](https://guides.hanamirb.org/v2.0/app/slices/) are very much independent parts of your application. They import a few general components from the main app, but other than that, they can be prepared and booted **independently** from other slices.
 
-![Hanami slies hierarchy](/images/episodes/36/hanami-slices-hierarchy.png)]
+![Hanami slies hierarchy](/images/episodes/36/hanami-slices-hierarchy.png)
 
 This opens nice opportunities for deploying different parts of your app without loading any unnecessary gems and components!
 
@@ -261,13 +261,13 @@ I don’t want to go into the logic here, sorry, because I only want to focus on
 
 Well, one benefit from doing this, could be that we can import all the components into any slice we want. We can use our interactors in both `API` and `Admin` panel, while maintain the HTTP handling separately.
 
-![Diagram: Sharing components across slices](images/episodes/36/diagram-sharing-components.png)]
+![Diagram: Sharing components across slices](/images/episodes/36/diagram-sharing-components.png)
 
 To do this, I just need to add the slice-specific configuration files.
 
 ### Configure Hanami slices to import components
 
-I’m going to allow people to subscribe themselves for book reviews and unsubscribe from them freely.
+I’m going to allow people to subscribe to book reviews and unsubscribe from them freely.
 
 ```ruby
 # config/slices/api.rb
