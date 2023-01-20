@@ -29,7 +29,7 @@ In this episode, I'm going to show you how I quickly transform markdown input in
 
 [🎬 02] I'm going to write a CLI script, to take my markdown file content as input, and generate HTML out of it.
 
-If you're wondering, why I need the console tool for this, the answer is pretty interesting. [🎬 03] I'm using Podia as a hosting provider for my Hanami Mastery PRO episodes, and however great their product is, their editor has some caveats.
+If you're wondering, why I need the console tool for this, the answer is pretty interesting. [🎬 03] I'm using Podia as a hosting provider for my Hanami Mastery PRO episodes, courses, and all the premium content for rubyists wanting something more. However great their product is, their editor has some caveats.
 
 To easily copy and paste the content into Podia and publish effortlessly, [🎬 04] I need to:
 
@@ -108,7 +108,29 @@ Now Let's make it to work.
 
 ## Transformation test
 
-[🎬 12] Let me start by writing a test for this. In the `spec` directory, I'm going to add a new file named `to_pro_spec.rb`. [🎬 13] Here I'll have two content variables, one is the input, and the other is my expected HTML result.
+[🎬 12] Let me start by writing a test for this. In the `spec` directory, I'm going to add a new file named `to_pro_spec.rb`. [🎬 13] Here I'll have two content variables, one is the input, and the other is my expected HTML result. I'll just paste prepared content just to save you from watching how I write meaningful HTML and markdown on the screen.
+
+```ruby
+  let(:content) do
+    <<~STRING
+      paragraph 1
+
+      paragraph 2
+
+      # Level 1 header
+      # Level 2 Header
+      # Level 3 Header
+
+      ![Sample Image](/images/episodes/34/sample-image.png)
+
+      :::call to action 1
+      sample content inside
+      - with line items
+      <>
+      :::
+    STRING
+  end
+```
 
 ```ruby
   let(:expected) do
@@ -222,15 +244,25 @@ result.gsub(/<\/h\d>/, "</h1>")
 
 ## Code verification
 
-[🎬 23] Now we can check if our transformation works as expected. First Let me run my test. It's all green!
+[🎬 23] Now we can check if our transformation works as expected. First Let me run my test. 
 
 ```ruby
 bundle exec rspec
 ```
 
-![Successful test results](/images/episodes/success-test-results.png)
+The HTML is rendered, but it seems, that my custom components had not been removed from the processing. Let me check what happened.
 
-[🎬 24] Now let me call the CLI command with the actual episode number to verify the actual content
+Oh, I forgot about rendering the HTML for already filtered markdown, not actual input. Now let me try again.
+
+This time it's better, but again a little failure - this time I've made a mistake in the regular expression, missing the closing character of the HTML tag. I will add it quickly here... and try again.
+
+Now It's all green! Yaay!
+
+![Successful test results](/images/episodes/39/success-test-results.png)
+
+[🎬 24] Now let me call the CLI command with the actual episode number to verify the actual content. This time I'll add the `-s` flag, to save the result to the file on the disk.
+
+I have my file listed here, so let me open it in the browser now...
 
 ```shell
 exec/hanami_mastery pro -s 36
@@ -238,6 +270,8 @@ open 36-episode.html
 ```
 
 ![HTML version of an episode content](/images/episodes/39/HME-html-version-no-styles.png)
+
+And voila! My HTML is properly generated, and I can easily copy that to my podia editor without any manual changes.
 
 Again, if anything here is unclear on how things work, I recommend checking episode 37, where I've described commands and DRY-CLI in detail.
 
