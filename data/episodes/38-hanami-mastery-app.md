@@ -14,11 +14,7 @@ thumbnail:
   big: /images/episodes/38/cover-big.jpeg
   small: /images/episodes/38/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1613836453829558272
 ---
 Hi there!
 
