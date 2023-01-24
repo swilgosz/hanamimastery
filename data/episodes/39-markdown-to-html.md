@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/39/cover-big.jpeg
   small: /images/episodes/39/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1617818461836828672
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/10k1vmz/html_from_markdown_made_simple/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/10k1vsk/html_from_markdown_made_simple/
 source: https://github.com/hanamimastery/episodes/tree/main/039
 ---
 
