@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ['commonmaker', 'cli', 'transformations']
 title: "HTML from markdown made simple!"
 excerpt: "Have you ever considered how to efficiently render HTML out of your markdown input in ruby? Here we cover this problem with additional custom cosmetic improvements."
-videoId: null
+videoId: FDEGSyTaLxQ
 publishedAt: "2022-02-09"
 modifiedAt: "2022-02-09"
 thumbnail:
