@@ -1,24 +1,24 @@
 ---
-id: 41
-aliases: ["HMEP041"]
+id: 40
+aliases: ["HMEP040"]
 author: "swilgosz"
 topics: ['hanami', 'cli']
 title: "Spin up your Hanami apps easily with Hanamismith"
 excerpt: "I always liked rails templating collections that allowed us to quickly compose ruby apps. Now the same is possible for Hanami!"
-videoId: null
+videoId: "V4QPZi3j7uY"
 publishedAt: "2023-01-31"
 modifiedAt: "2023-01-31"
 thumbnail:
-  full: /images/episodes/41/cover-full.jpeg
-  big: /images/episodes/41/cover-big.jpeg
-  small: /images/episodes/41/cover-small.jpeg
+  full: /images/episodes/40/cover-full.jpeg
+  big: /images/episodes/40/cover-big.jpeg
+  small: /images/episodes/40/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: https://github.com/hanamimastery/episodes/tree/main/041
+source: https://github.com/hanamimastery/episodes/tree/main/040
 ---
 Hi there!
 
@@ -160,7 +160,7 @@ hanami server
 
 Now, everything seems to work fine. Visiting my browser at `localhost` on port `2300` will show me the landing page.
 
-![Hanamismith Home page](/images/episodes/41/hanami-smith-home-page.png)
+![Hanamismith Home page](/images/episodes/40/hanami-smith-home-page.png)
 
 #### Views
 
@@ -168,7 +168,7 @@ Let's check out how the view rendering is done here. Visiting `Gemfile` will sho
 
 When I'll open the show template of my homepage, and update the content inside, I should see my updates after refreshing the page, without the need to restart the server.
 
-![Updated Home page view](/images/episodes/41/updated-homepage.png)
+![Updated Home page view](/images/episodes/40/updated-homepage.png)
 
 ### HTMX integration
 
