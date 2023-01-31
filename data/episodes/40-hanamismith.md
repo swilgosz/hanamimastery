@@ -13,11 +13,10 @@ thumbnail:
   big: /images/episodes/40/cover-big.jpeg
   small: /images/episodes/40/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1620474405343076377
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/10q4ydx/spin_up_your_hanami_apps_easily_with_hanamismith/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/10q4zsh/spin_up_your_hanami_apps_easily_with_hanamismith/
 source: https://github.com/hanamimastery/episodes/tree/main/040
 ---
 I was always a fan of having an [easy way to spin up scaffold rails applications](https://railsapps.github.io/rails-application-templates.html) with a [single console command](/episodes/37-dry-cli). For people like me, who test out every week a new idea, getting rid of all the manual work related to the repeatable configuration can mean a lot.
