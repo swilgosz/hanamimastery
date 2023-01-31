@@ -20,8 +20,6 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/040
 ---
-Hi there!
-
 I was always a fan of having an [easy way to spin up scaffold rails applications](https://railsapps.github.io/rails-application-templates.html) with a [single console command](/episodes/37-dry-cli). For people like me, who test out every week a new idea, getting rid of all the manual work related to the repeatable configuration can mean a lot.
 
 It's even more useful if your company has service-oriented architecture and new projects are being added in a regular manner.
@@ -96,7 +94,7 @@ After hitting enter, my application is built. We may get into the project folder
 
 ### App structure.
 
-You can see here that we have a standard Hanami 2 application created, but with some additional features. 
+You can see here that we have a standard Hanami 2 application created, but with some additional features.
 
 #### Github integration
 
@@ -129,7 +127,7 @@ createdb hanamimastery_development
 [55509] Use Ctrl-C to stop
 
 lib/puma/launcher.rb:304:in `write': No such file or directory @ rb_sysopen - tmp/server.pid (Errno::ENOENT)
-	from 
+	from
 ```
 
 Hm... It crashed again, because it cannot write to the `tmp` directory. I think I just need to create it via the `mkdir` command.
@@ -204,7 +202,7 @@ Yaay! It works!
 
 With this, You may now add real functionality to your app.
 
-Unfortunately, that's all I have for you today. 
+Unfortunately, that's all I have for you today.
 
 ## Summary
 
@@ -226,6 +224,6 @@ I want to especially thank my recent sponsors,
 
 and [all the Hanami Mastery PRO subscirbers](https://pro.hanamimastery.com/), for supporting this project, I really appreciate it!
 
-:::important Consider sponsoring?  
-If you want to support us, check out our [GitHub sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!  
+:::important Consider sponsoring?
+If you want to support us, check out our [GitHub sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!
 :::
