@@ -4,7 +4,7 @@ aliases: ["HMEP041"]
 author: "swilgosz"
 topics: ['hanami', 'deployment']
 title: "Deploying Hanami Apps to Render"
-excerpt: "<<Summary>>"
+excerpt: "Learn how to quickly deploy Hanami apps to production-§ready server, using Render hosting provider, the best replacement for Heroku right now."
 videoId: null
 publishedAt: "2022-02-09"
 modifiedAt: "2022-02-09"
