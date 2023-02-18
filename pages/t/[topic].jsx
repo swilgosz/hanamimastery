@@ -24,12 +24,14 @@ export default function BlogIndex({ posts, authors, topic }) {
           type: "website",
         }}
       />
-      <ArticlesLayout article={
-        <>
-        <h1>Recent articles and screencasts related to {topic}</h1>
-        <ContentGrid items={posts} />
-        </>
-      } />
+      <ArticlesLayout
+        article={
+          <>
+            <h1>Recent articles and screencasts related to {topic}</h1>
+            <ContentGrid items={posts} />
+          </>
+        }
+      />
     </>
   );
 }
@@ -45,9 +47,9 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const items = await getContent();
-  const arr = items.map((p) => (p.topics));
+  const arr = items.map((p) => p.topics);
   const allTopics = [].concat(...arr);
-  const topics = [...new Set(allTopics)]
+  const topics = [...new Set(allTopics)];
   return {
     paths: topics.map((t) => ({
       params: {

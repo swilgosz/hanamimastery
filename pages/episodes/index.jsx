@@ -42,11 +42,12 @@ export default function BlogIndex({ articles, episodes, authors }) {
 export async function getStaticProps() {
   const episodes = await getContent("episodes");
   const authors = await getContent("team");
+  console.log(authors);
 
   return {
     props: {
       episodes,
-      authors
+      authors,
     }, // will be passed to the page component as props
   };
 }

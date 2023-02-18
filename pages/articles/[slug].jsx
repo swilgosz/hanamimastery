@@ -1,7 +1,7 @@
 import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import ArticleLayout from "../../layouts/article-layout";
-import { getContentBySlug } from "../../utils/queries";
+import { getContentBySlug, getContent } from "../../utils/queries";
 import TopicSuggestion from "../../features/topic-suggestion";
 
 export default function Article({ mdxSource, frontMatter }) {
@@ -14,10 +14,10 @@ export default function Article({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await getContent("articles");
+  const posts = await getContent("articles");
 
   return {
-    paths: slugs.map((p) => ({ params: { slug: p.slug } })),
+    paths: posts.map((p) => ({ params: { slug: p.slug } })),
     fallback: false,
   };
 }

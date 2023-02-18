@@ -15,10 +15,10 @@ export default function Episode({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await getContent("episodes");
+  const posts = await getContent("episodes");
 
   return {
-    paths: slugs.map((p) => ({ params: { slug: p.slug } })),
+    paths: posts.map((p) => ({ params: { slug: p.slug } })),
     fallback: false,
   };
 }
