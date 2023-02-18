@@ -4,6 +4,7 @@ author: "swilgosz"
 topics: ["hanami", "hanami-view"]
 title: "Listing articles in Hanami and Dry-View"
 excerpt: "In this episode I explain the Hanami architecture related to views rendering, by using Hanami View, Hanami Actions and templates, to list articles for a blog applicaton."
+published: true
 publishedAt: "2021-05-15"
 modifiedAt: "2021-10-03"
 aliases: ['HMEP002']

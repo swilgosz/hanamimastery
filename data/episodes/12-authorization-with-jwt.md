@@ -5,6 +5,7 @@ author: "swilgosz"
 topics: ['hanami', 'authorization', 'dry-effects', 'dry-rb', 'dry-configurable']
 title: "Authorization with JWT in Hanami applications!"
 excerpt: "Authorizating your API applications can be trivial, if you have proper tolls to do it. Here I showcase how authorization with JWT can be done effortless in any ruby application by using Hanami 2 as an example."
+published: true
 videoId: ITusxlun0J8
 publishedAt: "2022-01-03"
 modifiedAt: "2022-12-21"

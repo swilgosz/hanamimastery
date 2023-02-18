@@ -6,6 +6,7 @@ topics: ["dry-rb", "dry-schema", "hanami"]
 title: "The underrated power of dry-schema"
 excerpt: "dry-schema is an extremely powerful and validation engine for Ruby applications and as it's a built-in validation solution for Hanami projects, It is important to get familiar with it."
 videoId: 6ayFwr2OcDc
+published: true
 publishedAt: "2022-04-19"
 modifiedAt: "2022-04-29"
 thumbnail:

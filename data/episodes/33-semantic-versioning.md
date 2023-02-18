@@ -6,6 +6,7 @@ topics: ['gems']
 title: "Deep dive into semantic versioning in Ruby"
 excerpt: "Semantic versioning is a useful approach to version your projects or gems - and that will be necessary at some point if you seriously think about ruby career."
 videoId: txa616T0VGQ
+published: true
 publishedAt: "2022-11-15"
 modifiedAt: "2022-11-15"
 thumbnail:

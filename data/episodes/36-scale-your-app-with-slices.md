@@ -6,6 +6,7 @@ topics: ['hanami', 'architecture']
 title: "Scale your app with slices!"
 excerpt: "In Hanami, you can reduce technical debt and keep fast development when the application grows. For that, slices is the key feature to revolutionize the way you think about web applications in Ruby."
 videoId: 0FNyymwYGwM
+published: true
 publishedAt: "2022-12-20"
 modifiedAt: "2022-12-20"
 thumbnail:

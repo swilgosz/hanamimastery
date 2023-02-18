@@ -6,6 +6,7 @@ topics: ['rom-rb', 'tests', 'rom-factory']
 title: "ROM-Factory - Your testing buddy for Hanami apps"
 excerpt: "If you have experience testing ruby applications, I'm sure you've heard about FactoryBot. Here I show you the alternative, suited for ROM-based applications, including Hanami 2."
 videoId: ZTgZTEQB1iM
+published: true
 publishedAt: "2022-10-11"
 modifiedAt: "2022-10-11"
 thumbnail:

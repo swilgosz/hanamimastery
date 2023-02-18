@@ -5,6 +5,7 @@ author: "swilgosz"
 topics: ['thoughts']
 title: "Hanami Mastery 2022 - Year Summary and next plans."
 excerpt: "The 2022 was a big progress for me in multiple fields, but 2023 is going to be even bigger. Let's summarize the year, stop for a while to thank everyone, and figure out plans for the upcoming year!"
+published: true
 publishedAt: "2022-12-28"
 modifiedAt: "2022-12-28"
 thumbnail:

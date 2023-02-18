@@ -5,6 +5,7 @@ author: "swilgosz"
 topics: ["thoughts", "hanami", 'open-source']
 title: "The secret of stunning OSS contributions!"
 excerpt: "If you can contribute to open-source, do it only if you can benefit from it. So if you can't benefit, either drop the idea or... make it beneficial!"
+published: true
 publishedAt: "2021-10-20"
 modifiedAt: "2022-04-29"
 thumbnail:

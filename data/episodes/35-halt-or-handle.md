@@ -6,6 +6,7 @@ topics: ['hanami', 'dry-monads']
 title: "Halt or Handle? Dealing with exceptions in Hanami apps!"
 excerpt: "Handling exceptions is one of the most needed features for any applications that can scale. If you are wondering, how to handle errors in Hanami 2 applications, don't look for more."
 videoId: DKvzkUXV1kU
+published: true
 publishedAt: "2022-12-13"
 modifiedAt: "2022-12-13"
 thumbnail:

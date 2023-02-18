@@ -6,6 +6,7 @@ topics: ["dry-rb", "dry-validation", "hanami"]
 title: "dry-validation - The one gem to validate them all!"
 excerpt: "Validating data input is an extremely important problem to tackle in all applications. In Ruby ecosystem there is no better tool for that than dry-validation. Here is why!"
 videoId: 2FhHo38dHpw
+published: true
 publishedAt: "2022-04-25"
 modifiedAt: "2022-04-29"
 thumbnail:

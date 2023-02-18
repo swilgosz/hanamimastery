@@ -4,6 +4,7 @@ author: "swilgosz"
 topics: ["dry-rb", "dry-configurable"]
 title: "Configure anything with dry-configurable"
 excerpt: "Configuring projects and components is one of the most common features in programming in general. dry-configurable is a standalone gem providing you exactly this in Ruby! Read about how to use it."
+published: true
 publishedAt: "2021-06-19"
 modifiedAt: "2022-12-21"
 aliases: ['HMEP005']

@@ -6,6 +6,7 @@ topics: ["linters", "quality", "rubocop"]
 title: "Rubocop - 4 ways to reduce your frustration!"
 excerpt: "Rubocop recently managed to be listed as one of the most loved and most frustrating ruby gems which is quite an achievement. In this episode, I'll show you how to keep it only in the loved section."
 videoId: HmIgiulHplc
+published: true
 publishedAt: "2022-06-27"
 modifiedAt: "2022-06-27"
 thumbnail:

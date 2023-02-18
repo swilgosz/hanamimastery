@@ -6,6 +6,7 @@ topics: ["rom-rb", "persistence", "hanami"]
 title: "Leverage ROM Repositories"
 excerpt: "Relations are the heart of ROM, but for bigger applications, you'll appreciate to know repositories."
 videoId: kbpFGlCXIeg
+published: true
 publishedAt: "2022-09-22"
 modifiedAt: "2022-09-22"
 premium: true

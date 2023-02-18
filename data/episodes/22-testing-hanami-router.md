@@ -6,6 +6,7 @@ topics: ["hanami", "hanami-router"]
 title: "Hanami Router with TDD"
 excerpt: "Routing is one of the basic components of any web application. In this episode I'll dig a bit into the Hanami router from the usage point of view, covering why it's great and how to work with it."
 videoId: YI9YUYIROAw
+published: true
 publishedAt: "2022-06-13"
 modifiedAt: "2022-12-21"
 thumbnail:

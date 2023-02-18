@@ -4,6 +4,7 @@ author: "swilgosz"
 topics: ["open-source", "thoughts"]
 title: "My attempt to change the world of Open-Source financing."
 excerpt: "Open-Source development is hard nowadays. Here I explain how I want to make it easier."
+published: true
 publishedAt: "2021-06-07"
 modifiedAt: "2022-07-19"
 aliases: ['HMAP001']

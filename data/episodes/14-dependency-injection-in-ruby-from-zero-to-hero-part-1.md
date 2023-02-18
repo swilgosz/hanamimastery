@@ -6,6 +6,7 @@ topics: ['dry-rb', 'dry-container', 'dependency-injection']
 title: "Dependency Injection in Ruby from 0 to hero (Part 1)"
 excerpt: "Dependency Injection is an extremely useful programming technique and can be easily implemented in Ruby! Mastering it is an important skill to leverage the power of Hanami applications! dry-container is one way to help you with it!"
 videoId: sYl2v3YgK2Q
+published: true
 publishedAt: "2022-01-31"
 modifiedAt: "2022-04-29"
 thumbnail:

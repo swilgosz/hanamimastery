@@ -4,6 +4,7 @@ author: "swilgosz"
 topics: ['dry-rb']
 title: "I've made a dependency graph for all DRY gems of Ruby gems family!"
 excerpt: "Have you ever wondered which DRY-RB library learn first? I did when I started with DRY-RB. I hope this will help!"
+published: true
 publishedAt: "2021-07-27"
 modifiedAt: "2022-04-29"
 aliases: ['HMAP004']

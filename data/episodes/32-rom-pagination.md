@@ -6,6 +6,7 @@ topics: ["hanami", "rom-rb", "pagination", "persistence"]
 title: "Pagination in Hanami apps with ROM"
 excerpt: "There are plenty of popular ways to handle pagination in Ruby apps. But did you know, that ROM supports Pagination out of the box? And so Hanami does? In this episode, I'll show you how to quickly implement pagination from scratch for your Hanami projects."
 videoId: 5p9dEv7ENbA
+published: true
 publishedAt: "2022-10-17"
 modifiedAt: "2022-12-21"
 thumbnail:

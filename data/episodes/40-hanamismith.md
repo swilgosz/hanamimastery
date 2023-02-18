@@ -6,6 +6,7 @@ topics: ['hanami', 'cli']
 title: "Spin up your Hanami apps easily with Hanamismith"
 excerpt: "I always liked rails templating collections that allowed us to quickly compose ruby apps. Now the same is possible for Hanami!"
 videoId: "V4QPZi3j7uY"
+published: true
 publishedAt: "2023-01-31"
 modifiedAt: "2023-01-31"
 thumbnail:

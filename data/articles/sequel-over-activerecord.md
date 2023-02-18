@@ -5,6 +5,7 @@ author: "swilgosz"
 topics: ["hanami", "rails", "persistence", "rom-rb", "activerecord", "sequel"]
 title: "ROM and Sequel over ActiveRecord?"
 excerpt: "I've wondered why Hanami uses sequel under the hood. There are some problems with ActiveRecord, but I've wanted to know exactly, what it is about. Here is the summary of my foundings."
+published: true
 publishedAt: "2021-11-19"
 modifiedAt: "2022-04-29"
 thumbnail:

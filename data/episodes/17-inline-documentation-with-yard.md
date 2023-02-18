@@ -6,6 +6,7 @@ topics: ['documentation']
 title: "Inline documentation - the secret habit of successful devs."
 excerpt: "Everyone would love to have a secret power. A skill that makes you a hero. There is no one such skill, but in this episode, I'll talk about inline documentation - a great skill that can make you a better developer."
 videoId: -h52cUY4obo
+published: true
 publishedAt: "2022-03-08"
 modifiedAt: "2022-12-21"
 thumbnail:
