@@ -6,6 +6,7 @@ topics: ['hanami', 'integrations', 'google']
 title: "Connect your ruby app with google drive."
 excerpt: ""
 videoId: null
+published: false
 premium: true
 publishedAt: "2023-02-23"
 modifiedAt: "2023-02-23"
