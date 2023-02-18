@@ -6,6 +6,7 @@ topics: ['rom-rb', 'hanami', 'relations', 'sequel', 'persistence']
 title: "Configure ROM from scratch"
 excerpt: "Hanami 2.0 comes without the persistence layer nor views preconfigured. It is useful then to know how to set up the best ORM available in the Ruby ecosystem."
 videoId: qbhCJ6jO0oE
+published: true
 publishedAt: "2022-09-20"
 modifiedAt: "2022-12-21"
 thumbnail:

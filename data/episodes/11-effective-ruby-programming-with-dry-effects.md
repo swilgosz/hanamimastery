@@ -6,6 +6,7 @@ topics: ["dry-rb", "hanami", "dry-effects"]
 title: "Effective programming in ruby"
 excerpt: "2 real-world examples of using algebraic effects in Hanami ruby applications with dry-effects."
 videoId: "Ik_81cHFAqg"
+published: true
 publishedAt: "2021-11-29"
 modifiedAt: "2022-12-17"
 thumbnail:

@@ -6,6 +6,7 @@ topics: ["tests"]
 title: "7 Levels of test coverage"
 excerpt: "Do you measure your test coverage? Do you know that everything below 80% is irrelevant? Here I list 7 levels of test coverage, check out where you are!"
 videoId: _6drOV_-k-4
+published: true
 publishedAt: "2022-07-19"
 modifiedAt: "2022-07-19"
 thumbnail:

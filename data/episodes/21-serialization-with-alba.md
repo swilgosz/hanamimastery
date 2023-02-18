@@ -6,6 +6,7 @@ topics: ["hanami", "api", "rom-rb"]
 title: "JSON Serialization with Alba in Hanami"
 excerpt: "Serialize your API responses in Hanami applications with alba - the fastest ruby serialization gem"
 videoId: SHxV_pxh6m4
+published: true
 publishedAt: "2022-05-10"
 modifiedAt: "2022-12-21"
 thumbnail:

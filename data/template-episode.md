@@ -5,6 +5,7 @@ topics: ["templates"]
 title: "#1 <<Title>>"
 excerpt: "<<Summary>>"
 videoId: null
+published: true
 publishedAt: "2021-09-09"
 modifiedAt: "2021-10-03"
 aliases: ['HMEP008']

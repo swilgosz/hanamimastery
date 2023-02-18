@@ -7,6 +7,7 @@ title: "Intro to Apps architecture - Level 1: Context"
 excerpt: "In this episode we are going to design high-level concept of Hanami-based Web application. In 2023 we're going to automate a few things, and create production-ready Hanami application, that will support our content creation."
 videoId: "TDeuxcRrjpU"
 premium: true
+published: true
 publishedAt: "2023-01-13"
 modifiedAt: "2023-01-13"
 thumbnail:

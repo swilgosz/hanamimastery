@@ -6,6 +6,7 @@ topics: ["sitemap", "seo"]
 title: "Generate Sitemaps for Hanami applications!"
 excerpt: "Sitemap is one of the core features for any web application, to make sure your site is indexed properly. Here is how to generate sitemaps in Hanami applications using sitemap_generator gem!"
 videoId: 5F_Ty2-ha-Y
+published: true
 publishedAt: "2022-08-08"
 modifiedAt: "2022-08-08"
 thumbnail:

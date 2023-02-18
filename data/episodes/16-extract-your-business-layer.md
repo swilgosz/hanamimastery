@@ -6,6 +6,7 @@ topics: ['hanami', 'rails', 'architecture']
 title: "Your app is not your business!"
 excerpt: "Check out these 4 ways to separate your business logic aside of your application layer in Ruby applications."
 videoId: intcf3jzzn8
+published: true
 publishedAt: "2022-03-01"
 modifiedAt: "2022-04-29"
 thumbnail:

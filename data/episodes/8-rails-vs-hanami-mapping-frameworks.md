@@ -5,6 +5,7 @@ topics: ['rails', 'hanami']
 title: "Learn new things easily - mapping Rails to Hanami!"
 excerpt: "When I've started with learning Hanami, I've struggled a lot because of the different concepts Hanami has over Rails. In this episode of Hanami Mastery I'm mapping Rails to Hanami for easier learning."
 videoId: 73oJ-_aldc8
+published: true
 publishedAt: "2021-09-09"
 modifiedAt: "2022-04-29"
 aliases: ['HMEP008']

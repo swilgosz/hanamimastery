@@ -4,6 +4,7 @@ author: "swilgosz"
 topics: ["hanami"]
 title: "Hanami architecture explained"
 excerpt: "People ask me about the simple explanation of Hanami architecture. Why is it so complicated? Is it? I'll try to explain it in simple words."
+published: true
 publishedAt: "2021-06-29"
 modifiedAt: "2022-07-19"
 aliases: ['HMAP002']

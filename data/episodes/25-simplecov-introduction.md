@@ -6,6 +6,7 @@ topics: ["tests", "simplecov"]
 title: "Branch for a next Launch - Simplecov!"
 excerpt: "Enchance your test coverage reports by mastering the Simplecov gem!"
 videoId: "84J-_DlvoQE"
+published: true
 publishedAt: "2022-07-25"
 modifiedAt: "2022-07-25"
 thumbnail:

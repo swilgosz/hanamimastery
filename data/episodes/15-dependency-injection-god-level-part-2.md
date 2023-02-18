@@ -6,6 +6,7 @@ topics: ["dry-rb", "dry-system", "dependency-injection", "hanami", 'dry-inflecto
 title: "Dependency Injection in Ruby - GOD Level! Meet dry-system! (Part 2)"
 excerpt: "Dependency injection brings you great power, but comes with its own headaches. If you can get rid of them, You're left with the power only. In Ruby, with dry-system, it's possible. Here is how!"
 videoId: hT0NcYiTsQY
+published: true
 publishedAt: "2022-02-07"
 modifiedAt: "2022-04-29"
 thumbnail:

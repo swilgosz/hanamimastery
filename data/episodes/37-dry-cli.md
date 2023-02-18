@@ -6,6 +6,7 @@ topics: ['cli', 'dry-rb']
 title: "Advanced CLI tools with Ruby and dry-cli!"
 excerpt: "Utility scripts in Ruby can be very powerful, but also very messy. In this episode I showcase dry-cli, to help you maintain advanced ruby CLI programs."
 videoId: "FF3dsbd5ZNA"
+published: true
 publishedAt: "2023-01-10"
 modifiedAt: "2023-01-13"
 thumbnail:
