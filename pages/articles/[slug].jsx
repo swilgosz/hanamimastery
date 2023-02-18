@@ -1,7 +1,6 @@
 import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import ArticleLayout from "../../layouts/article-layout";
-import { getSlugs } from "../../utils/file-browsers";
 import { getContentBySlug } from "../../utils/queries";
 import TopicSuggestion from "../../features/topic-suggestion";
 

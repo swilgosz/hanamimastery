@@ -3,7 +3,6 @@ import { MDXRemote } from "next-mdx-remote";
 import components from "../../features/mdx-components";
 import TopicSuggestion from "../../features/topic-suggestion";
 import EpisodeLayout from "../../layouts/episode-layout";
-import { getSlugs } from "../../utils/file-browsers";
 import { getContent, getContentBySlug } from "../../utils/queries";
 
 export default function Episode({ mdxSource, frontMatter }) {
