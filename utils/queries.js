@@ -76,6 +76,9 @@ async function getContent(type) {
     const source = readFileByPath(filePath);
     const { data } = matter(source);
 
+    if ((type === "articles" || type === "episodes") && !data.published)
+      return allPosts;
+
     return [_serializeContentData(filePath, data), ...allPosts].sort(
       (itemA, itemB) => {
         if (itemA.publishedAt > itemB.publishedAt) return -1;
