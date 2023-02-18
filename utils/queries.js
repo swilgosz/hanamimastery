@@ -1,13 +1,10 @@
-const fs = require('fs')
-const path = require("path")
-const root = process.cwd();
-
+const path = require("path");
 const readingTime = require("reading-time");
 const matter = require("gray-matter");
 const mdxPrism = require("mdx-prism");
 const { serialize } = require("next-mdx-remote/serialize");
 const { readFileByPath, getPaths } = require("./file-browsers");
-const admonitions = require('remark-admonitions');
+const admonitions = require("remark-admonitions");
 
 /*
   Extends the file meta data by additional fields and information, like
@@ -16,16 +13,17 @@ const admonitions = require('remark-admonitions');
   @param [Object] data object to extend, read from the file
 */
 function _serializeContentData(filePath, data) {
-  const postSlug = filePath.split("/").slice(1)[0];
-  const type = filePath.split("/")[0]
-  const itemPath = (type == 'pages') ? postSlug : filePath;
-  const host = process.env.NEXT_PUBLIC_BASE_URL || '';
+  const normalizedPath = path.normalize(filePath);
+  const postSlug = normalizedPath.split(path.sep).slice(1)[0];
+  const type = normalizedPath.split(path.sep)[0];
+  const itemPath = type == "pages" ? postSlug : filePath;
+  const host = process.env.NEXT_PUBLIC_BASE_URL || "";
 
   return {
     ...data,
     type,
     premium: data.premium || false,
-    fullTitle: (type == 'episodes') ? `#${data.id} ${data.title}` : data.title,
+    fullTitle: type == "episodes" ? `#${data.id} ${data.title}` : data.title,
     slug: postSlug,
     path: itemPath,
     url: `${host}/${itemPath}`,
@@ -33,9 +31,9 @@ function _serializeContentData(filePath, data) {
     thumbnail: {
       full: `${host}${data.thumbnail.full}`,
       big: `${host}${data.thumbnail.big}`,
-      small: `${host}${data.thumbnail.small}`
-    }
-  }
+      small: `${host}${data.thumbnail.small}`,
+    },
+  };
 }
 
 /*
@@ -45,7 +43,7 @@ function _serializeContentData(filePath, data) {
   @return [Object] a content object
 */
 async function getContentBySlug(type, slug) {
-  const filePath = slug ? `${type}/${slug}` : type
+  const filePath = slug ? `${type}/${slug}` : type;
   const source = readFileByPath(filePath);
 
   const { data, content } = matter(source);
@@ -78,14 +76,13 @@ async function getContent(type) {
     const source = readFileByPath(filePath);
     const { data } = matter(source);
 
-    return [
-      _serializeContentData(filePath, data),
-      ...allPosts,
-    ].sort((itemA, itemB) => {
-      if (itemA.publishedAt > itemB.publishedAt) return -1;
-      if (itemA.publishedAt < itemB.publishedAt) return 1;
-      return 0;
-    });
+    return [_serializeContentData(filePath, data), ...allPosts].sort(
+      (itemA, itemB) => {
+        if (itemA.publishedAt > itemB.publishedAt) return -1;
+        if (itemA.publishedAt < itemB.publishedAt) return 1;
+        return 0;
+      }
+    );
   }, []);
 }
 
@@ -95,7 +92,7 @@ async function getContent(type) {
 */
 async function getContentByTopic(topic) {
   const posts = await getContent();
-  return posts.filter((item) => (item.topics.includes(topic)));
+  return posts.filter((item) => item.topics.includes(topic));
 }
 
 exports.getContentBySlug = getContentBySlug;
