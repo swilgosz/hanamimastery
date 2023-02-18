@@ -15,10 +15,10 @@ export default function Article({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await getSlugs("articles");
+  const slugs = await getContent("articles");
 
   return {
-    paths: slugs.map((p) => ({ params: { slug: p } })),
+    paths: slugs.map((p) => ({ params: { slug: p.slug } })),
     fallback: false,
   };
 }

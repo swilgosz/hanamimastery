@@ -4,7 +4,7 @@ import components from "../../features/mdx-components";
 import TopicSuggestion from "../../features/topic-suggestion";
 import EpisodeLayout from "../../layouts/episode-layout";
 import { getSlugs } from "../../utils/file-browsers";
-import { getContentBySlug } from "../../utils/queries";
+import { getContent, getContentBySlug } from "../../utils/queries";
 
 export default function Episode({ mdxSource, frontMatter }) {
   return (
@@ -16,10 +16,10 @@ export default function Episode({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await getSlugs("episodes");
+  const slugs = await getContent("episodes");
 
   return {
-    paths: slugs.map((p) => ({ params: { slug: p } })),
+    paths: slugs.map((p) => ({ params: { slug: p.slug } })),
     fallback: false,
   };
 }
