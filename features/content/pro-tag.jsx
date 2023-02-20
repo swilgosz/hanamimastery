@@ -2,7 +2,7 @@
 import React from "react";
 import { Chip, makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   protag: {
     marginLeft: '5px',
     padding: '0',
@@ -14,7 +14,7 @@ const ProTag = ({pro}) => {
   const classes = useStyles();
   if (!pro) {
     return '';
-  } else {
+  } 
     return(
       <Chip
         className={classes.protag}
@@ -27,7 +27,7 @@ const ProTag = ({pro}) => {
         clickable
       />
     );
-  }
+  
 }
 
 export default ProTag;

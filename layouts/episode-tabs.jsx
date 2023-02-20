@@ -48,10 +48,6 @@ function LinkTab(props) {
   );
 }
 
-function SrcFolderName(id) {
-  return (parseInt(id) < 100 ? `0${id}` : id);
-}
-
 export default function EpisodeTabs({episode}) {
   const classes = useStyles();
 
@@ -61,7 +57,7 @@ export default function EpisodeTabs({episode}) {
 
   const episodePath = React.useMemo(() => `/episodes/${slug}`, [slug]);
   const value = getTabsValue(view);
-  const source = episode.source;
+  const {source} = episode;
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   return (
@@ -73,7 +69,7 @@ export default function EpisodeTabs({episode}) {
       >
         <LinkTab
           label="Read"
-          aria-selected={true}
+          aria-selected
           href={episodePath}
           {...a11yProps(0)}
         />

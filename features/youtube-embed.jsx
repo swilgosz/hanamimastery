@@ -1,9 +1,7 @@
-import PropTypes from "prop-types";
-
 const YoutubeEmbed = ({ embedId }) => {
   if (!embedId) {
     return '';
-  } else {
+  } 
     return <div className="video-responsive">
       <iframe
         width="853"
@@ -15,7 +13,7 @@ const YoutubeEmbed = ({ embedId }) => {
         title="Embedded youtube"
       />
     </div>
-  }
+  
 };
 
 

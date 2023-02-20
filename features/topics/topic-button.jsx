@@ -3,9 +3,8 @@ import React from "react";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Chip, makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
-
   },
 }));
 

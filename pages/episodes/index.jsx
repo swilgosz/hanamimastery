@@ -7,7 +7,7 @@ import HomePageSchema from "../../features/content-schemas/homepage-schema";
 import { setAuthors } from "../../redux/slices/authors";
 import { getContent } from "../../utils/queries";
 
-export default function BlogIndex({ articles, episodes, authors }) {
+export default function BlogIndex({ episodes, authors }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setAuthors(authors));
@@ -31,7 +31,7 @@ export default function BlogIndex({ articles, episodes, authors }) {
         article={
           <>
             <h1>Recent Hanami Mastery screencast episodes</h1>
-            <ContentGrid items={episodes} more={true} />
+            <ContentGrid items={episodes} more />
           </>
         }
       />

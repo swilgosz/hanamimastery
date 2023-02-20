@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, makeStyles } from "@material-ui/core";
+import { Container} from "@material-ui/core";
+import { MDXRemote } from "next-mdx-remote";
 import { SeoComponent } from "../features/seo";
 
-import { MDXRemote } from "next-mdx-remote";
 import components from "../features/mdx-components";
 import ArticlesLayout from "../layouts/articles-layout";
 import { getContentBySlug } from "../utils/queries";

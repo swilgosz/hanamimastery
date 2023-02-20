@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import NextLink from 'next/link';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     margin: '25px 0',
     padding: '10px',
@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
   const classes = useStyles();
+
   return (
     <Grid
       className={classes.root}

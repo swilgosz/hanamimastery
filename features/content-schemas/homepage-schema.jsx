@@ -8,9 +8,8 @@ function makeHomePageSchema() {
       url: process.env.NEXT_PUBLIC_BASE_URL,
       description: "Master the Hanami Ruby framework in no time with high-quality video guides and articles!",
       keywords: "hanami, hanamirb, ruby, web development",
-      name: 'Hanami Mastery',
       about: {
-        url: "${process.env.NEXT_PUBLIC_BASE_URL}/about`",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/about`,
         name: "About",
         description: "Hanami Mastery is an initiative to help Hanami community grow."
       },
@@ -49,7 +48,7 @@ function makeHomePageSchema() {
 export default function HomePageSchema({ episode }) {
   return (
       <script
-          key={`blogJSON-homepage`}
+          key="blogJSON-homepage"
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(makeHomePageSchema(episode)) }}
       />

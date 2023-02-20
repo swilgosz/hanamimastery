@@ -1,6 +1,7 @@
+/* eslint-disable no-param-reassign */
 import { NextSeo } from "next-seo";
 
-export const SeoComponent = ({ title, fullTitle, thumbnails, url, excerpt, topics, ogtype }) => {
+export const SeoComponent = ({ title, fullTitle, thumbnails, url, excerpt, topics }) => {
   if (!thumbnails) {
     thumbnails = { big: `${process.env.NEXT_PUBLIC_BASE_URL || ''}/logo-hm.jpeg` }
   }

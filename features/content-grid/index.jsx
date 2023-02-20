@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ContentDisplay = (props) => {
   const classes = useStyles();
-  const items = props.items;
+  const {items} = props;
   return (
     <Grid container component="ul" className={classes.list} spacing={6}>
       {items.map((item, index) => (

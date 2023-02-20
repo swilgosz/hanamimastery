@@ -1,8 +1,8 @@
 import * as React from "react";
 
 import { Grid, Container, Typography } from "@material-ui/core";
-import { SeoComponent } from "../../features/seo";
 import { useRouter } from "next/router";
+import { SeoComponent } from "../../features/seo";
 import { useStyles } from "./episode-layout.styles";
 import BuyMeACoffee from "../../features/buy-me-a-coffee-button";
 import Discussions from "../../features/content/discussions";
@@ -42,7 +42,7 @@ const EpisodeLayout = ({ episode, children }) => {
   const displayVideo = React.useMemo(() => shouldDisplayVideo(view), [view]);
 
   let prefix;
-  if (view == "discuss") {
+  if (view === "discuss") {
     prefix = "Discussions for "
   } else {
     prefix = ""

@@ -81,8 +81,8 @@ export default function Discusions({ discussions, url, title, identifier }) {
           shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
           config={{
             url: `${url}`,
-            title: title,
-            identifier: identifier,
+            title,
+            identifier,
           }}
         />
       </div>

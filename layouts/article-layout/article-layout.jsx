@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Grid, Container, Typography } from "@material-ui/core";
-import { SeoComponent } from "../../features/seo";
 import { useRouter } from "next/router";
+import { SeoComponent } from "../../features/seo";
 import { useStyles } from "./article-layout.styles";
 import ArticleSchema from "../../features/content-schemas/article-schema";
 import ArticleTabs from "../article-tabs";
@@ -35,13 +35,6 @@ const ArticleLayout = ({ article, children }) => {
     () => shouldDisplayDiscussions(view),
     [view]
   );
-
-  let prefix;
-  if (view == "discuss") {
-    prefix = "Discussions for "
-  } else {
-    prefix = ""
-  }
 
   return (
     <>

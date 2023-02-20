@@ -10,7 +10,6 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-
 import NextLink from "next/link";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -99,7 +98,7 @@ function SidebarSponsors() {
         ))}
       </AutoPlaySwipeableViews>
       <Typography className={classes.centered}>
-          <NextLink href={`/sponsors`} passHref>
+          <NextLink href="/sponsors" passHref>
             <Button variant="contained" color="primary">
               See all sponsors
             </Button>

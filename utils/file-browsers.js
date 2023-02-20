@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require("path")
+
 const root = process.cwd();
 
 /*
@@ -30,7 +31,7 @@ return fileNames.map((fileName) => (fileName.replace(/\.md/, "")));
 async function getPaths(contentType) {
   let paths = [];
 
-  if (contentType == 'articles' || !contentType) {
+  if (contentType === 'articles' || !contentType) {
     const articles = await getSlugs('articles')
 
     paths = [
@@ -39,7 +40,7 @@ async function getPaths(contentType) {
     ];
   }
 
-  if (contentType == 'episodes' || !contentType) {
+  if (contentType === 'episodes' || !contentType) {
     const episodes = await getSlugs('episodes')
 
     paths = [

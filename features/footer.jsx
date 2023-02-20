@@ -7,8 +7,9 @@ const useStyles = makeStyles((theme) => ({
   footer: { marginTop: "auto", padding: theme.spacing(2) },
 }));
 
-export default function footer() {
+export default function Footer() {
   const classes = useStyles();
+
   return (
     <Typography
       component="footer"

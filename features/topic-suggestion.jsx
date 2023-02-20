@@ -1,17 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Button, Typography, Card, CardContent, CardActions, CardHeader } from "@material-ui/core";
-
-import DeleteIcon from '@material-ui/icons/Delete';
+import { Button, Typography, Card, CardContent, CardActions, makeStyles } from "@material-ui/core";
 import ChatIcon from '@material-ui/icons/Chat';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
-// import CardActions from '@mui/material/CardActions';
-
-
-import { makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
   },
   centered: {
@@ -29,7 +22,6 @@ export default function TopicSuggestion() {
   return (
     <Card sx={{ maxWidth: 345 }} className={classes.centered}>
       <CardContent>
-      <h3></h3>
         <Typography gutterBottom variant="h5" component="div">
         Do you know great Ruby gems?
         </Typography>

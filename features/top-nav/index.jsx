@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { makeStyles } from "@material-ui/core/styles";
 import NextLink from "next/link";
-import Image from "next/image";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Container, useMediaQuery, useTheme, Link } from "@material-ui/core";

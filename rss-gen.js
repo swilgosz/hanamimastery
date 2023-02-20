@@ -1,10 +1,10 @@
 const fs = require("fs")
-const rss = require("rss")
+const Rss = require("rss")
 
 const { getContent } = require("./utils/queries")
 
 async function getRssData() {
-  const feed = new rss({
+  const feed = new Rss({
     title: "Hanami Mastery newest episodes!",
     description: "The best way to master Hanami ruby framework!",
     feed_url: "https://hanamimastery.com/feed.xml",
@@ -24,10 +24,8 @@ async function getRssData() {
 
   posts.map(
     ({
-      author,
       excerpt,
       topics,
-      videoId,
       publishedAt,
       fullTitle,
       url,
@@ -47,7 +45,7 @@ async function getRssData() {
       //     'type' : 'video'
       //   }
       // }
-      feed.item(xmlItem);
+       return feed.item(xmlItem);
     }
   );
   return feed;

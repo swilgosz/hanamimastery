@@ -2,7 +2,6 @@ import NextLink from "next/link";
 import MenuItem from "@material-ui/core/MenuItem";
 import { nanoid } from "@reduxjs/toolkit";
 import RssFeedIcon from '@material-ui/icons/RssFeed';
-import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 
 const links = [
@@ -14,12 +13,6 @@ const links = [
   { href: "/sponsors", label: "Sponsors" },
   { href: "/feed", label: "RSS", icon: '/rss-feed-icon.png' }
 ];
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    color: "primary",
-  },
-}));
 
 const MenuItems = ({ MenuItemProps = {} }) =>
   links.map(({ href, label, icon, highlight }) => {

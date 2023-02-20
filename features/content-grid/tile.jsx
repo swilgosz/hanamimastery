@@ -17,6 +17,7 @@ import TextTruncate from "react-text-truncate";
 import { findAuthor } from "../../redux/slices/authors";
 import TopicList from "../topics/topic-list";
 import ProTag from "../content/pro-tag";
+
 const useStyles = makeStyles((theme) => ({
   content: {
     display: "flex",
@@ -38,9 +39,9 @@ const useStyles = makeStyles((theme) => ({
 
 const ContentTile = ({ item, variant }) => {
   const classes = useStyles();
-  const { author: authorName, id, topics, path, excerpt, thumbnail, slug, fullTitle } = item;
+  const { author: authorName, topics, path, excerpt, thumbnail, fullTitle } = item;
   const author = useSelector((state) => findAuthor(state, authorName));
-  const thumbnailUrl = variant == 'big' ? thumbnail.big : thumbnail.small
+  const thumbnailUrl = variant === 'big' ? thumbnail.big : thumbnail.small
   return (
     <Card className={classes.card}>
       <NextLink href={`/${path}`} passHref>
