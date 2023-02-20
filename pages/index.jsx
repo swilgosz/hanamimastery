@@ -1,16 +1,13 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import {
-  Box,
-  Button,
-} from "@material-ui/core";
-import NextLink from "next/link";
-import { SeoComponent } from "../features/seo";
-import ContentGrid from "../features/content-grid/index";
-import ArticlesLayout from "../layouts/articles-layout";
-import HomePageSchema from "../features/content-schemas/homepage-schema";
-import { setAuthors } from "../redux/slices/authors";
-import { getContent } from "../utils/queries";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Box, Button } from '@material-ui/core';
+import NextLink from 'next/link';
+import { SeoComponent } from '../features/seo';
+import ContentGrid from '../features/content-grid/index';
+import ArticlesLayout from '../layouts/articles-layout';
+import HomePageSchema from '../features/content-schemas/homepage-schema';
+import { setAuthors } from '../redux/slices/authors';
+import { getContent } from '../utils/queries';
 
 export default function BlogIndex({ articles, episodes, authors }) {
   const dispatch = useDispatch();
@@ -54,15 +51,15 @@ export default function BlogIndex({ articles, episodes, authors }) {
 }
 
 export async function getStaticProps() {
-  const episodes = await getContent("episodes");
-  const articles = await getContent("articles");
-  const authors = await getContent("team");
+  const episodes = await getContent('episodes');
+  const articles = await getContent('articles');
+  const authors = await getContent('team');
 
   return {
     props: {
       articles: articles.slice(0, 3),
       episodes: episodes.slice(0, 5),
-      authors
+      authors,
     }, // will be passed to the page component as props
   };
 }

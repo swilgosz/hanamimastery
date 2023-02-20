@@ -1,1 +1,1 @@
-export { default } from "./article-layout";
+export { default } from './article-layout';

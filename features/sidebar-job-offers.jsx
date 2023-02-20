@@ -9,13 +9,13 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import { Link, Card, CardContent, CardHeader} from "@material-ui/core";
+import { Link, Card, CardContent, CardHeader } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: theme.spacing(2),
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
   },
   list: {
     width: '100%',
@@ -27,21 +27,20 @@ const useStyles = makeStyles((theme) => ({
   },
   centered: {
     // display: 'block',
-    paddingTop: "0px",
-    marginTop: "0px",
+    paddingTop: '0px',
+    marginTop: '0px',
     textAlign: 'center',
-    display: 'block'
+    display: 'block',
   },
   header: {
     textAlign: 'center',
     display: 'block',
-    padding: '0px'
+    padding: '0px',
   },
   media: {
-    padding: '20px'
-  }
+    padding: '20px',
+  },
 }));
-
 
 export default function JobOffers() {
   const classes = useStyles();
@@ -57,7 +56,7 @@ export default function JobOffers() {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }} className={ classes.root }>
+    <Card sx={{ maxWidth: 345 }} className={classes.root}>
       <CardHeader title="Open Hanami Jobs" className={classes.header} />
       <CardContent>
         <List
@@ -78,7 +77,10 @@ export default function JobOffers() {
                 {/* <ListItemIcon>
                   <ArrowIcon />
                 </ListItemIcon> */}
-                <Link href="https://apply.workable.com/dnsimple/" target="_blank_">
+                <Link
+                  href="https://apply.workable.com/dnsimple/"
+                  target="_blank_"
+                >
                   <ListItemText primary="All job offers" />
                 </Link>
               </ListItem>
@@ -97,7 +99,10 @@ export default function JobOffers() {
           <Collapse in={open2} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem button color="primary" className={classes.nestedList}>
-                <Link href="https://careers.ascendaloyalty.com/" target="_blank_">
+                <Link
+                  href="https://careers.ascendaloyalty.com/"
+                  target="_blank_"
+                >
                   <ListItemText primary="All job offers" />
                 </Link>
               </ListItem>

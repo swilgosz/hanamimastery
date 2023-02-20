@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 
 function TabPanel(props) {
@@ -12,9 +12,7 @@ function TabPanel(props) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <div>{children}</div>
-      )}
+      {value === index && <div>{children}</div>}
     </div>
   );
 }

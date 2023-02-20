@@ -1,11 +1,11 @@
-import { Grid, makeStyles } from "@material-ui/core";
-import ContentTile from "./tile";
+import { Grid, makeStyles } from '@material-ui/core';
+import ContentTile from './tile';
 
 const useStyles = makeStyles((theme) => ({
   list: {
-    listStyle: "none",
+    listStyle: 'none',
     padding: theme.spacing(0, 4, 4, 0),
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('md')]: {
       padding: theme.spacing(0, 0),
     },
   },
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ContentDisplay = (props) => {
   const classes = useStyles();
-  const {items} = props;
+  const { items } = props;
   return (
     <Grid container component="ul" className={classes.list} spacing={6}>
       {items.map((item, index) => (
@@ -25,7 +25,6 @@ const ContentDisplay = (props) => {
           component="li"
         >
           <ContentTile item={item} variant={index === 0 ? 'big' : 'small'} />
-
         </Grid>
       ))}
     </Grid>

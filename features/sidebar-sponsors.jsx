@@ -10,7 +10,7 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import NextLink from "next/link";
+import NextLink from 'next/link';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -18,14 +18,12 @@ const tutorialSteps = [
   {
     label: 'DNSimple',
     url: 'https://dnsimple.com/opensource',
-    imgPath:
-      "/images/partners/dnsimple-logo-blue.png",
+    imgPath: '/images/partners/dnsimple-logo-blue.png',
   },
   {
     label: 'AscendaLoyalty',
     url: 'https://ascendaloyalty.com',
-    imgPath:
-    "/images/partners/Ascenda-mainlogo.png",
+    imgPath: '/images/partners/Ascenda-mainlogo.png',
   },
 ];
 
@@ -52,10 +50,10 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   centered: {
-    textAlign: "center",
+    textAlign: 'center',
     // alignItems: "center",
     // display: "flex",
-  }
+  },
 }));
 
 function SidebarSponsors() {
@@ -79,7 +77,9 @@ function SidebarSponsors() {
   return (
     <div className={classes.root}>
       <Paper square elevation={0} className={classes.header}>
-        <Typography variant="h5" gutterBottom>Trusted & Supported by</Typography>
+        <Typography variant="h5" gutterBottom>
+          Trusted & Supported by
+        </Typography>
       </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -91,18 +91,22 @@ function SidebarSponsors() {
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
               <a href={step.url} target="_blank_" rel="sponsored">
-                <img className={classes.img} src={step.imgPath} alt={step.label} />
+                <img
+                  className={classes.img}
+                  src={step.imgPath}
+                  alt={step.label}
+                />
               </a>
             ) : null}
           </div>
         ))}
       </AutoPlaySwipeableViews>
       <Typography className={classes.centered}>
-          <NextLink href="/sponsors" passHref>
-            <Button variant="contained" color="primary">
-              See all sponsors
-            </Button>
-          </NextLink>
+        <NextLink href="/sponsors" passHref>
+          <Button variant="contained" color="primary">
+            See all sponsors
+          </Button>
+        </NextLink>
       </Typography>
       <MobileStepper
         steps={maxSteps}
@@ -110,14 +114,26 @@ function SidebarSponsors() {
         variant="text"
         activeStep={activeStep}
         nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+          <Button
+            size="small"
+            onClick={handleNext}
+            disabled={activeStep === maxSteps - 1}
+          >
             Next
-            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+            {theme.direction === 'rtl' ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
           </Button>
         }
         backButton={
           <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+            {theme.direction === 'rtl' ? (
+              <KeyboardArrowRight />
+            ) : (
+              <KeyboardArrowLeft />
+            )}
             Back
           </Button>
         }

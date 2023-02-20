@@ -1,5 +1,5 @@
-import React from "react";
-import { DiscussionEmbed } from "disqus-react";
+import React from 'react';
+import { DiscussionEmbed } from 'disqus-react';
 
 import {
   List,
@@ -8,20 +8,20 @@ import {
   ListItemText,
   Divider,
   Typography,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import RedditIcon from "@material-ui/icons/Reddit";
-import TwitterIcon from "@material-ui/icons/Twitter";
+import RedditIcon from '@material-ui/icons/Reddit';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   list: {
-    width: "100%",
+    width: '100%',
     backgroundColor: theme.palette.background.paper,
-    marginTop: "30px",
-    marginBottom: "100px",
+    marginTop: '30px',
+    marginBottom: '100px',
   },
 }));
 

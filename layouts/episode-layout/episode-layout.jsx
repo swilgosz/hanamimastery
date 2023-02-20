@@ -1,25 +1,25 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { Grid, Container, Typography } from "@material-ui/core";
-import { useRouter } from "next/router";
-import { SeoComponent } from "../../features/seo";
-import { useStyles } from "./episode-layout.styles";
-import BuyMeACoffee from "../../features/buy-me-a-coffee-button";
-import Discussions from "../../features/content/discussions";
-import EmailSubscriptionForm from "../../features/email-subscription-form";
-import EpisodeSchema from "../../features/content-schemas/episode-schema";
-import EpisodeTabs from "../episode-tabs";
-import GHSponsor from "../../features/gh-sponsor";
-import ShareButtons from "../../features/share-buttons";
-import YoutubeEmbed from "../../features/youtube-embed";
-import SidebarSponsors from "../../features/sidebar-sponsors";
-import SidebarJobOffers from "../../features/sidebar-job-offers";
-import ProTag from "../../features/content/pro-tag";
+import { Grid, Container, Typography } from '@material-ui/core';
+import { useRouter } from 'next/router';
+import { SeoComponent } from '../../features/seo';
+import { useStyles } from './episode-layout.styles';
+import BuyMeACoffee from '../../features/buy-me-a-coffee-button';
+import Discussions from '../../features/content/discussions';
+import EmailSubscriptionForm from '../../features/email-subscription-form';
+import EpisodeSchema from '../../features/content-schemas/episode-schema';
+import EpisodeTabs from '../episode-tabs';
+import GHSponsor from '../../features/gh-sponsor';
+import ShareButtons from '../../features/share-buttons';
+import YoutubeEmbed from '../../features/youtube-embed';
+import SidebarSponsors from '../../features/sidebar-sponsors';
+import SidebarJobOffers from '../../features/sidebar-job-offers';
+import ProTag from '../../features/content/pro-tag';
 import {
   shouldDisplayArticle,
   shouldDisplayDiscussions,
   shouldDisplayVideo,
-} from "../../utils/display-queries";
+} from '../../utils/display-queries';
 
 const EpisodeLayout = ({ episode, children }) => {
   const classes = useStyles();
@@ -42,10 +42,10 @@ const EpisodeLayout = ({ episode, children }) => {
   const displayVideo = React.useMemo(() => shouldDisplayVideo(view), [view]);
 
   let prefix;
-  if (view === "discuss") {
-    prefix = "Discussions for "
+  if (view === 'discuss') {
+    prefix = 'Discussions for ';
   } else {
-    prefix = ""
+    prefix = '';
   }
 
   return (
@@ -63,13 +63,17 @@ const EpisodeLayout = ({ episode, children }) => {
         style={{ backgroundImage: `url("${thumbnail.full}")` }}
       >
         <div className={classes.heroFilterWrapper}>
-        <Typography variant="h1" align="center" className={classes.heroTitle}>
-          {title}
-        </Typography>
-        <Typography variant="h5" align="center" className={classes.heroSubtitle}>
-          {`Episode #${id}`}
-          <ProTag pro={episode.premium} />
-        </Typography>
+          <Typography variant="h1" align="center" className={classes.heroTitle}>
+            {title}
+          </Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            className={classes.heroSubtitle}
+          >
+            {`Episode #${id}`}
+            <ProTag pro={episode.premium} />
+          </Typography>
         </div>
       </section>
       <Container className={classes.conainer} maxWidth="xl" component="main">

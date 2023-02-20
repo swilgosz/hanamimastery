@@ -1,10 +1,10 @@
 export const shouldDisplayArticle = (view) => {
   switch (view) {
-    case "episodes":
+    case 'episodes':
       return true;
-    case "discuss":
+    case 'discuss':
       return false;
-    case "watch":
+    case 'watch':
       return false;
     default:
       return true;
@@ -13,9 +13,9 @@ export const shouldDisplayArticle = (view) => {
 
 export const shouldDisplayDiscussions = (view) => {
   switch (view) {
-    case "episodes":
+    case 'episodes':
       return false;
-    case "discuss":
+    case 'discuss':
       return true;
     default:
       return false;
@@ -24,11 +24,11 @@ export const shouldDisplayDiscussions = (view) => {
 
 export const shouldDisplayVideo = (view) => {
   switch (view) {
-    case "episodes":
+    case 'episodes':
       return true;
-    case "discuss":
+    case 'discuss':
       return true;
-    case "watch":
+    case 'watch':
       return true;
     default:
       return true;

@@ -1,22 +1,22 @@
-import * as React from "react";
-import { Grid, Container, Typography } from "@material-ui/core";
-import { useRouter } from "next/router";
-import { SeoComponent } from "../../features/seo";
-import { useStyles } from "./article-layout.styles";
-import ArticleSchema from "../../features/content-schemas/article-schema";
-import ArticleTabs from "../article-tabs";
-import BuyMeACoffee from "../../features/buy-me-a-coffee-button";
-import Discussions from "../../features/content/discussions";
-import EmailSubscriptionForm from "../../features/email-subscription-form";
-import GHSponsor from "../../features/gh-sponsor";
-import ShareButtons from "../../features/share-buttons";
-import SidebarSponsors from "../../features/sidebar-sponsors";
-import SidebarJobOffers from "../../features/sidebar-job-offers";
+import * as React from 'react';
+import { Grid, Container, Typography } from '@material-ui/core';
+import { useRouter } from 'next/router';
+import { SeoComponent } from '../../features/seo';
+import { useStyles } from './article-layout.styles';
+import ArticleSchema from '../../features/content-schemas/article-schema';
+import ArticleTabs from '../article-tabs';
+import BuyMeACoffee from '../../features/buy-me-a-coffee-button';
+import Discussions from '../../features/content/discussions';
+import EmailSubscriptionForm from '../../features/email-subscription-form';
+import GHSponsor from '../../features/gh-sponsor';
+import ShareButtons from '../../features/share-buttons';
+import SidebarSponsors from '../../features/sidebar-sponsors';
+import SidebarJobOffers from '../../features/sidebar-job-offers';
 
 import {
   shouldDisplayArticle,
   shouldDisplayDiscussions,
-} from "../../utils/display-queries";
+} from '../../utils/display-queries';
 
 const ArticleLayout = ({ article, children }) => {
   const classes = useStyles();

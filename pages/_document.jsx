@@ -14,18 +14,29 @@ export default class MyDocument extends Document {
           <link
             rel="alternate"
             type="application/rss+xml"
-            title="Hanami Mastery RSS channel!" href={siteUrl}
+            title="Hanami Mastery RSS channel!"
+            href={siteUrl}
           />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=60b823ffeed0fd001128d645&product=sticky-share-buttons' async='async' />
+          <script
+            type="text/javascript"
+            src="https://platform-api.sharethis.com/js/sharethis.js#property=60b823ffeed0fd001128d645&product=sticky-share-buttons"
+            async="async"
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
-          <script type="text/javascript" src="https://a.omappapi.com/app/js/api.min.js" data-account="82043" data-user="72987" async />
+          <script
+            type="text/javascript"
+            src="https://a.omappapi.com/app/js/api.min.js"
+            data-account="82043"
+            data-user="72987"
+            async
+          />
         </body>
       </Html>
     );

@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React from 'react';
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Box, makeStyles } from "@material-ui/core";
-import { nanoid } from "@reduxjs/toolkit";
-import TopicButton from "./topic-button"
+import { Box, makeStyles } from '@material-ui/core';
+import { nanoid } from '@reduxjs/toolkit';
+import TopicButton from './topic-button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,8 +23,10 @@ export default function TopicList({ topics }) {
   return (
     <Box className={classes.root}>
       {displayedTopics.length
-        ? displayedTopics.map((topic) => <TopicButton key={nanoid()} topic={topic}/>)
+        ? displayedTopics.map((topic) => (
+            <TopicButton key={nanoid()} topic={topic} />
+          ))
         : null}
     </Box>
-  )
+  );
 }

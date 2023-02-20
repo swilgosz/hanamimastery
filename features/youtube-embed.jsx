@@ -1,8 +1,9 @@
 const YoutubeEmbed = ({ embedId }) => {
   if (!embedId) {
     return '';
-  } 
-    return <div className="video-responsive">
+  }
+  return (
+    <div className="video-responsive">
       <iframe
         width="853"
         height="480"
@@ -13,8 +14,7 @@ const YoutubeEmbed = ({ embedId }) => {
         title="Embedded youtube"
       />
     </div>
-  
+  );
 };
-
 
 export default YoutubeEmbed;
