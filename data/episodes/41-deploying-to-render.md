@@ -10,9 +10,9 @@ published: true
 publishedAt: "2023-02-21"
 modifiedAt: "2023-02-21"
 thumbnail:
-  full: /images/episodes/41/cover-full.jpeg
-  big: /images/episodes/41/cover-big.jpeg
-  small: /images/episodes/41/cover-small.jpeg
+  full: /images/episodes/41/cover-full.png
+  big: /images/episodes/41/cover-big.png
+  small: /images/episodes/41/cover-small.png
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
   reddit:
