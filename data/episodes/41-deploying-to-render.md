@@ -7,8 +7,8 @@ title: "Deploying Hanami Apps to Render"
 excerpt: "Learn how to quickly deploy Hanami apps to production-§ready server, using Render hosting provider, the best replacement for Heroku right now."
 videoId: hCVcEw6shSA
 published: true
-publishedAt: "2022-02-21"
-modifiedAt: "2022-02-21"
+publishedAt: "2023-02-21"
+modifiedAt: "2023-02-21"
 thumbnail:
   full: /images/episodes/41/cover-full.jpeg
   big: /images/episodes/41/cover-big.jpeg
