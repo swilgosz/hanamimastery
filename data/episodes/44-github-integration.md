@@ -2,13 +2,13 @@
 id: 44
 aliases: ["HMEP044"]
 author: "swilgosz"
-topics: []
-title: "#44 <<Title>>"
-excerpt: "<<Summary>>"
+topics: ['hanami', 'integrations']
+title: "Github integration with Hanami"
+excerpt: "If you're a developer, you know GitHub. And if you don't know Hanami, you definitely should. In this episode, I'll show you how to make them both to know each other."
 videoId: null
 published: false
-publishedAt: "2022-02-09"
-modifiedAt: "2022-02-09"
+publishedAt: "2023-02-09"
+modifiedAt: "2023-02-09"
 thumbnail:
   full: /images/episodes/44/cover-full.jpeg
   big: /images/episodes/44/cover-big.jpeg
@@ -21,15 +21,13 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/044
 ---
-Hi there!
-## Introduction
-### Browsing episodes from DB
+[🎬 01] Hi there!
 
-I have here a Hanami application listing all my Hanami Mastery episodes. If you wonder why, check out episode 38 when I've explained that in details.
+I have here a Hanami application listing all my Hanami Mastery episodes. If you wonder why I need this, check out [episode 38](/episodes/38-hanami-mastery-app) when I've explained that in detail.
 
-The thing is, this episodes data is pulled out from my db, while I host my content using static site generator, and my source of truth database, is Github repository and markdown file system!
+The thing is, these episodes' data is pulled out from my DB, but I host my content using the static site generator. The source of truth database is a GitHub repository and markdown file system!
 
-All our content is open sourced, and everyone can contribute to it, by writing new episodes, or updating the existing ones. 
+All our content is open-sourced, and everyone can contribute to it, by writing new episodes, or updating the existing ones. 
 
 This is part of our mission to bring value to Ruby community together, and I don't want to use private postgres database for this.
 
