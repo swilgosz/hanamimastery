@@ -14,11 +14,11 @@ thumbnail:
   big: /images/episodes/41/cover-big.png
   small: /images/episodes/41/cover-small.png
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1628097631619514389
+  mastodon: https://ruby.social/@hanamimastery/109904114431323420
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/118c6no/deploying_hanami_apps_to_render_hanami_mastery_041/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/118cw51/deploy_your_hanami_apps_to_render/
 source: https://github.com/hanamimastery/hanami-render-example
 ---
 When I've first discovered React, one of the best things I've found was the extremely powerful free hosting providers, that allow you to deploy applications with zero config.
