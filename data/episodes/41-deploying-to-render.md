@@ -5,10 +5,10 @@ author: "swilgosz"
 topics: ['hanami', 'deployment']
 title: "Deploying Hanami Apps to Render"
 excerpt: "Learn how to quickly deploy Hanami apps to production-§ready server, using Render hosting provider, the best replacement for Heroku right now."
-videoId: null
-published: false
-publishedAt: "2022-02-09"
-modifiedAt: "2022-02-09"
+videoId: hCVcEw6shSA
+published: true
+publishedAt: "2022-02-21"
+modifiedAt: "2022-02-21"
 thumbnail:
   full: /images/episodes/41/cover-full.jpeg
   big: /images/episodes/41/cover-big.jpeg
@@ -25,7 +25,7 @@ When I've first discovered React, one of the best things I've found was the extr
 
 Vercel is just a one example, that builds your app based on the config file or predefined defaults, and allow to spin-up preview for each branch or pull request in no time.
 
-I've started my Hanami Mastery in NextJS mostly due to this possibilities. 
+I've started my Hanami Mastery in NextJS mostly due to this possibilities.
 
 You just push a NextJS repository to Github, and magic happens. However, if you want to customize the configuration a bit, all you need to do, is to write a single YAML configuration file and you're ready to go.
 
@@ -129,7 +129,7 @@ We could add our database specification in the `render.yaml` file, but if we do 
 
 Let me add a new postgres instance named `HME041`. The details I can set to random strings, because I use the URL property name in my configs. Important though is to define your plan here. For the sake of this episode I'll set the free tier, and we're ready to go. Our database is creating.
 
-Now the web service can be finally created as all configuration dependencies had been resolved. I'll set the name to this episode number, and click create. This can take a moment for you, so no don't be worried. 
+Now the web service can be finally created as all configuration dependencies had been resolved. I'll set the name to this episode number, and click create. This can take a moment for you, so no don't be worried.
 
 Oh, deployment failed with an error. Let me check what happened.
 
@@ -166,6 +166,6 @@ I want to especially thank my recent sponsors,
 
 and [all the Hanami Mastery PRO subscirbers](https://pro.hanamimastery.com/), for supporting this project, I really appreciate it!
 
-:::important Consider sponsoring?  
-If you want to support us, check out our [Github sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!  
+:::important Consider sponsoring?
+If you want to support us, check out our [Github sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!
 :::
