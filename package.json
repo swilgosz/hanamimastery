@@ -24,7 +24,7 @@
     "json-api-normalizer": "^1.0.4",
     "lodash.merge": "^4.6.2",
     "mdx-prism": "^0.3.3",
-    "next": "11.0.1",
+    "next": "12.1.0",
     "next-mdx-remote": "^3.0.1",
     "next-seo": "^4.23.0",
     "prop-types": "^15.8.1",
