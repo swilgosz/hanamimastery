@@ -90,7 +90,7 @@ const EpisodeLayout = ({ episode, children }) => {
             component="article"
             className={classes.article}
           >
-            <ShareButtons />
+            <ShareButtons data={episode} />
             {displayVideo && <YoutubeEmbed embedId={videoId} />}
             {displayArticle && children}
             {displayDiscussions && (

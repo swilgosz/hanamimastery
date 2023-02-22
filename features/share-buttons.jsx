@@ -3,7 +3,8 @@ import React from 'react';
 import { StickyShareButtons } from 'sharethis-reactjs';
 
 export default function ShareButtons({ data }) {
-  const { url, thumbnail, topic } = data;
+  const { url, thumbnail, title } = data;
+
   return (
     <StickyShareButtons
       config={{
@@ -32,8 +33,8 @@ export default function ShareButtons({ data }) {
         size: 48, // the size of each button (INTEGER)
         top: 160, // offset in pixels from the top of the page
         url,
-        title: topic,
-        thumbnail: thumbnail.small,
+        title,
+        image: thumbnail.small,
       }}
     />
   );
