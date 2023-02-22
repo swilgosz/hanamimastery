@@ -1,5 +1,6 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import theme from '../styles/theme';
 
@@ -21,10 +22,9 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <script
-            type="text/javascript"
+          <Script
             src="https://platform-api.sharethis.com/js/sharethis.js#property=60b823ffeed0fd001128d645&product=sticky-share-buttons"
-            async="async"
+            strategy="beforeInteractive"
           />
         </Head>
         <body>
