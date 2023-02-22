@@ -1,1 +1,1 @@
-export { default } from "./episode-layout";
+export { default } from './episode-layout';

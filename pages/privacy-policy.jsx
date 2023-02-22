@@ -1,5 +1,5 @@
 import ArticlesLayout from '../layouts/articles-layout';
-import { SeoComponent } from "../features/seo";
+import { SeoComponent } from '../features/seo';
 
 export default function PrivacyPolicy() {
   return (
@@ -8,9 +8,9 @@ export default function PrivacyPolicy() {
         title="Privacy Policy for Hanami Mastery!"
         excerpt="All our data-collection information in one place!"
         thumbnails={{
-          full: "/logo-hm.jpeg",
-          big: "/logo-hm.jpeg",
-          small: "/logo-hm-letter.jpeg"
+          full: '/logo-hm.jpeg',
+          big: '/logo-hm.jpeg',
+          small: '/logo-hm-letter.jpeg',
         }}
         ogtype="website"
       />
@@ -21,12 +21,13 @@ export default function PrivacyPolicy() {
               <div className="content">
                 <h1>Personal Data Protection Policy</h1>
                 <p>
-                  Pursuant to Article 24(2) in connection with Article 4 point (7)
-                  of regulation (EU) 2016/679 of the European Parliament and of
-                  the Council 2016/679 of 27th April 2016 on the protection of
-                  natural persons with regard to the processing of personal data
-                  and on the free movement of such data and repealing Directive
-                  95/46/EC, this personal data protection policy is established.
+                  Pursuant to Article 24(2) in connection with Article 4 point
+                  (7) of regulation (EU) 2016/679 of the European Parliament and
+                  of the Council 2016/679 of 27th April 2016 on the protection
+                  of natural persons with regard to the processing of personal
+                  data and on the free movement of such data and repealing
+                  Directive 95/46/EC, this personal data protection policy is
+                  established.
                 </p>
                 <h2>I. Key definitions</h2>
                 <p>For the purpose of this policy:</p>
@@ -41,9 +42,15 @@ export default function PrivacyPolicy() {
                   52-129 Wrocław;
                   <br />
                   e-mail address:
-                  <a href="mailto:info@hanamimastery.com">info@hanamimastery.com</a>;
+                  <a href="mailto:info@hanamimastery.com">
+                    info@hanamimastery.com
+                  </a>
+                  ;
                   <br />
-                  web address:&nbsp;<a href="http://hanamimastery.com">https://hanamimastery.com</a>
+                  web address:&nbsp;
+                  <a href="http://hanamimastery.com">
+                    https://hanamimastery.com
+                  </a>
                   com;
                   <br />
                   telephone number: (+48) 724 532&nbsp;430;
@@ -66,20 +73,22 @@ export default function PrivacyPolicy() {
                 </p>
                 <h3>Personal data</h3>
                 <p>
-                  means any information relating to an identified or identifiable
-                  natural individual, for example, a name and a surname, PESEL No.
-                  (Personal ID No.), NIP (Tax Identification Number), REGON (the
-                  National Official Register of Business Entities), location data,
-                  an Internet Protocol (IP) address;
+                  means any information relating to an identified or
+                  identifiable natural individual, for example, a name and a
+                  surname, PESEL No. (Personal ID No.), NIP (Tax Identification
+                  Number), REGON (the National Official Register of Business
+                  Entities), location data, an Internet Protocol (IP) address;
                 </p>
                 <h3>Client</h3>
-                <p>means any entity to whom the controller provides services;</p>
+                <p>
+                  means any entity to whom the controller provides services;
+                </p>
                 <h3>Personal data breach</h3>
                 <p>
-                  means a breach of security leading to the accidental or unlawful
-                  destruction, loss, alteration, unauthorised disclosure of, or
-                  access to, personal data transmitted, stored or otherwise
-                  processed;
+                  means a breach of security leading to the accidental or
+                  unlawful destruction, loss, alteration, unauthorised
+                  disclosure of, or access to, personal data transmitted, stored
+                  or otherwise processed;
                 </p>
                 <h3>Recipient</h3>
                 <p>
@@ -89,12 +98,12 @@ export default function PrivacyPolicy() {
                 <h3>Restriction of processing</h3>
                 <p>
                   means where processing has been restricted, such personal data
-                  shall, with the exception of storage, only be processed with the
-                  data subject&apos;s consent or for the establishment, exercise
-                  or defence of legal claims or for the protection of the rights
-                  of another natural or legal person or for reasons of important
-                  public interest of the Union or of a Member State (Article 18(2)
-                  of the GDPR);
+                  shall, with the exception of storage, only be processed with
+                  the data subject&apos;s consent or for the establishment,
+                  exercise or defence of legal claims or for the protection of
+                  the rights of another natural or legal person or for reasons
+                  of important public interest of the Union or of a Member State
+                  (Article 18(2) of the GDPR);
                 </p>
                 <h3>Processor</h3>
                 <p>
@@ -122,25 +131,26 @@ export default function PrivacyPolicy() {
                     regulation
                   </a>
                   (EU) 2016/679 of the European Parliament and of the Council
-                  2016/679 of 27th April 2016 on the protection of natural persons
-                  with regard to the processing of personal data and on the free
-                  movement of such data and repealing Directive 95/46/EC;
+                  2016/679 of 27th April 2016 on the protection of natural
+                  persons with regard to the processing of personal data and on
+                  the free movement of such data and repealing Directive
+                  95/46/EC;
                 </p>
                 <h3>Information society service</h3>
                 <p>
                   means any service normally provided for remuneration, at a
                   distance, by means of electronic equipment, and at the
-                  individual request of a recipient of a service (including online
-                  purchasing, purchasing access to particular contents, online
-                  service);
+                  individual request of a recipient of a service (including
+                  online purchasing, purchasing access to particular contents,
+                  online service);
                 </p>
                 <h3>Consent of the data subject</h3>
                 <p>
                   means any freely given, specific, informed and unambiguous
-                  indication of the data subject&apos;s wishes by which he or she,
-                  by a statement or by a clear affirmative action, signifies
-                  agreement to the processing of personal data relating to him or
-                  her.
+                  indication of the data subject&apos;s wishes by which he or
+                  she, by a statement or by a clear affirmative action,
+                  signifies agreement to the processing of personal data
+                  relating to him or her.
                 </p>
 
                 <p>
@@ -150,9 +160,9 @@ export default function PrivacyPolicy() {
                   <li>
                     <p>
                       <span>
-                        Processing shall be lawful only if and to the extent that
-                        at least one of the following applies (pursuant to Article
-                        6(1) of the GDPR):
+                        Processing shall be lawful only if and to the extent
+                        that at least one of the following applies (pursuant to
+                        Article 6(1) of the GDPR):
                       </span>
                     </p>
                   </li>
@@ -170,10 +180,10 @@ export default function PrivacyPolicy() {
                   <li>
                     <p>
                       <span>
-                        processing is necessary for the performance of a contract
-                        to which the data subject is party or in order to take
-                        steps at the request of the data subject prior to entering
-                        into a contract;
+                        processing is necessary for the performance of a
+                        contract to which the data subject is party or in order
+                        to take steps at the request of the data subject prior
+                        to entering into a contract;
                       </span>
                     </p>
                   </li>
@@ -188,15 +198,15 @@ export default function PrivacyPolicy() {
                   <li>
                     <p>
                       <span>
-                        processing is necessary for the purposes of the legitimate
-                        interests pursued by the controller, except where such
-                        interests are overridden by the interests or fundamental
-                        rights and freedoms of the data subject which require
-                        protection of personal data, in particular where the data
-                        subject is a child. For this purpose, the controller
-                        checks which actions are suitable to meet the requirements
-                        of the legitimate interests and at the same time respect
-                        fundamental rights and freedoms.
+                        processing is necessary for the purposes of the
+                        legitimate interests pursued by the controller, except
+                        where such interests are overridden by the interests or
+                        fundamental rights and freedoms of the data subject
+                        which require protection of personal data, in particular
+                        where the data subject is a child. For this purpose, the
+                        controller checks which actions are suitable to meet the
+                        requirements of the legitimate interests and at the same
+                        time respect fundamental rights and freedoms.
                       </span>
                     </p>
                   </li>
@@ -210,11 +220,13 @@ export default function PrivacyPolicy() {
                         subject is informed of the principles of personal data
                         processing{' '}
                       </span>
-                      <span>at the time of the collection of personal data</span>
                       <span>
-                        . In order to get more information on data processing, you
-                        should contact the controller by means indicated in point
-                        I of this policy.
+                        at the time of the collection of personal data
+                      </span>
+                      <span>
+                        . In order to get more information on data processing,
+                        you should contact the controller by means indicated in
+                        point I of this policy.
                       </span>
                     </p>
                   </li>
@@ -246,9 +258,9 @@ export default function PrivacyPolicy() {
                       <span>Personal data shall be</span>
                       <span> collected for </span>
                       <span>
-                        specified, explicit and legitimate purposes. Personal data
-                        are processed to a limited extent necessary to perform the
-                        duties, unless you gave the consent to{' '}
+                        specified, explicit and legitimate purposes. Personal
+                        data are processed to a limited extent necessary to
+                        perform the duties, unless you gave the consent to{' '}
                       </span>
                       <span>process the data for other purposes</span>
                       <span>.</span>
@@ -261,8 +273,9 @@ export default function PrivacyPolicy() {
                       <span>Personal data shall be</span>
                       <span>
                         adequate, relevant and limited to what is necessary in
-                        relation to the purposes for which they are processed. The
-                        requested data are necessary to provide the services.
+                        relation to the purposes for which they are processed.
+                        The requested data are necessary to provide the
+                        services.
                       </span>
                     </p>
                   </li>
@@ -276,10 +289,10 @@ export default function PrivacyPolicy() {
                       <span>
                         every reasonable step will be taken to ensure that
                         personal data that are inaccurate (having regard to the
-                        purposes for which they are processed or the content) are
-                        erased or rectified without delay. The procedure laid down
-                        in point III of this policy facilitates the process of
-                        erasing or rectifying the data.
+                        purposes for which they are processed or the content)
+                        are erased or rectified without delay. The procedure
+                        laid down in point III of this policy facilitates the
+                        process of erasing or rectifying the data.
                       </span>
                     </p>
                   </li>
@@ -288,11 +301,11 @@ export default function PrivacyPolicy() {
                   <li>
                     <p>
                       <span>
-                        The data are processed only for a period necessary for the
-                        purpose for which they are processed. Your data, after the
-                        contract execution, are deleted without delay, unless you
-                        gave the consent to process the data for other purposes
-                        than the contract execution.
+                        The data are processed only for a period necessary for
+                        the purpose for which they are processed. Your data,
+                        after the contract execution, are deleted without delay,
+                        unless you gave the consent to process the data for
+                        other purposes than the contract execution.
                       </span>
                     </p>
                   </li>
@@ -301,12 +314,13 @@ export default function PrivacyPolicy() {
                   <li>
                     <p>
                       <span>
-                        The data are processed with integrity and confidentiality.
-                        The controller provides appropriate security of personal
-                        data, including protection against unauthorised or
-                        unlawful processing and against accidental loss,
-                        destruction or damage. For further information, please
-                        refer to point IV and V of this policy.
+                        The data are processed with integrity and
+                        confidentiality. The controller provides appropriate
+                        security of personal data, including protection against
+                        unauthorised or unlawful processing and against
+                        accidental loss, destruction or damage. For further
+                        information, please refer to point IV and V of this
+                        policy.
                       </span>
                     </p>
                   </li>
@@ -319,8 +333,8 @@ export default function PrivacyPolicy() {
                 </p>
                 <p>
                   <span>
-                    Pursuant to Article 12(1) of the GDPR, you have the following
-                    rights:
+                    Pursuant to Article 12(1) of the GDPR, you have the
+                    following rights:
                   </span>
                 </p>
                 <ol>
@@ -337,25 +351,25 @@ export default function PrivacyPolicy() {
                     <p>
                       <span>
                         The data subject shall have the right to obtain from the
-                        controller confirmation as to whether or not personal data
-                        concerning him or her are being processed (Article 15 of
-                        the GDPR);
+                        controller confirmation as to whether or not personal
+                        data concerning him or her are being processed (Article
+                        15 of the GDPR);
                       </span>
                     </p>
                   </li>
                   <li>
                     <p>
                       <span>
-                        The data subject shall have the right to obtain access to
-                        the following information: the purposes of the processing;
-                        the categories of personal data concerned; the recipients
-                        or categories of recipient to whom personal data have been
-                        or will be disclosed; where possible, the envisaged period
-                        for which personal data will be stored, or, if not
-                        possible, the criteria used to determine that period;
-                        where personal data are not collected from the data
-                        subject, any available information as to their source
-                        (Article 15 of the GDPR);
+                        The data subject shall have the right to obtain access
+                        to the following information: the purposes of the
+                        processing; the categories of personal data concerned;
+                        the recipients or categories of recipient to whom
+                        personal data have been or will be disclosed; where
+                        possible, the envisaged period for which personal data
+                        will be stored, or, if not possible, the criteria used
+                        to determine that period; where personal data are not
+                        collected from the data subject, any available
+                        information as to their source (Article 15 of the GDPR);
                       </span>
                     </p>
                   </li>
@@ -382,10 +396,11 @@ export default function PrivacyPolicy() {
                   <li>
                     <p>
                       <span>
-                        The data subject shall have the right to receive personal
-                        data concerning him or her for transmitting to other
-                        controller or to have personal data transmitted directly
-                        from one controller to another (Article 20 of the GDPR);
+                        The data subject shall have the right to receive
+                        personal data concerning him or her for transmitting to
+                        other controller or to have personal data transmitted
+                        directly from one controller to another (Article 20 of
+                        the GDPR);
                       </span>
                     </p>
                   </li>
@@ -397,21 +412,21 @@ export default function PrivacyPolicy() {
                         (Article 21 of the GDPR). The controller shall no longer
                         process the personal data unless the controller
                         demonstrates compelling legitimate grounds (for further
-                        information, please refer to point II of this policy). The
-                        data subject shall have the right to object to processing
-                        of personal data for profiling and direct marketing
-                        purposes;
+                        information, please refer to point II of this policy).
+                        The data subject shall have the right to object to
+                        processing of personal data for profiling and direct
+                        marketing purposes;
                       </span>
                     </p>
                   </li>
                   <li>
                     <p>
                       <span>
-                        The data subject shall have the right to lodge a complaint
-                        to the President of the Office of Personal Data Protection
-                        if the data subject considers that the processing of
-                        personal data relating to him or her infringes the GDPR
-                        (Article 77 of the GDPR);
+                        The data subject shall have the right to lodge a
+                        complaint to the President of the Office of Personal
+                        Data Protection if the data subject considers that the
+                        processing of personal data relating to him or her
+                        infringes the GDPR (Article 77 of the GDPR);
                       </span>
                     </p>
                   </li>
@@ -420,23 +435,24 @@ export default function PrivacyPolicy() {
                       <span>
                         The data subject shall have the right to an effective
                         judicial remedy against the controller or other body
-                        processing his or her data under the Civil Code where the
-                        data subject considers that his or her rights under the
-                        GDPR have been infringed as a result of the processing of
-                        his or her personal data in non-compliance with the GDPR
-                        (Article 78 of the GDPR). Court proceedings for exercising
-                        this right shall be brought before the courts competent
-                        under the Code of Civil Procedure;
+                        processing his or her data under the Civil Code where
+                        the data subject considers that his or her rights under
+                        the GDPR have been infringed as a result of the
+                        processing of his or her personal data in non-compliance
+                        with the GDPR (Article 78 of the GDPR). Court
+                        proceedings for exercising this right shall be brought
+                        before the courts competent under the Code of Civil
+                        Procedure;
                       </span>
                     </p>
                   </li>
                   <li>
                     <p>
                       <span>
-                        The data subject shall have the right to compensation and
-                        liability if the data subject has suffered material or
-                        non-material damage as a result of an infringement of the
-                        GDPR (Article 82 of the GDPR). Court proceedings for
+                        The data subject shall have the right to compensation
+                        and liability if the data subject has suffered material
+                        or non-material damage as a result of an infringement of
+                        the GDPR (Article 82 of the GDPR). Court proceedings for
                         exercising the right to receive compensation shall be
                         brought before the courts competent under the Code of
                         Civil Procedure.
@@ -448,41 +464,43 @@ export default function PrivacyPolicy() {
                 <p>
                   <span>
                     The requests mentioned in points 1-6 shall be made in a
-                    written form and sent to the controller&rsquo;s correspondence
-                    address or by electronic means. The controller responds to
-                    requests in the form requested by the data subject.
+                    written form and sent to the controller&rsquo;s
+                    correspondence address or by electronic means. The
+                    controller responds to requests in the form requested by the
+                    data subject.
                   </span>
                 </p>
 
                 <p>
                   <span>
-                    The controller shall provide information on action taken on a
-                    request to the data subject within one month of receipt of the
-                    request. That period may be extended by two further months
-                    where necessary, taking into account the complexity and number
-                    of the requests. The controller shall inform the data subject
-                    of any such extension within one month of receipt of the
-                    request.
+                    The controller shall provide information on action taken on
+                    a request to the data subject within one month of receipt of
+                    the request. That period may be extended by two further
+                    months where necessary, taking into account the complexity
+                    and number of the requests. The controller shall inform the
+                    data subject of any such extension within one month of
+                    receipt of the request.
                   </span>
                 </p>
 
                 <p>
                   <span>
-                    Any communication and any actions taken shall be provided free
-                    of charge, unless otherwise specified. If the requests are
-                    made more often than once a month, the controller will charge
-                    a fee for providing the information or taking the action
-                    requested. Where requests from a data subject are manifestly
-                    unfounded or excessive, the controller may refuse to act on
-                    the request. The controller shall bear the burden of
-                    demonstrating the manifestly unfounded or excessive character
-                    of the request.
+                    Any communication and any actions taken shall be provided
+                    free of charge, unless otherwise specified. If the requests
+                    are made more often than once a month, the controller will
+                    charge a fee for providing the information or taking the
+                    action requested. Where requests from a data subject are
+                    manifestly unfounded or excessive, the controller may refuse
+                    to act on the request. The controller shall bear the burden
+                    of demonstrating the manifestly unfounded or excessive
+                    character of the request.
                   </span>
                 </p>
 
                 <p>
                   <span>
-                    IV. The technical and organizational data protection measures
+                    IV. The technical and organizational data protection
+                    measures
                   </span>
                 </p>
                 <p>
@@ -557,8 +575,8 @@ export default function PrivacyPolicy() {
                   <li>
                     <p>
                       <span>
-                        uses licensed and effective antivirus software in order to
-                        minimise the possibility of accidental data loss or
+                        uses licensed and effective antivirus software in order
+                        to minimise the possibility of accidental data loss or
                         unauthorised access to the data;
                       </span>
                     </p>
@@ -578,8 +596,8 @@ export default function PrivacyPolicy() {
                     <p>
                       <span>
                         The controller ensures that, by default, only personal
-                        data which are necessary for each specific purpose of the
-                        processing are processed (privacy by default). That
+                        data which are necessary for each specific purpose of
+                        the processing are processed (privacy by default). That
                         obligation applies to the amount of personal data
                         collected, the extent of their processing, the period of
                         their storage and their accessibility.
@@ -591,8 +609,8 @@ export default function PrivacyPolicy() {
                   <span>
                     For this purpose, personal data are collected through
                     appropriate forms on the website and contracts, which do not
-                    collect insignificant data. Moreover, data are disclosed only
-                    to entities necessary to perform the services.
+                    collect insignificant data. Moreover, data are disclosed
+                    only to entities necessary to perform the services.
                   </span>
                 </p>
                 <p>
@@ -626,8 +644,8 @@ export default function PrivacyPolicy() {
                 </p>
                 <p>
                   <span>
-                    It is a website traffic analysis tool. It generates reports in
-                    relation to collecting website traffic data. Further
+                    It is a website traffic analysis tool. It generates reports
+                    in relation to collecting website traffic data. Further
                     information at:{' '}
                   </span>
                   <a href="http://www.ittechnology.us/ebook-google-analytics/">
@@ -642,8 +660,8 @@ export default function PrivacyPolicy() {
                     Google Analytics respects privacy policy of &ldquo;EU-US
                     Privacy Shield&rdquo; and is registered in EU-US Privacy
                     Shield program designed by the U.S. Department of Commerce.
-                    EU-US Privacy Shield is a framework for exchanges of personal
-                    data for commercial purposes between the{' '}
+                    EU-US Privacy Shield is a framework for exchanges of
+                    personal data for commercial purposes between the{' '}
                   </span>
                   <a href="https://en.wikipedia.org/wiki/European_Union">
                     <span>European Union</span>
@@ -694,21 +712,21 @@ export default function PrivacyPolicy() {
                 </p>
                 <p>
                   <span>
-                    The controller uses Mailchimp in order to exchange information
-                    with clients. It facilitates the review of established
-                    arrangements, evaluates client&rsquo;s needs and provides high
-                    service quality. Further information at:
+                    The controller uses Mailchimp in order to exchange
+                    information with clients. It facilitates the review of
+                    established arrangements, evaluates client&rsquo;s needs and
+                    provides high service quality. Further information at:
                     https://mailchimp.com/.
                   </span>
                 </p>
                 <p>
                   <span>
-                    The personal data are disclosed by the controller to Mailchimp
-                    only in the scope necessary for the purpose of using their
-                    services (sending emails to clients). The Mailchimp company
-                    stores data in accordance with the highest security standards
-                    and encrypted connections with SSL certificate. The Privacy
-                    Policy located at{' '}
+                    The personal data are disclosed by the controller to
+                    Mailchimp only in the scope necessary for the purpose of
+                    using their services (sending emails to clients). The
+                    Mailchimp company stores data in accordance with the highest
+                    security standards and encrypted connections with SSL
+                    certificate. The Privacy Policy located at{' '}
                   </span>
                   <a href="https://mailchimp.com/legal/">
                     <span>https://mailchimp.com/legal/</span>
@@ -720,13 +738,13 @@ export default function PrivacyPolicy() {
                 </p>
                 <p>
                   <span>
-                    The controller uses Mailchimp only send emails to the clients
-                    who explicitly registered to the newsletter. The resignation
-                    from Mailchimp services can be executed by cancelling
-                    subscription in any email sent to the client, or solely by
-                    client&rsquo;s request in a written form sent to the
-                    controller&rsquo;s correspondence address or by electronic
-                    means.
+                    The controller uses Mailchimp only send emails to the
+                    clients who explicitly registered to the newsletter. The
+                    resignation from Mailchimp services can be executed by
+                    cancelling subscription in any email sent to the client, or
+                    solely by client&rsquo;s request in a written form sent to
+                    the controller&rsquo;s correspondence address or by
+                    electronic means.
                   </span>
                 </p>
                 <ol start="3">
@@ -739,8 +757,8 @@ export default function PrivacyPolicy() {
                 <p>
                   <span>These are services provided by </span>
                   <span>
-                    HubSpot, Inc., 25 First Street, 2nd Floor, Cambridge, MA 02141
-                    USA
+                    HubSpot, Inc., 25 First Street, 2nd Floor, Cambridge, MA
+                    02141 USA
                   </span>
                   <span>.</span>
                 </p>
@@ -761,8 +779,8 @@ export default function PrivacyPolicy() {
                     only in the scope necessary for the purpose of data storage
                     (archiving information exchange with clients). The Hubspot
                     company stores data in accordance with the highest security
-                    standards and encrypted connections with SSL certificate. The
-                    Privacy Policy located at{' '}
+                    standards and encrypted connections with SSL certificate.
+                    The Privacy Policy located at{' '}
                   </span>
                   <a href="https://legal.hubspot.com/privacy-policy">
                     <span>https://legal.hubspot.com/privacy-policy</span>
@@ -775,12 +793,12 @@ export default function PrivacyPolicy() {
                 <p>
                   <span>
                     The controller uses HubSpot to archive information exchange
-                    with all clients. The resignation from HubSpot services shall
-                    be executed solely by client&rsquo;s request in a written form
-                    sent to the controller&rsquo;s correspondence address or by
-                    electronic means. The resignation from HubSpot services bears
-                    such consequences as the loss of the abovementioned
-                    functionalities and benefits.
+                    with all clients. The resignation from HubSpot services
+                    shall be executed solely by client&rsquo;s request in a
+                    written form sent to the controller&rsquo;s correspondence
+                    address or by electronic means. The resignation from HubSpot
+                    services bears such consequences as the loss of the
+                    abovementioned functionalities and benefits.
                   </span>
                 </p>
                 <ol start="4">
@@ -799,9 +817,9 @@ export default function PrivacyPolicy() {
                 </p>
                 <p>
                   <span>
-                    Digital Ocean is a hosting company providing cloud platform to
-                    external users. The controller stores there application codes
-                    and database.
+                    Digital Ocean is a hosting company providing cloud platform
+                    to external users. The controller stores there application
+                    codes and database.
                   </span>
                 </p>
                 <p>
@@ -809,10 +827,10 @@ export default function PrivacyPolicy() {
                     Digital Ocean Inc. respects privacy policy of &ldquo;EU-US
                     Privacy Shield&rdquo; and is registered in EU-US Privacy
                     Shield program designed by the U.S. Department of Commerce.,
-                    which guarantees the proper level of personal data protection
-                    stored in Digital Ocean servers. For further information on
-                    EU-US Privacy Shield, please refer to point VI(1) of this
-                    policy.
+                    which guarantees the proper level of personal data
+                    protection stored in Digital Ocean servers. For further
+                    information on EU-US Privacy Shield, please refer to point
+                    VI(1) of this policy.
                   </span>
                 </p>
                 <p>
@@ -832,10 +850,10 @@ export default function PrivacyPolicy() {
                 <p>
                   <span>
                     The usage of external servers provided by Digital Ocean is
-                    necessary to conduct business in the current scope and at the
-                    expected level of services. The resignation from the services
-                    provided by Digital Ocean means the resignation from the
-                    services provided by the controller.
+                    necessary to conduct business in the current scope and at
+                    the expected level of services. The resignation from the
+                    services provided by Digital Ocean means the resignation
+                    from the services provided by the controller.
                   </span>
                 </p>
                 <ol start="5">
@@ -847,11 +865,12 @@ export default function PrivacyPolicy() {
                 </ol>
                 <p>
                   <span>
-                    The controller uses accounting services offered by IFIRMA S.A.
-                    with its registered office in Wrocław, ul. Grabiszyńska 241B,
-                    53-234 Wrocław, NIP (Tax Identification Number) 898-16-47-572,
-                    REGON (the National Official Register of Business Entities)
-                    931082394, KRS (the National Court Register) 0000281947.
+                    The controller uses accounting services offered by IFIRMA
+                    S.A. with its registered office in Wrocław, ul. Grabiszyńska
+                    241B, 53-234 Wrocław, NIP (Tax Identification Number)
+                    898-16-47-572, REGON (the National Official Register of
+                    Business Entities) 931082394, KRS (the National Court
+                    Register) 0000281947.
                   </span>
                 </p>
                 <p>
@@ -862,19 +881,19 @@ export default function PrivacyPolicy() {
                     <a href="https://www.ifirma.pl/rodo/polityka-prywatnosci-ifirma-pl">
                       https://www.ifirma.pl/rodo/polityka-prywatnosci-ifirma-pl
                     </a>
-                    applies to the protection of personal data processed by IFIRMA
-                    S.A.
+                    applies to the protection of personal data processed by
+                    IFIRMA S.A.
                   </span>
                 </p>
                 <p>
                   <span>
                     Processing personal data by IFIRMA S.A. is necessary to
-                    perform the duties laid down on the controller, as provided in
-                    applicable law &nbsp;(the Act of 29 September 1994 on
+                    perform the duties laid down on the controller, as provided
+                    in applicable law &nbsp;(the Act of 29 September 1994 on
                     accounting Journal of Laws 2018, item 395 as amended),
                     therefore the controller has a right to process the data
-                    independently of data subject consent (Article 6(1)(c) of the
-                    GDPR).
+                    independently of data subject consent (Article 6(1)(c) of
+                    the GDPR).
                   </span>
                 </p>
                 <ol start="6">
@@ -906,15 +925,15 @@ export default function PrivacyPolicy() {
                     </span>
                   </a>
                   <span>
-                    applies to the protection of personal data processed by IFIRMA
-                    S.A.
+                    applies to the protection of personal data processed by
+                    IFIRMA S.A.
                   </span>
                 </p>
                 <p>
                   <span>
                     Processing personal data by IFIRMA S.A. is necessary to
-                    perform the duties laid down on the controller, as provided in
-                    applicable law &nbsp;(
+                    perform the duties laid down on the controller, as provided
+                    in applicable law &nbsp;(
                   </span>
                   <a href="https://www.global-regulation.com/translation/poland/3353960/the-act-of-11-march-2004-on-tax-on-goods-and-services.html">
                     <span>
@@ -936,12 +955,12 @@ export default function PrivacyPolicy() {
                     <p>
                       <span>
                         This Personal Data Protection Policy is binding on the
-                        controller and the client. It does not cover the relations
-                        between the clients and bodies indicated on this website
-                        in the form of direct links or in another form. The way
-                        personal data are protected by abovementioned bodies is
-                        determined by separate regulations established by these
-                        bodies.
+                        controller and the client. It does not cover the
+                        relations between the clients and bodies indicated on
+                        this website in the form of direct links or in another
+                        form. The way personal data are protected by
+                        abovementioned bodies is determined by separate
+                        regulations established by these bodies.
                       </span>
                     </p>
                   </li>

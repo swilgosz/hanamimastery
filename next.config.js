@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 module.exports = {
   async redirects() {
     return [
@@ -14,15 +15,15 @@ module.exports = {
       //   permanent: true,
       // },
       {
-        source: "/feed",
-        destination: "/feed.xml",
+        source: '/feed',
+        destination: '/feed.xml',
         permanent: true,
       },
       {
-        source: "/rss",
-        destination: "/feed.xml",
+        source: '/rss',
+        destination: '/feed.xml',
         permanent: true,
-      }
+      },
     ];
   },
   webpack: (config, { isServer }) => {

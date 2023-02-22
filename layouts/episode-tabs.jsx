@@ -1,25 +1,25 @@
-import * as React from "react";
-import { Box, Tabs, Tab, makeStyles, useMediaQuery } from "@material-ui/core";
-import NextLink from "next/link";
-import { useRouter } from "next/router";
+import * as React from 'react';
+import { Box, Tabs, Tab, makeStyles, useMediaQuery } from '@material-ui/core';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    width: '100%',
     backgroundColor: theme.palette.background.paper,
-    borderColor: "divider",
+    borderColor: 'divider',
   },
   link: {
-    display: "inline-flex",
-    alignSelf: "center",
+    display: 'inline-flex',
+    alignSelf: 'center',
   },
 }));
 
 const getTabsValue = (view) => {
   switch (view) {
-    case "episodes":
+    case 'episodes':
       return 0;
-    case "discuss":
+    case 'discuss':
       return 1;
     default:
       return 0;
@@ -29,7 +29,7 @@ const getTabsValue = (view) => {
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`,
   };
 }
 
@@ -48,11 +48,7 @@ function LinkTab(props) {
   );
 }
 
-function SrcFolderName(id) {
-  return (parseInt(id) < 100 ? `0${id}` : id);
-}
-
-export default function EpisodeTabs({episode}) {
+export default function EpisodeTabs({ episode }) {
   const classes = useStyles();
 
   const {
@@ -61,19 +57,19 @@ export default function EpisodeTabs({episode}) {
 
   const episodePath = React.useMemo(() => `/episodes/${slug}`, [slug]);
   const value = getTabsValue(view);
-  const source = episode.source;
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
+  const { source } = episode;
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   return (
     <Box className={classes.root}>
       <Tabs
-        orientation={isSmallScreen ? false : "vertical"}
+        orientation={isSmallScreen ? false : 'vertical'}
         value={value}
         centered
       >
         <LinkTab
           label="Read"
-          aria-selected={true}
+          aria-selected
           href={episodePath}
           {...a11yProps(0)}
         />
@@ -84,7 +80,7 @@ export default function EpisodeTabs({episode}) {
           href={`${episodePath}?view=discuss`}
           {...a11yProps(1)}
         />
-        {source &&
+        {source && (
           <LinkTab
             label="Source"
             className={classes.link}
@@ -92,7 +88,7 @@ export default function EpisodeTabs({episode}) {
             target="_blank"
             {...a11yProps(0)}
           />
-        }
+        )}
       </Tabs>
     </Box>
   );

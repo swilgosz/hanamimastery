@@ -1,10 +1,10 @@
-const path = require("path");
-const readingTime = require("reading-time");
-const matter = require("gray-matter");
-const mdxPrism = require("mdx-prism");
-const { serialize } = require("next-mdx-remote/serialize");
-const { readFileByPath, getPaths } = require("./file-browsers");
-const admonitions = require("remark-admonitions");
+const path = require('path');
+const readingTime = require('reading-time');
+const matter = require('gray-matter');
+const mdxPrism = require('mdx-prism');
+const { serialize } = require('next-mdx-remote/serialize');
+const admonitions = require('remark-admonitions');
+const { readFileByPath, getPaths } = require('./file-browsers');
 
 /*
   Extends the file meta data by additional fields and information, like
@@ -16,14 +16,14 @@ function _serializeContentData(filePath, data) {
   const normalizedPath = path.normalize(filePath);
   const postSlug = normalizedPath.split(path.sep).slice(1)[0];
   const type = normalizedPath.split(path.sep)[0];
-  const itemPath = type == "pages" ? postSlug : filePath;
-  const host = process.env.NEXT_PUBLIC_BASE_URL || "";
+  const itemPath = type === 'pages' ? postSlug : filePath;
+  const host = process.env.NEXT_PUBLIC_BASE_URL || '';
 
   return {
     ...data,
     type,
     premium: data.premium || false,
-    fullTitle: type == "episodes" ? `#${data.id} ${data.title}` : data.title,
+    fullTitle: type === 'episodes' ? `#${data.id} ${data.title}` : data.title,
     slug: postSlug,
     path: itemPath,
     url: `${host}/${itemPath}`,
@@ -72,7 +72,7 @@ async function getContentBySlug(type, slug) {
 async function getContent(type) {
   const paths = await getPaths(type);
 
-  return await paths.reduce((allPosts, filePath) => {
+  return paths.reduce((allPosts, filePath) => {
     const source = readFileByPath(filePath);
     const { data } = matter(source);
 

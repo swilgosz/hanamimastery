@@ -1,10 +1,10 @@
-import React from "react";
-import { MDXRemote } from "next-mdx-remote";
-import { Container } from "@material-ui/core";
-import { getContentBySlug } from "../utils/queries";
-import components from "../features/mdx-components";
-import ArticlesLayout from "../layouts/articles-layout";
-import { SeoComponent } from "../features/seo";
+import React from 'react';
+import { MDXRemote } from 'next-mdx-remote';
+import { Container } from '@material-ui/core';
+import { getContentBySlug } from '../utils/queries';
+import components from '../features/mdx-components';
+import ArticlesLayout from '../layouts/articles-layout';
+import { SeoComponent } from '../features/seo';
 
 export default function Page({ frontMatter, mdxSource }) {
   return (
@@ -27,7 +27,7 @@ export default function Page({ frontMatter, mdxSource }) {
 }
 
 export async function getStaticProps() {
-  const post = await getContentBySlug("pages", "thank-you");
+  const post = await getContentBySlug('pages', 'thank-you');
 
   if (!post) {
     return {

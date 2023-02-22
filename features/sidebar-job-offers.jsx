@@ -5,24 +5,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import ArrowIcon from '@material-ui/icons/ArrowRight';
-import SendIcon from '@material-ui/icons/Send';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
-import { Link, Typography, Card, CardMedia, CardActions, CardContent, CardHeader, Button } from "@material-ui/core";
-import NextLink from "next/link";
+import { Link, Card, CardContent, CardHeader } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: theme.spacing(2),
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
   },
   list: {
     width: '100%',
@@ -34,21 +27,20 @@ const useStyles = makeStyles((theme) => ({
   },
   centered: {
     // display: 'block',
-    paddingTop: "0px",
-    marginTop: "0px",
+    paddingTop: '0px',
+    marginTop: '0px',
     textAlign: 'center',
-    display: 'block'
+    display: 'block',
   },
   header: {
     textAlign: 'center',
     display: 'block',
-    padding: '0px'
+    padding: '0px',
   },
   media: {
-    padding: '20px'
-  }
+    padding: '20px',
+  },
 }));
-
 
 export default function JobOffers() {
   const classes = useStyles();
@@ -64,16 +56,14 @@ export default function JobOffers() {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }} className={ classes.root }>
+    <Card sx={{ maxWidth: 345 }} className={classes.root}>
       <CardHeader title="Open Hanami Jobs" className={classes.header} />
       <CardContent>
         <List
           component="nav"
           aria-labelledby="nested-list-subheader"
           subheader={
-            <ListSubheader component="div" id="nested-list-subheader">
-
-            </ListSubheader>
+            <ListSubheader component="div" id="nested-list-subheader" />
           }
           className={classes.root}
         >
@@ -87,7 +77,10 @@ export default function JobOffers() {
                 {/* <ListItemIcon>
                   <ArrowIcon />
                 </ListItemIcon> */}
-                <Link href="https://apply.workable.com/dnsimple/" target="_blank_">
+                <Link
+                  href="https://apply.workable.com/dnsimple/"
+                  target="_blank_"
+                >
                   <ListItemText primary="All job offers" />
                 </Link>
               </ListItem>
@@ -106,7 +99,10 @@ export default function JobOffers() {
           <Collapse in={open2} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem button color="primary" className={classes.nestedList}>
-                <Link href="https://careers.ascendaloyalty.com/" target="_blank_">
+                <Link
+                  href="https://careers.ascendaloyalty.com/"
+                  target="_blank_"
+                >
                   <ListItemText primary="All job offers" />
                 </Link>
               </ListItem>

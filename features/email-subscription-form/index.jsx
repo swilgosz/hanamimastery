@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, CardContent, makeStyles } from "@material-ui/core";
+import React from 'react';
+import { Card, CardContent, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,7 +15,7 @@ export default function EmailSubscriptionForm() {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <div id="om-jygtzgejjk4smsfhwyo7-holder"></div>
+        <div id="om-jygtzgejjk4smsfhwyo7-holder" />
       </CardContent>
     </Card>
   );

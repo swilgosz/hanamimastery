@@ -3,16 +3,17 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import NextLink from 'next/link';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     margin: '25px 0',
     padding: '10px',
-    backgroundColor: 'rgb(245,245,245)'
-  }
+    backgroundColor: 'rgb(245,245,245)',
+  },
 }));
 
 export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
   const classes = useStyles();
+
   return (
     <Grid
       className={classes.root}
@@ -36,7 +37,9 @@ export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
         alt="Rails api thumbnail"
       />
       <Grid item xs={12} md={6}>
-        <Typography className={classes.header} variant="h5">Ruby On Rails REST API</Typography>
+        <Typography className={classes.header} variant="h5">
+          Ruby On Rails REST API
+        </Typography>
         <Typography variant={size === 'small' ? 'subtitle2' : 'h6'}>
           The complete guide
         </Typography>

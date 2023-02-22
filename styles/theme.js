@@ -1,19 +1,19 @@
-import { createTheme } from "@material-ui/core";
+import { createTheme } from '@material-ui/core';
 
 export default createTheme({
   palette: {
     primary: {
-      main: "#CB4426",
+      main: '#CB4426',
     },
   },
   overrides: {
     MuiButton: {
-      containedPrimary: { color: "#fff" },
+      containedPrimary: { color: '#fff' },
     },
     MuiCssBaseline: {
-      "@global": {
+      '@global': {
         html: {
-          WebkitFontSmoothing: "auto",
+          WebkitFontSmoothing: 'auto',
         },
       },
     },

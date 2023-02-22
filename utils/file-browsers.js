@@ -1,5 +1,6 @@
-const fs = require('fs')
-const path = require("path")
+const fs = require('fs');
+const path = require('path');
+
 const root = process.cwd();
 
 /*
@@ -8,7 +9,7 @@ const root = process.cwd();
   @return [Array] - list of files in the given folder
 */
 async function _getFiles(type) {
-  return fs.readdirSync(path.join(root, "data", type));
+  return fs.readdirSync(path.join(root, 'data', type));
 }
 
 /*
@@ -17,9 +18,9 @@ async function _getFiles(type) {
   @return [Array] list of items' slugs
 */
 async function getSlugs(contentType) {
-const fileNames = await _getFiles(contentType);
+  const fileNames = await _getFiles(contentType);
 
-return fileNames.map((fileName) => (fileName.replace(/\.md/, "")));
+  return fileNames.map((fileName) => fileName.replace(/\.md/, ''));
 }
 
 /*
@@ -30,22 +31,16 @@ return fileNames.map((fileName) => (fileName.replace(/\.md/, "")));
 async function getPaths(contentType) {
   let paths = [];
 
-  if (contentType == 'articles' || !contentType) {
-    const articles = await getSlugs('articles')
+  if (contentType === 'articles' || !contentType) {
+    const articles = await getSlugs('articles');
 
-    paths = [
-      ...paths,
-      ...articles.map((slug) => (path.join('articles', slug)))
-    ];
+    paths = [...paths, ...articles.map((slug) => path.join('articles', slug))];
   }
 
-  if (contentType == 'episodes' || !contentType) {
-    const episodes = await getSlugs('episodes')
+  if (contentType === 'episodes' || !contentType) {
+    const episodes = await getSlugs('episodes');
 
-    paths = [
-      ...paths,
-      ...episodes.map((slug) => (path.join('episodes', slug)))
-    ];
+    paths = [...paths, ...episodes.map((slug) => path.join('episodes', slug))];
   }
 
   return paths;
@@ -58,12 +53,11 @@ async function getPaths(contentType) {
 */
 function readFileByPath(filePath) {
   const source = fs.readFileSync(
-    path.join(root, "data", `${filePath}.md`),
-    "utf8"
+    path.join(root, 'data', `${filePath}.md`),
+    'utf8'
   );
   return source;
 }
-
 
 exports.getSlugs = getSlugs;
 exports.getPaths = getPaths;
