@@ -2,7 +2,9 @@
 import React from 'react';
 import { StickyShareButtons } from 'sharethis-reactjs';
 
-export default function ShareButtons() {
+export default function ShareButtons({ data }) {
+  const { url, thumbnail, title } = data;
+
   return (
     <StickyShareButtons
       config={{
@@ -30,6 +32,9 @@ export default function ShareButtons() {
         show_toggle: true, // show/hide the toggle buttons (true, false)
         size: 48, // the size of each button (INTEGER)
         top: 160, // offset in pixels from the top of the page
+        url,
+        title,
+        image: thumbnail.small,
       }}
     />
   );
