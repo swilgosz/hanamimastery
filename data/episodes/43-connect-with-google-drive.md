@@ -11,9 +11,9 @@ premium: true
 publishedAt: "2023-02-23"
 modifiedAt: "2023-02-23"
 thumbnail:
-  full: /images/episodes/42/cover-full.jpeg
-  big: /images/episodes/42/cover-big.jpeg
-  small: /images/episodes/42/cover-small.jpeg
+  full: /images/episodes/42/cover-full.png
+  big: /images/episodes/42/cover-big.png
+  small: /images/episodes/42/cover-small.png
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
 source: https://github.com/hanamimastery/app
@@ -30,7 +30,7 @@ My process for preparing thumbnails is this:
 2. **Prepare Versions** - We use this thumbnail for youtube videos, but also we save it in the repository and generate image versions out of it.
 3. **Push all versions to GitHub** - at the end, all the images are committed to the episode's branch and pushed to GitHub, waiting for publication. 
 
-![](/images/episodes/42/google-drive-component-diagram.png)
+![Google Drive Integration schema](google-drive-component-diagram.png)
 
 I want to completely delegate or automate the work choosing and adjusting thumbnails, and I don't want people to be forced learning how to work with GitHub repositories and how to commit files.
 
