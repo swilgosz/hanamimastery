@@ -14,11 +14,11 @@ thumbnail:
   big: /images/episodes/42/cover-big.jpeg
   small: /images/episodes/42/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/@hanamimastery/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1633088821477687297
+  mastodon: https://ruby.social/@hanamimastery/109982101779105164
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/11kyq7m/best_way_to_work_with_front_matter_in_ruby_hanam/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/11kyr6i/best_way_to_work_with_front_matter_in_ruby_hanam/
 source: https://github.com/hanamimastery/episodes/tree/main/042
 ---
 Hi there!
