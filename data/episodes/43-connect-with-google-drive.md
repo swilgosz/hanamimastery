@@ -1,19 +1,19 @@
 ---
-id: 42
-aliases: ["HMEP042"]
+id: 43
+aliases: ["HMEP043"]
 author: "swilgosz"
 topics: ['hanami', 'integrations', 'google']
 title: "Connect your ruby app with google drive."
 excerpt: ""
-videoId: null
+videoId: rgFIQ_DeMsc
 published: false
 premium: true
-publishedAt: "2023-02-23"
-modifiedAt: "2023-02-23"
+publishedAt: "2023-03-09"
+modifiedAt: "2023-03-09"
 thumbnail:
-  full: /images/episodes/42/cover-full.png
-  big: /images/episodes/42/cover-big.png
-  small: /images/episodes/42/cover-small.png
+  full: /images/episodes/43/cover-full.png
+  big: /images/episodes/43/cover-big.png
+  small: /images/episodes/43/cover-small.png
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
 source: https://github.com/hanamimastery/app
@@ -56,11 +56,10 @@ Then make sure you share your drive with the service account email.
 
 Once you have it, we can implement the connection.
 
-## Summary
-
-This is only a part of the episode!
-Subscribe to [Hanami Mastery PRO](https://pro.hanamimastery.com) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
+:::tip Subscribe to Hanami Mastery PRO  
+This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://pro.hanamimastery.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!  
+:::
 
 ## Thanks
 
-That's all for today, thank you for watching!, and see you in the next episode!
+That's all for today, thank you for watching, and see you in the next episode!
