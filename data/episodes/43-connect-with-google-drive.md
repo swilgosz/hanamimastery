@@ -15,12 +15,11 @@ thumbnail:
   big: /images/episodes/43/cover-big.png
   small: /images/episodes/43/cover-small.png
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1633955723850940416
+  mastodon: https://ruby.social/@hanamimastery/109995647132487900
 source: https://github.com/hanamimastery/app
 ---
-Hi there!
-
-In [[38-hanami-mastery-app|episode 38]], we used a high-level application diagram to visualize the needs [our hanami mastery application](https://app.hanamimastery.com) will help us to solve.
+In the [[38-hanami-mastery-app|episode 38]], we used a high-level application diagram to visualize the needs [our hanami mastery application](https://app.hanamimastery.com) will help us to solve.
 
 In this episode, we'll go to the next level, and I'll start taking care of one of the most annoying steps I have during the episode creation process, which is thumbnail preparation.
 
