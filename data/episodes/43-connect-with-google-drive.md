@@ -6,7 +6,7 @@ topics: ['hanami', 'integrations', 'google']
 title: "Connect your ruby app with google drive."
 excerpt: "In the world of amazing technology pace, integrations between services are the key to success and the same applies to ruby projects. In this episode, we integrate our Hanami application with Google drive."
 videoId: rgFIQ_DeMsc
-published: false
+published: true
 premium: true
 publishedAt: "2023-03-09"
 modifiedAt: "2023-03-09"
