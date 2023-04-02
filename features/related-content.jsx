@@ -1,4 +1,4 @@
-import { Box, Typography, makeStyles } from '@material-ui/core';
+import { Container, Typography, makeStyles } from '@material-ui/core';
 import React from 'react';
 import ContentDisplay from './content-grid';
 
@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '1rem',
     marginTop: '1rem',
+    padding: theme.spacing(0, 0, 0, 4),
   },
 }));
 
@@ -18,9 +19,9 @@ export default function RelatedContent({ posts }) {
   const classes = useStyles();
 
   return (
-    <Box className={classes.container}>
+    <Container className={classes.container}>
       <Typography variant="h2">Related Content</Typography>
       <ContentDisplay items={posts} relatedContent />
-    </Box>
+    </Container>
   );
 }

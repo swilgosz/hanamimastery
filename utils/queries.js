@@ -100,6 +100,8 @@ async function getContentByTopic(topic) {
 async function getRelatedContent(post) {
   const { topics: relatedTopics, id } = post;
 
+  const relatedPostsReturned = 4;
+
   const posts = await getContent();
   const postsWithTopic = posts.filter((item) =>
     item.topics.some((topic) => relatedTopics.includes(topic))
@@ -125,11 +127,23 @@ async function getRelatedContent(post) {
     (a, b) => b.topicCount - a.topicCount
   );
 
-  const relatedPostsReturned = 3;
+  if (sortedRelatedPosts.length < relatedPostsReturned) {
+    const amountOfRelatedPosts =
+      relatedPostsReturned - sortedRelatedPosts.length;
+    const filterRelatedPosts = posts.filter(
+      (item) =>
+        item.id !== id && sortedRelatedPosts.some((i) => i.id !== item.id)
+    );
 
-  const slicedRelatedPosts = sortedRelatedPosts.slice(0, relatedPostsReturned);
+    return [
+      ...sortedRelatedPosts,
+      ...filterRelatedPosts.slice(0, amountOfRelatedPosts),
+    ];
+  }
 
-  return slicedRelatedPosts;
+  const sliceRelatedPosts = sortedRelatedPosts.slice(0, relatedPostsReturned);
+
+  return sliceRelatedPosts;
 }
 
 exports.getContentBySlug = getContentBySlug;
