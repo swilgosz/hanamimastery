@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ContentDisplay = (props) => {
   const classes = useStyles();
-  const { items } = props;
+  const { items, relatedContent } = props;
   return (
     <Grid container component="ul" className={classes.list} spacing={6}>
       {items.map((item, index) => (
@@ -21,10 +21,13 @@ const ContentDisplay = (props) => {
           key={item.id}
           item
           xs={12}
-          md={index === 0 ? 12 : 6}
+          md={index === 0 && !relatedContent ? 12 : 6}
           component="li"
         >
-          <ContentTile item={item} variant={index === 0 ? 'big' : 'small'} />
+          <ContentTile
+            item={item}
+            variant={index === 0 && !relatedContent ? 'big' : 'small'}
+          />
         </Grid>
       ))}
     </Grid>

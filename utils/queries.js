@@ -94,9 +94,56 @@ async function getContent(type) {
 */
 async function getContentByTopic(topic) {
   const posts = await getContent();
+
   return posts.filter((item) => item.topics.includes(topic));
+}
+
+async function getRelatedContent(post) {
+  const { topics: relatedTopics, id } = post;
+
+  const relatedPostsReturned = 4;
+
+  const content = await getContent();
+
+  const posts = content.sort((a, b) => b.publishedAt - a.publishedAt);
+
+  const postsWithTopic = posts.filter((item) =>
+    item.topics.some((topic) => relatedTopics.includes(topic))
+  );
+
+  const countRelatedTopics = postsWithTopic.reduce(
+    (postsWithTopicAcc, postWithTopic) => {
+      if (postWithTopic.id === id) return postsWithTopicAcc;
+      const topicCount = postWithTopic.topics.reduce((topicsAcc, topic) => {
+        relatedTopics.forEach((item) => {
+          if (topic === item) topicsAcc++;
+        });
+        return topicsAcc;
+      }, 0);
+
+      postsWithTopicAcc.push({ topicCount, ...postWithTopic });
+      return postsWithTopicAcc;
+    },
+    []
+  );
+
+  const sortRelatedPosts = countRelatedTopics.sort(
+    (a, b) => b.topicCount - a.topicCount
+  );
+
+  if (sortRelatedPosts.length < relatedPostsReturned) {
+    const amountOfRecentPosts = relatedPostsReturned - sortRelatedPosts.length;
+    const filterPosts = posts.filter(
+      (item) => item.id !== id && sortRelatedPosts.some((i) => i.id !== item.id)
+    );
+
+    return [...sortRelatedPosts, ...filterPosts.slice(0, amountOfRecentPosts)];
+  }
+
+  return sortRelatedPosts.slice(0, relatedPostsReturned);
 }
 
 exports.getContentBySlug = getContentBySlug;
 exports.getContent = getContent;
 exports.getContentByTopic = getContentByTopic;
+exports.getRelatedContent = getRelatedContent;
