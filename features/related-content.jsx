@@ -20,7 +20,7 @@ export default function RelatedContent({ posts }) {
 
   return (
     <Container className={classes.container}>
-      <Typography variant="h3">Related or recent posts</Typography>
+      <Typography variant="h3">May also interest you...</Typography>
       <ContentDisplay items={posts} relatedContent />
     </Container>
   );
