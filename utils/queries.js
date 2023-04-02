@@ -97,6 +97,42 @@ async function getContentByTopic(topic) {
   return posts.filter((item) => item.topics.includes(topic));
 }
 
+async function getRelatedContent(post) {
+  const { topics: relatedTopics, id } = post;
+
+  const posts = await getContent();
+  const postsWithTopic = posts.filter((item) =>
+    item.topics.some((topic) => relatedTopics.includes(topic))
+  );
+
+  const countRelatedTopics = postsWithTopic.reduce(
+    (postsWithTopicAcc, postWithTopic) => {
+      if (postWithTopic.id === id) return postsWithTopicAcc;
+      const topicCount = postWithTopic.topics.reduce((topicsAcc, topic) => {
+        relatedTopics.forEach((item) => {
+          if (topic === item) topicsAcc++;
+        });
+        return topicsAcc;
+      }, 0);
+
+      postsWithTopicAcc.push({ topicCount, ...postWithTopic });
+      return postsWithTopicAcc;
+    },
+    []
+  );
+
+  const sortedRelatedPosts = countRelatedTopics.sort(
+    (a, b) => b.topicCount - a.topicCount
+  );
+
+  const relatedPostsReturned = 3;
+
+  const slicedRelatedPosts = sortedRelatedPosts.slice(0, relatedPostsReturned);
+
+  return slicedRelatedPosts;
+}
+
 exports.getContentBySlug = getContentBySlug;
 exports.getContent = getContent;
 exports.getContentByTopic = getContentByTopic;
+exports.getRelatedContent = getRelatedContent;

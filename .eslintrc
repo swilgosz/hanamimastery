@@ -7,6 +7,8 @@
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",
     "react/no-unescaped-entities": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-param-reassign": "off",
+    "no-plusplus": "off"
   }
 }
