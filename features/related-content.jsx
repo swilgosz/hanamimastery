@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '1rem',
-    marginTop: '1rem',
+    gap: '20px',
+    marginTop: '20px',
     padding: theme.spacing(0, 0, 0, 4),
   },
 }));
@@ -20,7 +20,7 @@ export default function RelatedContent({ posts }) {
 
   return (
     <Container className={classes.container}>
-      <Typography variant="h2">Related Content</Typography>
+      <Typography variant="h3">Related or recent posts</Typography>
       <ContentDisplay items={posts} relatedContent />
     </Container>
   );
