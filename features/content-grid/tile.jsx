@@ -19,6 +19,9 @@ import TopicList from '../topics/topic-list';
 import ProTag from '../content/pro-tag';
 
 const useStyles = makeStyles((theme) => ({
+  card: {
+    height: '100%',
+  },
   content: {
     display: 'flex',
     flexDirection: 'column',
