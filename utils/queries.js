@@ -123,25 +123,20 @@ async function getRelatedContent(post) {
     []
   );
 
-  const sortedRelatedPosts = countRelatedTopics.sort(
+  const sortRelatedPosts = countRelatedTopics.sort(
     (a, b) => b.topicCount - a.topicCount
   );
 
-  if (sortedRelatedPosts.length < relatedPostsReturned) {
-    const amountOfRelatedPosts =
-      relatedPostsReturned - sortedRelatedPosts.length;
-    const filterRelatedPosts = posts.filter(
-      (item) =>
-        item.id !== id && sortedRelatedPosts.some((i) => i.id !== item.id)
+  if (sortRelatedPosts.length < relatedPostsReturned) {
+    const amountOfRecentPosts = relatedPostsReturned - sortRelatedPosts.length;
+    const filterPosts = posts.filter(
+      (item) => item.id !== id && sortRelatedPosts.some((i) => i.id !== item.id)
     );
 
-    return [
-      ...sortedRelatedPosts,
-      ...filterRelatedPosts.slice(0, amountOfRelatedPosts),
-    ];
+    return [...sortRelatedPosts, ...filterPosts.slice(0, amountOfRecentPosts)];
   }
 
-  const sliceRelatedPosts = sortedRelatedPosts.slice(0, relatedPostsReturned);
+  const sliceRelatedPosts = sortRelatedPosts.slice(0, relatedPostsReturned);
 
   return sliceRelatedPosts;
 }
