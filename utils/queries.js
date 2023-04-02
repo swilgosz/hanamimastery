@@ -94,6 +94,7 @@ async function getContent(type) {
 */
 async function getContentByTopic(topic) {
   const posts = await getContent();
+
   return posts.filter((item) => item.topics.includes(topic));
 }
 
@@ -102,7 +103,10 @@ async function getRelatedContent(post) {
 
   const relatedPostsReturned = 4;
 
-  const posts = await getContent();
+  const content = await getContent();
+
+  const posts = content.sort((a, b) => b.publishedAt - a.publishedAt);
+
   const postsWithTopic = posts.filter((item) =>
     item.topics.some((topic) => relatedTopics.includes(topic))
   );
@@ -136,9 +140,7 @@ async function getRelatedContent(post) {
     return [...sortRelatedPosts, ...filterPosts.slice(0, amountOfRecentPosts)];
   }
 
-  const sliceRelatedPosts = sortRelatedPosts.slice(0, relatedPostsReturned);
-
-  return sliceRelatedPosts;
+  return sortRelatedPosts.slice(0, relatedPostsReturned);
 }
 
 exports.getContentBySlug = getContentBySlug;

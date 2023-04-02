@@ -8,14 +8,14 @@ import {
   getContentBySlug,
   getRelatedContent,
 } from '../../utils/queries';
-import RelatedArticles from '../../features/related-content';
+import RelatedContent from '../../features/related-content';
 
 export default function Episode({ mdxSource, frontMatter, relatedContent }) {
   return (
     <EpisodeLayout episode={frontMatter}>
       <MDXRemote {...mdxSource} components={components} />
       <TopicSuggestion />
-      <RelatedArticles posts={relatedContent} />
+      <RelatedContent posts={relatedContent} />
     </EpisodeLayout>
   );
 }
