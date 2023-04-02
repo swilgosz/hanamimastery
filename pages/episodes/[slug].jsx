@@ -10,12 +10,12 @@ import {
 } from '../../utils/queries';
 import RelatedArticles from '../../features/related-content';
 
-export default function Episode({ mdxSource, frontMatter, relatedPosts }) {
+export default function Episode({ mdxSource, frontMatter, relatedContent }) {
   return (
     <EpisodeLayout episode={frontMatter}>
       <MDXRemote {...mdxSource} components={components} />
       <TopicSuggestion />
-      {/* <RelatedArticles topics={relatedPosts} /> */}
+      <RelatedArticles posts={relatedContent} />
     </EpisodeLayout>
   );
 }
@@ -31,6 +31,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = await getContentBySlug('episodes', params.slug);
-  const relatedPosts = await getRelatedContent(post.frontMatter);
-  return { props: { ...post, relatedPosts } };
+  const relatedContent = await getRelatedContent(post.frontMatter);
+  return { props: { ...post, relatedContent } };
 }
