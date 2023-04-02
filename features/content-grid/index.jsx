@@ -21,7 +21,7 @@ const ContentDisplay = (props) => {
           key={item.id}
           item
           xs={12}
-          md={index === 0 && !relatedContent ? 12 : 4}
+          md={index === 0 && !relatedContent ? 12 : 6}
           component="li"
         >
           <ContentTile
