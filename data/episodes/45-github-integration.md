@@ -93,7 +93,7 @@ This now should prepend my episodes list with a new row each time I'm clicking t
 
 Works!
 
-![[episodes-list-unstyled.png]]
+![Unstyled episodes from DB](/images/episodes/45/episodes-list-unstyled.png)
 
 ### Setting the view
 
@@ -145,7 +145,7 @@ For explaining how this part works, I recommend you to go back to visit [episode
 
 For today, let's check how it behaves.
 
-![[episodes-list-styled.png]]
+![Styled episodes from DB](/images/episodes/45/episodes-list-styled.png)
 
 When I click, on top of the list, the last saved episode is prepended again, showing duplicates. That's an amazing first step, but what we want to do, is to fetch all new episodes from Github, and this is what we'll do now.
 
