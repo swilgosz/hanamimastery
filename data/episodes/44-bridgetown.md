@@ -68,14 +68,13 @@ You can preview a few different text blocks, including code sample, basic `CSS` 
 
 If I'd say a single thing I love Rails for, it's the [convention over the configuration philosophy](https://rubyonrails.org/doctrine#convention-over-configuration). It started this trend of making all the projects just work out of the box and as a user, I see it as extremely convenient.
 
-
 ## Directory structure
 
-When I'll open the project file tree, You'll see a few main folders, for example one named *frontend*, that contains all the javascript and CSS for our application. The content of my blog will be placed in *src* folder though, so let me check it now.
+When I'll open the project file tree, You'll see a few main folders, for example, one named *frontend*, that contains all the javascript and CSS for our application. The content of my blog will be placed in the *src* folder though, so let me check it now.
 
-You can find here some shared components, like footer and navigation bar, and those are all written in `liquid` template language. You can configure Bridgetown to use `slim`, `erb`, or any other template language if you don't like the default and I'll probably do it just because I completely don't know `liquid` syntax.
+Here, some shared components, like the footer and navigation bar, are all written in `liquid` template language. You can configure Bridgetown to use `slim`, `erb`, or any other template language if you don't like the default and I'll probably do it just because I completely don't know the `liquid` syntax.
 
-The posts are grouped together in the `posts` folder, so if you want to write something, you can start right-away, using your favorite content editor. On Hanami Mastery I don't have posts though, but rather `articles` and `episodes`, so let me show you how you can create custom collections if that suits you better.
+The posts are grouped in the posts folder, so if you want to write something, you can start immediately, using your favorite content editor. I don't have posts on Hanami Mastery, but rather `articles` and `episodes`, so let me show you how you can create custom collections if that suits you better.
 
 In the `bridgetown.config.yml` file, I'm going to add two of my custom collections and configure some options.
 
@@ -115,7 +114,7 @@ In case you have a lot of content on your blog, you may be interested in enablin
 
 I'll show you how it works on my episodes list. In the frontmatter of this page, I want to specify which collection to paginate, and because I only have 3 items, I'll paginate by 2 episodes per page.
 
-With this I can replace the `collection.episodes` by `paginator` call, and to show the pagination links, I'll paste the code snipped from the official documentation - you can style it up further if you wish of course.
+With this, I can replace the `collection.episodes` by a `paginator` call, and to show the pagination links, I'll paste the code snipped from the official documentation - you can style it up further if you wish of course.
 
 Now when I'll visit my browser, I can already see the basic navigation feature enabled.
 
@@ -142,6 +141,8 @@ I want to especially thank my recent sponsors,
 - [Maxim Gurin](https://github.com/maximgurin)
 - [prowly.com](http://prowly.com/)
 - [Akilas Yemane](https://twitter.com/akilasy)
+
+- [Aleksandr Barsukov](https://unsplash.com/@aleksandr_barsukov)
 
 and [all the Hanami Mastery PRO subscribers, for supporting this project, I really appreciate it!
 
