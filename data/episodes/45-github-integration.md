@@ -1,14 +1,14 @@
 ---
-id: 44
-aliases: ["HMEP044"]
+id: 45
+aliases: ["HMEP045"]
 author: "swilgosz"
 topics: ['hanami', 'integrations']
 title: "Github integration with Hanami"
 excerpt: "If you're a developer, you know GitHub. And if you don't know Hanami, you definitely should. In this episode, I'll show you how to make them both to know each other."
 videoId: null
 published: false
-publishedAt: "2023-02-09"
-modifiedAt: "2023-02-09"
+publishedAt: "2023-05-11"
+modifiedAt: "2023-05-11"
 thumbnail:
   full: /images/episodes/44/cover-full.jpeg
   big: /images/episodes/44/cover-big.jpeg
@@ -19,7 +19,7 @@ discussions:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: https://github.com/hanamimastery/episodes/tree/main/044
+source: https://github.com/hanamimastery/episodes/tree/main/045
 ---
 [🎬 01] Hi there!
 
@@ -27,7 +27,7 @@ I have here a Hanami application listing all my Hanami Mastery episodes and I wa
 
 [🎬 02] The thing is, these episodes' data is pulled out from my DB, but I host my content using the static site generator. [🎬 03] The source of truth database is a GitHub repository and markdown file system!
 
-All our content is open-sourced, and everyone can contribute to it, by writing new episodes, or updating the existing ones. 
+All our content is open-sourced, and everyone can contribute to it, by writing new episodes, or updating the existing ones.
 
 This is part of our mission to bring value to Ruby community together, and I don't want to use private postgres database for this.
 
@@ -220,7 +220,7 @@ client.user
 # ...
 ```
 
-Seems it works! 
+Seems it works!
 
 ## Github integration class.
 
@@ -311,7 +311,7 @@ This is why, only a minimal set of data is returned here, and to download the co
 
 ### Fetching Content
 
-[🎬 30] To fetch the actual file content, I will need the file path from the GitHub repository. Then I'll use the `contents` method for the `Octokit` client to read the given file. 
+[🎬 30] To fetch the actual file content, I will need the file path from the GitHub repository. Then I'll use the `contents` method for the `Octokit` client to read the given file.
 
 It needs my repository name, file path, and some more strict pointer to the exact file reference because as you know, GitHub stores all versions of all your files.
 
@@ -339,7 +339,7 @@ Works like a charm! We can now fetch from GithHub all the details of any episode
 
 ## Interactor
 
-[🎬 32] Now the final step is writing our results into the database. For this, I'm going to write an interactor that will inject the github integration class and the episodes repository. 
+[🎬 32] Now the final step is writing our results into the database. For this, I'm going to write an interactor that will inject the github integration class and the episodes repository.
 
 [🎬 33] It will use the `Success` object, including all new drafts that are imported. If you're interested in how the interactor is implemented, check out the source code of the app, but you can also refer to [episode 007 about dry-monads](/episodes/7-untangle-your-app-with-dry-monads).
 
@@ -450,7 +450,7 @@ module Main
       end
     end
   end
-end      
+end
 ```
 
 [🎬 42] Then I want to have a `source id` extracted out of my path and added to the hash transformation when needed.
@@ -485,8 +485,8 @@ module Main
             key
           end.to_sym
         end
-        
-        # ... 
+
+        # ...
       end
     end
   end
@@ -497,7 +497,7 @@ end
 
 [🎬 44] We now can import new files to the system, but nothing calls our interactor, so let's update our action accordingly.
 
-I need to inject my interactor as a dependency, and then extract a value from the call. 
+I need to inject my interactor as a dependency, and then extract a value from the call.
 
 ```ruby
 module Main
@@ -505,7 +505,7 @@ module Main
     module Episodes
       class Fetch < Main::Action
         include Deps['interactors.fetch_draft_episodes']
-        
+
         def handle(request, response)
           result = fetch_draft_episodes.call
           episodes = result.value![:drafts]
