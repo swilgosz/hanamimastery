@@ -3,8 +3,8 @@ id: 9
 aliases: ["HMAP009"]
 author: "swilgosz"
 topics: ['oss', 'thoughts']
-title: "Open Source Heroes - A Poem of appreciation."
-excerpt: "Working with open source for a long time is tremendous work, often unappreciated. Join me with a moment of sharing a word of appreciation to one of OSS hero you know!"
+title: "Open Source Heroes - A Poem of Appreciation."
+excerpt: "Working with open source for a long time is tremendous work, often unappreciated. Join me with a moment of sharing a word of appreciation to one of OSS heroes you know!"
 published: true
 publishedAt: "2023-05-08"
 modifiedAt: "2023-05-08"
@@ -12,6 +12,12 @@ thumbnail:
   full: /images/articles/open-source-heroes/cover-full.png
   big: /images/articles/open-source-heroes/cover-big.png
   small: /images/articles/open-source-heroes/cover-small.png
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1655669896875745281
+  mastodon: https://ruby.social/@hanamimastery/110334931076745830
+  reddit:
+    ruby: https://www.reddit.com/r/ruby/comments/13c3jg9/open_source_heroes_a_poem_of_appreciation/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/13c3ogq/open_source_heroes_a_poem_of_appreciation/
 category: stray
 ---
 Working with open source for a long time is tremendous work, [often unappreciated](https://dev.to/david_whitney/open-source-exploitation-5dpj). 
