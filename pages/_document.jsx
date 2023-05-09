@@ -1,6 +1,6 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import Script from 'next/script';
+// import Script from 'next/script';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import theme from '../styles/theme';
 
@@ -22,21 +22,21 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <Script
+          {/* <Script
             src="https://platform-api.sharethis.com/js/sharethis.js#property=60b823ffeed0fd001128d645&product=sticky-share-buttons"
             strategy="beforeInteractive"
-          />
+          /> */}
         </Head>
         <body>
           <Main />
           <NextScript />
-          <script
+          {/* <script
             type="text/javascript"
             src="https://a.omappapi.com/app/js/api.min.js"
             data-account="82043"
             data-user="72987"
             async
-          />
+          /> */}
         </body>
       </Html>
     );

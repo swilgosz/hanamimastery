@@ -32,10 +32,7 @@ export default function MenuAppBar() {
           variant="dense"
         >
           <NextLink href="/" passHref>
-            <Link>
-              {/* <Image width="83" height="28" src="/logo-small.png" /> */}
-              <h3>HanamiMastery</h3>
-            </Link>
+            <h3>HanamiMastery</h3>
           </NextLink>
           {isDesktop ? <DesktopMenu /> : <MobileMenu />}
         </Toolbar>

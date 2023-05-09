@@ -36,13 +36,7 @@ function a11yProps(index) {
 function LinkTab(props) {
   const classes = useStyles();
   return (
-    <NextLink
-      className={classes.link}
-      centered
-      href={props.href}
-      passHref
-      shallow
-    >
+    <NextLink className={classes.link} href={props.href} passHref shallow>
       <Tab className={classes.link} {...props} />
     </NextLink>
   );
@@ -63,9 +57,8 @@ export default function EpisodeTabs({ episode }) {
   return (
     <Box className={classes.root}>
       <Tabs
-        orientation={isSmallScreen ? false : 'vertical'}
+        orientation={isSmallScreen ? 'horizontal' : 'vertical'}
         value={value}
-        centered
       >
         <LinkTab
           label="Read"
