@@ -90,6 +90,8 @@ _into extreme **open-source mode**._
 
 *to add some views and do the 2.1 release.*
 
+> A poem was written by Seb Wilgosz (no AI involved, lol!).
+
 ![The Open Source Hero](/images/articles/open-source-heroes/cover-original.png)
 
 ## Thanks!
