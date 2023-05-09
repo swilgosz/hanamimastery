@@ -13,10 +13,11 @@ const { readFileByPath, getPaths } = require('./file-browsers');
   @param [Object] data object to extend, read from the file
 */
 function _serializeContentData(filePath, data) {
-  const normalizedPath = path.normalize(filePath);
-  const postSlug = normalizedPath.split(path.sep).slice(1)[0];
+  const normalizedPath = path.normalize(filePath).replace(/\\/g, '/');
+  const postSlug = normalizedPath.split('/').slice(1)[0];
   const type = normalizedPath.split(path.sep)[0];
-  const itemPath = type === 'pages' ? postSlug : filePath;
+
+  const itemPath = type === 'pages' ? postSlug : normalizedPath;
   const host = process.env.NEXT_PUBLIC_BASE_URL || '';
 
   return {
