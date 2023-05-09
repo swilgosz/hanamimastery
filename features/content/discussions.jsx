@@ -8,12 +8,12 @@ import {
   ListItemText,
   Divider,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 
-import RedditIcon from '@material-ui/icons/Reddit';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import RedditIcon from '@mui/icons-material/Reddit';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {},

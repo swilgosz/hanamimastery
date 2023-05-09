@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Box, Button } from '@material-ui/core';
+import { Box, Button } from '@mui/material';
 import NextLink from 'next/link';
 import { SeoComponent } from '../features/seo';
 import ContentGrid from '../features/content-grid/index';

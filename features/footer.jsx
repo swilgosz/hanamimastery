@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import NextLink from 'next/link';
-import { Link, makeStyles, Typography } from '@material-ui/core';
+import { Link, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   footer: { marginTop: 'auto', padding: theme.spacing(2) },

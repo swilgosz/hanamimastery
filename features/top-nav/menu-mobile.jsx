@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Menu from '@material-ui/core/Menu';
-import { Close } from '@material-ui/icons';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
+import { Close } from '@mui/icons-material';
 import MenuItems from './menu-items';
 
 const MobileMenu = () => {

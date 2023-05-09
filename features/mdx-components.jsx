@@ -1,13 +1,5 @@
-import {
-  Typography,
-  Chip,
-  Link,
-  makeStyles,
-  createStyles,
-  withTheme,
-  Grid,
-  withStyles,
-} from '@material-ui/core';
+import { Typography, Chip, Link, createStyles, Grid } from '@mui/material';
+import { makeStyles, withStyles, withTheme } from '@mui/styles';
 import NextLink from 'next/link';
 import CourseAd from './course-ad';
 import EmailSubscriptionForm from './email-subscription-form/index';

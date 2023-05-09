@@ -2,12 +2,13 @@ import '../styles/highlighting.css';
 import '../styles/fonts.css';
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
+
+import { makeStyles } from '@mui/styles';
+import { CssBaseline, Typography } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
 import { useRouter } from 'next/router';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import TagManager from 'react-gtm-module';
-import { Typography } from '@material-ui/core';
 import NextLink from 'next/link';
 import TopNav from '../features/top-nav/index';
 import Footer from '../features/footer';

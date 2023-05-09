@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Grid, Container, Typography } from '@material-ui/core';
+import { Grid, Container, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import { SeoComponent } from '../../features/seo';
 import { useStyles } from './episode-layout.styles';

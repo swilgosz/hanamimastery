@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import NextLink from 'next/link';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import { Container, useMediaQuery, useTheme, Link } from '@material-ui/core';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import { Container, useMediaQuery, useTheme } from '@mui/material';
 import MobileMenu from './menu-mobile';
 import DesktopMenu from './menu-desktop';
 

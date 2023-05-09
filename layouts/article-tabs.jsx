@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Box, Tabs, Tab, makeStyles, useMediaQuery } from '@material-ui/core';
+import { Box, Tabs, Tab, useMediaQuery } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -36,7 +37,13 @@ function a11yProps(index) {
 function LinkTab(props) {
   const classes = useStyles();
   return (
-    <NextLink className={classes.link} href={props.href} passHref shallow>
+    <NextLink
+      className={classes.link}
+      centered
+      href={props.href}
+      passHref
+      shallow
+    >
       <Tab className={classes.link} {...props} />
     </NextLink>
   );
@@ -59,6 +66,7 @@ export default function ArticleTabs() {
     <Box className={classes.root}>
       <Tabs
         orientation={isSmallScreen ? 'horizontal' : 'vertical'}
+        centered
         value={value}
       >
         <LinkTab

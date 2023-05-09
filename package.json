@@ -11,10 +11,15 @@
     "lint:fix": "eslint . --ext ts --ext tsx --ext js --ext jsx --fix"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^2.2.0",
     "@mapbox/rehype-prism": "^0.7.0",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.3",
+    "@mui/styles": "^5.12.3",
     "@reduxjs/toolkit": "^1.5.1",
     "add": "^2.0.6",
     "disqus-react": "^1.0.11",

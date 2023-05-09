@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Box, Tabs, Tab, makeStyles, useMediaQuery } from '@material-ui/core';
+import { Box, Tabs, Tab, useTheme } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { makeStyles } from '@mui/styles';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -58,6 +60,7 @@ export default function EpisodeTabs({ episode }) {
     <Box className={classes.root}>
       <Tabs
         orientation={isSmallScreen ? 'horizontal' : 'vertical'}
+        centered
         value={value}
       >
         <LinkTab

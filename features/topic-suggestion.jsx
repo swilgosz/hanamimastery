@@ -6,10 +6,11 @@ import {
   Card,
   CardContent,
   CardActions,
-  makeStyles,
-} from '@material-ui/core';
-import ChatIcon from '@material-ui/icons/Chat';
-import TwitterIcon from '@material-ui/icons/Twitter';
+} from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
+import ChatIcon from '@mui/icons-material/Chat';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
 const useStyles = makeStyles(() => ({
   root: {},

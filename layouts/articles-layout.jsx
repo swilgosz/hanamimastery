@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Grid, Container, makeStyles } from '@material-ui/core';
+import { Grid, Container } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import EmailSubscriptionForm from '../features/email-subscription-form';
 import GHSponsor from '../features/gh-sponsor';
 import SidebarSponsors from '../features/sidebar-sponsors';

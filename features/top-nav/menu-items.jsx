@@ -1,8 +1,8 @@
 import NextLink from 'next/link';
-import MenuItem from '@material-ui/core/MenuItem';
+import MenuItem from '@mui/material/MenuItem';
 import { nanoid } from '@reduxjs/toolkit';
-import RssFeedIcon from '@material-ui/icons/RssFeed';
-import { Button } from '@material-ui/core';
+import RssFeedIcon from '@mui/icons-material/RssFeed';
+import { Button } from '@mui/material';
 
 const links = [
   { href: 'https://pro.hanamimastery.com', label: 'GO PRO', highlight: 'true' },

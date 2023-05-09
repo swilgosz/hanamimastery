@@ -9,8 +9,8 @@ import {
   CardHeader,
   Link,
   Button,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+} from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import NextLink from 'next/link';
 import { useSelector } from 'react-redux';
 import TextTruncate from 'react-text-truncate';
