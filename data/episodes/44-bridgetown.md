@@ -14,11 +14,10 @@ thumbnail:
   big: /images/episodes/44/cover-big.jpeg
   small: /images/episodes/44/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/@hanamimastery/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1656013134035918877
+  mastodon: https://ruby.social/@hanamimastery/110340379572394441
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/13d34bu/lets_make_a_blog_with_bridgetown_hanami_mastery/
 source: https://github.com/hanamimastery/episodes/tree/main/044
 ---
 
