@@ -5,8 +5,8 @@ author: "swilgosz"
 topics: ['bridgetown', 'web']
 title: "Let's make a blog with Bridgetown"
 excerpt: "Bridgetown is the best static site generator for Ruby, and here is why."
-videoId: null
-published: false
+videoId: 4PWDNZsZ-L0
+published: true
 publishedAt: "2023-05-09"
 modifiedAt: "2023-05-09"
 thumbnail:
