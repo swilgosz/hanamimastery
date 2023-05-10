@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import CustomLink from './custom-link';
 import { Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import CustomLink from './custom-link';
 
 const useStyles = makeStyles((theme) => ({
   footer: { marginTop: 'auto', padding: theme.spacing(2) },
