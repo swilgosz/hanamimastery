@@ -7,16 +7,15 @@ import {
   CardActions,
   CardActionArea,
   CardHeader,
-  Link,
   Button,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import NextLink from 'next/link';
 import { useSelector } from 'react-redux';
 import TextTruncate from 'react-text-truncate';
 import { findAuthor } from '../../redux/slices/authors';
 import TopicList from '../topics/topic-list';
 import ProTag from '../content/pro-tag';
+import CustomLink from '../custom-link';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -54,18 +53,16 @@ const ContentTile = ({ item, variant }) => {
   const thumbnailUrl = variant === 'big' ? thumbnail.big : thumbnail.small;
   return (
     <Card className={classes.card}>
-      <NextLink href={`/${path}`} passHref>
+      <CustomLink href={`/${path}`}>
         <CardActionArea>
           <CardMedia className={classes.media} image={thumbnailUrl} />
         </CardActionArea>
-      </NextLink>
+      </CustomLink>
       <CardHeader
         disableTypography
         title={
           <>
-            <NextLink passHref href={`/${path}`}>
-              {fullTitle}
-            </NextLink>
+            <CustomLink href={`/${path}`}>{fullTitle}</CustomLink>
             <ProTag pro={item.premium} />
           </>
         }
@@ -87,11 +84,11 @@ const ContentTile = ({ item, variant }) => {
         </Typography>
       </CardContent>
       <CardActions className={classes.actions}>
-        <NextLink href={`/${path}`} passHref>
+        <CustomLink href={`/${path}`}>
           <Button variant="contained" color="primary">
             Read more
           </Button>
-        </NextLink>
+        </CustomLink>
       </CardActions>
     </Card>
   );

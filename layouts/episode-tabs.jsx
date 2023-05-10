@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Box, Tabs, Tab } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles } from '@mui/styles';
-import NextLink from 'next/link';
 import { useRouter } from 'next/router';
+import CustomLink from '../features/custom-link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,9 +38,9 @@ function a11yProps(index) {
 function LinkTab(props) {
   const classes = useStyles();
   return (
-    <NextLink className={classes.link} href={props.href} passHref shallow>
+    <CustomLink className={classes.link} href={props.href}>
       <Tab className={classes.link} {...props} />
-    </NextLink>
+    </CustomLink>
   );
 }
 
