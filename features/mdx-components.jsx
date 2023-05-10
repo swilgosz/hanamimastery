@@ -63,11 +63,7 @@ const CustomLink = (props) => {
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
   if (isInternalLink) {
-    return (
-      <NextLink href={href} passHref>
-        <Link {...props} />
-      </NextLink>
-    );
+    return <NextLink href={href} passHref {...props} />;
   }
 
   return <Link target="_blank" {...props} />;

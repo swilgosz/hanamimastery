@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Tabs, Tab, useTheme } from '@mui/material';
+import { Box, Tabs, Tab } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles } from '@mui/styles';
 import NextLink from 'next/link';

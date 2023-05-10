@@ -64,7 +64,7 @@ const ContentTile = ({ item, variant }) => {
         title={
           <>
             <NextLink passHref href={`/${path}`}>
-              <Link variant="h6">{fullTitle}</Link>
+              {fullTitle}
             </NextLink>
             <ProTag pro={item.premium} />
           </>
