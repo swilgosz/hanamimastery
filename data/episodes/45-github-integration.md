@@ -14,11 +14,8 @@ thumbnail:
   big: /images/episodes/45/cover-big.png
   small: /images/episodes/45/cover-small.png
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/XXX
-  reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1656943095047503872
+  mastodon: https://ruby.social/@hanamimastery/110354904368535568
 source: https://github.com/hanamimastery/episodes/tree/main/045
 ---
 I have here a Hanami application listing all my Hanami Mastery episodes and I want to allow managing them from the browser. If you wonder why I need this, check out [episode 38](/episodes/38-hanami-mastery-app) when I've explained that in detail.
