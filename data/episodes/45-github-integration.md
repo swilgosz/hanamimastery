@@ -5,19 +5,19 @@ author: "swilgosz"
 topics: ['hanami', 'integrations']
 title: "Github integration with Hanami"
 excerpt: "If you're a developer, you know GitHub. And if you don't know Hanami, you definitely should. In this episode, I'll show you how to make them both to know each other."
-videoId: null
-published: false
-publishedAt: "2023-05-11"
-modifiedAt: "2023-05-11"
+videoId: uMBrD6vLL2k
+published: true
+publishedAt: "2023-05-12"
+modifiedAt: "2023-05-12"
 thumbnail:
   full: /images/episodes/44/cover-full.png
   big: /images/episodes/44/cover-big.png
   small: /images/episodes/44/cover-small.png
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
+  mastodon: https://ruby.social/XXX
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/045
 ---
