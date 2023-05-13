@@ -9,6 +9,7 @@ videoId: uMBrD6vLL2k
 published: true
 publishedAt: "2023-05-12"
 modifiedAt: "2023-05-12"
+premium: true
 thumbnail:
   full: /images/episodes/45/cover-full.png
   big: /images/episodes/45/cover-big.png
