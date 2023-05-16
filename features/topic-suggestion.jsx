@@ -27,7 +27,7 @@ const useStyles = makeStyles(() => ({
 export default function TopicSuggestion() {
   const classes = useStyles();
   return (
-    <Card sx={{ maxWidth: 345 }} className={classes.centered}>
+    <Card className={classes.centered}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           Do you know great Ruby gems?
