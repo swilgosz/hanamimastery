@@ -5,7 +5,7 @@ import MenuItems from './menu-items';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    padding: 0,
+    alignItems: 'center',
     minHeight: theme.spacing(6),
   },
 }));

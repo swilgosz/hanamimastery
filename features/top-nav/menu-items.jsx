@@ -1,6 +1,5 @@
-import MenuItem from '@mui/material/MenuItem';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
-import { Button } from '@mui/material';
+import { Button, MenuItem } from '@mui/material';
 import CustomLink from '../custom-link';
 
 const links = [
@@ -18,12 +17,12 @@ const links = [
   { id: 7, href: '/feed', label: 'RSS', icon: '/rss-feed-icon.png' },
 ];
 
-const MenuItems = ({ MenuItemProps = {} }) =>
+const MenuItems = () =>
   links.map(({ id, href, label, icon, highlight }) => {
     if (icon) {
       return (
         <CustomLink key={id} href={href}>
-          <MenuItem {...MenuItemProps}>
+          <MenuItem>
             <RssFeedIcon />
           </MenuItem>
         </CustomLink>
@@ -33,7 +32,7 @@ const MenuItems = ({ MenuItemProps = {} }) =>
     if (highlight) {
       return (
         <CustomLink key={id} href={href}>
-          <MenuItem variant="">
+          <MenuItem>
             <Button variant="contained" color="primary">
               {label}
             </Button>
@@ -43,7 +42,7 @@ const MenuItems = ({ MenuItemProps = {} }) =>
     }
     return (
       <CustomLink key={id} href={href}>
-        <MenuItem variant="">{label}</MenuItem>
+        <MenuItem sx={{ color: 'text.primary' }}>{label}</MenuItem>
       </CustomLink>
     );
   });

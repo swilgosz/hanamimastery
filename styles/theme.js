@@ -6,6 +6,13 @@ export default createTheme({
       main: '#CB4426',
     },
   },
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        maxWidth: 1280,
+      },
+    },
+  },
   overrides: {
     MuiButton: {
       containedPrimary: { color: '#fff' },

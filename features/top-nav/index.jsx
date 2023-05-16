@@ -1,21 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { makeStyles } from '@mui/styles';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import { Container, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Container,
+  useMediaQuery,
+  useTheme,
+  AppBar,
+  Toolbar,
+} from '@mui/material';
 import MobileMenu from './menu-mobile';
 import DesktopMenu from './menu-desktop';
 import CustomLink from '../custom-link';
 
 const useStyles = makeStyles(() => ({
-  forkme: {
-    position: 'absolute',
-    right: 0,
-    top: 0,
-  },
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
+    height: '56px',
   },
 }));
 
@@ -28,7 +28,7 @@ export default function MenuAppBar() {
       <AppBar color="inherit">
         <Toolbar
           className={classes.toolbar}
-          component={(props) => <Container maxWidth="lg" {...props} />}
+          component={(props) => <Container {...props} />}
           variant="dense"
         >
           <CustomLink href="/">
