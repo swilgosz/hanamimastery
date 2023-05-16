@@ -5,7 +5,6 @@ import EmailSubscriptionForm from '../features/email-subscription-form';
 import GHSponsor from '../features/gh-sponsor';
 import SidebarSponsors from '../features/sidebar-sponsors';
 import SidebarJobOffers from '../features/sidebar-job-offers';
-
 import BuyMeACoffee from '../features/buy-me-a-coffee-button';
 
 const useStyles = makeStyles((theme) => ({
@@ -18,7 +17,7 @@ const ArticlesLayout = ({ article }) => {
   const classes = useStyles();
   return (
     <Container className={classes.root} component="main">
-      <Grid container spacing={3}>
+      <Grid container spacing={6}>
         <Grid xs={12} md={8} component="article" item>
           {article}
         </Grid>
