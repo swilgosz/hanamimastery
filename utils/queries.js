@@ -1,10 +1,12 @@
+/* eslint-disable import/extensions */
+
 import path from 'path';
 import readingTime from 'reading-time';
 import matter from 'gray-matter';
 import mdxPrism from 'mdx-prism';
-import { serialize } from 'next-mdx-remote/serialize';
+import { serialize } from 'next-mdx-remote/serialize.js';
 import admonitions from 'remark-admonitions';
-import { readFileByPath, getPaths } from './file-browsers';
+import { readFileByPath, getPaths } from './file-browsers.js';
 
 /*
   Extends the file meta data by additional fields and information, like

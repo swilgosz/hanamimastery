@@ -1,5 +1,4 @@
-/* eslint-disable no-param-reassign */
-module.exports = {
+const nextConfig = {
   async redirects() {
     return [
       /*
@@ -33,3 +32,5 @@ module.exports = {
     return config;
   },
 };
+
+export default nextConfig;

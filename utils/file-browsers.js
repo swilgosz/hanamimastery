@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const root = process.cwd();
 
@@ -17,7 +17,7 @@ async function _getFiles(type) {
   @param [String] contentType (folder name)
   @return [Array] list of items' slugs
 */
-async function getSlugs(contentType) {
+export async function getSlugs(contentType) {
   const fileNames = await _getFiles(contentType);
 
   return fileNames.map((fileName) => fileName.replace(/\.md/, ''));
@@ -28,7 +28,7 @@ async function getSlugs(contentType) {
   @param [String] contentType (folder name) (optional)
   @return [Array] list of items' file paths relative to 'data' folder
 */
-async function getPaths(contentType) {
+export async function getPaths(contentType) {
   let paths = [];
 
   if (contentType === 'articles' || !contentType) {
@@ -51,14 +51,10 @@ async function getPaths(contentType) {
   @param [String] file path, i.e: "episodes/1-funny-episode"
   @return [String] a content of the markdown file
 */
-function readFileByPath(filePath) {
+export function readFileByPath(filePath) {
   const source = fs.readFileSync(
     path.join(root, 'data', `${filePath}.md`),
     'utf8'
   );
   return source;
 }
-
-exports.getSlugs = getSlugs;
-exports.getPaths = getPaths;
-exports.readFileByPath = readFileByPath;

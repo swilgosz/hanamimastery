@@ -1,7 +1,6 @@
-const fs = require('fs');
-const Rss = require('rss');
-
-const { getContent } = require('./utils/queries');
+import fs from 'fs';
+import Rss from 'rss';
+import { getContent } from './utils/queries.js';
 
 async function getRssData() {
   const feed = new Rss({
@@ -21,7 +20,6 @@ async function getRssData() {
   });
 
   const posts = await getContent();
-
   posts.map(({ excerpt, topics, publishedAt, fullTitle, url, thumbnail }) => {
     const xmlItem = {
       title: fullTitle,
