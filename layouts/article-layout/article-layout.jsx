@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Container, Typography } from '@material-ui/core';
+import { Grid, Container, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import { SeoComponent } from '../../features/seo';
 import { useStyles } from './article-layout.styles';
@@ -54,12 +54,12 @@ const ArticleLayout = ({ article, children }) => {
           {title}
         </Typography>
       </section>
-      <Container className={classes.conainer} maxWidth="xl" component="main">
-        <Grid container className={classes.root} spacing={4}>
-          <Grid item xs={12} sm={12} md={12} lg={2} xl={3} component="aside">
+      <Container className={classes.container} maxWidth="xl" component="main">
+        <Grid container spacing={4}>
+          <Grid xs={12} sm={12} md={12} lg={2} item component="aside">
             <ArticleTabs />
           </Grid>
-          <Grid item sm={12} md={8} lg={7} xl={6} component="article">
+          <Grid sm={12} md={8} lg={7} item component="article">
             <ShareButtons data={article} />
             {displayArticle && children}
             {displayDiscussions && (
@@ -72,10 +72,10 @@ const ArticleLayout = ({ article, children }) => {
             )}
           </Grid>
           <Grid
-            item
             xs={12}
             md={4}
             lg={3}
+            item
             component={(props) => (
               <Container maxWidth="lg" component="aside" {...props} />
             )}

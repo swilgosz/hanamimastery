@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Grid, Container, Typography } from '@material-ui/core';
+import { Grid, Container, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import { SeoComponent } from '../../features/seo';
 import { useStyles } from './episode-layout.styles';
@@ -76,17 +76,16 @@ const EpisodeLayout = ({ episode, children }) => {
           </Typography>
         </div>
       </section>
-      <Container className={classes.conainer} maxWidth="xl" component="main">
-        <Grid container className={classes.root} spacing={4}>
-          <Grid item xs={12} sm={12} md={12} lg={2} xl={3} component="aside">
+      <Container className={classes.container} component="main">
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12} lg={2} component="aside">
             <EpisodeTabs episode={episode} />
           </Grid>
           <Grid
-            item
             sm={12}
             md={8}
             lg={7}
-            xl={6}
+            item
             component="article"
             className={classes.article}
           >
@@ -103,10 +102,10 @@ const EpisodeLayout = ({ episode, children }) => {
             )}
           </Grid>
           <Grid
-            item
             xs={12}
             md={4}
             lg={3}
+            item
             component={(props) => (
               <Container maxWidth="lg" component="aside" {...props} />
             )}

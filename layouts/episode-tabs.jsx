@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Box, Tabs, Tab, makeStyles, useMediaQuery } from '@material-ui/core';
-import NextLink from 'next/link';
+import { Box, Tabs, Tab } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
+import CustomLink from '../features/custom-link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -10,8 +12,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: 'divider',
   },
   link: {
-    display: 'inline-flex',
-    alignSelf: 'center',
+    width: '100%',
   },
 }));
 
@@ -35,16 +36,11 @@ function a11yProps(index) {
 
 function LinkTab(props) {
   const classes = useStyles();
+  const { href, ...rest } = props;
   return (
-    <NextLink
-      className={classes.link}
-      centered
-      href={props.href}
-      passHref
-      shallow
-    >
-      <Tab className={classes.link} {...props} />
-    </NextLink>
+    <CustomLink href={href}>
+      <Tab className={classes.link} {...rest} />
+    </CustomLink>
   );
 }
 
@@ -58,14 +54,14 @@ export default function EpisodeTabs({ episode }) {
   const episodePath = React.useMemo(() => `/episodes/${slug}`, [slug]);
   const value = getTabsValue(view);
   const { source } = episode;
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
   return (
     <Box className={classes.root}>
       <Tabs
-        orientation={isSmallScreen ? false : 'vertical'}
-        value={value}
         centered
+        orientation={isSmallScreen ? 'horizontal' : 'vertical'}
+        value={value}
       >
         <LinkTab
           label="Read"

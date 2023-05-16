@@ -1,21 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { makeStyles } from '@material-ui/core/styles';
-import NextLink from 'next/link';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import { Container, useMediaQuery, useTheme, Link } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import {
+  Container,
+  useMediaQuery,
+  useTheme,
+  AppBar,
+  Toolbar,
+} from '@mui/material';
 import MobileMenu from './menu-mobile';
 import DesktopMenu from './menu-desktop';
+import CustomLink from '../custom-link';
 
 const useStyles = makeStyles(() => ({
-  forkme: {
-    position: 'absolute',
-    right: 0,
-    top: 0,
-  },
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
+    height: '56px',
   },
 }));
 
@@ -28,15 +28,12 @@ export default function MenuAppBar() {
       <AppBar color="inherit">
         <Toolbar
           className={classes.toolbar}
-          component={(props) => <Container maxWidth="lg" {...props} />}
+          component={(props) => <Container {...props} />}
           variant="dense"
         >
-          <NextLink href="/" passHref>
-            <Link>
-              {/* <Image width="83" height="28" src="/logo-small.png" /> */}
-              <h3>HanamiMastery</h3>
-            </Link>
-          </NextLink>
+          <CustomLink href="/">
+            <h3>HanamiMastery</h3>
+          </CustomLink>
           {isDesktop ? <DesktopMenu /> : <MobileMenu />}
         </Toolbar>
       </AppBar>

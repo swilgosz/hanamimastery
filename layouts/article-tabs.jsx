@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Box, Tabs, Tab, makeStyles, useMediaQuery } from '@material-ui/core';
-import NextLink from 'next/link';
+import { Box, Tabs, Tab, useMediaQuery } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
+import CustomLink from '../features/custom-link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -10,8 +11,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: 'divider',
   },
   link: {
-    display: 'inline-flex',
-    alignSelf: 'center',
+    width: '100%',
   },
 }));
 
@@ -34,17 +34,13 @@ function a11yProps(index) {
 }
 
 function LinkTab(props) {
+  const { href, ...rest } = props;
   const classes = useStyles();
+
   return (
-    <NextLink
-      className={classes.link}
-      centered
-      href={props.href}
-      passHref
-      shallow
-    >
-      <Tab className={classes.link} {...props} />
-    </NextLink>
+    <CustomLink className={classes.link} href={href}>
+      <Tab className={classes.link} {...rest} />
+    </CustomLink>
   );
 }
 
@@ -59,14 +55,14 @@ export default function ArticleTabs() {
 
   const articlePath = React.useMemo(() => `/articles/${slug}`, [slug]);
 
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
   return (
     <Box className={classes.root}>
       <Tabs
-        orientation={isSmallScreen ? false : 'vertical'}
-        value={value}
+        orientation={isSmallScreen ? 'horizontal' : 'vertical'}
         centered
+        value={value}
       >
         <LinkTab
           className={classes.link}

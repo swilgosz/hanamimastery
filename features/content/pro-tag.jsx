@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Chip, makeStyles } from '@material-ui/core';
+import { Chip } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => ({
   protag: {

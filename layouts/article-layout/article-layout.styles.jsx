@@ -1,12 +1,9 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles((theme) => ({
-  root: {
-    marginTop: theme.spacing(4),
-  },
   container: {
-    paddingLeft: '4px',
-    paddingRight: '0px',
+    marginTop: theme.spacing(5),
+    maxWidth: '1920px',
   },
   hero: {
     backgroundSize: 'cover',

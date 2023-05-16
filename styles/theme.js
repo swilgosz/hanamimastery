@@ -1,9 +1,21 @@
-import { createTheme } from '@material-ui/core';
+import { createTheme } from '@mui/material';
 
 export default createTheme({
   palette: {
     primary: {
       main: '#CB4426',
+    },
+  },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          textDecoration: 'none',
+          ':hover': {
+            textDecoration: 'underline',
+          },
+        },
+      },
     },
   },
   overrides: {
