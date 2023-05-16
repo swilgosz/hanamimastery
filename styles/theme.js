@@ -7,11 +7,6 @@ export default createTheme({
     },
   },
   components: {
-    MuiContainer: {
-      styleOverrides: {
-        maxWidth: 1280,
-      },
-    },
     MuiLink: {
       styleOverrides: {
         root: {

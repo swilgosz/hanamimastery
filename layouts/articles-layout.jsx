@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
 const ArticlesLayout = ({ article }) => {
   const classes = useStyles();
   return (
-    <Container component="main">
-      <Grid container className={classes.root} spacing={2}>
+    <Container className={classes.root} component="main">
+      <Grid container spacing={3}>
         <Grid xs={12} md={8} component="article" item>
           {article}
         </Grid>

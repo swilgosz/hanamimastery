@@ -11,8 +11,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: 'divider',
   },
   link: {
-    display: 'inline-flex',
-    alignSelf: 'center',
+    width: '100%',
   },
 }));
 
@@ -56,7 +55,7 @@ export default function ArticleTabs() {
 
   const articlePath = React.useMemo(() => `/articles/${slug}`, [slug]);
 
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
   return (
     <Box className={classes.root}>

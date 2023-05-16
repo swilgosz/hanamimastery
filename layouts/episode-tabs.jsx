@@ -12,8 +12,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: 'divider',
   },
   link: {
-    display: 'inline-flex',
-    alignSelf: 'center',
+    width: '100%',
   },
 }));
 
@@ -39,7 +38,7 @@ function LinkTab(props) {
   const classes = useStyles();
   const { href, ...rest } = props;
   return (
-    <CustomLink className={classes.link} centered href={href}>
+    <CustomLink href={href}>
       <Tab className={classes.link} {...rest} />
     </CustomLink>
   );
@@ -55,13 +54,13 @@ export default function EpisodeTabs({ episode }) {
   const episodePath = React.useMemo(() => `/episodes/${slug}`, [slug]);
   const value = getTabsValue(view);
   const { source } = episode;
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
   return (
     <Box className={classes.root}>
       <Tabs
-        orientation={isSmallScreen ? 'horizontal' : 'vertical'}
         centered
+        orientation={isSmallScreen ? 'horizontal' : 'vertical'}
         value={value}
       >
         <LinkTab
