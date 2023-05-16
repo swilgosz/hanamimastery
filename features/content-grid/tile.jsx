@@ -20,14 +20,14 @@ import CustomLink from '../custom-link';
 const useStyles = makeStyles((theme) => ({
   card: {
     height: '100%',
-  },
-  content: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  content: {
     paddingTop: '0px',
+    height: '100%',
   },
   media: {
-    content: '',
     height: 'auto',
     paddingBottom: '56.5%',
     backgroundPosition: 'center',
