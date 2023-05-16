@@ -75,6 +75,7 @@ const ArticleLayout = ({ article, children }) => {
             xs={12}
             md={4}
             lg={3}
+            item
             component={(props) => (
               <Container maxWidth="lg" component="aside" {...props} />
             )}

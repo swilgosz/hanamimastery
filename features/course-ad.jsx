@@ -33,8 +33,9 @@ export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
         component="img"
         src="/rails-rest-api.jpg"
         alt="Rails api thumbnail"
+        item
       />
-      <Grid xs={12} md={6}>
+      <Grid xs={12} md={6} item>
         <Typography className={classes.header} variant="h5">
           Ruby On Rails REST API
         </Typography>
