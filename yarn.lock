@@ -1398,10 +1398,10 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
-disqus-react@^1.0.11:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/disqus-react/-/disqus-react-1.1.1.tgz"
-  integrity sha512-Ob6/3l3WQb682RLplStVZsvRbGnD2DdppmwmHZ3PO7JNyLZfdldKGXnotm0ZhdTCX6DM8oE4Bpr08cSymBIdzg==
+disqus-react@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/disqus-react/-/disqus-react-1.1.5.tgz#e844d040eed8f55467106e49d00e29d629e07043"
+  integrity sha512-9fdG5m6c3wJzlCDLaMheuUagMVj3s5qgUSXdekpCsvzYOKG21AiuOoqyDzA0oXrpPnYzgpnsvPYqZ+i0hJPGZw==
 
 doctrine@^2.1.0:
   version "2.1.0"
@@ -3631,7 +3631,7 @@ react-event-listener@^0.6.0:
 
 react-gtm-module@^2.0.11:
   version "2.0.11"
-  resolved "https://registry.npmjs.org/react-gtm-module/-/react-gtm-module-2.0.11.tgz"
+  resolved "https://registry.yarnpkg.com/react-gtm-module/-/react-gtm-module-2.0.11.tgz#14484dac8257acd93614e347c32da9c5ac524206"
   integrity sha512-8gyj4TTxeP7eEyc2QKawEuQoAZdjKvMY4pgWfycGmqGByhs17fR+zEBs0JUDq4US/l+vbTl+6zvUIx27iDo/Vw==
 
 react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
