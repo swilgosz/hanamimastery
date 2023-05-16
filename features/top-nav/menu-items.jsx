@@ -31,7 +31,7 @@ const MenuItems = () =>
 
     if (highlight) {
       return (
-        <CustomLink key={id} href={href}>
+        <CustomLink key={id} href={href} noUnderline>
           <MenuItem>
             <Button variant="contained" color="primary">
               {label}
@@ -41,7 +41,7 @@ const MenuItems = () =>
       );
     }
     return (
-      <CustomLink key={id} href={href}>
+      <CustomLink key={id} href={href} noUnderline>
         <MenuItem sx={{ color: 'text.primary' }}>{label}</MenuItem>
       </CustomLink>
     );

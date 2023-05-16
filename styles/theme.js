@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material';
 
 export default createTheme({
   palette: {
@@ -10,6 +10,16 @@ export default createTheme({
     MuiContainer: {
       styleOverrides: {
         maxWidth: 1280,
+      },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          textDecoration: 'none',
+          ':hover': {
+            textDecoration: 'underline',
+          },
+        },
       },
     },
   },

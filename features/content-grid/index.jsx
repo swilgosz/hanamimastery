@@ -8,6 +8,7 @@ const ContentDisplay = (props) => {
     <Grid container spacing={3}>
       {items.map((item, index) => (
         <Grid
+          item
           key={item.id}
           xs={12}
           md={index === 0 && !relatedContent ? 12 : 6}

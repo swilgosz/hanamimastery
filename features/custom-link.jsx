@@ -1,12 +1,18 @@
 import { Link as MuiLink } from '@mui/material';
 import NextLink from 'next/link';
 
-const CustomLink = ({ href, children, otherProps }) => (
+const muiLinkStyles = {
+  '&:hover': {
+    textDecoration: 'none',
+  },
+};
+
+const CustomLink = ({ href, children, noUnderline, otherProps }) => (
   <MuiLink
     component={NextLink}
     href={href}
     {...otherProps}
-    sx={{ textDecoration: 'none' }}
+    sx={noUnderline && muiLinkStyles}
   >
     {children}
   </MuiLink>

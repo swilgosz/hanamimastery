@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: theme.spacing(4),
   },
-  card: {},
 }));
 
 const ArticlesLayout = ({ article }) => {
@@ -20,10 +19,11 @@ const ArticlesLayout = ({ article }) => {
   return (
     <Container component="main">
       <Grid container className={classes.root} spacing={2}>
-        <Grid xs={12} md={8} component="article">
+        <Grid xs={12} md={8} component="article" item>
           {article}
         </Grid>
         <Grid
+          item
           xs={12}
           md={4}
           component={(props) => (
