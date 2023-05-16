@@ -59,7 +59,7 @@ const ContentTile = ({ item, variant }) => {
         </CardActionArea>
       </CustomLink>
       <CardHeader
-        disableTypography
+        titleTypographyProps={{ sx: { fontWeight: '100' } }}
         title={
           <>
             <CustomLink href={`/${path}`}>{fullTitle}</CustomLink>

@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import fs from 'fs';
 import Rss from 'rss';
 import { getContent } from './utils/queries.js';

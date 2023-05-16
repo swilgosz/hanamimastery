@@ -27,14 +27,13 @@ export default class MyDocument extends Document {
           <NextScript />
           <Script
             src="https://platform-api.sharethis.com/js/sharethis.js#property=60b823ffeed0fd001128d645&product=sticky-share-buttons"
-            strategy="lazyOnload"
+            strategy="beforeInteractive"
           />
-          <script
-            type="text/javascript"
+          <Script
             src="https://a.omappapi.com/app/js/api.min.js"
+            strategy="lazyOnload"
             data-account="82043"
             data-user="72987"
-            async
           />
         </body>
       </Html>
