@@ -17,7 +17,7 @@ const ArticlesLayout = ({ article }) => {
   const classes = useStyles();
   return (
     <Container className={classes.root} component="main">
-      <Grid container spacing={6}>
+      <Grid container columnSpacing={6}>
         <Grid xs={12} md={8} component="article" item>
           {article}
         </Grid>
