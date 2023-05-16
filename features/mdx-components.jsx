@@ -5,6 +5,7 @@ import EmailSubscriptionForm from './email-subscription-form/index';
 import YoutubeEmbed from './youtube-embed';
 import GHSponsor from './gh-sponsor';
 import TopicSuggestion from './topic-suggestion';
+import MuiCustomLink from './custom-link';
 
 const CustomChip = withTheme(
   withStyles((theme) => ({
@@ -62,10 +63,10 @@ const CustomLink = (props) => {
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
   if (isInternalLink) {
-    return <CustomLink href={href} />;
+    return <MuiCustomLink href={href} />;
   }
 
-  return <CustomLink target="_blank" href={href} />;
+  return <MuiCustomLink target="_blank" href={href} />;
 };
 
 const useHeaderStyles = makeStyles(() =>

@@ -37,9 +37,10 @@ function a11yProps(index) {
 
 function LinkTab(props) {
   const classes = useStyles();
+  const { href, ...rest } = props;
   return (
-    <CustomLink className={classes.link} href={props.href}>
-      <Tab className={classes.link} {...props} />
+    <CustomLink className={classes.link} centered href={href}>
+      <Tab className={classes.link} {...rest} />
     </CustomLink>
   );
 }
