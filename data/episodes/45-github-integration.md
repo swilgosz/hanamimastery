@@ -5,20 +5,18 @@ author: "swilgosz"
 topics: ['hanami', 'integrations']
 title: "Github integration with Hanami"
 excerpt: "If you're a developer, you know GitHub. And if you don't know Hanami, you definitely should. In this episode, I'll show you how to make them both to know each other."
-videoId: null
-published: false
-publishedAt: "2023-05-11"
-modifiedAt: "2023-05-11"
+videoId: uMBrD6vLL2k
+published: true
+publishedAt: "2023-05-12"
+modifiedAt: "2023-05-12"
+premium: true
 thumbnail:
-  full: /images/episodes/44/cover-full.png
-  big: /images/episodes/44/cover-big.png
-  small: /images/episodes/44/cover-small.png
+  full: /images/episodes/45/cover-full.png
+  big: /images/episodes/45/cover-big.png
+  small: /images/episodes/45/cover-small.png
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    rails: https://www.reddit.com/r/rails/comments/pjuqct/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1656943095047503872
+  mastodon: https://ruby.social/@hanamimastery/110354904368535568
 source: https://github.com/hanamimastery/episodes/tree/main/045
 ---
 I have here a Hanami application listing all my Hanami Mastery episodes and I want to allow managing them from the browser. If you wonder why I need this, check out [episode 38](/episodes/38-hanami-mastery-app) when I've explained that in detail.
@@ -149,8 +147,8 @@ For today, let's check how it behaves.
 
 When I click, on top of the list, the last saved episode is prepended again, showing duplicates. That's an amazing first step, but what we want to do, is to fetch all new episodes from Github, and this is what we'll do now.
 
-:::tip Subscribe to Hanami Mastery PRO  
-This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://pro.hanamimastery.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!  
+:::tip Subscribe to Hanami Mastery PRO
+This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://pro.hanamimastery.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
 :::
 
 ## Thanks

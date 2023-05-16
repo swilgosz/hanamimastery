@@ -5,8 +5,8 @@ author: "swilgosz"
 topics: ['bridgetown', 'web']
 title: "Let's make a blog with Bridgetown"
 excerpt: "Bridgetown is the best static site generator for Ruby, and here is why."
-videoId: null
-published: false
+videoId: 4PWDNZsZ-L0
+published: true
 publishedAt: "2023-05-09"
 modifiedAt: "2023-05-09"
 thumbnail:
@@ -14,11 +14,10 @@ thumbnail:
   big: /images/episodes/44/cover-big.jpeg
   small: /images/episodes/44/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/@hanamimastery/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1656013134035918877
+  mastodon: https://ruby.social/@hanamimastery/110340379572394441
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/13d34bu/lets_make_a_blog_with_bridgetown_hanami_mastery/
 source: https://github.com/hanamimastery/episodes/tree/main/044
 ---
 
