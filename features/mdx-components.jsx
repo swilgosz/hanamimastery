@@ -61,12 +61,15 @@ const CustomImage = ({ src, alt }) => {
 const CustomLink = (props) => {
   const { href } = props;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
-
   if (isInternalLink) {
-    return <MuiCustomLink href={href} />;
+    return <MuiCustomLink href={href}>{props.children}</MuiCustomLink>;
   }
 
-  return <MuiCustomLink target="_blank" href={href} />;
+  return (
+    <MuiCustomLink target="_blank" href={href}>
+      {props.children}
+    </MuiCustomLink>
+  );
 };
 
 const useHeaderStyles = makeStyles(() =>
