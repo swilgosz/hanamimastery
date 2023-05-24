@@ -3,10 +3,11 @@ import React from 'react';
 import { StickyShareButtons } from 'sharethis-reactjs';
 
 export default function ShareButtons({ data }) {
-  const { url, thumbnail, title } = data;
+  const { url, thumbnail, title, id } = data;
 
   return (
     <StickyShareButtons
+      key={id}
       config={{
         alignment: 'right', // alignment of buttons (left, right)
         color: 'social', // set the color of buttons (social, white)
