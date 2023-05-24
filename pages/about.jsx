@@ -8,8 +8,6 @@ import ArticlesLayout from '../layouts/articles-layout';
 import { getContentBySlug } from '../utils/queries';
 
 export default function Page({ frontMatter, mdxSource }) {
-  console.log(mdxSource);
-
   return (
     <>
       <SeoComponent
