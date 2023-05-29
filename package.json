@@ -21,6 +21,7 @@
     "@mui/material": "^5.13.0",
     "@mui/styles": "^5.12.3",
     "@reduxjs/toolkit": "^1.9.5",
+    "cookies-next": "^2.1.1",
     "disqus-react": "^1.1.5",
     "gray-matter": "^4.0.3",
     "mdx-prism": "^0.3.4",

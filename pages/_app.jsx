@@ -13,6 +13,7 @@ import Footer from '../features/footer';
 import theme from '../styles/theme';
 import store from '../redux/store';
 import CustomLink from '../features/custom-link';
+import CookiesPopup from '../features/cookies-popup';
 
 const useStyles = makeStyles(() => ({
   alert: {
@@ -93,6 +94,7 @@ export default function MyApp(props) {
         </div>
         <Component {...pageProps} />
         <Footer />
+        <CookiesPopup />
       </ThemeProvider>
     </Provider>
   );
