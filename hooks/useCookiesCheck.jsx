@@ -6,7 +6,6 @@ export const useCookiesCheck = () => {
 
   useEffect(() => {
     const consent = getCookie('cookieConsent');
-    console.log('render');
     setChecked(consent ?? false);
   }, []);
 
