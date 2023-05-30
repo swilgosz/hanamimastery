@@ -113,6 +113,8 @@ export async function getRelatedContent(post) {
     item.topics.some((topic) => relatedTopics.includes(topic))
   );
 
+  if (postsWithTopic.length === 1) return posts.slice(0, relatedPostsReturned);
+
   const countRelatedTopics = postsWithTopic.reduce(
     (postsWithTopicAcc, postWithTopic) => {
       if (postWithTopic.id === id) return postsWithTopicAcc;
