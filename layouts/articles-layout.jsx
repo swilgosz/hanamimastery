@@ -25,9 +25,9 @@ const ArticlesLayout = ({ article }) => {
           item
           xs={12}
           md={4}
-          component={(props) => (
-            <Container maxWidth="lg" component="aside" {...props} />
-          )}
+          container
+          flexDirection="column"
+          alignItems="center"
         >
           <GHSponsor className={classes.card} />
           <BuyMeACoffee className={classes.card} />
