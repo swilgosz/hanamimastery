@@ -6,14 +6,15 @@ export const useCookiesCheck = () => {
 
   useEffect(() => {
     const consent = getCookie('cookieConsent');
+    console.log('render');
     setChecked(consent ?? false);
   }, []);
 
   const handleSetCookie = () => {
-    setChecked(true);
     const date = new Date();
     const newDate = new Date(date.setMonth(date.getMonth() + 11));
     setCookie('cookieConsent', 'true', { expires: newDate });
+    setChecked(true);
   };
 
   return [checked, { handleSetCookie }];
