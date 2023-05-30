@@ -16,17 +16,15 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+    width: '100%',
   },
   list: {
-    width: '100%',
-    // maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
   nestedList: {
     paddingLeft: theme.spacing(4),
   },
   centered: {
-    // display: 'block',
     paddingTop: '0px',
     marginTop: '0px',
     textAlign: 'center',
@@ -56,7 +54,7 @@ export default function JobOffers() {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }} className={classes.root}>
+    <Card className={classes.root}>
       <CardHeader title="Open Hanami Jobs" className={classes.header} />
       <CardContent>
         <List

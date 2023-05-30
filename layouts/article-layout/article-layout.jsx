@@ -75,10 +75,10 @@ const ArticleLayout = ({ article, children }) => {
             xs={12}
             md={4}
             lg={3}
+            container
             item
-            component={(props) => (
-              <Container maxWidth="lg" component="aside" {...props} />
-            )}
+            flexDirection="column"
+            alignItems="center"
           >
             <GHSponsor className={classes.card} />
             <BuyMeACoffee className={classes.card} />
