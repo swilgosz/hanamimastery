@@ -27,7 +27,7 @@ export default function BlogIndex({ articles, episodes, authors }) {
           <>
             <h1>Recent episodes</h1>
             <ContentGrid items={episodes} more />
-            <Box align="right" m={4}>
+            <Box align="right" my={6}>
               <CustomLink href="/episodes" center>
                 <Button variant="contained" color="primary">
                   More episodes...
@@ -36,7 +36,7 @@ export default function BlogIndex({ articles, episodes, authors }) {
             </Box>
             <h1>Recent articles</h1>
             <ContentGrid items={articles} more />
-            <Box align="right" m={4}>
+            <Box align="right" my={6}>
               <CustomLink href="/c/stray" center>
                 <Button variant="contained" color="primary">
                   More articles...
