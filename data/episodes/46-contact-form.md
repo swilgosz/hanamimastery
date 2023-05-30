@@ -15,14 +15,12 @@ thumbnail:
   small: /images/episodes/46/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/@hanamimastery/XXX
+  mastodon: https://ruby.social/@hanamimastery/110456953972427423
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/13vn23z/contact_forms_with_hanami_view_hanami_mastery_046/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/13vn2fd/contact_forms_with_hanami_view_hanami_mastery_046/
 source: https://github.com/hanamimastery/episodes/tree/main/046
 ---
-
-Hi there!
 
 With the [introduction of Hanami 2.1](https://github.com/hanami/hanami) the view layer get's in place so I've decided to play a bit with the form helpers to show you how we could use them.
 
