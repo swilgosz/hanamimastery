@@ -26,10 +26,6 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
           <Script
-            src="https://platform-api.sharethis.com/js/sharethis.js#property=60b823ffeed0fd001128d645&product=sticky-share-buttons"
-            strategy="beforeInteractive"
-          />
-          <Script
             src="https://a.omappapi.com/app/js/api.min.js"
             strategy="lazyOnload"
             data-account="82043"
