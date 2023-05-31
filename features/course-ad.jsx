@@ -1,7 +1,6 @@
-import { Box, Button, Grid, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-
-import NextLink from 'next/link';
+import { Box, Button, Grid, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomLink from './custom-link';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -29,14 +28,14 @@ export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
       )}
     >
       <Grid
-        item
         xs={12}
         md={6}
         component="img"
         src="/rails-rest-api.jpg"
         alt="Rails api thumbnail"
+        item
       />
-      <Grid item xs={12} md={6}>
+      <Grid xs={12} md={6} item>
         <Typography className={classes.header} variant="h5">
           Ruby On Rails REST API
         </Typography>
@@ -47,10 +46,7 @@ export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
           Create professional API applications that you can hook anything into!
           Learn how to code like professionals using Test Driven Development!
         </p>
-        <NextLink
-          href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
-          passHref
-        >
+        <CustomLink href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB">
           <Button
             variant="contained"
             color="primary"
@@ -60,7 +56,7 @@ export default function CourseAd({ BoxProps = {}, size = 'big', bg }) {
           >
             Take this course!
           </Button>
-        </NextLink>
+        </CustomLink>
       </Grid>
     </Grid>
   );

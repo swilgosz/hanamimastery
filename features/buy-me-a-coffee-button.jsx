@@ -1,10 +1,12 @@
 import React from 'react';
-import { Card, CardContent, makeStyles } from '@material-ui/core';
+import { Card, CardContent } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: theme.spacing(2),
     paddingTop: theme.spacing(1),
+    width: '100%',
   },
   centered: {
     display: 'block',

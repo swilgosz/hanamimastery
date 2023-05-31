@@ -1,19 +1,11 @@
-import {
-  Typography,
-  Chip,
-  Link,
-  makeStyles,
-  createStyles,
-  withTheme,
-  Grid,
-  withStyles,
-} from '@material-ui/core';
-import NextLink from 'next/link';
+import { Typography, Chip, createStyles, Grid } from '@mui/material';
+import { makeStyles, withStyles, withTheme } from '@mui/styles';
 import CourseAd from './course-ad';
 import EmailSubscriptionForm from './email-subscription-form/index';
 import YoutubeEmbed from './youtube-embed';
 import GHSponsor from './gh-sponsor';
 import TopicSuggestion from './topic-suggestion';
+import MuiCustomLink from './custom-link';
 
 const CustomChip = withTheme(
   withStyles((theme) => ({
@@ -69,16 +61,15 @@ const CustomImage = ({ src, alt }) => {
 const CustomLink = (props) => {
   const { href } = props;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
-
   if (isInternalLink) {
-    return (
-      <NextLink href={href} passHref>
-        <Link {...props} />
-      </NextLink>
-    );
+    return <MuiCustomLink href={href}>{props.children}</MuiCustomLink>;
   }
 
-  return <Link target="_blank" {...props} />;
+  return (
+    <MuiCustomLink target="_blank" href={href}>
+      {props.children}
+    </MuiCustomLink>
+  );
 };
 
 const useHeaderStyles = makeStyles(() =>
@@ -124,14 +115,14 @@ const CustomHeader = ({ variant, children, id, ...props }) => {
     >
       {children}
       {id && (
-        <Link
+        <CustomLink
           className={classes.anchor}
           color="primary"
           aria-label="anchor"
           href={`#${id}`}
         >
           #
-        </Link>
+        </CustomLink>
       )}
     </Typography>
   );

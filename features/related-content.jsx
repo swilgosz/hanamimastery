@@ -1,8 +1,10 @@
-import { Container, Typography, makeStyles } from '@material-ui/core';
+import { Container, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
 import React from 'react';
 import ContentDisplay from './content-grid';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
     width: '100%',
     display: 'flex',
@@ -11,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '20px',
     marginTop: '20px',
-    padding: theme.spacing(0, 0, 0, 4),
   },
 }));
 
