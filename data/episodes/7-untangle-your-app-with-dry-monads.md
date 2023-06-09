@@ -7,7 +7,7 @@ excerpt: "Everyone knows how messy Rails controllers can be come. In this episod
 videoId: FnXezvNDnIg
 published: true
 publishedAt: "2021-07-23"
-modifiedAt: "2022-04-29"
+modifiedAt: "2023-06-09"
 aliases: ['HMEP007']
 thumbnail:
   full: /images/episodes/7/cover-full.jpeg
