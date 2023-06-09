@@ -28,7 +28,7 @@ I have here an application, the same that I've created in  [episode 40](/episode
 
 For more details about integrating it, I encourage you to check episodes 2 and 3, where I've shown how to list articles using Bulma and Hanami-view.
 
-![[/images/episodes/46/welcome-page.png]]
+![Welcome Page](/images/episodes/46/welcome-page.png)
 
 It allows users to click a button and pretend to subscribe to my [youtube channel](https://www.youtube.com/channel/UC4Z5nwSfZrUO4NI_n9SY3uQ). Of course, that's just a fake for lamers.
 
@@ -126,7 +126,7 @@ Now I just need to add a template. This time I'll use the standard ERB engine to
 
 Now when I start my server, and visit the `/contact` URL, you'll see that a new page is rendered properly :). Great!
 
-![[/images/episodes/46/empty-contact-page.png]]
+![Empty contact page](/images/episodes/46/empty-contact-page.png)
 
 ### Navigation
 
@@ -151,7 +151,6 @@ At the end I'm adding the `navbar-item` HTML class, so it will be presented in a
 
 Let me check how it looks now.
 
-![[/images/episodes/46/navigation.png]]
 
 Cool! Having that, I can add my contact form to the page.
 
@@ -185,7 +184,7 @@ Finally, I'll add the *submit* button, using the `submit` helper called on my fo
 
 With this, my form is ready for basic usage.
 
-![[/images/episodes/46/contact-form.png]]
+![Contact form page](/images/episodes/46/contact-form.png)
 
 ### Post Action
 
@@ -228,7 +227,7 @@ end
 
 Having that done, I'll print my input parameters on the screen and then redirect to the standard contact page.
 
-![[/images/episodes/46/logs-form-params.png]]
+![Logs for form params](/images/episodes/46/logs-form-params.png)
 
 All works! Great! However, we can do better to handle my form data in all cases.
 
@@ -324,7 +323,7 @@ With this, below, I'm going to show the errors for the given field. No prettifyi
 
 When I visit the browser now, you'll see that my field values are preserved, but the errors presentation could be done better.
 
-![[/images/episodes/46/validations-unstyled.png]]
+![Unstyled validations view](/images/episodes/46/validations-unstyled.png)
 
 Let's take care of this next
 
