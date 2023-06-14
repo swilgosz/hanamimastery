@@ -245,11 +245,11 @@ docker run -p 1080:1080 -p 1025:1025 maildev/maildev
 
 Let me simulate the potential subscriber coming to HanamiMastery. For the message, I'll just paste in the string I've prepared as you probably don't want to watch me typing it in especially since we have the content of the email hardcoded.
 
-![[Pasted image 20230524010856.png]]
+![Filled in Contact Form](/images/episodes/47/filled-in-contact-form.png)
 
 Now let's check the inbox... Works just great!
 
-![[Pasted image 20230524011313.png]]
+![Incoming email view](/images/episodes/47/incoming-mail-view.png)
 
 :::info
 I'm using [Maildev](https://github.com/maildev/maildev) to run an email server locally. Totally recommend it as it's nice and easy to use.
@@ -295,11 +295,11 @@ Now Let's test the email again.
 
 By the way, a much better approach would be to work with tests, instead of browser checks, but I've found that episodes full of code are hard to follow, and this way I keep videos more interesting. I already published the TDD course, but, if you'd love to see more tests in my tutorials, let me know and I'll address that in the future!
 
-![[Pasted image 20230524012931.png]]
+![Dynamic message in filled in contact form](/images/episodes/47/dynamic-message-contact-form-filled.png)
 
 The email works!
 
-![[Pasted image 20230524020217.png]]
+![Incoming dynamic email view](/images/episodes/47/dynamic-content-incoming-email.png)
 
 ## Summary
 
