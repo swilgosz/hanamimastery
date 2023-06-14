@@ -12,8 +12,10 @@ thumbnail:
   full: /images/articles/unofficial-hanami-upgrade-guides/cover-full.jpeg
   big: /images/articles/unofficial-hanami-upgrade-guides/cover-big.jpeg
   small: /images/articles/unofficial-hanami-upgrade-guides/cover-small.jpeg
-source: https://github.com/hanamimastery/episodes/tree/main/001
+source: nil
 category: stray
+discussions:
+  twitter: https://twitter.com/HanamiMastery/status/1668785362955632641
 ---
 
 :::warning
