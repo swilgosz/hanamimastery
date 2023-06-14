@@ -443,7 +443,7 @@ We can extract all our logic to pure ruby objects, that have no dependencies and
 
 Unfortunately, that's all I have for you today, but stay tuned for the next episode, where I'll implement the actual email sending functionality.
 
-[CTA-2 - Like-and-Subscribe](https://www.notion.so/CTA-2-Like-and-Subscribe-6968f8aadb374d7e90024fb604b279a4)
+I hope you've enjoyed this episode, and if you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/hanamimastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
 ## Thanks
 
@@ -455,4 +455,6 @@ I want to especially thank my recent sponsors,
 
 and [all the Hanami Mastery PRO subscirbers](https://pro.hanamimastery.com/), for supporting this project, I really appreciate it!
 
-[CTA-5 - Support!](https://www.notion.so/CTA-5-Support-3bb0101351494acfa27975ce338d7454)
+:::important Consider sponsoring?
+If you want to support us, check out our [Github sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!
+:::

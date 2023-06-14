@@ -5,10 +5,10 @@ author: "swilgosz"
 topics: ["hanami", "mailer"]
 title: "Send emails with hanami-mailer"
 excerpt: "Sending emails in web apps is a very common task. In this video, I'm going to send a contact email using hanami-mailer gem."
-videoId: null
-publishedAt: "2023-06-01"
-modifiedAt: "2023-06-01"
-published: false
+videoId: olYAcN88-xc
+publishedAt: "2023-06-14"
+modifiedAt: "2023-06-14"
+published: true
 thumbnail:
   full: /images/episodes/47/cover-full.jpeg
   big: /images/episodes/47/cover-big.jpeg
@@ -21,31 +21,29 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/047
 ---
-[🎬 01] Hi there!
+I have here the simple application that I've built in the previous episodes, and [in the last one, I've added this form](/episodes/46-contact-form), allowing us to send values to the server for processing.
 
-I have here the simple application that I've built in the previous episodes, and in the last one, I've added this form, allowing us to send values to the server for processing.
-
-[🎬 02] There is no processing other than logging the parameters in the console, though.
+There is no processing other than logging the parameters in the console, though.
 
 In this episode, we're going to change this and send the actual email to the support.
 
 ## Hanami-Mailer
 
-[🎬 03] There are many ways to send emails in Ruby, and plenty of solutions had already been created. 
+There are many ways to send emails in Ruby, and plenty of solutions had already been created. 
 
 Today, I'll show you the `hanami-mailer` gem.
 
-[🎬 04] [hanami-mailer](https://github.com/gems/hannami/mailer) is a great little library allowing you to create mailer classes for different purposes, that can be used in any application.
+[hanami-mailer](https://github.com/gems/hannami/mailer) is a great little library allowing you to create mailer classes for different purposes, that can be used in any application.
 
-It aims to be easy to integrate with Hanami applications, but the caveat with it is [🎬 05] that it had been created for the previous version of Hanami, and the full integration with Hanami 2 is not done yet, at least at the moment of publishing this video.
+It aims to be easy to integrate with Hanami applications, but the caveat with it is that it had been created for the previous version of Hanami, and the full integration with Hanami 2 is not done yet, at least at the moment of publishing this video.
 
-[🎬 06] Usually in Hanami Mastery episodes, you can see the cool, up-to-date solutions, integrated more or less with the latest Hanami versions out of the box, or just framework-agnostic gems that can be easily used anywhere.
+Usually in Hanami Mastery episodes, you can see the cool, up-to-date solutions, integrated more or less with the latest Hanami versions out of the box, or just framework-agnostic gems that can be easily used anywhere.
 
-[🎬 07] In this episode, though, I'll take a somewhat different approach and will integrate the *hanami-mailer* showing you how to solve some caveats leveraging the power of providers to integrate anything you want.
+In this episode, though, I'll take a somewhat different approach and will integrate the *hanami-mailer* showing you how to solve some caveats leveraging the power of providers to integrate anything you want.
 
-### Install gem
+### Install hanami-mailer
 
-[🎬 08] First of all, let me install the gem by adding it to the `Gemfile`, and calling: `bundle` 
+First of all, let me install the gem by adding it to the `Gemfile`, and calling: `bundle` 
 
 ```ruby
 # Gemfile
@@ -55,7 +53,7 @@ gem "hanami-mailer", github: "hanami/mailer", branch: "main"
 
 ### Configuration
 
-[🎬 09] Having that, I can create the provider for the main slice, where I'll have my mailer config, and set up the client. I'm adding it in the main slice, because different slices could be responsible for sending different types of emails, with different recipients specified or other configuration applied.
+Having that, I can create the provider for the main slice, where I'll have my mailer config, and set up the client. I'm adding it in the main slice, because different slices could be responsible for sending different types of emails, with different recipients specified or other configuration applied.
 
 ```ruby
 # slices/main/config/providers/mailer.rb
@@ -70,7 +68,7 @@ Main::Slice.register_provider :mailer, namespace: true do
 end
 ```
 
-[🎬 10] In the *prepare* block, I'll initialize a new configuration object and set the templates' root to `mailers`, default charset to `UTF-8`, and configure the *delivery method* to _test_ just for now. 
+In the *prepare* block, I'll initialize a new configuration object and set the templates' root to `mailers`, default charset to `UTF-8`, and configure the *delivery method* to _test_ just for now. 
 
 ```ruby
 # slices/main/config/providers/mailer.rb
@@ -94,15 +92,15 @@ end
 
 ```
 
-[🎬 11] Having the mailer configured, I'm going to add the configuration to the components container registry.
+Having the mailer configured, I'm going to add the configuration to the components container registry.
 
-[🎬 12] Keep in mind, that here in the root folder configuration for my mailers, I'm using the `target.root`, and the target refers to the slice's container, not the general application. This is why I'll place my mailers in the slice's root folder in a moment. 
+Keep in mind, that here in the root folder configuration for my mailers, I'm using the `target.root`, and the target refers to the slice's container, not the general application. This is why I'll place my mailers in the slice's root folder in a moment. 
 
 ### Finalize configuration.
 
-[🎬 13] Once the mailers are loaded, we'll need to finalize the configuration yet, and here is the caveat. 
+Once the mailers are loaded, we'll need to finalize the configuration yet, and here is the caveat. 
 
-[🎬 14] According to the [Conventions](https://github.com/hanami/mailer#conventions) all mailers need to be loaded and initialized with the configuration object before calling `finalize` on the `Hanami::Mailer`
+According to the [Conventions](https://github.com/hanami/mailer#conventions) all mailers need to be loaded and initialized with the configuration object before calling `finalize` on the `Hanami::Mailer`
 
 Without that,  my mailers will not be found in the configuration object.
 
@@ -124,7 +122,7 @@ Main::Slice.register_provider :mailer, namespace: true do
 end
 ```
 
-[🎬 15] This most likely will be fixed on the next version of *hanami-mailer*, but it's somewhat lower on the priority list right now, so [🎬 16]  if you'd wonder where to start your open-source journey to become an [open-source hero worth of a poem](https://hanamimastery.com/articles/open-source-heroes), this could be a great opportunity for you to contribute to a meaningful OSS project.
+This most likely will be fixed on the next version of *hanami-mailer*, but it's somewhat lower on the priority list right now, so  if you'd wonder where to start your open-source journey to become an [open-source hero worth of a poem](https://hanamimastery.com/articles/open-source-heroes), this could be a great opportunity for you to contribute to a meaningful OSS project.
 
 But in the meantime, let's just make sure all my mailers are indeed initialized first.
 
@@ -145,23 +143,23 @@ start do
 end
 ```
 
-[🎬 17] First I want to find all defined mailers in my slice, and for that, I'm going to use the configured root path extracted from the configuration object.
+First I want to find all defined mailers in my slice, and for that, I'm going to use the configured root path extracted from the configuration object.
 
-[🎬 18] This way, I'll have all my mailer filenames accessed, and I can iterate through them, forcing my container to load the object before config finalization.
+This way, I'll have all my mailer filenames accessed, and I can iterate through them, forcing my container to load the object before config finalization.
 
-[🎬 19] I know that it's not too convenient, but in ruby community, there are many gems that are implemented using different programming styles and patterns than those proposed by Hanami 2, and I hope this example shows how elastic configuration of gems via providers can be.
+I know that it's not too convenient, but in ruby community, there are many gems that are implemented using different programming styles and patterns than those proposed by Hanami 2, and I hope this example shows how elastic configuration of gems via providers can be.
 
 With this little snippet, all the preparation work is done. Now we just need a mailer.
 
 ### Create Mailer.
 
-[🎬 20] I'm going to add a new folder, where I place my *ContactMailer* file, and inside define the mailer class.
+I'm going to add a new folder, where I place my *ContactMailer* file, and inside define the mailer class.
 
-[🎬 21] First I'm going to inject my configuration object, so it'll be automatically used when we load it into the container.
+First I'm going to inject my configuration object, so it'll be automatically used when we load it into the container.
 
-[🎬 22] Then, I'll define some required properties, like sender and recipient. For now, let me just hardcode my stuff to check if everything works as expected.
+Then, I'll define some required properties, like sender and recipient. For now, let me just hardcode my stuff to check if everything works as expected.
 
-[🎬 23] Now I need the email subject and the template name.
+Now I need the email subject and the template name.
 
 ```ruby
 # slices/main/mailers/contact_mailer.rb
@@ -183,7 +181,7 @@ end
 
 ### Template
 
-[🎬 24] I don't have a template file yet, so let me just create a new `ERB` file, with a single paragraph, showing a sample message.
+I don't have a template file yet, so let me just create a new `ERB` file, with a single paragraph, showing a sample message.
 
 ```html
 <p>This is a hardcoded message</p>
@@ -193,7 +191,7 @@ With this, I only need to call my mailer from the action.
 
 ## Calling the mailer.
 
-[🎬 25] In the action file, I'm going to inject the contact mailer [as a dependency](/t/dependency-injection), and inside of the `handle` method, just call `deliver` on it, passing my contact form object as arguments.
+In the action file, I'm going to inject the contact mailer [as a dependency](/t/dependency-injection), and inside of the `handle` method, just call `deliver` on it, passing my contact form object as arguments.
 
 ```ruby
 # slices/main/actions/contact/send.rb
@@ -223,47 +221,51 @@ module Main
 end
 ```
 
-[🎬 26] Those arguments will become my locals, which I can access from both template, and the mailer object, but I'll get back to it in a moment.
+Those arguments will become my locals, which I can access from both template, and the mailer object, but I'll get back to it in a moment.
 
 ### Sending an email
 
-[🎬 27] For now, let's check if we actually can send the email with hardcoded content. I would love to see if I hadn't made any stupid mistakes on the way, so let me run the server now.
+For now, let's check if we actually can send the email with hardcoded content. I would love to see if I hadn't made any stupid mistakes on the way, so let me run the server now.
 Hmm... as one might expect, the server crashes because of some typos I made, so let me remove them now.
 
-[🎬 28] I have for sure an extra colon in the provider, but let me scan if nothing else is here. Oh! One more. Let's hope that's everything as I don't want to re-record this whole video.
+I have for sure an extra colon in the provider, but let me scan if nothing else is here. Oh! One more. Let's hope that's everything as I don't want to re-record this whole video.
 
-[🎬 29] Ok, the application is running now. Let me then change the delivery method to `:smtp` so we could test the actual email delivery.
+Ok, the application is running now. Let me then change the delivery method to `:smtp` so we could test the actual email delivery.
 
 ```ruby
 config.delivery_method = :smtp, { address: "localhost", port: 1025 }
 ```
 
-[🎬 30] If I'll run the application server, and the email server, I should be able to see new emails coming in the browser tab.
+If I'll run the application server, and the email server, I should be able to see new emails coming in the browser tab.
 
 ```shell
 hanami server
 docker run -p 1080:1080 -p 1025:1025 maildev/maildev
 ```
 
-[🎬 31] Let me simulate the potential subscriber coming to HanamiMastery. For the message, I'll just paste in the string I've prepared as you probably don't want to watch me typing it in especially since we have the content of the email hardcoded.
+Let me simulate the potential subscriber coming to HanamiMastery. For the message, I'll just paste in the string I've prepared as you probably don't want to watch me typing it in especially since we have the content of the email hardcoded.
 
 ![[Pasted image 20230524010856.png]]
 
-[🎬 32] Now let's check the inbox... Works just great!
+Now let's check the inbox... Works just great!
 
 ![[Pasted image 20230524011313.png]]
+
+:::info
+I'm using [Maildev](https://github.com/maildev/maildev) to run an email server locally. Totally recommend it as it's nice and easy to use.
+:::
 
 ## Adding Dynamic data
 
 That's cool, but we need more dynamic values to be included in the email, so let's do it now.
 
-[🎬 33] In the email template, I'm going to change my text with the simple `message` call, that comes from the mailer object
+In the email template, I'm going to change my text with the simple `message` call, that comes from the mailer object
 
 ```html
 <p><%= locals.dig(:contact, :message) %></p>
 ```
 
-[🎬 34] Now, in the mailer, I'll replace the static sender with the email also fetched from locals, and finally, I'll extract the recipient to be read from settings.
+Now, in the mailer, I'll replace the static sender with the email also fetched from locals, and finally, I'll extract the recipient to be read from settings.
 
 ```ruby
 from ->(locals) { locals.dig(:contact, :email) }
@@ -273,7 +275,7 @@ to Slice['settings'].mail_support
 
 ### Define settings
 
-[🎬 35] This looks better, but let me yet define the new setting for the app. If you're not familiar with it, this module allows you to clearly define the required settings in your app, making it less error-prone in case of missing environment variables are not present.
+This looks better, but let me yet define the new setting for the app. If you're not familiar with it, this module allows you to clearly define the required settings in your app, making it less error-prone in case of missing environment variables are not present.
 
 ```ruby
 # config/settings.rb
@@ -281,7 +283,7 @@ to Slice['settings'].mail_support
 setting :mail_support
 ```
 
-[🎬 36] Now let me also add the value to the corresponding variable in the development environment file.
+Now let me also add the value to the corresponding variable in the development environment file.
 
 ```ruby
 # .environment.development
@@ -291,7 +293,7 @@ MAIL_SUPPORT=support@hanamimastery.com
 
 Now Let's test the email again. 
 
-[🎬 37] By the way, a much better approach would be to work with tests, instead of browser checks, but I've found that episodes full of code are hard to follow, and this way I keep videos more interesting. I already published the TDD course, but, if you'd love to see more tests in my tutorials, let me know and I'll address that in the future!
+By the way, a much better approach would be to work with tests, instead of browser checks, but I've found that episodes full of code are hard to follow, and this way I keep videos more interesting. I already published the TDD course, but, if you'd love to see more tests in my tutorials, let me know and I'll address that in the future!
 
 ![[Pasted image 20230524012931.png]]
 
@@ -301,16 +303,15 @@ The email works!
 
 ## Summary
 
-[🎬 38] Sending emails in ruby is a common thing, but I usually send templated emails, managed by external services and It's been a while since I've touched any email-sending library.
+Sending emails in ruby is a common thing, but I usually send templated emails, managed by external services and It's been a while since I've touched any email-sending library.
 
-[🎬 39] Hanami Mailer is a great opportunity to make email sending simple and powerful, and I'm looking forward to seeing updates and seamless integration with Hanami 2.
+Hanami Mailer is a great opportunity to make email sending simple and powerful, and I'm looking forward to seeing updates and seamless integration with Hanami 2.
 
-
-[CTA-2 - Like-and-Subscribe](https://www.notion.so/CTA-2-Like-and-Subscribe-6968f8aadb374d7e90024fb604b279a4)
+I hope you've enjoyed this episode, and if you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/hanamimastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
 ## Thanks
 
-[🎬 40] I want to especially thank my recent sponsors,
+I want to especially thank my recent sponsors,
 
 -  [Lucian Ghinda](https://github.com/lucianghinda)
 - [Maxim Gurin](https://github.com/maximgurin)
@@ -318,6 +319,6 @@ The email works!
 
 and [all the Hanami Mastery PRO subscirbers](https://pro.hanamimastery.com/), for supporting this project, I really appreciate it!
 
-[CTA-5 - Support!](https://www.notion.so/CTA-5-Support-3bb0101351494acfa27975ce338d7454)
-
-As usual, here you can see two of my previous episodes, so feel free to check them out and happy coding!
+:::important Consider sponsoring?
+If you want to support us, check out our [Github sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!
+:::
