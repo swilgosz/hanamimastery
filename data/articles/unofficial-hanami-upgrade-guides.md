@@ -40,7 +40,7 @@ Special thanks to [Ng Chen Hon](https://github.com/MutatedBread), [Hieu Nguyen](
 If you have very small application, **consider creating a brand new Hanami 2 application**, with views and persistence in place, and just copy your code there.
 
 :::tip
-You can use [HanamiSmith to spin such quickly](https://hanamimastery.com/episodes/40-hanamismith)
+You can use [HanamiSmith to spin such quickly](https://hanamimastery.com/episodes/40-hanamismith), or refer to the [Sean Colins' sample PR](https://github.com/hanami/bookshelf/pull/15) to upgrade it all at once
 :::
 
 # 2. Medium-size applications
@@ -400,7 +400,7 @@ DB_CLIENT.extension(:pg_array, :pg_json)
 
 This improved reading jsonb columns and automatic hash transformations.
 
-#### Make sure you sort columns to use copy_table 
+#### Make sure you sort columns to use copy_table
 
 copy_table requires columns to be provided in the fixed order. If you pass the hash, things may break in after upgrading sequel
 
@@ -475,7 +475,7 @@ gem 'rom-sql', '~>3.5'
 gem 'rom-factory'
 ```
 
-### Setup relevant infrastructure 
+### Setup relevant infrastructure
 
 Example ROM configuration file. Another examples you can find in [HME028, where we configure ROM from scratch](/episodes/28-configure-rom-from-scratch).
 
@@ -633,7 +633,7 @@ All fabricators should be replaced by factory definitions. Example:
 Fabricator(:article) do
   id { SecureRandom.uuid }
   created_at { Faker::Time.backward(days: 14, period: :evening) }
-  updated_at { Faker::Time.backward(days: 14, 
+  updated_at { Faker::Time.backward(days: 14,
 end
 
 # NOW
