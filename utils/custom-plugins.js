@@ -45,6 +45,18 @@ export function customDirective() {
           data.hProperties = {
             class: 'admonition-content admonition-info',
           };
+        } else if (node.name === 'warning') {
+          data.hProperties = {
+            class: 'admonition-content admonition-warning',
+          };
+        } else if (node.name === 'tip') {
+          data.hProperties = {
+            class: 'admonition-content admonition-tip',
+          };
+        } else if (node.name === 'caution') {
+          data.hProperties = {
+            class: 'admonition-content admonition-caution',
+          };
         }
 
         const findLabel = node.children.findIndex((i) => i.data.directiveLabel);
