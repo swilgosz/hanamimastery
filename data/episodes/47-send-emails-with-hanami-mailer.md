@@ -251,7 +251,7 @@ Now let's check the inbox... Works just great!
 
 ![Incoming email view](/images/episodes/47/incoming-mail-view.png)
 
-:::info
+:::info[Info]
 I'm using [Maildev](https://github.com/maildev/maildev) to run an email server locally. Totally recommend it as it's nice and easy to use.
 :::
 
@@ -319,6 +319,6 @@ I want to especially thank my recent sponsors,
 
 and [all the Hanami Mastery PRO subscirbers](https://pro.hanamimastery.com/), for supporting this project, I really appreciate it!
 
-:::important Consider sponsoring?
+:::important[Consider sponsoring?]
 If you want to support us, check out our [Github sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!
 :::

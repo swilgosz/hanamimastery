@@ -22,10 +22,10 @@ thumbnail:
 
 <br />
 
-:::info Hanami Mastery Insights
+:::info[Hanami Mastery Insights]
 If you want to get more insights about the Hanami Mastery initiative, **I strongly encourage you** to take a short look at the 
-- <a href="/about" target="_blank">about page</a> - to see the details about <strong>our mission and plans</strong>, 
-- <a href="/collaboration" target="_blank">collaboration page</a> - to see the <strong>list of our current services and ways we can help each other!</strong>
+- [about page](/about) - to see the details about <strong>our mission and plans</strong>, 
+- [collaboration page](/collaboration)> - to see the <strong>list of our current services and ways we can help each other!</strong>
 :::
 
 <br />

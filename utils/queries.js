@@ -5,9 +5,9 @@ import readingTime from 'reading-time';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkDirective from 'remark-directive';
-import { visit } from 'unist-util-visit';
 
 import { readFileByPath, getPaths } from './file-browsers.js';
+import { customDirective } from './custom-plugins.js';
 
 /*
   Extends the file meta data by additional fields and information, like
@@ -15,28 +15,6 @@ import { readFileByPath, getPaths } from './file-browsers.js';
   @param [String] filePath, i.e 'episodes/1-super-episode'
   @param [Object] data object to extend, read from the file
 */
-
-function myRemarkPlugin() {
-  return (tree) => {
-    visit(tree, (node) => {
-      if (
-        node.type === 'textDirective' ||
-        node.type === 'leafDirective' ||
-        node.type === 'containerDirective'
-      ) {
-        if (node.name !== 'info') return;
-
-        const data = node.data || (node.data = {});
-        const tagName = node.type === 'textDirective' ? 'span' : 'div';
-
-        data.hName = tagName;
-        data.hProperties = {
-          class: 'test',
-        };
-      }
-    });
-  };
-}
 
 function _serializeContentData(filePath, data) {
   const normalizedPath = path.normalize(filePath).replace(/\\/g, '/');
@@ -75,7 +53,7 @@ export async function getContentBySlug(type, slug) {
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [remarkDirective, myRemarkPlugin],
+      remarkPlugins: [remarkDirective, customDirective],
       rehypePlugins: [],
     },
   });
