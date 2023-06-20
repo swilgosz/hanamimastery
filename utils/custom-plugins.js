@@ -31,10 +31,19 @@ const svg = {
   ],
 };
 
-export function customDirective() {
+export function admonitionDirective() {
   return (tree) => {
     visit(tree, (node) => {
       if (node.type === 'containerDirective') {
+        if (
+          node.name !== 'important' &&
+          node.name !== 'info' &&
+          node.name !== 'warning' &&
+          node.name !== 'tip' &&
+          node.name !== 'caution'
+        )
+          return;
+
         const data = node.data || (node.data = {});
 
         if (node.name === 'important') {
@@ -59,27 +68,23 @@ export function customDirective() {
           };
         }
 
-        const findLabel = node.children.findIndex((i) => i.data.directiveLabel);
+        node.children[0].data.hName = 'h5';
 
-        if (findLabel !== undefined) {
-          node.children[findLabel].data.hName = 'h5';
+        const h5Child = node.children[0];
 
-          const h5Child = node.children[0];
+        node.children.splice(0, 1);
 
-          node.children.splice(0, 1);
-
-          const container = {
-            type: 'div',
-            data: {
-              hName: 'div',
-              hProperties: {
-                class: 'admonition-label',
-              },
+        const container = {
+          type: 'div',
+          data: {
+            hName: 'div',
+            hProperties: {
+              class: 'admonition-label',
             },
-            children: [svg, h5Child],
-          };
-          node.children.unshift(container);
-        }
+          },
+          children: [svg, h5Child],
+        };
+        node.children.unshift(container);
       }
     });
   };

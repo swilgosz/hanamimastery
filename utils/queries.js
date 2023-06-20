@@ -7,7 +7,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import remarkDirective from 'remark-directive';
 
 import { readFileByPath, getPaths } from './file-browsers.js';
-import { customDirective } from './custom-plugins.js';
+import { admonitionDirective } from './custom-plugins.js';
 
 /*
   Extends the file meta data by additional fields and information, like
@@ -53,7 +53,7 @@ export async function getContentBySlug(type, slug) {
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [remarkDirective, customDirective],
+      remarkPlugins: [remarkDirective, admonitionDirective],
       rehypePlugins: [],
     },
   });
