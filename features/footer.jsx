@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import NextLink from 'next/link';
-import { Link, makeStyles, Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomLink from './custom-link';
 
 const useStyles = makeStyles((theme) => ({
   footer: { marginTop: 'auto', padding: theme.spacing(2) },
@@ -18,9 +19,7 @@ export default function Footer() {
       className={classes.footer}
     >
       Copyright © HanamiMastery {new Date().getFullYear()}.{' '}
-      <NextLink href="/privacy-policy" passHref>
-        <Link>Privacy Policy</Link>
-      </NextLink>
+      <CustomLink href="/privacy-policy">Privacy Policy</CustomLink>
     </Typography>
   );
 }

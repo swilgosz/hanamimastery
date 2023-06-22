@@ -1,11 +1,11 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { MenuList } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { MenuList } from '@mui/material';
 import MenuItems from './menu-items';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    padding: 0,
+    alignItems: 'center',
     minHeight: theme.spacing(6),
   },
 }));

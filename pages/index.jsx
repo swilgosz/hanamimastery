@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Box, Button } from '@material-ui/core';
-import NextLink from 'next/link';
+import { Box, Button } from '@mui/material';
 import { SeoComponent } from '../features/seo';
 import ContentGrid from '../features/content-grid/index';
 import ArticlesLayout from '../layouts/articles-layout';
 import HomePageSchema from '../features/content-schemas/homepage-schema';
 import { setAuthors } from '../redux/slices/authors';
 import { getContent } from '../utils/queries';
+import CustomLink from '../features/custom-link';
 
 export default function BlogIndex({ articles, episodes, authors }) {
   const dispatch = useDispatch();
@@ -27,21 +27,21 @@ export default function BlogIndex({ articles, episodes, authors }) {
           <>
             <h1>Recent episodes</h1>
             <ContentGrid items={episodes} more />
-            <Box align="right" m={4}>
-              <NextLink href="/episodes" passHref center>
+            <Box align="right" my={6}>
+              <CustomLink href="/episodes" center>
                 <Button variant="contained" color="primary">
                   More episodes...
                 </Button>
-              </NextLink>
+              </CustomLink>
             </Box>
             <h1>Recent articles</h1>
             <ContentGrid items={articles} more />
-            <Box align="right" m={4}>
-              <NextLink href="/c/stray" passHref center>
+            <Box align="right" my={6}>
+              <CustomLink href="/c/stray" center>
                 <Button variant="contained" color="primary">
                   More articles...
                 </Button>
-              </NextLink>
+              </CustomLink>
             </Box>
           </>
         }

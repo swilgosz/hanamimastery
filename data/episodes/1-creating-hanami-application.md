@@ -23,7 +23,7 @@ We're entering **a new era in the Ruby world**, there are no doubts about that! 
 
 In this episode, I'll show you how to quickly start with a new Hanami project.  I'll create a brand new Hanami application using the prepared [Hanami Application Template](https://github.com/hanami/hanami-2-application-template).
 
-:::caution Upcoming CLI updates!
+:::caution[Upcoming CLI updates!]
 This article shows how to create Hanami 2 project using Temporary repository, which soon will be replaced by the neat [CLI application and code generators](https://github.com/hanami/cli)!
 :::
 
@@ -99,7 +99,7 @@ However, if I'll run the project now, it'll crash saying that the **database URL
 
 This is strictly related to missing required key in the settings, which is managed by [dry-configurable](https://dry-rb.org/gems/dry-configurable)). I'm sure that these error messages will be improved in the near future. 
 
-:::important Detailed dry-configurable guide
+:::important[Detailed dry-configurable guide]
 You can check the [dry-configurable episode](/episodes/5-configure-anything-with-dry-configurable) for more details about how the *dry-configurable* gem, and so Hanami settings work.
 :::
 
@@ -153,6 +153,6 @@ Hanami solves that issue, and with all the amazing progress on simplifying the i
 - [Luca Guidi](https://lucaguidi.com/) - For tremendous work on whole Hanami development.
 - And All the people engaged in the Hanami project, thanks to whom I have a topic to write about.
 
-:::tip Become an awesome subscriber!
+:::tip[Become an awesome subscriber!]
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::

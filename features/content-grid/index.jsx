@@ -1,30 +1,22 @@
-import { Grid, makeStyles } from '@material-ui/core';
+import { Grid } from '@mui/material';
+
 import ContentTile from './tile';
 
-const useStyles = makeStyles((theme) => ({
-  list: {
-    listStyle: 'none',
-    padding: theme.spacing(0, 4, 4, 0),
-    [theme.breakpoints.down('md')]: {
-      padding: theme.spacing(0, 0),
-    },
-  },
-}));
-
 const ContentDisplay = (props) => {
-  const classes = useStyles();
-  const { items } = props;
+  const { items, relatedContent } = props;
   return (
-    <Grid container component="ul" className={classes.list} spacing={6}>
+    <Grid container spacing={6}>
       {items.map((item, index) => (
         <Grid
-          key={item.id}
           item
+          key={item.id}
           xs={12}
-          md={index === 0 ? 12 : 6}
-          component="li"
+          md={index === 0 && !relatedContent ? 12 : 6}
         >
-          <ContentTile item={item} variant={index === 0 ? 'big' : 'small'} />
+          <ContentTile
+            item={item}
+            variant={index === 0 && !relatedContent ? 'big' : 'small'}
+          />
         </Grid>
       ))}
     </Grid>

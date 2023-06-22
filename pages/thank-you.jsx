@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDXRemote } from 'next-mdx-remote';
-import { Container } from '@material-ui/core';
+import { Container } from '@mui/material';
 import { getContentBySlug } from '../utils/queries';
 import components from '../features/mdx-components';
 import ArticlesLayout from '../layouts/articles-layout';

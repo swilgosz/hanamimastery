@@ -7,25 +7,27 @@ import {
   CardActions,
   CardActionArea,
   CardHeader,
-  Link,
   Button,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import NextLink from 'next/link';
+} from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { useSelector } from 'react-redux';
 import TextTruncate from 'react-text-truncate';
 import { findAuthor } from '../../redux/slices/authors';
 import TopicList from '../topics/topic-list';
 import ProTag from '../content/pro-tag';
+import CustomLink from '../custom-link';
 
 const useStyles = makeStyles((theme) => ({
-  content: {
+  card: {
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
+  },
+  content: {
     paddingTop: '0px',
+    height: '100%',
   },
   media: {
-    content: '',
     height: 'auto',
     paddingBottom: '56.5%',
     backgroundPosition: 'center',
@@ -51,18 +53,16 @@ const ContentTile = ({ item, variant }) => {
   const thumbnailUrl = variant === 'big' ? thumbnail.big : thumbnail.small;
   return (
     <Card className={classes.card}>
-      <NextLink href={`/${path}`} passHref>
+      <CustomLink href={`/${path}`}>
         <CardActionArea>
           <CardMedia className={classes.media} image={thumbnailUrl} />
         </CardActionArea>
-      </NextLink>
+      </CustomLink>
       <CardHeader
-        disableTypography
+        titleTypographyProps={{ sx: { fontWeight: '100' } }}
         title={
           <>
-            <NextLink passHref href={`/${path}`}>
-              <Link variant="h6">{fullTitle}</Link>
-            </NextLink>
+            <CustomLink href={`/${path}`}>{fullTitle}</CustomLink>
             <ProTag pro={item.premium} />
           </>
         }
@@ -84,11 +84,11 @@ const ContentTile = ({ item, variant }) => {
         </Typography>
       </CardContent>
       <CardActions className={classes.actions}>
-        <NextLink href={`/${path}`} passHref>
+        <CustomLink href={`/${path}`}>
           <Button variant="contained" color="primary">
             Read more
           </Button>
-        </NextLink>
+        </CustomLink>
       </CardActions>
     </Card>
   );

@@ -1,32 +1,30 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import { Link, Card, CardContent, CardHeader } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import ListSubheader from '@mui/material/ListSubheader';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Collapse from '@mui/material/Collapse';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import { Link, Card, CardContent, CardHeader } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: theme.spacing(2),
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+    width: '100%',
   },
   list: {
-    width: '100%',
-    // maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
   nestedList: {
     paddingLeft: theme.spacing(4),
   },
   centered: {
-    // display: 'block',
     paddingTop: '0px',
     marginTop: '0px',
     textAlign: 'center',
@@ -56,7 +54,7 @@ export default function JobOffers() {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }} className={classes.root}>
+    <Card className={classes.root}>
       <CardHeader title="Open Hanami Jobs" className={classes.header} />
       <CardContent>
         <List

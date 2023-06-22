@@ -27,7 +27,7 @@ Recently, I’ve had some [fun with Hanami Actions](/episodes/18-hanami-actions-
 
 Routing is one of the basic components of any web application. This is the interface between your application and the clients using it. In this episode I'll dig a bit into the Hanami router from the usage point of view, covering why it's great and how to work with it.
 
-:::tip Check out ROM testing
+:::tip[Check out ROM testing]
 In this episode we only cover the route testing. If you're interested in chekcing how to test other parts of your app, look at the [HME031 - Testing persistence](/episodes/31-rom-factory) - to wrap your head about persistence tips for Hanami applications.
 
 To reach the [Yoda Level of test coverage](/episodes/24-different-levels-of-test-coverage), you need to know them all :).
@@ -244,12 +244,12 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ## Thank you!
 
-:::important [Recent sponsors](https://github.com/sponsors/swilgosz)
+:::important[Recent sponsors]
 - [Benjamin Klotz](https://github.com/tak1n)
 - [Saeloun](https://github.com/saeloun)
 - [Brandon Weaver](https://github.com/baweaver)
 :::
 
-:::important Other thanks
+:::important[Other thanks]
 - [La-Rel Easter](https://unsplash.com/@lastnameeaster) - for the great Cover Image!
 :::

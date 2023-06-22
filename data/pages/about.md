@@ -11,26 +11,23 @@ thumbnail:
 
 <Grid container spacing={2}>
   <Grid item xs={12} md={6}>
-  <Typography paragraph>Hi, I'm <strong>Seb Wilgosz</strong>, and I run <a href='https://hanamimastery.com'>HanamiMastery</a> to help you get into <a href='https://hanamirb.org/'>Hanami framework</a> as easily as possible.</Typography>
-
-
-  <Typography paragraph>Among the others, I am an author of <a href='https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/' target='_blank'>Rails API course</a> on Udemy and <a href='https://driggl.com' target='_blank'>Driggl blog</a>.</Typography>
-  <Typography paragraph>
-    I love Ruby, so <strong>I'd love to see the Ruby ecosystem evolving and changing</strong>. This is why Hanami Mastery came alive!
-  </Typography>
+  <Typography paragraph>Hi, I'm <strong>Seb Wilgosz</strong>, and I run [HanamiMastery](https://hanamimastery.com) to help you get into [Hanami framework](https://hanamirb.org) as easily as possible.</Typography>
+  <Typography paragraph>Among the others, I am an author of [Rails API course](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide) on Udemy and [Driggl blog](https://driggl.com).</Typography>
+  <Typography paragraph>I love Ruby, so <strong>I'd love to see the Ruby ecosystem evolving and changing</strong>. This is why Hanami Mastery came alive!</Typography>  
 </Grid>
   <Grid item xs={12} md={6}>
-  <img alt='Sebastian Wilgosz' src='/images/team/swilgosz-small.jpg' />
+  ![Sebastian Wilgosz](/images/team/swilgosz-small.jpg)
   </Grid>
 </Grid>
 
 <br />
 
-:::important Our Mission
+:::important[Our Mission]
 Make **Open-Source** projects **an attractive way for full-time jobs**!
 :::
 
 <br />
+
 
 **I strongly believe that great community projects should get more support and financial stability**. Unfortuantely, most of amazing people who create great libraries and projects, need to work during nights and over the weekends **to make OUR lives better**.
 
@@ -54,22 +51,18 @@ This project is driven by a few simple rules.
     <h3>
       Episodes
     </h3>
-    <Typography paragraph>Episode consists of:
+    <Typography paragraph>Episode consists of:</Typography>
       <ul>
-      <li>Article guide - <a href="/episodes/9-guide-to-models-in-hanami-and-rom">see example</a>.
-      </li>
-      <li>Youtube Video guide - <a href="https://youtu.be/GAmHmj0XK5U" target="_blank">see example</a></li>
+      <li>Article guide - [see example](/episodes/9-guide-to-models-in-hanami-and-rom).</li>
+      <li>Youtube Video guide - [see example](https://youtu.be/GAmHmj0XK5U)</li>
       <li>Summary notes/snippets (comming soon)</li>
       </ul>
-    </Typography>
   </Grid>
   <Grid item xs={12} md={6}>
     <h3>
       Articles
     </h3>
-    <Typography paragraph>
-    Except full episodes, I'm publishing standard blog articles, under the <a href="/c/stray">stray category</a>. These usually don't contain video attached and may touch topics that are outside of the Hanami domain. <a href="/articles/dry-rb-dependency-graph">See example</a>.
-    </Typography>
+    <Typography paragraph> Except full episodes, I'm publishing standard blog articles, under the [stray category](/c/stray). These usually don't contain video attached and may touch topics that are outside of the Hanami domain. [See example](/articles/dry-rb-dependency-graph).</Typography>
   </Grid>
 </Grid>
 

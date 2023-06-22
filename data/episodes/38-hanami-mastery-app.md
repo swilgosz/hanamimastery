@@ -125,8 +125,9 @@ Now let's architecture this beauty...
 
 ## Summary
 
-This is only a part of the episode!
-Subscribe to [Hanami Mastery PRO](https://pro.hanamimastery.com) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
+:::tip[Subscribe to Hanami Mastery PRO]
+This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://pro.hanamimastery.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!  
+:::
 
 ## Thanks
 

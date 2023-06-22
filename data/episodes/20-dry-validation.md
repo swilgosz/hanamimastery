@@ -39,7 +39,7 @@ It's *dry-validation* and this is what I'll talk today about.
 
 I have recorded two episodes about [how to do dependency injection in ruby like a PRO](/t/dependency-injection) using DRY-libraries, so feel free to check them out!
 
-:::tip Do you want to apply next-level dependency injection in your ruby apps?
+:::tip[Do you want to apply next-level dependency injection in your ruby apps?]
 
 Here you can learn about how dry-container can solve some of the DI problems: [HME014 - Dependency Injection in Ruby: From zero to hero](/episodes/14-dependency-injection-in-ruby-from-zero-to-hero-part-1)
 And here how to master DI in ruby by leveraging the features of dry-system:

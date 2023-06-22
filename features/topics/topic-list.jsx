@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Box, makeStyles } from '@material-ui/core';
+import { Box } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { nanoid } from '@reduxjs/toolkit';
 import TopicButton from './topic-button';
 
