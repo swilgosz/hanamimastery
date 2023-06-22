@@ -16,16 +16,16 @@ thumbnail:
     <Typography paragraph>Below are all the details you need.</Typography>
   </Grid>
   <Grid item xs={12} md={6}>
-    <img alt='Sebastian Wilgosz' src='/images/team/swilgosz-small.jpg' />
+  ![Sebastian Wilgosz](/images/team/swilgosz-small.jpg)
   </Grid>
 </Grid>
 
 <br />
 
-:::info Hanami Mastery Insights
+:::info[Hanami Mastery Insights]
 If you want to get more insights about the Hanami Mastery initiative, **I strongly encourage you** to take a short look at the 
-- <a href="/about" target="_blank">about page</a> - to see the details about <strong>our mission and plans</strong>, 
-- <a href="/collaboration" target="_blank">collaboration page</a> - to see the <strong>list of our current services and ways we can help each other!</strong>
+- [about page](/about) - to see the details about <strong>our mission and plans</strong>, 
+- [collaboration page](/collaboration)> - to see the <strong>list of our current services and ways we can help each other!</strong>
 :::
 
 <br />
@@ -41,7 +41,7 @@ However, even though I myself in this field want to be transparent, **I value yo
 
 You can check there, how much support I got and how much support I give.
 
-:::important Disclaimer
+:::important[Disclaimer]
 While I keep in public
 - all the income
 - impact on the Open-Source world

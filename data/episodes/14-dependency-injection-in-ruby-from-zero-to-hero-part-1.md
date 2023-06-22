@@ -121,7 +121,7 @@ It's easy, but there are a few problems here.
 
 First of all, the logic responsible for generating logs is **placed directly in different classes**, which makes it hard to refactor. If you'll EVER want to add an additional logging channel like [papertrail] or even own S3 bucket, you'll have hell in replacing all log calls in your application.
 
-:::warning I won't replace my logger!
+:::warning[I won't replace my logger!]
 Yeah, if you won't, probably you don't write tests....
 :::
 

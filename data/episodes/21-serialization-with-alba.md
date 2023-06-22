@@ -113,7 +113,7 @@ slice :main, at: "/" do
 end
 ```
 
-:::tip Test your router
+:::tip[Test your router]
 Usually, I'm also adding tests for my code, which I don't show in the episodes to keep videos short and clean. Check out [HME022 - Testing the router](22-testing-hanami-router) and [HME031 - Testing persistence](/episodes/31-rom-factory) to get some idea about testing Hanami applications.
 :::
 

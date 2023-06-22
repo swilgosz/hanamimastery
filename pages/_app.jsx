@@ -14,6 +14,7 @@ import theme from '../styles/theme';
 import store from '../redux/store';
 import CustomLink from '../features/custom-link';
 import CookiesPopup from '../features/cookies-popup';
+import '../styles/admonition.css';
 
 const useStyles = makeStyles(() => ({
   alert: {

@@ -427,13 +427,13 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ## Thanks
 
-:::important [Recent sponsors](https://github.com/sponsors/swilgosz)
+:::important[Recent sponsors]
 - [Benjamin Klotz](https://github.com/tak1n)
 - [Saeloun](https://github.com/saeloun)
 - [Brandon Weaver](https://github.com/baweaver)
 :::
 
-:::important Other thanks
+:::important[Other thanks]
 - [Nick Seagrave](https://unsplash.com/@seagrave) - for the great Cover Image!
 :::
 
