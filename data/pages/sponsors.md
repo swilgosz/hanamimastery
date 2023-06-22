@@ -16,7 +16,7 @@ thumbnail:
     <Typography paragraph>Below are all the details you need.</Typography>
   </Grid>
   <Grid item xs={12} md={6}>
-    <img alt='Sebastian Wilgosz' src='/images/team/swilgosz-small.jpg' />
+  ![Sebastian Wilgosz](/images/team/swilgosz-small.jpg)
   </Grid>
 </Grid>
 
@@ -41,7 +41,7 @@ However, even though I myself in this field want to be transparent, **I value yo
 
 You can check there, how much support I got and how much support I give.
 
-:::important Disclaimer
+:::important[Disclaimer]
 While I keep in public
 - all the income
 - impact on the Open-Source world
