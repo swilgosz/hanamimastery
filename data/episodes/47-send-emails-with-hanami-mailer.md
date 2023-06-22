@@ -251,7 +251,7 @@ Now let's check the inbox... Works just great!
 
 ![Incoming email view](/images/episodes/47/incoming-mail-view.png)
 
-:::info[Info]
+:::info
 I'm using [Maildev](https://github.com/maildev/maildev) to run an email server locally. Totally recommend it as it's nice and easy to use.
 :::
 

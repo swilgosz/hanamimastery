@@ -35,44 +35,54 @@ export function admonitionDirective() {
   return (tree) => {
     visit(tree, (node) => {
       if (node.type === 'containerDirective') {
-        if (
-          node.name !== 'important' &&
-          node.name !== 'info' &&
-          node.name !== 'warning' &&
-          node.name !== 'tip' &&
-          node.name !== 'caution'
-        )
-          return;
-
         const data = node.data || (node.data = {});
 
-        if (node.name === 'important') {
-          data.hProperties = {
-            class: 'admonition-content admonition-important',
-          };
-        } else if (node.name === 'info') {
-          data.hProperties = {
-            class: 'admonition-content admonition-info',
-          };
-        } else if (node.name === 'warning') {
-          data.hProperties = {
-            class: 'admonition-content admonition-warning',
-          };
-        } else if (node.name === 'tip') {
-          data.hProperties = {
-            class: 'admonition-content admonition-tip',
-          };
-        } else if (node.name === 'caution') {
-          data.hProperties = {
-            class: 'admonition-content admonition-caution',
-          };
+        switch (node.name) {
+          case 'important':
+            data.hProperties = {
+              class: 'admonition-content admonition-important',
+            };
+            break;
+          case 'info':
+            data.hProperties = {
+              class: 'admonition-content admonition-info',
+            };
+            break;
+          case 'warning':
+            data.hProperties = {
+              class: 'admonition-content admonition-warning',
+            };
+            break;
+          case 'tip':
+            data.hProperties = {
+              class: 'admonition-content admonition-tip',
+            };
+            break;
+          case 'caution':
+            data.hProperties = {
+              class: 'admonition-content admonition-caution',
+            };
+            break;
+          default:
+            return;
         }
 
-        node.children[0].data.hName = 'h5';
+        let h5Child;
 
-        const h5Child = node.children[0];
-
-        node.children.splice(0, 1);
+        if (node.children.length === 1) {
+          h5Child = {
+            type: 'heading',
+            data: {
+              hName: 'h5',
+            },
+            children: [{ type: 'text', value: node.name }],
+          };
+        } else {
+          const firstChild = node.children[0];
+          firstChild.data.hName = 'h5';
+          h5Child = firstChild;
+          node.children.splice(0, 1);
+        }
 
         const container = {
           type: 'div',
