@@ -244,12 +244,12 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ## Thank you!
 
-:::important [Recent sponsors](https://github.com/sponsors/swilgosz)
+:::important[Recent sponsors]
 - [Benjamin Klotz](https://github.com/tak1n)
 - [Saeloun](https://github.com/saeloun)
 - [Brandon Weaver](https://github.com/baweaver)
 :::
 
-:::important Other thanks
+:::important[Other thanks]
 - [La-Rel Easter](https://unsplash.com/@lastnameeaster) - for the great Cover Image!
 :::

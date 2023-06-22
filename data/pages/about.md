@@ -26,7 +26,7 @@ thumbnail:
 
 <br />
 
-:::important Our Mission
+:::important[Our Mission]
 Make **Open-Source** projects **an attractive way for full-time jobs**!
 :::
 

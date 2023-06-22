@@ -252,13 +252,13 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ## Thanks
 
-:::important [Recent sponsors](https://github.com/sponsors/swilgosz)
+:::important[Recent sponsors]
 - [Akilas Yemane](https://twitter.com/akilasy)
 - [Bill Tihen](https://github.com/btihen)
 - [Benjamin Klotz](https://github.com/tak1n)
 :::
 
-:::important Other thanks
+:::important[Other thanks] 
 - [Erik Mclean](https://unsplash.com/@introspectivedsgn) - for the great Cover Image!
 :::
 

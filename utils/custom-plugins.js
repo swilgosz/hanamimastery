@@ -68,8 +68,11 @@ export function admonitionDirective() {
         }
 
         let h5Child;
+        const firstChild = node.children[0];
 
-        if (node.children.length === 1) {
+        console.log();
+
+        if (!firstChild.data) {
           h5Child = {
             type: 'heading',
             data: {
@@ -78,7 +81,6 @@ export function admonitionDirective() {
             children: [{ type: 'text', value: node.name }],
           };
         } else {
-          const firstChild = node.children[0];
           firstChild.data.hName = 'h5';
           h5Child = firstChild;
           node.children.splice(0, 1);

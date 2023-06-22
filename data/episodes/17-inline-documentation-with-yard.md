@@ -130,7 +130,7 @@ This is, what happens when I'll hover over the `service.call` method execution l
 
 **I immediately get the information about what type of class is assigned to the service reader**, and what the method does! In this case, it subscribes the current video viewer to the youtube channel.
 
-:::important Disclaimer
+:::important[Disclaimer]
 As you can see here, automatic subscriptions are not fully implemented yet, so **please use the [manual way of subscribing to a channel](https://www.youtube.com/c/HanamiMastery)**, for a while yet.
 :::
 

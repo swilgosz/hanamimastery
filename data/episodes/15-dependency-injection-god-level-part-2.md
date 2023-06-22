@@ -389,12 +389,12 @@ If you want to see more content in this fashion, **Subscribe to [my YT channel](
 
 ## Thank you!
 
-:::important Recent sponsors
+:::important[Recent sponsors]
 - **DNSimple** - which kindly joined to my platinum sponsorship tier allowing me to delegate a bit of work related to editing videos for my tutorials.
  - **Andrzej Krzywda**
  - **Sebastjan Hribar**
 :::
 
-:::important Other thanks
+:::important[Other thanks]
 - [La-Rel Easter](https://unsplash.com/@lastnameeaster) - for the great Cover Image!
 :::
