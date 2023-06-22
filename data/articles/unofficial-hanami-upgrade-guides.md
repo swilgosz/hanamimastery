@@ -56,7 +56,7 @@ If you have medium-size application, without crazy custom monkey patches or wrap
 **Reasons:**
 
 - Hanami 1.x requires Ruby < 3, while Hanami 2.x requires Ruby > 3
-- Hanami Model requires Ruby < 3, <= ROM 3.3
+- Hanami Model requires Ruby < 3, {'<='} ROM 3.3
 - Hanami Utils requires Ruby < 3
 
 ## 2.1 Prepare app for ROM 5 upgrade
