@@ -139,7 +139,7 @@ const MDXComponents = {
   p: (props) => <Typography {...props} paragraph />,
   li: (props) => <Typography {...props} component="li" />,
   kbd: (props) => <Kbd {...props} />,
-  a: CustomLink,
+  a: (props) => <CustomLink {...props} />,
   img: (props) => <CustomImage {...props} />,
   CourseAd,
   EmailSubscriptionForm,
