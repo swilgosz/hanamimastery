@@ -39,7 +39,7 @@ base0F  #be5046  Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php 
     overflow-x: auto;
     padding: 1em;
     white-space: pre-wrap;
-    line-break: anywhere;
+    line-break: strict;
     font-size: 1rem;
   }
 }
