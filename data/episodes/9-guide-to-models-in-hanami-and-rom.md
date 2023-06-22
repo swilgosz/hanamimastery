@@ -268,7 +268,7 @@ Because we do entity definitions based on the tables definitions, there is no ne
 
 Now, let's add an article repository.
 
-:::warning Update notice!
+:::warning[Update notice!]
 You'll encounter a problem with loading repositories due to file-loading improvements introduced in `Hanami 2.0-alpha3`. Check out [episode #13](/episodes/13-dry-container-tips) for detailed explanation!
 :::
 

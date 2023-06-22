@@ -24,6 +24,9 @@
   margin: 0;
   color: #000000;
 }
+.admonition-content ul {
+  margin: 0;
+}
 
 .admonition-content h5 {
   font-size: 20px;

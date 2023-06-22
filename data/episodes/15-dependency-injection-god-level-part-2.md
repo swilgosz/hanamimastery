@@ -286,7 +286,7 @@ Even though dry-validation is the actual, most popular gem from the dry family, 
 
 ### Configurable file name resolver!
 
-:::Warning Configurable Acronyms!
+:::Warning[Configurable Acronyms!]
 
 The `IOLogger` class defined above will raise an error when you try to load it **with default configuration**, because it interprets the file_name as `IoLogger`. Fortunately *dry-system* uses dry-inflector to transform strings, which I covered in [episode #4](/episodes/4-string-transformations-with-dry-inflector)!
 

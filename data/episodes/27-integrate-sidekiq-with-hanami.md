@@ -197,7 +197,7 @@ I'm going to schedule my `generate_sitemap` worker now.
 
 I need to define the identifier of my scheduled position, then specify **how often the job should run**. Just for this showcase, I'll set it to run every 2 seconds.
 
-:::tip Don't you know the cron syntax?
+:::tip[Don't you know the cron syntax?]
 If you are not familiar yet with this scheduling syntax, I recommend you bookmark the [Cronatab Guru](https://crontab.guru/). It's an interactive editor of the crontab syntax which I visit all the time because cron syntax is one of these things that I am just unable to remember.
 :::
 

@@ -70,8 +70,6 @@ export function admonitionDirective() {
         let h5Child;
         const firstChild = node.children[0];
 
-        console.log();
-
         if (!firstChild.data) {
           h5Child = {
             type: 'heading',

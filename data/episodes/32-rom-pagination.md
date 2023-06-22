@@ -139,7 +139,7 @@ module Sandbox
 end
 ```
 
-:::caution Working with relations
+:::caution[Working with relations]
 For the sake of this example, my repository return relation object, that I can call pagination methods on. However, it's not the encouraged practice.
 
 [Repositories should return already finalized collection](/episodes/29-leverage-rom-repositories) - an array and should be used for simple queries. For any more advanced usage, like complicated queries, dynamic filters, or pagination, I encourage using Query Objects.

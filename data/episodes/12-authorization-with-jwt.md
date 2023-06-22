@@ -132,7 +132,7 @@ First I need to add the `jay_doubleu_tee` gem to my `Gemfile`. Then run the bund
 gem 'jay_doubleu_tee'
 ```
 
-:::tip Learn safe versioning
+:::tip[Learn safe versioning]
 If you're interested in ideas how to manage gem versions in bigger projects, check out [HME034 introducing pessimize gem](/episodes/34-versioning-with-pessimize). It's just one way to never accidentially update gem unintentionally.
 :::
 
