@@ -5,6 +5,7 @@ import readingTime from 'reading-time';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkDirective from 'remark-directive';
+import rehypeHighlight from 'rehype-highlight';
 
 import { readFileByPath, getPaths } from './file-browsers.js';
 import { admonitionDirective } from './custom-plugins.js';
@@ -54,7 +55,7 @@ export async function getContentBySlug(type, slug) {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [remarkDirective, admonitionDirective],
-      rehypePlugins: [],
+      rehypePlugins: [rehypeHighlight],
     },
   });
   return {
