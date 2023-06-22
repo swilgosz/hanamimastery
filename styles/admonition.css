@@ -19,7 +19,8 @@
   margin-bottom: 1rem;
 }
 
-.admonition-content p {
+.admonition-content p,
+.admonition-content li {
   margin: 0;
   color: #000000;
 }
