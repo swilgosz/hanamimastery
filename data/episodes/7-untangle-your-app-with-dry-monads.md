@@ -475,7 +475,7 @@ This makes it extremely easy to test in encapsulation, as I can just inject anyt
 
 Finally, I call the `CreateUser` service object (or interactor) with the value that is returned from my validator. At this point, I am hundred percent sure that **I'm always working with the valid input parameters**, correct types, and values so I can easily skip validation, or raise unexpected errors if such a situation happens.
 
-:::caution Different names for service objects
+:::caution[Different names for service objects]
 You may notice that I tend to call my **service objects - operations**, the same I did for validators instead of contracts - but that's irrelevant. Call them however you wish, just be consistent.
 
 Other names you may see on the web:

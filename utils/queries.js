@@ -3,10 +3,12 @@
 import path from 'path';
 import readingTime from 'reading-time';
 import matter from 'gray-matter';
-import mdxPrism from 'mdx-prism';
-import { serialize } from 'next-mdx-remote/serialize.js';
-import admonitions from 'remark-admonitions';
+import { serialize } from 'next-mdx-remote/serialize';
+import remarkDirective from 'remark-directive';
+import rehypeHighlight from 'rehype-highlight';
+
 import { readFileByPath, getPaths } from './file-browsers.js';
+import { admonitionDirective } from './custom-plugins.js';
 
 /*
   Extends the file meta data by additional fields and information, like
@@ -14,6 +16,7 @@ import { readFileByPath, getPaths } from './file-browsers.js';
   @param [String] filePath, i.e 'episodes/1-super-episode'
   @param [Object] data object to extend, read from the file
 */
+
 function _serializeContentData(filePath, data) {
   const normalizedPath = path.normalize(filePath).replace(/\\/g, '/');
   const postSlug = normalizedPath.split('/').slice(1)[0];
@@ -51,8 +54,8 @@ export async function getContentBySlug(type, slug) {
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [admonitions],
-      rehypePlugins: [mdxPrism],
+      remarkPlugins: [remarkDirective, admonitionDirective],
+      rehypePlugins: [rehypeHighlight],
     },
   });
   return {

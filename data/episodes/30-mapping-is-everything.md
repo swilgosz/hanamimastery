@@ -179,7 +179,7 @@ However, in some scenarios, you’ll need *a custom mapping ability*. One exampl
 
 Let me show you how to do this.
 
-:::tip Subscribe to Hanami Mastery PRO
+:::tip[Subscribe to Hanami Mastery PRO]
 This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://pro.hanamimastery.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
 :::
 

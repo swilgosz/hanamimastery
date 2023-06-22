@@ -147,7 +147,7 @@ For today, let's check how it behaves.
 
 When I click, on top of the list, the last saved episode is prepended again, showing duplicates. That's an amazing first step, but what we want to do, is to fetch all new episodes from Github, and this is what we'll do now.
 
-:::tip Subscribe to Hanami Mastery PRO
+:::tip[Subscribe to Hanami Mastery PRO]
 This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://pro.hanamimastery.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
 :::
 

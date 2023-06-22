@@ -413,6 +413,6 @@ I want to especially thank my recent sponsors,
 
 and [all the Hanami Mastery PRO subscirbers](https://pro.hanamimastery.com), for supporting this project, I really appreciate it!
 
-:::important Consider sponsoring?
-If you want to support us, check out our [Github sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!
+:::important[Consider sponsoring?]
+If you want to support us, check out our [Github sponsors page](https://github.com/sponsors/swilgosz) or join [Hanami Mastery PRO](https://pro.hanamimastery.com/) to gain the access to more learning resources and our private discord server!
 :::

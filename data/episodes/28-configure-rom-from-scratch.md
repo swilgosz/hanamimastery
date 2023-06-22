@@ -26,7 +26,7 @@ However, as Hanami 2.0 will be released without the persistence layer pre-config
 
 In this episode, I'll go with you through the basic integration of ROM in Hanami, but You can take these steps and apply them in ANY Ruby application, and it'll still work the same.
 
-:::info Disclaimer
+:::info[Disclaimer]
 In this episode, I'll showcase the basics of ROM, but this is just a part of the **deep dive course** about [understanding ROM and mastering it](https://hanamimastery.teachable.com/p/hanami-mastery-premium) we're making for you.
 
 This course we already started to record and it is available as a part of [Hanami Mastery PRO](https://hanamimastery.teachable.com/p/hanami-mastery-premium). Feel free to join to get early access and have an impact on shaping it with us!
@@ -70,7 +70,7 @@ You may refer to [HMEP21](/episodes/21-serialization-with-alba) to see how I’v
 
 Of course, the route is also set up, so when I'll visit the `/articles` URL in the browser, you'll see the empty JSON response and the goal is to fill it with the content loaded from the database.
 
-:::tip Test your router
+:::tip[Test your router] 
 In my episodes, I mostly show only working code, however the process of creating it is a bit different. If you're interested in how to test Hanami apps, check out [HME022 - Testing the router](22-testing-hanami-router) to get some idea about testing phase.
 :::
 
@@ -80,7 +80,7 @@ I'm not a person who likes to wait, but rather one who takes things in hand, so 
 
 ## Installing ROM with SQL
 
-:::warning Disclaimer
+:::warning[Disclaimer]
 This episode is **NOT targeted at beginners** expecting everything working out-of-the-box.
 
 It's for people wanting to know **how the persistence layer works under the hood** and how to master the great ORM which the ROM definitely is.
