@@ -14,11 +14,11 @@ thumbnail:
   big: /images/episodes/47/cover-big.jpeg
   small: /images/episodes/47/cover-small.jpeg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/@hanamimastery/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1668923798689570819
+  mastodon: https://ruby.social/@hanamimastery/110542023334544886
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/14gjuph/send_emails_with_hanamimailer_hanami_mastery_047/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/1494a5v/send_emails_with_hanamimailer_hanami_mastery_047/
 source: https://github.com/hanamimastery/episodes/tree/main/047
 ---
 I have here the simple application that I've built in the previous episodes, and [in the last one, I've added this form](/episodes/46-contact-form), allowing us to send values to the server for processing.
