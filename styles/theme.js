@@ -10,6 +10,7 @@ export default createTheme({
   typography: {
     h1: {
       fontSize: '2.5rem',
+      fontWeight: 'bold',
     },
     h2: {
       fontSize: '2rem',

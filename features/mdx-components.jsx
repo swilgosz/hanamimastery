@@ -31,10 +31,11 @@ const useImageStyles = makeStyles((theme) =>
       width: '100%',
       display: 'flex',
       flexDirection: 'column',
+      gap: '1rem',
+      marginBottom: '1rem',
     },
     image: {
       maxWidth: '100%',
-      margin: `0 auto ${theme.spacing(1.25)}px auto`,
       borderRadius: `${theme.spacing(1)}px`,
     },
     caption: {
