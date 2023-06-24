@@ -1,0 +1,35 @@
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  margin-bottom: 30px;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.quote {
+  background: #f9f9f9;
+  border-left: 10px solid #cb4426;
+  margin: 0 0 1rem 0;
+  padding: 0.5rem;
+  quotes: '\201C''\201D''\2018''\2019';
+}
+.quote:before {
+  color: #cb4426;
+  content: open-quote;
+  font-size: 4rem;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+.quote p {
+  font-style: italic;
+}

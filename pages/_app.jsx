@@ -1,4 +1,6 @@
 import '../styles/highlighting.css';
+import '../styles/admonition.css';
+import '../styles/mdx-components.css';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { makeStyles } from '@mui/styles';
@@ -13,7 +15,6 @@ import theme from '../styles/theme';
 import store from '../redux/store';
 import CustomLink from '../features/custom-link';
 import CookiesPopup from '../features/cookies-popup';
-import '../styles/admonition.css';
 
 const useStyles = makeStyles(() => ({
   alert: {
