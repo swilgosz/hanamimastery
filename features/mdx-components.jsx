@@ -36,7 +36,7 @@ const useImageStyles = makeStyles((theme) =>
     },
     image: {
       maxWidth: '100%',
-      borderRadius: `${theme.spacing(1)}px`,
+      borderRadius: '0.5rem',
     },
     caption: {
       lineHeight: '20px',

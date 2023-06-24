@@ -15,19 +15,25 @@
 }
 
 .quote {
-  background: #f9f9f9;
-  border-left: 10px solid #cb4426;
+  font-size: 1.4em;
+  width: 100%;
+  font-style: italic;
+  padding: 2rem 2rem 1rem 3.5rem;
+  border-left: 8px solid #cb4426;
+  line-height: 1.6;
+  position: relative;
+  background: #f8f8f8;
   margin: 0 0 1rem 0;
-  padding: 0.5rem;
-  quotes: '\201C''\201D''\2018''\2019';
 }
-.quote:before {
+
+.quote::before {
+  font-family: Roboto, sans-serif;
+  content: '\201C';
   color: #cb4426;
-  content: open-quote;
-  font-size: 4rem;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
+  font-size: 4em;
+  position: absolute;
+  left: 5px;
+  top: -20px;
 }
 
 .quote p {

@@ -5,6 +5,7 @@
     padding: 1em;
     display: block;
     max-width: calc(100vw - 50px);
+    border-radius: 0.5rem;
   }
 }
 
