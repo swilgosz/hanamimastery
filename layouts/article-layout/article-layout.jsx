@@ -59,7 +59,14 @@ const ArticleLayout = ({ article, children }) => {
           <Grid xs={12} sm={12} md={12} lg={2} item component="aside">
             <ArticleTabs />
           </Grid>
-          <Grid sm={12} md={8} lg={7} item component="article">
+          <Grid
+            sm={12}
+            md={8}
+            lg={7}
+            item
+            component="article"
+            sx={{ width: '100%' }}
+          >
             <ShareButtons data={article} />
             {displayArticle && children}
             {displayDiscussions && (
