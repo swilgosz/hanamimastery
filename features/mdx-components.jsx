@@ -38,8 +38,6 @@ const useImageStyles = makeStyles((theme) =>
       borderRadius: `${theme.spacing(1)}px`,
     },
     caption: {
-      fontWeight: 'lighter',
-      fontSize: '16px',
       lineHeight: '20px',
       color: theme.palette.grey[600],
       textAlign: 'center',
@@ -75,16 +73,9 @@ const CustomLink = (props) => {
 const useHeaderStyles = makeStyles(() =>
   createStyles({
     root: {
-      marginTop: '30px',
-      marginBottom: '15px',
-      scrollMarginTop: '100px',
-      scrollSnapMargin: '100px', // Safari
-      // '&[id]': {
-      //   pointerEvents: 'none',
-      // },
       '&[id]:before': {
         display: 'block',
-        height: ' 6rem',
+        height: '6rem',
         marginTop: '-6rem',
         visibility: 'hidden',
         content: `""`,
@@ -92,7 +83,6 @@ const useHeaderStyles = makeStyles(() =>
       '&[id]:hover a': { opacity: 1 },
     },
     anchor: {
-      fontWeight: 'normal',
       marginLeft: '0.375rem',
       opacity: '0',
       '&:focus': {
@@ -129,6 +119,10 @@ const CustomHeader = ({ variant, children, id, ...props }) => {
 };
 const Om = ({ om }) => <div id={om} />;
 
+const CustomQuote = (props) => (
+  <blockquote className="quote">{props.children}</blockquote>
+);
+
 const MDXComponents = {
   h1: (props) => <CustomHeader variant="h1" my={4} {...props} />,
   h2: (props) => <CustomHeader variant="h2" {...props} />,
@@ -141,6 +135,7 @@ const MDXComponents = {
   kbd: (props) => <Kbd {...props} />,
   a: (props) => <CustomLink {...props} />,
   img: (props) => <CustomImage {...props} />,
+  blockquote: (props) => <CustomQuote {...props} />,
   CourseAd,
   EmailSubscriptionForm,
   Om,

@@ -26,13 +26,11 @@ export const useStyles = makeStyles((theme) => ({
   heroTitle: {
     fontWeight: '400',
     padding: theme.spacing(2),
-    fontSize: '2.125rem',
     lineHeight: '1.235',
     letterSpacing: '0.00735em',
   },
   heroSubtitle: {
     // padding: theme.spacing(2),
-    fontSize: '1.125rem',
     fontWeight: '400',
     lineHeight: '1.0',
     letterSpacing: '0.00735em',
