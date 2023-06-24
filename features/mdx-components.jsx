@@ -71,7 +71,7 @@ const CustomLink = ({ href, children }) => {
 };
 
 const CustomHeader = ({ variant, children, id, ...props }) => (
-  <Typography variant={variant} id={id} {...props}>
+  <Typography variant={variant} id={id} {...props} gutterBottom>
     {children}
   </Typography>
 );
