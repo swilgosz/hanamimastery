@@ -57,71 +57,29 @@ const CustomImage = ({ src, alt }) => {
   );
 };
 
-const CustomLink = (props) => {
-  const { href } = props;
+const CustomLink = ({ href, children }) => {
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
   if (isInternalLink) {
-    return <MuiCustomLink href={href}>{props.children}</MuiCustomLink>;
+    return <MuiCustomLink href={href}>{children}</MuiCustomLink>;
   }
 
   return (
     <MuiCustomLink target="_blank" href={href}>
-      {props.children}
+      {children}
     </MuiCustomLink>
   );
 };
 
-const useHeaderStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      '&[id]:before': {
-        display: 'block',
-        height: '6rem',
-        marginTop: '-6rem',
-        visibility: 'hidden',
-        content: `""`,
-      },
-      '&[id]:hover a': { opacity: 1 },
-    },
-    anchor: {
-      marginLeft: '0.375rem',
-      opacity: '0',
-      '&:focus': {
-        opacity: 1,
-        boxShadow: 'outline',
-      },
-    },
-  })
+const CustomHeader = ({ variant, children, id, ...props }) => (
+  <Typography variant={variant} id={id} {...props}>
+    {children}
+  </Typography>
 );
 
-const CustomHeader = ({ variant, children, id, ...props }) => {
-  const classes = useHeaderStyles();
-  return (
-    <Typography
-      className={classes.root}
-      variant={variant}
-      id={id}
-      gutterBottom
-      {...props}
-    >
-      {children}
-      {id && (
-        <CustomLink
-          className={classes.anchor}
-          color="primary"
-          aria-label="anchor"
-          href={`#${id}`}
-        >
-          #
-        </CustomLink>
-      )}
-    </Typography>
-  );
-};
 const Om = ({ om }) => <div id={om} />;
 
-const CustomQuote = (props) => (
-  <blockquote className="quote">{props.children}</blockquote>
+const CustomQuote = ({ children }) => (
+  <blockquote className="quote">{children}</blockquote>
 );
 
 const MDXComponents = {
