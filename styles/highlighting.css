@@ -4,8 +4,22 @@
     overflow: auto;
     padding: 1em;
     display: block;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     width: 100%;
+  }
+
+  pre code.hljs::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  pre code.hljs::-webkit-scrollbar-thumb {
+    background-color: #cb4426;
+    border-radius: 0.3rem;
+    padding-bottom: 1rem;
+  }
+  pre code.hljs::-webkit-scrollbar-track {
+    background-color: #282c34;
+    border-radius: 0.3rem;
   }
 }
 
