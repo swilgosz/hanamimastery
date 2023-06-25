@@ -31,7 +31,7 @@ const svg = {
   ],
 };
 
-export function admonitionDirective() {
+export function remarkAdmonitionDirective() {
   return (tree) => {
     visit(tree, (node) => {
       if (node.type === 'containerDirective') {

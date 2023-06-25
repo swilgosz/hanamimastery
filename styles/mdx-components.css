@@ -39,3 +39,11 @@
 .quote p {
   font-style: italic;
 }
+
+[id]::before {
+  content: '';
+  display: block;
+  visibility: hidden;
+  height: 63px; /* this is the height of your header */
+  margin-top: -63px; /* this is the height of your header, negated */
+}

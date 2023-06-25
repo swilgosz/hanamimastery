@@ -10,9 +10,14 @@ import {
 } from '../../utils/queries';
 import RelatedContent from '../../features/related-content';
 
-export default function Episode({ mdxSource, frontMatter, relatedContent }) {
+export default function Episode({
+  mdxSource,
+  frontMatter,
+  relatedContent,
+  headings,
+}) {
   return (
-    <EpisodeLayout episode={frontMatter}>
+    <EpisodeLayout episode={frontMatter} headings={headings}>
       <MDXRemote {...mdxSource} components={components} />
       <TopicSuggestion />
       <RelatedContent posts={relatedContent} />
