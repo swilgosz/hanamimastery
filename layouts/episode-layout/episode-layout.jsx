@@ -88,6 +88,7 @@ const EpisodeLayout = ({ episode, children }) => {
             item
             component="article"
             className={classes.article}
+            sx={{ width: '100%' }}
           >
             <ShareButtons data={episode} />
             {displayVideo && <YoutubeEmbed embedId={videoId} />}

@@ -31,15 +31,14 @@ const useImageStyles = makeStyles((theme) =>
       width: '100%',
       display: 'flex',
       flexDirection: 'column',
+      gap: '1rem',
+      marginBottom: '1rem',
     },
     image: {
       maxWidth: '100%',
-      margin: `0 auto ${theme.spacing(1.25)}px auto`,
-      borderRadius: `${theme.spacing(1)}px`,
+      borderRadius: '0.3rem',
     },
     caption: {
-      fontWeight: 'lighter',
-      fontSize: '16px',
       lineHeight: '20px',
       color: theme.palette.grey[600],
       textAlign: 'center',
@@ -58,76 +57,30 @@ const CustomImage = ({ src, alt }) => {
   );
 };
 
-const CustomLink = (props) => {
-  const { href } = props;
+const CustomLink = ({ href, children }) => {
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
   if (isInternalLink) {
-    return <MuiCustomLink href={href}>{props.children}</MuiCustomLink>;
+    return <MuiCustomLink href={href}>{children}</MuiCustomLink>;
   }
 
   return (
     <MuiCustomLink target="_blank" href={href}>
-      {props.children}
+      {children}
     </MuiCustomLink>
   );
 };
 
-const useHeaderStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      marginTop: '30px',
-      marginBottom: '15px',
-      scrollMarginTop: '100px',
-      scrollSnapMargin: '100px', // Safari
-      // '&[id]': {
-      //   pointerEvents: 'none',
-      // },
-      '&[id]:before': {
-        display: 'block',
-        height: ' 6rem',
-        marginTop: '-6rem',
-        visibility: 'hidden',
-        content: `""`,
-      },
-      '&[id]:hover a': { opacity: 1 },
-    },
-    anchor: {
-      fontWeight: 'normal',
-      marginLeft: '0.375rem',
-      opacity: '0',
-      '&:focus': {
-        opacity: 1,
-        boxShadow: 'outline',
-      },
-    },
-  })
+const CustomHeader = ({ variant, children, id, ...props }) => (
+  <Typography variant={variant} id={id} {...props} gutterBottom>
+    {children}
+  </Typography>
 );
 
-const CustomHeader = ({ variant, children, id, ...props }) => {
-  const classes = useHeaderStyles();
-  return (
-    <Typography
-      className={classes.root}
-      variant={variant}
-      id={id}
-      gutterBottom
-      {...props}
-    >
-      {children}
-      {id && (
-        <CustomLink
-          className={classes.anchor}
-          color="primary"
-          aria-label="anchor"
-          href={`#${id}`}
-        >
-          #
-        </CustomLink>
-      )}
-    </Typography>
-  );
-};
 const Om = ({ om }) => <div id={om} />;
+
+const CustomQuote = ({ children }) => (
+  <blockquote className="quote">{children}</blockquote>
+);
 
 const MDXComponents = {
   h1: (props) => <CustomHeader variant="h1" my={4} {...props} />,
@@ -141,6 +94,7 @@ const MDXComponents = {
   kbd: (props) => <Kbd {...props} />,
   a: (props) => <CustomLink {...props} />,
   img: (props) => <CustomImage {...props} />,
+  blockquote: (props) => <CustomQuote {...props} />,
   CourseAd,
   EmailSubscriptionForm,
   Om,

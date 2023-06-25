@@ -1,10 +1,11 @@
 import '../styles/highlighting.css';
-import '../styles/fonts.css';
+import '../styles/admonition.css';
+import '../styles/mdx-components.css';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { makeStyles } from '@mui/styles';
 import { CssBaseline, Typography } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import TagManager from 'react-gtm-module';
@@ -14,7 +15,6 @@ import theme from '../styles/theme';
 import store from '../redux/store';
 import CustomLink from '../features/custom-link';
 import CookiesPopup from '../features/cookies-popup';
-import '../styles/admonition.css';
 
 const useStyles = makeStyles(() => ({
   alert: {
@@ -61,6 +61,8 @@ export default function MyApp(props) {
     TagManager.initialize(tagManagerArgs);
   }, []);
 
+  const responsiveTheme = responsiveFontSizes(theme);
+
   return (
     <Provider store={store}>
       <Head>
@@ -70,7 +72,7 @@ export default function MyApp(props) {
         />
       </Head>
 
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={responsiveTheme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <TopNav />

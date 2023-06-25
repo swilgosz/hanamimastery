@@ -1,0 +1,41 @@
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  margin-bottom: 30px;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.quote {
+  font-size: 1.4em;
+  width: 100%;
+  font-style: italic;
+  padding: 2rem 2rem 1rem 3.5rem;
+  border-left: 8px solid #cb4426;
+  line-height: 1.6;
+  position: relative;
+  background: #f8f8f8;
+  margin: 0 0 1rem 0;
+}
+
+.quote::before {
+  font-family: Roboto, sans-serif;
+  content: '\201C';
+  color: #cb4426;
+  font-size: 4em;
+  position: absolute;
+  left: 5px;
+  top: -20px;
+}
+
+.quote p {
+  font-style: italic;
+}
