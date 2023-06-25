@@ -9,6 +9,7 @@ const TableOfContents = ({ url, headings }) => {
         bgcolor: 'background.paper',
         borderTop: '2px solid',
         borderColor: 'primary.main',
+        display: { xs: 'none', lg: 'block' },
       }}
       component="nav"
       aria-labelledby="nested-list-subheader"
