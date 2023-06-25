@@ -20,6 +20,7 @@ import {
   shouldDisplayDiscussions,
   shouldDisplayVideo,
 } from '../../utils/display-queries';
+import TableOfContents from '../../features/table-of-contents/table-of-contents';
 
 const EpisodeLayout = ({ episode, children }) => {
   const classes = useStyles();
@@ -80,6 +81,7 @@ const EpisodeLayout = ({ episode, children }) => {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12} lg={2} component="aside">
             <EpisodeTabs episode={episode} />
+            <TableOfContents headings={episode.headings} />
           </Grid>
           <Grid
             sm={12}

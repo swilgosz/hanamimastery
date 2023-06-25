@@ -67,11 +67,11 @@ export async function getContentBySlug(type, slug) {
   return {
     mdxSource,
     frontMatter: {
+      headings,
       wordCount: content.split(/\s+/gu).length,
       readingTime: readingTime(content),
       ..._serializeContentData(filePath, data),
     },
-    headings,
   };
 }
 
