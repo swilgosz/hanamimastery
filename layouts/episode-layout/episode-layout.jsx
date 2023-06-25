@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, Box } from '@mui/material';
 import { useRouter } from 'next/router';
 import { SeoComponent } from '../../features/seo';
 import { useStyles } from './episode-layout.styles';
@@ -80,8 +80,10 @@ const EpisodeLayout = ({ episode, children }) => {
       <Container className={classes.container} component="main">
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12} lg={2} component="aside">
-            <EpisodeTabs episode={episode} />
-            <TableOfContents headings={episode.headings} />
+            <Box sx={{ position: 'sticky', top: '70px', overflowY: 'auto' }}>
+              <EpisodeTabs episode={episode} />
+              <TableOfContents headings={episode.headings} url={episode.url} />
+            </Box>
           </Grid>
           <Grid
             sm={12}
