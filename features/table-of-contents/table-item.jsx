@@ -15,7 +15,10 @@ const TableItem = ({ title, id, subheading, url }) => {
       >
         {(!subheading && (
           <ListItemText
-            primaryTypographyProps={{ fontSize: '0.9rem', fontWeight: 'bold' }}
+            primaryTypographyProps={{
+              fontSize: '0.9rem',
+              fontWeight: 'bold',
+            }}
             primary={title}
           />
         )) || (
