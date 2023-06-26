@@ -8,8 +8,8 @@ const TableItem = ({ title, id, subheading, url }) => {
     <CustomLink href={`${url}#${id}`} noUnderline>
       <ListItemButton
         sx={[
-          (subheading && { p: '2px 2px 2px 32px' }) || {
-            p: '2px 2px 2px 16px',
+          (subheading && { p: '0 0 0 32px' }) || {
+            p: '0 0 0 16px',
           },
         ]}
       >
