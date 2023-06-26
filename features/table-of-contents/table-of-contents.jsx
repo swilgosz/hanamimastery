@@ -2,7 +2,7 @@ import { List } from '@mui/material';
 import React from 'react';
 import TableItem from './table-item';
 
-const TableOfContents = ({ url, headings }) => {
+const TableOfContents = ({ headings }) => {
   return (
     <List
       sx={{
@@ -24,7 +24,6 @@ const TableOfContents = ({ url, headings }) => {
               title={heading.title}
               key={`key-${heading.id}`}
               id={`${heading.id}`}
-              url={url}
             />
             {children.length >= 1 && (
               <List component="div" disablePadding>
@@ -36,7 +35,6 @@ const TableOfContents = ({ url, headings }) => {
                         id={subheading.id}
                         key={`key-${subheading.id}`}
                         subheading
-                        url={url}
                       />
                     </React.Fragment>
                   );

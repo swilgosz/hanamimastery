@@ -71,9 +71,11 @@ const ArticleLayout = ({ article, children }) => {
             }}
           >
             <ArticleTabs />
-            <Box sx={{ overflow: 'auto', maxHeight: '75%', pr: 1 }}>
-              <TableOfContents headings={article.headings} url={article.url} />
-            </Box>
+            {view !== 'discuss' && (
+              <Box sx={{ overflow: 'auto', maxHeight: '75%', pr: 1 }}>
+                <TableOfContents headings={article.headings} />
+              </Box>
+            )}
           </Grid>
           <Grid
             sm={12}

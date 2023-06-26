@@ -93,9 +93,11 @@ const EpisodeLayout = ({ episode, children }) => {
             }}
           >
             <EpisodeTabs episode={episode} />
-            <Box sx={{ overflow: 'auto', maxHeight: '67.5%', pr: 1 }}>
-              <TableOfContents headings={episode.headings} url={episode.url} />
-            </Box>
+            {view !== 'discuss' && (
+              <Box sx={{ overflow: 'auto', maxHeight: '67.5%', pr: 1 }}>
+                <TableOfContents headings={episode.headings} />
+              </Box>
+            )}
           </Grid>
           <Grid
             sm={12}

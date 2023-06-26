@@ -3,9 +3,9 @@ import React from 'react';
 import { ListItemButton, ListItemText } from '@mui/material';
 import CustomLink from '../custom-link';
 
-const TableItem = ({ title, id, subheading, url }) => {
+const TableItem = ({ title, id, subheading }) => {
   return (
-    <CustomLink href={`${url}#${id}`} noUnderline>
+    <CustomLink href={`#${id}`} noUnderline>
       <ListItemButton
         sx={[
           (subheading && { p: '0 0 0 32px' }) || {
