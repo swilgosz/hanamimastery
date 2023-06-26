@@ -16,7 +16,7 @@ export function rehypeExtractHeadings({ headings }) {
         } else if (headingRank(node) === 3) {
           if (headings.length === 0)
             throw new Error(
-              'Wrong structure of headings in article, <h2> must be a first heading'
+              'Wrong structure of headings in article, <h3> cannot be the first heading'
             );
           headings[headings.length - 1].children.push({
             title: toString(node),
