@@ -79,9 +79,21 @@ const EpisodeLayout = ({ episode, children }) => {
       </section>
       <Container className={classes.container} component="main">
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={12} lg={2} component="aside">
-            <Box sx={{ position: 'sticky', top: '70px', overflowY: 'auto' }}>
-              <EpisodeTabs episode={episode} />
+          <Grid
+            xs={12}
+            sm={12}
+            md={12}
+            lg={2}
+            item
+            component="aside"
+            sx={{
+              maxHeight: { lg: '95vh' },
+              position: { lg: 'sticky' },
+              top: '40px',
+            }}
+          >
+            <EpisodeTabs episode={episode} />
+            <Box sx={{ overflow: 'auto', maxHeight: '67.5%', pr: 1 }}>
               <TableOfContents headings={episode.headings} url={episode.url} />
             </Box>
           </Grid>

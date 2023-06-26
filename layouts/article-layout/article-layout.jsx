@@ -56,10 +56,22 @@ const ArticleLayout = ({ article, children }) => {
         </Typography>
       </section>
       <Container className={classes.container} maxWidth="xl" component="main">
-        <Grid container spacing={4}>
-          <Grid xs={12} sm={12} md={12} lg={2} item component="aside">
-            <Box sx={{ position: 'sticky', top: '70px', overflowY: 'auto' }}>
-              <ArticleTabs />
+        <Grid container spacing={3}>
+          <Grid
+            xs={12}
+            sm={12}
+            md={12}
+            lg={2}
+            item
+            component="aside"
+            sx={{
+              maxHeight: { lg: '95vh' },
+              position: { lg: 'sticky' },
+              top: '40px',
+            }}
+          >
+            <ArticleTabs />
+            <Box sx={{ overflow: 'auto', maxHeight: '75%', pr: 1 }}>
               <TableOfContents headings={article.headings} url={article.url} />
             </Box>
           </Grid>

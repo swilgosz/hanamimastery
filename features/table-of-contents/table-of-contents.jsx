@@ -11,6 +11,7 @@ const TableOfContents = ({ url, headings }) => {
         borderTop: '2px solid',
         borderColor: 'primary.main',
         display: { xs: 'none', lg: 'block' },
+        height: '100%',
       }}
       component="nav"
       aria-labelledby="nested-list-subheader"
