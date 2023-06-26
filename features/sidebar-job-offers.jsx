@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -60,9 +59,6 @@ export default function JobOffers() {
         <List
           component="nav"
           aria-labelledby="nested-list-subheader"
-          subheader={
-            <ListSubheader component="div" id="nested-list-subheader" />
-          }
           className={classes.root}
         >
           <ListItem button onClick={handleClick1} className={classes.list}>
@@ -72,9 +68,6 @@ export default function JobOffers() {
           <Collapse in={open1} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem button color="primary" className={classes.nestedList}>
-                {/* <ListItemIcon>
-                  <ArrowIcon />
-                </ListItemIcon> */}
                 <Link
                   href="https://apply.workable.com/dnsimple/"
                   target="_blank_"
@@ -82,11 +75,6 @@ export default function JobOffers() {
                   <ListItemText primary="All job offers" />
                 </Link>
               </ListItem>
-              {/* <ListItem button color="primary" className={classes.nestedList}>
-                <Link href="https://apply.workable.com/dnsimple/j/F17DAD5B37/" target="_blank_">
-                  <ListItemText primary="Sr Software Engineer" />
-                </Link>
-              </ListItem> */}
             </List>
           </Collapse>
 
