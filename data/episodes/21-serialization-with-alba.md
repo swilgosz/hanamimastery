@@ -375,7 +375,7 @@ Not sure what else one could expect from the serialization engine and if you had
 
 Let me know what you think!
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::

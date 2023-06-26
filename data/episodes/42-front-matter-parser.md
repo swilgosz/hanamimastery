@@ -123,7 +123,7 @@ _front_matter_parser_ is a lightweight and easy-to-use Ruby gem that makes it tr
 
 With just a few lines of code, you can extract metadata from your files and use it in your applications. However, following the DRY philosophy of providing simple functionality in a very extendable way, it’s just the go-to if you want to work with markdown or any other type of *front matter* input.
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 

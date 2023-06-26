@@ -26,7 +26,7 @@ I often work with hashes in plain ruby, especially when I prepare **standalone s
 
 In the *episode #4* I've described [how I easily do fancy manipulations on string objects](/episodes/4-string-transformations-with-dry-inflector), but, more complex data sets require more powerful tricks to serve our needs so I've decided to extend this topic.
 
-### Troubles with data transformations - symbolize keys
+## Troubles with data transformations - symbolize keys
 
 One example of troublesome hash, is when I get the hash as a method argument, but **I don't know if the keys are symbols or strings**. Then things can get messy.
 
@@ -41,7 +41,7 @@ deserialize({ 'data' => 'bad luck!' })
 
 Because the expected key does not exist, I receive `nil` and I can easily end up with the *undefined method* error which may be an embarrassing overlook for me in the eyes of my clients.
 
-#### Custom hash stringifiers
+### Custom hash stringifiers
 
 In rails, you can just call `symbolize_keys` or `deep_symbolize_keys` on the given hash and the problem would be solved. This would work on any deep level of my argument.
 
@@ -136,13 +136,13 @@ It's already hard to see what's happening here, and again, if there would be **s
 
 Just imagine that I'd need to stringify and rename some keys too!
 
-### Meet dry-transformer
+## Meet dry-transformer
 
 This is where a great little gem comes with help. It's a [dry-transformer](https://dry-rb.org/gems/dry-transformer), another amazing micro-library put together by [Piotr Solnica](https://github.com/solnic), it is great as it has completely no dependencies whatsoever! You can inject it in your projects without any risk - and in case you want to have it directly in your codebase, you can even just copy the code,** as only plain ruby is used inside**. Amazing stuff.
 
 This little library allows you to pass any data as an input and do some crazy transformations to ensure you will work with the expected data format.
 
-#### Ok, but How that could be handy?
+### Ok, but How that could be handy?
 
 Well, one example is, that in HanamiMastery I work with [JSON:API standard](https://jsonapi.org/) when it comes to my API communication. It's super nice, REST-ful standard, with a lot of overhead already done by very smart people.
 
@@ -158,7 +158,7 @@ What I should do, is transform the incoming data from one standard to another re
 
 ![Why we need adapters](/images/episodes/6/adapters-3.png)
 
-#### Other useful examples for data transformations in Ruby
+### Other useful examples for data transformations in Ruby
 
 Similar requirements are often needed in case of:
 - CSV exports or imports,
@@ -196,7 +196,7 @@ adapter.call(hash)
 
 But also, **some much more complex scenarios** may be done in a simple, easy to read and maintain code.
 
-### Summary
+## Summary
 
 `dry-transformer` allows you to** write middleware for your APIs with no effort**, you can do mappings from hash to objects and other ways around, advanced array modifications, and a whole bunch of other stuff you would ever need.
 
@@ -206,7 +206,7 @@ Super useful stuff and I strongly suggest giving it a shot. You may be surprised
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
-### Special thanks
+## Special thanks
 
 I'd like to thank [Benjamin Klotz]. for joining my Github sponsors, I appreciate that a lot!
 

@@ -28,7 +28,7 @@ A missing piece in the specification. Basically, **HOW TO HANDLE BUSINESS LOGIC 
 
 To explain it, I need to talk a bit about [HTTP status codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
-### HTTP Status codes
+## HTTP Status codes
 
 If you've ever worked with any API, you're familiar with the fact, that when you send a request to the server, **it can respond with different responses**.
 
@@ -53,7 +53,7 @@ One example is a 300 status code, which identifies, that for a certain request, 
 
 ![Multiple responses (300) HTTP status code][/images/articles/why-all-apis-are-inconsistent/multiple-responses-request.png]
 
-### The missing piece
+## The missing piece
 
 However, even though there are a lot of defined status codes, **there is a certain common problem, where none of them really applies**.
 
@@ -63,10 +63,10 @@ The book example would be when you want to publish an article.
 
 Let's say you have an article, and you publish it. If everything goes fine, you'll get a successful response from the server. However, if you'll try to publish the article again, **it's not clear how a server should respond!**
 
-#### Forbidden (403).
+### Forbidden (403).
 
 One way to approach this problem would be to **return a forbidden error**, indicating that the user cannot perform this action. However, **it has nothing related to user permissions**. Even super admin cannot publish already published article, because **business rules just do not allow such thing to happen**!
-#### So maybe Method not allowed? (405)
+### So maybe Method not allowed? (405)
 
 The other candidate could be a 405 HTTP status code referring to an invalid method error. However, this one refers to the HTTP method, not just unacceptable action at the given moment.
 
@@ -118,7 +118,7 @@ Or do you want to set the article as premium, but the BLOG has a basic plan?
 
 Hm.... teapot?
 
-#### Invalid (422) or just BAD (400)
+### Invalid (422) or just BAD (400)
 
 Then we could say, that the request is not valid (422), or bad (400), but if you think about it, it isn't! **It's everything ok with the request itself**, it's just that in this particular moment APPLICATION refuses to process it due to the business conditions!
 
@@ -154,11 +154,11 @@ Well, in this particular case, would just return 404, saying that `draft article
 
 But try to think outside of the box, and maybe YOU will be the one that will add a missing piece to the API standards!
 
-### Do you like this content?
+## Do you like this content?
 
 I hope you've enjoyed this article, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
 
-### Special Thanks!
+## Special Thanks!
 
 I'd like to thank [all my sponsors](https://github.com/sponsors/swilgosz) for supporting this project!
 

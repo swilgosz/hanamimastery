@@ -32,7 +32,7 @@ I quickly figured out that such diagram may tremendously simplify the decision m
 
 I think It's a great idea, so here it is!
 
-### Full DRY-RB dependency char
+## Full DRY-RB dependency char
 
 This network diagram shows connections between all the official [gems from DRY-RB organization](https://dry-rb.org/gems) and external libraries.
 
@@ -50,12 +50,12 @@ This diagram shows **only internal gems connections**, for a more simplified vie
 ![DRY-RB internal dependency graph](/images/articles/dry-rb-dependency-graph/dry-rb-dependency-graph-internal.png)
 
 
-## Conclusions
+### Conclusions
 
 **You can quickly identify also key gems** for the whole DRY-RB ecosystem, like `dry-core`, or `dry-container` which are designed as a base for building more complex gems and libraries. Of course, you still can use them directly in your apps if you see the benefits from it, but it may be harder to find a use case for them.
 
 
-### Sorting DRY-RB libraries based on connections.
+## Sorting DRY-RB libraries based on connections.
 
 The philosophy behind the DRY-RB ecosystem is **to provide simple gems that perform single tasks** and **can be connected together to build more complex abstractions**.
 
@@ -65,7 +65,7 @@ Based on the dependency graph, and links between multiple libraries, you can ide
 
 **For example. **
 
-#### 1. Application-level gems
+### 1. Application-level gems
 
 `dry-rails` depends on `dry-validation`, `dry-system`, and `dry-schema`.
 
@@ -73,11 +73,11 @@ As `dry-rails` is a pure integration with Rails applications, you can safely ass
 
 If I'd have this graph when I started learning DRY-RB, I'd be super happy, as it would remove a lot of overhead from me allowing me to focus on what's easiest to adopt in my web applications.
 
-#### 2. Low-level gems
+### 2. Low-level gems
 
 A lot of gems depend on `dry-core`, `dry-container`, which may give you an idea, that those two gems are very useful, but maybe not for direct usage but rather for building your own ruby libraries.
 
-#### 3. Standalone gems
+### 3. Standalone gems
 
 This is a bit misleading because each of DRY-RB gems is "standalone" and can be used independently, only with its own dependencies. However, some gems stand out in front of others even on the graph above, as **they have no dependencies and nothing depends on them**.
 
@@ -86,13 +86,13 @@ It's worth checking out why those few gems had been created. **What kind of task
 `dry-transformer` ([see episode #6](/episodes/6-complex-ruby-data-transformations-made-simple)), `dry-equalizer` or `dry-files` are gems that allow to solve common ruby problems without loading anything else.
 
 
-### Summary
+## Summary
 
 If I'd start learning DRY-RB gems now, I'd pick Application-Level gems, like `dry-schema` and `dry-validation`. Those are also one of the most popular ones, so there is a great chance there are nice tutorials already published on the web.
 
 Then I'd try to make familiar with some of the super-small gems, like `dry-configurable`, or `dry-inflector`, which are easy to understand and quite intutive to use.
 
-#### Further thoughts
+### Further thoughts
 
 While this graph is useful as a starting point, **you cannot figure out everything**. For example, one of the most common problems in programming advanced components is solved by `dry-configuration`. I've talked about it in [episode #4](/episodes/5-configure-anything-with-dry-configurable), however, you cannot figure it out from this graph.
 
@@ -108,7 +108,7 @@ I'll soon publish more episodes and tricks related to DRY-RB family.
 
 <br />
 
-### Special Thanks!
+## Special Thanks!
 
 I'd like to thank Andreas Wagner and [Thomas Carr](https://github.com/htcarr3) for supporting this project on Github sponsors! I really appreciate that!
 

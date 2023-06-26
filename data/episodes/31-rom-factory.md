@@ -181,7 +181,7 @@ ROM-Factory is a nice gem created to make ROM-based applications more testable, 
 I am a [huge fan of testing my code](/episodes/25-simplecov-introduction), so I love having this in place.
 as I got used to the *factory_bot* before. I hope you'll enjoy it too!
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::

@@ -29,7 +29,7 @@ I've started my Hanami Mastery in NextJS mostly due to this possibilities.
 
 You just push a NextJS repository to Github, and magic happens. However, if you want to customize the configuration a bit, all you need to do, is to write a single YAML configuration file and you're ready to go.
 
-### The end of Heroku
+## The end of Heroku
 
 In Ruby ecosystem, the best we had so far, was Heroku. It was super useful to play with sandbox projects, however, as Heroku had [shut down their free tier](https://help.heroku.com/RSBRUH58/removal-of-heroku-free-product-plans-faq), to experiment with POC or snadbox project, we needed to look for alternatives.
 
@@ -152,11 +152,11 @@ Done!
 
 While this guide was not totally smooth, I hope you'll find it useful that I've decided to keep the debugging parts. Render is amazing, and despite advanced web apps usually requiring multiple services to be set up, it's still very easy and straightforward to do it.
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 
-### Thanks
+## Thanks
 
 I want to especially thank my recent sponsors,
 

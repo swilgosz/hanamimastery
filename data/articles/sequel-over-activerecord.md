@@ -22,7 +22,7 @@ category: stray
 ---
 Hanami uses [ROM-RB](https://rom-rb.org) to implement the persistence layer, and if it comes to SQL databases, ROM uses Sequel to manage SQL connections.
 
-### But WHY? Why not ActiveRecord?
+## But WHY? Why not ActiveRecord?
 
 I wondered about the reasons behind that. I knew there are issues with ActiveRecord and I did face some of them in my career, but I wanted to know the exact pain points and **why Sequel is better than ActiveRecord in enough different areas** to be chosen by the Hanami team.
 
@@ -240,15 +240,15 @@ Now, when I work more with Hanami, I really enjoy being exposed on Sequel too!
 
 Keep in mind, that this article covers only a fraction of the differences. I'll extend it but in the meantime, I strongly encourage you to [watch the video](https://www.youtube.com/watch?v=ftJrBpiYQXM) and read the resources linked below!
 
-### Consider support!
+## Consider support!
 
 I hope you've enjoyed this article, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)**, and **follow me [on Twitter](https://twitter.com/hanamimastery)**!  As always, all links you can find the description of the video or in the https://hanamimastery.com.
 
-### References
+## References
 - [Sequel CheatSheet](http://sequel.jeremyevans.net/rdoc/files/doc/cheat_sheet_rdoc.html)
 - [Ode to sequel by Janko Marohnić](https://janko.io/ode-to-sequel/)
 - https://mrbrdo.wordpress.com/2013/10/15/why-you-should-stop-using-activerecord-and-start-using-sequel/
 
-### Thanks!
+## Thanks!
 - [Jon Tyson](https://unsplash.com/@jontyson) - For a great cover photo
 - [Janko Marohnić](https://github.com/janko) - for the astonishing groundwork to make this article possible.

@@ -25,7 +25,7 @@ At the moment, It only has the home page implemented, but I'd love to transfer i
 
 To start, let's start by adding a new route, under the `/articles` URL.
 
-### Adding static HTML rendering endpoint
+## Adding static HTML rendering endpoint
 
 First, let's visit the `routes.rb` file stored in the `config` directory. The router distributes the incoming requests and decides which action should handle that.
 
@@ -47,7 +47,7 @@ This will render the level one header HTML tag with the _Articles_ string in the
 
 ![Static Page rendering](/images/episodes/2/static-browser.png)
 
-### Rendering
+## Rendering
 
 This is super simple and elastic in use because as those are the only requirements, we can replace this `proc` with any object that meets the router's expectations!
 
@@ -98,7 +98,7 @@ Now when I'll visit the browser, You should see the updated text. Awesome!
 
 ![Static Page rendering](/images/episodes/2/static-browser-from-action.png)
 
-### Using views and templates
+## Using views and templates
 
 While this works fine, usually we'd like to write our templates in the `html` or `slim` files or serialize our `JSON` responses using serializers instead of using raw strings everywhere.
 
@@ -174,7 +174,7 @@ I need the `article` definition yet, and we're ready to go! A quick look at the 
 
 This is still just a rendering - to style it up you'll need to make use of Hanami::Assets which [I cover in the next episode](/episodes/3-style-your-app-with-bulma)
 
-### Summary
+## Summary
 
 In this episode, we've gone through the basic rendering flow in Hanami applications and understood the view-related part of Hanami Architecture.
 
@@ -182,7 +182,7 @@ It may be a lot compared to the simplified, [MVC](https://www.tutorialspoint.com
 
 The extended Hanami architecture, where each class has its dedicated purpose definitely allows to reduce coupling in bigger systems and helps to better manage complexity.
 
-### Special Thanks
+## Special Thanks
 
 - [Paul Skorupskas](https://unsplash.com/@pawelskor) for a great cover photo
 - [Tim Riley](https://timriley.info/) - for the great help in understanding Hanami's views architecture.

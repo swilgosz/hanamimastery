@@ -24,7 +24,7 @@ source: null
 
 Recently I gave a talk on [Saint P Ruby meetup](https://www.youtube.com/c/SaintPRubyCommunity) and as I've got nice feedback, I've decided to extract some interesting parts to an official Hanami Mastery episode.
 
-:::note
+:::important
 This talk, and this episode, was sponsored by [Useo](https://useo.pl).
 :::
 
@@ -34,13 +34,13 @@ In this episode, I'll talk about mapping Hanami to Rails, and especially I'll fo
 
 > Before I start, let me just mention that I'm working on an e-book extending this topic deeply, so if you are opt-in for more content from me related to Rails and Hanami comparison, with code examples and such - you can [join my Github sponsors](https://github.com/sponsors/swilgosz) for access to the early versions of the ebook and having an impact what to cover in it.
 
-### Why mapping concepts is a useful skill
+## Why mapping concepts is a useful skill
 
 When I've been starting with Hanami, I was really confused at least several times **mostly because of different assumptions Hanami has over Rails**. After several years of development with Rails only, to quickly start with Hanami I needed to MAP certain parts of Rails applications to Hanami just to understand it better and learn faster.
 
 And as I've shown on an example of creating a [dependency graph for DRY-RB ecosystem](/articles/dry-rb-dependency-graph), my brain just works very well when it have visualised diagrams to refer.
 
-### Abstractions
+## Abstractions
 
 So let's talk about abstractions in Hanami and Rails. I name _abstractions_ all kinds of building blocks you'll need to build your application.
 
@@ -48,7 +48,7 @@ If you have a big experience in Rails, you may be surprised, that Hanami encoura
 
 This leads to having **fewer but bigger** files in Rails, and more but smaller files in Hanami. Just switching from one framework to another requires a bit of mindset change and a development workflow to be adjusted. I hope this episode will help you with it.
 
-#### Rails abstractions
+### Rails abstractions
 
 In Rails, you can list all the key abstractions very easily as they are pretty well defined and there are not too many of them
 
@@ -63,7 +63,7 @@ So you have:
 - Mailers
 - global Helpers
 
-#### Hanami abstractions
+### Hanami abstractions
 
 In Hanami, you'll be encouraged to have more abstractions in your system depending on your domain and application structure. By default, Hanami introduces way more building blocks, and some of them you may easily understand if you come from Rails world, but others you'd need to just check as they have no direct mapping to Rails.
 
@@ -81,7 +81,7 @@ So we have routes and actions instead of controllers.
 
 Let's then take a closer look into differences and try to map those components to each other.
 
-### Controllers and actions
+## Controllers and actions
 
 Controllers and actions are pretty easy to understand, as they really do play the same role in both frameworks.
 
@@ -90,7 +90,7 @@ In Rails each controller has multiple actions defined as methods, in Hanami, you
 In Rails controllers, the action renders the template directly, while in Hanami it just calls the proper view.
 
 
-### Views
+## Views
 
 This moves our attention to the view rendering. In [Hanami episode #2](/episodes/2-listing-articles-with-hanami-view) I already dag into the view rendering and have shown how to render articles for a blog - feel free to check it out if you're interested in implementation details.
 
@@ -113,7 +113,7 @@ Then finally, presentation logic had been extracted to Parts, so it's clear wher
 
 This is more code to be written from the very first endpoint, but it scales way better and this solution can be used in Rails too if you want it.
 
-### Models
+## Models
 
 Then let's go on to the models.
 
@@ -140,7 +140,7 @@ It seems like a much more scalable approach, you can easily replace or reuse tho
 
 I see it as a reasonable trade-off, let me know how do you see it in the comments.
 
-### Scalability with slices
+## Scalability with slices
 
 Rails is designed to write medium-sized monolithic applications and **its default file structure just does not scale well**. At some point, you'll need to extend it but there is no clear way how, [so we create our own soultions](/episodes/7-untangle-your-app-with-dry-monads), and enter similar issues React applications have, where every project has different structure and patterns applied.
 
@@ -154,7 +154,7 @@ In Hanami, you'll organize your app around slices since day one. You may think a
 
 Whenever then comes a need to extract a part of the application into a separate service, it's way easier, as you already have encapsulated slices, that can be easily removed from the main repository, and put somewhere else.
 
-### Summary
+## Summary
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion,** Subscribe to [this YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 

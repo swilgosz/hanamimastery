@@ -23,7 +23,7 @@ People start to ask me a lot about **Hanami architecture** and why it's so compl
 
 In this episode, I'll explain this concept with simple words. However,  to keep things simple, I'll extract more detailed stuff into **separate articles**.
 
-### The architecture.
+## The architecture.
 
 First of all, let's clarify the term *software architecture*. **Martin Fowler** already wrote [a dozen of posts about it](https://martinfowler.com/architecture/), but in general, the architecture isn't really about **MVC**, **Service objects**, used **ORM** or things like that. **MVC is not architecture** - let's start with that, so we'll be able to more easily go into the core of the question.
 
@@ -35,7 +35,7 @@ I'm pointing at this, because people asking me about *Hanami architecture*, **do
 
 But, as most of the people use words: "hanami architecture", **let's explain that first.**
 
-#### Some examples of software architecture:
+### Some examples of software architecture:
 
 - Monolith
 - Microservice Architecture
@@ -52,17 +52,17 @@ This is **exactly what rails** does.
 
 What differs from Rails, is that Hanami enforces the **separation of concerns**, encouraging developers by default to build applications that scale well, and are **easily transferrable into other architecture types**.
 
-### How Hanami supports multiple architectures?
+## How Hanami supports multiple architectures?
 
 There are several core concepts Hanami introduces, which allow developers to write much **bigger applications without slowing down over time**. The first of them is **Slices**.
 
-#### 1. Slices
+### 1. Slices
 
 A **slice** in Hanami is a way for you **to add boundaries to certain parts of your application.** You can think of it as a similar concept to `Rails::Engine`, but it's much more self-contained and independent of the other parts of the system.
 
 Slices are mini-applications, completely independent, but available in the same codebase for simplicity. If you'll ever want to extract this part to a completely separate project, you'll be able more or less just copy the folder out and paste it to the other service repository, while most of the things will be still working out of the box.
 
-#### 2. Separation of concerns
+### 2. Separation of concerns
 
 The second big part of the Hanami is the *separation of concerns* - a high-level concept that the whole framework is built upon.
 
@@ -82,10 +82,10 @@ By using Hanami you can write crawlers, cron jobs, background workers, applicati
 
 This is the real power of this framework and this is what differs it from rails on the concept and architecture level.
 
-### Summary
+## Summary
 
 I hope you've enjoyed this article, and if you want to see more content in this fashion, **[Subscribe to HM YT channel](https://www.youtube.com/c/HanamiMastery)** and **[follow me on Twitter](https://twitter.com/hanamimastery)**!
 
-### Special Thanks!
+## Special Thanks!
 
 I'd like to thank all people supporting this project! Any support allows me to spend more time on creating this content, **promoting great open source projects**.

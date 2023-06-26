@@ -390,7 +390,7 @@ If you will write about other examples of using effects in ruby, let me know, I 
 
 It can become a while until effects will be widely adopted across ruby applications but you may be one of the early adopters!
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 

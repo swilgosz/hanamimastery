@@ -392,7 +392,7 @@ When I would write sth like: `UUIDV4Generator.call`, then I'd definitely not be 
 
 Inline documentation is a great tool that can bring awesome long-term benefits to your team, and I find it very useful if we keep sanity about it.
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 

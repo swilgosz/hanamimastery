@@ -26,7 +26,7 @@ I have [this simple Hanami web application here](/episodes/2-listing-articles-wi
 
 To achieve this, I'll make use of [Bulma CSS](https://bulma.io/), which is a great, simple to use, CSS-only framework. This means it works with any JS engine you would like to use in your app. No matter if you use your custom scripts, jQuery, React, Angular, or Vue, Bulma will always work as you may expect and this is the main reason I've chosen it for this showcase.
 
-### Install Bulma in Hanami application
+## Install Bulma in Hanami application
 
 Let's integrate Bulma with our project first
 
@@ -69,7 +69,7 @@ config.actions.content_security_policy[:default_src] = "'self' http://localhost:
 ![Article's grid](/images/episodes/3/bulma-installed.png)
 
 
-### Install Bulma with Hanami via NPM
+## Install Bulma with Hanami via NPM
 
 Bulma is also shipped as an NPM package, so If you don't want to use CDN, thanks to Hanami::View you can easily install any NPM package into your hanami application using the standard package installation instructions.
 
@@ -87,7 +87,7 @@ and then in the `index.css` file just replace the CDN download link with the pac
 
 When you'll visit the browser, you should not notice any changes in the rendered content.
 
-### Add Bulma grid to Hanami template
+## Add Bulma grid to Hanami template
 
 The margins had been changed too, however, this is still pretty bad. Let's update it by adding some grid. I want articles to be shown in rows of three elements. To achieve this, I'll iterate through my array of articles, using `each_slice` method, passing the expected number of columns as an argument.
 
@@ -110,7 +110,7 @@ This finally gives a nice change to the rendered result. All articles are groupe
 ![Bulma installed](/images/episodes/3/grid.png)
 
 
-### Adding Breadcrumbs
+## Adding Breadcrumbs
 
 Bulma has a lot of predefined components ready to be used. I'll just add some breadcrumbs on top of my articles list just to demonstrate how to use them.
 
@@ -185,13 +185,13 @@ article.container
 
 ```
 
-### Summary
+## Summary
 
 [Hanami-Assets](https://github.com/hanami/assets) is an amazing gem that allows managing assets in any Ruby application. In [Hanami 2,](https://hanamirb.org), with zero-configuration integration, it's just a pleasure to work with.
 
 You can use it with Bulma, Foundation, React, Vue, or any other asset framework, as it's extremely flexible.
 
-### Special Thanks
+## Special Thanks
 
 - [Yuttanant Suwansiri](https://github.com/armgit5) for supporting this project.
 - [Pankaj Patel](https://unsplash.com/@pankajpatel) for a great cover photo.

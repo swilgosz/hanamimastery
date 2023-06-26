@@ -55,7 +55,7 @@ In this episode I'll let address those requirements, showing you how to write a 
 
 Let's do some coding then!
 
-### Sitemap generation
+## Sitemap generation
 
 I will use the [sitemap_generator](https://github.com/kjvarga/sitemap_generator) gem to do the actual sitemap file generation.
 
@@ -95,7 +95,7 @@ end
 
 Now let me quickly add the `DEFAULT_HOST` environment variable, and we're ready to write the actual generation task.
 
-### Writing the sitemap generator
+## Writing the sitemap generator
 
 Now Let me create the interactor, named *generate sitemap*.
 
@@ -146,7 +146,7 @@ This is a small boost to the development workflow so let me use this approach.
 
 Now I call it, and as a result I have the sitemap file availble in the public directory right away! Awesome.
 
-#### Sitemap preview
+### Sitemap preview
 
 Let me now add a simple action to browse this file in the browser.
 
@@ -381,7 +381,7 @@ I removed quite a piece of code from here, and the only thing I should add is th
 
 Still, the sitemap generation works perfectly.
 
-#### Dynamic routes.
+### Dynamic routes.
 
 Our sitemap generator is complete - at least if we talk about static routes.
 Now, though, is a time to add all my article pages to it.
@@ -420,10 +420,10 @@ Write in the comments if you succeeded with this.
 
 This is all I have for you today. We successfully generated a dynamic sitemap for our Hanami application that we can trigger whenever we want. Regenerating the sitemap can take a while though, so In the next episode, I'll show you how to leverage background jobs, to make it more production-ready.
 
-**:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
-:::**
+:::
 
 ## Thanks
 

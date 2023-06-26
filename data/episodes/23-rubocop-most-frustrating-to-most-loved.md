@@ -26,7 +26,7 @@ One team prefers the double quotes, while other teams - a single. It's a never-e
 
 I want to focus on problem-solving, and while in the ideal world everyone would place dots at the end of the line, at the end of the day it's not what I'm paid for.
 
-### PR reviews.
+## PR reviews.
 Let's take a look at PR reviews.
 
 Reviewing PRs take time, and when code is consistent within a project, it makes it easier to spot any real problems and this is why I care about code style in general. 
@@ -35,7 +35,7 @@ PR reviews should be as easy as possible, and when I do it, I want to be focused
 
 Fortunately, there are some tools that can help us automate the tedious work of tracking the linter changes and today I want to say a few bits about one particular solution.
 
-### Meet RuboCop
+## Meet RuboCop
 Probably every Ruby developer had heard about the [Rubocop gem](https://www.ruby-toolbox.com/projects/rubocop). It's an amazing linter library, that helps us analyse and format our code to follow the defined guidelines. Started by [Bozhidar Batsov](https://github.com/bbatsov) around 2012 it's also the one of the oldest popular ruby gems still in use.
 Aside of the code formatting issues, it can actually help you discover a few more meaningful problems, like.
 
@@ -200,7 +200,7 @@ If there are other points that drive you crazy though, please leave a comment in
 
 Unfortunately, it's all I have for you today. I hope you've enjoyed this episode and learned sth new!
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::

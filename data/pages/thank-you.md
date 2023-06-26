@@ -8,7 +8,7 @@ thumbnail:
 
 ---
 
-### Thank you for your support!
+## Thank you for your support!
 
 I really appreciate joining to my email subscribers! If you want to recieve more updates, feel free to follow me on twitter!
 

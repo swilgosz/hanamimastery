@@ -27,7 +27,7 @@ In this episode, I'll show you how to quickly start with a new Hanami project.  
 This article shows how to create Hanami 2 project using Temporary repository, which soon will be replaced by the neat [CLI application and code generators](https://github.com/hanami/cli)!
 :::
 
-### The quick setup
+## The quick setup
 
 Even though at the time of recording this video the CLI for Hanami 2 is not yet finished, It's super easy to set up a new project [thanks to this template](https://github.com/hanami/hanami-2-application-template), and with the Hanami team working hard on the CLI, **things will soon be even easier**.
 
@@ -40,7 +40,7 @@ At the moment the process consists of 4 simple steps, but before we'll dive into
 
 I'll cover them all in the article below
 
-#### TLDR (full script here)
+### TLDR (full script here)
 
 ```shell
 g clone git@github.com:hanami/hanami-2-application-template.git sandbox
@@ -57,7 +57,7 @@ There are several ways to do so, especially to install Ruby - there are even gra
 
 Then when it comes to SQLite we can just use the bundler to install the ruby gem that takes of that.
 
-#### 1. Cloning the repository
+### 1. Cloning the repository
 
 First of all, I need to create a new Hanami project by cloning the template repository into a customized named folder of my application. In the terminal, I'll paste the git clone command adding sandbox as a project name.
 
@@ -74,7 +74,7 @@ To install dependencies, we need to run _bundler_ as in any other ruby applicati
 bundle install
 ```
 
-#### 2. Running the installer
+### 2. Running the installer
 
 Next, run the installation script appending the command with your app name to rename all the default
 instances to your customized application name.
@@ -87,7 +87,7 @@ This will rename all the occurrences of the default AppPrototypeTest with the sa
 
 The output says, that "the application is ready to be run", but we need to apply the proper configuration yet.
 
-#### 4. Rename the sample .env file
+### 4. Rename the sample .env file
 
 Hanami application template with the default configuration can be run using just a normal `puma` api, with usual port specification and other options.
 
@@ -137,7 +137,7 @@ Now I'll restart the server and in the browser, we can see the updated text. Ama
 
 ![Updated Hanami Welcome screen](/images/episodes/1/updated-welcome-screen-in-hanami.png)
 
-### Summary
+## Summary
 
 I love **how Rails made it super-easy to start with a new project** and deliver MVPs to the clients. Amazing CLI, file generators, all that is perfect for beginners.
 
@@ -145,7 +145,7 @@ Unfortunately, when apps grow, Rails default architecture becomes problematic.
 
 Hanami solves that issue, and with all the amazing progress on simplifying the initial usage, **I believe it has a bright future!**
 
-### Special thanks!
+## Special thanks!
 
 - [Sven Schwyn](https://github.com/svoop) for supporting my channel, really appreciated!
 - [Piotr Solnica (Solnic)](https://github.com/solnic) - for his great work on [dry-rb](https://github.com/dry-rb) ecosystem which made Hanami project possible.

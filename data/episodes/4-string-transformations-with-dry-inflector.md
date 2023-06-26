@@ -31,11 +31,11 @@ It's a [dry-inflector](https://github.com/dry-rb/dry-inflector) gem written by [
 I discovered this gem by [watching one of Luca's Youtube videos](https://www.youtube.com/watch?v=xexeoulYPTM) - and I am super glad that I've made a habit of watching other developers' videos and presentations!
 
 
-:::note
+:::important
 While this episode covers **string transformations only**, if you are interested in more advanced stuff, **covering hash and object transformations**, check out [episode #6](/episodes/6-complex-ruby-data-transformations-made-simple)
 :::
 
-### The problem we've faced
+## The problem we've faced
 
 Recently we needed to improve in our projects the way we distribute the commands that had been triggered in the system. Whenever the command is called, it should be properly handled and the appropriate event should be published to our event store.
 
@@ -104,7 +104,7 @@ We didn't want that, because ActiveSupport is a set of a WHOLE LOT of features t
 
 We thought about implementing it on our own, but then we've found the `dry-inflector` - which is exactly what we needed.
 
-### DRY-INFLECTOR
+## DRY-INFLECTOR
 
 *dry-inflector* is a simple gem that wraps several useful string transformations into a small `inflector` object. Because it is so small, we gladly injected that into our internal ecosystem.
 
@@ -238,13 +238,13 @@ inflector.pluralize("dry-inflector") # => "dry-inflector"
 
 That's all I have for today, [check out the gem's documentation](https://dry-rb.org/gems/dry-inflector/) if you seek more examples of usage.
 
-### Do you like this episode? Consider sponsoring the project!
+## Do you like this episode? Consider sponsoring the project!
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, [Subscribe to my channel](https://www.youtube.com/c/HanamiMastery) and [follow me on twitter](https://twitter.com/sebwilgosz)!  As always, all links you can find the description of the video or in the [Hanami Mastery about page](https://hanamimastery.com/about)
 
 See you!
 
-### Special Thanks!
+## Special Thanks!
 
 I'd like to thank All the amazing people who decided to sponsor me so far. I appreciate your trust, as I understand that too many blogs do not even hit the barrier of 10 articles!
 

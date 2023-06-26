@@ -21,11 +21,11 @@ category: stray
 
 People seem to be surprised being mentioned in my articles in a "special thanks" section, tweets, videos, or when I send a personal "thank you" email. As I got questions about it and my thoughts around this topic were not ordered, I've decided to sort them out by writing this article.
 
-### Why I'm giving so much appreciation everywhere?
+## Why I'm giving so much appreciation everywhere?
 
 First of all, I don't think that I'm giving a lot of appreciation, but I certainly feel like **there is not enough appreciation being given in general**.
 
-#### I feel like people do not appreciate enough external factors
+### I feel like people do not appreciate enough external factors
 
 I believe, that giving an appreciation is important and that more people should be more transparent on where their success comes from. For example, most of the productivity gurus on Youtube always show you their presence and give great pieces of advice, **but they never mention the amazing teams they have behind the scenes** that take over a lot of the tasks required to produce great content efficiently.
 
@@ -45,7 +45,7 @@ Companies can build amazing things, earn tons of money, but they rarely spend a 
 
 I disagree, I rebel, and I will stand against that.
 
-#### I'm not building my business on my own.
+### I'm not building my business on my own.
 
 As I've mentioned the Youtube productivity gurus, here is my case.** I DON'T build my projects on my own.**
 
@@ -59,7 +59,7 @@ All that I just take, without asking for permission, just because it's legal to 
 
 **The very least I can do is to say "thank you" from time to time**.
 
-#### Freelancers and coding help
+### Freelancers and coding help
 
 I heavily make use of great developers willing to help me with the issues or features I have trouble with. **I do delegate the advanced react stuff** wherever I don't know how to do something or have no time to do it.
 
@@ -67,7 +67,7 @@ I heavily make use of great developers willing to help me with the issues or fea
 
 I do appreciate that people help me with it and **by showing their contributions and paying for the work they do** - no matter it's open-sourced - I see it as a very minimal thing I can do to say "thank you".
 
-#### Resources: videos, courses, books, articles...
+### Resources: videos, courses, books, articles...
 
 The [super nice recording hardware](https://youtu.be/6cfdckLHqg8) is recommended to me by my friend. Just like that, but **this changed the way I work and allowed my videos to reach the next level of quality**.
 
@@ -99,7 +99,7 @@ I'm just happy when I hear from time to time: "Hey Seb, I really like what you d
 
 Well, there are only two main things that I am worried about when I say "thank you" in public posts.
 
-#### Someone could feel unfair by getting small appreciation for a great help
+### Someone could feel unfair by getting small appreciation for a great help
 
 I'm not sure actually if this is how people feel often or not.
 
@@ -111,7 +111,7 @@ I would love if people help me **just because they believe in what I do and they
 
 A great example is, that I'm sponsoring on Github **all the people of Hanami team**, but I don't expect any one of them to sponsor me back. My gest for them is my appreciation for the work they already did! The whole Hanami Mastery initiative, on the other hand, is a project that tries to improve the way people appreciate the work done on the great open-source projects.
 
-#### Growth and companies
+### Growth and companies
 
 **The growth scares me**. I don't want to grow Hanami Mastery infinitely. I am really inspired by the book: "Company of One", which highlights a similar mindset to what I believe in. **I'd like to stay small, to better serve my audience**.
 
@@ -131,7 +131,7 @@ Sometimes, However,  **I'll get valuable help and I'll not be able to even say "
 
 Sorry, happens, I'm just a human.
 
-### Summary
+## Summary
 
 I'm posting this as a note that will evolve, but I want to make it clear what's in my mind and why I'm doing certain things.
 
@@ -157,7 +157,7 @@ Thanks!
 
 I hope you've enjoyed this article, and if you want to see more content in this fashion,** Subscribe to my Newsletter, [this YT channel](https://www.youtube.com/c/HanamiMastery)** and **follow me [on Twitter](https://twitter.com/hanamimastery)!
 
-### Special Thanks!
+## Special Thanks!
 
 As always I want to say a special thanks to my [Github sponsors](https://github.com/sponsors/swilgosz)! Any support allows me to spend more time on creating this content, promoting great open source projects.
 

@@ -27,7 +27,7 @@ However, *dry-validation* consists of 2 big parts, one of which, and I think the
 
 In this episode, I want to explicitly tell you about *dry-schema* and explain in what scenarios you could use it as a standalone validation engine.
 
-### What is *dry-schema*
+## What is *dry-schema*
 
 [dry-schema](https://dry-rb.org/gems/dry-schema) is a gem created by [Peter Solnica](https://github.com/solnic) around 2019 by extracting it from `dry-validation` and the intention was to make dry-validation more extendable, by extracting the structure and the basic type checks to simplify dry-validation source code.
 
@@ -35,7 +35,7 @@ You may [read more about dry-schema origins](https://solnic.codes/2019/01/31/int
 
 In this episode, I'll mostly focus on covering a few nice features and explaining, when `dry-schema` is a perfect choice for validating data structures.
 
-### What is *dry-schema* for
+## What is *dry-schema* for
 Dry schema is only designed for simple data validations, and because of its amazing performance, it lets you validate every input to your system, not just models just before saving them to the databases.
 
 The key goal of this gem is to ensure that data you'll work with, is safe for being used by your code. It provides two main functionalities:
@@ -45,7 +45,7 @@ The key goal of this gem is to ensure that data you'll work with, is safe for be
 
 The list of features is actually stupidly long, but these two points are the main focus of the library.
 
-#### Data structure
+### Data structure
 
 In your application you may have various types of input, like:
 - Form Params
@@ -60,7 +60,7 @@ But this is waay too late to apply validations. If you don't agree, please recal
 
 This kind of issues can be completely eliminated if more people would make use of gems like `dry-schema`, validating and transforming all the input incomming to the system, ensuring they always work with data types they expect.
 
-#### Why we validate data?
+### Why we validate data?
 
 ##### 1. Security
 
@@ -138,7 +138,7 @@ schema.call(input).errors.to_h
 # => {:name=>["must be a string"]}
 ```
 
-#### Data coercion
+### Data coercion
 
 However, for certain scenarios, my validations would not behave as expected. If I'll pass to my web server a params, they'll be transformed from JSON string to a hash, but all the values would be strings, no integers.
 
@@ -185,7 +185,7 @@ What a wonderful time to be alive!
 
 However, it's not the end of the awesome features `dry-schema` allows you to do.
 
-#### Macros
+### Macros
 
 `dry-schema` comes with a great collection of built-in predicates logic, that allows you to chain multiple simple rules. With this you can create way more strict validations if needed.
 
@@ -227,7 +227,7 @@ All the `filled`, and `maybe` keywords were macros too. I strongly recommend vis
 
 Because YES, you can build your own macros, wrapping any set of predicates common for your project, to make your code more DRY, however that is easier to be done by using dry-validation gem.
 
-#### Using classes instead variables.
+### Using classes instead variables.
 
 Now let me go one step further.
 
@@ -289,11 +289,11 @@ result.errors.to_h
 
 It's amazing, how it can allow you to organize your code and manage input data validations apart from the business logic.
 
-### Summary
+## Summary
 
 But this is all I've for you in this episode!
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
@@ -308,11 +308,11 @@ It's extremely fast, composable, and powerful validation engine and I strongly r
 
 Maybe with this gem added to your project, you'll start to validate more input data, and less bugs will appear in your applications.
 
-### When to use dry-schema?
+## When to use dry-schema?
 
 At the end, by quoting the documentation statement, if you wonder when to use this beauty, the answer is "Always, and Everywhere!"
 
-### Thanks!
+## Thanks!
 
 I want to especially thank my recent sponsors,
 

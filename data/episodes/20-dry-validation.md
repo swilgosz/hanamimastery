@@ -62,7 +62,7 @@ then *dry-validation* is the way to go.
 
 Let me show you a few nice features specific for *dry-validation*.
 
-:::note
+:::important
 If you want to use *dry-validation* in your project, **this video shows just a subset of features** - the whole functionality provided by *dry-schema* is omitted here, **as I've covered this gem in two of my previous episodes**. Check them out to have a complete overview of validation power you get for free in Hanami applications.
 
 - [HME018 - Validating params in Hanami Actions](/episodes/18-hanami-actions-basics)
@@ -218,7 +218,7 @@ The funny thing is that people often use it in Rails applications, skipping stro
 
 Unfortunately, this is all I've for today! I hope you enjoyed this episode and stay in touch to get updates about my upcoming content!
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::

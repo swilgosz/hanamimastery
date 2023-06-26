@@ -371,7 +371,7 @@ Slices in Hanami are insanely powerful, allowing us to completely control
 
 There are multiple ways you can organize your slices, but I hope the two ideas I’ve shown you above will give you some portion of inspiration.
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 

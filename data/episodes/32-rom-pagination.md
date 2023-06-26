@@ -85,7 +85,7 @@ end
 
 I use the `after` callback to set my HTTP response status to`:ok` after the action successfully processes the request.
 
-:::note
+:::important
 If you want to know more about setting this persistence layer up, check out my [episodes related to ROM](/t/rom-rb), I’ve already covered several of them. Or, check out the [Hanami Mastery PRO](https://pro.hanamimastery.com), where I’m trying to share more advanced tutorials in a regular manner.
 :::
 
