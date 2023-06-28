@@ -1,6 +1,7 @@
 import '../styles/highlighting.css';
 import '../styles/admonition.css';
 import '../styles/mdx-components.css';
+import '../styles/globals.css';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { makeStyles } from '@mui/styles';
