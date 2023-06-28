@@ -2,7 +2,7 @@
 id: 10
 aliases: ["HMAP010"]
 author: "swilgosz"
-topics: ['hanami', 'rom']
+topics: ['hanami', 'rom-rb']
 title: "WIP: Unofficial guide for upgrading Hanami 1.x -> Hanami 2.x"
 excerpt: "When there is a complete framework rewrite, upgrading may be tricky, and it definitely is this time. Hope this guide will help you save some headache during upgrading on the hardest shift ever."
 publishedAt: "2023-06-14"
