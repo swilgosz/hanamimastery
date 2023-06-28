@@ -23,7 +23,7 @@ I came through an article by Piotr Solnica, covering his [thoughts about open-so
 
 > DISCLAIMER: Please do not read this article in the mindset that I'm complaining. I'm pointing here my mistakes, the reality I've faced, but not to complain, but to improve! :)
 
-### My open-source reality.
+## My open-source reality.
 
 I've first met Piotr around 2015 at one conference in Wrocław, where he presented the [ROM.rb](https://rom-rb.org) updates, and I was still kind of a junior-level ruby developer up then. I saw what he did in this library and I was amazed. Shocked, and amazed.
 
@@ -81,7 +81,7 @@ BUT, the majority of developers are not good marketers. **They are good develope
 
 I saw it as not fair, and not as I would like it to keep, and as I am really a 0-1 person, for whom either something works, or can be fixed, I started thinking about the solution.
 
-### First attempt - The Rails API course.
+## First attempt - The Rails API course.
 
 I've created and published [Rails API Udemy course](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide/), which goal was to help people start writing the good API, and then build a community around it, to support them more.
 
@@ -99,7 +99,7 @@ How does it compare to Dry-rb, ROM-rb, or Hanami?
 
 I still see potential in publishing more online courses in the near future, but due to my family situation I needed to hold off with new big projects.
 
-### My second attempt - HanamiMastery
+## My second attempt - HanamiMastery
 
 When I've worked on the Rails API course creation I needed to learn a lot. This actually forced my skills into the next level of API development and software architecture.
 
@@ -108,7 +108,7 @@ I quickly realized that Rails architecture is not enough even for API-Only scala
 
 But then [Hanami 2.0-alpha2](https://hanamirb.org/blog/2021/05/04/announcing-hanami-200alpha2/) had been announced and It appeared to be a solution for all architectural issues I've faced in all my teams so far.
 
-#### The risk to switch
+### The risk to switch
 
 My client supported me fully, in test-out New Hanami for one of our microservices which I highly appreciate. In the end, however, we've decided to not switch (at least) just yet, due to 2 main factors:
 
@@ -122,7 +122,7 @@ However, I really believe the Hanami is so greatly designed, it can become a new
 
 Here is where [HanamiMastery](https://hanamimastery.com)'d been born.
 
-#### HanamiMastery is born
+### HanamiMastery is born
 
 I've gone through the main issues we've faced, and realized, that this is not only a Hanami problem. This is an Open-Source problem in general.
 
@@ -143,14 +143,14 @@ Still, I put a tremendous amount of effort to create content, publish it, mainta
 
 So This is a start.
 
-### Summary
+## Summary
 
 **This is my attempt to change the world.** For Hanami and Open-Source in General. I don't expect to be ever able to finance a majority of great projects that should be supported, but If I'll inspire one person in any way, I'll be fulfilled.
 
 Nowadays, working open-source is definitely a hard thing to do. But I see a bright future ahead, and I'll do my best to bring it closer to all of us!
 
 
-### Special thanks
+## Special thanks
 
 I'd like to explicitly thank
 

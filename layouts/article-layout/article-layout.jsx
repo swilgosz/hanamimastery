@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, Box } from '@mui/material';
 import { useRouter } from 'next/router';
 import { SeoComponent } from '../../features/seo';
 import { useStyles } from './article-layout.styles';
+import TableOfContents from '../../features/table-of-contents/table-of-contents';
 import ArticleSchema from '../../features/content-schemas/article-schema';
 import ArticleTabs from '../article-tabs';
 import BuyMeACoffee from '../../features/buy-me-a-coffee-button';
@@ -55,9 +56,26 @@ const ArticleLayout = ({ article, children }) => {
         </Typography>
       </section>
       <Container className={classes.container} maxWidth="xl" component="main">
-        <Grid container spacing={4}>
-          <Grid xs={12} sm={12} md={12} lg={2} item component="aside">
+        <Grid container spacing={3}>
+          <Grid
+            xs={12}
+            sm={12}
+            md={12}
+            lg={2}
+            item
+            component="aside"
+            sx={{
+              maxHeight: { lg: '95vh' },
+              position: { lg: 'sticky' },
+              top: '40px',
+            }}
+          >
             <ArticleTabs />
+            {view !== 'discuss' && (
+              <Box sx={{ overflow: 'auto', maxHeight: '75%', pr: 1 }}>
+                <TableOfContents headings={article.headings} />
+              </Box>
+            )}
           </Grid>
           <Grid
             sm={12}

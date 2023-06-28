@@ -7,15 +7,21 @@ const muiLinkStyles = {
   },
 };
 
-const CustomLink = ({ href, children, noUnderline, otherProps }) => (
-  <MuiLink
-    component={NextLink}
-    href={href}
-    {...otherProps}
-    sx={noUnderline && muiLinkStyles}
-  >
-    {children}
-  </MuiLink>
-);
+const headerLink = {
+  color: '#000000',
+};
+
+const CustomLink = ({ href, children, noUnderline, otherProps, header }) => {
+  return (
+    <MuiLink
+      component={NextLink}
+      href={href}
+      {...otherProps}
+      sx={(noUnderline && muiLinkStyles) || (header && headerLink)}
+    >
+      {children}
+    </MuiLink>
+  );
+};
 
 export default CustomLink;

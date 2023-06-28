@@ -36,7 +36,7 @@ But almost instantly, a second thought came to my mind, revealing, that **I am a
 
 So in this episode, I'll show you **my version of service objects** that allowed me to replace one ruby web framework with another in a complete service in less than a day.
 
-:::note Disclaimer.
+:::important Disclaimer.
 This was a very small API-only service.
 :::
 

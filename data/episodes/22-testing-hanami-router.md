@@ -23,7 +23,7 @@ source: https://github.com/hanamimastery/episodes/tree/main/022
 
 Recently, I’ve had some [fun with Hanami Actions](/episodes/18-hanami-actions-basics), and this time I’ll dig a little bit into **the routing part**.
 
-### Routing
+## Routing
 
 Routing is one of the basic components of any web application. This is the interface between your application and the clients using it. In this episode I'll dig a bit into the Hanami router from the usage point of view, covering why it's great and how to work with it.
 
@@ -229,7 +229,7 @@ I recommend checking out the gem's documentation, where you may learn about othe
 
 And many more.
 
-### Summary
+## Summary
 
 *hanami-router* is a great, standalone routing engine you may include in any ruby web server. It's extremely fast, fully-features, and well tested.
 
@@ -237,8 +237,7 @@ I hope this episode helped you understand how to work with it and test it in Han
 
 Unfortunately, it's all I have for you today. I hope you've enjoyed this episode and learned sth new!
 
-:::note Become an awesome subscriber!
-
+:::important[Become an awesome subscriber!]
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 

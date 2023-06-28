@@ -29,7 +29,7 @@ Today I'll deep dive into one of the tools that can help you figure out where yo
 
 There are several code metric tools, and quality checkers for Ruby available out there, and I hope I'll cover all of them at some point.
 
-:::note 4 ways to remove your frustration
+:::important 4 ways to remove your frustration
 So far I covered the `Rubocop` in [episode 23](/episodes/23-rubocop-most-frustrating-to-most-loved) which appears to be one of the most popular I published so far. Check it out if you're interested in how to ensure your code remains consistent within the project.
 :::
 
@@ -115,7 +115,7 @@ This shows, why having less than 80% line coverage in your application means not
 
 Let me fix it then.
 
-### Testing the code.
+## Testing the code.
 
 Let me add a nice test example then. I just add one test for a `call` method, that checks if calling the instance of my class with arguments `4` and `2`, will result in a number of exactly `2`.
 
@@ -140,17 +140,17 @@ It seems, that my file is fully covered now! Isn't that great?
 
 But wait, have you spotted the problem?
 
-### Branch vs Line test coverage.
+## Branch vs Line test coverage.
 
 I have a one-line conditional here, but I only test one path of the condition. My code returns a message in case of passing a `0` as a divisor, and even though I don't have the test for that, I still get a full test coverage report!
 
-#### Line Coverage
+### Line Coverage
 
 It happens because *simplecov* by default is configured in a way to work with Line test coverage. This means, that if a line of code is called during our test run, it's considered to be tested.
 
 It makes sense, but as you can see in this example, often it's not enough. This is where *branch coverage* comes in.
 
-#### Branch Coverage
+### Branch Coverage
 
 Branch coverage is the type of check, which covers all branches of my conditionals, no matter if they are inline or not. In case of any branch of the condition is not tested, the line is considered uncovered.
 
@@ -189,7 +189,7 @@ Now my file is finally reported correctly.
 
 However, it's not all we can improve.
 
-### Basic filters
+## Basic filters
 
 *Simplecov* has no knowledge about our application. Therefore, by default, it just reports all files we have in the system, including all *test* files.
 
@@ -210,7 +210,7 @@ Now finally, after running my tests the end result looks as expected, including 
 
 ![All files coverage report with filters applied](/images/episodes/25/coverage-all-cleaned-up.png)
 
-### Grouping
+## Grouping
 
 Things are looking way better now, and I love this simple look at the start, but when I'm working on bigger applications, split into different teams/departments, I like to have a way of grouping the report by files relevant to my part of the project.
 
@@ -232,7 +232,7 @@ end
 
 Feel free to group by whatever works for you, in Hanami, grouping by slices makes the most sense.
 
-### Conditional *simplecov* runs
+## Conditional *simplecov* runs
 
 Then finally, during my regular workflow, I rarely run all tests in my project. Usually, I'm only interested in running the tests I'm writing for the current file, leaving the rest to the CI checks after pushing my changes to the server.
 
@@ -249,7 +249,7 @@ end
 
 This allows me to only call coverage when needed, as well as set the CI checks to call it by default. My daily workflow is not slowed down by unnecessary redundant checks, and everyone is happy.
 
-### Controling the quality of test coverage
+## Controling the quality of test coverage
 
 To ensure test coverage in projects I'm working on does not drop over time, I'm usually setting a few additional rules in the config.
 
@@ -277,7 +277,7 @@ Having this, the build will always fail, if the coverage is lower than before.
 
 I tend to have a badge in the project `Readme` file, with the current test coverage percentage and refresh it after each merge to the main branch. This prevents any developer to open a PR that doesn't have enough tests and slowly forces the quality of the code to be increased.
 
-### Summary
+## Summary
 
 Simplecov is a nice guide to have an overview of how well-tested our application is. As often happens in such great gems, I only scratched the surface of possibilities it allows though.
 
@@ -285,12 +285,12 @@ There is a ton of documentation about how to speed up your checks when running t
 
 Unfortunately, it's all I have for you today.
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 
-### Thanks
+## Thanks
 
 I want to especially thank my recent sponsors,
 

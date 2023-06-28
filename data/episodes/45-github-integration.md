@@ -31,7 +31,7 @@ This is why I will write the GitHub integration today, which will allow me to pu
 
 The integration with Google Drive is already in Place, as we shown in [episode 42](43-connect-with-google-drive.md) so Github integration is really, the last piece to make this application actually useful.
 
-### Scope
+## Scope
 
 Our goal for today is to
 1. Connect to the Github API

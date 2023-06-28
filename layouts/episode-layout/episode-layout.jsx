@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, Box } from '@mui/material';
 import { useRouter } from 'next/router';
 import { SeoComponent } from '../../features/seo';
 import { useStyles } from './episode-layout.styles';
@@ -20,6 +20,7 @@ import {
   shouldDisplayDiscussions,
   shouldDisplayVideo,
 } from '../../utils/display-queries';
+import TableOfContents from '../../features/table-of-contents/table-of-contents';
 
 const EpisodeLayout = ({ episode, children }) => {
   const classes = useStyles();
@@ -78,8 +79,25 @@ const EpisodeLayout = ({ episode, children }) => {
       </section>
       <Container className={classes.container} component="main">
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={12} lg={2} component="aside">
+          <Grid
+            xs={12}
+            sm={12}
+            md={12}
+            lg={2}
+            item
+            component="aside"
+            sx={{
+              maxHeight: { lg: '95vh' },
+              position: { lg: 'sticky' },
+              top: '40px',
+            }}
+          >
             <EpisodeTabs episode={episode} />
+            {view !== 'discuss' && (
+              <Box sx={{ overflow: 'auto', maxHeight: '67.5%', pr: 1 }}>
+                <TableOfContents headings={episode.headings} />
+              </Box>
+            )}
           </Grid>
           <Grid
             sm={12}

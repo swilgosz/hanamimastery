@@ -25,7 +25,7 @@ Action in Hanami is probably the biggest and the most feature-rich building bloc
 
 Let's start with a basic action.
 
-### Overriding the body
+## Overriding the body
 
 By default, actions use corresponding defined views and HTML template, but for this example for simplicity, I'll skip views by defining the `handle` method and overriding the status and the body.
 
@@ -74,7 +74,7 @@ end
 
  Now let's extend this beauty.
 
-### Custom Response headers
+## Custom Response headers
 
 The first thing I want to show is how we can modify response headers in Hanami Actions.
 
@@ -88,7 +88,7 @@ When I visit the URL subscribe me at hanamimastery.com, you will see a new heade
 
 ![Custom header set](/images/episodes/18/custom-header-set.png)
 
-### Params
+## Params
 
 That's cool!
 
@@ -140,7 +140,7 @@ After restarting the server, your extra parameter should be visible now.
 
 ![Params in response body 2](/images/episodes/18/params-in-response-body-2.png)
 
-#### Validating params
+### Validating params
 
 Having access to the parameters is great, but there may be a chance you'd like to validate the input parameters incoming to your endpoints.
 
@@ -184,7 +184,7 @@ end
 ```
 
 
-:::note
+:::important
 Hanami uses [Dry Validations](https://dry-rb.orgs/dry-validation) and [Dry-Schema](https://dry-rb.orgs/dry-schema) under the hood as a validation engine, and **I'll do a separate video about the details of how powerful those gems are**, but for now let's just check what happens when I call this code.
 :::
 
@@ -192,7 +192,7 @@ Now, when I'll send the request with the empty *name*, I'll get the *422* error 
 
 ![Validation Error example](/images/episodes/18/validation-error.png)
 
-### Before and After Hooks!
+## Before and After Hooks!
 
 It's cool to have this in place, however with this line our `handle` method starts to be a bit fat, doing too much. Validating parameters is something that can happen before every action in my system.
 
@@ -230,7 +230,7 @@ module Main
 end
 ```
 
-#### Chaining before and after hooks
+### Chaining before and after hooks
 
 I can also chain the hooks together and **prepend or append hooks to the existing list.**
 
@@ -291,7 +291,7 @@ When I'll run this, It'll arrange my string components in the expected order!
 
 If you want some methods to be run after the given action, use the `after` hooks in the same way.
 
-### Error Handling
+## Error Handling
 
 Finally, let's take a short look at the error handling. Hanami provides a neat way to handle exceptions in actions by using `handle_exception` method called on the action config object.
 
@@ -368,7 +368,7 @@ This will properly handle my error and return the formatted message to the user 
 
 ![Handled error response](/images/episodes/18/handled-error-response.png)
 
-### Summary
+## Summary
 
 Hanami Actions are rich in features, that are extremely useful in building scalable web applications. I only covered a few main functions, but if you want to know more, I strongly recommend to visit the documentation for easier overview.
 
@@ -376,12 +376,12 @@ Working with actions is surprisingly easy, and I had a lot of fun trying them ou
 
 However, that's all for today. I hope you've enjoyed this episode, and
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::
 
-### Thanks
+## Thanks
 
 I want to especially thank my recent sponsors,
 

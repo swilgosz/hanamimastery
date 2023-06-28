@@ -38,7 +38,7 @@ Then I'm going to schedule my background job to run *every day* and refresh my s
 
 So let's go!
 
-### Sidekiq
+## Sidekiq
 
 If you work with ruby, I guess I don't need to introduce a *sidekiq* gem to you. It's a background processing engine for Ruby.
 
@@ -121,7 +121,7 @@ end
 
 Looks simple, doesn't it? And indeed it is!
 
-#### Configuring sidekiq process
+### Configuring sidekiq process
 
 Now we need the Sidekiq configuration file to be added.
 
@@ -245,7 +245,7 @@ Let me know in the comments, if you would like to place your workers in differen
 
 Unfortunately, that's all I have prepared for this episode, I hope you've found it useful and if you do, consider subscribing to the channel and follow me on Twitter!
 
-:::note Become an awesome subscriber!
+:::important[Become an awesome subscriber!]
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 :::

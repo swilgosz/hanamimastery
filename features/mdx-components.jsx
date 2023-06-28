@@ -1,5 +1,7 @@
-import { Typography, Chip, createStyles, Grid } from '@mui/material';
+import { Typography, Chip, createStyles, Grid, Box } from '@mui/material';
 import { makeStyles, withStyles, withTheme } from '@mui/styles';
+import InsertLinkIcon from '@mui/icons-material/InsertLink';
+import { useState } from 'react';
 import CourseAd from './course-ad';
 import EmailSubscriptionForm from './email-subscription-form/index';
 import YoutubeEmbed from './youtube-embed';
@@ -70,11 +72,35 @@ const CustomLink = ({ href, children }) => {
   );
 };
 
-const CustomHeader = ({ variant, children, id, ...props }) => (
-  <Typography variant={variant} id={id} {...props} gutterBottom>
-    {children}
-  </Typography>
-);
+const CustomHeader = ({ variant, children, id, ...props }) => {
+  const [isShown, setIsShown] = useState(false);
+
+  if (id && (variant === 'h2' || variant === 'h3')) {
+    return (
+      <Typography variant={variant} id={id} {...props} gutterBottom>
+        <MuiCustomLink href={`#${id}`} header>
+          <Box
+            onMouseEnter={() => setIsShown(true)}
+            onMouseLeave={() => setIsShown(false)}
+            sx={{ display: 'inline' }}
+          >
+            {children}
+            {isShown && (
+              <InsertLinkIcon
+                sx={{ fontSize: '0.8em', marginLeft: '0.3rem' }}
+              />
+            )}
+          </Box>
+        </MuiCustomLink>
+      </Typography>
+    );
+  }
+  return (
+    <Typography variant={variant} id={id} {...props} gutterBottom>
+      {children}
+    </Typography>
+  );
+};
 
 const Om = ({ om }) => <div id={om} />;
 

@@ -21,7 +21,7 @@ discussions:
 source: #https://github.com/hanamimastery/episodes/tree/main/016
 ---
 
-### My story - designing your domain
+## My story - designing your domain
 
 In this episode of Hanami Mastery I want to talk about something different than usual, touching topic that was on back of my head for a while already. Today I won't cover a particular gem nor tool but rather the approach to tackle the **difficulty of solving business problems using software**.
 
@@ -32,7 +32,7 @@ Below I describe **4 ways of implementing business logic in your Ruby apps** to 
 3. Hanami Slices
 4. Rails Engines
 
-### App framework is just a tool
+## App framework is just a tool
 
 In my career I experienced a lot of suffering while translating the business expectations to technical requirements and solutioning the detailed approaches using our CRUD-based web applications.
 
@@ -60,7 +60,7 @@ There is an extremely well done video by Mayer Zombade that illustrates this pro
 
 In all those cases there is a big need to translate the business requirements or expectations to technical language, which often generates confusion and it's easy to miss important concepts.
 
-### Limiting your thinking by framework
+## Limiting your thinking by framework
 
 This happens, because we developers tend to think about solving problems by applying solutions that suit to the tooling we use, **often being limited by that**.
 
@@ -90,7 +90,7 @@ A while ago our development started to slow down significantly due to circular r
 
 So we started looking for solutions in the field of better mapping of our system to what business wants and does.
 
-### Discovery of DDD
+## Discovery of DDD
 
 One nice way to tackle that problem is the [Domain-Driven Development](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215) - an approach described by Eric Evans in his Book published in 2003.
 
@@ -98,7 +98,7 @@ He described it by a series of different patterns, that were further evolved by 
 
 I totally recommend this book for anyone interested in working on non-trivial, real-world business problems and scalable applications.
 
-#### Separating App from business.
+### Separating App from business.
 
 The key part covered here, is that with a proper design, we could very deeply understand the business domain and processes on the engineer part, we can use the same language while talking to each other, and we can build highly reliable software, building exactly what is needed, and skipping everything else.
 
@@ -110,11 +110,11 @@ This is where I started putting to my projects a clear separation between the bu
 
 Instead of mixing it all together, I use application layer as an intermediate adapter, communicating with business only via the unified interface.
 
-### Existing solutions
+## Existing solutions
 
 In Ruby ecosystem, this idea is more and more popular, and I am happy that there are already several very nice approaches implementing it quite well.
 
-#### 1. Arkency with their DDD
+### 1. Arkency with their DDD
 
 The first way I want to mention is the [Arkency](https://arkency.com) company, which designed and introduced to the Ruby ecosystem DDD with event-sourcing, having a lot of success with refactoring huge unmaintainable rails monoliths into more robust structures, where multiple contexts are split apart.
 
@@ -159,7 +159,7 @@ I got very much inspired by their way of thinking and tackling problems, and wor
 
 I totally recommend to check some of their books or courses, to help our minds open at least little bit.
 
-#### 2. Trailblazer
+### 2. Trailblazer
 
 Aside of Arkency, there is another, quite a bit movement in Ruby ecosystem, initiated by [Nick Suterer](https://github.com/apotonick) - a great Ruby Developer, heavily engaged into Open Source community, **giving numerous talks and publishing a lot of learning content** on his own. He created a standalone framework, within pure Ruby, which solely focuses on business layer of your apps.
 
@@ -205,7 +205,7 @@ I checked trailblazer in details around 5 years ago though, and I was extremely 
 
 This is definitely a big topic I'm going to take a closer look into, and prepare at least a few episodes about possible integrations of Trailblazer with Hanami Applications in the near future.
 
-#### 3. Hanami Slices
+### 3. Hanami Slices
 
 The next approach to easier map the business domain in your applications Is [Hanami framework](https://hanamirb.org), with built-in slices. While Hanami is an Application framework, thanks to slices, it can play very well with both business domain approaches described above.
 
@@ -233,7 +233,7 @@ Using just Hanami Slices for mapping business domains in an understandable and c
 
 If you'll want me to share your ideas, reach out to me with your articles, talks or tutorials, and I'll do my best to mention them.
 
-#### 4. Rails Engines
+### 4. Rails Engines
 
 Lastly, It would not be fair to not mention Rails feature helping to split our applications to multiple pieces. It's powerful feature, easy-to-use, but definitely underrated and not popular enough, often also not used correctly.
 
@@ -257,7 +257,7 @@ For Rails applications, when it comes to implementing clear business domain, I'd
 
 You may also extract the business differently, but doing things not *the rails way* within Rails applications can bring you a lot of troubles and all the custom stuff needs to be well documented, to easily hire new Rails developers.
 
-### Summary
+## Summary
 
 You may argue that only prototyping matters, and it's not relevant to extract business logic apart of the application layer, but I don't agree.
 
@@ -277,7 +277,7 @@ I encourage you to give them a try in your projects too!
 
 If you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/HanamiMastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
-### Thanks
+## Thanks
 
 I want to especially thank my recent sponsors,
 

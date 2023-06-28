@@ -6,10 +6,10 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkDirective from 'remark-directive';
 import rehypeHighlight from 'rehype-highlight';
-
+import rehypeSlug from 'rehype-slug';
 import { readFileByPath, getPaths } from './file-browsers.js';
-import { admonitionDirective } from './custom-plugins.js';
-
+import { remarkAdmonitionDirective } from './plugins/remarkAdmonitionDirective.js';
+import { rehypeExtractHeadings } from './plugins/rehypeExtractHeadings.js';
 /*
   Extends the file meta data by additional fields and information, like
   adding HOST to the thumbnail urls, adding slug (from filename), path, URL, etc
@@ -52,15 +52,22 @@ export async function getContentBySlug(type, slug) {
   const source = readFileByPath(filePath);
 
   const { data, content } = matter(source);
+  const headings = [];
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [remarkDirective, admonitionDirective],
-      rehypePlugins: [rehypeHighlight],
+      remarkPlugins: [remarkDirective, remarkAdmonitionDirective],
+      rehypePlugins: [
+        rehypeHighlight,
+        rehypeSlug,
+        [rehypeExtractHeadings, { headings }],
+      ],
     },
   });
+
   return {
     mdxSource,
     frontMatter: {
+      headings,
       wordCount: content.split(/\s+/gu).length,
       readingTime: readingTime(content),
       ..._serializeContentData(filePath, data),
@@ -80,7 +87,6 @@ export async function getContent(type) {
   return paths.reduce((allPosts, filePath) => {
     const source = readFileByPath(filePath);
     const { data } = matter(source);
-
     if (!data.published) return allPosts;
 
     return [_serializeContentData(filePath, data), ...allPosts].sort(

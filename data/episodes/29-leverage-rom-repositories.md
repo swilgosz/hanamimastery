@@ -27,7 +27,7 @@ We are Ruby developers, aren't we? And Ruby was **designed for developers' happi
 
 In this episode, we'll go one step further, by extending our current application by adding [repositories](https://rom-rb.org/learn/repository/5.2/) to the system.
 
-### Convenience.
+## Convenience.
 
 I start with the code from the previous example, where I have just a single action defined to list my articles.
 
@@ -73,7 +73,7 @@ This is what repositories are for.
 This is only a preview of the episode. [Subscribe to Hanami Mastery PRO](https://pro.hanamimastery.com/hanami-mastery-pro) to see the full video, and access several other premium resources. Thanks for watching, and see you in the next one!
 :::
 
-### Thanks
+## Thanks
 
 In the next PRO episode, we'll talk more about **mapping the structs to different entity classes**, for better data presentation management.
 

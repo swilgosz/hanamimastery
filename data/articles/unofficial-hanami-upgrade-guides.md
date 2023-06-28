@@ -37,7 +37,7 @@ Special thanks to [Ng Chen Hon](https://github.com/MutatedBread), [Hieu Nguyen](
 
 ---
 
-# 1. Small Applications
+## 1. Small Applications
 
 If you have very small application, **consider creating a brand new Hanami 2 application**, with views and persistence in place, and just copy your code there.
 
@@ -45,7 +45,7 @@ If you have very small application, **consider creating a brand new Hanami 2 app
 You can use [HanamiSmith to spin such quickly](https://hanamimastery.com/episodes/40-hanamismith), or refer to the [Sean Colins' sample PR](https://github.com/hanami/bookshelf/pull/15) to upgrade it all at once
 :::
 
-# 2. Medium-size applications
+## 2. Medium-size applications
 
 If you have medium-size application, without crazy custom monkey patches or wrappers on your gems or hanami itself, consider doing it in 3 steps.
 
@@ -650,7 +650,7 @@ end
 
 TODO: Notes
 
-# 3. Large-size applications
+## 3. Large-size applications
 
 This approach is designed for very large monoliths, where no downtime is allowed, no production bugs accepted, and dozens of PRs are created every day, making code conflicts a huge problem, and the break on development is not allowed.
 
