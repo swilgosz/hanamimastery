@@ -10,9 +10,7 @@ import {
   Button,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { useSelector } from 'react-redux';
 import TextTruncate from 'react-text-truncate';
-import { findAuthor } from '../../redux/slices/authors';
 import TopicList from '../topics/topic-list';
 import ProTag from '../content/pro-tag';
 import CustomLink from '../custom-link';
@@ -41,15 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ContentTile = ({ item, variant }) => {
   const classes = useStyles();
-  const {
-    author: authorName,
-    topics,
-    path,
-    excerpt,
-    thumbnail,
-    fullTitle,
-  } = item;
-  const author = useSelector((state) => findAuthor(state, authorName));
+  const { topics, path, excerpt, thumbnail, fullTitle } = item;
   const thumbnailUrl = variant === 'big' ? thumbnail.big : thumbnail.small;
   return (
     <Card className={classes.card}>
@@ -68,7 +58,6 @@ const ContentTile = ({ item, variant }) => {
         }
         subheader={
           <Typography variant="subtitle1">
-            {author && author.name}
             <TopicList topics={topics} />
           </Typography>
         }

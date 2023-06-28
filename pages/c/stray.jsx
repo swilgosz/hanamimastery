@@ -1,16 +1,9 @@
 import { NextSeo } from 'next-seo';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import ContentGrid from '../../features/content-grid/index';
 import ArticlesLayout from '../../layouts/articles-layout';
-import { setAuthors } from '../../redux/slices/authors';
 import { getContent } from '../../utils/queries';
 
-export default function BlogIndex({ posts, authors }) {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setAuthors(authors));
-  }, [authors]);
+export default function BlogIndex({ posts }) {
   return (
     <>
       <NextSeo
@@ -32,9 +25,8 @@ export default function BlogIndex({ posts, authors }) {
 
 export async function getStaticProps() {
   const posts = await getContent('articles');
-  const authors = await getContent('team');
 
   return {
-    props: { posts, authors }, // will be passed to the page component as props
+    props: { posts }, // will be passed to the page component as props
   };
 }

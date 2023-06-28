@@ -3,7 +3,6 @@ import '../styles/admonition.css';
 import '../styles/mdx-components.css';
 import '../styles/globals.css';
 import * as React from 'react';
-import { Provider } from 'react-redux';
 import { makeStyles } from '@mui/styles';
 import { CssBaseline, Typography } from '@mui/material';
 import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
@@ -13,7 +12,6 @@ import TagManager from 'react-gtm-module';
 import TopNav from '../features/top-nav/index';
 import Footer from '../features/footer';
 import theme from '../styles/theme';
-import store from '../redux/store';
 import CustomLink from '../features/custom-link';
 import CookiesPopup from '../features/cookies-popup';
 
@@ -65,7 +63,7 @@ export default function MyApp(props) {
   const responsiveTheme = responsiveFontSizes(theme);
 
   return (
-    <Provider store={store}>
+    <>
       <Head>
         <meta
           name="author"
@@ -100,6 +98,6 @@ export default function MyApp(props) {
         <Footer />
         <CookiesPopup />
       </ThemeProvider>
-    </Provider>
+    </>
   );
 }

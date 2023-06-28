@@ -24,6 +24,7 @@ function _serializeContentData(filePath, data) {
   const itemPath = type === 'pages' ? postSlug : normalizedPath;
   const host = process.env.NEXT_PUBLIC_BASE_URL || '';
 
+  console.log(data);
   return {
     ...data,
     type,
