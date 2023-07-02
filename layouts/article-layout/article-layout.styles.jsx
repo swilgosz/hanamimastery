@@ -11,16 +11,18 @@ export const useStyles = makeStyles((theme) => ({
     minHeight: theme.spacing(75),
     color: theme.palette.common.white,
   },
-  heroFilter: {
-    flexGrow: 1,
-    backdropFilter: 'brightness(0.35)',
+  heroFilterWrapper: {
     display: 'flex',
+    flexGrow: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: theme.spacing(2),
-    fontSize: '2.125rem',
+    backdropFilter: 'brightness(0.35)',
+    gap: 12,
+  },
+  heroTitle: {
     fontWeight: '400',
+    padding: theme.spacing(2),
     lineHeight: '1.235',
     letterSpacing: '0.00735em',
   },

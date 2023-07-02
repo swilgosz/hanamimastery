@@ -22,6 +22,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     backdropFilter: 'brightness(0.35)',
+    gap: 12,
   },
   heroTitle: {
     fontWeight: '400',

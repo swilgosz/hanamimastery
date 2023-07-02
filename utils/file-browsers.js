@@ -43,6 +43,12 @@ export async function getPaths(contentType) {
     paths = [...paths, ...episodes.map((slug) => path.join('episodes', slug))];
   }
 
+  if (contentType === 'authors' || !contentType) {
+    const authors = await getSlugs('authors');
+
+    paths = [...paths, ...authors.map((slug) => path.join('authors', slug))];
+  }
+
   return paths;
 }
 

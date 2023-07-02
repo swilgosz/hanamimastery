@@ -14,7 +14,8 @@ const links = [
   { id: 4, href: '/about', label: 'About' },
   { id: 5, href: '/collaboration', label: 'Collaboration' },
   { id: 6, href: '/sponsors', label: 'Sponsors' },
-  { id: 7, href: '/feed', label: 'RSS', icon: '/rss-feed-icon.png' },
+  { id: 7, href: '/authors', label: 'Authors' },
+  { id: 8, href: '/feed', label: 'RSS', icon: '/rss-feed-icon.png' },
 ];
 
 const MenuItems = () =>

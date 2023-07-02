@@ -9,6 +9,6 @@ socialLinks:
   website: 'https://nbcasts.com'
 ---
 
-A founder of [NBcasts](https://hanamimastery.com) and [content_for :devs](https://www.contentfor.devs) podcast.
+A founder of [NBcasts](https://hanamimastery.com) and [content_for_devs](https://www.contentfor.devs) podcast.
 
 I am ruby developer, that likes to share what he knows since always.
