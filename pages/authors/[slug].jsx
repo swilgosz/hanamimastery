@@ -18,23 +18,28 @@ export default function Episode({ mdxSource, frontMatter, episodesByAuthor }) {
             {name}
           </Typography>
           <MDXRemote {...mdxSource} components={components} />
-          <Typography variant="h5" fontWeight="bold">
-            Check my socials:
-          </Typography>
-          <Container
-            sx={{ display: 'flex', flexDirection: 'column' }}
-            component="ul"
-          >
-            {Object.entries(socialLinks).map(([key, value]) => (
-              <Box component="li" key={key}>
-                <CustomLink href={value}>
-                  <Typography textTransform="capitalize" display="inline">
-                    {key}
-                  </Typography>
-                </CustomLink>
-              </Box>
-            ))}
-          </Container>
+          {socialLinks && (
+            <>
+              <Typography variant="h5" fontWeight="bold">
+                Check my socials:
+              </Typography>
+              <Container
+                sx={{ display: 'flex', flexDirection: 'column' }}
+                component="ul"
+              >
+                {Object.entries(socialLinks).map(([key, value]) => (
+                  <Box component="li" key={key}>
+                    <CustomLink href={value}>
+                      <Typography textTransform="capitalize" display="inline">
+                        {key}
+                      </Typography>
+                    </CustomLink>
+                  </Box>
+                ))}
+              </Container>
+            </>
+          )}
+
           <Typography variant="h4" fontWeight="bold" textAlign="center" mb={2}>
             Episodes/articles by {name}:
           </Typography>
