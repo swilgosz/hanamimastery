@@ -13,7 +13,7 @@ export default function Episode({ mdxSource, frontMatter, episodesByAuthor }) {
   return (
     <ArticlesLayout
       article={
-        <Container maxWidth="lg" mb={2}>
+        <Container maxWidth="lg" sx={{ mb: 2 }}>
           <Typography variant="h4" fontWeight="bold" mb={2}>
             {name}
           </Typography>
