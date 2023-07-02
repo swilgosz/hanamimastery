@@ -27,7 +27,7 @@ export default function AuthorIndex({ authors }) {
         </Typography>
         <Container sx={{ display: 'flex', flexWrap: 'wrap' }}>
           {authors.map((author) => {
-            const { avatar, name, url, slug } = author;
+            const { avatar, name, slug } = author;
 
             return (
               <Grid
@@ -63,7 +63,7 @@ export default function AuthorIndex({ authors }) {
                   )}
                 </Grid>
                 <Grid item xs={12}>
-                  <CustomLink href={url}>
+                  <CustomLink href={`authors/${slug}`}>
                     <Typography textAlign="center">{name}</Typography>
                   </CustomLink>
                 </Grid>
