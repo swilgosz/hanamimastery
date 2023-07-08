@@ -28,17 +28,29 @@ function _serializeContentData(filePath, data) {
     ...data,
     type,
     premium: data.premium || false,
-    fullTitle: type === 'episodes' ? `#${data.id} ${data.title}` : data.title,
+    ...(data.title && {
+      fullTitle: type === 'episodes' ? `#${data.id} ${data.title}` : data.title,
+    }),
     slug: postSlug,
     path: itemPath,
     url: `${host}/${itemPath}`,
     namespace: type,
-    thumbnail: {
+    ...(data.thumbnail && {
       full: `${host}${data.thumbnail.full}`,
       big: `${host}${data.thumbnail.big}`,
       small: `${host}${data.thumbnail.small}`,
-    },
+    }),
   };
+}
+
+function getAuthorData(author) {
+  if (author) {
+    const authorPath = `authors/${author}`;
+    const authorSource = readFileByPath(authorPath);
+    const { data } = matter(authorSource);
+    return data;
+  }
+  return {};
 }
 
 /*
@@ -50,7 +62,6 @@ function _serializeContentData(filePath, data) {
 export async function getContentBySlug(type, slug) {
   const filePath = slug ? `${type}/${slug}` : type;
   const source = readFileByPath(filePath);
-
   const { data, content } = matter(source);
   const headings = [];
   const mdxSource = await serialize(content, {
@@ -64,6 +75,7 @@ export async function getContentBySlug(type, slug) {
     },
   });
 
+  const authorData = getAuthorData(data.author);
   return {
     mdxSource,
     frontMatter: {
@@ -71,6 +83,7 @@ export async function getContentBySlug(type, slug) {
       wordCount: content.split(/\s+/gu).length,
       readingTime: readingTime(content),
       ..._serializeContentData(filePath, data),
+      authorData,
     },
   };
 }
@@ -87,6 +100,7 @@ export async function getContent(type) {
   return paths.reduce((allPosts, filePath) => {
     const source = readFileByPath(filePath);
     const { data } = matter(source);
+
     if (!data.published) return allPosts;
 
     return [_serializeContentData(filePath, data), ...allPosts].sort(
@@ -154,4 +168,15 @@ export async function getRelatedContent(post) {
   }
 
   return sortRelatedPosts.slice(0, relatedPostsReturned);
+}
+
+export async function getAuthors(type) {
+  const paths = await getPaths(type);
+
+  return paths.reduce((allAuthors, filePath) => {
+    const source = readFileByPath(filePath);
+    const { data } = matter(source);
+
+    return [_serializeContentData(filePath, data), ...allAuthors];
+  }, []);
 }

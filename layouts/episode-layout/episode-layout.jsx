@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { Grid, Container, Typography, Box } from '@mui/material';
 import { useRouter } from 'next/router';
 import { SeoComponent } from '../../features/seo';
@@ -15,12 +14,14 @@ import YoutubeEmbed from '../../features/youtube-embed';
 import SidebarSponsors from '../../features/sidebar-sponsors';
 import SidebarJobOffers from '../../features/sidebar-job-offers';
 import ProTag from '../../features/content/pro-tag';
+
 import {
   shouldDisplayArticle,
   shouldDisplayDiscussions,
   shouldDisplayVideo,
 } from '../../utils/display-queries';
 import TableOfContents from '../../features/table-of-contents/table-of-contents';
+import AuthorLink from '../../features/author-link';
 
 const EpisodeLayout = ({ episode, children }) => {
   const classes = useStyles();
@@ -29,8 +30,17 @@ const EpisodeLayout = ({ episode, children }) => {
     query: { view },
   } = useRouter();
 
-  const { topics, videoId, title, thumbnail, id, excerpt, url, discussions } =
-    episode;
+  const {
+    topics,
+    videoId,
+    title,
+    thumbnail,
+    id,
+    excerpt,
+    url,
+    discussions,
+    authorData,
+  } = episode;
 
   const displayArticle = React.useMemo(
     () => shouldDisplayArticle(view),
@@ -63,7 +73,7 @@ const EpisodeLayout = ({ episode, children }) => {
         className={classes.hero}
         style={{ backgroundImage: `url("${thumbnail.full}")` }}
       >
-        <div className={classes.heroFilterWrapper}>
+        <Container className={classes.heroFilterWrapper} maxWidth="100vw">
           <Typography variant="h1" align="center" className={classes.heroTitle}>
             {title}
           </Typography>
@@ -71,11 +81,10 @@ const EpisodeLayout = ({ episode, children }) => {
             variant="h5"
             align="center"
             className={classes.heroSubtitle}
-          >
-            {`Episode #${id}`}
-            <ProTag pro={episode.premium} />
-          </Typography>
-        </div>
+          >{`Episode #${id}`}</Typography>
+          <ProTag pro={episode.premium} />
+          <AuthorLink authorData={authorData} />
+        </Container>
       </section>
       <Container className={classes.container} component="main">
         <Grid container spacing={3}>

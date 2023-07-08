@@ -13,6 +13,7 @@ import GHSponsor from '../../features/gh-sponsor';
 import ShareButtons from '../../features/share-buttons';
 import SidebarSponsors from '../../features/sidebar-sponsors';
 import SidebarJobOffers from '../../features/sidebar-job-offers';
+import AuthorLink from '../../features/author-link';
 
 import {
   shouldDisplayArticle,
@@ -26,7 +27,16 @@ const ArticleLayout = ({ article, children }) => {
     query: { view },
   } = useRouter();
 
-  const { topics, title, thumbnail, id, excerpt, url, discussions } = article;
+  const {
+    topics,
+    title,
+    thumbnail,
+    id,
+    excerpt,
+    url,
+    discussions,
+    authorData,
+  } = article;
 
   const displayArticle = React.useMemo(
     () => shouldDisplayArticle(view),
@@ -51,9 +61,17 @@ const ArticleLayout = ({ article, children }) => {
         className={classes.hero}
         style={{ backgroundImage: `url("${thumbnail.full}")` }}
       >
-        <Typography variant="h1" align="center" className={classes.heroFilter}>
-          {title}
-        </Typography>
+        <Container className={classes.heroFilterWrapper} maxWidth="100vw">
+          <Typography variant="h1" align="center" className={classes.heroTitle}>
+            {title}
+          </Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            className={classes.heroSubtitle}
+          >{`Episode #${id}`}</Typography>
+          <AuthorLink authorData={authorData} />
+        </Container>
       </section>
       <Container className={classes.container} maxWidth="xl" component="main">
         <Grid container spacing={3}>

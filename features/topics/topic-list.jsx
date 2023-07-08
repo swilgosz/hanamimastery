@@ -3,7 +3,6 @@ import React from 'react';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { nanoid } from '@reduxjs/toolkit';
 import TopicButton from './topic-button';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +24,7 @@ export default function TopicList({ topics }) {
     <Box className={classes.root}>
       {displayedTopics.length
         ? displayedTopics.map((topic) => (
-            <TopicButton key={nanoid()} topic={topic} />
+            <TopicButton topic={topic} key={`key-${topic}`} />
           ))
         : null}
     </Box>

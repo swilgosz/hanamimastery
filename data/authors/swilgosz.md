@@ -1,6 +1,7 @@
 ---
 slug: 'swilgosz'
 name: 'Sebastian Wilgosz'
+avatar: images/team/swilgosz-avatar.jpg
 socialLinks:
   github: 'https://github.com/swilgosz'
   twitter: 'https://twitter.com/sebwilgosz'
@@ -9,6 +10,6 @@ socialLinks:
   website: 'https://hanamimastery.com'
 ---
 
-A founder of [@HanamiMastery](https://hanamimastery.com) and and [content_for :devs](https://www.contentfor.devs) podcast, Karate master, piano guy, husband, father, and productivity madman.
+A founder of [@HanamiMastery](https://hanamimastery.com) and [content_for_devs](https://www.contentfor.devs) podcast, Karate master, piano guy, husband, father and productivity madman.
 
 I love to make others' lives better as mine is quite good already.
