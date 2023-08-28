@@ -11,9 +11,9 @@ thumbnail:
 
 <Grid container spacing={2}>
   <Grid item xs={12} md={6}>
-  <Typography paragraph>Hi, I'm <strong>Seb Wilgosz</strong>, and I run [HanamiMastery](https://hanamimastery.com) to help you get into [Hanami framework](https://hanamirb.org) as easily as possible.</Typography>
+  <Typography paragraph>Hi, I'm <strong>Seb Wilgosz</strong>, and I run [Hanami Mastery](https://hanamimastery.com) to help you get into [Hanami framework](https://hanamirb.org) as easily as possible.</Typography>
   <Typography paragraph>Among the others, I am an author of [Rails API course](https://www.udemy.com/course/ruby-on-rails-api-the-complete-guide) on Udemy and [Driggl blog](https://driggl.com).</Typography>
-  <Typography paragraph>I love Ruby, so <strong>I'd love to see the Ruby ecosystem evolving and changing</strong>. This is why Hanami Mastery came alive!</Typography>  
+  <Typography paragraph>I love Ruby, so <strong>I'd love to see the Ruby ecosystem evolving and changing</strong>. This is why Hanami Mastery came alive!</Typography>
 </Grid>
   <Grid item xs={12} md={6}>
   ![Sebastian Wilgosz](/images/team/swilgosz-small.jpg)
@@ -35,7 +35,7 @@ To make things worse, creating a great OpenSource project require great technica
 
 **Those two usually don't play well together**, which makes great open source maintainers and contributors to suffer for working for free.
 
-[HanamiMastery](https://hanamimastery.com) is a first step, to improve on that field.
+[Hanami Mastery](https://hanamimastery.com) is a first step, to improve on that field.
 
 ### Rules
 

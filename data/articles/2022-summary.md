@@ -18,9 +18,9 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/zx551b/hanami_mastery_2022_year_summary_and_next_plans/
 category: stray
 ---
-It's this time of a year, when your mind works in a special way. You can close a chapter, and start fresh, adjust, rethimk, adapt.
+It's this time of a year, when your mind works in a special way. You can close a chapter, and start fresh, adjust, rethink, adapt.
 
-However hard this year was for you, you are here, and this is great! This is a huge achievent in itself. Now what will the next one look for you?
+However hard this year was for you, you are here, and this is great! This is a huge achievement in itself. Now what will the next one look for you?
 
 Life is running, but it's always worthy to stop for a while and think about last months. 
 
@@ -49,7 +49,7 @@ If you are wondering, why I'm writing it, there are a few reasons.
 
 Hanami Mastery is a result of multiple businesses, and people I've met directly or indirectly in my life. **It was possible because those people documented their journey**.
 
-I've written last year about [why I give so much appreciation](/articles/giving-appreciation), but nothing changed since that. If Ali Abdaal would not publish his [[TODO]] crappy first video recorded on the phone, he would not be a multimillionaire, but neither I would know, that [first 100 videos on youtube does not matter](https://aliabdaal.com/9-lessons-from-4-years-on-youtube/).
+I've written last year about [why I give so much appreciation](/articles/giving-appreciation), but nothing changed since that. If Ali Abdaal would not publish his [crappy first video](https://youtu.be/MpevcHafHZI?si=BhuWVyD3eGc84n0U) recorded on the phone, he would not be a multimillionaire, but neither I would know, that [first 100 videos on youtube does not matter](https://aliabdaal.com/9-lessons-from-4-years-on-youtube/).
 
 Maybe, just maybe, somebody will find it useful, that [I've tracked my Hanami Mastery finances since day one](/about), and documented chronologically, what I achieved.
 
@@ -57,15 +57,15 @@ Maybe, just maybe, somebody will find it useful, that [I've tracked my Hanami Ma
 
 While other people do matter, I also have personal interest in all of this. This interest is - make thinking easier.
 
-Let's be honest. My memory sucks.
+Let's be honest. **My memory sucks**.
 
-I remember bank accounts and phone numbers, but you need to say your name to me 5 times before I will stop asking about it - and even then you cannot be sure I finally remembered or just got embarrassed enough to shut down.
+I remember bank accounts and phone numbers after hearing them once. I remembered a code to the gate's electric lock only because I saw somebody typed it once a year earlier. At the same time, you need to say your name to me 5 times before I will stop asking about it - and even then you cannot be sure I finally remembered or just got embarrassed enough to shut down.
 
 I find myself not remembering correctly facts from the past. The more time passed since the event happened, the more blurred the memory becomes, and I start remembering only the most important facts, instead of the whole context around it.
 
 While this is not so extreme, I would love to remember more. Remember when sth happened, what were my thoughts then, and what other events could affect it all.
 
-I don't remember long-term suffering. I don't remember sleepless nights. I don't remember the euphoria from the first person who supported my work! After some time I only know that I was happy, or struggling.
+I don't remember long-term suffering. I don't remember sleepless nights. I don't remember the euphoria from the first person who supported my work! **After some time I only know that I was happy, or struggling during a given tome period.**
 
 That's not something I enjoy. I'd love to remember things better, to remember the process, and to be able referring to that in my future work.
 
@@ -97,29 +97,29 @@ Let's dig into each of them.
 
 Since my first kid had been born, I definitely reduced the amount of books I'm reading. In the past I was able to read dozens of books during the year, but not anymore.
 
-However, to grow as a person, as a programmer and entrepreneur, books are like a sport. You can live without them, but you'll loose a lot of potential.
+However, to grow as a person, as a programmer and entrepreneur, **books are like a sport**. You can live without them, but you'll loose a lot of potential.
 
-**I'm reading tons of articles**, as I'm paid for being up-to-date with Ruby stuff, but its not the same. Im reality, reading articles is similar to memories. What I've read was blurred and mixed together, and often I could not recall the source form where I knew something.
+**I'm reading tons of articles**, as I'm paid for being up-to-date with Ruby and engineering stuff, **but its not the same**. In reality, reading articles is similar to memories. What I've read was blurred and mixed together, and often I could not recall the source form where I knew something.
 
-Another thing related tonthat, and possibly evwn more important is, that I wanted to get back to the habit of reading, but **not just reading.** 
+Another thing related to that, and possibly even more important is, that I wanted to get back to the habit of reading, but **not just reading.** 
 
 I wanted to Read, annotate, process, and reuse my knowledge. With the help of knowledge funneling, this actually was possible. I'll write about it on the other occasion though.
 
 At the end of the year, I met my goal and even more. **I've read 21 books**, either technical or helping me to grow in different directions I'm targetting.
 
-At some point I'll make a list for you, with reviews - because with SecondBrain it's possible :).
+At some point I'll make a list for you, with reviews - because with *Second Brain* it's possible :).
 
 ### 2. Figure out processes to release videos weekly.
 
-One person said, that *"almost does not count"*. I don't agree, but... Yeah, I did not met this at all.
+One person said, that *"almost does not count"*. I don't agree, but... Yeah, **I did not met this at all**.
 
-In 2022 we released **25 episodes**. 2022 Has 52 weeks, so **I've been releasing a video more or less every other week**.
+In 2022 we released **25 episodes**. 2022 Had 52 weeks, so **I've been releasing a video more or less every other week**.
 
 It's not my target, so I'll definitely continue improving in 2023. However, I do need to admit. I'm proud of what we were able to achieve. 25 episodes with kids and full-time job, is a grind and I don't gonna lie.
 
 However, **comparing to the previous year**, this is more than twice as much! **In 2021 I've released 11 episodes**, so there is progress, and this is the thing that matter.
 
-But I'm excited because it's just the beginning!
+Despite not meeting this goal, I'm excited because it's just the beginning!
 
 ### 4. Help with delivering Hanami 2.0 by contributing to the guides
 
@@ -127,7 +127,7 @@ This goal was super important, but it was very hard to find the time for this. D
 
 This was very demotivating, and it was tough for me to consistently contribute to the Hanami guides.
 
-In the end, thanks to the [Andrew Croome](https://github.com/andrewcroome) who jumped into the team when we needed him, we've been able to pull Hanami 2.0 guides together :). Teamwork is everything!
+In the end, thanks to the [Andrew Croome](https://github.com/andrewcroome) who jumped into the team when we needed him, we've been able to pull [Hanami 2.0 guides together](https://guides.hanamirb.org) :). Teamwork is everything!
 
 This goal would never be met if I would work on this alone, but fortunately, I did not need to! Thanks, everyone who contributed to the endless slack discussions, for making it possible!
 
@@ -167,11 +167,11 @@ I still keep doors open, to do more guest blogging in next year, as it brings di
 
 Will see. For now, completely missed a goal.
 
-#### 3. Build a team to spread the work needed to produce great screencast
+#### 3. Build a team to spread the work needed to produce great screencasts
 
-Delegation and utomation are the keys to scale up anything. 
+Delegation and automation are the keys to scale up anything. 
 
-In Programming, at some point, when you start reaching out to staff-level roles in the company, learning how to delegate is crucial.
+In Programming, at some point, when you start reaching staff-level roles in the company, learning how to delegate is crucial.
 
 The same when you drive a company.
 
@@ -240,7 +240,7 @@ For sure no!
 1. Publish 50 new episodes.
   1. Reduce my daily job to 4 days per week.
   2. Use this time, to ensure regular content publications (weekly)
-2. Generate $10/month of income, so we can bring education to the next level.
+2. Generate $10k/month of income, so we can bring education to the next level.
   1. Develop processes for Hanami Mastery PRO, and bring more clients to it.
   2. Automate some processes.
   3. Encourage more companies to support *Hanami Mastery* and *Content for devs*.

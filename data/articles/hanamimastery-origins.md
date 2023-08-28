@@ -120,7 +120,7 @@ I could not argue - and actually, I was one of the people advocating sticking wi
 
 However, I really believe the Hanami is so greatly designed, it can become a new "go-to" web framework for ruby apps and I really wanted it to succeed.
 
-Here is where [HanamiMastery](https://hanamimastery.com)'d been born.
+Here is where [Hanami Mastery](https://hanamimastery.com)'d been born.
 
 ### HanamiMastery is born
 
