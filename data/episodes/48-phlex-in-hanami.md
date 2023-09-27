@@ -2,15 +2,15 @@
 id: 48
 aliases:
   - HMEP048
-author: swilgosz
+author: "swilgosz"
 topics:
   - views
   - hanami
-title: Phlex with Hanami - make your views written in Ruby. Completely.
-excerpt: There is a famous video about the IT skill iceberg - but thankfully, there is an alternative. If you ever wondered if you can build entire websites without HTML overhead, now you can! Meet Phlex, a view engine, where you can write Ruby instead of HTML
-videoId: Vg-ifUh-r4Q
-publishedAt: 2023-09-27
-modifiedAt: 2023-09-27
+title: "Phlex with Hanami - make your views written in Ruby. Completely."
+excerpt: "There is a famous video about the IT skill iceberg - but thankfully, there is an alternative. If you ever wondered if you can build entire websites without HTML overhead, now you can! Meet Phlex, a view engine, where you can write Ruby instead of HTML"
+videoId: "Vg-ifUh-r4Q"
+publishedAt: "2023-09-27"
+modifiedAt: "2023-09-27"
 thumbnail:
   full: /images/episodes/48/cover-full.png
   big: /images/episodes/48/cover-big.png
