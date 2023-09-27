@@ -2,15 +2,15 @@
 id: 48
 aliases:
   - HMEP048
-author: swilgosz
+author: "swilgosz"
 topics:
   - views
   - hanami
-title: Phlex with Hanami - make your views written in Ruby. Completely.
-excerpt: There is a famous video about the IT skill iceberg - but thankfully, there is an alternative. If you ever wondered if you can build entire websites without HTML overhead, now you can! Meet Phlex, a view engine, where you can write Ruby instead of HTML
-videoId: 
-publishedAt: 2023-08-04
-modifiedAt: 2023-08-04
+title: "Phlex with Hanami - make your views written in Ruby. Completely."
+excerpt: "There is a famous video about the IT skill iceberg - but thankfully, there is an alternative. If you ever wondered if you can build entire websites without HTML overhead, now you can! Meet Phlex, a view engine, where you can write Ruby instead of HTML"
+videoId: "Vg-ifUh-r4Q"
+publishedAt: "2023-09-27"
+modifiedAt: "2023-09-27"
 thumbnail:
   full: /images/episodes/48/cover-full.png
   big: /images/episodes/48/cover-big.png
@@ -22,7 +22,7 @@ discussions:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: https://github.com/hanamimastery/episodes/tree/main/048
-published: false
+published: true
 ---
 When I started with web development, I remember this overwhelming feeling, after starting to gain information about new tech stacks, more modern tech stacks, and **even more** modern tech stacks. I did it in the pace, I could not even process the information.
 
@@ -199,7 +199,7 @@ In the body, I'll set a div with a `container` class, and yield whatever will us
 
 Then in the `head` block, I'm going to add a stylesheet link, loading *Bulma* from the CDN. If this is too fast, I'm sorry - I'm kind of speeding through the *Bulma* itself because I already covered it in 2 of my previous episodes. Check them out if you want to learn more about this amazing CSS framework.
 
-[🎬 28 ] For now, let me switch to the view file and use my newly created Layout. To do this, I just need to call the `render` method, and instantiate my `ApplicationLayout`, passing the content of my view as a block to the *new* method. It'll be all yielded within the body, applying anything defined in the layout as you may expect.
+For now, let me switch to the view file and use my newly created Layout. To do this, I just need to call the `render` method, and instantiate my `ApplicationLayout`, passing the content of my view as a block to the *new* method. It'll be all yielded within the body, applying anything defined in the layout as you may expect.
 
 ```ruby
 # frozen_string_literal: true
@@ -233,7 +233,7 @@ Yes, I know you still need to somewhat know the HTML tags, *Phlex* does not elim
 Let me jump into the more complex example though.
 ## More complex example
 
-[🎬30] I want to add a navigation to my layout, as I had in my previous episode. For this, let me copy the HTML I had before, and adjust to the Ruby syntax.
+I want to add a navigation to my layout, as I had in my previous episode. For this, let me copy the HTML I had before, and adjust to the Ruby syntax.
 
 All you see seems to be pretty intuitive. We call the HTML tag as method, passing the attributes into the brackets, and opening the block to place elements inside.
 
