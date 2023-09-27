@@ -16,11 +16,11 @@ thumbnail:
   big: /images/episodes/48/cover-big.png
   small: /images/episodes/48/cover-small.png
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/@hanamimastery/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1707062634502090938
+  mastodon: https://ruby.social/@hanamimastery/111137983649643097
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/16togwv/phlex_with_hanami_make_your_views_written_in_ruby/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/16tommx/phlex_with_hanami_make_your_views_written_in_ruby/
 source: https://github.com/hanamimastery/episodes/tree/main/048
 published: true
 ---
