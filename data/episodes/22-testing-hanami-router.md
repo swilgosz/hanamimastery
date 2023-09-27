@@ -46,7 +46,7 @@ First of all, I'll get the application router object and assign this to a variab
 require "spec_helper"
 
 RSpec.describe "Routes" do
-  let(:router) { Sandbox::Application.router }
+  let(:router) { Sandbox::App.router }
 end
 ```
 
@@ -153,7 +153,7 @@ Then you have the _path_ information, which consists of static and dynamic segme
 This is quite a bit of information, and in Hanami you may get access to all that information by writing a reverse test scenario.
 
 ### Route recognition tests
-In the test file, instead of taking the route name as an argument and checking the generated path, I can instead pass the generated path to the `recognize method`, and verify if all the information from this route is properly served by our application.
+In the test file, instead of taking the route name as an argument and checking the generated path, I can pass the generated path to the `recognize method`, and verify if all the information from this route is properly served by our application.
 
 Therefore, I can check the `path`, HTML method, and all the params recognized by my router correctly.
 
