@@ -293,7 +293,7 @@ Instead, I'll leave it to you as homework.
 Let me know in the comments if you managed to pull it together, and don't forget to send some appreciation to Joel! He does a great job, going against the flow of the mainstream approach.
 ## Summary
 
-I love that tools like *Phlex* appear in the Ruby ecosystem, and I'll definitely promote more of such. Pushing boundaries is important to keep innovation appearing in the community, and I love those fresh examples of new approaches to the old problems.
+I love that tools like *Phlex* appear in the Ruby ecosystem, and I'll definitely promote more of such. Pushing boundaries is important to keep innovation appearing in the community, and I love those fresh examples of new approaches to the old problems. I am also super glad that other blogs also started to cover them (you can find [Phlex mentions on the NB casts](https://nbcasts.com/episodes/more-phlex)).
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/hanamimastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 ## Thanks
