@@ -41,12 +41,18 @@ Even if you'll skip most of it, and have already decided that you want to work w
 - Javascript
 - ...and more
 
-Even with technology like [HTMX](/episodes/40-hanamismith) or [Hotwire](https://www.hotrails.dev/), limiting your JS requirements to the bare minimum, You cannot avoid writing HTML, right? 
+Even with technology like [HTMX](/episodes/40-hanamismith) or [Hotwire](https://www.hotrails.dev/), limiting your JS requirements to the bare minimum, You cannot avoid writing HTML, right?
 
 ![No need HTML for web meme](/images/episodes/48/meme-blog.png)
 
 Well... not right, actually.
+
+:::warning Disclaimer
+By reading this article you may get an inpression, that it suggests that you can skip learning HTML completely which is not true. It's a humorous way to point out that you can decide to start learning ruby and write complete applications in pure Ruby, however you'll need to learn HTML tags anyway.
+:::
+
 ## Meet Phlex
+
 Different people started to address this issue, of web development being too complicated. Tools like
 *HTMX* and *Hotwire* allow you to skip writing *Javascript*, and work only with *HTML* documents being sent to the server, and new documents being sent back.
 
@@ -103,7 +109,7 @@ module Sandbox
 end
 ```
 
-Now, because I work on the existing project, let me clean up a few things. In the `main` slice view configuration object, I have a templates path defined - I can remove that. 
+Now, because I work on the existing project, let me clean up a few things. In the `main` slice view configuration object, I have a templates path defined - I can remove that.
 
 ```ruby
 module Main
@@ -138,7 +144,7 @@ module Sandbox
 end
 ```
 
-Let me paste here a hello-world sort of thing, copying from the *phlex* documentation. It is supposed to render a nice welcome message, a bolded string underneath, followed by a paragraph. 
+Let me paste here a hello-world sort of thing, copying from the *phlex* documentation. It is supposed to render a nice welcome message, a bolded string underneath, followed by a paragraph.
 
 However, to render it well, I need to yet call this view, so let me visit my action file.
 
@@ -156,7 +162,7 @@ module Sandbox
 end
 ```
 
-As you can see, I only need to instantiate the view class here, because Hanami calls the `render` method on the object returned by the class. 
+As you can see, I only need to instantiate the view class here, because Hanami calls the `render` method on the object returned by the class.
 
 I think that's all.
 
@@ -288,7 +294,7 @@ Instead, I'll leave it to you as homework.
 
 ![Disgusted](/images/episode qws/48/disgusted.jpg)
 
-**Yep! Love you too!** 
+**Yep! Love you too!**
 
 Let me know in the comments if you managed to pull it together, and don't forget to send some appreciation to Joel! He does a great job, going against the flow of the mainstream approach.
 ## Summary
