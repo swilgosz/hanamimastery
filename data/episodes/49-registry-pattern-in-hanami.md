@@ -383,7 +383,8 @@ What are those benefits?
 
 In short, with one gem addition, Hanami manages to give us ease of configuration and a lot of benefits, leveraging the registry pattern implemented on the extreme level.
 ## Thanks
-I would love to thank our episode partner and would love to hear if you like this sort of things as I'd love to collaborate with more people in the future!
+
+I would love to thank our [episode partner](https://nbcasts.com) and would love to hear if you like this sort of things as I'd love to collaborate with more people in the future!
 
 For that, you can like, share, and comment on my episode discussion threads! We can do more if we do it together!
 
