@@ -14,15 +14,15 @@ published: true
 publishedAt: "2023-10-03"
 modifiedAt: "2023-10-03"
 thumbnail:
-  full: /images/episodes/44/cover-full.jpeg
-  big: /images/episodes/44/cover-big.jpeg
-  small: /images/episodes/44/cover-small.jpeg
+  full: /images/episodes/49/cover-full.jpeg
+  big: /images/episodes/49/cover-big.jpeg
+  small: /images/episodes/49/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/1656013134035918877
   mastodon: https://ruby.social/@hanamimastery/110340379572394441
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/13d34bu/lets_make_a_blog_with_bridgetown_hanami_mastery/
-source: https://github.com/hanamimastery/episodes/tree/main/044
+source: https://github.com/hanamimastery/episodes/tree/main/049
 ---
 Hi there!
 
