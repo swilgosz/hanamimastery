@@ -9,20 +9,20 @@ topics:
   - dependency-injection
 title: "Registry Pattern in Hanami apps"
 excerpt: "Registry pattern is one of many programming best practices, applied by default in Hanami projects. In this episode, we deep dive into how the registry pattern is used in Hanami apps and explain how it works."
-videoId: ""
-published: false
+videoId: "gbK_VjPwhfU"
+published: true
 publishedAt: "2023-10-03"
 modifiedAt: "2023-10-03"
 thumbnail:
-  full: /images/episodes/44/cover-full.jpeg
-  big: /images/episodes/44/cover-big.jpeg
-  small: /images/episodes/44/cover-small.jpeg
+  full: /images/episodes/49/cover-full.jpeg
+  big: /images/episodes/49/cover-big.jpeg
+  small: /images/episodes/49/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/1656013134035918877
   mastodon: https://ruby.social/@hanamimastery/110340379572394441
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/13d34bu/lets_make_a_blog_with_bridgetown_hanami_mastery/
-source: https://github.com/hanamimastery/episodes/tree/main/044
+source: https://github.com/hanamimastery/episodes/tree/main/049
 ---
 Hi there!
 
@@ -69,7 +69,7 @@ end
 We've passed the database to two classes so far. As I said before, this is a tiny app, and by that, I mean that it's an application that implements, at its core, only four classes.
 At this rate, if we keep growing it, we'll end up passing the database to dozens of objects.
 
-``` {.bash org-language="sh"}
+```bash
 tree lib
 lib
 ├── database.rb
@@ -84,18 +84,20 @@ This dependency management problem can get very complex very quickly.
 
 But Hanami provides us with a solution: dependency injection using [dry-system](https://dry-rb.org/gems/dry-system/1.0/).
 To use the `dry-system` integration, we first need to create a `provider` under the `config/providers` directory.
-``` {.bash org-language="sh"}
+```bash
 $ mkdir config/providers
 ```
 
 Since on the `TodoApp` class, we access the database through the `db` attribute reader,we'll call our provider with the same name. Let's create the `db.rb` file
-``` {.bash org-language="sh"}
+
+```bash
 $ touch config/providers/db.rb
 ```
 
 Inside this file, we register a new providercalled `:db` and we pass it a block.
 Then we call the start methodand on it's block,we create the database instance.
 Finally, we registerthe `db` provider, passing in our `mongo_db` object.
+
 ``` ruby
 Hanami.app.register_provider(:db) do
   start do
@@ -201,7 +203,7 @@ Since the `TodoApp` class is the entrypoint to our system, we don't need to chan
 
 Lets do it by running the specs.There's an `ArgumentError` in the initializer.
 
-``` {.bash org-language="sh"}
+```bash
 docker-compose run --rm web sh -c "bundle exec rspec --options /app/.rspec /app/spec"
 [+] Running 1/0
 ⠿ Container hanami-app-mongodb-1  Running                       0.0s
@@ -381,7 +383,8 @@ What are those benefits?
 
 In short, with one gem addition, Hanami manages to give us ease of configuration and a lot of benefits, leveraging the registry pattern implemented on the extreme level.
 ## Thanks
-I would love to thank our episode partner and would love to hear if you like this sort of things as I'd love to collaborate with more people in the future!
+
+I would love to thank our [episode partner](https://nbcasts.com) and would love to hear if you like this sort of things as I'd love to collaborate with more people in the future!
 
 For that, you can like, share, and comment on my episode discussion threads! We can do more if we do it together!
 
