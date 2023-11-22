@@ -1,13 +1,16 @@
 ---
 id: 3
-author: "swilgosz"
-topics: ["hanami", "hanami-view" ]
+author: swilgosz
+topics:
+  - "hanami"
+  - "views"
 title: "Style your Hanami App with Bulma using Hanami Assets"
 excerpt: "In this episode I make use of Bulma CSS framework and integrate it with Hanami 2.0 application to prettify it with the least effort possible."
 published: true
 publishedAt: "2021-05-30"
 modifiedAt: "2021-10-03"
-aliases: ['HMEP003']
+aliases:
+  - HMEP003
 videoId: "tnOaUNfdgfo"
 thumbnail:
   full: /images/episodes/3/cover-full.jpeg
@@ -17,7 +20,7 @@ discussions:
   twitter: https://twitter.com/HanamiMastery/status/1399429644143706125
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/ns1don/style_your_hanami_app_with_bulma_using/
-source: https://github.com/hanamimastery/episodes/tree/main/003
+source: "https://github.com/hanamimastery/episodes/compare/HME003-pre...HME003"
 ---
 
 I have [this simple Hanami web application here](/episodes/2-listing-articles-with-hanami-view), listing sample blog articles with cat's images on top. Honestly, It's horrible. Really. And my goal for this episode is to **make it prettier with the least effort possible**.

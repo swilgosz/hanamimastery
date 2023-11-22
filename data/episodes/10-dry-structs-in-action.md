@@ -19,7 +19,7 @@ discussions:
     ruby: https://www.reddit.com/r/ruby/comments/qz98gt/10_model_your_business_with_structs_on_steroids/
     rails: https://www.reddit.com/r/rails/comments/qz9a70/10_model_your_business_with_structs_on_steroids/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/qz9akm/10_model_your_business_with_structs_on_steroids/
-source: https://github.com/hanamimastery/episodes/tree/main/010
+source: "https://github.com/hanamimastery/episodes/compare/HME010-pre...HME010"
 ---
 
 In this episode of Hanami Mastery, I will deep dive into the possible implementation of the parts from a business layer in your project and show you **why typed structs** can be useful in your system. To do this, I'll use [dry-struct](https://dry-rb.org/gems/dry-struct) as a struct initialization engine.

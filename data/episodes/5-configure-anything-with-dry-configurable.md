@@ -8,7 +8,7 @@ published: true
 publishedAt: "2021-06-19"
 modifiedAt: "2022-12-21"
 aliases: ['HMEP005']
-videoId: J_352sH25oc
+videoId: "J_352sH25oc"
 thumbnail:
   full: /images/episodes/5/cover-full.jpeg
   big: /images/episodes/5/cover-big.jpeg
@@ -19,7 +19,7 @@ discussions:
     ruby: https://www.reddit.com/r/ruby/comments/o9ha9h/5_configure_anything_with_dryconfigurable/
     rails: https://www.reddit.com/r/rails/comments/o9hbe8/5_configure_anything_with_dryconfigurable/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/o9hbrs/5_configure_anything_with_dryconfigurable/
-source: https://github.com/hanamimastery/episodes/tree/main/001
+source: "https://github.com/hanamimastery/episodes/compare/HME005-pre...HME005"
 ---
 When you write ruby gems or even reusable components, there is often a need for configuring your projects to behave differently in different contexts.
 

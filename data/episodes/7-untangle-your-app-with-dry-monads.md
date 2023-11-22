@@ -4,7 +4,7 @@ author: "swilgosz"
 topics: ['rails', 'dry-rb']
 title: "Untangle your code with MORE than service objects! Meet dry-monads!"
 excerpt: "Everyone knows how messy Rails controllers can be come. In this episode, I'm implementing the service-pattern on steroids using dry-monads in my sample Rails application."
-videoId: FnXezvNDnIg
+videoId: "FnXezvNDnIg"
 published: true
 publishedAt: "2021-07-23"
 modifiedAt: "2023-06-09"
@@ -19,7 +19,7 @@ discussions:
     ruby: https://www.reddit.com/r/ruby/comments/opyw3q/7_untangle_your_code_with_more_than_service/
     rails: https://www.reddit.com/r/rails/comments/opywct/7_untangle_your_code_with_more_than_service/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/opywku/7_untangle_your_code_with_more_than_service/
-source: https://github.com/hanamimastery/episodes/tree/main/007
+source: "https://github.com/hanamimastery/episodes/compare/HME007-pre...HME007"
 ---
 
 Recently I've written an article, where I've told about the decision process behind my attempt to [replace Rails with Hanami](https://www.useo.pl/blog/2021/07/trying-hanami-in-microservices) in our microservices ecosystem and why I decided not to do it **just yet**.

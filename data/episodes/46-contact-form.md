@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ['views', 'hanami', 'validations']
 title: "Contact Forms with Hanami View"
 excerpt: "With the release of Hanami 2.1, the view layer is fully integrated with our Hanami applications. Let's check how to make use of a form helper to send a contact email."
-videoId: CJaaB-gTwAc
+videoId: "CJaaB-gTwAc"
 published: true
 publishedAt: "2023-05-30"
 modifiedAt: "2023-05-30"
@@ -19,7 +19,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/13vn23z/contact_forms_with_hanami_view_hanami_mastery_046/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/13vn2fd/contact_forms_with_hanami_view_hanami_mastery_046/
-source: https://github.com/hanamimastery/episodes/tree/main/046
+source: "https://github.com/hanamimastery/episodes/compare/HME046-pre...HME046"
 ---
 
 With the [introduction of Hanami 2.1](https://github.com/hanami/hanami) the view layer get's in place so I've decided to play a bit with the form helpers to show you how we could use them.

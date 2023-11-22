@@ -1,11 +1,11 @@
 ---
 id: 48
 aliases:
-  - HMEP048
-author: "swilgosz"
+  - "HMEP048"
+author: swilgosz
 topics:
-  - views
-  - hanami
+  - "views"
+  - "hanami"
 title: "Phlex with Hanami - make your views written in Ruby. Completely."
 excerpt: "There is a famous video about the IT skill iceberg - but thankfully, there is an alternative. If you ever wondered if you can build entire websites without HTML overhead, now you can! Meet Phlex, a view engine, where you can write Ruby instead of HTML"
 videoId: "Vg-ifUh-r4Q"
@@ -21,7 +21,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/16togwv/phlex_with_hanami_make_your_views_written_in_ruby/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/16tommx/phlex_with_hanami_make_your_views_written_in_ruby/
-source: https://github.com/hanamimastery/episodes/tree/main/048
+source: "https://github.com/hanamimastery/episodes/compare/HME048-pre...HME048"
 published: true
 ---
 When I started with web development, I remember this overwhelming feeling, after starting to gain information about new tech stacks, more modern tech stacks, and **even more** modern tech stacks. I did it in the pace, I could not even process the information.

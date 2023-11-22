@@ -14,12 +14,12 @@ thumbnail:
   big: /images/episodes/50/cover-big.png
   small: /images/episodes/50/cover-small.png
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/@hanamimastery/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1712113932113179070
+  mastodon: https://ruby.social/@hanamimastery/111216941834797108
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: https://github.com/hanamimastery/episodes/tree/main/050
+    ruby: https://www.reddit.com/r/ruby/comments/175foiz/special_hanami_core_team_interview_hanami_mastery/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/175fpb4/special_hanami_core_team_interview_hanami_mastery/
+source: null
 published: true
 ---
 Hi everyone! 

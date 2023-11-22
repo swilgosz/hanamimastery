@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ['bridgetown', 'web']
 title: "Let's make a blog with Bridgetown"
 excerpt: "Bridgetown is the best static site generator for Ruby, and here is why."
-videoId: 4PWDNZsZ-L0
+videoId: "4PWDNZsZ-L0"
 published: true
 publishedAt: "2023-05-09"
 modifiedAt: "2023-05-09"
@@ -18,7 +18,7 @@ discussions:
   mastodon: https://ruby.social/@hanamimastery/110340379572394441
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/13d34bu/lets_make_a_blog_with_bridgetown_hanami_mastery/
-source: https://github.com/hanamimastery/episodes/tree/main/044
+source: "https://github.com/hanamimastery/episodes/compare/HME044-pre...HME044"
 ---
 
 Today I'm going to show you the *Bridgetown*, a progressive-site generator written in Ruby. Even though I'm not using it just yet, I'm going to be a heavy user relatively soon and therefore I wanted to do some digging into this topic for you.

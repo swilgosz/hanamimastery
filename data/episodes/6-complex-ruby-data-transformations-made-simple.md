@@ -8,7 +8,7 @@ published: true
 publishedAt: "2021-07-09"
 modifiedAt: "2022-04-29"
 aliases: ['HMEP006']
-videoId: JAJae1S4tDw
+videoId: "JAJae1S4tDw"
 thumbnail:
   full: /images/episodes/6/cover-full.jpeg
   big: /images/episodes/6/cover-big.jpeg
@@ -19,7 +19,7 @@ discussions:
     ruby: https://www.reddit.com/r/ruby/comments/ogu1lu/6_complex_ruby_transformations_made_simple_with/
     rails: https://www.reddit.com/r/rails/comments/ogu86y/6_complex_ruby_transformations_made_simple_with/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/ogu8e3/6_complex_ruby_transformations_made_simple_with/
-source: https://github.com/hanamimastery/episodes/tree/main/006
+source: "https://github.com/hanamimastery/episodes/compare/HME006-pre...HME006"
 ---
 
 I often work with hashes in plain ruby, especially when I prepare **standalone scripts or gem packages**, or [I need to deserialize the parameters comming to the server](/episodes/7-untangle-your-app-with-dry-monads), and there were plenty of situations where I needed to do some simple, or more complex data transformations to achieve the expected output.

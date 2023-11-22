@@ -1,13 +1,15 @@
 ---
 id: 1
-author: "swilgosz"
-topics: ["hanami"]
+author: swilgosz
+topics:
+  - "hanami"
 title: "Creating a new Hanami app from the template"
 excerpt: "How to create a brand new Hanami app lighting fast by using the Hanami application template."
 published: true
 publishedAt: "2021-05-10"
 modifiedAt: "2022-02-06"
-aliases: ['HMEP001']
+aliases:
+  - "HMEP001"
 videoId: "Gx4eqU-oDL8"
 thumbnail:
   full: /images/episodes/1/cover-full.jpeg
@@ -16,7 +18,7 @@ thumbnail:
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/1392320536596860928
   reddit: []
-source: https://github.com/hanamimastery/episodes/tree/main/001
+source: "https://github.com/hanamimastery/episodes/compare/HME001-pre...HME001"
 ---
 
 We're entering **a new era in the Ruby world**, there are no doubts about that! It's all because really soon a **completely rewritten** Hanami framework will have its next major release!

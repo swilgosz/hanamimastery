@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ['hanami', 'integrations']
 title: "Github integration with Hanami"
 excerpt: "If you're a developer, you know GitHub. And if you don't know Hanami, you definitely should. In this episode, I'll show you how to make them both to know each other."
-videoId: uMBrD6vLL2k
+videoId: "uMBrD6vLL2k"
 published: true
 publishedAt: "2023-05-12"
 modifiedAt: "2023-05-12"
@@ -17,7 +17,7 @@ thumbnail:
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/1656943095047503872
   mastodon: https://ruby.social/@hanamimastery/110354904368535568
-source: https://github.com/hanamimastery/episodes/tree/main/045
+source: "https://github.com/hanamimastery/episodes/compare/HME045-pre...HME045"
 ---
 I have here a Hanami application listing all my Hanami Mastery episodes and I want to allow managing them from the browser. If you wonder why I need this, check out [episode 38](/episodes/38-hanami-mastery-app) when I've explained that in detail.
 

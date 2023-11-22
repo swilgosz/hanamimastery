@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ['hanami', 'deployment']
 title: "Deploying Hanami Apps to Render"
 excerpt: "Learn how to quickly deploy Hanami apps to production-ready server, using Render hosting provider, the best replacement for Heroku right now."
-videoId: hCVcEw6shSA
+videoId: "hCVcEw6shSA"
 published: true
 publishedAt: "2023-02-21"
 modifiedAt: "2023-02-21"
@@ -19,7 +19,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/118c6no/deploying_hanami_apps_to_render_hanami_mastery_041/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/118cw51/deploy_your_hanami_apps_to_render/
-source: https://github.com/hanamimastery/hanami-render-example
+source: "https://github.com/hanamimastery/hanami-render-example"
 ---
 When I've first discovered React, one of the best things I've found was the extremely powerful free hosting providers, that allow you to deploy applications with zero config.
 

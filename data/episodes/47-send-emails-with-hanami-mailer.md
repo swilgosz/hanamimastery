@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ["hanami", "mailer"]
 title: "Send emails with hanami-mailer"
 excerpt: "Sending emails in web apps is a very common task. In this video, I'm going to send a contact email using hanami-mailer gem."
-videoId: olYAcN88-xc
+videoId: "olYAcN88-xc"
 publishedAt: "2023-06-14"
 modifiedAt: "2023-06-14"
 published: true
@@ -19,7 +19,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/14gjuph/send_emails_with_hanamimailer_hanami_mastery_047/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/1494a5v/send_emails_with_hanamimailer_hanami_mastery_047/
-source: https://github.com/hanamimastery/episodes/tree/main/047
+source: "https://github.com/hanamimastery/episodes/compare/HME047-pre...HME047"
 ---
 I have here the simple application that I've built in the previous episodes, and [in the last one, I've added this form](/episodes/46-contact-form), allowing us to send values to the server for processing.
 

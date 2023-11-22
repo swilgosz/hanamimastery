@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ['front-matter', 'transformations']
 title: "Best way to work with Front Matter in Ruby!"
 excerpt: "If you want to work with front_matter in Ruby, you need to know the front_matter_parser gem. Here is everything you need."
-videoId: dR08d5buJtQ
+videoId: "dR08d5buJtQ"
 published: true
 publishedAt: "2023-03-07"
 modifiedAt: "2023-03-23"
@@ -19,7 +19,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/11kyq7m/best_way_to_work_with_front_matter_in_ruby_hanam/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/11kyr6i/best_way_to_work_with_front_matter_in_ruby_hanam/
-source: https://github.com/hanamimastery/episodes/tree/main/042
+source: "https://github.com/hanamimastery/episodes/compare/HME042-pre...HME042"
 ---
 Hi there!
 

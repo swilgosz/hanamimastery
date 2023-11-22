@@ -1,13 +1,16 @@
 ---
 id: 2
-author: "swilgosz"
-topics: ["hanami", "hanami-view"]
+author: swilgosz
+topics:
+  - "hanami"
+  - "views"
 title: "Listing articles in Hanami and Dry-View"
-excerpt: "In this episode I explain the Hanami architecture related to views rendering, by using Hanami View, Hanami Actions and templates, to list articles for a blog applicaton."
+excerpt: "In this episode I explain the Hanami architecture related to view rendering, by using Hanami View, Hanami Actions, and templates, to list articles for a blog application."
 published: true
 publishedAt: "2021-05-15"
 modifiedAt: "2021-10-03"
-aliases: ['HMEP002']
+aliases:
+  - "HMEP002"
 videoId: "79_1lHX_uEA"
 thumbnail:
   full: /images/episodes/2/cover-full.jpeg
@@ -16,7 +19,7 @@ thumbnail:
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/1393999827546038279
   reddit: []
-source: https://github.com/hanamimastery/episodes/tree/main/002
+source: "https://github.com/hanamimastery/episodes/compare/HME002-pre...HME002"
 ---
 
 In the previous episode, I've created a new Hanami application, using the [Template repository](/episodes/1-creating-hanami-application).

@@ -30,7 +30,6 @@ This is work-in-progress guide, if you see this valuable, [consider support](htt
 Hanami 2 is an almost complete framework rewrite, which makes upgrading projects uncommonly hard. However, it’s important to say, that the core team states there won’t be any such major rewrites of the framework in the future, and the official upgrade guides will be available.
 :::
 
-
 This document was created as a result of combined work of [Ascenda developers](https://ascendaloyalty.com), after upgrading multiple services of various sizes. Based on our experience, here are our thoughts.
 
 Special thanks to [Ng Chen Hon](https://github.com/MutatedBread), [Hieu Nguyen](https://github.com/hieuk09) and [Sebastian Wilgosz](https://bio.link/swilgosz) for all the initial exploration.

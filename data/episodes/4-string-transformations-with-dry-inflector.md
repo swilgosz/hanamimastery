@@ -18,7 +18,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/o28dun/4_an_easy_string_manipulations_in_ruby_with/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/o28c02/easy_string_manipulation_in_ruby_with/
-source: https://github.com/hanamimastery/episodes/tree/main/004
+source: "https://github.com/hanamimastery/episodes/compare/HME004-pre...HME004"
 ---
 
 In this episode of Hanami Mastery screencast I want to showcase a super useful little Ruby Gem, that helped me a lot in writing my own Ruby packages.

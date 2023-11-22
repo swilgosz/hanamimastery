@@ -19,9 +19,8 @@ discussions:
     ruby: https://www.reddit.com/r/ruby/comments/pzmi3f/integrate_hanami_20_with_your_database_using_rom/
     rails: https://www.reddit.com/r/rails/comments/pzmiap/integrate_hanami_20_with_your_database_using_rom/
     hanamirb: https://www.reddit.com/r/hanamirb/comments/pzmihi/integrate_hanami_20_with_your_database_using_rom/
-source: https://github.com/hanamimastery/episodes/tree/main/009
+source: "https://github.com/hanamimastery/episodes/compare/HME009-pre...HME009"
 ---
-
 
 In the [Hanami Mastery #002](/episodes/2-listing-articles-with-hanami-view) I've shown you how to list articles in Hanami 2.0 application and in the third episode, [how to prettify them using Bulma CSS framework](/episodes/3-style-your-app-with-bulma). However, there is an issue with this.
 

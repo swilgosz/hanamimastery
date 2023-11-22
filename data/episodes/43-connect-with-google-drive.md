@@ -5,7 +5,7 @@ author: "swilgosz"
 topics: ['hanami', 'integrations', 'google']
 title: "Connect your ruby app with google drive."
 excerpt: "In the world of amazing technology pace, integrations between services are the key to success and the same applies to ruby projects. In this episode, we integrate our Hanami application with Google drive."
-videoId: rgFIQ_DeMsc
+videoId: "rgFIQ_DeMsc"
 published: true
 premium: true
 publishedAt: "2023-03-09"
@@ -17,7 +17,7 @@ thumbnail:
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/1633955723850940416
   mastodon: https://ruby.social/@hanamimastery/109995647132487900
-source: https://github.com/hanamimastery/app
+source: "https://github.com/hanamimastery/app"
 ---
 In the [[38-hanami-mastery-app|episode 38]], we used a high-level application diagram to visualize the needs [our hanami mastery application](https://app.hanamimastery.com) will help us to solve.
 

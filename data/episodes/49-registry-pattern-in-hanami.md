@@ -4,9 +4,9 @@ aliases:
   - "HMEP049"
 author: "fiachetti"
 topics:
-  - hanami
-  - patterns
-  - dependency-injection
+  - "hanami"
+  - "patterns"
+  - "dependency-injection"
 title: "Registry Pattern in Hanami apps"
 excerpt: "Registry pattern is one of many programming best practices, applied by default in Hanami projects. In this episode, we deep dive into how the registry pattern is used in Hanami apps and explain how it works."
 videoId: "gbK_VjPwhfU"
@@ -22,7 +22,7 @@ discussions:
   mastodon: https://ruby.social/@hanamimastery/110340379572394441
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/13d34bu/lets_make_a_blog_with_bridgetown_hanami_mastery/
-source: https://github.com/hanamimastery/episodes/tree/main/049
+source: "https://github.com/hanamimastery/episodes/compare/HME049-pre...HME049"
 ---
 Hi there!
 

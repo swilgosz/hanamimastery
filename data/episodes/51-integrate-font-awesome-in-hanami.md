@@ -1,17 +1,17 @@
 ---
-id: "51"
+id: 51
 aliases:
-  - HMEP051
+  - "HMEP051"
 published: false
 author: swilgosz
 topics:
-  - hanami
-  - hanami-view
-title: Font awesome icons in Hanami apps!
-excerpt: Probably any web app nowadays require font icons to be loaded this or other way. In this episode, I'm showing the integration of Font awesome icons in Hanami 2 applications.
+  - "hanami"
+  - "views"
+title: "Font awesome icons in Hanami apps!"
+excerpt: "Probably any web app nowadays require font icons to be loaded this or other way. In this episode, I'm showing the integration of Font awesome icons in Hanami 2 applications."
 videoId: 
-publishedAt: 2023-11-21
-modifiedAt: 2023-11-21
+publishedAt: "2023-11-28"
+modifiedAt: "2023-11-28"
 thumbnail:
   full: /images/episodes/integrate/cover-full.jpeg
   big: /images/episodes/integrate/cover-big.jpeg
@@ -22,7 +22,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: https://github.com/hanamimastery/episodes/tree/main/0integrate
+source: "https://github.com/hanamimastery/episodes/compare/HME051-pre...HME051"
 ---
 
 Hi there!
@@ -37,7 +37,7 @@ Bulma is compatible with multiple implementations of icons, but it's up to you w
 
 ## Font awesome icon kit
 
-In today's short episode, I will show you one way to integrate the font awesome icon set.
+In today's short episode, I will show you one way to integrate the [font awesome icon set](https://fontawesome.com/).
 
 I will skip the registration part but to use font awesome icons you need to have the icon set created.
 
