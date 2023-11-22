@@ -2,7 +2,7 @@
 id: 52
 aliases:
   - "HMEP052"
-published: 
+published: false
 author: swilgosz
 topics:
   - "hanami"
@@ -13,9 +13,9 @@ videoId:
 publishedAt: "2023-12-05"
 modifiedAt: "2023-12-05"
 thumbnail:
-  full: /images/episodes/Render flash messages/cover-full.png
-  big: /images/episodes/Render flash messages/cover-big.png
-  small: /images/episodes/Render flash messages/cover-small.png
+  full: /images/episodes/52/cover-full.png
+  big: /images/episodes/52/cover-big.png
+  small: /images/episodes/52/cover-small.png
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
   mastodon: https://ruby.social/@hanamimastery/XXX

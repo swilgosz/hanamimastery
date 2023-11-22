@@ -13,9 +13,9 @@ videoId:
 publishedAt: "2023-11-28"
 modifiedAt: "2023-11-28"
 thumbnail:
-  full: /images/episodes/integrate/cover-full.jpeg
-  big: /images/episodes/integrate/cover-big.jpeg
-  small: /images/episodes/integrate/cover-small.jpeg
+  full: /images/episodes/51/cover-full.jpeg
+  big: /images/episodes/51/cover-big.jpeg
+  small: /images/episodes/51/cover-small.jpeg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
   mastodon: https://ruby.social/@hanamimastery/XXX
