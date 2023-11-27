@@ -3,13 +3,13 @@ id: 51
 aliases:
   - "HMEP051"
 published: false
-author: swilgosz
+author: "swilgosz"
 topics:
   - "hanami"
   - "views"
 title: "Font awesome icons in Hanami apps!"
-excerpt: "Probably any web app nowadays require font icons to be loaded this or other way. In this episode, I'm showing the integration of Font awesome icons in Hanami 2 applications."
-videoId: 
+excerpt: "Probably any web app nowadays requires font icons to be loaded this or other way. In this episode, I'm showing the integration of Font Awesome icons in Hanami 2 applications."
+videoId: "84o-aECwCCU"
 publishedAt: "2023-11-28"
 modifiedAt: "2023-11-28"
 thumbnail:
