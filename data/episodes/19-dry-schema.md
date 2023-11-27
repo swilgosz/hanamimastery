@@ -36,7 +36,7 @@ You may [read more about dry-schema origins](https://solnic.codes/2019/01/31/int
 In this episode, I'll mostly focus on covering a few nice features and explaining, when `dry-schema` is a perfect choice for validating data structures.
 
 ## What is *dry-schema* for
-Dry schema is only designed for simple data validations, and because of its amazing performance, it lets you validate every input to your system, not just models just before saving them to the databases.
+Dry schema is only designed for simple data validations, and because of its amazing performance, it lets you validate every input to your system, not only models just before saving them to the databases.
 
 The key goal of this gem is to ensure that data you'll work with, is safe for being used by your code. It provides two main functionalities:
 
@@ -62,9 +62,11 @@ This kind of issues can be completely eliminated if more people would make use o
 
 ### Why we validate data?
 
+But why we validate params in the first place?
+
 ##### 1. Security
 
-But why we validate params in the first place? One of the important reasons is of course security. You may experience [SQL injection](https://en.wikipedia.org/wiki/SQL_injection), or just hacking to the system by updating the field you won't intended to allow. This is why we need [strong parameters in Rails](https://quick-adviser.com/why-do-we-need-strong-params-in-rails/), and this is [why dry-schema is used as a improved replacement for this use case in Hanami actions](/episodes/18-hanami-actions-basics). I've covered this in my previous episode, feel free to check it out!
+One of the important reasons is of course security. You may experience [SQL injection](https://en.wikipedia.org/wiki/SQL_injection), or just hacking to the system by updating the field you won't intended to allow. This is why we need [strong parameters in Rails](https://quick-adviser.com/why-do-we-need-strong-params-in-rails/), and this is [why dry-schema is used as an improved replacement for this use case in Hanami actions](/episodes/18-hanami-actions-basics). I've covered this in my previous episode, feel free to check it out!
 
 ##### 2. Reliability
 

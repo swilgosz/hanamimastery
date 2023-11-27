@@ -302,6 +302,10 @@ Let me know in the comments if you managed to pull it together, and don't forget
 I love that tools like *Phlex* appear in the Ruby ecosystem, and I'll definitely promote more of such. Pushing boundaries is important to keep innovation appearing in the community, and I love those fresh examples of new approaches to the old problems. I am also super glad that other blogs also started to cover them (you can find [Phlex mentions on the NB casts](https://nbcasts.com/episodes/more-phlex)).
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/hanamimastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+
+:::tip Learn more about Phlex!
+If you want to know more about Phlex, [Paweł Świątkowski published an extensive response to this article](https://katafrakt.me/2023/10/03/on-using-phlex/), adding more context and examples, backed up with his much greater experience with Phlex in commercial use. Make sure to check that out too!
+:::
 ## Thanks
 
 I want to especially thank my recent sponsors,
