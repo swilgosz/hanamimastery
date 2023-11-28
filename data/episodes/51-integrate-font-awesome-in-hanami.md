@@ -2,7 +2,7 @@
 id: 51
 aliases:
   - "HMEP051"
-published: false
+published: true
 author: "swilgosz"
 topics:
   - "hanami"
