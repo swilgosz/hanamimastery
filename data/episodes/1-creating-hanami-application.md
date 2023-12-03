@@ -21,6 +21,8 @@ discussions:
 source: "https://github.com/hanamimastery/episodes/compare/HME001-pre...HME001"
 ---
 
+%[https://youtu.be/Gx4eqU-oDL8]
+
 We're entering **a new era in the Ruby world**, there are no doubts about that! It's all because really soon a **completely rewritten** Hanami framework will have its next major release!
 
 In this episode, I'll show you how to quickly start with a new Hanami project.  I'll create a brand new Hanami application using the prepared [Hanami Application Template](https://github.com/hanami/hanami-2-application-template).

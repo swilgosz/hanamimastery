@@ -7,7 +7,7 @@ author: "swilgosz"
 topics:
   - "hanami"
   - "views"
-title: "Font awesome icons in Hanami apps!"
+title: "Font Awesome icons in Hanami apps!"
 excerpt: "Probably any web app nowadays requires font icons to be loaded this or other way. In this episode, I'm showing the integration of Font Awesome icons in Hanami 2 applications."
 videoId: "84o-aECwCCU"
 publishedAt: "2023-11-28"
@@ -24,7 +24,6 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: "https://github.com/hanamimastery/episodes/compare/HME051-pre...HME051"
 ---
-
 Hi there!
 
 I have here the user registration form, similar to the one I implemented in [episode 46](/episodes/46-contact-form), and[ it uses Bulma](/episodes/3-style-your-app-with-bulma) to make it pretty without a hassle.
@@ -70,7 +69,7 @@ config.actions.content_security_policy[:script_src] = [
 ].join(' ')
 ```
 
-Now, when I visit the website again, I will see one more server that requires access to download actual icons but the error says, it first needs to be allowed to even connect with. 
+Now, when I visit the website again, I will see one more server that requires access to download actual icons but the error says, it first needs to be allowed to even connect with.
 
 ![connect-src rule violation](/images/episodes/51/connect-rule-violation.png)
 
@@ -118,13 +117,13 @@ However, the icon kit ID hardcoded in the layout does not seem to be the best ap
 
 First of all
 
-- It can change in the future 
+- It can change in the future
 - It can be different in development, staging, and production environments, with different settings applied.
 - While you should always restrict your bundles to be accessible only by specific domains, this is the potential identifier of the paid service, and we don't want random hackers to make use of it.
 
 I would expect something like this to be read from application settings, not directly hard coded so let me refactor this now.
 
-First of all, I would love to have the new setting added, and make it optional for development and tests. The reason for this is, that not having the icons set should not prevent the majority of development excluding some UI stuff 
+First of all, I would love to have the new setting added, and make it optional for development and tests. The reason for this is, that not having the icons set should not prevent the majority of development excluding some UI stuff
 
 ```ruby
 # config/settings.rb
@@ -139,7 +138,7 @@ end
 ```
 
 
-Then let me set the environment variable and paste my kit ID here 
+Then let me set the environment variable and paste my kit ID here
 
 ```ruby
 # .env.development
@@ -147,7 +146,7 @@ DATABASE_URL=postgres://localhost/hanamimastery_development
 FONT_AWESOME_KIT=b3924f7a01
 ```
 
-To verify if it works, I can open the app console and check the new setting there. 
+To verify if it works, I can open the app console and check the new setting there.
 
 ```ruby
 > Hanamimastery::App.settings.font_awesome_kit

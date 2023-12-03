@@ -144,7 +144,7 @@ Here is how it will look in the real-world example.
 
 The first step would be to extract any logic that leaked to my template. 
 
-:::warning Disclaimer
+:::warning[Disclaimer]
 Ok, It's not the actual first step. For the very first step, you should have a feature test created for flash messages, which as usual I'll skip on this tutorial but just for you to remember, I am absolutely and totally into making sure you have automatic test coverage before starting any kind of refactoring.
 :::
 
