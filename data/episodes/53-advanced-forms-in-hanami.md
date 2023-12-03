@@ -197,7 +197,7 @@ Under each field, I'm going to paste the line that will render the field error m
 <div class="control has-icons-left <%= 'has-icons-right is-danger' if form.errors[:username].any? %>">
 ```
 
-:::warning Disclaimer
+:::warning[Disclaimer]
 [🎬 17] By the way, I know there is a logic here, I am doing things step by step so you won't get lost in my thinking process.
 :::
 

@@ -47,7 +47,7 @@ Even with technology like [HTMX](/episodes/40-hanamismith) or [Hotwire](https://
 
 Well... not right, actually.
 
-:::warning Disclaimer
+:::caution[Disclaimer]
 By reading this article you may get an inpression, that it suggests that you can skip learning HTML completely which is not true. It's a humorous way to point out that you can decide to start learning ruby and write complete applications in pure Ruby, however you'll need to learn HTML tags anyway.
 :::
 

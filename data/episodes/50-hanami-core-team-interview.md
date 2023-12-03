@@ -413,7 +413,7 @@ Just make yourself known and we can work with you.
 **Seb:** Thanks! So let's jump into the next section. We actually finished up with the Hanami-related questions or Hanami-focused questions. Now I will jump to the dry-oriented one. There are just a few more questions to be asked of you.
 
 ### Question 7: Hanami and business logic, relation to Trailblazer?
-:::quote Drowze
+:::quote[Drowze]
 How would you compare the DRY ecosystem compares itself to Trailblazer?
 :::
 

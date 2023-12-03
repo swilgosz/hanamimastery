@@ -2,12 +2,12 @@
 id: 55
 aliases:
   - "HMEP055"
-published: 
+published: false
 author: swilgosz
 topics: ["hanami", "views"]
 title: "Pagination in Hanami made fun!"
 excerpt: "When you want to implement the pagination feature in Hanami, you'll quickly realize how annoying it can be, making all the repository methods accept the pagination parameters - unless you check out this episode of Hanami Mastery, where I implement pagination in a cool way."
-videoId: 
+videoId:
 publishedAt: 2022-02-09
 modifiedAt: 2022-02-09
 thumbnail:
@@ -22,6 +22,10 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: "https://github.com/hanamimastery/episodes/compare/HME055-pre...HME055"
 ---
+Hi there!
+
+Some time ago, in the [episode 32](/episodes/32-rom-pagination) I've covered a simple way to implement pagination in ROM-based applications. However,
+
 1. Create a gem, hm-pagination
 2. Integrate the gem in the video.
 3. Bonus - explain the implementation details in premium video?
@@ -42,5 +46,5 @@ https://dry-rb.org/gems/dry-types/1.0/constraints/
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/hanamimastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
-## Thanks: 
+## Thanks:
 > Use [[THME - Thanks]]
