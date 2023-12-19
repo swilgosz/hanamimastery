@@ -16,6 +16,8 @@ Episode consists of:
 First, run the development server:
 
 ```bash
+nvm use 18
+yarn install
 yarn run dev
 ```
 
