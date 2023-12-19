@@ -17,11 +17,11 @@ thumbnail:
   big: /images/episodes/52/cover-big.png
   small: /images/episodes/52/cover-small.png
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/@hanamimastery/XXX
+  twitter: https://twitter.com/HanamiMastery/status/1737214778001498359
+  mastodon: https://ruby.social/@hanamimastery/111609081085666001
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/18mcagt/flash_it_all_out_hanami_mastery_052/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/18mcii7/flash_it_all_out_hanami_mastery_052/
 source: "https://github.com/hanamimastery/episodes/compare/HME052-pre...HME052"
 ---
 Hi there!
