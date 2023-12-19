@@ -1,7 +1,7 @@
 ---
 id: 50
 aliases:
-  - HMEP050
+  - "HMEP050"
 author: swilgosz
 topics: ["hanami", "dry-rb", "rom-rb"]
 title: "Special: Hanami Core Team Interview"
