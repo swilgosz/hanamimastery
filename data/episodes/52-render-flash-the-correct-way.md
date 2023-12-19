@@ -2,16 +2,16 @@
 id: 52
 aliases:
   - "HMEP052"
-published: false
-author: swilgosz
+published: true
+author: "swilgosz"
 topics:
   - "hanami"
   - "views"
 title: "Render flash messages in Hanami, but like a PRO"
 excerpt: "Showing flash messages in Hanami is trivial, and it is even shown in the official guides. In this episode though, we make this future-proof, testable, and maintainable for a future growth of your application."
-videoId: 
-publishedAt: "2023-12-05"
-modifiedAt: "2023-12-05"
+videoId: "kSolnTmT59w"
+publishedAt: "2023-12-19"
+modifiedAt: "2023-12-19"
 thumbnail:
   full: /images/episodes/52/cover-full.png
   big: /images/episodes/52/cover-big.png
@@ -22,7 +22,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: "https://github.com/hanamimastery/episodes/compare/HME053-pre...HME053"
+source: "https://github.com/hanamimastery/episodes/compare/HME052-pre...HME052"
 ---
 Hi there!
 I have here the simple registration form implemented, and depending on the form validation result, I'd love to show the flash message at the top of the page, indicating if account creation was successful or not.
