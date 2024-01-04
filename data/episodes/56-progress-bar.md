@@ -1,18 +1,19 @@
 ---
-id: 11
-author: "kkpiotrowski"
+id: 56
+aliases:
+  - "HMEP056"
+author: kkpiotrowski
 topics: ["hanami", "htmx", "sidekiq", "rom-rb", "redis", "sequel"]
 title: "Hanami and HTMX progress bar"
-excerpt: "<<Summary>>"
+excerpt: "Progress bars are a great way to process a more time consuming task, while letting the user know, that something is actually happening, instead of having them wonder if something broke. In Hanami, you can easily leverage HTMX and a simple Sidekiq + Redis process to achieve a smooth progress bar, that will fill up as the task is being processed."
 videoId: null
 published: false
 publishedAt: 
 modifiedAt: 
-aliases: ['HMEP011']
 thumbnail:
-  full: https://via.placeholder.com/1920/600?text=HanamiMastery.com
-  big: https://via.placeholder.com/780/440?text=HanamiMastery.com
-  small: https://via.placeholder.com/360/200?text=HanamiMastery.com
+  full: /images/episodes/56/cover-full.jpeg
+  big: /images/episodes/56/cover-big.jpeg
+  small: /images/episodes/56/cover-small.jpeg
 discussions:
   twitter: null
   reddit:
@@ -22,7 +23,7 @@ discussions:
 source: 
 ---
 
-Hi there! I want to show off a little feature I made using hanami, [htmx](https://htmx.org/) and a little bit od [redis](https://redis.io/) + [sidekiq](https://sidekiq.org/).
+Hi there! I want to show off a little feature I made using hanami, [htmx](https://htmx.org/) and a little bit of [redis](https://redis.io/) + [sidekiq](https://sidekiq.org/).
 
 It is a popular pattern to show a progress bar when you're doing some longer-running task, like uploading a file, or processing some data. I wanted to show you how to do it in hanami, while making the progress bar fill smoothly, and not just jump from 0 to 100% when the task is done.
 
@@ -122,14 +123,15 @@ module Main
 end
 
 # Spec, only showing the basic happy path example, for breviety
-#   context "with good params"  do
-let(:params) { Hash[isbn: "978-0-306-40615-7"] }
-let(:worker) { double(Main::Workers::IsbnSearch) }
-it "works" do
-  Sidekiq::Testing.fake! do
-    response = subject.call(params)
-    allow(Main::Workers::IsbnSearch).to receive(:perform_async).with("978-0-306-40615-7").and_return(worker)
-    expect(response.status).to eq 200
+context "with good params"  do
+  let(:params) { Hash[isbn: "978-0-306-40615-7"] }
+  let(:worker) { double(Main::Workers::IsbnSearch) }
+  it "works" do
+    Sidekiq::Testing.fake! do
+      response = subject.call(params)
+      allow(Main::Workers::IsbnSearch).to receive(:perform_async).with("978-0-306-40615-7").and_return(worker)
+      expect(response.status).to eq 200
+    end
   end
 end
 ```
@@ -180,14 +182,16 @@ With the template:
 ```
 
 This is where the majority of HTMX magic comes in. We have 3 important div's:
-1. The outer div, that will be replaced with the result of the search, and along with him, all divs inside, that are described below
-2. The progress div, that every 2 seconds checks the progress of the search, and updates the progress bar -> div below
-3. The initial progress bar div, that is replaced with the progress bar div from the `SearchProgress` action, the div from point 2 makes the request.
+1. The outer **div**, that will be replaced with the result of the search, and along with him, all divs inside (that are described below)
+2. The progress **div**, that every 2 seconds checks the progress of the search, and updates the progress bar -> **div** below
+3. The initial progress bar **div**, that is replaced with the progress bar **div** from the `SearchProgress` action, the **div** from point 2 makes the request.
 
-All this happens based on the `hx-target`, `hx-get` and `hx-swap` attributes, `hx-trigger` is used to repeat the request every 2 seconds on the div that checks the progress, and for comlepting the process in case of the outer div.
-`target` tells HTMX where to put the response
-`get` is simply the request identifier, the `get` is the type and the value given is the URL
-`swap` is a method of replacement, so how to replace the target with the response
+All this happens based on the `hx-target`, `hx-get` and `hx-swap` attributes, `hx-trigger` is used to repeat the request every 2 seconds on the **div** that checks the progress, and for completing the process in case of the outer **div**.
+- `target` tells HTMX where to put the response
+- `get` is simply the request identifier, the `get` is the type and the value given is the URL
+- `swap` is a method of replacement, so how to replace the target with the response
+
+This is all rather basic stuff from HTMX, pretty much the [introduction part of their docs](https://htmx.org/docs/#introduction). So if you think it is somewhat impressive, keep it mind this is just what is possible with the very basics. Although I do think that hanami routing and actions and view systems make it much easier to use (than for example rails would). In Hanami it is simply very easy to make the code very modular, composable and repeatable. I think HTMX and Hanami are a great fit together and I hope this whole example does show it.
 
 So lets take a look at the `SearchProgress` action:
 
@@ -203,8 +207,8 @@ module SearchProgress
 end
 ```
 
-`HX-Trigger` is a header that will tell the HTMX to trigger the `done` action, which will fire up the `SearchResult` action, which will render the result of the search.
-The header is based on the redis value, which is set by the worker, which we will see in a moment.
+`HX-Trigger` is a header that will tell the HTMX to trigger the `done` action, which will fire up the `SearchResult` action, and that will render the result of the search.
+The header is based on the redis value, which is set by the worker (we will get there soon).
 
 ```ruby
 module SearchResult
@@ -218,7 +222,7 @@ module SearchResult
 end
 ```
 
-Result is simple, we use the books repo to make a simple request.
+Result is simple, we use the books repo to make a simple request, som rom and sequel are used here, but it is not really relevant to the topic at hand, so the repo implementation is omitted.
 
 You probably noticed the inputs in the view, they just hold the values we need to keep finding the correct book based on the initial isbn (which later got an identifier on the back, that tells us if it is ISBN-10 or 13 to make some queries easier).
 
@@ -261,9 +265,9 @@ module Main
   end
 end
 ```
-Just a simple check of the redis value, and returning the correct value for the progress bar. Then the rest is taken care by CSS thanks to sharing the `id` between the HTML elements that are "replaced".
+Just a simple check of the redis value, and returning the correct value for the progress bar. Then the rest is taken care by CSS and tailwind styling. Thanks to sharing the `id` between the HTML elements that are "replaced", the transition is smooth, rather than the filler color of the bar just appearing. It flows.
 
-And the result is also simple:
+Then we have the result that replaces the progress bar, it is a simple card with the book data, taken from the struct we got from the repository.
 
 ```html
 <div class="card lg:card-side bg-base-100 shadow-xl">
@@ -290,7 +294,7 @@ module SearchResult
 end
 ```
 
-That are all the blocks we need in place to have a fully functional frontend. We just need the backend to implement all the logic that does the actual work, and monitors the progress.
+Those are all the blocks we need in place to have a fully functional frontend. We just need the backend to implement all the logic that does the actual work, and monitors the progress.
 
 
 ### Worker that works hard
@@ -330,7 +334,7 @@ We wanna take an ISBN, and delegate work to other objects, checking if the book 
   end
 ```
 
-In general sidekiq workers should only take the most basic input (strings etc.) and delegate most of the work to other objects, so that we can test them in isolation, handle errors better etc. This is the way I always prefered the workers/jobs to be coded, and it works great here too, cause we just list all the dependencies, use them one by one and monitor the process easily and clearly thanks to that.
+In general sidekiq workers should only take **the most basic input** (strings etc.) and **delegate** most of the work to other objects, so that we can test them in isolation, handle errors better etc. This is the way I always preferred the workers/jobs to be coded, and it works great here too, cause we just list all the dependencies, use them one by one and monitor the process easily and clearly thanks to that.
 
 For brevity's sake I've put everything in the perform method, but it in real life it could be a good idea to split it out more into methods, for readability and clearer error outputs.
 
@@ -369,15 +373,15 @@ end
 
 ```
 
-Now this is a fully functional progress bar (the implementations of parser and get_google_isbn objects are not really relevant).
+Now this is a fully functional progress bar (the implementations of parser and get_google_isbn objects are not really relevant, those are implementation details not connected to progress bar directly).
 
-This could be further improved and made into a far more reusable code, with redis communication being delegated to pub/sub system, that could be better coupled with places that do actually push the progress forward, rather than putting everything into a worker, that should be more of a simple delegator.
+This could be further improved and made into a far more reusable code, with redis communication being delegated to **pub/sub** system, that could be better coupled with places that do actually push the progress forward, rather than putting everything into a worker, that should be more of a simple delegator.
 
-Now lets see how this looks in action (please not that I am not exactly a CSS wizard, or an UI designer so the styling is not the best, but it works!):
+But maybe **pub/sub** system in hanami is a topic for a different episode?
 
+Now lets see how this looks in action (please not that I am not exactly a CSS wizard, or an UI designer so the visuals of the site are not the best, but it works!):
 
 ![Progress Bar gif](/images/articles/progress-bar/demo.gif)
-
 
 
 ### Summary
@@ -386,10 +390,4 @@ I hope you've enjoyed this episode, and if you want to see more content in this 
 
 ### Special Thanks!
 
-I'd like to thank [LATEST SPONSORS]. for supporting this project!
-
-Any support allows me to spend more time on creating this content, promoting great open source projects.
-
-Also, check out two of my previous videos here! Thank you all for being here, you're awesome! - and see you in the next Hanami Mastery episode!
-
-- [John Smith]()- for a great cover image
+This episode was made possible thanks to [2N IT](https://www.2n.pl/) that allowed me to take some time to work on this cool feature.
