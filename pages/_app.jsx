@@ -75,25 +75,6 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <TopNav />
-        <div className={classes.alert}>
-          <Typography paragraph className={classes.alertText}>
-            Dear friends, please watch President Zelenskyy's{' '}
-            <CustomLink
-              href="https://twitter.com/PMoelleken/status/1496941845812760577"
-              className={classes.link}
-            >
-              speech
-            </CustomLink>
-            . 🇺🇦 Help our brave mates in Ukraine with{' '}
-            <CustomLink
-              href="https://actions.sumofus.org/a/give-to-ukrainians-who-need-an-urgent-lifeline"
-              className={classes.link}
-            >
-              a donation
-            </CustomLink>
-            .
-          </Typography>
-        </div>
         <Component {...pageProps} />
         <Footer />
         <CookiesPopup />
