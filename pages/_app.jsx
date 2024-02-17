@@ -4,7 +4,7 @@ import '../styles/mdx-components.css';
 import '../styles/globals.css';
 import * as React from 'react';
 import { makeStyles } from '@mui/styles';
-import { CssBaseline, Typography } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
