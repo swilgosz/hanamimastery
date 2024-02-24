@@ -12,7 +12,6 @@ import TagManager from 'react-gtm-module';
 import TopNav from '../features/top-nav/index';
 import Footer from '../features/footer';
 import theme from '../styles/theme';
-import CustomLink from '../features/custom-link';
 import CookiesPopup from '../features/cookies-popup';
 
 const useStyles = makeStyles(() => ({
