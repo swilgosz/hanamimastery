@@ -3,7 +3,6 @@ import '../styles/admonition.css';
 import '../styles/mdx-components.css';
 import '../styles/globals.css';
 import * as React from 'react';
-import { makeStyles } from '@mui/styles';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import { useRouter } from 'next/router';
@@ -13,24 +12,6 @@ import TopNav from '../features/top-nav/index';
 import Footer from '../features/footer';
 import theme from '../styles/theme';
 import CookiesPopup from '../features/cookies-popup';
-
-const useStyles = makeStyles(() => ({
-  alert: {
-    display: 'flex',
-    alignSelf: 'center',
-    alignItems: 'center',
-    margin: '30px auto',
-  },
-  alertText: {
-    textAlign: 'center',
-    margin: 'auto',
-    fontWeight: 'bold',
-  },
-  link: {
-    color: 'white !important',
-    fontWeight: 'bold',
-  },
-}));
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
