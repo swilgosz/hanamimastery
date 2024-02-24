@@ -33,7 +33,6 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function MyApp(props) {
-  const classes = useStyles();
   const { Component, pageProps } = props;
 
   const { asPath } = useRouter();
