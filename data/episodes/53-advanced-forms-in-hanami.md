@@ -2,14 +2,14 @@
 id: 53
 aliases:
   - "HMEP053"
-published: false
+published: true
 author: swilgosz
 topics: ['views', 'hanami']
 title: "Advanced forms in Hanami 2"
 excerpt: "Working with templates is a hard job and eliminating the logic out of them is absolutely not trivial. In this episode we'll use Hanami tools to implement advanced forms."
 videoId: 'C-h0zlePfqY'
-publishedAt: "2022-02-09"
-modifiedAt: "2024-12-12"
+publishedAt: "2024-09-12"
+modifiedAt: "2024-09-12"
 thumbnail:
   full: /images/episodes/53/cover-full.jpeg
   big: /images/episodes/53/cover-big.jpeg
