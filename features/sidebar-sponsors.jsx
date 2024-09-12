@@ -15,11 +15,11 @@ import CustomLink from './custom-link';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
-  {
-    label: 'DNSimple',
-    url: 'https://dnsimple.com/opensource',
-    imgPath: '/images/partners/dnsimple-logo-blue.png',
-  },
+  // {
+  //   label: 'DNSimple',
+  //   url: 'https://dnsimple.com/opensource',
+  //   imgPath: '/images/partners/dnsimple-logo-blue.png',
+  // },
   {
     label: 'AscendaLoyalty',
     url: 'https://ascendaloyalty.com',
