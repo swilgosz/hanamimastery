@@ -24,7 +24,7 @@ source: "https://github.com/hanamimastery/episodes/compare/HME055-pre...HME055"
 ---
 Hi there!
 
-Some time ago, in the [episode 32](/episodes/32-rom-pagination) I've covered a simple way to implement pagination in ROM-based applications. However,
+Some time ago, in the [episode 32](/episodes/32-rom-pagination) I've covered a simple way to implement pagination in ROM-based applications. However, that only works if you 
 
 1. Create a gem, hm-pagination
 2. Integrate the gem in the video.
