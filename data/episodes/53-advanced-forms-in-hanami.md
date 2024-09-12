@@ -7,7 +7,7 @@ author: swilgosz
 topics: ['views', 'hanami']
 title: "Advanced forms in Hanami 2"
 excerpt: "Working with templates is a hard job and eliminating the logic out of them is absolutely not trivial. In this episode we'll use Hanami tools to implement advanced forms."
-videoId: 
+videoId: 'C-h0zlePfqY'
 publishedAt: "2022-02-09"
 modifiedAt: "2024-12-12"
 thumbnail:
