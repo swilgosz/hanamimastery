@@ -20,7 +20,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: "https://github.com/hanamimastery/episodes/tree/main/053"
+source: "https://github.com/hanamimastery/episodes/compare/HME053-pre...HME053"
 ---
 Hi there!
 
