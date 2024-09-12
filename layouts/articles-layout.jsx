@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Grid, Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import EmailSubscriptionForm from '../features/email-subscription-form';
+// import EmailSubscriptionForm from '../features/email-subscription-form';
 import GHSponsor from '../features/gh-sponsor';
 import SidebarSponsors from '../features/sidebar-sponsors';
 import SidebarJobOffers from '../features/sidebar-job-offers';
@@ -31,7 +31,7 @@ const ArticlesLayout = ({ article }) => {
         >
           <GHSponsor className={classes.card} />
           <BuyMeACoffee className={classes.card} />
-          <EmailSubscriptionForm className={classes.card} />
+          {/* <EmailSubscriptionForm className={classes.card} /> */}
           <SidebarSponsors />
           <SidebarJobOffers />
         </Grid>
