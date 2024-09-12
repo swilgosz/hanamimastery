@@ -4,7 +4,7 @@ aliases:
   - "HMEP053"
 published: false
 author: swilgosz
-topics: 
+topics: ['views', 'hanami']
 title: "Advanced forms in Hanami 2"
 excerpt: "Working with templates is a hard job and eliminating the logic out of them is absolutely not trivial. In this episode we'll use Hanami tools to implement advanced forms."
 videoId: 
@@ -22,16 +22,15 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: "https://github.com/hanamimastery/episodes/tree/main/053"
 ---
-
 [🎬 01] Hi there!
 
-In the previous episode, I made the introduction to using scopes in Hanami 2 applications. Today I will dig a bit further, and also leverage the [Parts feature](https://guides.hanamiarb.org/v2.1/views/parts), so if you're not familiar with this, I'd recommend visiting the guides first or [checking out my previous episodes](https://hanamimastery.com/t/views) on these topics.
+In the previous episode, I made the [introduction to using scopes](/episodes/52-render-flash-the-correct-way) in Hanami 2 applications. Today I will dig a bit further, and leverage the [Parts feature](https://guides.hanamirb.org/v2.1/views/parts), so if you're not familiar with this, I'd recommend visiting the guides first or [checking out my previous episodes](https://hanamimastery.com/t/views) on these topics.
 
 [🎬 02] Today I want to tackle the logic extraction from complex forms in Hanami 2, step-by-step, and because of that it can take a while, so **please prepare yourself for a longer episode**.
 
 ## Overview of the problem
 
-[🎬 03] I have here the registration form I've created for [rendering the flash messages](/episodes/52-render-flash-the-correct-way) tutorial, however, it's not fully functional yet. 
+[🎬 03] I have here the registration form I've created for [rendering the flash messages](/episodes/52-render-flash-the-correct-way) tutorial, however, it's not fully functional yet.
 
 ![Basic form error with no errors](/images/episodes/53/registration-form-all-fields.png)
 
@@ -124,7 +123,7 @@ end
 
 ### Expose the form object in the view
 
-[🎬 10] Now in the view, I can make use of this to expose the form object I would like to work with in the templates. [🎬 11] I'll make it dependent on the `registration` and `errors` input arguments, but will set defaults for them, so the new action can render the view without passing any parameters to it.
+[🎬 10] Now in the view, I can make use of this to expose the `form` object I would like to work with in the templates. [🎬 11] I'll make it dependent on the `values` and `errors` input arguments, but will set defaults for them, so the `new` action can render the view without passing any parameters to it.
 
 [🎬 11] Then inside, I'll return the hash that merges those two together and will decorate this value in a moment.
 
@@ -186,7 +185,7 @@ Under each field, I'm going to paste the line that will render the field error m
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
-    <%= render("shared/forms/field_errors", messages: forms.error[:username]) if form.errors[:username].any? %>
+    <%= render("shared/forms/field_errors", messages: forms.error(:username)) if form.errors(:username).any? %>
   </div>
 </div>
 ```
@@ -222,7 +221,9 @@ Under each field, I'm going to paste the line that will render the field error m
 [🎬 21] All those fields are very similar. The HTML part is different, but the logic inside is just the same. All they need is 
 - a form object to render the field values correctly
 - information if the error is there, 
-- error messages, 
+- error messages,
+- icon name
+- attribute name
 - and maybe custom label text as you may see in the case of the checkbox here.
 
 ### Step 1. Normalize your partials
@@ -261,7 +262,7 @@ label_text = 'Username'
 </span>
 ```
 
-[🎬 25] Now let's look at error checks. There are two places that check if the field is an error, so let's extract this out too.
+[🎬 25] Now let's look at error checks. There are two places that check if the field is an error, so let's extract this out too. It comes with setting up dynamic set of classes for the control field that can be extracted to a variable together.
 
 ```ruby
 <%
@@ -322,7 +323,9 @@ control_class_names << 'has-icons-right' if error_field?
 
 [🎬 29] The span class should also be conditional based on the fact that the icon is present. Already we've discovered a bug in our code that can be fixed in a moment! Isn't that cool?
 
-[🎬 30] Let me then extract the icon span into a separate partial
+[🎬 30] Let me then extract the icon span into a separate partial. [🎬 31] Let's render the icon passing down the name as a local, and the aligment information. Then do nothing if the icon should not be set.
+
+I'll create a new partial, named `field_icon`, and inside I'll paste my span, replacing dynamic content with local variables. The `icon_name` local I'll rename to `icon`, and replace that when rendering too.
 
 ```ruby
 # slices/main/templates/shared/forms/field_icon.rb
@@ -332,7 +335,7 @@ control_class_names << 'has-icons-right' if error_field?
 </span>
 ```
 
-[🎬 31] Let's render the icon passing down the name as a local, and do nothing if the icon should not be set.
+I can replace that when rendering the partial too!
 
 ```ruby
 has_icon? = !icon_name.nil?
@@ -340,7 +343,7 @@ has_icon? = !icon_name.nil?
   <%= (f.label field_name, class: "label") { label_text } %>
   <div class="control has-icons-left <%= 'has-icons-right' if error_field? %>">
     <%= f.text_field field_name, class: "input" %>
-    <%= render("shared/forms/field_icon", icon_name: 'user', align: 'left') %>
+    <%= render("shared/forms/field_icon", icon: 'user', align: 'left') %>
     <%= render("shared/forms/field_errors", messages: errors if errors_field? %>
   </div>
 </div>
@@ -350,12 +353,15 @@ has_icon? = !icon_name.nil?
 
 ```ruby
 # slices/main/templates/shared/forms/_field_errors.html.erb
-<%= render("shared/forms/field_icon", icon_name: 'exclamation-triangle', align: 'right') %>
+<%= render("shared/forms/_field_icon", icon_name: 'exclamation-triangle', align: 'right') %>
 
 <% messages.each do |msg| %>
   <p class="help is-danger"><%= msg %></p>
 <% end %>
 ```
+
+Oh! I see I've named the icon partial wrongly. Let me quickly rename the file to `field_icon`, and reflect that in partials that call it. Now it's fine.
+
 
 [🎬 33] Finally, let's take a closer look at the input field. I want to have the extra class added in case of an error, so it gets the ==red highlight==. I will extract it the same way as I did for a wrapper div.
 
@@ -363,7 +369,7 @@ has_icon? = !icon_name.nil?
 input_field_classes = "input #{ 'is-danger' if error_field? }"
 ```
 
-[🎬 34] Then finally, let's also allow to set a custom placeholder if needed.
+[🎬 34] When I think about it, I can even add a dynamic placeholder support. Let's also allow this to be passed in.
 
 [🎬 35] Pheeew, done. That's crazy! I hope you can see now, how much logic is hidden in templates of most applications, and with this knowledge, we can together make the world a better place!
 
@@ -416,6 +422,13 @@ Cool! So the next step for me is to write the *form input scope*, that will acce
 
 [🎬 39] In the new scope file, I am going to paste down all the logic I have extracted from my partial and then wrap them up with the nice ruby methods.
 
+`field_name` will just call super, and stringify the value, so we can pass in symbols as well.
+`label_text` should be optional, so if there is no `label` attribute passed in, we'll return the humanized `field_name`.
+
+let's skip the `icon_name` for now... 
+to decide whether the field is error, we need to check errors array, and we already ensure this will be an array, so let's write this down.
+
+Next we have `control_class_names`. First I need to have the default value, add the icon class if error has icon, and error, if it has an error. At the end we join the classes into a single string. This means, that in the `test_field` partial I can remove the first part of the control classes and just rely on the variable.
 
 ```ruby
 # frozen_string_literal: true
@@ -429,16 +442,16 @@ module Main
             super.to_s
           end
 
-          def control_field_classes
-            classes = %w[control has-icons-left]
-            classes << 'has-icons-right' if error_field?
-            classes.join(' ')
-          end
-
           def label_text
             return label if respond_to?(:label) && label
 
             _context.inflector.humanize(field_name)
+          end
+
+          def control_field_classes
+            classes = %w[control has-icons-left]
+            classes << 'has-icons-right' if error_field?
+            classes.join(' ')
           end
 
           def placeholder_text
@@ -464,9 +477,20 @@ end
 
 ```
 
-[🎬 40] Ok. We have now an amazing class, that we can unit test and that can guarantee that our partials will be rendered correctly. There is a big but here.
+Going back to the scope, errors will be just passed as arguments, so we don't need it. After that I imlpement the `input_field_classes` method similar to what we have in the `control` tag, and for the placeholder, I'll again, return the passed in argument, or fallback to default calculated on the field name.
 
-[🎬 41] If I will go to the form template, and replace my inputs by calling the input scope, with some attributes, and then rendering the exact template, it does not look much better, does it?
+[🎬 40] Ok. We have now an amazing class, that we can unit test and that can guarantee that our partials will be rendered correctly. *There is a big caveat here though*.
+
+[🎬 41] If I go to the form template, replace my inputs by calling the input scope with some attributes, and then render the exact template, it does not look much better, does it?
+
+```ruby
+scope(Forms::Input).render(
+  field_name: 'username',
+  errors: form.errors,
+  placeholder: 'Username',
+  label: 'Username'
+)
+```
 
 [🎬 42] It's because this code does not belong to a template. Hanami provides us with parts, as a way to decorate our exposures, and all the data we need to set this up we have on the form exposure, except the form builder. 
 
@@ -481,9 +505,7 @@ end
 [🎬 44] Or instead of returning the scope from the part I can even hide the rendering inside the part's method. I will go with the latter approach, though I a not sure which one is better yet, as those concepts are just too new. Looking for your feedback on this!
 
 ```ruby
-<% form.username_scope(f).
-   render("shared/forms/text_field")
-%>
+<% form.username_input(f) %>
 ```
 
 [🎬 45] Now let me create the missing methods in my part.
@@ -517,7 +539,7 @@ def prepare_scope(f, field_name, **options)
 end
 ```
 
-[🎬 49] Then I can repeat that for the remaining scopes form fields, with minimal changes. I need just a field name to be changed, and the partial name to be rendered, and the rest is just the same.
+[🎬 49] Then I can repeat that for the remaining scopes form fields, with minimal changes. I need just a field name to be changed, and the partial name to be rendered, and the rest is just the same, except the `tac` field.
 
 ```ruby
 # frozen_string_literal: true
@@ -570,7 +592,9 @@ module Main
 end
 ```
 
-[🎬 50]  Only for the `tac` field I need to prepare a custom label, and paste that as an option parameter to the scope.
+Before though, let me clean things up a bit. I'll move the errors to the private section, as this won't be used anymore from the template, then I'm going to setup the correct icon names for the fields.
+
+[🎬 50]  Now to the `tac` field rendering. Only this field needs a custom label that I need to prepare, and paste that as an option parameter to the scope.
 
 ```ruby
 def tac_input(f)
@@ -583,7 +607,7 @@ end
 
 ```
 
-[🎬 51] Now that drives us again to the template form where we can replace the complicated HTML with our part methods.
+[🎬 51] Now that drives us again to the template form where we can replace the complicated HTML with our part methods. This cannot be more clean.
 
 ```ruby
 <%= form_for :registration, routes.path(:register_account) do |f| %>
@@ -603,7 +627,11 @@ end
 <% end %>
 ```
 
-[🎬 52] The form though, works flawlessly, as before.
+You'll miss the `password_field` partial yet, but that's identical to the `input_field`, except the method used on the form builder, so I can prepare that quickly before running the app.
+
+Let me check now what happens in the browser, as I've written quite a bunch of code at once. There is an error saying, that `icon_name` is called, but it is not passed into the scope in one call. Let me check. Oh, it's because our checkbox has no icon passed, but I still call this method on the conditional. I'll just make it optional. Can be solved in the part, but that's fine for now.
+
+[🎬 52] Now the form works flawlessly, as before, but our template is as slim as one can imagine.
 ## Summary
 
 [🎬 53] Working with templates is a hard job and eliminating the logic out of them is absolutely not trivial. [🎬 54] Hanami provides us with a bunch of tools that help us maintain this complexity and keep our templates always simple and clean. But there are still multiple tradeoffs. 
