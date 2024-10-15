@@ -14,9 +14,9 @@ videoId: "ulFu1I76qZ0"
 publishedAt: "2024-10-16"
 modifiedAt: "2024-10-16"
 thumbnail:
-  full: /images/episodes/54/cover-full.jpeg
-  big: /images/episodes/54/cover-big.jpeg
-  small: /images/episodes/54/cover-small.jpeg
+  full: /images/episodes/54/cover-full.jpg
+  big: /images/episodes/54/cover-big.jpg
+  small: /images/episodes/54/cover-small.jpg
 discussions:
   twitter: https://twitter.com/HanamiMastery/status/XXX
   mastodon: https://ruby.social/@hanamimastery/XXX
@@ -31,7 +31,9 @@ Hi there!
 [Hanami 2.2 beta went out](https://hanamirb.org/blog/2024/09/25/hanami-220beta2/), and the team is squeezing everything to wrap up the last remaining tasks. Therefore, I've decided to challenge the new release to show how easy it is right now to start a new web prototype. So let's make a blog in a few minutes.
 
 Before we start, a little disclaimer though - Hanami 2.2 generates empty views, and for Hanami Mastery videos [I use Bulma CSS framework](/episodes/3-style-your-app-with-bulma), so to save your eyes from looking at how I write HTML boilerplate I have extended the default generators using with `hanami-cli_bulma` gem, that give basic bulma support for newly created hanami views.
-### Generate a new app.
+
+## Generate a new app.
+
 So for the record, I'll first install the `hanami` gem, and then `hanami-cli_bulma` gem and override executable, so we'll use bulma integration for generating application. Feel free to add a few minutes to the whole run for the HTML burden. Over time the generators' experience will be improved in the plain hanami-cli too!
 
 ```shell
@@ -60,8 +62,9 @@ Then opening the appplication layout file shows you that I've automatically crea
 
 Now let me jump to to the DB implementation. Our goal is to have a CRUD-like article listing, with preview, creation and deletion in place, so I'll start from creating a few articles records.
 
-### DB Preparation
-To do that, first I need a migration file which I can create by running migration generator. 
+## DB Preparation
+
+To do that, first I need a migration file which I can create by running migration generator.
 
 ```shell
 bundle exec hanami g migration articles
@@ -97,9 +100,9 @@ Having that I can run the migration and play with the db in my console.
 bundle exec hanami db migrate
 ```
 
-This `db mibrate` command generated the `structure.sql` file, that can be used to quickly setup db without running all the migrations - useful for commands like: `hanami db prepare` 
+This `db mibrate` command generated the `structure.sql` file, that can be used to quickly setup db without running all the migrations - useful for commands like: `hanami db prepare`
 
-Having db set up, let me generate articles relation file. 
+Having db set up, let me generate articles relation file.
 
 ```shell
 bundle exec hanami g relation articles
@@ -139,7 +142,8 @@ This way, in the main application repository, I'll enable *create*, *update* and
 
 Now article creation will work as you may expect and we'll leverage that in our app in a moment. For now, I'll create a second article yet and will move to the next part of the episode, which is the article listing.
 
-### Article's listing
+## Article's listing
+
 I'll start with action generation, as it immediately generates views together for me, saving additional precious minutes.
 
 ```shell
@@ -182,7 +186,7 @@ This adds a new route to the `routes.rb`, and generates all necessary files need
 
 If I run the server and visit the page, I'll get the undefined method `items`, which is kind of expected. Let me add it in the view object.
 
-#### Index view
+### Index view
 
 Here I need to expose the items method to the template, so template can access it, and inside I'll fetch all articles from the repository.
 
@@ -229,7 +233,7 @@ end
 
 ```
 
-Now our articles listing, while hardcoded, already shows 2 items on the list. 
+Now our articles listing, while hardcoded, already shows 2 items on the list.
 
 Then if I visit the template and replace the hardcoded fields to fetch data from the `item` object, I'll get the legit articles listing for my blog.
 
@@ -254,7 +258,8 @@ Then if I visit the template and replace the hardcoded fields to fetch data from
 
 Good! Next will be the article preview.
 
-### Article details page
+## Article details page
+
 I want the article title to be a link, that after being clicked, redirects you to the article's details page. For that, I'm going to replace the string with the `link_to` helper, passing `:article` path as a second argument, and add some bulma tags to make it pretty.
 
 Then I'll generate a new action, named `articles.show`
@@ -320,11 +325,11 @@ Ups, sorry, the content should also be called on the item object, not directly i
 ![[article-details-page-preview.png]]
 
 
-#### Params validation
+### Params validation
+
 Now a few words about error handling. Currently, when we pass in at the end of the URL any string, it'll be interpreted by the router as `ID`, and our DB will be called, checking for ID's presence. Then server returns DB error to the user. I would love to not even hit the DB when the ID is not an integer or does not match other restrictions, like being lower than one.
 
 ![[article-not-found-db-error.png]]
-
 
 For that, I can open the action file, and halt the request processing in case of params are invalid. I'll return 422 status for now. Then above, I'll make sure that ID parameter needs to be coercible to `String` by using built-in action validation rules that hanami provides out of the box.
 
@@ -351,6 +356,7 @@ end
 Now when you'll try to fetch the article using a parameter that is not an integer, we'll never even try to render the view, not even mentioning to hit the db. I can change this here to 404, to return a different error page. If you are interested in detailed error handling for hanami applications, I've already 2 episodes about this topic, starting from [Flash message rendering](https://hanamimastery.com/episodes/52-render-flash-the-correct-way), which I recommned for you to check out.
 
 ### Navigation
+
 Articles previewing works fine. Now, before I add some form actions, let me update the top navigation links to quickly switch between articles listing and the details page
 
 ```html
@@ -362,7 +368,8 @@ Articles previewing works fine. Now, before I add some form actions, let me upda
 
 With this, let me go to the last two features: creating and deleting the article.
 
-### Create article
+## Create article
+
 I'll generate 2 actions. `New` and `Create` using 2 separate generator calls.
 
 ```shell
@@ -370,7 +377,7 @@ bundle exec hanami g action articles.new
 bundle exec hanami g action articles.create
 ```
 
-You may see, that the `create action` generator did not create the view or template file, which is expected. Now Let me check the routes and add the aliases for each of them. 
+You may see, that the `create action` generator did not create the view or template file, which is expected. Now Let me check the routes and add the aliases for each of them.
 
 ```ruby
 # config/routes.rb
@@ -390,7 +397,7 @@ Then in the top navigation of my application layout I'll add a button to visit t
 
 ![[new-article-button.png]]
 
-#### Form rendering
+### Form rendering
 
 When I click on it, I'll get a very simple and hardcoded form example, that I need to tweak now a bit to make it working. First of all, I want to show the "New Article" title for the page instead of action class.
 
@@ -442,7 +449,8 @@ Now I have a fully functional article form, and the only thing left now is to pr
 
 ![[new-article-form.png]]
 
-#### Request handling
+### Request handling
+
 In the action file, I'll start from validating the object. I want the form to have an `article` root key, and inside be title attribute, coercible to string and present, as well as the content, with the same rules applied.
 
 ```ruby
@@ -487,7 +495,8 @@ Now I have a fully functional article creation in my blog application. Great!
 
 Let me add the last feature for today then and remove some of our items from the list!
 
-### Deleting articles.
+## Deleting articles.
+
 To remove articles, I'll generate a new action, but this time, with the `--skip-view` flag, which prevents hanami from creating both view and template files.
 
 ```shell
@@ -541,9 +550,12 @@ Now in the routes file, I'll add the alias to my route, and that should be all!
 
 I have now an application, that can list, preview, create, and delete articles, with full DB integration and using Bulma CSS framework to look great!
 
-### Homework
+## Homework
+
 You may see, that the last feature, updating the article, I've left unifinished, and that's on purpose - feel free to treat it as homework!
+
 ## Summary
+
 I am amazed by the progress that Hanami 2.2 show, and how well ROM classes are integrated in this version. There are no issues whatsoever, and everything I'd need to build advanced web applications is already in place.
 
 The plain view generators may require some love in the near future, but this quality of life features are not as important, as when more advanced apps are being written, generators are becoming less useful, and the AI autocompletion tools like copilot take the lead.
@@ -552,10 +564,10 @@ Now we have finally the complete, full-featured framework and I cannot wait to p
 
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/hanamimastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
 
-## Thanks: 
+## Thanks:
 > Use [[THME - Thanks]]
 
-I want to especially thank my recent sponsors, 
+I want to especially thank my recent sponsors,
 
 - [Melvric Goh](https://github.com/melvrickgoh)
 - [Adrian Marin](https://github.com/adrianthedev)
