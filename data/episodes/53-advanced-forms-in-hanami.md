@@ -22,15 +22,14 @@ discussions:
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
 source: "https://github.com/hanamimastery/episodes/compare/HME053-pre...HME053"
 ---
-Hi there!
-
 In the previous episode, I made the [introduction to using scopes](/episodes/52-render-flash-the-correct-way) in Hanami 2 applications. Today I will dig a bit further, and leverage the [Parts feature](https://guides.hanamirb.org/v2.1/views/parts), so if you're not familiar with this, I'd recommend visiting the guides first or [checking out my previous episodes](https://hanamimastery.com/t/views) on these topics.
 
-Today I want to tackle the logic extraction from complex forms in Hanami 2, step-by-step, and because of that it can take a while, so **please prepare yourself for a longer episode**.
+Today I want to eliminate all the logic in complex templates in Hanami 2, step-by-step.
 
+Let's begin.
 ## Overview of the problem
 
-I have here the registration form I've created for [rendering the flash messages](/episodes/52-render-flash-the-correct-way) tutorial, however, it's not fully functional yet.
+I have here the registration form created for [rendering the flash messages](/episodes/52-render-flash-the-correct-way) tutorial, however, it's not fully functional yet.
 
 ![Basic form error with no errors](/images/episodes/53/registration-form-all-fields.png)
 
@@ -88,17 +87,13 @@ It contains a couple of fields only, but you may already see that it's a pretty 
 <% end %>
 ```
 
+For example, if there are errors in a particular field, **the input should be highlighted with a red border**, and the exclamation icon should be added to the right side of the input.
 
-For example, if there are errors in a particular field, the input should be highlighted with a red border, and the exclamation icon should be added to the right side of the input.
-
-Additionally, below the input, there should be the exact red notification about what's wrong with this field.
+Additionally, below the input, **there should be the exact red notification about what's wrong with this field.**
 
 ![Registration form with error messages](/images/episodes/53/registration-form-field-errors.png)
 
 Today I want to do the challenge to extract this logic and refactor the code, so it's easier to work with the dynamic data we have here.
-
-Let's start then.
-
 ## Render the field input error messages
 
 ### Rendering errors from the action.

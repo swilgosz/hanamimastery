@@ -1,15 +1,17 @@
 ---
-id: 55
+id: 56
 aliases:
-  - "HMEP055"
+  - HMEP054
 published: false
 author: swilgosz
-topics: ["hanami", "views"]
-title: "Pagination in Hanami made fun!"
-excerpt: "When you want to implement the pagination feature in Hanami, you'll quickly realize how annoying it can be, making all the repository methods accept the pagination parameters - unless you check out this episode of Hanami Mastery, where I implement pagination in a cool way."
-videoId:
-publishedAt: 2022-02-09
-modifiedAt: 2022-02-09
+topics:
+  - hanami
+  - views
+title: Pagination in Hanami made fun!
+excerpt: When you want to implement the pagination feature in Hanami, you'll quickly realize how annoying it can be, making all the repository methods accept the pagination parameters - unless you check out this episode of Hanami Mastery, where I implement pagination in a cool way.
+videoId: 
+publishedAt: 2024-10-10
+modifiedAt: 2024-10-10
 thumbnail:
   full: /images/episodes/54/cover-full.jpeg
   big: /images/episodes/54/cover-big.jpeg
@@ -20,11 +22,14 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: "https://github.com/hanamimastery/episodes/compare/HME055-pre...HME055"
+source: https://github.com/hanamimastery/episodes/compare/HME055-pre...HME055
 ---
 Hi there!
 
-Some time ago, in the [episode 32](/episodes/32-rom-pagination) I've covered a simple way to implement pagination in ROM-based applications. However, that only works if you 
+Some time ago, in the [episode 32](/episodes/32-rom-pagination) I've covered a simple way to implement pagination in ROM-based applications. It's cool, because it's natively supported by ROM and Hanami, however, that only works if you work with relations.
+
+And, if you are familiar with the repositories concept, their methods are not 
+
 
 1. Create a gem, hm-pagination
 2. Integrate the gem in the video.

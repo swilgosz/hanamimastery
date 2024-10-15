@@ -1,17 +1,17 @@
 ---
-id: 54
+id: 55
 aliases:
-  - "HMEP054"
+  - HMEP055
 published: 
 author: swilgosz
 topics:
-  - "errors"
-  - "hanami"
-title: "Exceptional Exceptions in Ruby!"
-excerpt: "Proper error handling in your application is often overlooked, but it's extremely important to not get crazy in maintaining your projects. Check out how you can put your error notifications to the next level in any ruby application."
+  - errors
+  - hanami
+title: Exceptional Exceptions in Ruby!
+excerpt: Proper error handling in your application is often overlooked, but it's extremely important to not get crazy in maintaining your projects. Check out how you can put your error notifications to the next level in any ruby application.
 videoId: 
-publishedAt: "2023-10-17"
-modifiedAt: "2023-10-17"
+publishedAt: 2023-10-17
+modifiedAt: 2023-10-17
 thumbnail:
   full: /images/episodes/51/cover-full.jpeg
   big: /images/episodes/51/cover-big.jpeg
@@ -22,7 +22,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-source: "https://github.com/hanamimastery/episodes/compare/HME054-pre...HME054"
+source: https://github.com/hanamimastery/episodes/compare/HME054-pre...HME054
 ---
 [🎬 01] Hi there!
 
