@@ -1,18 +1,18 @@
 ---
 id: 54
 aliases:
-  - HMEP054
+  - "HMEP054"
 published: true
-author: swilgosz
+author: "swilgosz"
 topics:
-  - hanami
-  - views
-  - persistence
-title: Last Puzzle in place! Fullstack Hanami 2.2!
-excerpt: Hanami 2.2-beta2 is relased, which finally becomes a complete, fullstack framework. Let's make a blog in Hanami taking a closer look at its basic features.
-videoId: ulFu1I76qZ0
-publishedAt: 2024-10-16
-modifiedAt: 2024-10-16
+  - "hanami"
+  - "views"
+  - "persistence"
+title: "Last Puzzle in place! Fullstack Hanami 2.2!"
+excerpt: "Hanami 2.2-beta2 is relased, which finally becomes a complete, fullstack framework. Let's make a blog in Hanami taking a closer look at its basic features."
+videoId: "ulFu1I76qZ0"
+publishedAt: "2024-10-16"
+modifiedAt: "2024-10-16"
 thumbnail:
   full: /images/episodes/54/cover-full.jpeg
   big: /images/episodes/54/cover-big.jpeg
@@ -23,7 +23,7 @@ discussions:
   reddit:
     ruby: https://www.reddit.com/r/ruby/comments/XXX
     hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
-https://github.com/hanamimastery/episodes/compare/HME054-pre...HME054
+source: "https://github.com/hanamimastery/episodes/compare/HME054-pre...HME054"
 ---
 
 Hi there!
