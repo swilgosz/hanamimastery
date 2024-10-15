@@ -18,11 +18,11 @@ thumbnail:
   big: /images/episodes/54/cover-big.jpg
   small: /images/episodes/54/cover-small.jpg
 discussions:
-  twitter: https://twitter.com/HanamiMastery/status/XXX
-  mastodon: https://ruby.social/@hanamimastery/XXX
+  twitter: https://x.com/HanamiMastery/status/1846330717774483883
+  mastodon: https://ruby.social/@hanamimastery/113314006373923744
   reddit:
-    ruby: https://www.reddit.com/r/ruby/comments/XXX
-    hanamirb: https://www.reddit.com/r/hanamirb/comments/XXX
+    ruby: https://www.reddit.com/r/ruby/comments/1g4lfa2/last_puzzle_in_place_fullstack_hanami_22_showcase/
+    hanamirb: https://www.reddit.com/r/hanamirb/comments/1g4lg1s/last_puzzle_in_place_fullstack_hanami_22_showcase/
 source: "https://github.com/hanamimastery/episodes/compare/HME054-pre...HME054"
 ---
 
