@@ -22,7 +22,7 @@ discussions:
 source: null
 ---
 
-Recently I gave a talk on [Saint P Ruby meetup](https://www.youtube.com/c/SaintPRubyCommunity) and as I've got nice feedback, I've decided to extract some interesting parts to an official Hanami Mastery episode.
+Recently I gave a talk on [Saint P Ruby meetup](https://www.youtube.com/watch?v=Eqj2nabX9uw) and as I've got nice feedback, I've decided to extract some interesting parts to an official Hanami Mastery episode.
 
 :::important
 This talk, and this episode, was sponsored by [Useo](https://useo.pl).
@@ -52,7 +52,7 @@ This leads to having **fewer but bigger** files in Rails, and more but smaller f
 
 In Rails, you can list all the key abstractions very easily as they are pretty well defined and there are not too many of them
 
-![Rails abstractions](/images/episodes/8/rails-abstractions.png)
+![Rails abstractions](/images/episodes/8/image-rails-abstractions.png)
 
 So you have:
 
