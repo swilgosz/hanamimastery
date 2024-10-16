@@ -30,11 +30,13 @@ Hi there!
 
 [Hanami 2.2 beta went out](https://hanamirb.org/blog/2024/09/25/hanami-220beta2/), and the team is squeezing everything to wrap up the last remaining tasks. Therefore, I've decided to challenge the new release to show how easy it is right now to start a new web prototype. So let's make a blog in a few minutes.
 
-Before we start, a little disclaimer though - Hanami 2.2 generates empty views, and for Hanami Mastery videos [I use Bulma CSS framework](/episodes/3-style-your-app-with-bulma), so to save your eyes from looking at how I write HTML boilerplate I have extended the default generators using with `hanami-cli_bulma` gem, that give basic bulma support for newly created hanami views.
+:::caution[Disclaimer]
+Hanami 2.2 generates empty views, and for Hanami Mastery videos [I use Bulma CSS framework](/episodes/3-style-your-app-with-bulma), so to save your eyes from looking at how I write HTML boilerplate I have extended the default generators using the [hanami-cli_bulma gem](https://rubygems.org/gems/hanami-cli_bulma), that gives basic bulma support for newly created hanami views.
+:::
 
 ## Generate a new app.
 
-So for the record, I'll first install the `hanami` gem, and then `hanami-cli_bulma` gem and override executable, so we'll use bulma integration for generating application. Feel free to add a few minutes to the whole run for the HTML burden. Over time the generators' experience will be improved in the plain hanami-cli too!
+I'll first install the `hanami` gem, and then `hanami-cli_bulma` gem, overriding executable, so we'll use bulma integration for generating application. Feel free to add a few minutes to the whole run for the HTML burden. Over time the generators' experience will be improved in the plain hanami-cli too!
 
 ```shell
 echo "nodejs 21.2.0\nruby 3.3.5" > .tool-versions
@@ -48,21 +50,67 @@ Now I can create the new `hanami` app, named `hanami_mastery`, and that will inc
 hanami new hanami_mastery
 ```
 
-This created all the necessary files for the new hanami app with sqlite 3 integration, assets and views in place, and installed the missing gems together with node packages. As I have installed all dependencies before, this command may take a bit longer for you.
+This command had done a few things:
 
+- created all the necessary files for the new hanami app with sqlite 3 integration, assets and views in place,
+- installed the missing gems
+- installed node packages. 
+
+
+Now I can go to the app folder, and you can see all files generated. 
 ```shell
 cd hanami_mastery
 ```
 
-Now I can go to the app folder, and you can see all files generated. Let me switch to the editor for better look!
+### Bulma integration overview
 
-A few things to notice. `bulma` generators added a few tweaks to the default generated files. In the app css folder, you'll see the `@import` statement for the Bulma CSS.
+A few things to notice. `bulma` generators added a few tweaks to the default generated files. In the `app.css` folder, you'll see the `@import` statement for the Bulma CSS.
+
+```css
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+```
 
 Then opening the appplication layout file shows you that I've automatically created some HTML burden to save your precious time.
 
-Now let me jump to to the DB implementation. Our goal is to have a CRUD-like article listing, with preview, creation and deletion in place, so I'll start from creating a few articles records.
+```html
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://hanamimastery.com">
+        <img src="https://hanamimastery.com/logo-hm-letter.jpeg" height="28">
+      </a>
+    </div>
+    <div id="top-navigation" class="navbar-menu">
+      <div class="navbar-start">
+        <%= link_to 'Home', '/', class: 'navbar-item' %>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Hanami mastery</strong>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+  <%= javascript_tag "app" %>
+</body>
+```
+
+Now let me jump to to the DB implementation.
 
 ## DB Preparation
+
+Our goal is to have a CRUD-like article listing, with preview, creation and deletion in place, so I'll start from creating a few articles records.
 
 To do that, first I need a migration file which I can create by running migration generator.
 
@@ -73,7 +121,7 @@ bundle exec hanami g migration articles
 
 Inside I want to create the articles table with just a few fields. It needs to contain ID as primary key, and to make things simple I'll leave it as integer which is the default.
 
-Then I need the title and the content for the preview, and let me yet add the status field, with default value set to 0. I am not sure if I'll use it in this showcase, but it does not hurt to have it here.
+Then I need the *title* and the *content* for the preview, and let me yet add the *status* field, with default value set to 0. I am not sure if I'll use it in this showcase, but it does not hurt to have it here.
 
 ```ruby
 # config/db/migate/202410153056_articles.rb
@@ -110,9 +158,11 @@ bundle exec hanami g relation articles
 
 This is a table representation in our ruby application, and for the barebone usage, this is the minimum you need to work with data in hanami apps.
 
+:::important[More on using relations directly]
 I've talked about this in [ROM setup from scratch](/episodes/28-configure-rom-from-scratch), episode, so feel free to check it out.
+:::
 
-Here however, I want to make use of the `auto_struct` feature and leverage repositories for convenience, so I'll quickly generate the article repository, and the article struct.
+Here, however, I want to make use of the `auto_struct` feature and leverage repositories for convenience, so I'll quickly generate the article repository and the struct.
 
 ```shell
 bundle exec hanami g repo article
@@ -132,19 +182,33 @@ $> repo.articles.to_a
 
 You can see, that I have the repo instance already configured to work with the database, and I can access the articles relation through it, which returns no records at the moment.
 
-While I could already use relation to create new objects, I want to use `repository.create` directly for convienience. However, if I'll run it now, article creation will fail with `NoMethodError`.
+### Repository commands
 
-![[undefined-method-create-on-repo.png]]
+While I could already use relation to create new objects, I want to use `repo.create` directly for convienience. However, if I'll run it now, article creation will fail with `NoMethodError`.
+
+![Undefined method create on repo](/images/episodes/54/undefined-method-create-on-repo.png)
 
 This happens, because Hanami encourages developers to be explicit in what they need, and the framework provides you with minimal setup, allowing you to enable exactly those features you want.
 
 This way, in the main application repository, I'll enable *create*, *update* and *delete* commands on the repository directly, so I don't need to go through the relations to do it.
 
-Now article creation will work as you may expect and we'll leverage that in our app in a moment. For now, I'll create a second article yet and will move to the next part of the episode, which is the article listing.
+```ruby
+# app/db/repo.rb
+
+module HanamiMastery
+  module DB
+    class Repo < Hanami::DB::Repo
+      commands :create, update: :by_pk, delete: :by_pk
+    end
+  end
+end
+```
+
+Now article creation works as you may expect and we'll leverage that in our app in a moment. For now, I'll create a second article yet and will move to the next part of the episode, which is the article listing.
 
 ## Article's listing
 
-I'll start with action generation, as it immediately generates views together for me, saving additional precious minutes.
+I'll start with action generation, as it immediately generates views together, saving additional precious minutes.
 
 ```shell
 bundle exec hanami g action articles.index
@@ -154,7 +218,7 @@ bundle exec hanami g action articles.index
 #=> Updated app/templates/articles/index.html.erb
 ```
 
-This adds a new route to the `routes.rb`, and generates all necessary files needed to handle this endpoint. I'll now visit the `articles/index` template, where you may see, that generator already added a few HTML burden for me.  It uses the `items` list, and loops through them showing the table rows with some hardcoded details.
+This adds a new route to the `routes.rb`, and generates all necessary files needed to handle this endpoint. Now I need to visit the `articles/index` template, where you may see, that generator already added a few HTML burden for me.  It uses the `items` list, and loops through them showing the table rows with some hardcoded details.
 
 ```html
 <h1 class="title is-1">HanamiMastery::Views::Articles::Index</h1>
@@ -184,11 +248,11 @@ This adds a new route to the `routes.rb`, and generates all necessary files need
 
 ```
 
-If I run the server and visit the page, I'll get the undefined method `items`, which is kind of expected. Let me add it in the view object.
+If I run the server and visit the page, I'll get the `undefined method: items` error, which is kind of expected. Let me add it in the view object.
 
 ### Index view
 
-Here I need to expose the items method to the template, so template can access it, and inside I'll fetch all articles from the repository.
+Here I need to *expose* the `items` method to the template, so template can access it, and inside I'll fetch all articles from the repository.
 
 ```ruby
 # app/views/articles/index.rb
@@ -208,7 +272,7 @@ module HanamiMastery
 end
 ```
 
-Then in the base repository, I'll add the `all` method. It could use `root` directly, but I prefer to define the default scope I want to have for my repository, which will remain private. One of the reasons for that I will share with you in the upcoming episode.
+Then in the base repository, I'll add the `all` method. It could use `root` directly, but I prefer to define the default scope I want to have for all repositories, which will remain private. One of the reasons for that I will share with you in the upcoming episode.
 
 ```ruby
 # app/db/repo.rb
@@ -254,13 +318,13 @@ Then if I visit the template and replace the hardcoded fields to fetch data from
 
 ```
 
-![[articles-index-page-preview.png]]
+![Articles index page preview](/images/episodes/54/articles-index-page-preview.png)
 
-Good! Next will be the article preview.
+Good! Next will be the article preview!
 
 ## Article details page
 
-I want the article title to be a link, that after being clicked, redirects you to the article's details page. For that, I'm going to replace the string with the `link_to` helper, passing `:article` path as a second argument, and add some bulma tags to make it pretty.
+I want the article *title* to be a link, that after being clicked, redirects you to the article's details page. For that, I'm going to replace the string with the `link_to` helper, passing `:article` path as a second argument, and add some bulma tags to make it pretty.
 
 Then I'll generate a new action, named `articles.show`
 
@@ -270,6 +334,8 @@ bundle exec hanami g action articles.show
 
 This behaves exactly as you may expect. It adds a route to the routes file, creates the action file to handle the request, and a view file, together with a template, to show the response.
 
+### Named routes
+
 The issue you may face at this point is that when you try to refresh the page again, you'll get the error pointing to the fact, that the route named `:article` cannot be found. I can solve it by naming my newly created article passing in the `as: :article` argument.
 
 ```ruby
@@ -277,7 +343,6 @@ The issue you may face at this point is that when you try to refresh the page ag
 
 module HanamiMastery
   class Routes < Hanami::Routes
-    # Add your routes here. See https://guides.hanamirb.org/routing/overview/ for details.
     get "/articles", to: "articles.index", as: :articles
     get "/articles/:id", to: "articles.show", as: :article
   end
@@ -287,7 +352,7 @@ end
 
 Having that fixed, let me open the article's show view file, and add the article fetching logic there. Similar to the *index* view, I need the repository and expose the object I want to work with in the template - but this time I'll need the `:id` parameter from the request, so this is what I use in the block.
 
-Then inside, I'm just going to find the article by id.
+Then inside, I'm just going to *find* the article by its ID.
 
 ```ruby
 # app/views/articles/show.rb
@@ -307,7 +372,11 @@ module HanamiMastery
 end
 ```
 
-I need to yet add the `find` method in the base repository, that will accept the `id`, and return a single record from the table. I've implemented it in a way to raise an error in case of not finding the object, but you can remove the exclamation mark to return *nil* instead.
+I need to yet add the `find` method in the base repository, that will accept the ID, and return a single record from the table. 
+
+TODO: notice callout
+
+I've implemented it in a way to raise an error in case of not finding the object, but you can remove the exclamation mark to return *nil* instead.
 
 ```ruby
 # app/db/repo.rb
@@ -317,21 +386,27 @@ def find(id)
 end
 ```
 
-Finally, in the template I'll replace the hardcoded strings with the article attributes and this should be all needed to check the preview of my article.
+Finally, in the template I'll replace hardcoded strings with article attributes and this should be all needed to check the preview of my article.
 
-%% TODO: Remove from script %%
-Ups, sorry, the content should also be called on the item object, not directly in the view. Now this will work. Amazing!
+Amazing!
 
-![[article-details-page-preview.png]]
-
+![Article details page preview](/images/episodes/54/article-details-page-preview.png)
 
 ### Params validation
 
-Now a few words about error handling. Currently, when we pass in at the end of the URL any string, it'll be interpreted by the router as `ID`, and our DB will be called, checking for ID's presence. Then server returns DB error to the user. I would love to not even hit the DB when the ID is not an integer or does not match other restrictions, like being lower than one.
+Now a few words about error handling. Currently, when we pass in any string at the end of the URL, it'll be interpreted by the router as `ID`, and our DB will be called, checking for ID's presence. Then server returns DB error to the user. 
 
-![[article-not-found-db-error.png]]
+![Article not found DB error](/images/episodes/54/article-not-found-db-error.png)
 
-For that, I can open the action file, and halt the request processing in case of params are invalid. I'll return 422 status for now. Then above, I'll make sure that ID parameter needs to be coercible to `String` by using built-in action validation rules that hanami provides out of the box.
+I would love to not even hit the DB when the ID is not an integer or does not match other restrictions, like being lower than one.
+
+For that, I can open the action file, and halt the request processing in case of params being invalid. I'll return `404` status for now. 
+
+:::important[More on error handling]
+If you are interested in detailed error handling for hanami applications, I've already 2 episodes about this topic, starting from [Flash message rendering](https://hanamimastery.com/episodes/52-render-flash-the-correct-way), which I recommned for you to check out.
+:::
+
+Then above, I'll make sure that ID parameter needs to be coercaible to `String` by using built-in action validation rules that hanami provides out of the box.
 
 ```ruby
 # app/actions/articles/show.rb
@@ -353,7 +428,7 @@ module HanamiMastery
 end
 ```
 
-Now when you'll try to fetch the article using a parameter that is not an integer, we'll never even try to render the view, not even mentioning to hit the db. I can change this here to 404, to return a different error page. If you are interested in detailed error handling for hanami applications, I've already 2 episodes about this topic, starting from [Flash message rendering](https://hanamimastery.com/episodes/52-render-flash-the-correct-way), which I recommned for you to check out.
+Now when you'll try to fetch the article using a parameter that is not an integer, we'll never even try to render the view, not even mentioning to hit the DB!
 
 ### Navigation
 
@@ -370,7 +445,7 @@ With this, let me go to the last two features: creating and deleting the article
 
 ## Create article
 
-I'll generate 2 actions. `New` and `Create` using 2 separate generator calls.
+I'll generate two actions - `New` and `Create` - using separate generator calls.
 
 ```shell
 bundle exec hanami g action articles.new
@@ -395,7 +470,9 @@ Then in the top navigation of my application layout I'll add a button to visit t
 </div>
 ```
 
-![[new-article-button.png]]
+And done. My blog is starting to take a shape!
+
+![New article button](/images/episodes/54/new-article-button.png)
 
 ### Form rendering
 
@@ -403,7 +480,9 @@ When I click on it, I'll get a very simple and hardcoded form example, that I ne
 
 Then I want the form to wrap its fields into the `article` object, and use the `create_article` POST request when submitted. Finally I need to add second field to the form, which will allow me to type in the content of my article when being created.
 
-This will be a *textarea* type of field, with different class name and the placeholder. I'll also update the icon here, but that's irrelevant. I don't have the fontawesome integrated here, but if you are keen how to do it, I already have a tutorial for this. Check [episode 51](https://hanamimastery.com/episodes/51-integrate-font-awesome-in-hanami) for all the details of how to configure font awesome in your apps.
+This will be a *textarea* type of field, with different class name and the placeholder. 
+
+I'll also update the icon here, but that's irrelevant. I don't have the *FontAwesome* integrated here, but if you are keen how to do it, I already have a tutorial for this. Check [episode 51](https://hanamimastery.com/episodes/51-integrate-font-awesome-in-hanami) for all the details of how to configure font awesome in your apps!
 
 Now in the form I want to update yet the `cancel` button, to redirect me to the articles list.
 
@@ -447,7 +526,7 @@ Now in the form I want to update yet the `cancel` button, to redirect me to the 
 
 Now I have a fully functional article form, and the only thing left now is to provide the handler for it in the corresponding action.
 
-![[new-article-form.png]]
+![New article form](/images/episodes/54/new-article-form.png)
 
 ### Request handling
 
@@ -562,25 +641,27 @@ The plain view generators may require some love in the near future, but this qua
 
 Now we have finally the complete, full-featured framework and I cannot wait to play with it and write some serious Hanami apps for real!
 
+:::important[Consider subscribing?]
 I hope you've enjoyed this episode, and if you want to see more content in this fashion, **Subscribe to [my YT channel](https://www.youtube.com/c/hanamimastery)**, **[Newsletter](https://mailchi.mp/6ac8f64f3c5d/hanami-mastery-newsletter)** and **follow me [on Twitter](https://twitter.com/hanamimastery)**!
+:::
 
-## Thanks:
-> Use [[THME - Thanks]]
+## Thanks
 
-I want to especially thank my recent sponsors,
+### Recent sponsors:
 
 - [Melvric Goh](https://github.com/melvrickgoh)
 - [Adrian Marin](https://github.com/adrianthedev)
 - [Lucian Ghinda](https://github.com/lucianghinda)
 
-for supporting this project, I really apreciate it!
+### Cover photo
+-  [Diva Plavalaguna](https://www.pexels.com/@diva-plavalaguna/) 
 
-And, appreciate to [Diva Plavalaguna](https://www.pexels.com/@diva-plavalaguna/) for the amazing cover photo!
-
+### Consider support?
 By helping me with a few dollars per month creating this content, you are helping the open-source developers and maintainers to create amazing software for you!
 
-And remember, if you want to support my work even without money involved, the best you can do is to like, share and comment on my episodes and discussions threads. Help me add value to the Open-Source community!
+- [Support links](/sponsors)
+
+And remember, if you want to support my work even without money involved, the best you can do is to **like**, **share** and **comment** on my episodes and discussions threads. Help me add value to the Open-Source community!
 
 If you know other great gems you wish me to talk about, leave a comment with `#suggestion`, and I'll gladly cover them in the future episodes!
 
-As usual, here you can find two of my previous videos! Thank you all for supporting my channel, you are awesome, and have a nice rest of your day!
